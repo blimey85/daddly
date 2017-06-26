@@ -1,0 +1,5 @@
+test:
+  database: dp_test
+  username: root
+  password: mysql
+  host: mysql

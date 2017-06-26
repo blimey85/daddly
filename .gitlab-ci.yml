@@ -7,7 +7,17 @@ image: "ruby:2.4.1"
 # Only needed when using a docker container to run your tests in.
 # Check out: http://docs.gitlab.com/ce/ci/docker/using_docker_images.html#what-is-service
 services:
-  - mysql:latest
+- mysql
+
+variables:
+  # Configure mysql service (https://hub.docker.com/_/mysql/)
+  MYSQL_DATABASE: dp_test
+  MYSQL_ROOT_PASSWORD: mysql
+
+connect:
+  image: mysql
+  script:
+  - echo "SELECT 'OK';" | mysql --user=root --password="$MYSQL_ROOT_PASSWORD" --host=mysql "$MYSQL_DATABASE"
 
 # Cache gems in between builds
 cache:
