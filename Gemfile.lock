@@ -1,3 +1,39 @@
+GIT
+  remote: git://github.com/amatsuda/kaminari.git
+  revision: 4efe5fd2bde3e8688fca220f93d14558d080d811
+  branch: master
+  specs:
+    kaminari (1.0.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.0.1)
+      kaminari-activerecord (= 1.0.1)
+      kaminari-core (= 1.0.1)
+    kaminari-actionview (1.0.1)
+      actionview
+      kaminari-core (= 1.0.1)
+    kaminari-activerecord (1.0.1)
+      activerecord
+      kaminari-core (= 1.0.1)
+    kaminari-core (1.0.1)
+
+GIT
+  remote: git@github.com:blimey85/decanter.git
+  revision: dfb2aeb76d5747737959650a012a8bed2b77e1d9
+  specs:
+    decanter (0.9.0)
+      activesupport
+
+GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: 9c468a269442a6ce1b34c752d3ddec6a1cb6b0c0
+  specs:
+    ransack (1.8.3)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,17 +76,36 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    annotate (2.7.2)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
     arel (8.0.0)
+    autoparse (0.3.3)
+      addressable (>= 2.3.1)
+      extlib (>= 0.9.15)
+      multi_json (>= 1.0.0)
     autoprefixer-rails (7.1.1.2)
       execjs
+    awesome_print (1.8.0)
+    aws_cf_signer (0.1.3)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
+    bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    bh (1.3.6)
+      actionpack
+      activesupport
     bindex (0.5.0)
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
+    bootstrap-social-rails (4.12.0)
+      railties (>= 3.1)
     builder (3.2.3)
     byebug (9.0.6)
     capistrano (3.0.1)
@@ -75,9 +130,19 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.7.0)
       ffi (~> 1.0, >= 1.0.11)
+    cloudinary (1.8.1)
+      aws_cf_signer
+      rest-client
+    cocoon (1.2.10)
     coderay (1.1.1)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -86,11 +151,25 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    css_parser (1.5.0)
+      addressable
     database_cleaner (1.6.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
+    devise (4.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.2)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.3)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
+    equalizer (0.0.11)
     erubi (1.6.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    extlib (0.9.16)
     factory_girl (4.8.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.8.0)
@@ -98,14 +177,50 @@ GEM
       railties (>= 3.0.0)
     faker (1.7.3)
       i18n (~> 0.5)
+    faraday (0.12.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
+    fullcalendar-rails (3.2.0.0)
+      jquery-rails (>= 4.0.5, < 5.0.0)
+      jquery-ui-rails (>= 5.0.2)
+      momentjs-rails (>= 2.9.0)
+    geocoder (1.4.4)
+    gibbon (3.0.2)
+      faraday (>= 0.9.1)
+      multi_json (>= 1.11.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    google-api-client (0.8.2)
+      activesupport (>= 3.2)
+      addressable (~> 2.3)
+      autoparse (~> 0.3)
+      extlib (~> 0.9)
+      faraday (~> 0.9)
+      launchy (~> 2.4)
+      multi_json (~> 1.10)
+      retriable (~> 1.4)
+      signet (~> 0.6)
+    hashie (3.5.5)
     high_voltage (3.0.0)
+    htmlentities (4.3.4)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (0.8.4)
+    ice_nine (0.11.2)
+    jasny-bootstrap-rails (3.1.3)
+      railties (>= 3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jquery-rails (4.3.1)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
+    jquery-ui-rails (6.0.1)
+      railties (>= 3.2.16)
+    jwt (1.5.6)
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.1.5)
@@ -116,20 +231,57 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
+    meta-tags (2.4.1)
+      actionpack (>= 3.2.0, < 5.2)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    modernizr-rails (2.7.1)
+    momentjs-rails (2.17.1)
+      railties (>= 3.1)
     multi_json (1.12.1)
+    multi_xml (0.6.0)
+    multipart-post (2.0.0)
     mysql2 (0.3.21)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.1.0)
+    netrc (0.11.0)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    oauth2 (1.4.0)
+      faraday (>= 0.8, < 0.13)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (1.6.1)
+      hashie (>= 3.4.6, < 3.6.0)
+      rack (>= 1.6.2, < 3)
+    omniauth-facebook (4.0.0)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-google-oauth2 (0.5.0)
+      jwt (~> 1.5)
+      multi_json (~> 1.3)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.3.1)
+    omniauth-oauth2 (1.3.1)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
+    orm_adapter (0.5.0)
+    polyamorous (1.3.1)
+      activerecord (>= 3.0)
+    premailer (1.10.4)
+      addressable
+      css_parser (>= 1.4.10)
+      htmlentities (>= 4.0.0)
+    premailer-rails (1.9.7)
+      actionmailer (>= 3, < 6)
+      premailer (~> 1.7, >= 1.7.9)
     public_suffix (2.0.5)
     puma (3.9.1)
     rack (2.0.3)
@@ -152,6 +304,8 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-jquery-autocomplete (1.0.3)
+      rails (>= 3.2)
     rails_layout (1.0.41)
     railties (5.1.1)
       actionpack (= 5.1.1)
@@ -163,6 +317,14 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    responders (2.4.0)
+      actionpack (>= 4.2.0, < 5.3)
+      railties (>= 4.2.0, < 5.3)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    retriable (1.4.1)
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -189,9 +351,21 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    selectize-rails (0.12.4)
     selenium-webdriver (3.4.3)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    sentry-raven (2.5.3)
+      faraday (>= 0.7.6, < 1.0)
+    signet (0.7.3)
+      addressable (~> 2.3)
+      faraday (~> 0.9)
+      jwt (~> 1.5)
+      multi_json (~> 1.10)
+    simple_form (3.5.0)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
+    simple_form_jasny_fileupload (0.0.7)
     slim (3.0.8)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 1.3.3, < 2.1)
@@ -227,6 +401,16 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
+    warden (1.2.7)
+      rack (>= 1.0)
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -242,8 +426,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
+  awesome_print
   better_errors
+  bh
   bootstrap (~> 4.0.0.alpha6)
+  bootstrap-social-rails
   byebug
   capistrano (~> 3.0.1)
   capistrano-bundler
@@ -251,28 +439,56 @@ DEPENDENCIES
   capistrano-rails-console
   capistrano-rvm (~> 0.1.1)
   capybara (~> 2.13)
+  carrierwave
+  cloudinary
+  cocoon
   coffee-rails (~> 4.2)
   database_cleaner
+  decanter!
+  devise (~> 4.2)
   factory_girl_rails
   faker
+  font-awesome-rails
+  fullcalendar-rails
+  geocoder
+  gibbon
+  google-api-client (= 0.8.2)
   high_voltage
+  jasny-bootstrap-rails
   jbuilder (~> 2.5)
+  jquery-ui-rails
+  kaminari!
   launchy
   listen (>= 3.0.5, < 3.2)
+  meta-tags
+  modernizr-rails
   mysql2 (~> 0.3.18)
+  nokogiri
+  omniauth
+  omniauth-facebook
+  omniauth-google-oauth2
+  omniauth-oauth2 (= 1.3.1)
+  premailer-rails
   puma (~> 3.7)
   rails (~> 5.1.1)
+  rails-jquery-autocomplete
   rails_layout
+  ransack!
+  responders (~> 2.0)
   rspec-rails
   sass-rails (~> 5.0)
+  selectize-rails
   selenium-webdriver
+  sentry-raven
+  simple_form
+  simple_form_jasny_fileupload
   slim-rails
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
-  tzinfo-data
   uglifier (>= 1.3.0)
+  virtus
   web-console (>= 3.3.0)
 
 RUBY VERSION
