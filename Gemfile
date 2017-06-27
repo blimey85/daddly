@@ -45,6 +45,8 @@ gem 'omniauth-google-oauth2'
 gem 'google-api-client', '0.8.2', require: 'google/api_client'
 gem 'omniauth-facebook'
 
+gem 'rack-mini-profiler'
+
 group :development do
   gem 'better_errors', git: 'git@github.com:charliesome/better_errors.git'
   gem 'binding_of_caller'
