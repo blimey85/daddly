@@ -27,7 +27,7 @@ group :development do
 end
 
 group :test do
-  gem :'pg'
+  gem 'pg'
 end
 
 # gem 'bootstrap', '~> 4.0.0.alpha6'
