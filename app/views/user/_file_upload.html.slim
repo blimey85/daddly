@@ -1,0 +1,24 @@
+- if @user.avatar.file.nil?
+  .fileinput.fileinput-new data-provides="fileinput"
+    .fileinput-new
+      img.avatar src='/profile_upload_default.jpg' /
+    .fileinput-preview.fileinput-exists
+    div
+      span.btn.btn-file
+        span.btn.btn-sm.btn-info.btn-rounded.fileinput-new Select image
+        span.btn.btn-sm.btn-warning.btn-rounded.fileinput-exists Change
+        = f.input_field :avatar
+      br
+      a.btn.btn-sm.btn-danger.btn-rounded.fileinput-exists data-dismiss="fileinput" href="#" style="margin-top: 10px;" Remove
+- else
+  .fileinput.fileinput-exists data-provides="fileinput"
+    .fileinput-new
+      img.avatar src="/profile_upload_default.jpg" /
+    .fileinput-preview.fileinput-exists
+      = image_tag(@user.avatar.url, size: '100', style: 'line-height: 20px;')
+    div
+      span.btn.btn-file
+        span.btn.btn-sm.btn-info.btn-rounded.fileinput-new Select image
+        span.btn.btn-sm.btn-warning.btn-rounded.fileinput-exists Change
+        = f.input_field :avatar
+      a.btn.btn-sm.btn-danger.btn-rounded.fileinput-exists data-dismiss="fileinput" href="#" style="margin-left: 10px;" Remove

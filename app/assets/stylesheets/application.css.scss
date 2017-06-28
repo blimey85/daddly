@@ -10,6 +10,28 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+@import "bootstrap/scss/bootstrap";
+@import "jasny-bootstrap.min";
+@import "mdb";
+@import "bootstrap-social";
+@import "font-path-overwrite";
+@import "font-awesome/scss/font-awesome";
+@import "fullcalendar/dist/fullcalendar.min";
+@import "selectize";
+@import "selectize.default";
+
+
+.btn-social > :first-child {
+  line-height: 48px;
+}
+.avatar {
+  @extend .img-thumbnail;
+  @extend .mx-auto;
+  max-width: 100px;
+  max-height: 100px;
+  margin-bottom: 10px;
+}
+div.fileinput-preview img {
+  @extend .avatar;
+}

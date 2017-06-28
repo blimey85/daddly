@@ -1,0 +1,166 @@
+css:
+  .column-left {float: left;width: 33%;}
+  .column-right {float: right;width: 33%;}
+  .column-center {display: inline-block; width: 33%;}
+  [type="checkbox"].filled-in:checked + label:before {
+    border-right: 2px solid #4285F4;
+    border-bottom: 2px solid #4285F4;
+  }
+  [type="checkbox"].filled-in:checked + label:after {
+    border: 2px solid #4285F4;
+    background-color: #fff;
+  }
+
+  textarea.md-textarea {
+    padding: 1rem 0;
+    min-height: 5rem;
+    resize: vertical;
+  }
+
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=url],
+  input[type=time],
+  input[type=date],
+  input[type=datetime-local],
+  input[type=tel],
+  input[type=number],
+  input[type=search-md],
+  input[type=search],
+  textarea.md-textarea {
+    height: inherit;
+  }
+
+  .btn-file {
+    padding: 0;
+    margin: 0;
+    border-radius: 30px;
+  }
+  .fileinput-new, .fileinput-exists {
+    margin: 0;
+  }
+
+javascript:
+    $(document).ready(function () {
+        // used for fancy selectize dropboxes
+        $('.selectize-default').selectize();
+        // used for triggering selectize on newly inserted selects
+        $('#children').on('cocoon:after-insert', function (e, addedItem) {
+            $(addedItem).find('.selectize-default').selectize();
+        });
+        $(window).on('clear.bs.fileinput', function (e) {
+            return $(e.target).find('.btn-file input[type=hidden]').val(1);
+        });
+
+        $(window).on('change.bs.fileinput', function (e) {
+            return $(e.target).find('.btn-file input[type=hidden]').val(0);
+        });
+    });
+
+.container
+  .row.justify-content-center
+    .col-7
+      .card
+        .card-block
+          .form-header.purple.darken-4
+            h3
+              i.fa.fa-user
+              |  Edit Your Profile:
+          = simple_form_for(@user, html: { class: 'form-horizontal' } ) do |f|
+            - if @user.errors.any?
+              #error_explanation
+                h2 = "#{pluralize(@user.errors.count, "error")} prohibited this profile from being saved:"
+                ul
+                  - @user.errors.full_messages.each do |message|
+                    li = message
+
+            .row
+              .col
+                = f.input :first_name
+              .col
+                = f.input :last_name
+            .row
+              .col
+                = f.input :zipcode, as: :string, required: false
+              .col
+                = f.input :age
+
+            .md-form
+              = f.label :bio
+              = f.input_field :bio, as: :text, class: 'md-textarea'
+
+            br
+            h3 Avatar?
+            #avatar.text-center.col-5
+
+              /= f.input :avatar, as: :jasnyfile, label: false
+              = render partial: 'file_upload', :locals => {f: f}
+
+
+              /.fileinput.fileinput-new.text-center data-provides="fileinput"
+              /  .fileinput-new.thumbnail.rounded-circle style=("max-width: 100px; max-height: 100px; margin-bottom: 10px;")
+              /    img src="/profile_upload_default.jpg" /
+              /  .fileinput-preview.fileinput-exists.thumbnail style=("max-width: 100px; max-height: 100px; margin-bottom: 10px;")
+              /  div
+              /    span.btn.btn-file
+              /      span.btn.btn-sm.btn-info.btn-rounded.fileinput-new Select image
+              /      span.btn.btn-sm.btn-warning.btn-rounded.fileinput-exists Change
+              /      /input name="..." type="file" class="btn btn-rounded" /
+              /      = f.input_field :avatar, as: :attachinary, input_html: {class: 'btn btn-rounded'}
+              /    br
+              /    a.btn.btn-sm.btn-danger.btn-rounded.fileinput-exists data-dismiss="fileinput" href="#" style="margin-top: 10px;" Remove
+
+
+            br
+            h3 Children?
+            #children
+              = f.simple_fields_for :kids do |kid|
+                = render 'kid_fields', f: kid
+              .links
+                = link_to_add_association 'add child', f, :kids, class: 'btn btn-sm btn-success btn-rounded'
+
+
+
+            br
+            br
+            h3 Things you would like to do with other guys?
+            #interests_container
+              #interests.col-sm-12
+                - lastcat = '';
+                - lastsubcat = '';
+                - col = 1;
+                - for int in Interest.order(:category, :subcategory, :name)
+                  - if int.category != lastcat
+                    - unless lastcat == ''
+                      | </div>
+                    div.h4
+                      strong #{int.category}
+                    - col = 1
+                    - lastcat = int.category
+                  - if int.subcategory != lastsubcat
+                    - unless lastsubcat == 'Video Games' || lastsubcat == ''
+                      | </div>
+                    - if col == 1
+                      | <div class="column-left">
+                      strong #{int.subcategory}
+                    - elsif col == 2
+                      | <div class="column-center">
+                      strong #{int.subcategory}
+                    - else
+                      | <div class="column-right">
+                      strong #{int.subcategory}
+                    - col += 1
+                    - lastsubcat = int.subcategory
+
+                  fieldset
+                    = check_box_tag "user_interest_ids_#{int.id}", int.id, @user.interests.include?(int), name: 'user[interest_ids][]', class: 'filled-in'
+                    = label_tag "user_interest_ids_#{int.id}", int.name
+
+
+
+
+            .text-center.mt-1-half
+              button.btn.btn-deep-purple
+                i.fa.fa-lg.fa-user.ml-0
+                | &nbsp;Update Profile

@@ -1,0 +1,32 @@
+css:
+  .card img.rounded-circle {
+    border-radius: 50%;
+  }
+
+.container
+  .row.justify-content-center
+    .col-7
+      .card
+        p#notice = notice
+
+        p
+          strong First Name:
+          = @user.first_name
+        p
+          strong Last Name:
+          = @user.last_name
+        p
+          strong Location:
+          = "#{@user.city}, #{@user.state}"
+        p
+          strong Age:
+          = @user.age
+        p
+          strong Bio:
+          = @user.bio
+        p
+          = image_tag(@user.avatar.url, size: '100', class: 'rounded-circle')
+
+
+        = link_to 'Edit', edit_user_path(@user)
+

@@ -23,12 +23,15 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   # gem 'spring'
   # gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'mysql2', '~> 0.3.18'
 end
 
+group :test do
+  gem :'pg'
+end
 
-gem 'bootstrap', '~> 4.0.0.alpha6'
+# gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'high_voltage'
-gem 'mysql2', '~> 0.3.18'
 gem 'slim-rails'
 gem 'modernizr-rails'
 gem 'meta-tags', require: 'meta_tags'
@@ -59,12 +62,15 @@ group :development do
   # gem 'spring-commands-rspec'
   gem 'awesome_print'
   gem 'annotate'
+  # gem 'pry-rails'
 end
 
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'dotenv-rails'
+  gem 'jazz_hands2', git: 'git@github.com:shaicoleman/jazz_hands2.git'
 end
 
 group :test do
@@ -73,12 +79,11 @@ group :test do
 end
 
 gem 'bootstrap-social-rails'
-gem 'font-awesome-rails'
+# gem 'font-awesome-rails'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'cocoon'
 gem 'geocoder'
-gem 'fullcalendar-rails'
-gem 'selectize-rails'
+
 #gem 'decanter'
 gem 'decanter', git: 'git@github.com:blimey85/decanter.git'
 

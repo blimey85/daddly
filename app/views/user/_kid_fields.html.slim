@@ -1,0 +1,13 @@
+.nested-fields
+  .container
+    .row
+      .col
+        = f.label :gender
+        = f.input_field :gender, collection: Kid::GENDERS, prompt: "Select child's gender", class: 'selectize-default'
+      .col
+        = f.label :age
+        = f.input_field :age, collection: 0..30, prompt: "Select child's age", class: 'selectize-default'
+
+  div.col-sm-12.text-right
+    = f.check_box :_destroy
+    = link_to_remove_association " remove child", f, class: 'btn btn-sm btn-danger btn-rounded'

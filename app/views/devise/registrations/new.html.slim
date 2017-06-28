@@ -1,0 +1,47 @@
+.row.justify-content-center
+  .col-4
+    = panel title: 'Signup', context: :primary do
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal' } ) do |f|
+        .panel-body
+          = f.error_notification
+          | <p>Sign up for an account<p />
+
+          .md-form
+            i.fa.fa-envelope.prefix
+            = f.text_field :email, class: 'form-control', autofocus: true
+            = f.label :email
+
+          .md-form
+            i.fa.fa-envelope.prefix
+            = f.text_field :password, class: 'form-control'
+            = f.label :password
+
+          .md-form
+            i.fa.fa-envelope.prefix
+            = f.text_field :password_confirmation, class: 'form-control'
+            = f.label :password_confirmation
+
+
+
+          /.form-inputs
+          /  = f.input :email, required: true, autofocus: true, label: false do
+          /    span.input-group-addon
+          /      i.fa.fa-envelope-o.fa-fw
+          /    = f.input_field :email, class: 'form-control', placeholder: 'Email address'
+          /
+          /  = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false do
+          /    span.input-group-addon
+          /      i.fa.fa-key.fa-fw
+          /    = f.input_field :password, class: 'form-control', placeholder: 'Password'
+          /
+          /  = f.input :password_confirmation, required: true, label: false do
+          /    span.input-group-addon
+          /      i.fa.fa-key.fa-fw
+          /    = f.input_field :password_confirmation, class: 'form-control', placeholder: 'Password confirmation'
+
+        .panel-footer
+          .buttons
+            = f.button :submit, 'Sign up', class: 'btn'
+
+          .links
+            = render 'devise/shared/links'

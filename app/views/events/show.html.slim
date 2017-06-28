@@ -1,0 +1,182 @@
+.container
+  .row.justify-content-center
+    .col-8
+
+      p#notice = notice
+
+      p
+        strong Name:
+        = @event.name
+      p
+        strong Description:
+        = @event.description
+      p
+        strong Starts at:
+        = @event.starts_at
+      p
+        strong Ends at:
+        = @event.ends_at
+      p
+        strong Rsvp count:
+        = @event.rsvp_count
+      p
+        strong Rsvp min limit:
+        = @event.rsvp_min_limit
+      p
+        strong Rsvp max limit:
+        = @event.rsvp_max_limit
+      p
+        strong Waitlist:
+        = @event.waitlist
+      p
+        strong Waitlist count:
+        = @event.waitlist_count
+      p
+        strong Status:
+        = @event.status
+      p
+        strong Type:
+        = @event.type
+      p
+        strong Visibility:
+        = @event.visibility
+      br
+      br
+      .card
+        br
+        br
+        - if @event.comments.size.eql? 0
+          .event-comments.col-md-11.pull-right id=("comments-container-#{@event.id}")
+            javascript:
+                var commentsArray#{@event.id} = [];
+        - else
+          .event-comments.col-md-11.pull-right id=("comments-container-#{@event.id}")
+            javascript:
+                var commentsArray#{@event.id} = #{raw check_user_interactions(@event.comments, current_user.id)};
+
+
+
+css:
+  .col-md-11 { padding-top: 15px; }
+
+javascript:
+    //$(document).ajaxComplete(function () {
+    //    generateAvatars();
+    //});
+    //function addTriangleTo(target) {
+    //    var dimensions = target.getClientRects()[0];
+    //    var pattern = Trianglify({
+    //        width: dimensions.width,
+    //        height: 120,
+    //        cell_size: 15,
+    //        seed: '#{current_user.username}'
+    //    });
+    //    target.style['background-image'] = 'url(' + pattern.png() + ')';
+    //}
+    //addTriangleTo(document.getElementById('profile-image'));
+
+    $('.item-like').click(function () {
+        var arr = this.id.split('-');
+        var clickedType = arr[0];
+        var clickedID = arr[1];
+
+        $.ajax({
+            type: 'post',
+            url: '/votes/like/' + clickedType + '/' + clickedID + '/' + "/#{current_user.username}",
+            success: function (returnObj) {
+                // TODO: DO I need to be doing something here?
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+    $('.item-unlike').click(function () {
+        var arr = this.id.split('-');
+        var clickedType = arr[0];
+        var clickedID = arr[1];
+        $.ajax({
+            type: 'post',
+            url: '/votes/unlike/' + clickedType + '/' + clickedID + '/' + "/#{current_user.username}",
+            success: function (returnObj) {
+                // TODO: Do I need to be doing something here?
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+
+    $('.event-comments').each(function (index, element) {
+        var ID = this.id;
+        var IDN = parseInt(ID.match(/\d+/));
+        var comments = eval("commentsArray" + IDN);
+        var urlSuffix = IDN + '/#{current_user.username}';
+
+        $('#' + ID).comments({
+            fieldMappings: {
+                parent: 'parent_id',
+                modified: 'edited_at',
+                fullname: 'username',
+                content: 'body',
+                created: 'created_at'
+            },
+            enableNavigation: false,
+            roundProfilePictures: true,
+            youText: "#{current_user.username}",
+            textareaRows: 1,
+            maxRepliesVisible: 20,
+            enableAttachments: false,
+            getComments: function (success, error) {
+                success(comments);
+            },
+            postComment: function (commentOBJ, success, error) {
+                console.log(commentOBJ);
+                $.ajax({
+                    type: 'post',
+                    url: '/comments/create/Status/' + urlSuffix,
+                    data: commentOBJ,
+                    success: function (comment) {
+                        success(commentOBJ)
+                    },
+                    error: error
+                });
+            },
+            putComment: function (commentOBJ, success, error) {
+                rqstComment('put', ID, success, error, commentOBJ);
+            },
+            deleteComment: function (commentOBJ, success, error) {
+                rqstComment('delete', ID, success, error, commentOBJ);
+            },
+            upvoteComment: function (commentOBJ, success, error) {
+                //rqstComment('upvote', ID, success, error, commentOBJ);
+
+                //if (commentOBJ.userHasUpvoted) {
+                $.ajax({
+                    type: 'post',
+                    url: '/votes/like/Comment/' + commentOBJ.id + '/' + '/#{current_user.username}',
+                    data: {
+                        comment: commentOBJ.id
+                    },
+                    success: function () {
+                        success(commentOBJ)
+                    },
+                    error: error
+                });
+                //} else {
+                //  $.ajax({
+                //    type: 'delete',
+                //    url: '/votes/unlike/' + urlSuffix,
+                //    data: {
+                //      comment: commentOBJ.id
+                //    },
+                //    success: function () {
+                //      success(commentOBJ)
+                //    },
+                //    error: error
+                //  });
+                //}
+
+            }
+        })
+    });

@@ -1,5 +1,9 @@
 test:
-  database: dp_test
-  username: root
-  password: mysql
-  host: mysql
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  host: postgres
+  username: runner
+  password: ""
+  database: test_db

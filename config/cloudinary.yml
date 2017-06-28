@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: daddly
+  api_key: '332384964826292'
+  api_secret: nv_VXmVTMF5t6li8ZvuctK9m0GU
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: daddly
+  api_key: '332384964826292'
+  api_secret: nv_VXmVTMF5t6li8ZvuctK9m0GU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: daddly
+  api_key: '332384964826292'
+  api_secret: nv_VXmVTMF5t6li8ZvuctK9m0GU
+  enhance_image_tag: true
+  static_image_support: false

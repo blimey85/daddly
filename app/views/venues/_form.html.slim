@@ -1,0 +1,43 @@
+= form_for @venue do |f|
+  - if @venue.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@venue.errors.count, "error")} prohibited this venue from being saved:"
+      ul
+        - @venue.errors.full_messages.each do |message|
+          li = message
+
+  .md-form
+    i.fa.fa-envelope.prefix
+    = f.text_field :name, class: 'form-control'
+    = f.label :name
+
+  .md-form
+    i.fa.fa-envelope.prefix
+    = f.text_field :address, class: 'form-control'
+    = f.label :address
+  .md-form
+    i.fa.fa-envelope.prefix
+    = f.text_field :city, class: 'form-control'
+    = f.label :city
+
+  .md-form
+    i.fa.fa-envelope.prefix
+    = f.text_field :state, class: 'form-control'
+    = f.label :state
+
+  .md-form
+    i.fa.fa-envelope.prefix
+    = f.number_field :zipcode, class: 'form-control'
+    = f.label :zipcode
+
+  .md-form
+    .switch
+      label
+        | Public
+        = f.check_box :visibility
+        span.lever
+        | Private
+  br
+  br
+  .text-center
+    = f.button class: 'btn btn-deep-purple'
