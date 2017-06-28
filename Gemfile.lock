@@ -24,30 +24,6 @@ GIT
       activesupport
 
 GIT
-  remote: git@github.com:charliesome/better_errors.git
-  revision: 40cb4e6f6a4cdd0bc67a21a45bfadf9d325d1305
-  specs:
-    better_errors (2.1.1)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
-      rack (>= 0.9.0)
-
-GIT
-  remote: git@github.com:shaicoleman/jazz_hands2.git
-  revision: f8650b3d5c1ff7e2805e1339d94f9619b3e6ba1b
-  specs:
-    jazz_hands2 (1.0.2)
-      hirb (~> 0.7, >= 0.7.3)
-      pry (~> 0.10, >= 0.10.1)
-      pry-byebug (>= 3.1)
-      pry-doc (~> 0.8, >= 0.8.0)
-      pry-git (~> 0.2, >= 0.2.3)
-      pry-rails (~> 0.3, >= 0.3.4)
-      pry-remote (~> 0.1, >= 0.1.7)
-      pry-stack_explorer (~> 0.4, >= 0.4.9)
-      railties (>= 3.0)
-
-GIT
   remote: https://github.com/activerecord-hackery/ransack.git
   revision: 9c468a269442a6ce1b34c752d3ddec6a1cb6b0c0
   specs:
@@ -157,7 +133,6 @@ GEM
       aws_cf_signer
       rest-client
     cocoon (1.2.10)
-    coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (4.2.2)
@@ -181,7 +156,6 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
-    diffy (3.2.0)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.2.1)
@@ -190,7 +164,6 @@ GEM
       railties (>= 3.2, < 5.2)
     equalizer (0.0.11)
     erubi (1.6.0)
-    erubis (2.7.0)
     execjs (2.7.0)
     extlib (0.9.16)
     factory_girl (4.8.0)
@@ -219,12 +192,8 @@ GEM
       multi_json (~> 1.10)
       retriable (~> 1.4)
       signet (~> 0.6)
-    grit (2.0.0)
-      diff-lcs (>= 1.1.2)
-      mime-types (>= 1.15)
     hashie (3.5.5)
     high_voltage (3.0.0)
-    hirb (0.7.3)
     htmlentities (4.3.4)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -298,28 +267,6 @@ GEM
     premailer-rails (1.9.7)
       actionmailer (>= 3, < 6)
       premailer (~> 1.7, >= 1.7.9)
-    pry (0.10.4)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
-    pry-byebug (3.4.2)
-      byebug (~> 9.0)
-      pry (~> 0.10)
-    pry-doc (0.10.0)
-      pry (~> 0.9)
-      yard (~> 0.9)
-    pry-git (0.2.3)
-      diffy
-      grit
-      pry (>= 0.9.8)
-    pry-rails (0.3.6)
-      pry (>= 0.10.4)
-    pry-remote (0.1.8)
-      pry (~> 0.9)
-      slop (~> 3.0)
-    pry-stack_explorer (0.4.9.2)
-      binding_of_caller (>= 0.7)
-      pry (>= 0.9.11)
     public_suffix (2.0.5)
     puma (3.9.1)
     rack (2.0.3)
@@ -410,7 +357,6 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (~> 3.0)
-    slop (3.6.0)
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -452,7 +398,6 @@ GEM
     websocket-extensions (0.1.2)
     xpath (2.1.0)
       nokogiri (~> 1.3)
-    yard (0.9.9)
 
 PLATFORMS
   ruby
@@ -460,7 +405,6 @@ PLATFORMS
 DEPENDENCIES
   annotate
   awesome_print
-  better_errors!
   bh
   binding_of_caller
   bootstrap-social-rails
@@ -486,7 +430,6 @@ DEPENDENCIES
   google-api-client (= 0.8.2)
   high_voltage
   jasny-bootstrap-rails
-  jazz_hands2!
   jbuilder (~> 2.5)
   jquery-ui-rails
   kaminari!
