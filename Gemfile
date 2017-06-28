@@ -78,9 +78,7 @@ gem 'bootstrap-social-rails'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'cocoon'
 gem 'geocoder'
-
-#gem 'decanter'
-gem 'decanter', git: 'git@github.com:blimey85/decanter.git'
+gem 'decanter'
 
 # used for locations on venue form
 gem 'jquery-ui-rails' # used for autocomplete
