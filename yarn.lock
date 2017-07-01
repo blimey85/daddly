@@ -32,6 +32,10 @@ moment@^2.9.0:
   version "2.18.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
+sweetalert2@^6.6.5:
+  version "6.6.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.6.5.tgz#ffffc1064711ff7870bc8aefe1678f95ecc290db"
+
 tether@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/tether/-/tether-1.4.0.tgz#0f9fa171f75bf58485d8149e94799d7ae74d1c1a"

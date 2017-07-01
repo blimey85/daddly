@@ -26,7 +26,3 @@ css:
           = @user.bio
         p
           = image_tag(@user.avatar.url, size: '100', class: 'rounded-circle')
-
-
-        = link_to 'Edit', edit_user_path(@user)
-

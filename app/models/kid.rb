@@ -2,17 +2,15 @@
 #
 # Table name: kids
 #
-#  id         :integer          not null, primary key
-#  gender     :integer          default(""), not null
-#  age        :integer          not null
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id      :integer          not null, primary key
+#  gender  :integer          default(0), not null
+#  age     :integer          not null
+#  user_id :integer
 #
 
 class Kid < ApplicationRecord
   belongs_to :user
-
-  GENDERS = [:'', :'Not Saying', :Boy, :Girl]
-  enum gender: GENDERS
+  enumerate :gender, with: Gender
+  # GENDERS = [:'', :'Not Saying', :Boy, :Girl]
+  # enum gender: GENDERS
 end

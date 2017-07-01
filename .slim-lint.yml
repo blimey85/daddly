@@ -1,0 +1,37 @@
+# As some lines need to be fairly long, line length is disabled
+# Also, .html_safe is used on occasion so Rails/OutputSafety is disabled
+# Other ignored_cops is the default list
+
+linters:
+  LineLength:
+    enabled: false
+
+  RuboCop:
+    enabled: true
+    ignored_cops:
+      - Layout/AlignHash
+      - Layout/AlignParameters
+      - Layout/FirstParameterIndentation
+      - Layout/IndentationConsistency
+      - Layout/IndentationWidth
+      - Layout/MultilineArrayBraceLayout
+      - Layout/MultilineAssignmentLayout
+      - Layout/MultilineHashBraceLayout
+      - Layout/MultilineMethodCallBraceLayout
+      - Layout/MultilineMethodCallIndentation
+      - Layout/MultilineMethodDefinitionBraceLayout
+      - Layout/MultilineOperationIndentation
+      - Layout/TrailingBlankLines
+      - Layout/TrailingWhitespace
+      - Lint/BlockAlignment
+      - Lint/EndAlignment
+      - Lint/Void
+      - Metrics/BlockLength
+      - Metrics/LineLength
+      - Rails/OutputSafety
+      - Style/BlockNesting
+      - Style/FileName
+      - Style/FrozenStringLiteralComment
+      - Style/IfUnlessModifier
+      - Style/Next
+      - Style/WhileUntilModifier

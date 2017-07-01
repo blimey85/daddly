@@ -17,10 +17,10 @@
 @import "bootstrap-social";
 @import "font-path-overwrite";
 @import "font-awesome/scss/font-awesome";
-@import "fullcalendar/dist/fullcalendar.min";
+@import "fullcalendar/dist/fullcalendar";
 @import "selectize";
 @import "selectize.default";
-
+@import "sweetalert2/dist/sweetalert2";
 
 .btn-social > :first-child {
   line-height: 48px;

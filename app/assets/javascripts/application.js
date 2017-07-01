@@ -12,10 +12,14 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require jquery/dist/jquery
+//= require jquery3
+//= require jquery_ujs
+//= require sweetalert2/dist/sweetalert2
+//= require sweet-alert2-rails
 //= require tether/dist/js/tether
 //= require bootstrap/dist/js/bootstrap
+//= require jasny-bootstrap/dist/js/jasny-bootstrap
 //= require moment/min/moment.min
-//= require fullcalendar/dist/fullcalendar.min
-//= require selectize.min
-//= require_tree .
+//= require fullcalendar/dist/fullcalendar
+//= require selectize
+//= require cocoon

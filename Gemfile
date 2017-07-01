@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 ruby '2.4.1'
@@ -45,10 +45,10 @@ gem 'omniauth-google-oauth2'
 gem 'google-api-client', '0.8.2', require: 'google/api_client'
 gem 'omniauth-facebook'
 
-gem 'rack-mini-profiler'
+# gem 'rack-mini-profiler'
 
 group :development do
-  # gem 'better_errors', git: 'git@github.com:charliesome/better_errors.git'
+  gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capistrano', '~> 3.0.1'
   gem 'capistrano-bundler'
@@ -66,7 +66,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'dotenv-rails'
-  # gem 'jazz_hands2', git: 'git@github.com:shaicoleman/jazz_hands2.git'
+  gem 'irbtools-more', require: 'irbtools/binding'
 end
 
 group :test do
@@ -80,6 +80,10 @@ gem 'cocoon'
 gem 'geocoder'
 gem 'decanter'
 
+gem 'jquery-rails'
+# gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+gem 'sweet-alert2-rails'
+
 # used for locations on venue form
 gem 'jquery-ui-rails' # used for autocomplete
 gem 'rails-jquery-autocomplete' # used for autocomplete
@@ -91,8 +95,11 @@ gem 'simple_form_jasny_fileupload'
 gem 'cloudinary'
 
 # used for pagination
-gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+gem 'kaminari', github: 'amatsuda/kaminari', branch: 'master'
 # used for real-time exception reporting
 # gem 'sentry-raven'
 # used for virtual attributes
 gem 'virtus'
+
+# used for enum fields
+gem 'active_enum', github: 'adzap/active_enum'

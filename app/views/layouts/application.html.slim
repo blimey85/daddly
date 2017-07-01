@@ -5,13 +5,14 @@ html
     title
       = content_for?(:title) ? yield(:title) : 'Dp'
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Dp'}"
-    == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
-  body
-    header
-      == render 'layouts/header'
-    main[role="main"]
-      == render 'layouts/messages'
-      == yield
-    == render 'layouts/footer'
+
+  == render 'layouts/header'
+  /== javascript_include_tag 'mdb', 'data-turbolinks-track' => 'reload'
+  main[role="main"]
+    == render 'layouts/messages'
+    == yield
+  == javascript_include_tag 'mdb'
+  == render 'layouts/footer'

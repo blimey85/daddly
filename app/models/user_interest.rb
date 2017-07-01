@@ -6,8 +6,6 @@
 #  user_id     :integer
 #  interest_id :integer
 #  experience  :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
 #
 
 class UserInterest < ApplicationRecord

@@ -2,15 +2,14 @@
 #
 # Table name: interests
 #
-#  id          :integer          not null, primary key
-#  category    :string
-#  subcategory :string
-#  name        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id              :integer          not null, primary key
+#  sub_category_id :integer
+#  name            :string(255)
 #
 
 class Interest < ApplicationRecord
   has_many  :user_interests
-  has_many  :users, :through => :user_interests
+  has_many  :users, through: :user_interests
+
+  belongs_to :sub_category
 end

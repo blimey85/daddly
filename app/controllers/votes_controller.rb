@@ -5,42 +5,42 @@ class VotesController < ApplicationController
 
   def index
     @votes = Vote.all
-  end 
+  end
 
   def show
-  end 
+  end
 
-  def new 
+  def new
     @vote = Vote.new
-  end 
+  end
 
   def edit
-  end 
+  end
 
   def create
     @vote = Vote.new(vote_params)
     @vote.save
     respond_with(@vote)
-  end 
+  end
 
   def update
     @vote.update(vote_params)
     flash[:notice] = 'Vote was successfully updated.'
     respond_with(@vote)
-  end 
+  end
 
   def destroy
     @vote.destroy
     redirect_to votes_url, notice: 'Vote was successfully destroyed.'
-  end 
+  end
 
   private
-    def set_vote
-      @vote = Vote.find(params[:id])
-    end 
 
-    def vote_params
-      params.require(:vote).permit(:votable_id, :votable_type, :user) 
-    end 
+  def set_vote
+    @vote = Vote.find(params[:id])
+  end
+
+  def vote_params
+    params.require(:vote).permit(:votable_id, :votable_type, :user)
+  end
 end
- 

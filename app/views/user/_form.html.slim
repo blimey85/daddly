@@ -32,6 +32,13 @@ css:
     height: inherit;
   }
 
+  [type="checkbox"] + label {
+    padding-left: 25px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 14px;
+  }
+
   .btn-file {
     padding: 0;
     margin: 0;
@@ -67,14 +74,13 @@ javascript:
             h3
               i.fa.fa-user
               |  Edit Your Profile:
-          = simple_form_for(@user, html: { class: 'form-horizontal' } ) do |f|
+          = simple_form_for(@user, html: { class: 'form-horizontal' }) do |f|
             - if @user.errors.any?
               #error_explanation
-                h2 = "#{pluralize(@user.errors.count, "error")} prohibited this profile from being saved:"
+                h2 = "#{pluralize(@user.errors.count, 'error')} prohibited this profile from being saved:"
                 ul
                   - @user.errors.full_messages.each do |message|
                     li = message
-
             .row
               .col
                 = f.input :first_name
@@ -93,24 +99,7 @@ javascript:
             br
             h3 Avatar?
             #avatar.text-center.col-5
-
-              /= f.input :avatar, as: :jasnyfile, label: false
-              = render partial: 'file_upload', :locals => {f: f}
-
-
-              /.fileinput.fileinput-new.text-center data-provides="fileinput"
-              /  .fileinput-new.thumbnail.rounded-circle style=("max-width: 100px; max-height: 100px; margin-bottom: 10px;")
-              /    img src="/profile_upload_default.jpg" /
-              /  .fileinput-preview.fileinput-exists.thumbnail style=("max-width: 100px; max-height: 100px; margin-bottom: 10px;")
-              /  div
-              /    span.btn.btn-file
-              /      span.btn.btn-sm.btn-info.btn-rounded.fileinput-new Select image
-              /      span.btn.btn-sm.btn-warning.btn-rounded.fileinput-exists Change
-              /      /input name="..." type="file" class="btn btn-rounded" /
-              /      = f.input_field :avatar, as: :attachinary, input_html: {class: 'btn btn-rounded'}
-              /    br
-              /    a.btn.btn-sm.btn-danger.btn-rounded.fileinput-exists data-dismiss="fileinput" href="#" style="margin-top: 10px;" Remove
-
+              = render partial: 'file_upload', locals: { f: f }
 
             br
             h3 Children?
@@ -127,39 +116,22 @@ javascript:
             h3 Things you would like to do with other guys?
             #interests_container
               #interests.col-sm-12
-                - lastcat = '';
-                - lastsubcat = '';
-                - col = 1;
-                - for int in Interest.order(:category, :subcategory, :name)
-                  - if int.category != lastcat
-                    - unless lastcat == ''
-                      | </div>
-                    div.h4
-                      strong #{int.category}
-                    - col = 1
-                    - lastcat = int.category
-                  - if int.subcategory != lastsubcat
-                    - unless lastsubcat == 'Video Games' || lastsubcat == ''
-                      | </div>
-                    - if col == 1
-                      | <div class="column-left">
-                      strong #{int.subcategory}
-                    - elsif col == 2
-                      | <div class="column-center">
-                      strong #{int.subcategory}
-                    - else
-                      | <div class="column-right">
-                      strong #{int.subcategory}
-                    - col += 1
-                    - lastsubcat = int.subcategory
 
-                  fieldset
-                    = check_box_tag "user_interest_ids_#{int.id}", int.id, @user.interests.include?(int), name: 'user[interest_ids][]', class: 'filled-in'
-                    = label_tag "user_interest_ids_#{int.id}", int.name
-
-
-
-
+                - @categories.each do |category|
+                  .row
+                    .col-md-12.h4
+                      strong =category.name
+                    - category.sub_categories.in_groups_of(3, false) do |row|
+                      .row.col-md-12
+                        - for subcategory in row
+                          .col-md-4
+                            strong =subcategory.name
+                            - subcategory.interests.each do |interest|
+                              fieldset
+                                = check_box_tag "user_interest_ids_#{interest.id}", interest.id, @user.interests.include?(interest), name: 'user[interest_ids][]', class: 'filled-in'
+                                = label_tag "user_interest_ids_#{interest.id}", interest.name
+            br
+            br
             .text-center.mt-1-half
               button.btn.btn-deep-purple
                 i.fa.fa-lg.fa-user.ml-0

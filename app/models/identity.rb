@@ -4,24 +4,24 @@
 #
 #  id           :integer          not null, primary key
 #  user_id      :integer
-#  provider     :string
-#  accesstoken  :string
-#  uid          :string
-#  name         :string
-#  email        :string
-#  nickname     :string
-#  image        :string
-#  phone        :string
-#  urls         :string
+#  provider     :string(255)
+#  accesstoken  :string(255)
+#  uid          :string(255)
+#  name         :string(255)
+#  email        :string(255)
+#  nickname     :string(255)
+#  image        :string(255)
+#  phone        :string(255)
+#  urls         :string(255)
+#  refreshtoken :string(255)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  refreshtoken :string
 #
 
 class Identity < ApplicationRecord
   belongs_to :user
-  validates_presence_of :uid, :provider
-  validates_uniqueness_of :uid, :scope => :provider
+  validates :uid, :provider, presence: true
+  validates :uid, uniqueness: { scope: :provider }
 
   def self.find_for_oauth(auth)
     identity = find_by(provider: auth.provider, uid: auth.uid)
@@ -36,5 +36,16 @@ class Identity < ApplicationRecord
     identity.urls = (auth.info.urls || '').to_json
     identity.save
     identity
+  end
+
+  # With example: Gary A. Traffanstedt
+  # first_name: Gary A.
+  # last_name: Traffanstedt
+  def first_name
+    name.split(' ')[0..-2].join(' ')
+  end
+
+  def last_name
+    name.split(' ').last
   end
 end

@@ -1,0 +1,5 @@
+- if user_signed_in?
+    = link_to('Edit Account', edit_user_registration_path, class: 'dropdown-item')
+    = link_to('Edit Profile', edit_user_path(current_user.id), class: 'dropdown-item')
+- else
+    = link_to('Register', new_user_registration_path, class: 'dropdown-item')

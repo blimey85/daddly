@@ -1,6 +1,62 @@
-/ Rails flash messages styled for Bootstrap 4.0
-- flash.each do |name, msg|
-  - if msg.is_a?(String)
-    div class="alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}"
-      button.close[type="button" data-dismiss="alert" aria-hidden="true"] ×
-      = content_tag :div, msg, :id => "flash_#{name}"
+/ Rails flash messages styled for Toastr
+
+- unless flash.empty?
+  css:
+    #toast-container > .toast {
+      background-image: none !important;
+    }
+    #toast-container > .toast:before {
+      position: fixed;
+      font-family: FontAwesome;
+      font-size: 24px;
+      line-height: 18px;
+      float: left;
+      color: #FFF;
+      padding-right: 0.5em;
+      margin: auto 0.5em auto -1.5em;
+    }
+    #toast-container > div {
+      width: 450px;
+    }
+    #toast-container > .toast-warning:before {
+      content: "\f06a";
+    }
+    #toast-container > .toast-error:before {
+      content: "\f071";
+    }
+    #toast-container > .toast-info:before {
+      content: "\f05a";
+    }
+    #toast-container > .toast-success:before {
+      content: "\f00c";
+    }
+
+  javascript:
+      toastr.options = {
+          "closeButton": true,
+          "debug": false,
+          "newestOnTop": false,
+          "progressBar": true,
+          "positionClass": "toast-top-right",
+          "preventDuplicates": true,
+          "onclick": null,
+          "showDuration": "300",
+          "hideDuration": "1000",
+          "timeOut": "9999",
+          "extendedTimeOut": "9999",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+      };
+
+  - flash_messages = []
+  - flash.each do |type, message, title|
+    ruby:
+      type = 'success' if type == 'notice'
+      type = 'error' if type == 'alert'
+      text = "<script>toastr.#{type}('#{message}'"
+      text += ", '#{title}'" if title.present? # include title if set
+      text += ');</script>'
+      flash_messages << text.html_safe if message.present?
+  = safe_join(flash_messages, "\n")

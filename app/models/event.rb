@@ -3,8 +3,8 @@
 # Table name: events
 #
 #  id             :integer          not null, primary key
-#  name           :string
-#  description    :text
+#  name           :string(255)
+#  description    :text(65535)
 #  starts_at      :datetime
 #  ends_at        :datetime
 #  rsvp_count     :integer
@@ -15,6 +15,7 @@
 #  status         :integer
 #  type           :integer
 #  visibility     :integer
+#  user_id        :integer
 #  venue_id       :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
@@ -22,7 +23,7 @@
 
 class Event < ApplicationRecord
   has_many  :event_venues
-  has_many  :venues, :through => :event_venues
+  has_many  :venues, through: :event_venues
 
   has_many :comments, as: :commentable
 
