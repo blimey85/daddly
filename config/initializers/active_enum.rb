@@ -2,7 +2,6 @@
 require 'active_enum/form_helpers/simple_form' # for SimpleForm
 
 ActiveEnum.setup do |config|
-
   # Extend classes to add enumerate method
   # config.extend_classes = [ ActiveRecord::Base ]
 
@@ -14,7 +13,6 @@ ActiveEnum.setup do |config|
 
   # Storage of values (:memory, :i18n)
   # config.storage = :memory
-
 end
 
 # ActiveEnum.define do
@@ -30,4 +28,3 @@ class Gender < ActiveEnum::Base
   value id: 1, name: 'Male'
   value id: 2, name: 'Female'
 end
-

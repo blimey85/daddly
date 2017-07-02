@@ -48,6 +48,14 @@ css:
     margin: 0;
   }
 
+  div.has-danger span.form-text.text-muted {
+    color: #db0000 !important;
+    font-size: 12px;
+  }
+  div.md-form.has-danger label {
+    color: #db0000;
+  }
+
 javascript:
     $(document).ready(function () {
         // used for fancy selectize dropboxes
@@ -74,7 +82,7 @@ javascript:
             h3
               i.fa.fa-user
               |  Edit Your Profile:
-          = simple_form_for(@user, html: { class: 'form-horizontal' }) do |f|
+          = simple_form_for(@user, validate: true, html: { class: 'form-horizontal' }) do |f|
             - if @user.errors.any?
               #error_explanation
                 h2 = "#{pluralize(@user.errors.count, 'error')} prohibited this profile from being saved:"
@@ -82,20 +90,17 @@ javascript:
                   - @user.errors.full_messages.each do |message|
                     li = message
             .row
-              .col
+              .col.md-form.form-group: .md-form
                 = f.input :first_name
-              .col
+              .col.md-form.form-group: .md-form
                 = f.input :last_name
             .row
-              .col
-                = f.input :zipcode, as: :string, required: false
-              .col
+              .col.md-form.form-group: .md-form
+                = f.input :zipcode, as: :string
+              .col.md-form.form-group: .md-form
                 = f.input :age
-
-            .md-form
-              = f.label :bio
-              = f.input_field :bio, as: :text, class: 'md-textarea'
-
+            .row: .col-12: .md-form.form-group: .md-form
+              = f.input :bio, as: :text, input_html: { class: 'md-textarea' }
             br
             h3 Avatar?
             #avatar.text-center.col-5
@@ -123,7 +128,7 @@ javascript:
                       strong =category.name
                     - category.sub_categories.in_groups_of(3, false) do |row|
                       .row.col-md-12
-                        - for subcategory in row
+                        - row.each do |subcategory|
                           .col-md-4
                             strong =subcategory.name
                             - subcategory.interests.each do |interest|

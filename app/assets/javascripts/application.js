@@ -23,3 +23,5 @@
 //= require fullcalendar/dist/fullcalendar
 //= require selectize
 //= require cocoon
+//= require rails.validations
+//= require rails.validations.simple_form

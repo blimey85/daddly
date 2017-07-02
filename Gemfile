@@ -103,3 +103,6 @@ gem 'virtus'
 
 # used for enum fields
 gem 'active_enum', github: 'adzap/active_enum'
+
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'

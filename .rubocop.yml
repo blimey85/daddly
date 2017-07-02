@@ -46,6 +46,9 @@ Layout/EmptyLinesAroundMethodBody:
 Metrics/AbcSize:
   Enabled: false
 
+Metrics/BlockLength:
+  Enabled: false
+
 Metrics/CyclomaticComplexity:
   Enabled: false
 
@@ -67,6 +70,9 @@ Metrics/PerceivedComplexity:
 
 Rails:
   Enabled: true
+
+Rails/OutputSafety:
+  Enabled: false
 
 Rails/SkipsModelValidations:
   Enabled: false

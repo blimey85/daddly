@@ -36,6 +36,7 @@ class User < ApplicationRecord
   attr_accessor :oauth_callback
   attr_accessor :current_password
 
+  ### Devise Validations ###
   validates_presence_of   :email, if: :email_required?
   validates_uniqueness_of :email, allow_blank: true, if: :email_changed?
   validates_format_of     :email, with: Devise.email_regexp, allow_blank: true, if: :email_changed?
@@ -43,6 +44,13 @@ class User < ApplicationRecord
   validates_presence_of     :password, if: :password_required?
   validates_confirmation_of :password, if: :password_required?
   validates_length_of       :password, within: Devise.password_length, allow_blank: true
+
+  ### User Profile Validations ###
+  validates :first_name, length: { minimum: 5 }
+  validates :last_name, length: { minimum: 5 }
+  validates_format_of :zipcode, :with => /\A\d{5}(-\d{4})?\z/, :message => 'is not a valid US zipcode'
+  validates_numericality_of :age, greater_than: 12 # user must be at least 13
+  validates :bio, length: { minimum: 32 }
 
   mount_uploader :avatar, AvatarUploader
 
