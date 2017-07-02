@@ -4,7 +4,7 @@ cache: bundler
 matrix:
   include:
     # Latest compiled version in http://rubies.travis-ci.org
-    - rvm: 2.4.1
+    - rvm: 2.4.0
       env:
         - DB=mysql
 
