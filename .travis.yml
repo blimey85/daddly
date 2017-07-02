@@ -16,7 +16,7 @@ notifications:
   email: blimey85@gmail.com
 
 before_install:
-  - gem uninstall -i $rvm_global_gems_path did_you_mean
+  - gem uninstall did_you_mean
   #rest
 
 before_script:
