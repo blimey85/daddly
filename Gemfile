@@ -21,13 +21,9 @@ end
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'mysql2', '~> 0.3.18'
 end
 
-group :test do
-  gem 'pg'
-end
-
+gem 'mysql2', '~> 0.3.18'
 gem 'high_voltage'
 gem 'slim-rails'
 gem 'modernizr-rails'
@@ -59,6 +55,7 @@ group :development do
   # gem 'spring-commands-rspec'
   gem 'awesome_print'
   gem 'annotate'
+  gem 'irbtools-more', require: 'irbtools/binding'
 end
 
 group :development, :test do
@@ -66,7 +63,6 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'dotenv-rails'
-  gem 'irbtools-more', require: 'irbtools/binding'
 end
 
 group :test do
