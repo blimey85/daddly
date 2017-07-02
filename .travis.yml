@@ -4,7 +4,7 @@ cache: bundler
 matrix:
   include:
     # Latest compiled version in http://rubies.travis-ci.org
-    - rvm: 2.4.0
+    - rvm: 2.4.1
       env:
         - DB=mysql
 
@@ -14,6 +14,10 @@ matrix:
 
 notifications:
   email: blimey85@gmail.com
+
+before_install:
+  - gem uninstall -i $rvm_global_gems_path did_you_mean
+  #rest
 
 before_script:
   - mysql -e 'create database IF NOT EXISTS dp_test;'
