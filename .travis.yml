@@ -17,4 +17,4 @@ notifications:
 
 before_script:
   - mysql -e 'create database IF NOT EXISTS dp_test;'
-  - bundle exec rails db:schema:load
+  - bundle exec rake db:schema:load
