@@ -16,7 +16,7 @@ notifications:
   email: blimey85@gmail.com
 
 before_install:
-  - gem uninstall did_you_mean
+  - gem uninstall -i /home/travis/.rvm/gems/ruby-2.4.1@global did_you_mean
   #rest
 
 before_script:
