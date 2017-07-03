@@ -1,3 +1,14 @@
+#  Decanter Information
+#
+#  name           :string
+#  description    :integer
+#  rsvp_min_limit :integer
+#  rsvp_max_limit :integer
+#
+#  starts_at      :datetime = [:start_date, :start_time] squashed
+#  ends_at        :datetime = [:end_date, :end_time] squashed
+#
+
 class EventDecanter < Decanter::Base
   ignore :waitlist, :status, :type, :visibility, :venue_id
 
