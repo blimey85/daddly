@@ -41,4 +41,11 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_many(:user_interests) }
     it { is_expected.to have_many(:interests) }
   end
+
+  describe User, '#name' do
+    it 'returns the concatenated first name and last initial' do
+      user = build(:user, first_name: 'Josh', last_name: 'Steiner')
+      expect(user.fullname).to eq 'Josh S'
+    end
+  end
 end
