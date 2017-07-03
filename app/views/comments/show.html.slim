@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Commentable:
+  = @comment.commentable_id
+p
+  strong Commentable type:
+  = @comment.commentable_type
+p
+  strong Body:
+  = @comment.body
+p
+  strong Parent:
+  = @comment.parent_id
+p
+  strong User:
+  = @comment.user_id
+p
+  strong Edited at:
+  = @comment.edited_at
+p
+  strong Upvote count:
+  = @comment.upvote_count
+
+= link_to 'Edit', edit_comment_path(@comment)
+'|
+= link_to 'Back', comments_path

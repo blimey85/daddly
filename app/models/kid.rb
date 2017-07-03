@@ -11,6 +11,4 @@
 class Kid < ApplicationRecord
   belongs_to :user
   enumerate :gender, with: Gender
-  # GENDERS = [:'', :'Not Saying', :Boy, :Girl]
-  # enum gender: GENDERS
 end

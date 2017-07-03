@@ -1,0 +1,24 @@
+language: ruby
+cache: bundler
+
+matrix:
+  include:
+    # Latest compiled version in http://rubies.travis-ci.org
+    - rvm: 2.4.1
+      env:
+        - DB=mysql
+
+  #branches:
+  #  only:
+  #    - develop
+
+notifications:
+  email: blimey85@gmail.com
+
+before_install:
+  - gem uninstall -i /home/travis/.rvm/gems/ruby-2.4.1@global did_you_mean
+  #rest
+
+before_script:
+  - mysql -e 'create database IF NOT EXISTS dp_test;'
+  - bundle exec rake db:schema:load
