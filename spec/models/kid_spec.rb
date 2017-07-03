@@ -8,7 +8,10 @@
 #  user_id :integer
 #
 
-class Kid < ApplicationRecord
-  belongs_to :user
-  enumerate :gender, with: Gender
+require 'rails_helper'
+
+RSpec.describe Kid, type: :model do
+  context 'Model Associations' do
+    it { is_expected.to belong_to(:user) }
+  end
 end

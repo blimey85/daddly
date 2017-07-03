@@ -11,4 +11,5 @@
 #
 
 class Vote < ApplicationRecord
+  belongs_to :comments
 end

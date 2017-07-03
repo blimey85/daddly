@@ -8,7 +8,8 @@
 #  user_id :integer
 #
 
-class Kid < ApplicationRecord
-  belongs_to :user
-  enumerate :gender, with: Gender
+FactoryGirl.define do
+  factory :kid do
+    
+  end
 end

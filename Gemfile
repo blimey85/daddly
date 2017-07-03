@@ -16,6 +16,9 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'spring'
+  gem 'spring-watcher-listen'
+  gem 'guard-rspec', '~> 4.6.4', require: false
 end
 
 group :development do
@@ -52,7 +55,7 @@ group :development do
   gem 'capistrano-rails-console'
   gem 'capistrano-rvm', '~> 0.1.1'
   gem 'rails_layout'
-  # gem 'spring-commands-rspec'
+  gem 'spring-commands-rspec'
   gem 'awesome_print'
   gem 'annotate'
   gem 'irbtools-more', require: 'irbtools/binding'
@@ -68,6 +71,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
 end
 
 gem 'bootstrap-social-rails'
@@ -75,9 +79,7 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'cocoon'
 gem 'geocoder'
 gem 'decanter'
-
 gem 'jquery-rails'
-# gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'sweet-alert2-rails'
 
 # used for locations on venue form

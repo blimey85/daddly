@@ -35,5 +35,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'Model Associations' do
+    it { is_expected.to have_many(:identities) }
+    it { is_expected.to have_many(:kids) }
+    it { is_expected.to have_many(:user_interests) }
+    it { is_expected.to have_many(:interests) }
+  end
 end
