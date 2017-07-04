@@ -24,7 +24,6 @@
 class Event < ApplicationRecord
   has_many  :event_venues
   has_many  :venues, through: :event_venues
-
   has_many :comments, as: :commentable
 
   # used for date and time pickers which get merged to datetime field

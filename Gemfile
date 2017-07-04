@@ -10,7 +10,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
+# gem 'jbuilder', '~> 2.5'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug'
@@ -59,6 +60,7 @@ group :development do
   gem 'awesome_print'
   gem 'annotate'
   gem 'irbtools-more', require: 'irbtools/binding'
+  gem 'seed_dump'
 end
 
 group :development, :test do
@@ -71,7 +73,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers', branch: 'rails-5'
 end
 
 gem 'bootstrap-social-rails'
@@ -101,6 +103,8 @@ gem 'virtus'
 
 # used for enum fields
 gem 'active_enum', github: 'adzap/active_enum'
-
+# used for client-side validations
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+# used for searching
+gem 'ransack', github: 'activerecord-hackery/ransack'

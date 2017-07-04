@@ -2,13 +2,12 @@ class VenuesController < ApplicationController
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json, :js
 
-  autocomplete :venue, :name, extra_data: [:id, :name, :address, :city, :state, :zipcode], full: true
-
   def index
     @venues = Venue.all
   end
 
   def show
+    render json: @venue
   end
 
   def new
@@ -34,6 +33,14 @@ class VenuesController < ApplicationController
     redirect_to venues_url, notice: 'Venue was successfully destroyed.'
   end
 
+  # uses Ransack for search
+  # uses ActiveModel Serializer VenueSearchSerializer for decorating
+  # returns :id, :name, :full_address [:address, :city, :state: :zipcode]
+  def search
+    @venues = Venue.ransack(name_cont: params[:r]).result(distinct: true)
+    render json: @venues, each_serializer: VenueSearchSerializer
+  end
+
   private
 
   def set_venue
@@ -41,6 +48,6 @@ class VenuesController < ApplicationController
   end
 
   def venue_params
-    params.require(:venue).permit(:name, :address, :city, :state, :zipcode, :latitude, :longitude, :visibility, :events_id)
+    params.require(:venue).permit(:r, :name, :address, :city, :state, :zipcode, :latitude, :longitude, :visibility, :events_id)
   end
 end

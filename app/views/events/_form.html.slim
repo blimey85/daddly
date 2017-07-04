@@ -14,7 +14,7 @@ css:
     opacity: 0.5;
   }
 
-= form_for @event do |f|
+= simple_form_for @event do |f|
   - if @event.errors.any?
     #error_explanation
       h2 = "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
@@ -84,12 +84,11 @@ css:
     i.fa.fa-envelope.prefix
     = f.label :venue_id, 'Select venue', class: 'active'
     = f.select :venue_id, {}, {}, {multiple: false, class: 'selectize venues'}
-  br
-  br
-  br
-  br
-  .text-center
-    = f.button class: 'btn btn-deep-purple'
+
+  .text-center.mt-1-half
+    button.btn.btn-info.mb-2
+      i.fa.fa-calendar.ml-1
+      | &nbsp;&nbsp;Add Event
 
 .modal.fade.venue-modal aria-labelledby="mySmallModalLabel" role="dialog" tabindex="-1"
   .modal-dialog.cascading-modal role="document"
@@ -98,8 +97,8 @@ css:
         button.close.waves-effect.waves-light aria-label="Close" data-dismiss="modal" type="button"
           span aria-hidden="true"  ×
         h4.title
-          i.material-icons business
-          | Add Venue
+          i.fa.fa-address-card-o.ml-1
+          | Add New Venue
       .modal-body.mb-0
         = form_for Venue.new do |f|
           .md-form

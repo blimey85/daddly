@@ -26,3 +26,4 @@
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require jquery-comments/js/jquery-comments
+//= require events
