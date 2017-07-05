@@ -20,6 +20,7 @@
 #  updated_at     :datetime         not null
 #  created_at     :datetime         not null
 #  comments_count :integer          default(0), not null
+#  votes_count    :integer          default(0), not null
 #
 # Indexes
 #
@@ -28,7 +29,7 @@
 #
 
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :title, :start, :end, :description, :comments_count
+  attributes :id, :title, :start, :end, :description, :comments_count, :votes_count
 
   def title
     object.name
