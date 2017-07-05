@@ -2,6 +2,31 @@ css:
   .card img.rounded-circle {
     border-radius: 50%;
   }
+  .fc-event {
+    color: #fff !important;
+  }
+  .qtip {
+    font-size: 1em;
+    max-width: 350px;
+  }
+  .qtip-titlebar {
+    padding: 10px;
+    font-size: .85em;
+  }
+  .qtip-content {
+    font-size: .85em;
+  }
+  .qtip-title-content {
+    float: left;
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .qtip-title-interactions {
+    float: right;
+    margin-left: 10px;
+  }
 
 .container
   .row.justify-content-center
@@ -29,7 +54,7 @@ css:
   br
   br
   .row.justify-content-center
-    .col-12
+    .col-10
       #calendar
   br
   br
@@ -59,19 +84,27 @@ javascript:
           //content: event.description
           content: {
             text: event.title,
-            title: event.description
+            title: "<div class='qtip-title-content'>" +
+              event.description +
+              "</div>" +
+              "<div class='qtip-title-interactions'><i class='fa fa-heart fa-lg'></i> " + event.votes_count +
+              "&nbsp;&nbsp;" +
+              "<i class='fa fa-comments fa-lg'></i> " + event.comments_count +
+              "</div>"
           },
           position: {
             my: 'bottom center',
             at: 'top center',
-            //target: 'mouse',
             viewport: $('#calendar'),
             adjust: {
               mouse: false,
               scroll: false
             }
           },
-          style: 'qtip-blue'
+          style: 'qtip-blue' //,
+          //hide: {
+          //  event: false
+          //}
         });
       }
     });
