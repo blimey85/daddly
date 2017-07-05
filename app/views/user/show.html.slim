@@ -26,3 +26,53 @@ css:
           = @user.bio
         p
           = image_tag(@user.avatar.url, size: '100', class: 'rounded-circle')
+  br
+  br
+  .row.justify-content-center
+    .col-12
+      #calendar
+  br
+  br
+
+javascript:
+  $(document).ready(function() {
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listWeek'
+      },
+      editable: false,
+      events: {
+        url: '/events/calendar',
+        type: 'GET',
+        data: {
+          custom_param1: 'something',
+          custom_param2: 'somethingelse'
+        },
+        error: function () {
+          alert('there was an error while fetching events!');
+        }
+      },
+      eventRender: function (event, element) {
+        element.qtip({
+          //content: event.description
+          content: {
+            text: event.title,
+            title: event.description
+          },
+          position: {
+            my: 'bottom center',
+            at: 'top center',
+            //target: 'mouse',
+            viewport: $('#calendar'),
+            adjust: {
+              mouse: false,
+              scroll: false
+            }
+          },
+          style: 'qtip-blue'
+        });
+      }
+    });
+  });

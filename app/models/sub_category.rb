@@ -6,6 +6,10 @@
 #  name        :string(255)
 #  category_id :integer
 #
+# Indexes
+#
+#  index_sub_categories_on_category_id  (category_id)
+#
 
 class SubCategory < ApplicationRecord
   belongs_to :category

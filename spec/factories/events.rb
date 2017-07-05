@@ -17,8 +17,14 @@
 #  visibility     :integer
 #  user_id        :integer
 #  venue_id       :integer
-#  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  created_at     :datetime         not null
+#  comments_count :integer          default(0), not null
+#
+# Indexes
+#
+#  index_events_on_user_id   (user_id)
+#  index_events_on_venue_id  (venue_id)
 #
 
 FactoryGirl.define do

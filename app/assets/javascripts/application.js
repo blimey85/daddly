@@ -26,4 +26,5 @@
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require jquery-comments/js/jquery-comments
+//= require qtip2/dist/jquery.qtip
 //= require events

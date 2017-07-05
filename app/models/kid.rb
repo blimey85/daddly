@@ -7,6 +7,10 @@
 #  age     :integer          not null
 #  user_id :integer
 #
+# Indexes
+#
+#  index_kids_on_user_id  (user_id)
+#
 
 class Kid < ApplicationRecord
   belongs_to :user

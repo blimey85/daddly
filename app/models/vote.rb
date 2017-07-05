@@ -9,6 +9,10 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
+# Indexes
+#
+#  index_votes_on_votable_id_and_votable_type  (votable_id,votable_type)
+#
 
 class Vote < ApplicationRecord
   belongs_to :comments

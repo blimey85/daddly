@@ -35,6 +35,14 @@ GIT
     kaminari-core (1.0.1)
 
 GIT
+  remote: https://github.com/ctran/annotate_models.git
+  revision: 5f37a974f3dff68f92b3495115f1399e7db5c584
+  specs:
+    annotate (2.7.2)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
+
+GIT
   remote: https://github.com/thoughtbot/shoulda-matchers.git
   revision: ead87017a6c15adce66a87dce8ee2ece91d0d27c
   branch: rails-5
@@ -89,9 +97,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    annotate (2.7.2)
-      activerecord (>= 3.2, < 6.0)
-      rake (>= 10.4, < 13.0)
+    after_commit_action (1.0.1)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
     arel (8.0.0)
     autoparse (0.3.3)
       addressable (>= 2.3.1)
@@ -177,6 +185,10 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    counter_culture (1.7.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      after_commit_action (~> 1.0)
     css_parser (1.5.0)
       addressable
     database_cleaner (1.6.1)
@@ -538,7 +550,7 @@ PLATFORMS
 DEPENDENCIES
   active_enum!
   active_model_serializers (~> 0.10.0)
-  annotate
+  annotate!
   awesome_print
   better_errors
   bh
@@ -557,6 +569,7 @@ DEPENDENCIES
   cloudinary
   cocoon
   coffee-rails (~> 4.2)
+  counter_culture (~> 1.0)
   database_cleaner
   decanter
   devise (~> 4.2)
