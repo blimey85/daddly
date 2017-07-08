@@ -45,8 +45,10 @@
       p
         .event-comments id="comments-container-#{@event.id}"
 
-
-
+css:
+  span.delete {
+    display: none;
+  }
 
 javascript:
     $('.item-like').click(function () {
@@ -107,6 +109,7 @@ javascript:
                 userHasUpvoted: 'user_has_upvoted'
             },
             enableAttachments: false,
+            enableDeleting: false,
             enableNavigation: false,
             enablePinging: true,
             maxRepliesVisible: 20,
@@ -135,24 +138,38 @@ javascript:
                 });
             },
             postComment: function (commentOBJ, success, error) {
+                // commentOBJ has an id we need to remove as this is a new comment
+                delete commentOBJ.id;
+                // commentOBJ lacks the following data so we inject it
+                commentOBJ.commentable_type = 'Event';
+                commentOBJ.commentable_id = "#{@event.id}";
+                commentOBJ.user_id = "#{current_user.id}";
                 console.log(commentOBJ);
                 $.ajax({
                     type: 'POST',
-                    url: '/comments/create/Event/' + urlSuffix,
+                    url: '/comments',
                     data: commentOBJ,
-                    success: function (commentOBJ) {
-                        success(commentOBJ)
+                    success: function (retCommentOBJ) {
+                        success(retCommentOBJ)
                     },
                     error: error
                 });
             },
-            deleteComment: function (commentOBJ, success, error) {
-                rqstComment('delete', ID, success, error, commentOBJ);
+            putComment: function (commentOBJ, success, error) {
+              $.ajax({
+                type: 'PATCH',
+                url: '/comments/' + commentOBJ.id,
+                data: commentOBJ,
+                success: function (retCommentOBJ) {
+                  success(retCommentOBJ)
+                },
+                error: error
+              });
             },
             upvoteComment: function(commentsArray, success, error) {
                 if(commentsArray.user_has_upvoted) {
                     $.ajax({
-                        type: 'post',
+                        type: 'POST',
                         url: '/votes/like',
                         data: {
                             votable_type: 'Comment',
@@ -166,7 +183,7 @@ javascript:
                     });
                 } else {
                     $.ajax({
-                        type: 'delete',
+                        type: 'DELETE',
                         url: '/votes/unlike',
                         data: {
                             votable_type: 'Comment',
