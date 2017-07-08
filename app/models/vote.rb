@@ -4,7 +4,7 @@
 #
 #  id           :integer          not null, primary key
 #  votable_id   :integer
-#  votable_type :integer
+#  votable_type :string(255)
 #  user_id      :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
@@ -15,5 +15,8 @@
 #
 
 class Vote < ApplicationRecord
+  belongs_to :votable, polymorphic: true, counter_cache: :votes_count
+  has_many :votes, as: :votable
+
   belongs_to :comments
 end

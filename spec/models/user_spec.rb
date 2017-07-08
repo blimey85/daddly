@@ -30,6 +30,7 @@
 #  avater                 :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  avatar                 :string(255)
 #
 # Indexes
 #
@@ -48,9 +49,9 @@ RSpec.describe User, type: :model do
   end
 
   describe User, '#name' do
-    it 'returns the concatenated first name and last initial' do
+    it 'returns the concatenated first and last names' do
       user = build(:user, first_name: 'Josh', last_name: 'Steiner')
-      expect(user.fullname).to eq 'Josh S'
+      expect(user.fullname).to eq 'Josh Steiner'
     end
   end
 end

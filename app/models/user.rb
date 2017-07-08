@@ -30,6 +30,7 @@
 #  avater                 :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  avatar                 :string(255)
 #
 # Indexes
 #
@@ -53,7 +54,7 @@ class User < ApplicationRecord
   ### User Profile Validations ###
   validates :first_name, length: { minimum: 5 }
   validates :last_name, length: { minimum: 5 }
-  validates_format_of :zipcode, :with => /\A\d{5}(-\d{4})?\z/, :message => 'is not a valid US zipcode'
+  validates_format_of :zipcode, with: /\A\d{5}(-\d{4})?\z/, message: 'is not a valid US zipcode'
   validates_numericality_of :age, greater_than: 12 # user must be at least 13
   validates :bio, length: { minimum: 32 }
 
@@ -101,7 +102,7 @@ class User < ApplicationRecord
   end
 
   def fullname
-    "#{first_name} #{last_name[0]}"
+    "#{first_name} #{last_name}"
   end
 
   # Geo Location Block

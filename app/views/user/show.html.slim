@@ -32,8 +32,8 @@ css:
   .row.justify-content-center
     .col-7
       .card
-        p#notice = notice
-
+        p
+          = image_tag(@user.avatar.url, size: '100', class: 'img-thumbnail')
         p
           strong First Name:
           = @user.first_name
@@ -49,8 +49,6 @@ css:
         p
           strong Bio:
           = @user.bio
-        p
-          = image_tag(@user.avatar.url, size: '100', class: 'rounded-circle')
   br
   br
   .row.justify-content-center
@@ -72,8 +70,8 @@ javascript:
         url: '/events/calendar',
         type: 'GET',
         data: {
-          custom_param1: 'something',
-          custom_param2: 'somethingelse'
+          //custom_param1: 'something',
+          //custom_param2: 'somethingelse'
         },
         error: function () {
           alert('there was an error while fetching events!');

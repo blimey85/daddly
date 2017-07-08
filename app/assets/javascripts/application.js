@@ -18,6 +18,7 @@
 //= require sweet-alert2-rails
 //= require tether/dist/js/tether
 //= require bootstrap/dist/js/bootstrap
+//= require cloudinary/jquery.cloudinary
 //= require jasny-bootstrap/dist/js/jasny-bootstrap
 //= require moment/min/moment.min
 //= require fullcalendar/dist/fullcalendar
@@ -25,6 +26,10 @@
 //= require cocoon
 //= require rails.validations
 //= require rails.validations.simple_form
-//= require jquery-comments/js/jquery-comments
+//= require jquery-comments
 //= require qtip2/dist/jquery.qtip
 //= require events
+//= require jquery-textcomplete/dist/jquery.textcomplete
+//= require trix/dist/trix
+//= require mentionable_trix
+//= require trix_mentions

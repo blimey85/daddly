@@ -23,7 +23,7 @@ table
         td = comment.parent_id
         td = comment.user_id
         td = comment.edited_at
-        td = comment.upvote_count
+        td = comment.votes_count
         td = link_to 'Show', comment
         td = link_to 'Edit', edit_comment_path(comment)
         td = link_to 'Destroy', comment, data: { confirm: 'Are you sure?' }, method: :delete

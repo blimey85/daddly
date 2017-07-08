@@ -61,6 +61,7 @@ group :development do
   gem 'annotate', github: 'ctran/annotate_models'
   gem 'irbtools-more', require: 'irbtools/binding'
   gem 'seed_dump'
+  gem 'meta_request' # used for Chrome Rails Panel addon
 end
 
 group :development, :test do

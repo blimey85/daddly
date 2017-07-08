@@ -88,4 +88,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.active_record.belongs_to_required_by_default = false
 end

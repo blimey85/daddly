@@ -1,0 +1,21 @@
+[data-trix-attachment] {
+  display: inline-block;
+}
+span.trix-mention + figcaption {
+  display: none;
+}
+
+trix-mentions {
+  .selectize-control {
+    position: fixed
+  }
+  .selectize-input {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+  .selectize-control, .selectize-dropdown {
+    width: 200px !important;
+    z-index: 9999;
+  }
+}

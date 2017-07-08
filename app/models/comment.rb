@@ -9,7 +9,7 @@
 #  parent_id        :integer
 #  user_id          :integer
 #  edited_at        :datetime
-#  upvote_count     :integer          default(0)
+#  votes_count      :integer          default(0)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #

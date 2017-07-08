@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :show]
+  before_action :set_user, only: [:edit, :show]
   before_action :set_interests, only: :edit
 
   respond_to :html, :json, :js
@@ -11,6 +11,7 @@ class UserController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     @user.update(user_params)
     if user_params['avatar'] == '1'
       @user.remove_avatar!
@@ -20,6 +21,11 @@ class UserController < ApplicationController
     @interests = @user.interests.build
     flash[:notice] = 'User was successfully updated.'
     respond_with(@user)
+  end
+
+  def mentions
+    @users = User.ransack(first_name_cont: params[:r], username_cont: params[:r]).result(distinct: true)
+    render json: @users, each_serializer: MentionsSerializer
   end
 
   private

@@ -34,13 +34,11 @@ jasny-bootstrap@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/jasny-bootstrap/-/jasny-bootstrap-3.1.3.tgz#b072a681d50c649762c9543c7a6093d9baa2f87b"
 
-jquery-comments@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/jquery-comments/-/jquery-comments-1.0.1.tgz#618c0cd7d1df3ca8d2a240872b27bf4391706153"
-  dependencies:
-    jquery ">=1.9.0"
+jquery-textcomplete@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/jquery-textcomplete/-/jquery-textcomplete-1.8.1.tgz#1d8ebe066c606526db2b340e063a3b4b6acc949c"
 
-"jquery@2 - 3", jquery@>=1.6.0, jquery@>=1.9.0, jquery@>=1.9.1, jquery@^3.2.1:
+"jquery@2 - 3", jquery@>=1.6.0, jquery@>=1.9.1, jquery@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
@@ -62,3 +60,7 @@ sweetalert2@^6.6.5:
 tether@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/tether/-/tether-1.4.0.tgz#0f9fa171f75bf58485d8149e94799d7ae74d1c1a"
+
+trix@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/trix/-/trix-0.10.2.tgz#85fc61bfed5d29676e400cc70cbd9040b753f5b6"
