@@ -10,8 +10,9 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.includes(comments: :votes).find(params[:id])
-    @event.created_by_current_user = ''
-    @event.user_has_upvoted = ''
+    @event.user_id == current_user.id ? @event.created_by_current_user = '1' : @event.created_by_current_user = '0'
+    voted = Vote.where('votable_type = ? and votable_id = ? and user_id = ?', 'Event', @event.id, current_user.id).limit(1)
+    voted.first ? @event.user_has_upvoted = '1' : @event.user_has_upvoted = '0'
   end
 
   def new

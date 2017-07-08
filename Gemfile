@@ -108,3 +108,5 @@ gem 'active_enum', github: 'adzap/active_enum'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'counter_culture', '~> 1.0'
+
+gem 'goldiloader'
