@@ -1,7 +1,7 @@
 = form_for @comment do |f|
   - if @comment.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
+      h2 = "#{pluralize(@comment.errors.count, 'error')} prohibited this comment from being saved:"
       ul
         - @comment.errors.full_messages.each do |message|
           li = message
@@ -25,6 +25,6 @@
     = f.label :edited_at
     = f.datetime_select :edited_at
   .field
-    = f.label :upvote_count
-    = f.number_field :upvote_count
+    = f.label :votes_count
+    = f.number_field :votes_count
   .actions = f.submit

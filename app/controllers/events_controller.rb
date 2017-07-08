@@ -33,6 +33,11 @@ class EventsController < ApplicationController
     respond_with(@event)
   end
 
+  def calendar
+    @events = Event.all
+    render json: @events
+  end
+
   def destroy
     @event.destroy
     redirect_to events_url, notice: 'Event was successfully destroyed.'

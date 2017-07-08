@@ -30,6 +30,12 @@
 #  avater                 :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  avatar                 :string(255)
+#
+# Indexes
+#
+#  index_users_on_confirmation_token    (confirmation_token) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
 require 'rails_helper'
@@ -43,9 +49,9 @@ RSpec.describe User, type: :model do
   end
 
   describe User, '#name' do
-    it 'returns the concatenated first name and last initial' do
+    it 'returns the concatenated first and last names' do
       user = build(:user, first_name: 'Josh', last_name: 'Steiner')
-      expect(user.fullname).to eq 'Josh S'
+      expect(user.fullname).to eq 'Josh Steiner'
     end
   end
 end

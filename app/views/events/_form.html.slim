@@ -17,7 +17,7 @@ css:
 = simple_form_for @event do |f|
   - if @event.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+      h2 = "#{pluralize(@event.errors.count, 'error')} prohibited this event from being saved:"
       ul
         - @event.errors.full_messages.each do |message|
           li = message
@@ -35,25 +35,19 @@ css:
     .col-md-6
       .md-form
         i.fa.fa-calendar.prefix
-        /= f.label 'Select Start Date'
         = f.text_field :start_date, class: 'form-control datepicker', placeholder: 'Start Date', tabindex: '-1'
     .col-md-6
       .md-form
         i.fa.fa-clock-o.prefix
-        /= f.label 'Select Start Time'
         = f.text_field :start_time, class: 'form-control timepicker', id: 'starttime', placeholder: 'Start Time', tabindex: '-1'
-
-
   .row
     .col-md-6
       .md-form
         i.fa.fa-calendar.prefix
-        /= f.label 'Select End Date'
         = f.text_field :end_date, class: 'form-control datepicker', placeholder: 'End Date', tabindex: '-1'
     .col-md-6
       .md-form
         i.fa.fa-clock-o.prefix
-        /= f.label 'Select End Time'
         = f.text_field :end_time, class: 'form-control timepicker', id: 'endtime', placeholder: 'End Time', tabindex: '-1'
 
   .md-form
@@ -83,7 +77,7 @@ css:
   .md-form
     i.fa.fa-envelope.prefix
     = f.label :venue_id, 'Select venue', class: 'active'
-    = f.select :venue_id, {}, {}, {multiple: false, class: 'selectize venues'}
+    = f.select :venue_id, {}, {}, multiple: false, class: 'selectize venues'
 
   .text-center.mt-1-half
     button.btn.btn-info.mb-2
@@ -95,7 +89,7 @@ css:
     .modal-content
       .modal-header.light-blue.darken-3.white-text
         button.close.waves-effect.waves-light aria-label="Close" data-dismiss="modal" type="button"
-          span aria-hidden="true"  ×
+          span aria-hidden='true'  ×
         h4.title
           i.fa.fa-address-card-o.ml-1
           | Add New Venue

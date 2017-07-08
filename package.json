@@ -7,7 +7,9 @@
     "fullcalendar": "^3.4.0",
     "jasny-bootstrap": "^3.1.3",
     "jquery": "^3.2.1",
-    "jquery-comments": "^1.0.1",
-    "sweetalert2": "^6.6.5"
+    "jquery-textcomplete": "^1.8.1",
+    "qtip2": "^3.0.3",
+    "sweetalert2": "^6.6.5",
+    "trix": "^0.10.2"
   }
 }

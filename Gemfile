@@ -58,9 +58,10 @@ group :development do
   gem 'rails_layout'
   gem 'spring-commands-rspec'
   gem 'awesome_print'
-  gem 'annotate'
+  gem 'annotate', github: 'ctran/annotate_models'
   gem 'irbtools-more', require: 'irbtools/binding'
   gem 'seed_dump'
+  gem 'meta_request' # used for Chrome Rails Panel addon
 end
 
 group :development, :test do
@@ -106,5 +107,4 @@ gem 'active_enum', github: 'adzap/active_enum'
 # used for client-side validations
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
-# used for searching
-gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'counter_culture', '~> 1.0'

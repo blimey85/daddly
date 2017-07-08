@@ -1,46 +1,26 @@
 class VotesController < ApplicationController
-  before_action :set_vote, only: [:show, :edit, :update, :destroy]
-
-  respond_to :html, :json, :js
-
-  def index
-    @votes = Vote.all
-  end
-
-  def show
-  end
-
-  def new
-    @vote = Vote.new
-  end
-
-  def edit
-  end
-
   def create
     @vote = Vote.new(vote_params)
-    @vote.save
-    respond_with(@vote)
-  end
-
-  def update
-    @vote.update(vote_params)
-    flash[:notice] = 'Vote was successfully updated.'
-    respond_with(@vote)
+    if @vote.save
+      # render json: { message: 'Vote was successfully added.' }, status: 200, adapter: nil
+      render json: { message: 'Vote was successfully added.' }, status: 200, adapter: nil
+    else
+      render json: { error: @vote.errors.full_messages }, status: 422
+    end
   end
 
   def destroy
-    @vote.destroy
-    redirect_to votes_url, notice: 'Vote was successfully destroyed.'
+    @votes = Vote.where('votable_type = ? and votable_id = ? and user_id = ?', params['votable_type'], params['votable_id'], params['user_id']).limit(1)
+    if Vote.destroy(@votes.first.id)
+      render json: { message: 'Vote was successfully destroyed.' }, status: 200, adapter: nil
+    else
+      render json: { error: @votes.errors.full_messages }, status: 422
+    end
   end
 
   private
 
-  def set_vote
-    @vote = Vote.find(params[:id])
-  end
-
   def vote_params
-    params.require(:vote).permit(:votable_id, :votable_type, :user)
+    params.permit(:votable_id, :votable_type, :user_id)
   end
 end

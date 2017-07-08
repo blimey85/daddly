@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170630230944) do
+ActiveRecord::Schema.define(version: 20170707210956) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170630230944) do
     t.integer "parent_id"
     t.integer "user_id"
     t.datetime "edited_at"
-    t.integer "upvote_count", default: 0
+    t.integer "votes_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
@@ -51,8 +51,10 @@ ActiveRecord::Schema.define(version: 20170630230944) do
     t.integer "visibility"
     t.bigint "user_id"
     t.bigint "venue_id"
-    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "created_at", null: false
+    t.integer "comments_count", default: 0, null: false
+    t.integer "votes_count", default: 0, null: false
     t.index ["user_id"], name: "index_events_on_user_id"
     t.index ["venue_id"], name: "index_events_on_venue_id"
   end
@@ -128,6 +130,7 @@ ActiveRecord::Schema.define(version: 20170630230944) do
     t.string "avater"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -147,7 +150,7 @@ ActiveRecord::Schema.define(version: 20170630230944) do
 
   create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "votable_id"
-    t.integer "votable_type"
+    t.string "votable_type"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

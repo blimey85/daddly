@@ -42,39 +42,13 @@
         = @event.visibility
       br
       br
-      .card
-        br
-        br
-        - if @event.comments.size.eql? 0
-          .event-comments.col-md-11.pull-right id=("comments-container-#{@event.id}")
-            javascript:
-                var commentsArray#{@event.id} = [];
-        - else
-          .event-comments.col-md-11.pull-right id=("comments-container-#{@event.id}")
-            javascript:
-                var commentsArray#{@event.id} = #{raw check_user_interactions(@event.comments, current_user.id)};
+      p
+        .event-comments id="comments-container-#{@event.id}"
 
 
 
-css:
-  .col-md-11 { padding-top: 15px; }
 
 javascript:
-    //$(document).ajaxComplete(function () {
-    //    generateAvatars();
-    //});
-    //function addTriangleTo(target) {
-    //    var dimensions = target.getClientRects()[0];
-    //    var pattern = Trianglify({
-    //        width: dimensions.width,
-    //        height: 120,
-    //        cell_size: 15,
-    //        seed: '#{current_user.username}'
-    //    });
-    //    target.style['background-image'] = 'url(' + pattern.png() + ')';
-    //}
-    //addTriangleTo(document.getElementById('profile-image'));
-
     $('.item-like').click(function () {
         var arr = this.id.split('-');
         var clickedType = arr[0];
@@ -82,12 +56,17 @@ javascript:
 
         $.ajax({
             type: 'post',
-            url: '/votes/like/' + clickedType + '/' + clickedID + '/' + "/#{current_user.username}",
-            success: function (returnObj) {
-                // TODO: DO I need to be doing something here?
+            url: '/votes/like',
+            data: {
+                votable_type: clickedType,
+                votable_id: clickedID,
+                user_id: #{current_user.id}
             },
-            error: function (error) {
-                console.log(error);
+            success: function (returnObj) {
+                console.log(returnObj);
+            },
+            error: function (returnObj) {
+                console.log(returnObj);
             }
         });
     });
@@ -95,14 +74,20 @@ javascript:
         var arr = this.id.split('-');
         var clickedType = arr[0];
         var clickedID = arr[1];
+
         $.ajax({
-            type: 'post',
-            url: '/votes/unlike/' + clickedType + '/' + clickedID + '/' + "/#{current_user.username}",
-            success: function (returnObj) {
-                // TODO: Do I need to be doing something here?
+            type: 'delete',
+            url: '/votes/unlike/',
+            data: {
+                votable_type: clickedType,
+                votable_id: clickedID,
+                user_id: #{current_user.id}
             },
-            error: function (error) {
-                console.log(error);
+            success: function (returnObj) {
+                console.log(returnObj);
+            },
+            error: function (returnObj) {
+                console.log(returnObj);
             }
         });
     });
@@ -110,73 +95,90 @@ javascript:
     $('.event-comments').each(function (index, element) {
         var ID = this.id;
         var IDN = parseInt(ID.match(/\d+/));
-        var comments = eval("commentsArray" + IDN);
-        var urlSuffix = IDN + '/#{current_user.username}';
+        var urlSuffix = IDN + '/#{current_user.id}';
 
         $('#' + ID).comments({
             fieldMappings: {
                 parent: 'parent_id',
-                modified: 'edited_at',
-                fullname: 'username',
                 content: 'body',
-                created: 'created_at'
+                created: 'created_at',
+                modified: 'edited_at',
+                upvoteCount: 'upvote_count',
+                userHasUpvoted: 'user_has_upvoted'
             },
-            enableNavigation: false,
-            roundProfilePictures: true,
-            youText: "#{current_user.username}",
-            textareaRows: 1,
-            maxRepliesVisible: 20,
             enableAttachments: false,
-            getComments: function (success, error) {
-                success(comments);
+            enableNavigation: false,
+            enablePinging: true,
+            maxRepliesVisible: 20,
+            profilePictureURL: '#{current_user.avatar.url}',
+            roundProfilePictures: true,
+            textareaRows: 1,
+            youText: "#{current_user.fullname}",
+            getComments: function(success, error) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/comments/show?commentable_type=Event&commentable_id=#{@event.id}',
+                    success: function(commentsArray) {
+                        success(commentsArray)
+                    },
+                    error: error
+                });
+            },
+            getUsers: function(success, error) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/user/mentions?r=',
+                    success: function(userArray) {
+                        success(userArray)
+                    },
+                    error: error
+                });
             },
             postComment: function (commentOBJ, success, error) {
                 console.log(commentOBJ);
                 $.ajax({
-                    type: 'post',
-                    url: '/comments/create/Status/' + urlSuffix,
+                    type: 'POST',
+                    url: '/comments/create/Event/' + urlSuffix,
                     data: commentOBJ,
-                    success: function (comment) {
+                    success: function (commentOBJ) {
                         success(commentOBJ)
                     },
                     error: error
                 });
-            },
-            putComment: function (commentOBJ, success, error) {
-                rqstComment('put', ID, success, error, commentOBJ);
             },
             deleteComment: function (commentOBJ, success, error) {
                 rqstComment('delete', ID, success, error, commentOBJ);
             },
-            upvoteComment: function (commentOBJ, success, error) {
-                //rqstComment('upvote', ID, success, error, commentOBJ);
-
-                //if (commentOBJ.userHasUpvoted) {
-                $.ajax({
-                    type: 'post',
-                    url: '/votes/like/Comment/' + commentOBJ.id + '/' + '/#{current_user.username}',
-                    data: {
-                        comment: commentOBJ.id
-                    },
-                    success: function () {
-                        success(commentOBJ)
-                    },
-                    error: error
-                });
-                //} else {
-                //  $.ajax({
-                //    type: 'delete',
-                //    url: '/votes/unlike/' + urlSuffix,
-                //    data: {
-                //      comment: commentOBJ.id
-                //    },
-                //    success: function () {
-                //      success(commentOBJ)
-                //    },
-                //    error: error
-                //  });
-                //}
-
+            upvoteComment: function(commentsArray, success, error) {
+                if(commentsArray.user_has_upvoted) {
+                    $.ajax({
+                        type: 'post',
+                        url: '/votes/like',
+                        data: {
+                            votable_type: 'Comment',
+                            votable_id: commentsArray.id,
+                            user_id: "#{current_user.id}"
+                        },
+                        success: function() {
+                            success(commentsArray)
+                        },
+                        error: error
+                    });
+                } else {
+                    $.ajax({
+                        type: 'delete',
+                        url: '/votes/unlike',
+                        data: {
+                            votable_type: 'Comment',
+                            votable_id: commentsArray.id,
+                            user_id: "#{current_user.id}"
+                        },
+                        success: function() {
+                            success(commentsArray)
+                        },
+                        error: error
+                    });
+                }
             }
         })
     });

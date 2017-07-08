@@ -6,15 +6,17 @@
 #  parent_id        :integer
 #  user_id          :integer
 #  edited_at        :datetime
-#  upvote_count     :integer
+#  votes_count     :integer
 #
 
 class CommentDecanter < Decanter::Base
+  ignore :profile_picture_url
+
   input :commentable_id, :integer
   input :commentable_type, :string
   input :body, :text
   input :parent_id, :integer
   input :user_id, :integer
   input :edited_at, :datetime
-  input :upvote_count, :integer
+  input :votes_count, :integer
 end
