@@ -22,6 +22,8 @@ class Comment < ApplicationRecord
   belongs_to :commentable, polymorphic: true, counter_cache: :comments_count
   has_many :comments, as: :commentable
 
+  has_many  :pings, as: :pingable
+
   belongs_to :user
 
   has_many :votes, as: :votable

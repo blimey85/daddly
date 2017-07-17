@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
       commentable_type_eq: params[:commentable_type],
       commentable_id_eq: params[:commentable_id]
     )
-    @comments = @query.result.includes(:user)
+    @comments = @query.result.includes(:user, :votes, pings: :user)
     render json: @comments
   end
 

@@ -24,7 +24,7 @@ class UserController < ApplicationController
   end
 
   def mentions
-    @users = User.ransack(first_name_cont: params[:r], username_cont: params[:r]).result(distinct: true)
+    @users = User.ransack(first_name_or_username_cont: params[:r]).result(distinct: true)
     render json: @users, each_serializer: MentionsSerializer
   end
 

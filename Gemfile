@@ -110,3 +110,4 @@ gem 'client_side_validations-simple_form'
 gem 'counter_culture', '~> 1.0'
 
 gem 'goldiloader'
+gem 'wysiwyg-rails' # Froala editor

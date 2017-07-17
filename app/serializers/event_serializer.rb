@@ -29,7 +29,15 @@
 #
 
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :title, :start, :end, :description, :comments_count, :votes_count
+  attributes :id,
+             :title,
+             :start,
+             :end,
+             :description,
+             :comments_count,
+             :votes_count,
+             :created_by_current_user,
+             :user_has_upvoted
 
   def title
     object.name
@@ -41,5 +49,14 @@ class EventSerializer < ActiveModel::Serializer
 
   def end
     object.ends_at
+  end
+
+  def created_by_current_user
+    object.user_id == current_user.id ? 1 : 0
+  end
+
+  def user_has_upvoted
+    upvoted = object.votes.select { |x| x.user_id == current_user.id }
+    upvoted.present?
   end
 end

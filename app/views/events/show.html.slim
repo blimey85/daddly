@@ -40,6 +40,12 @@
       p
         strong Visibility:
         = @event.visibility
+      p
+        strong Created by current user:
+        = @event.created_by_current_user
+      p
+        strong Upvoted by current user:
+        = @event.user_has_upvoted
       br
       br
       p
@@ -93,7 +99,6 @@ javascript:
             }
         });
     });
-
     $('.event-comments').each(function (index, element) {
         var ID = this.id;
         var IDN = parseInt(ID.match(/\d+/));
@@ -102,7 +107,7 @@ javascript:
         $('#' + ID).comments({
             fieldMappings: {
                 parent: 'parent_id',
-                content: 'body',
+                content: 'content',
                 created: 'created_at',
                 modified: 'edited_at',
                 upvoteCount: 'upvote_count',
@@ -112,6 +117,7 @@ javascript:
             enableDeleting: false,
             enableNavigation: false,
             enablePinging: true,
+            enableHashtags: true,
             maxRepliesVisible: 20,
             profilePictureURL: '#{current_user.avatar.url}',
             roundProfilePictures: true,
@@ -127,30 +133,25 @@ javascript:
                     error: error
                 });
             },
-            getUsers: function(success, error) {
-                $.ajax({
-                    type: 'GET',
-                    url: '/user/mentions?r=',
-                    success: function(userArray) {
-                        success(userArray)
-                    },
-                    error: error
-                });
+            pingClicked: function (ping) {
+              window.location = '/user/' + ping
             },
             postComment: function (commentOBJ, success, error) {
+              console.log(commentOBJ);
                 // commentOBJ has an id we need to remove as this is a new comment
                 delete commentOBJ.id;
                 // commentOBJ lacks the following data so we inject it
+                commentOBJ.body = commentOBJ.content;
                 commentOBJ.commentable_type = 'Event';
                 commentOBJ.commentable_id = "#{@event.id}";
                 commentOBJ.user_id = "#{current_user.id}";
-                console.log(commentOBJ);
+
                 $.ajax({
                     type: 'POST',
                     url: '/comments',
                     data: commentOBJ,
                     success: function (retCommentOBJ) {
-                        success(retCommentOBJ)
+                        success(saveComment(retCommentOBJ))
                     },
                     error: error
                 });
@@ -198,4 +199,35 @@ javascript:
                 }
             }
         })
+    });
+    //$('.textarea').atwho({
+    //  at: "@",
+    //  displayTpl: '<li>${name} <small>${email}</small></li>',
+    //  insertTpl: "<input class='tag ping' value='@${name}' data-value='${id}'>",
+    //  limit: 200,
+    //  callbacks: {
+    //    remoteFilter: function (query, callback) {
+    //      if(query.length < 1){ return; }
+    //      $.getJSON("/user/mentions", {r: query}, function (data) {
+    //        callback(data)
+    //      });
+    //    }
+    //  }
+    //});
+    $(document).ready(function () {
+        $('input.tag.ping').qtip({
+          content: {
+            title: function() { return $(this).attr('data-qtip-title') },
+            text: function() { return $(this).attr('data-qtip-text') }
+          },
+          position: {
+            my: 'bottom center',
+            at: 'top center',
+            adjust: {
+              mouse: false,
+              scroll: false
+            }
+          },
+          style: 'qtip-dark'
+        });
     });

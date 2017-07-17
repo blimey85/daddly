@@ -24,7 +24,7 @@ class Venue < ApplicationRecord
   geocoded_by :zipcode do |obj, results|
     if (geo = results.first)
       obj.city = geo.city
-      obj.state = ::States.key(geo.state) # convert state to abbreviation
+      obj.state = ::STATES.key(geo.state) # convert state to abbreviation
       obj.latitude = geo.latitude
       obj.longitude = geo.longitude
     end

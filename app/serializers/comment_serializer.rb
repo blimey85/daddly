@@ -20,7 +20,7 @@
 
 class CommentSerializer < ActiveModel::Serializer
   attributes  :id,
-              :body,
+              :content,
               :parent_id,
               :user_id,
               :edited_at,
@@ -31,7 +31,12 @@ class CommentSerializer < ActiveModel::Serializer
               :commentable_type,
               :created_by_current_user,
               :upvote_count,
-              :user_has_upvoted
+              :user_has_upvoted,
+              :pings
+
+  def content
+    object.body
+  end
 
   def created_by_current_user
     object.user_id == current_user.id ? 1 : 0
@@ -39,6 +44,12 @@ class CommentSerializer < ActiveModel::Serializer
 
   def fullname
     object.user.fullname
+  end
+
+  def pings
+    object.pings.map do |ping|
+      PingsSerializer.new(ping)
+    end
   end
 
   def profile_picture_url

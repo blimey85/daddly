@@ -41,9 +41,9 @@ class MentionsSerializer < ActiveModel::Serializer
   attributes :id, :fullname, :email, :profile_picture_url
 
   # override email with username
-  def email
-    object.username
-  end
+  # def email
+  #   object.username
+  # end
 
   def profile_picture_url
     object.avatar.url

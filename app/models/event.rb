@@ -32,6 +32,7 @@ class Event < ApplicationRecord
   has_many  :event_venues
   has_many  :venues, through: :event_venues
   has_many :comments, as: :commentable
+  has_many :votes, as: :votable
 
   # used for date and time pickers which get merged to datetime field
   attr_accessor :start_date

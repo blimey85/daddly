@@ -235,6 +235,8 @@ GEM
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     formatador (0.2.5)
     geocoder (1.4.4)
     gibbon (3.0.2)
@@ -551,6 +553,9 @@ GEM
     websocket-extensions (0.1.2)
     wirb (2.1.1)
       paint (>= 0.9, < 3.0)
+    wysiwyg-rails (2.6.2)
+      font-awesome-sass (~> 4.4, >= 4.4.0)
+      railties (>= 3.2, < 6.0)
     xpath (2.1.0)
       nokogiri (~> 1.3)
 
@@ -631,6 +636,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   virtus
   web-console (>= 3.3.0)
+  wysiwyg-rails
 
 RUBY VERSION
    ruby 2.4.1p111

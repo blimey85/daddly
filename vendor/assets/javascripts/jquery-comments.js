@@ -190,8 +190,10 @@
                     isNew: 'is_new',
                     createdByAdmin: 'created_by_admin',
                     createdByCurrentUser: 'created_by_current_user',
-                    upvoteCount: 'votes_count',
-                    userHasUpvoted: 'user_has_upvoted'
+                    upvoteCount: 'upvote_count',
+                    userHasUpvoted: 'user_has_upvoted',
+                    qtip_title: 'qtip_title',
+                    qtip_text: 'qtip_text'
                 },
 
                 getUsers: function(success, error) {success([])},
@@ -1885,15 +1887,20 @@
             return upvoteEl;
         },
 
-        createTagElement: function(text, extraClasses, value) {
+        createTagElement: function(text, extraClasses, value, commentModel, ping) {
             var tagEl = $('<input/>', {
                 'class': 'tag',
                 'type': 'button',
                 'data-role': 'none',
             });
-            if(extraClasses) tagEl.addClass(extraClasses);
+            if (extraClasses) tagEl.addClass(extraClasses);
             tagEl.val(text);
             tagEl.attr('data-value', value);
+            if (typeof commentModel !== 'undefined') {
+                if (ping.qtip_title) tagEl.attr('data-qtip-title', ping.qtip_title);
+                if (ping.qtip_text) tagEl.attr('data-qtip-text', ping.qtip_text);
+            }
+
             return tagEl;
         },
 
@@ -2202,30 +2209,14 @@
 
         highlightPings: function(commentModel, html) {
             var self = this;
-
-            if(html.indexOf('@') != -1) {
-
-                var __createTag = function(user) {
-                    var tag = self.createTagElement('@' + user.fullname, 'ping', user.id);
+            $(commentModel.pings).each(function(index, ping) {
+                var sRegExInput = new RegExp('@' + ping.user_id);
+                html = html.replace((sRegExInput), function() {
+                    var tag = self.createTagElement('@' + ping.username, 'ping', ping.id, commentModel, ping);
                     return tag[0].outerHTML;
-                }
-
-                var highlightedHtml = '';
-                $(commentModel.pings).each(function(index, id) {
-                    if(id in self.usersById) {
-                        var user = self.usersById[id];
-                        var pingText = '@' + user.fullname;
-
-                        var endIndex = html.indexOf(pingText) + pingText.length;
-                        var current = html.slice(0, endIndex);
-                        highlightedHtml += current.replace(pingText, __createTag(user));
-
-                        html = html.slice(endIndex);
-                    }
                 });
-                highlightedHtml += html;
-                return highlightedHtml;
-            }
+            });
+
             return html;
         },
 

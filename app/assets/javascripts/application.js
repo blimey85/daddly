@@ -30,6 +30,5 @@
 //= require qtip2/dist/jquery.qtip
 //= require events
 //= require jquery-textcomplete/dist/jquery.textcomplete
-//= require trix/dist/trix
-//= require mentionable_trix
-//= require trix_mentions
+//= require froala
+//= require jquery.atwho
