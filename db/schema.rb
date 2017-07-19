@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170715150553) do
+ActiveRecord::Schema.define(version: 20170717231419) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20170715150553) do
     t.integer "visibility"
     t.bigint "user_id"
     t.bigint "venue_id"
-    t.datetime "updated_at", null: false
     t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "comments_count", default: 0, null: false
     t.integer "votes_count", default: 0, null: false
     t.index ["user_id"], name: "index_events_on_user_id"
@@ -131,13 +131,12 @@ ActiveRecord::Schema.define(version: 20170715150553) do
     t.string "first_name"
     t.string "last_name"
     t.integer "age"
-    t.string "bio"
+    t.text "bio"
     t.string "city"
     t.string "state"
     t.integer "zipcode"
     t.float "latitude", limit: 24
     t.float "longitude", limit: 24
-    t.string "avater"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"

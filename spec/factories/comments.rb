@@ -18,18 +18,7 @@
 #  index_comments_on_commentable_id_and_commentable_type  (commentable_id,commentable_type)
 #
 
-class Comment < ApplicationRecord
-  belongs_to :commentable, polymorphic: true, counter_cache: :comments_count
-  has_many :comments, as: :commentable
-
-  has_many :pings, as: :pingable
-
-  belongs_to :user
-
-  has_many :votes, as: :votable
-
-  # used for virtual attributes
-  include VirtusAttributes
-
-  validates :commentable_id, :commentable_type, :body, :user_id, presence: true
+FactoryGirl.define do
+  factory :comment do
+  end
 end

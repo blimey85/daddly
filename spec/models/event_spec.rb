@@ -31,11 +31,9 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  it { is_expected.to have_many(:event_venues) }
-  it { is_expected.to have_many(:venues) }
-  it { is_expected.to have_many(:comments) }
+  context 'Model Associations' do
+    it { is_expected.to have_many(:event_venues) }
+    it { is_expected.to have_many(:venues) }
+    it { is_expected.to have_many(:comments) }
+  end
 end
-
-# has_many  :event_venues
-# has_many  :venues, through: :event_venues
-# has_many :comments, as: :commentable

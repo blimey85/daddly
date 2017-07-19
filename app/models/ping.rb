@@ -16,8 +16,9 @@
 #
 
 class Ping < ApplicationRecord
+  belongs_to :user
   belongs_to :pingable, polymorphic: true
   has_many :pings, as: :pingable
 
-  belongs_to :user
+  validates :pingable_id, :pingable_type, :pinger_id, :user_id, presence: true
 end

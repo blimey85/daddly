@@ -1,7 +1,7 @@
 #inherit_from: .rubocop_todo.yml
 
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.4.0
   DisplayCopNames: true
   DisplayStyleGuide: true
   Exclude:
@@ -29,7 +29,6 @@ Semicolon:
   Enabled: false
 
 # LAYOUT ##########
-
 Layout/EmptyLinesAroundBlockBody:
   Enabled: true
 
@@ -67,7 +66,6 @@ Metrics/PerceivedComplexity:
   Max: 18
 
 # RAILS ##########
-
 Rails:
   Enabled: true
 
@@ -78,7 +76,6 @@ Rails/SkipsModelValidations:
   Enabled: false
 
 # STYLE ##########
-
 Style/FrozenStringLiteralComment:
   Enabled: false
 
@@ -86,4 +83,7 @@ Style/EmptyMethod:
   EnforcedStyle: expanded
 
 Style/SymbolArray:
+  Enabled: false
+
+Style/NestedTernaryOperator:
   Enabled: false

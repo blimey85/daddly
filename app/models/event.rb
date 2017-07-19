@@ -44,5 +44,6 @@ class Event < ApplicationRecord
   include VirtusAttributes
 
   # used for updating comment counts
-  counter_culture :category
+  # TODO: fix this!
+  # counter_culture :category
 end

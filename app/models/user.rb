@@ -21,13 +21,12 @@
 #  first_name             :string(255)
 #  last_name              :string(255)
 #  age                    :integer
-#  bio                    :string(255)
+#  bio                    :text(65535)
 #  city                   :string(255)
 #  state                  :string(255)
 #  zipcode                :integer
 #  latitude               :float(24)
 #  longitude              :float(24)
-#  avater                 :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  avatar                 :string(255)
@@ -39,24 +38,32 @@
 #
 
 class User < ApplicationRecord
-  attr_accessor :oauth_callback
+  extend StatesHelper
   attr_accessor :current_password
+  attr_accessor :oauth_callback
 
   ### Devise Validations ###
-  validates_presence_of   :email, if: :email_required?
-  validates_uniqueness_of :email, allow_blank: true, if: :email_changed?
-  validates_format_of     :email, with: Devise.email_regexp, allow_blank: true, if: :email_changed?
+  validates :email, presence: true, if: :email_required?
+  validates :email,
+            uniqueness: true,
+            format: { with: Devise.email_regexp },
+            allow_blank: true,
+            if: :email_changed?
 
-  validates_presence_of     :password, if: :password_required?
-  validates_confirmation_of :password, if: :password_required?
-  validates_length_of       :password, within: Devise.password_length, allow_blank: true
+  validates :password,
+            presence: true,
+            length: { within: Devise.password_length },
+            confirmation: true,
+            if: :password_required?
+
+  # validates :password, length: { within: Devise.password_length }, allow_blank: true
 
   ### User Profile Validations ###
-  validates :first_name, length: { minimum: 5 }
-  validates :last_name, length: { minimum: 5 }
-  validates_format_of :zipcode, with: /\A\d{5}(-\d{4})?\z/, message: 'is not a valid US zipcode'
-  validates_numericality_of :age, greater_than: 12 # user must be at least 13
+  validates :age, numericality: { greater_than: 12 }
   validates :bio, length: { minimum: 32 }
+  validates :first_name, :last_name, length: { minimum: 2 }
+  validates :zipcode, format: { with: /\A\d{5}(-\d{4})?\z/, message: 'is not a valid US zipcode' }
+  validates :zipcode, presence: true, if: :zipcode_required?
 
   mount_uploader :avatar, AvatarUploader
 
@@ -106,14 +113,13 @@ class User < ApplicationRecord
   end
 
   # Geo Location Block
-  validates :zipcode, presence: true, if: :zipcode_required?
   geocoded_by :zipcode do |obj, results|
     if (geo = results.first)
       obj.city = geo.city
-      obj.state = ::STATES.key(geo.state) # convert state to abbreviation
+      obj.state = STATES.key(geo.state) # convert state to abbreviation
       obj.latitude = geo.latitude
       obj.longitude = geo.longitude
     end
   end
-  after_validation :geocode if :zipcode_required?
+  after_validation :geocode, if: :zipcode_changed?
 end

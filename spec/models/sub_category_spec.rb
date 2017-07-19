@@ -14,6 +14,8 @@
 require 'rails_helper'
 
 RSpec.describe SubCategory, type: :model do
-  it { is_expected.to belong_to(:category) }
-  it { is_expected.to have_many(:interests) }
+  context 'Model Associations' do
+    it { is_expected.to belong_to(:category) }
+    it { is_expected.to have_many(:interests) }
+  end
 end

@@ -14,6 +14,5 @@
 
 FactoryGirl.define do
   factory :event_venue do
-    
   end
 end

@@ -1,0 +1,2 @@
+| $('#events').html("#{escape_javascript(render('events'))}");
+| $('#paginator').html("#{escape_javascript(paginate(@events, remote: true))}");

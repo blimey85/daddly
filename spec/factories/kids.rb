@@ -14,6 +14,5 @@
 
 FactoryGirl.define do
   factory :kid do
-    
   end
 end

@@ -1,7 +1,7 @@
 = form_for @venue do |f|
   - if @venue.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@venue.errors.count, "error")} prohibited this venue from being saved:"
+      h2 = "#{pluralize(@venue.errors.count, 'error')} prohibited this venue from being saved:"
       ul
         - @venue.errors.full_messages.each do |message|
           li = message

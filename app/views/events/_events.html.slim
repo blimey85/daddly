@@ -1,0 +1,10 @@
+- @events.each do |event|
+  a.list-group-item.list-group-item-action.flex-column.align-items-start href="#"
+    .d-flex.w-100.justify-content-between
+      .h3= event.name
+      | <small class="text-md-right" id="moment-#{event.id}">
+      javascript:
+        m = moment("#{event.starts_at.to_datetime}").format("ddd MMMM Do [<br>] h:mm a ");
+        document.getElementById("moment-#{event.id}").innerHTML = m;
+      | </small>
+    = event.description

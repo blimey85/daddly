@@ -21,13 +21,12 @@
 #  first_name             :string(255)
 #  last_name              :string(255)
 #  age                    :integer
-#  bio                    :string(255)
+#  bio                    :text(65535)
 #  city                   :string(255)
 #  state                  :string(255)
 #  zipcode                :integer
 #  latitude               :float(24)
 #  longitude              :float(24)
-#  avater                 :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  avatar                 :string(255)
@@ -48,9 +47,24 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_many(:interests) }
   end
 
-  describe User, '#name' do
+  context 'Model Validations' do
+    # context 'email_required? true' do
+    #   def email_required?
+    #     true
+    #   end
+    #   it { is_expected.to validate_presence_of(:email) }
+    # end
+    # context 'email_required? false' do
+    #   def email_required?
+    #     false
+    #   end
+    #   it { is_expected.not_to validate_presence_of(:email) }
+    # end
+  end
+
+  describe User, '#fullname' do
     it 'returns the concatenated first and last names' do
-      user = build(:user, first_name: 'Josh', last_name: 'Steiner')
+      user = FactoryGirl.build(:user, first_name: 'Josh', last_name: 'Steiner')
       expect(user.fullname).to eq 'Josh Steiner'
     end
   end

@@ -18,5 +18,16 @@
 require 'rails_helper'
 
 RSpec.describe Ping, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'Model Associations' do
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:pingable) }
+    it { is_expected.to have_many(:pings) }
+  end
+
+  context 'Model Validations' do
+    it { is_expected.to validate_presence_of(:pingable_id) }
+    it { is_expected.to validate_presence_of(:pingable_type) }
+    it { is_expected.to validate_presence_of(:pinger_id) }
+    it { is_expected.to validate_presence_of(:user_id) }
+  end
 end

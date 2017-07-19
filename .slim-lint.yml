@@ -12,7 +12,6 @@ linters:
       - Layout/AlignHash
       - Layout/AlignParameters
       - Layout/FirstParameterIndentation
-      - Layout/IndentationConsistency
       - Layout/IndentationWidth
       - Layout/MultilineArrayBraceLayout
       - Layout/MultilineAssignmentLayout

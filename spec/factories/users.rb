@@ -21,13 +21,12 @@
 #  first_name             :string(255)
 #  last_name              :string(255)
 #  age                    :integer
-#  bio                    :string(255)
+#  bio                    :text(65535)
 #  city                   :string(255)
 #  state                  :string(255)
 #  zipcode                :integer
 #  latitude               :float(24)
 #  longitude              :float(24)
-#  avater                 :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  avatar                 :string(255)
@@ -40,6 +39,14 @@
 
 FactoryGirl.define do
   factory :user do
-    
+    username    { Faker::Internet.user_name(8) }
+    age         { Faker::Number.between(13, 103) }
+    email       { Faker::Internet.email(username) }
+    bio         { Faker::Hipster.paragraph(3) }
+    zipcode     { Faker::Address.zip_code }
+    first_name  { Faker::Name.first_name }
+    last_name   { Faker::Name.last_name }
+    password 'password1234'
+    password_confirmation 'password1234'
   end
 end

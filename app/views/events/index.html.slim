@@ -9,38 +9,18 @@ css:
   .page-link {
     background-color: transparent;
   }
+  .list-group-item-info {
+    border: 0;
+  }
 
 .container
   .row.justify-content-center
     .col-8
       .list-group
-        - @events.each do |event|
-          a.list-group-item.list-group-item-action.flex-column.align-items-start href="#"
-            .d-flex.w-100.justify-content-between
-              .h3 = event.name
-              small.text-md-right
-                javascript: var m = moment("#{event.starts_at.to_datetime}").format("ddd MMMM Do [<br>] h:mm a "); document.write(m);
-                /= event.starts_at
-            = event.description
-
-                /|&nbsp;to&nbsp;
-                /= event.ends_at
-
-        .list-group-item.list-group-item-info
+        #events
+          = render 'events'
+        #paginator.list-group-item.list-group-item-info
           .col
-            = paginate @events
+            = paginate @events, remote: true
           .col.text-right
             = page_entries_info @events
-
-
-
-
-
-
-            /br = event.rsvp_count
-            /br = event.rsvp_min_limit
-            /br = event.rsvp_max_limit
-            /br = event.waitlist
-            /br = event.waitlist_count
-            /br = event.status
-            /br = event.type

@@ -16,6 +16,7 @@
 #
 
 class Venue < ApplicationRecord
+  extend StatesHelper
   has_many  :event_venues
   has_many  :events, through: :event_venues
 
@@ -24,7 +25,7 @@ class Venue < ApplicationRecord
   geocoded_by :zipcode do |obj, results|
     if (geo = results.first)
       obj.city = geo.city
-      obj.state = ::STATES.key(geo.state) # convert state to abbreviation
+      obj.state = STATES.key(geo.state) # convert state to abbreviation
       obj.latitude = geo.latitude
       obj.longitude = geo.longitude
     end
