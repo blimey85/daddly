@@ -22,4 +22,14 @@ RSpec.describe Venue, type: :model do
     it { is_expected.to have_many(:event_venues) }
     it { is_expected.to have_many(:events) }
   end
+
+  context 'Model Validations' do
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:address) }
+    it { is_expected.to validate_presence_of(:city) }
+    it { is_expected.to validate_presence_of(:state) }
+    it { is_expected.to validate_presence_of(:zipcode) }
+    it { is_expected.to validate_presence_of(:latitude) }
+    it { is_expected.to validate_presence_of(:longitude) }
+  end
 end

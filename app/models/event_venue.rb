@@ -15,4 +15,6 @@
 class EventVenue < ApplicationRecord
   belongs_to :event
   belongs_to :venue
+
+  validates :event_id, :venue_id, presence: true
 end

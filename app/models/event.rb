@@ -34,6 +34,8 @@ class Event < ApplicationRecord
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
 
+  validates :name, :description, :starts_at, :ends_at, :user_id, :venue_id, presence: true
+
   # used for date and time pickers which get merged to datetime field
   attr_accessor :start_date
   attr_accessor :start_time

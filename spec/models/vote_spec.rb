@@ -21,4 +21,10 @@ RSpec.describe Vote, type: :model do
     it { is_expected.to belong_to(:votable) }
     it { is_expected.to have_many(:votes) }
   end
+
+  context 'Model Validations' do
+    it { is_expected.to validate_presence_of(:votable_id) }
+    it { is_expected.to validate_presence_of(:votable_type) }
+    it { is_expected.to validate_presence_of(:user_id) }
+  end
 end

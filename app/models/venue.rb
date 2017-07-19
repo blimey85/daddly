@@ -20,8 +20,9 @@ class Venue < ApplicationRecord
   has_many  :event_venues
   has_many  :events, through: :event_venues
 
+  validates :name, :address, :city, :state, :zipcode, :latitude, :longitude, presence: true
+
   # Geo Location Block
-  validates :zipcode, presence: true
   geocoded_by :zipcode do |obj, results|
     if (geo = results.first)
       obj.city = geo.city

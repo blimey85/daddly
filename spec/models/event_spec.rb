@@ -36,4 +36,13 @@ RSpec.describe Event, type: :model do
     it { is_expected.to have_many(:venues) }
     it { is_expected.to have_many(:comments) }
   end
+
+  context 'Model Validations' do
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:description) }
+    it { is_expected.to validate_presence_of(:starts_at) }
+    it { is_expected.to validate_presence_of(:ends_at) }
+    it { is_expected.to validate_presence_of(:user_id) }
+    it { is_expected.to validate_presence_of(:venue_id) }
+  end
 end

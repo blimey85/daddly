@@ -19,4 +19,9 @@ RSpec.describe EventVenue, type: :model do
     it { is_expected.to belong_to(:event) }
     it { is_expected.to belong_to(:venue) }
   end
+
+  context 'Model Validations' do
+    it { is_expected.to validate_presence_of(:event_id) }
+    it { is_expected.to validate_presence_of(:venue_id) }
+  end
 end

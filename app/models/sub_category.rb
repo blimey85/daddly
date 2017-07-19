@@ -14,4 +14,6 @@
 class SubCategory < ApplicationRecord
   belongs_to :category
   has_many :interests
+
+  validates :name, :category_id, presence: true
 end

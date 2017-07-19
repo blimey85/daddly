@@ -18,4 +18,10 @@ RSpec.describe Kid, type: :model do
   context 'Model Associations' do
     it { is_expected.to belong_to(:user) }
   end
+
+  context 'Model Validations' do
+    it { is_expected.to validate_presence_of(:gender) }
+    it { is_expected.to validate_presence_of(:age) }
+    it { is_expected.to validate_presence_of(:user_id) }
+  end
 end

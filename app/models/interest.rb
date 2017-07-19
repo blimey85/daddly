@@ -12,4 +12,6 @@ class Interest < ApplicationRecord
   has_many  :users, through: :user_interests
 
   belongs_to :sub_category
+
+  validates :sub_category_id, :name, presence: true
 end
