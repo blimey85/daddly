@@ -28,9 +28,13 @@ gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'cloudinary'
 gem 'cocoon'
+gem 'jquery-rails'
+gem 'jquery-ui-rails' # used for autocomplete
+gem 'rails-jquery-autocomplete' # used for autocomplete
 gem 'simple_form'
 gem 'slim-rails'
 gem 'sweet-alert2-rails'
+gem 'wysiwyg-rails' # Froala editor
 
 # Uploads
 gem 'carrierwave'
@@ -44,21 +48,17 @@ gem 'geocoder'
 gem 'gibbon'
 gem 'goldiloader'
 gem 'high_voltage'
-gem 'jquery-rails'
-gem 'jquery-ui-rails' # used for autocomplete
 gem 'kaminari', github: 'amatsuda/kaminari', branch: 'master'
 gem 'meta-tags', require: 'meta_tags'
 gem 'modernizr-rails'
 gem 'nokogiri'
 gem 'premailer-rails'
-gem 'rails-jquery-autocomplete' # used for autocomplete
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'responders', '~> 2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'virtus'
-gem 'wysiwyg-rails' # Froala editor
 
 group :development do
   gem 'annotate', github: 'ctran/annotate_models'
@@ -78,6 +78,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'meta_request' # used for Chrome Rails Panel addon
   gem 'rails_best_practices'
+  gem 'rubocop'
   gem 'seed_dump'
   gem 'spring-commands-rspec'
   gem 'web-console', '>= 3.3.0'

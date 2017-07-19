@@ -693,6 +693,7 @@ DEPENDENCIES
   ransack!
   responders (~> 2.0)
   rspec-rails
+  rubocop
   sass-rails (~> 5.0)
   seed_dump
   selenium-webdriver
