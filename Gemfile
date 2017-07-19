@@ -77,6 +77,7 @@ group :development do
   gem 'irbtools-more', require: 'irbtools/binding'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'meta_request' # used for Chrome Rails Panel addon
+  gem 'rails_best_practices'
   gem 'seed_dump'
   gem 'spring-commands-rspec'
   gem 'web-console', '>= 3.3.0'
@@ -99,3 +100,5 @@ group :test do
   gem 'launchy'
   gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers', branch: 'rails-5'
 end
+
+gem 'mailboxer', github: 'mailboxer/mailboxer'
