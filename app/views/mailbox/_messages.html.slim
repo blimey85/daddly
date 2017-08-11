@@ -1,0 +1,8 @@
+.messages.panel-body
+  = render partial: 'conversations/conversation', collection: @messages
+.paginator
+  .row
+    .col
+      = paginate @messages, remote: true
+    .col.text-right
+      = page_entries_info @messages

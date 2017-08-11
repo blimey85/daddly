@@ -40,12 +40,11 @@
 class MentionsSerializer < ActiveModel::Serializer
   attributes :id, :fullname, :email, :profile_picture_url
 
-  # override email with username
-  # def email
-  #   object.username
-  # end
-
   def profile_picture_url
-    object.avatar.url
+    if object.avatar.url
+      object.avatar.url
+    else
+      'https://cdn0.iconfinder.com/data/icons/smiley-emoticons-handdrawn/100/16-48.png'
+    end
   end
 end

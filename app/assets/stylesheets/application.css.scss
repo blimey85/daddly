@@ -11,8 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  */
-@import "bootstrap/scss/bootstrap";
-@import "mdb";
+@import "bootstrap.min";
+@import "mdb.min";
 @import "jasny-bootstrap.min";
 @import "bootstrap-social";
 @import "font-path-overwrite";
@@ -23,8 +23,53 @@
 @import "sweetalert2/dist/sweetalert2";
 @import "jquery-comments";
 @import "qtip2/dist/jquery.qtip";
-@import "froala";
 @import "jquery.atwho";
+
+body {
+  color: #282d3f;
+}
+
+.navbar {
+  background-color: #282d3f;
+  color: #fff;
+  min-height: 50px;
+  padding: 0 1rem;
+}
+
+.top-nav-collapse {
+  background-color: #282d3f;
+}
+
+footer.page-footer {
+  background-color: rgba(0, 157, 246, 1.000);
+}
+
+footer.page-footer .footer-copyright {
+  background-color: #1A2139;
+}
+
+#header_icon {
+  fill: rgba(0, 157, 246, 1.000);
+}
+
+.my-2 {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: inherit;
+}
+svg.brand {
+  height: 20px;
+  margin-top: 10px;
+}
+
+.nav-link {
+  padding: 0;
+}
 
 .btn-social > :first-child {
   line-height: 48px;
@@ -41,4 +86,135 @@ div.fileinput-preview img {
 }
 .fa {
   font-family: FontAwesome !important;
+}
+
+// styles used for events and mailbox
+.flex-center ul,
+.card-overlay ul,
+.section.team-section
+.avatar ul,
+.section.team-section div.fileinput-preview img ul,
+div.fileinput-preview .section.team-section img ul,
+.testimonial-carousel .testimonial .avatar ul,
+.testimonial-carousel .testimonial div.fileinput-preview img ul,
+div.fileinput-preview .testimonial-carousel .testimonial img ul,
+.card .card-circle ul {
+  text-align: left;
+}
+.panel {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 24px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+div.mailbox-thread-card.list-group-item.list-group-item-action {
+  border: 0;
+  margin-bottom: 0;
+}
+.forum-thread-filters {
+  a {
+    color: #555555;
+    display: block;
+  }
+  a.active {
+    color: #222222;
+    font-weight: bold;
+  }
+  a:hover {
+    color: #222222;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  h5 {
+    margin: 0;
+  }
+  .md-pills li {
+    padding: 0;
+  }
+}
+
+.paginator {
+  margin: 10px;
+}
+.panel-body:before, .panel-body:after {
+  content: " ";
+  display: table;
+}
+#mailbox_folders {
+  .panel-body {
+    padding: 20px;
+  }
+  .md-pills .nav-link {
+    text-align: left;
+  }
+  hr {
+    margin: 20px -20px;
+  }
+  .btn {
+    box-shadow: none;
+  }
+  .btn-outline-info {
+    border: 1px solid #33b5e5;
+    border-radius: 6px;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  box-sizing: content-box;
+  height: 0;
+  margin: 0;
+}
+
+.text-right {
+  line-height: 32px;
+}
+.tab-content {
+  padding: 0;
+}
+.tab-pane {
+  padding: 0;
+}
+.pagination {
+  margin: 0;
+}
+.page-link {
+  background-color: inherit;
+  height: 32px;
+  width: 32px;
+}
+.page-item {
+  height: 32px;
+  width: 32px;
+  margin-right: 6px;
+}
+.pagination-icons {
+  font-size: 24px;
+  position: absolute;
+  margin-top: -6px;
+}
+
+.badge {
+  -webkit-border-radius: 10rem;
+  -moz-border-radius: 10rem;
+  border-radius: 10rem;
+}
+
+.spinner {
+  font-size: 4em;
+  text-align: center;
+  padding: 0.55em;
+  color: #282d3f;
+  display: none;
+}
+.mailbox-messages {
+  padding-top: 15px;
+}
+.nav-tabs {
+  margin-bottom: inherit;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }

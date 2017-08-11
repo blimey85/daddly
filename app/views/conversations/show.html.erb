@@ -1,0 +1,24 @@
+<h1><%= @conversation.subject %></h1>
+
+<h4>Participants</h4>
+<% @conversation.participants.each do |participant| %>
+    <div><%= participant.fullname %></div>
+<% end %>
+
+<hr />
+
+<% @conversation.receipts_for(current_user).each do |receipt| %>
+    <div>
+      <div><%= receipt.message.sender.fullname %> commented</div>
+      <%= simple_format receipt.message.body %>
+
+      <% if receipt.message.attachment? %>
+          <strong>Attachment</strong>
+          <%= link_to receipt.message.attachment.file.filename, receipt.message.attachment.url, target: :blank %>
+      <% end %>
+    </div>
+
+    <hr />
+<% end %>
+
+

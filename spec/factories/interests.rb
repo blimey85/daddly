@@ -3,8 +3,12 @@
 # Table name: interests
 #
 #  id              :integer          not null, primary key
+#  name            :string
 #  sub_category_id :integer
-#  name            :string(255)
+#
+# Indexes
+#
+#  index_interests_on_sub_category_id  (sub_category_id)
 #
 
 FactoryGirl.define do

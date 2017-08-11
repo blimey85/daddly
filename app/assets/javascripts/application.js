@@ -17,7 +17,8 @@
 //= require sweetalert2/dist/sweetalert2
 //= require sweet-alert2-rails
 //= require tether/dist/js/tether
-//= require bootstrap/dist/js/bootstrap
+//= require popper.min
+//= require bootstrap.min
 //= require cloudinary/jquery.cloudinary
 //= require jasny-bootstrap/dist/js/jasny-bootstrap
 //= require moment/min/moment.min
@@ -30,5 +31,5 @@
 //= require qtip2/dist/jquery.qtip
 //= require events
 //= require jquery-textcomplete/dist/jquery.textcomplete
-//= require froala
 //= require jquery.atwho
+//= require timeago/jquery.timeago

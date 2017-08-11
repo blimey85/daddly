@@ -3,13 +3,13 @@
 # Table name: venues
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)
-#  address    :string(255)
-#  city       :string(255)
-#  state      :string(255)
+#  name       :string
+#  address    :string
+#  city       :string
+#  state      :string
 #  zipcode    :integer
-#  latitude   :float(24)
-#  longitude  :float(24)
+#  latitude   :float
+#  longitude  :float
 #  visibility :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

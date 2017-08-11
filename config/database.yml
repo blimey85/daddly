@@ -1,28 +1,45 @@
-### Local Machine ###
-development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: dp_development
-  pool: 5
-  username: root
-  password: Winzippo85
-  host: localhost
+#### Local Machine ###
+#development:
+#  adapter: mysql2
+#  encoding: utf8
+#  reconnect: false
+#  database: dp_development
+#  pool: 5
+#  username: root
+#  password: Winzippo85
+#  host: localhost
+#
+#### Setup for Travis-CI ###
+#test:
+#  adapter: mysql2
+#  encoding: utf8
+#  database: dp_test
+#  username: travis
+#
+#### Production on Digital Ocean ###
+#production:
+#  adapter: mysql2
+#  encoding: utf8
+#  reconnect: false
+#  database: dp_production
+#  pool: 5
+#  username: root
+#  password: Winzippo85
+#  host: localhost
 
-### Setup for Travis-CI ###
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: dp_development
+  host: localhost
+  port: 5432
+  username: dp
+  password: dppassword
+
 test:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   database: dp_test
   username: travis
 
-### Production on Digital Ocean ###
-production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: dp_production
-  pool: 5
-  username: root
-  password: Winzippo85
-  host: localhost
+min_messages: notice

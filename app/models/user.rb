@@ -3,33 +3,33 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  email                  :string(255)      default("")
-#  encrypted_password     :string(255)      default(""), not null
-#  reset_password_token   :string(255)
+#  email                  :string           default("")
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
 #  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string(255)
-#  last_sign_in_ip        :string(255)
-#  confirmation_token     :string(255)
+#  current_sign_in_ip     :inet
+#  last_sign_in_ip        :inet
+#  confirmation_token     :string
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
-#  unconfirmed_email      :string(255)
-#  username               :string(255)
-#  first_name             :string(255)
-#  last_name              :string(255)
+#  unconfirmed_email      :string
+#  username               :string
+#  first_name             :string
+#  last_name              :string
 #  age                    :integer
-#  bio                    :text(65535)
-#  city                   :string(255)
-#  state                  :string(255)
+#  bio                    :text
+#  city                   :string
+#  state                  :string
 #  zipcode                :integer
-#  latitude               :float(24)
-#  longitude              :float(24)
+#  latitude               :float
+#  longitude              :float
+#  avatar                 :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  avatar                 :string(255)
 #
 # Indexes
 #
@@ -56,29 +56,37 @@ class User < ApplicationRecord
             confirmation: true,
             if: :password_required?
 
-  # validates :password, length: { within: Devise.password_length }, allow_blank: true
-
   ### User Profile Validations ###
-  validates :age, numericality: { greater_than: 12 }
-  validates :bio, length: { minimum: 32 }
-  validates :first_name, :last_name, length: { minimum: 2 }
-  validates :zipcode, format: { with: /\A\d{5}(-\d{4})?\z/, message: 'is not a valid US zipcode' }
-  validates :zipcode, presence: true, if: :zipcode_required?
+  # validates :age, numericality: { greater_than: 12 }
+  # validates :bio, length: { minimum: 32 }
+  # validates :first_name, :last_name, length: { minimum: 2 }
+  # validates :zipcode, format: { with: /\A\d{5}(-\d{4})?\z/, message: 'is not a valid US zipcode' }
+  # validates :zipcode, presence: true, if: :zipcode_required?
 
-  mount_uploader :avatar, AvatarUploader
-
+  ### Associations ###
   has_many :identities, dependent: :destroy
   has_many :kids, dependent: :destroy, inverse_of: :user
   accepts_nested_attributes_for :kids, reject_if: :all_blank, allow_destroy: true
-
+  has_many  :pings
   has_many  :user_interests
   has_many  :interests, through: :user_interests
 
+  ### Devise ###
   devise :omniauthable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, omniauth_providers: [:facebook, :google_oauth2]
+         :recoverable, :rememberable, :trackable, omniauth_providers: [:facebook, :google_oauth2, :twitter]
+
+  mount_uploader :avatar, AvatarUploader
+  acts_as_messageable
+
+  def facebook
+    identities.find_by(provider: 'facebook')
+  end
+
+  def facebook_client
+    @facebook_client ||= Facebook.client(access_token: facebook.accesstoken)
+  end
 
   def google_oauth2
-    # identities.where(:provider => 'google_oauth2').first
     identities.find_by(provider: 'google_oauth2')
   end
 
@@ -86,13 +94,12 @@ class User < ApplicationRecord
     @google_oauth2_client ||= GoogleAppsClient.client(google_oauth2)
   end
 
-  def facebook
-    # identities.where(:provider => 'facebook').first
-    identities.find_by(provider: 'facebook')
+  def twitter
+    identities.find_by(provider: 'twitter')
   end
 
-  def facebook_client
-    @facebook_client ||= Facebook.client(access_token: facebook.accesstoken)
+  def twitter_client
+    @twitter_client ||= Twitter.client(access_token: twitter.accesstoken)
   end
 
   def password_required?

@@ -10,6 +10,7 @@
     "jquery-textcomplete": "^1.8.1",
     "qtip2": "^3.0.3",
     "sweetalert2": "^6.6.5",
+    "timeago": "^1.6.1",
     "trix": "^0.10.2"
   }
 }

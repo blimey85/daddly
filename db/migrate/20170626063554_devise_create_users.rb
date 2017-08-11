@@ -16,8 +16,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.integer  :sign_in_count, default: 0, null: false
       t.datetime :current_sign_in_at
       t.datetime :last_sign_in_at
-      t.string   :current_sign_in_ip
-      t.string   :last_sign_in_ip
+      t.inet     :current_sign_in_ip
+      t.inet     :last_sign_in_ip
 
       ## Confirmable
       t.string   :confirmation_token
@@ -34,13 +34,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :first_name
       t.string :last_name
       t.integer :age
-      t.string :bio
+      t.text :bio
       t.string :city
       t.string :state
       t.integer :zipcode
       t.float :latitude
       t.float :longitude
-      t.string :avater
+      t.string :avatar
 
       t.timestamps null: false
     end

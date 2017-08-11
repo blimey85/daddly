@@ -1,0 +1,21 @@
+a href="test.html"
+  .mailbox-thread-card.list-group-item.list-group-item-action
+    .media
+      .media-left.jquery-comments
+        img.profile-picture.round alt=("Avatar Photo") src="#{conversation.originator.avatar.url}"
+      .media-body
+        .d-flex.w-100.justify-content-between
+          h6.mb-1
+            = conversation.originator.fullname
+            small
+              | (@#{conversation.originator.username})
+          small.text-md-right
+            = timeago(conversation.messages.last.created_at)
+        p.mb-0= conversation.subject
+        small= truncate conversation.messages.last.body, length: 145
+hr
+
+css:
+  .media {
+    width: 100%;
+  }
