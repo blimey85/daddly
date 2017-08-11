@@ -1,4 +1,4 @@
-css:
+scss:
   .card img.rounded-circle {
     border-radius: 50%;
   }
@@ -28,12 +28,51 @@ css:
     margin-left: 10px;
   }
 
+  @mixin avatar($size) {
+    width: $size;
+    height: $size;
+    background-color: #3f729b;
+    text-align: center;
+
+    .initials {
+      position: relative;
+      top: $size*0.25;
+      font-size: $size*0.5;
+      line-height: $size*0.5;
+      color: #fff;
+      font-family: "Arial Black", Gadget, sans-serif;
+      font-weight: bold;
+    }
+  }
+  .circle {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+  }
+
+  .avatar {
+    @include avatar(100px);
+  }
+
+  .avatar-sm {
+    @include avatar(50px);
+  }
+
+  .avatar-lg {
+    @include avatar(250px);
+  }
+
+
 .container
   .row.justify-content-center
     .col-7
       .card
         p
           = image_tag(@user.avatar.url, size: '100', class: 'img-thumbnail')
+        p
+          .avatar-sm.circle
+            span.initials
+              | GT
         p
           strong First Name:
           = @user.first_name

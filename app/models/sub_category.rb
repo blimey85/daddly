@@ -3,7 +3,7 @@
 # Table name: sub_categories
 #
 #  id          :integer          not null, primary key
-#  name        :string(255)
+#  name        :string
 #  category_id :integer
 #
 # Indexes

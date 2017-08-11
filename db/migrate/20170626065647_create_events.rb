@@ -13,6 +13,8 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.integer :status
       t.integer :type
       t.integer :visibility
+      t.integer :comments_count, null: false, default: 0
+      t.integer :votes_count, null: false, default: 0
       t.belongs_to :user
       t.references :venue, foreign_key: false
 

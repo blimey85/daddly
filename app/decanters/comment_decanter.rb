@@ -10,7 +10,7 @@
 #
 
 class CommentDecanter < Decanter::Base
-  ignore :profile_picture_url
+  ignore :profile_picture_url, :fullname, :upvote_count, :created_at, :created_by_current_user, :user_has_upvoted
 
   input :commentable_id, :integer
   input :commentable_type, :string

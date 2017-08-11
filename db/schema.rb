@@ -10,33 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719204324) do
+ActiveRecord::Schema.define(version: 20170802200607) do
 
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "comments", force: :cascade do |t|
     t.integer "commentable_id"
     t.string "commentable_type"
     t.text "body"
     t.integer "parent_id"
-    t.integer "user_id"
     t.datetime "edited_at"
     t.integer "votes_count", default: 0
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "event_venues", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "event_venues", force: :cascade do |t|
     t.bigint "event_id"
     t.bigint "venue_id"
     t.index ["event_id"], name: "index_event_venues_on_event_id"
     t.index ["venue_id"], name: "index_event_venues_on_venue_id"
   end
 
-  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "starts_at"
@@ -49,17 +53,17 @@ ActiveRecord::Schema.define(version: 20170719204324) do
     t.integer "status"
     t.integer "type"
     t.integer "visibility"
-    t.bigint "user_id"
-    t.bigint "venue_id"
-    t.datetime "updated_at", null: false
-    t.datetime "created_at", null: false
     t.integer "comments_count", default: 0, null: false
     t.integer "votes_count", default: 0, null: false
+    t.bigint "user_id"
+    t.bigint "venue_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_events_on_user_id"
     t.index ["venue_id"], name: "index_events_on_venue_id"
   end
 
-  create_table "identities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "identities", force: :cascade do |t|
     t.bigint "user_id"
     t.string "provider"
     t.string "accesstoken"
@@ -76,19 +80,20 @@ ActiveRecord::Schema.define(version: 20170719204324) do
     t.index ["user_id"], name: "index_identities_on_user_id"
   end
 
-  create_table "interests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "sub_category_id"
+  create_table "interests", force: :cascade do |t|
     t.string "name"
+    t.bigint "sub_category_id"
+    t.index ["sub_category_id"], name: "index_interests_on_sub_category_id"
   end
 
-  create_table "kids", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "kids", force: :cascade do |t|
     t.integer "gender", default: 0, null: false
     t.integer "age", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_kids_on_user_id"
   end
 
-  create_table "mailboxer_conversation_opt_outs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "mailboxer_conversation_opt_outs", id: :serial, force: :cascade do |t|
     t.string "unsubscriber_type"
     t.integer "unsubscriber_id"
     t.integer "conversation_id"
@@ -96,13 +101,13 @@ ActiveRecord::Schema.define(version: 20170719204324) do
     t.index ["unsubscriber_id", "unsubscriber_type"], name: "index_mailboxer_conversation_opt_outs_on_unsubscriber_id_type"
   end
 
-  create_table "mailboxer_conversations", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "mailboxer_conversations", id: :serial, force: :cascade do |t|
     t.string "subject", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "mailboxer_notifications", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "mailboxer_notifications", id: :serial, force: :cascade do |t|
     t.string "type"
     t.text "body"
     t.string "subject", default: ""
@@ -125,7 +130,7 @@ ActiveRecord::Schema.define(version: 20170719204324) do
     t.index ["type"], name: "index_mailboxer_notifications_on_type"
   end
 
-  create_table "mailboxer_receipts", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "mailboxer_receipts", id: :serial, force: :cascade do |t|
     t.string "receiver_type"
     t.integer "receiver_id"
     t.integer "notification_id", null: false
@@ -142,23 +147,26 @@ ActiveRecord::Schema.define(version: 20170719204324) do
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
   end
 
-  create_table "pings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "pings", force: :cascade do |t|
     t.integer "pingable_id"
     t.string "pingable_type"
-    t.integer "pinger_id"
+    t.bigint "pinger_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pingable_parent_id"
+    t.string "pingable_parent_type"
+    t.index ["pingable_id", "pingable_type", "pinger_id"], name: "index_pings_on_pingable_id_and_pingable_type_and_pinger_id", unique: true
     t.index ["user_id"], name: "index_pings_on_user_id"
   end
 
-  create_table "sub_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "sub_categories", force: :cascade do |t|
     t.string "name"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_sub_categories_on_category_id"
   end
 
-  create_table "user_interests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "user_interests", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "interest_id"
     t.integer "experience"
@@ -166,7 +174,7 @@ ActiveRecord::Schema.define(version: 20170719204324) do
     t.index ["user_id"], name: "index_user_interests_on_user_id"
   end
 
-  create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", default: ""
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -175,8 +183,8 @@ ActiveRecord::Schema.define(version: 20170719204324) do
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -189,34 +197,35 @@ ActiveRecord::Schema.define(version: 20170719204324) do
     t.string "city"
     t.string "state"
     t.integer "zipcode"
-    t.float "latitude", limit: 24
-    t.float "longitude", limit: 24
+    t.float "latitude"
+    t.float "longitude"
+    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "avatar"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "venues", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "venues", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "city"
     t.string "state"
     t.integer "zipcode"
-    t.float "latitude", limit: 24
-    t.float "longitude", limit: 24
+    t.float "latitude"
+    t.float "longitude"
     t.integer "visibility"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "votes", force: :cascade do |t|
     t.integer "votable_id"
     t.string "votable_type"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_votes_on_user_id"
     t.index ["votable_id", "votable_type"], name: "index_votes_on_votable_id_and_votable_type"
   end
 

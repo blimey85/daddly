@@ -5,9 +5,9 @@ class CreateComments < ActiveRecord::Migration[5.1]
       t.string :commentable_type
       t.text :body
       t.integer :parent_id
-      t.integer :user_id
       t.datetime :edited_at
-      t.integer :upvote_count, :default => 0
+      t.integer :votes_count, :default => 0
+      t.references :user, foreign_key: false
 
       t.timestamps
     end

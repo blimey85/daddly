@@ -1083,6 +1083,7 @@
                     this.options.scrollContainer.scrollTop(newScrollTop);
                 }
             }
+            ats();
         },
 
         editButtonClicked: function(ev) {
@@ -1410,7 +1411,6 @@
                     match: /(^|\s)@(([a-zäöüß]|\s)*)$/im,
                     search: function (term, callback) {
                         term = self.normalizeSpaces(term);
-
                         // Users excluding self and already pinged users
                         var pings = self.getPings(textarea);
                         var users = self.getUsers().filter(function(user) {
@@ -1418,7 +1418,7 @@
                             var alreadyPinged = pings.indexOf(user.id) != -1;
                             return !isSelf && !alreadyPinged;
                         });
-
+                        console.log(users);
                         // Sort users
                         self.sortUsers(users);
 
@@ -2210,13 +2210,12 @@
         highlightPings: function(commentModel, html) {
             var self = this;
             $(commentModel.pings).each(function(index, ping) {
-                var sRegExInput = new RegExp('@' + ping.user_id);
+                var sRegExInput = new RegExp('@' + ping.pinger_id);
                 html = html.replace((sRegExInput), function() {
                     var tag = self.createTagElement('@' + ping.username, 'ping', ping.id, commentModel, ping);
                     return tag[0].outerHTML;
                 });
             });
-
             return html;
         },
 

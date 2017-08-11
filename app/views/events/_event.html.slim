@@ -1,0 +1,8 @@
+a href="#{event_path(event.id)}"
+  .mailbox-thread-card.list-group-item.list-group-item-action.flex-column.align-items-start
+    .d-flex.w-100.justify-content-between
+      .h3= event.name
+      small.text-md-right
+        = timeago(event.starts_at.to_datetime)
+    = event.description
+hr

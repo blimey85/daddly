@@ -1,233 +1,293 @@
-.container
-  .row.justify-content-center
-    .col-8
+.card.mt-5
+  .card-body
+    p
+      strong> Name:
+      = @event.name
+    p
+      strong> Description:
+      = @event.description
+    p
+      strong> Starts at:
+      = @event.starts_at
+    p
+      strong> Ends at:
+      = @event.ends_at
+    p
+      strong> Rsvp count:
+      = @event.rsvp_count
+    p
+      strong> Rsvp min limit:
+      = @event.rsvp_min_limit
+    p
+      strong> Rsvp max limit:
+      = @event.rsvp_max_limit
+    p
+      strong> Waitlist:
+      = @event.waitlist
+    p
+      strong> Waitlist count:
+      = @event.waitlist_count
+    p
+      strong> Status:
+      = @event.status
+    p
+      strong> Type:
+      = @event.type
+    p
+      strong> Visibility:
+      = @event.visibility
+    p
+      strong> Created by current user:
+      = @event.created_by_current_user
+    p
+      strong> Upvoted by current user:
+      = @event.user_has_upvoted
 
-      p#notice = notice
+    .event-comments id="comments-container-#{@event.id}"
 
-      p
-        strong Name:
-        = @event.name
-      p
-        strong Description:
-        = @event.description
-      p
-        strong Starts at:
-        = @event.starts_at
-      p
-        strong Ends at:
-        = @event.ends_at
-      p
-        strong Rsvp count:
-        = @event.rsvp_count
-      p
-        strong Rsvp min limit:
-        = @event.rsvp_min_limit
-      p
-        strong Rsvp max limit:
-        = @event.rsvp_max_limit
-      p
-        strong Waitlist:
-        = @event.waitlist
-      p
-        strong Waitlist count:
-        = @event.waitlist_count
-      p
-        strong Status:
-        = @event.status
-      p
-        strong Type:
-        = @event.type
-      p
-        strong Visibility:
-        = @event.visibility
-      p
-        strong Created by current user:
-        = @event.created_by_current_user
-      p
-        strong Upvoted by current user:
-        = @event.user_has_upvoted
-      br
-      br
-      p
-        .event-comments id="comments-container-#{@event.id}"
-
-css:
+scss:
   span.delete {
     display: none;
   }
 
+  .jquery-comments ul.main li.comment .comment-wrapper {
+    border-top: 1px solid #DDD;
+    overflow: hidden;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .jquery-comments ul.main li.comment .comment-wrapper,
+  .jquery-comments ul.main li.toggle-all,
+  .jquery-comments ul.main li.comment .commenting-field {
+    padding: 1em;
+  }
+
+  .jquery-comments ul.main > li.comment:first-child > .comment-wrapper {
+    border-top: 1px solid #DDD;
+  }
+
+  #comment-list li.comment {
+    margin-bottom: 0;
+  }
+
+  .atwho-view .cur {
+    background: #3f729b;
+    color: white;
+  }
+
+  .atwho-view-ul {
+    white-space: nowrap;
+    line-height: 1.2em;
+
+    .details {
+      display: inline-block;
+    }
+    .email {
+      color: #AAA;
+      font-size: 0.95em;
+      margin-top: 0.1em;
+    }
+    .name {
+      font-weight: bold;
+    }
+    .profile-picture.round {
+      float: left;
+      width: 2.4em;
+      height: 2.4em;
+      margin-right: 0.5em;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      max-width: 48px;
+      max-height: 48px;
+    }
+  }
+
 javascript:
-    $('.item-like').click(function () {
-        var arr = this.id.split('-');
-        var clickedType = arr[0];
-        var clickedID = arr[1];
+  $('.item-like').click(function () {
+      var arr = this.id.split('-');
+      var clickedType = arr[0];
+      var clickedID = arr[1];
 
-        $.ajax({
-            type: 'post',
-            url: '/votes/like',
-            data: {
-                votable_type: clickedType,
-                votable_id: clickedID,
-                user_id: #{current_user.id}
-            },
-            success: function (returnObj) {
-                console.log(returnObj);
-            },
-            error: function (returnObj) {
-                console.log(returnObj);
-            }
-        });
-    });
-    $('.item-unlike').click(function () {
-        var arr = this.id.split('-');
-        var clickedType = arr[0];
-        var clickedID = arr[1];
+      $.ajax({
+          type: 'post',
+          url: '/votes/like',
+          data: {
+              votable_type: clickedType,
+              votable_id: clickedID,
+              user_id: #{current_user.id}
+          },
+          success: function (returnObj) {
+              console.log(returnObj);
+          },
+          error: function (returnObj) {
+              console.log(returnObj);
+          }
+      });
+  });
+  $('.item-unlike').click(function () {
+      var arr = this.id.split('-');
+      var clickedType = arr[0];
+      var clickedID = arr[1];
 
-        $.ajax({
-            type: 'delete',
-            url: '/votes/unlike/',
-            data: {
-                votable_type: clickedType,
-                votable_id: clickedID,
-                user_id: #{current_user.id}
-            },
-            success: function (returnObj) {
-                console.log(returnObj);
-            },
-            error: function (returnObj) {
-                console.log(returnObj);
-            }
-        });
-    });
-    $('.event-comments').each(function (index, element) {
-        var ID = this.id;
-        var IDN = parseInt(ID.match(/\d+/));
-        var urlSuffix = IDN + '/#{current_user.id}';
+      $.ajax({
+          type: 'delete',
+          url: '/votes/unlike/',
+          data: {
+              votable_type: clickedType,
+              votable_id: clickedID,
+              user_id: #{current_user.id}
+          },
+          success: function (returnObj) {
+              console.log(returnObj);
+          },
+          error: function (returnObj) {
+              console.log(returnObj);
+          }
+      });
+  });
+  $('.event-comments').each(function () {
+      var ID = this.id;
 
-        $('#' + ID).comments({
-            fieldMappings: {
-                parent: 'parent_id',
-                content: 'content',
-                created: 'created_at',
-                modified: 'edited_at',
-                upvoteCount: 'upvote_count',
-                userHasUpvoted: 'user_has_upvoted'
-            },
-            enableAttachments: false,
-            enableDeleting: false,
-            enableNavigation: false,
-            enablePinging: true,
-            enableHashtags: true,
-            maxRepliesVisible: 20,
-            profilePictureURL: '#{current_user.avatar.url}',
-            roundProfilePictures: true,
-            textareaRows: 1,
-            youText: "#{current_user.fullname}",
-            getComments: function(success, error) {
-                $.ajax({
-                    type: 'GET',
-                    url: '/comments/show?commentable_type=Event&commentable_id=#{@event.id}',
-                    success: function(commentsArray) {
-                        success(commentsArray)
-                    },
-                    error: error
-                });
-            },
-            pingClicked: function (ping) {
-              window.location = '/user/' + ping
-            },
-            postComment: function (commentOBJ, success, error) {
-              console.log(commentOBJ);
-                // commentOBJ has an id we need to remove as this is a new comment
-                delete commentOBJ.id;
-                // commentOBJ lacks the following data so we inject it
-                commentOBJ.body = commentOBJ.content;
-                commentOBJ.commentable_type = 'Event';
-                commentOBJ.commentable_id = "#{@event.id}";
-                commentOBJ.user_id = "#{current_user.id}";
-
-                $.ajax({
-                    type: 'POST',
-                    url: '/comments',
-                    data: commentOBJ,
-                    success: function (retCommentOBJ) {
-                        success(saveComment(retCommentOBJ))
-                    },
-                    error: error
-                });
-            },
-            putComment: function (commentOBJ, success, error) {
+      $('#' + ID).comments({
+          fieldMappings: {
+              parent: 'parent_id',
+              content: 'content',
+              created: 'created_at',
+              modified: 'edited_at',
+              upvoteCount: 'upvote_count',
+              userHasUpvoted: 'user_has_upvoted'
+          },
+          enableAttachments: false,
+          enableDeleting: false,
+          enableNavigation: false,
+          enablePinging: true,
+          enableHashtags: true,
+          maxRepliesVisible: 20,
+          profilePictureURL: '#{current_user.avatar.url}',
+          roundProfilePictures: true,
+          textareaRows: 1,
+          youText: "#{current_user.fullname}",
+          getComments: function(success, error) {
               $.ajax({
-                type: 'PATCH',
-                url: '/comments/' + commentOBJ.id,
-                data: commentOBJ,
-                success: function (retCommentOBJ) {
-                  success(retCommentOBJ)
-                },
-                error: error
+                  type: 'GET',
+                  url: '/comments/show?commentable_type=Event&commentable_id=#{@event.id}',
+                  success: function(commentsArray) {
+                      success(commentsArray)
+                  },
+                  error: error
               });
-            },
-            upvoteComment: function(commentsArray, success, error) {
-                if(commentsArray.user_has_upvoted) {
-                    $.ajax({
-                        type: 'POST',
-                        url: '/votes/like',
-                        data: {
-                            votable_type: 'Comment',
-                            votable_id: commentsArray.id,
-                            user_id: "#{current_user.id}"
-                        },
-                        success: function() {
-                            success(commentsArray)
-                        },
-                        error: error
-                    });
-                } else {
-                    $.ajax({
-                        type: 'DELETE',
-                        url: '/votes/unlike',
-                        data: {
-                            votable_type: 'Comment',
-                            votable_id: commentsArray.id,
-                            user_id: "#{current_user.id}"
-                        },
-                        success: function() {
-                            success(commentsArray)
-                        },
-                        error: error
-                    });
-                }
-            }
-        })
-    });
-    //$('.textarea').atwho({
-    //  at: "@",
-    //  displayTpl: '<li>${name} <small>${email}</small></li>',
-    //  insertTpl: "<input class='tag ping' value='@${name}' data-value='${id}'>",
-    //  limit: 200,
-    //  callbacks: {
-    //    remoteFilter: function (query, callback) {
-    //      if(query.length < 1){ return; }
-    //      $.getJSON("/user/mentions", {r: query}, function (data) {
-    //        callback(data)
-    //      });
-    //    }
-    //  }
-    //});
-    $(document).ready(function () {
-        $('input.tag.ping').qtip({
-          content: {
-            title: function() { return $(this).attr('data-qtip-title') },
-            text: function() { return $(this).attr('data-qtip-text') }
           },
-          position: {
-            my: 'bottom center',
-            at: 'top center',
-            adjust: {
-              mouse: false,
-              scroll: false
-            }
+          pingClicked: function (ping) {
+            window.location = '/user/' + ping
           },
-          style: 'qtip-dark'
-        });
+          postComment: function (commentOBJ, success, error) {
+              $.ajax({
+                  type: 'POST',
+                  url: '/comments',
+                  data: {
+                      body: commentOBJ.content,
+                      commentable_id: "#{@event.id}",
+                      commentable_type: 'Event',
+                      parent_id: commentOBJ.parent_id,
+                      user_id: "#{current_user.id}",
+                      mentions: commentOBJ.pings
+                  },
+                  success: function (retCommentOBJ) {
+                      success(retCommentOBJ)
+                  },
+                  error: error
+              });
+          },
+          putComment: function (commentOBJ, success, error) {
+              $.ajax({
+                  type: 'PATCH',
+                  url: '/comments/' + commentOBJ.id,
+                  data: commentOBJ,
+                  success: function (retCommentOBJ) {
+                      success(retCommentOBJ)
+                  },
+                  error: error
+              });
+          },
+          upvoteComment: function(commentsArray, success, error) {
+              if(commentsArray.user_has_upvoted) {
+                  $.ajax({
+                      type: 'POST',
+                      url: '/votes/like',
+                      data: {
+                          votable_type: 'Comment',
+                          votable_id: commentsArray.id,
+                          user_id: "#{current_user.id}"
+                      },
+                      success: function() {
+                          success(commentsArray)
+                      },
+                      error: error
+                  });
+              } else {
+                  $.ajax({
+                      type: 'DELETE',
+                      url: '/votes/unlike',
+                      data: {
+                          votable_type: 'Comment',
+                          votable_id: commentsArray.id,
+                          user_id: "#{current_user.id}"
+                      },
+                      success: function() {
+                          success(commentsArray)
+                      },
+                      error: error
+                  });
+              }
+          },
+          refresh: function () {
+              $('input.tag.ping').qtip({
+                  content: {
+                      title: function () { return $(this).attr('data-qtip-title') },
+                      text: function () { return $(this).attr('data-qtip-text') }
+                  },
+                  position: {
+                      my: 'bottom center',
+                      at: 'top center',
+                      adjust: {
+                          mouse: false,
+                          scroll: false
+                      }
+                  },
+                  style: 'qtip-dark'
+              });
+          }
+      })
+  });
+
+  function ats () {
+    $('.textarea').atwho({
+      at: "@",
+      displayTpl: '<li class="textcomplete-item"><a>' +
+      '<img class="profile-picture round" src="${profile_picture_url}">' +
+      '<div class="details">' +
+      '<div class="name">${fullname}</div>' +
+      '<div class="email">${email}</div>' +
+      '</div>' +
+      '</a></li>',
+      insertTpl: "<input class='tag ping' type='button' value='@${fullname}' data-value='${id}'>",
+      limit: 200,
+      searchKey: 'email',
+      callbacks: {
+        remoteFilter: function (query, callback) {
+          if (query.length < 1) { return; }
+          $.getJSON("/user/mentions", {r: query}, function (data) {
+            callback(data)
+            console.log(data);
+          });
+        }
+      }
     });
+  }
+
+  ats();
+

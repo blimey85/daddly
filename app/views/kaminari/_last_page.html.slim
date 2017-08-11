@@ -1,2 +1,2 @@
 li.page-item
-  = link_to_unless current_page.last?, raw(t('views.pagination.last')), url, remote: remote, class: 'page-link', title: 'Last Page', data: { toggle: 'tooltip', placement: 'bottom' }
+  = link_to_unless current_page.last?, '<span class="pagination-icons">&raquo;</span>'.html_safe, url, remote: remote, class: 'page-link', title: 'Last Page', data: { toggle: 'tooltip', placement: 'bottom' }

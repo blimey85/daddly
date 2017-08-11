@@ -6,11 +6,13 @@ end
 ruby '2.4.1'
 gem 'rails', '~> 5.1.2'
 
-gem 'mysql2', '~> 0.3.18'
+gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
+gem 'redis', '~> 3.0'
 
 gem 'active_enum', github: 'adzap/active_enum'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'activerecord-import'
 gem 'bh'
 gem 'bootsnap', require: false
 
@@ -21,6 +23,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-oauth2', '1.3.1'
+gem 'omniauth-twitter'
 
 # Frontend Stuff
 gem 'bootstrap-social-rails'
@@ -34,7 +37,7 @@ gem 'rails-jquery-autocomplete' # used for autocomplete
 gem 'simple_form'
 gem 'slim-rails'
 gem 'sweet-alert2-rails'
-gem 'wysiwyg-rails' # Froala editor
+# gem 'wysiwyg-rails' # Froala editor
 
 # Uploads
 gem 'carrierwave'

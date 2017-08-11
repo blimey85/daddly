@@ -1,26 +1,8 @@
-javascript:
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-css:
-  .pagination {
-    margin-bottom: 0;
-  }
-  .page-link {
-    background-color: transparent;
-  }
-  .list-group-item-info {
-    border: 0;
-  }
+.panel
+  #events.tab-pane
+    = render 'events'
 
-.container
-  .row.justify-content-center
-    .col-8
-      .list-group
-        #events
-          = render 'events'
-        #paginator.list-group-item.list-group-item-info
-          .col
-            = paginate @events, remote: true
-          .col.text-right
-            = page_entries_info @events
+javascript:
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })

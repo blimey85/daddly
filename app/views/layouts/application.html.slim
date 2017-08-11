@@ -2,17 +2,87 @@ doctype html
 html
   head
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" /
+    link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /
+    link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /
+    link href="/manifest.json" rel="manifest" /
+    link color="#009df6" href="/safari-pinned-tab.svg" rel="mask-icon" /
+    meta content="DADDLY" name="apple-mobile-web-app-title" /
+    meta content="DADDLY" name="application-name" /
+    meta content="#ffffff" name="theme-color" /
     title
       = content_for?(:title) ? yield(:title) : 'Dp'
-    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Dp'}"
+    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Daddly.io'}"
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
-
-  == render 'layouts/header'
-  /== javascript_include_tag 'mdb', 'data-turbolinks-track' => 'reload'
-  main
+  body
+    == render 'layouts/header'
+    <main class="pb-5">
+      <div class="container flex-center">
+        <div class="row pt-5 mt-3">
     == render 'layouts/messages'
     == yield
-  == javascript_include_tag 'mdb'
-  == render 'layouts/footer'
+    == javascript_include_tag 'mdb.min'
+    == render 'layouts/footer'
+
+css:
+  .intro-2 {
+      background: url("http://mdbootstrap.com/img/Photos/Others/forest1.jpg")no-repeat center center;
+      background-size: cover;
+  }
+
+  .hm-gradient .full-bg-img {
+      background: -webkit-linear-gradient(98deg, rgba(22, 91, 231, 0.5), rgba(255, 32, 32, 0.5) 100%);
+      background: -webkit-gradient(linear, 98deg, from(rgba(22, 91, 231, 0.5)), to(rgba(255, 32, 32, 0.5)));
+      background: linear-gradient(to 98deg, rgba(22, 91, 231, 0.5), rgba(255, 32, 32, 0.5) 100%);
+  }
+
+  .card {
+      background-color: rgba(255, 255, 255, 0.85);
+  }
+
+  .md-form .prefix {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+  }
+
+  h6 {
+      line-height: 1.7;
+  }
+
+  @media (max-width: 450px) and (max-height: 750px) {
+      .full-height,
+      .full-height body,
+      .full-height header,
+      .full-height header .view {
+          height: 1400px;
+      }
+  }
+
+  @media (min-width: 451px) and (max-width: 767px) and (max-height: 1023px) {
+      .full-height,
+      .full-height body,
+      .full-height header,
+      .full-height header .view {
+          height: 1200px;
+      }
+  }
+
+  @media (min-width: 800px) and (max-width: 1025px) {
+      .full-height,
+      .full-height body,
+      .full-height header,
+      .full-height header .view {
+          height: 900px;
+      }
+  }
+
+  @media (min-width: 1026px) and (max-height: 800px) {
+      .full-height,
+      .full-height body,
+      .full-height header,
+      .full-height header .view {
+          height: 800px;
+      }
+  }
