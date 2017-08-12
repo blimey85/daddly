@@ -24,28 +24,16 @@
 @import "jquery-comments";
 @import "qtip2/dist/jquery.qtip";
 @import "jquery.atwho";
+@import "forms";
+@import "uploads";
 
 body {
-  color: #282d3f;
+  color: #3C4858;
 }
 
 .navbar {
-  background-color: #282d3f;
-  color: #fff;
   min-height: 50px;
   padding: 0 1rem;
-}
-
-.top-nav-collapse {
-  background-color: #282d3f;
-}
-
-footer.page-footer {
-  background-color: rgba(0, 157, 246, 1.000);
-}
-
-footer.page-footer .footer-copyright {
-  background-color: #1A2139;
 }
 
 #header_icon {
@@ -217,4 +205,64 @@ hr {
   margin-right: 0;
   padding-left: 0;
   padding-right: 0;
+}
+
+
+//
+
+.mdb-skin .top-nav-collapse, .mdb-skin-custom .navbar {
+  background-color: #243a51
+}
+.mdb-skin-custom .navbar {
+  color: #fff
+}
+
+.mdb-skin-custom .navbar .navbar-nav .nav-item .dropdown-menu a:active,
+.mdb-skin-custom .navbar .navbar-nav .nav-item .dropdown-menu a:focus,
+.mdb-skin-custom .navbar .navbar-nav .nav-item .dropdown-menu a:hover {
+  background-color: #1dade2
+}
+
+.mdb-skin-custom .page-footer {
+  background-color: #243a51
+}
+
+.mdb-skin-custom .btn-ptc {
+  background: #08aae6
+}
+
+.mdb-skin-custom .btn-ptc:focus, .mdb-skin-custom .btn-ptc:hover {
+  background-color: #4abde8 !important
+}
+
+.mdb-skin-custom .btn-ptc.active {
+  background-color: #14799e !important
+}
+
+.mdb-skin-custom .btn-dtc {
+  background: #086fb9
+}
+
+.mdb-skin-custom .btn-dtc:focus, .mdb-skin-custom .btn-dtc:hover {
+  background-color: #1e71ae !important
+}
+
+.mdb-skin-custom .btn-dtc.active {
+  background-color: #0b2a41 !important
+}
+
+.mdb-skin-custom .btn-stc {
+  background: #083761
+}
+
+.mdb-skin-custom .btn-stc:focus, .mdb-skin-custom .btn-stc:hover {
+  background-color: #114a7d !important
+}
+
+.mdb-skin-custom .btn-stc.active {
+  background-color: #02080d !important
+}
+
+.mdb-skin-custom .form-header-custom {
+  background: #1b95c1 !important
 }

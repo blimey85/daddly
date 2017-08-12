@@ -1,11 +1,11 @@
 .nested-fields
   .container
     .row
-      .col
-        = f.label :gender
+      .col-md-6
+        = f.label :gender, required: false
         = f.input_field :gender, prompt: "Select child's gender", class: 'selectize-default'
-      .col
-        = f.label :age
+      .col-md-6
+        = f.label :age, required: false
         = f.input_field :age, collection: 0..30, prompt: "Select child's age", class: 'selectize-default'
 
   .col-sm-12.text-right

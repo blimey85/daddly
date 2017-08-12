@@ -1,0 +1,103 @@
+.waves-input-wrapper {
+  padding-bottom: 5px;
+}
+
+.icons-sm {
+  padding: 0;
+  margin: 0 10px;
+}
+
+.hr-div-left {
+  width: 18%;
+  margin-right: 3%;
+  margin-top: 12px;
+}
+
+.hr-div-right {
+  width: 18%;
+  margin-left: 3%;
+  margin-top: 12px;
+}
+
+.inline-ul .btn {
+  padding: 0.5rem 0.75rem;
+  margin: 6px;
+  text-transform: none;
+  width: 33%;
+}
+
+.full-width {
+  width: 95%;
+}
+
+input[type=text], input[type=password] {
+  height: 1.2rem;
+}
+
+button a, button a:hover {
+  color: white;
+}
+
+p.form-text.text-muted {
+  text-align: right;
+  font-weight: 300;
+  color: #999 !important;
+  margin-top: -1rem;
+}
+
+.column-left {float: left;width: 33%;}
+.column-right {float: right;width: 33%;}
+.column-center {display: inline-block; width: 33%;}
+[type="checkbox"].filled-in:checked + label:before {
+  border-right: 2px solid #4285F4;
+  border-bottom: 2px solid #4285F4;
+}
+[type="checkbox"].filled-in:checked + label:after {
+  border: 2px solid #4285F4;
+  background-color: #fff;
+}
+
+textarea.md-textarea {
+  padding: 1rem 0;
+  min-height: 5rem;
+  resize: vertical;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search-md],
+input[type=search],
+textarea.md-textarea {
+  height: inherit;
+}
+
+[type="checkbox"] + label {
+  padding-left: 25px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.btn-file {
+  padding: 0;
+  margin: 0;
+  border-radius: 30px;
+}
+.fileinput-new, .fileinput-exists {
+  margin: 0;
+}
+
+div.has-danger span.form-text.text-muted {
+  color: #db0000 !important;
+  font-size: 12px;
+}
+div.md-form.has-danger label {
+  color: #db0000;
+}
