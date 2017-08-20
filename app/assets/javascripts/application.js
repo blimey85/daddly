@@ -17,7 +17,7 @@
 //= require sweetalert2/dist/sweetalert2
 //= require sweet-alert2-rails
 //= require tether/dist/js/tether
-//= require popper.min
+// require popper.min
 //= require bootstrap.min
 //= require cloudinary/jquery.cloudinary
 //= require jasny-bootstrap/dist/js/jasny-bootstrap
