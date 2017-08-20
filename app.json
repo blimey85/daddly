@@ -3,6 +3,7 @@
   "description": "Daddly.io Web App",
   "scripts": {
     "dokku": {
+      "predeploy": "gem install bundler",
       "postdeploy": "bundle exec rake db:migrate"
     }
   }
