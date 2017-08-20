@@ -12,7 +12,7 @@
  *
  */
 @import "bootstrap.min";
-@import "mdb.min";
+@import "mdb";
 @import "jasny-bootstrap.min";
 @import "bootstrap-social";
 @import "font-path-overwrite";
@@ -26,6 +26,8 @@
 @import "jquery.atwho";
 @import "forms";
 @import "uploads";
+@import "simple_discussion";
+@import "_simple_discussion";
 
 body {
   color: #3C4858;

@@ -30,6 +30,7 @@
 #  avatar                 :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  moderator              :boolean
 #
 # Indexes
 #
@@ -38,6 +39,7 @@
 #
 
 class User < ApplicationRecord
+  include SimpleDiscussion::ForumUser
   extend StatesHelper
   attr_accessor :current_password
   attr_accessor :oauth_callback
@@ -116,6 +118,10 @@ class User < ApplicationRecord
   end
 
   def fullname
+    "#{first_name} #{last_name}"
+  end
+
+  def name
     "#{first_name} #{last_name}"
   end
 
