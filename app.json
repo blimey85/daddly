@@ -1,0 +1,9 @@
+{
+  "name": "Daddly.io",
+  "description": "Daddly.io Web App",
+  "scripts": {
+    "dokku": {
+      "postdeploy": "bundle exec rake db:migrate"
+    }
+  }
+}
