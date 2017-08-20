@@ -68,11 +68,6 @@ group :development do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'capistrano', '~> 3.1'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails', '~> 1.3'
-  gem 'capistrano-rails-console'
-  gem 'capistrano-rbenv', '~> 2.0'
   gem 'guard-bundler', require: false
   gem 'guard-rspec', '~> 4.6.4', require: false
   gem 'guard-rubocop'
