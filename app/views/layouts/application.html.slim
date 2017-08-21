@@ -13,7 +13,12 @@ html
     title
       = content_for?(:title) ? yield(:title) : 'Dp'
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Daddly.io'}"
+    == javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
+    == javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'
+    == javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+
+    == stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
     == stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
   body class="mdb-skin-custom"

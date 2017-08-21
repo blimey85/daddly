@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  */
-@import "bootstrap.min";
+//@import "bootstrap.min";
 @import "mdb";
 @import "jasny-bootstrap.min";
 @import "bootstrap-social";
@@ -65,8 +65,8 @@ svg.brand {
   line-height: 48px;
 }
 .avatar {
-  @extend .img-thumbnail;
-  @extend .mx-auto;
+  //@extend .img-thumbnail;
+  //@extend .mx-auto;
   max-width: 100px;
   max-height: 100px;
   margin-bottom: 10px;

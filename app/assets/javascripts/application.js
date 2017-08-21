@@ -10,15 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require turbolinks
-//= require jquery3
-//= require jquery_ujs
+// require rails-ujs
+// require turbolinks
+// require jquery3
+// require jquery_ujs
 //= require sweetalert2/dist/sweetalert2
 //= require sweet-alert2-rails
-//= require tether/dist/js/tether
-// require popper.min
-//= require bootstrap.min
 //= require cloudinary/jquery.cloudinary
 //= require jasny-bootstrap/dist/js/jasny-bootstrap
 //= require moment/min/moment.min
