@@ -37,6 +37,7 @@ gem 'rails-jquery-autocomplete' # used for autocomplete
 gem 'simple_form'
 gem 'slim-rails'
 gem 'sweet-alert2-rails'
+gem 'font-awesome-sass'
 # gem 'wysiwyg-rails' # Froala editor
 
 # Uploads
