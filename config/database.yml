@@ -42,4 +42,10 @@ test:
   database: dp_test
   username: travis
 
+production:
+  adapter: postgresql
+  url: <%= ENV['POSTGRESQL_URL'] %> # Environment variable for Dokku
+  encoding: unicode
+  pool: 5
+
 min_messages: notice

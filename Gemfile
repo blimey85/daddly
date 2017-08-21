@@ -46,7 +46,7 @@ gem 'simple_form_jasny_fileupload'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'counter_culture', '~> 1.0'
-gem 'decanter'
+# gem 'decanter'
 gem 'geocoder'
 gem 'gibbon'
 gem 'goldiloader'
@@ -68,11 +68,6 @@ group :development do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'capistrano', '~> 3.1'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails', '~> 1.3'
-  gem 'capistrano-rails-console'
-  gem 'capistrano-rbenv', '~> 2.0'
   gem 'guard-bundler', require: false
   gem 'guard-rspec', '~> 4.6.4', require: false
   gem 'guard-rubocop'
@@ -106,3 +101,4 @@ group :test do
 end
 
 gem 'mailboxer', github: 'mailboxer/mailboxer'
+gem 'simple_discussion', github: 'excid3/simple_discussion'

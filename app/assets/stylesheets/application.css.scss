@@ -11,8 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  */
-@import "bootstrap.min";
-@import "mdb.min";
+//@import "bootstrap.min";
+@import "mdb";
 @import "jasny-bootstrap.min";
 @import "bootstrap-social";
 @import "font-path-overwrite";
@@ -26,6 +26,8 @@
 @import "jquery.atwho";
 @import "forms";
 @import "uploads";
+@import "simple_discussion";
+@import "_simple_discussion";
 
 body {
   color: #3C4858;
@@ -63,8 +65,8 @@ svg.brand {
   line-height: 48px;
 }
 .avatar {
-  @extend .img-thumbnail;
-  @extend .mx-auto;
+  //@extend .img-thumbnail;
+  //@extend .mx-auto;
   max-width: 100px;
   max-height: 100px;
   margin-bottom: 10px;

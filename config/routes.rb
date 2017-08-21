@@ -84,24 +84,12 @@
 #                                       PUT      /votes/:id(.:format)                         votes#update
 #                                       DELETE   /votes/:id(.:format)                         votes#destroy
 #                                  page GET      /pages/*id                                   high_voltage/pages#show
-# 
+#
 
 Rails.application.routes.draw do
   ### Comments ###
   get 'comments/show', controller: :comments
   resources :comments, except: :show
-
-  ### Conversations / Messages ###
-  # resources :conversations do
-  #   resources :messages
-  #
-  #   collection do
-  #     get :inbox
-  #     get :all, action: :index
-  #     get :sent
-  #     get :trash
-  #   end
-  # end
 
   # mailbox folder routes
   get 'mailbox/inbox', controller: :mailbox
@@ -138,4 +126,7 @@ Rails.application.routes.draw do
   post '/votes/like', to: 'votes#create'
   delete '/votes/unlike', to: 'votes#destroy'
   resources :votes
+
+  ### Community ###
+  mount SimpleDiscussion::Engine => '/community'
 end

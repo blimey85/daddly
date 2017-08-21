@@ -113,7 +113,7 @@ SimpleForm.setup do |config|
   # config.generate_additional_classes_for = [:wrapper, :label, :input]
 
   # Whether attributes are required by default (or not). Default is true.
-  # config.required_by_default = true
+  config.required_by_default = false
 
   # Tell browsers whether to use the native HTML5 validations (novalidate form option).
   # These validations are enabled in SimpleForm's internal config but disabled by default
@@ -154,7 +154,7 @@ SimpleForm.setup do |config|
   # config.cache_discovery = !Rails.env.development?
 
   # Default class for inputs
-  # config.input_class = nil
+  config.input_class = 'form-control'
 
   # Define the default class of the input wrapper of the boolean input.
   config.boolean_label_class = 'checkbox'

@@ -2,25 +2,30 @@ doctype html
 html
   head
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
-    link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" /
-    link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /
-    link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /
-    link href="/manifest.json" rel="manifest" /
-    link color="#009df6" href="/safari-pinned-tab.svg" rel="mask-icon" /
-    meta content="DADDLY" name="apple-mobile-web-app-title" /
-    meta content="DADDLY" name="application-name" /
-    meta content="#ffffff" name="theme-color" /
+    link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"
+    link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"
+    link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"
+    link href="/manifest.json" rel="manifest"
+    link color="#009df6" href="/safari-pinned-tab.svg" rel="mask-icon"
+    meta content="DADDLY" name="apple-mobile-web-app-title"
+    meta content="DADDLY" name="application-name"
+    meta content="#ffffff" name="theme-color"
     title
       = content_for?(:title) ? yield(:title) : 'Dp'
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Daddly.io'}"
+    == javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
+    == javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'
+    == javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+
+    == stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
     == stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
   body class="mdb-skin-custom"
     == render 'layouts/header'
     <main class="pb-5">
-      <div class="container flex-center">
-        <div class="row pt-5 mt-3">
+      <div class="container pt-5 mt-3">
+        /<div class="row pt-5 mt-3">
     == render 'layouts/messages'
     == yield
     == javascript_include_tag 'mdb.min'

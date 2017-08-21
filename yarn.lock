@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-bootstrap@4.0.0-alpha.6:
-  version "4.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-alpha.6.tgz#4f54dd33ac0deac3b28407bc2df7ec608869c9c8"
-  dependencies:
-    jquery ">=1.9.1"
-    tether "^1.4.0"
-
 ev-emitter@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ev-emitter/-/ev-emitter-1.1.1.tgz#8f18b0ce5c76a5d18017f71c0a795c65b9138f2a"
@@ -38,7 +31,7 @@ jquery-textcomplete@^1.8.1:
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/jquery-textcomplete/-/jquery-textcomplete-1.8.2.tgz#225c5f6aac7c09c0e7b210cb004f8017b0ab0367"
 
-"jquery@2 - 3", jquery@>=1.2.3, jquery@>=1.6.0, jquery@>=1.9.1, jquery@^3.2.1:
+"jquery@2 - 3", jquery@>=1.2.3, jquery@>=1.6.0, jquery@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 

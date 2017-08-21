@@ -1,0 +1,35 @@
+.forum-thread p {
+  font-size: 13px !important;
+  margin-top: 6px !important;
+  margin-bottom: 0 !important;
+}
+
+.forum-thread h4 {
+  font-size: 16px;
+  a {
+    color: #333;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+
+}
+
+
+hr {
+  border: 0 !important;
+  border-top: 1px solid #eee !important;
+  margin: 24px -20px !important;
+}
+
+.forum-thread-filters a {
+  color: #555555 !important;
+  display: block !important;
+}
+
+.forum-thread-filters a:hover {
+  color: #222222 !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+}
