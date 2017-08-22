@@ -104,4 +104,7 @@ end
 gem 'mailboxer', github: 'mailboxer/mailboxer'
 gem 'simple_discussion', github: 'excid3/simple_discussion'
 
-gem 'skylight'
+group :production do
+  gem 'skylight'
+  gem 'sentry-raven'
+end
