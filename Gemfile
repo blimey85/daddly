@@ -103,3 +103,5 @@ end
 
 gem 'mailboxer', github: 'mailboxer/mailboxer'
 gem 'simple_discussion', github: 'excid3/simple_discussion'
+
+gem 'skylight'
