@@ -105,6 +105,7 @@ gem 'mailboxer', github: 'mailboxer/mailboxer'
 gem 'simple_discussion', github: 'excid3/simple_discussion'
 
 group :production do
-  gem 'skylight'
+  gem 'sendgrid-actionmailer'
   gem 'sentry-raven'
+  gem 'skylight'
 end

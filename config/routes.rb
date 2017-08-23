@@ -111,10 +111,18 @@ Rails.application.routes.draw do
   resources :events
 
   ### Root: Visitors ###
-  root to: 'visitors#index'
+  # root to: 'visitors#index'
 
   ### Users ###
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
+  devise_scope :user do
+    authenticated :user do
+      root :to => 'visitors#index'
+    end
+    unauthenticated :user do
+      root :to => 'devise/registrations#new', as: :unauthenticated_root
+    end
+  end
   get 'user/mentions', controller: :user
   resources :user
 
