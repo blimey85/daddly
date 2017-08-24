@@ -1,74 +1,32 @@
-
-.col-md-12
-  .card
-    = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f|
-      .card-body
-        h2.feature-title.text-center.mb-4.mt-2.font-bold
-          strong Log In
-        hr
-        .mt-3
-          = f.error_notification
-          .md-form
-            i.fa.fa-envelope.prefix
-            = f.text_field :email, class: 'form-control'
-            = f.label :email
-          .md-form
-            i.fa.fa-lock.prefix
-            = f.text_field :password, class: 'form-control', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
-            = f.label :password
-          .form-group.text-right
-            = f.check_box :remember_me, as: :boolean if devise_mapping.rememberable?
-            = f.label :remember_me
-          .text-center
-            = f.button :submit, 'Log In', class: 'btn-rounded mt-2 mb-3'
-          .row.d-flex.justify-content-center
-            .hr-div-left
-              hr.hr-dark
-            .center or log in with social media
-            .hr-div-right
-              hr.hr-dark
-          .row.d-flex.justify-content-center
-            .inline-ul.text-center.d-flex.justify-content-center.mt-2.full-width
-              = link_to raw('<button class="btn btn-fb" type="button"><i class="fa fa-facebook left"></i> Facebook'), omniauth_authorize_path(resource_name, 'facebook')
-              = link_to raw('<button class="btn btn-tw" type="button"><i class="fa fa-twitter left"></i> Twitter'), omniauth_authorize_path(resource_name, 'twitter')
-              = link_to raw('<button class="btn btn-gplus" type="button"><i class="fa fa-google-plus left"></i> Google'), omniauth_authorize_path(resource_name, 'google_oauth2')
-          .row.d-flex.justify-content-center.mt-3.mb-2
-            .whatever Don't have an account? &nbsp;
-            = link_to 'Sign Up', new_registration_path(resource_name)
-
-scss:
-  .waves-input-wrapper {
-    padding-bottom: 5px;
-  }
-
-  .icons-sm {
-    padding: 0;
-    margin: 0 10px;
-  }
-
-  .hr-div-left {
-    width: 18%;
-    margin-right: 3%;
-    margin-top: 12px;
-  }
-  .hr-div-right {
-    width: 18%;
-    margin-left: 3%;
-    margin-top: 12px;
-  }
-  .inline-ul .btn {
-    padding: 0.5rem 0.75rem;
-    margin: 6px;
-    text-transform: none;
-    width: 33%;
-  }
-  .full-width {
-    width: 95%;
-  }
-  input[type=text], input[type=password] {
-    height: 1.2rem;
-  }
-
-  button a, button a:hover {
-    color: white;
-  }
+/.col-md-12
+.card
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f|
+    .card-body
+      h2.feature-title.text-center.mb-4.mt-2.font-bold
+        strong Log In
+      hr
+      .mt-3
+        = f.error_notification
+        .md-form
+          i.fa.fa-envelope.prefix
+          = f.text_field :email, class: 'form-control'
+          = f.label :email
+        .md-form
+          i.fa.fa-lock.prefix
+          = f.text_field :password, class: 'form-control', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+          = f.label :password
+        .form-group.text-right
+          = f.check_box :remember_me, as: :boolean if devise_mapping.rememberable?
+          = f.label :remember_me
+        .text-center
+          = f.button :submit, 'Log In', class: 'btn-rounded mt-2 mb-3'
+        .row.d-flex.justify-content-center
+          | or log in with social media
+        .row.d-flex.justify-content-center
+          .inline-ul.text-center.d-flex.justify-content-center.mt-2.full-width
+            = link_to raw('<button class="btn btn-fb" type="button"><i class="fa fa-facebook left"></i> Facebook'), omniauth_authorize_path(resource_name, 'facebook')
+            = link_to raw('<button class="btn btn-tw" type="button"><i class="fa fa-twitter left"></i> Twitter'), omniauth_authorize_path(resource_name, 'twitter')
+            = link_to raw('<button class="btn btn-gplus" type="button"><i class="fa fa-google-plus left"></i> Google'), omniauth_authorize_path(resource_name, 'google_oauth2')
+        .row.d-flex.justify-content-center.mt-3.mb-2
+          .whatever Don't have an account? &nbsp;
+          = link_to 'Sign Up', new_registration_path(resource_name)

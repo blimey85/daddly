@@ -24,8 +24,7 @@ html.full-height
     == render 'layouts/devise_header'
     <section class="view intro-2">
       <div class="full-bg-img flex-center">
-        <div class="container">
-          <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
+        <div class="container col-md-6 col-lg-5 col-xl-4">
     == render 'layouts/messages'
     == yield
     == javascript_include_tag 'mdb.min'
@@ -50,38 +49,9 @@ css:
     line-height: 1.7;
   }
 
-  @media (max-width: 450px) and (max-height: 750px) {
-    .full-height,
-    .full-height body,
-    .full-height header,
-    .full-height header .view {
-      height: 1400px;
-    }
+  .full-height, .full-height body, .full-height header, .full-height header .view {
+    min-height: 100vh;
   }
-
-  @media (min-width: 451px) and (max-width: 767px) and (max-height: 1023px) {
-    .full-height,
-    .full-height body,
-    .full-height header,
-    .full-height header .view {
-      height: 1200px;
-    }
-  }
-
-  @media (min-width: 800px) and (max-width: 1025px) {
-    .full-height,
-    .full-height body,
-    .full-height header,
-    .full-height header .view {
-      height: 900px;
-    }
-  }
-
-  @media (min-width: 1026px) and (max-height: 800px) {
-    .full-height,
-    .full-height body,
-    .full-height header,
-    .full-height header .view {
-      height: 800px;
-    }
+  form {
+    margin: 0;
   }
