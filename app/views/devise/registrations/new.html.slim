@@ -13,11 +13,11 @@
           = f.label :email
         .md-form
           i.fa.fa-lock.prefix
-          = f.text_field :password, class: 'form-control'
+          = f.password_field :password, class: 'form-control'
           = f.label :password
         .md-form
           i.fa.fa-lock.prefix
-          = f.text_field :password_confirmation, class: 'form-control'
+          = f.password_field :password_confirmation, class: 'form-control'
           = f.label :password_confirmation
         .text-center
           = f.button :submit, 'Create Account', class: 'btn-rounded mt-2 mb-3'

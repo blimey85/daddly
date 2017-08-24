@@ -13,7 +13,7 @@
           = f.label :email
         .md-form
           i.fa.fa-lock.prefix
-          = f.text_field :password, class: 'form-control', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+          = f.password_field :password, class: 'form-control', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
           = f.label :password
         .form-group.text-right
           = f.check_box :remember_me, as: :boolean if devise_mapping.rememberable?
