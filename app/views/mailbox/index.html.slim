@@ -1,66 +1,70 @@
-.row
-  #mailbox_folders.col-sm-3
-    .panel
-      .panel-body.forum-thread-filters
-        a class="btn btn-outline-info btn-block" href="/forum/new" Send a Message
-        hr
-        h5
-          strong Mailboxes
-        ul.nav.nav-tabs.md-pills.pills-ins.flex-column[role="tablist"]
-          li.nav-item
-            #inbox-tab.a.nav-link.active[data-toggle="tab" role="tab" href="#inbox" data-url="/mailbox/inbox"]
-              i.fa.fa-inbox
-              |  Inbox&nbsp;
-              span.badge.badge-pill.info-color-dark 14
-          li.nav-item
-            #sent-tab.a.nav-link[data-toggle="tab" role="tab" href="#sent" data-url="/mailbox/sent"]
-              i.fa.fa-paper-plane-o
-              |  Sent
-          li.nav-item
-            #trash-tab.a.nav-link[data-toggle="tab" role="tab" href="#trash" data-url="/mailbox/trash"]
-              i.fa.fa-trash-o
-              |  Trash
-  .col-sm-9
-    .panel
-      .spinner
-        i.fa.fa-spinner.fa-pulse
-      .tab-content.vertical
-        #inbox.tab-pane.fade.in.show.active[role="tabpanel"]
-        #sent.tab-pane.fade[role="tabpanel"]
-        #trash.tab-pane.fade[role="tabpanel"]
-
-javascript:
-  // load initial tab
-  $.ajax({
-    url: '/mailbox/inbox',
-    type: 'GET',
-    dataType: 'script'
-  })
-
-  // load tabs on demand if not already loaded
-  $('[data-toggle="tab"]').on('click', function () {
-    var $this = $(this),
-    source = $this.attr('data-url'),
-    pane = $this.attr('href');
-
-    if ($(pane).text().length == 0) {
-      $.ajax({
-        url: source,
-        type: 'GET',
-        dataType: 'script'
-      })
-    }
-  });
-
-  // display ajax spinner as needed
-  $(document)
-    .ajaxStart(function () {
-      $(".tab-content").hide();
-      $(".spinner").show();
-  })
-    .ajaxStop(function () {
-      $('.timeago').timeago();
-      $(".spinner").hide();
-      $(".tab-content").show();
-  });
-
+= render layout: 'mailbox_layout' do
+  #mailbox
+    /= render 'conversations/form'
+    = render partial: 'conversations/conversation', collection: @messages
+/.row
+/  #mailbox_folders.col-sm-3
+/    .panel
+/      .panel-body.forum-thread-filters
+/        = link_to 'Send a Message', new_conversation_path, class: 'btn btn-outline-info btn-block'
+/        hr
+/        h5
+/          strong Mailboxes
+/        ul.nav.nav-tabs.md-pills.pills-ins.flex-column[role="tablist"]
+/          li.nav-item
+/            #inbox-tab.a.nav-link.active[data-toggle="tab" role="tab" href="#inbox" data-url="/mailbox/inbox"]
+/              i.fa.fa-inbox
+/              |  Inbox&nbsp;
+/              span.badge.badge-pill.info-color-dark 14
+/          li.nav-item
+/            #sent-tab.a.nav-link[data-toggle="tab" role="tab" href="#sent" data-url="/mailbox/sent"]
+/              i.fa.fa-paper-plane-o
+/              |  Sent
+/          li.nav-item
+/            #trash-tab.a.nav-link[data-toggle="tab" role="tab" href="#trash" data-url="/mailbox/trash"]
+/              i.fa.fa-trash-o
+/              |  Trash
+/  .col-sm-9
+/    .panel
+/      .spinner
+/        i.fa.fa-spinner.fa-pulse
+/      .tab-content.vertical
+/        #inbox.tab-pane.fade.in.show.active[role="tabpanel"]
+/        #sent.tab-pane.fade[role="tabpanel"]
+/        #trash.tab-pane.fade[role="tabpanel"]
+/
+//javascript:
+//  // load initial tab
+//  $.ajax({
+//    url: '/mailbox/inbox',
+//    type: 'GET',
+//    dataType: 'script'
+//  });
+//
+//  // load tabs on demand if not already loaded
+//  $('[data-toggle="tab"]').on('click', function () {
+//    var $this = $(this),
+//    source = $this.attr('data-url'),
+//    pane = $this.attr('href');
+//
+//    if ($(pane).text().length == 0) {
+//      $.ajax({
+//        url: source,
+//        type: 'GET',
+//        dataType: 'script'
+//      })
+//    }
+//  });
+//
+//  // display ajax spinner as needed
+//  $(document)
+//    .ajaxStart(function () {
+//      $(".tab-content").hide();
+//      $(".spinner").show();
+//  })
+//    .ajaxStop(function () {
+//      $('.timeago').timeago();
+//      $(".spinner").hide();
+//      $(".tab-content").show();
+//  });
+//

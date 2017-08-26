@@ -1,49 +1,49 @@
-.card.mt-5
-  .card-body
-    p
-      strong> Name:
-      = @event.name
-    p
-      strong> Description:
-      = @event.description
-    p
-      strong> Starts at:
-      = @event.starts_at
-    p
-      strong> Ends at:
-      = @event.ends_at
-    p
-      strong> Rsvp count:
-      = @event.rsvp_count
-    p
-      strong> Rsvp min limit:
-      = @event.rsvp_min_limit
-    p
-      strong> Rsvp max limit:
-      = @event.rsvp_max_limit
-    p
-      strong> Waitlist:
-      = @event.waitlist
-    p
-      strong> Waitlist count:
-      = @event.waitlist_count
-    p
-      strong> Status:
-      = @event.status
-    p
-      strong> Type:
-      = @event.type
-    p
-      strong> Visibility:
-      = @event.visibility
-    p
-      strong> Created by current user:
-      = @event.created_by_current_user
-    p
-      strong> Upvoted by current user:
-      = @event.user_has_upvoted
+= render layout: 'event_layout' do
 
-    .event-comments id="comments-container-#{@event.id}"
+  p
+    strong> Name:
+    = @event.name
+  p
+    strong> Description:
+    = @event.description
+  p
+    strong> Starts at:
+    = @event.starts_at
+  p
+    strong> Ends at:
+    = @event.ends_at
+  p
+    strong> Rsvp count:
+    = @event.rsvp_count
+  p
+    strong> Rsvp min limit:
+    = @event.rsvp_min_limit
+  p
+    strong> Rsvp max limit:
+    = @event.rsvp_max_limit
+  p
+    strong> Waitlist:
+    = @event.waitlist
+  p
+    strong> Waitlist count:
+    = @event.waitlist_count
+  p
+    strong> Status:
+    = @event.status
+  p
+    strong> Type:
+    = @event.type
+  p
+    strong> Visibility:
+    = @event.visibility
+  p
+    strong> Created by current user:
+    = @event.created_by_current_user
+  p
+    strong> Upvoted by current user:
+    = @event.user_has_upvoted
+
+  .event-comments id="comments-container-#{@event.id}"
 
 scss:
   span.delete {

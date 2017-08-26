@@ -119,8 +119,8 @@ ActiveRecord::Schema.define(version: 20170814035003) do
 
   create_table "interests", force: :cascade do |t|
     t.string "name"
-    t.bigint "sub_category_id"
-    t.index ["sub_category_id"], name: "index_interests_on_sub_category_id"
+    t.bigint "subcategory_id"
+    t.index ["subcategory_id"], name: "index_interests_on_subcategory_id"
   end
 
   create_table "kids", force: :cascade do |t|
@@ -186,8 +186,8 @@ ActiveRecord::Schema.define(version: 20170814035003) do
 
   create_table "pings", force: :cascade do |t|
     t.integer "pingable_id"
-    t.string "pingable_type"
-    t.bigint "pinger_id"
+    t.integer "pingable_type"
+    t.integer "pinger_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -201,6 +201,15 @@ ActiveRecord::Schema.define(version: 20170814035003) do
     t.string "name"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_sub_categories_on_category_id"
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.integer "test"
+    t.bigint "test2"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "user_interests", force: :cascade do |t|
@@ -236,7 +245,7 @@ ActiveRecord::Schema.define(version: 20170814035003) do
     t.integer "zipcode"
     t.float "latitude"
     t.float "longitude"
-    t.string "avatar"
+    t.string "avater"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "moderator"

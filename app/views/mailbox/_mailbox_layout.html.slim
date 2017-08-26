@@ -1,0 +1,25 @@
+.row.col-md-12
+  h1 Mailbox
+.row.simple_discussion
+  .col-md-3.mb-3
+    .card.card-body
+      = link_to 'New Message', new_conversation_path, class: "btn btn-outline-primary btn-block"
+      hr
+      .forum-thread-filters
+        h5
+          strong Folders
+        div
+          = link_to mailbox_inbox_path, remote: true do
+            = icon "inbox"
+            |  Inbox
+        div
+          = link_to mailbox_sent_path, remote: true do
+            = icon "paper-plane-o"
+            |  Sent Mail
+        div
+          = link_to mailbox_trash_path, remote: true do
+            = icon "trash-o"
+            |  Trash
+  .col-md-9.mb-3
+    .card.card-body
+      = yield

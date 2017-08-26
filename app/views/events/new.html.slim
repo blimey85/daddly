@@ -1,13 +1,7 @@
-br
-br
-.container
-  .row.justify-content-center
-    .col-6
-      .card
-        .card-body
-          .form-header.purple.darken-4
-            h3
-              i.fa.fa-calendar
-              |  Add Event:
-
-          == render 'form'
+.card
+  .card-body
+    h2.feature-title.text-center.mb-4.mt-2.font-bold
+      strong Add Event
+    hr
+    .mt-3
+      == render 'form'

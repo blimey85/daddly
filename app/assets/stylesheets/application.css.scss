@@ -103,26 +103,11 @@ div.mailbox-thread-card.list-group-item.list-group-item-action {
   border: 0;
   margin-bottom: 0;
 }
-.forum-thread-filters {
-  a {
-    color: #555555;
-    display: block;
-  }
-  a.active {
-    color: #222222;
-    font-weight: bold;
-  }
-  a:hover {
-    color: #222222;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  h5 {
-    margin: 0;
-  }
-  .md-pills li {
-    padding: 0;
-  }
+
+.simple_discussion .fa {
+  font-family: FontAwesome !important;
+  width: 20px;
+  text-align: center;
 }
 
 .paginator {

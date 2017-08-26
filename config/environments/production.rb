@@ -95,8 +95,15 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.active_record.belongs_to_required_by_default = false
+
+  # Install the Timber.io logger, send logs over HTTP.
+  log_device = Timber::LogDevices::HTTP.new(ENV['TIMBER_API_KEY'])
+  logger = Timber::Logger.new(log_device)
+  logger.level = config.log_level
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
+
 end
 
-Raven.configure do |config|
-  config.dsn = 'https://cf31f87a05fe4e2d9fee43c63fa71157:2181eae3c0ed4314922900b422a4b7da@sentry.io/183528'
-end
+# Raven.configure do |config|
+#   config.dsn = 'https://cf31f87a05fe4e2d9fee43c63fa71157:2181eae3c0ed4314922900b422a4b7da@sentry.io/183528'
+# end

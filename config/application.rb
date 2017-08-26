@@ -3,7 +3,7 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 
-module Dp
+module Daddly
   class Application < Rails::Application
     config.generators do |g|
       g.test_framework :rspec,

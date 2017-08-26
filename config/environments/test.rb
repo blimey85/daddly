@@ -41,4 +41,10 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.active_record.belongs_to_required_by_default = false
+
+  # Install the Timber.io logger, but do not send logs.
+  logger = Timber::Logger.new(nil)
+  logger.level = config.log_level
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
+
 end

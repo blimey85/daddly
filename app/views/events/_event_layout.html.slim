@@ -1,0 +1,38 @@
+.row.col-md-12
+  h1 Events
+.row.simple_discussion
+  .col-md-3.mb-3
+    .card.card-body
+      = link_to 'Add Event', new_event_path, class: "btn btn-outline-primary btn-block"
+      hr
+      .forum-thread-filters
+        h5
+          strong Filters
+        div
+          = link_to events_path do
+            = icon "bars"
+            |  All Events
+        div
+          = forum_link_to simple_discussion.answered_forum_threads_path do
+            = icon "check"
+            |  Answered
+        div
+          = forum_link_to simple_discussion.unanswered_forum_threads_path do
+            = icon "question"
+            |  Unanswered
+      hr
+      .forum-thread-filters
+        h6
+          strong By Category
+        div
+          = forum_link_to simple_discussion.forum_threads_path, exact: true do
+            = icon "circle"
+            |  All
+        - ForumCategory.sorted.each do |category|
+          div
+            = forum_link_to simple_discussion.forum_category_forum_threads_path(category) do
+              = icon "circle", style: "color: #{category.color}"
+              =< category.name
+  .col-md-9.mb-3
+    .card.card-body
+      = yield

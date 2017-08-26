@@ -3,6 +3,8 @@ class MailboxController < ApplicationController
   layout false, except: [:index]
 
   def index
+    @messages = mailbox.sentbox.page(params[:page]).per(1)
+    console
   end
 
   def inbox
