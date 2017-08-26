@@ -1,6 +1,9 @@
-$(function() {
+$(document).on("ready page:load turbolinks:load", function() {
     // used by MDB time pickers
-    $('.datepicker').pickadate();
+    $('.datepicker').pickadate({
+        min: true,
+        max: false
+    });
     $('#starttime').pickatime({twelvehour: true});
     $('#endtime').pickatime({twelvehour: true});
 
