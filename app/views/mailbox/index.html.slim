@@ -1,7 +1,11 @@
 = render layout: 'mailbox_layout' do
-  #mailbox
-    /= render 'conversations/form'
-    = render partial: 'conversations/conversation', collection: @messages
+/  #mailbox
+/    /= render 'conversations/form'
+/    = render partial: 'conversations/conversation', collection: @messages
+/br
+/br
+/br
+/br
 /.row
 /  #mailbox_folders.col-sm-3
 /    .panel
@@ -32,39 +36,39 @@
 /        #inbox.tab-pane.fade.in.show.active[role="tabpanel"]
 /        #sent.tab-pane.fade[role="tabpanel"]
 /        #trash.tab-pane.fade[role="tabpanel"]
-/
-//javascript:
-//  // load initial tab
-//  $.ajax({
-//    url: '/mailbox/inbox',
-//    type: 'GET',
-//    dataType: 'script'
-//  });
-//
-//  // load tabs on demand if not already loaded
-//  $('[data-toggle="tab"]').on('click', function () {
-//    var $this = $(this),
-//    source = $this.attr('data-url'),
-//    pane = $this.attr('href');
-//
-//    if ($(pane).text().length == 0) {
-//      $.ajax({
-//        url: source,
-//        type: 'GET',
-//        dataType: 'script'
-//      })
-//    }
-//  });
-//
-//  // display ajax spinner as needed
-//  $(document)
-//    .ajaxStart(function () {
-//      $(".tab-content").hide();
-//      $(".spinner").show();
-//  })
-//    .ajaxStop(function () {
-//      $('.timeago').timeago();
-//      $(".spinner").hide();
-//      $(".tab-content").show();
-//  });
-//
+
+javascript:
+  // load initial tab
+  $.ajax({
+    url: '/mailbox/inbox',
+    type: 'GET',
+    dataType: 'script'
+  });
+
+  // load tabs on demand if not already loaded
+  $('[data-toggle="tab"]').on('click', function () {
+    var $this = $(this),
+    source = $this.attr('data-url'),
+    pane = $this.attr('href');
+
+    if ($(pane).text().length == 0) {
+      $.ajax({
+        url: source,
+        type: 'GET',
+        dataType: 'script'
+      })
+    }
+  });
+
+  // display ajax spinner as needed
+  $(document)
+    .ajaxStart(function () {
+      $(".tab-content").hide();
+      $(".spinner").show();
+  })
+    .ajaxStop(function () {
+      $('.timeago').timeago();
+      $(".spinner").hide();
+      $(".tab-content").show();
+  });
+

@@ -1,3 +1,31 @@
+/.row.col-md-12
+/  h1 Mailbox
+/.row.simple_discussion
+/  .col-md-3.mb-3
+/    .card.card-body
+/      = link_to 'New Message', new_conversation_path, class: "btn btn-outline-primary btn-block"
+/      hr
+/      .forum-thread-filters
+/        h5
+/          strong Folders
+/        div
+/          = link_to mailbox_inbox_path, remote: true do
+/            = icon "inbox"
+/            |  Inbox
+/        div
+/          = link_to mailbox_sent_path, remote: true do
+/            = icon "paper-plane-o"
+/            |  Sent Mail
+/        div
+/          = link_to mailbox_trash_path, remote: true do
+/            = icon "trash-o"
+/            |  Trash
+/  .col-md-9.mb-3
+/    #messages.card.card-body
+/      = yield
+
+
+
 .row.col-md-12
   h1 Mailbox
 .row.simple_discussion
@@ -5,21 +33,52 @@
     .card.card-body
       = link_to 'New Message', new_conversation_path, class: "btn btn-outline-primary btn-block"
       hr
-      .forum-thread-filters
+      .forum-thread-filters[role="tablist"]
         h5
           strong Folders
-        div
-          = link_to mailbox_inbox_path, remote: true do
-            = icon "inbox"
-            |  Inbox
-        div
-          = link_to mailbox_sent_path, remote: true do
-            = icon "paper-plane-o"
-            |  Sent Mail
-        div
-          = link_to mailbox_trash_path, remote: true do
-            = icon "trash-o"
-            |  Trash
+        ul.nav.nav-tabs.md-pills.pills-ins.flex-column[role="tablist"]
+          li.nav-item
+            #inbox-tab.a.nav-link.active[data-toggle="tab" role="tab" href="#inbox" data-url="/mailbox/inbox"]
+              i.fa.fa-inbox
+              |  Inbox
+          li.nav-item
+            #sent-tab.a.nav-link[data-toggle="tab" role="tab" href="#sent" data-url="/mailbox/sent"]
+              i.fa.fa-paper-plane-o
+              |  Sent Mail
+          li.nav-item
+            #trash-tab.a.nav-link[data-toggle="tab" role="tab" href="#trash" data-url="/mailbox/trash"]
+              i.fa.fa-trash-o
+              |  Trash
   .col-md-9.mb-3
-    .card.card-body
-      = yield
+    .panel
+      .spinner
+        i.fa.fa-spinner.fa-pulse
+      .tab-content.vertical
+        #inbox.tab-pane.fade.in.show.active[role="tabpanel"]
+        #sent.tab-pane.fade[role="tabpanel"]
+        #trash.tab-pane.fade[role="tabpanel"]
+
+scss:
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    border: 0;
+    font-weight: bold;
+  }
+  .nav-tabs {
+    border: 0;
+
+    .nav-link {
+      border: 0;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      font-weight: bold;
+    }
+
+    .nav-item {
+      margin-bottom: inherit;
+    }
+  }
+  .tab-content hr {
+    margin: 0 !important;
+  }
