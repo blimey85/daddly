@@ -19,4 +19,8 @@ module ApplicationHelper
     time_format = time.strftime("%B #{time.day.ordinalize}, %Y at %I:%M%P")
     content_tag(:time, time_format.to_s, options.merge(datetime: time_utc, title: time_format))
   end
+
+  def segment_javascript_include
+    javascript_include_tag 'segment' if Rails.env.production?
+  end
 end
