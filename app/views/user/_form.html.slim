@@ -1,5 +1,5 @@
 javascript:
-    $(document).ready(function () {
+    $(document).on("ready page:load turbolinks:load", function() {
         // used for fancy selectize dropboxes
         $('.selectize-default').selectize();
         // used for triggering selectize on newly inserted selects
@@ -41,8 +41,8 @@ javascript:
               = f.input :age
           .row
             .col-md-12.md-form.form-group.mb-0: .md-form.mb-0
-              = f.input :bio, as: :text, input_html: { class: 'md-textarea' }
-          #avatar
+              = f.input :bio
+          #avatar.mt-3
             h3 Avatar?
             = render partial: 'file_upload', locals: { f: f }
           #children.mt-3
@@ -76,7 +76,3 @@ javascript:
 
           .text-center.mt-3
             = f.button :submit, 'Update Profile', class: 'btn-rounded mt-2 mb-3'
-          /.text-center.mt-1-half
-          /  button.btn.btn-deep-purple
-          /    i.fa.fa-lg.fa-user.ml-0
-          /    | &nbsp;Update Profile

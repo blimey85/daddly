@@ -253,3 +253,12 @@ hr {
 .mdb-skin-custom .form-header-custom {
   background: #1b95c1 !important
 }
+
+// remove border and padding from around selects
+.select.form-control, .selectize-control.form-control {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  min-height: 100px;
+}
