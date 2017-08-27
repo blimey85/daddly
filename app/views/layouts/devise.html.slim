@@ -6,12 +6,14 @@ html.full-height
     link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"
     link href="/manifest.json" rel="manifest"
     link color="#009df6" href="/safari-pinned-tab.svg" rel="mask-icon"
-    meta content="DADDLY" name="apple-mobile-web-app-title"
-    meta content="DADDLY" name="application-name"
+    meta content="Daddly.io" name="apple-mobile-web-app-title"
+    meta content="Daddly.io" name="application-name"
     meta content="#ffffff" name="theme-color"
     title
-      = content_for?(:title) ? yield(:title) : 'Dp'
+      = content_for?(:title) ? yield(:title) : 'Daddly.io'
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Daddly.io'}"
+    = tag :meta, name: 'current-user', content: current_user.id, data: {email: current_user.email, name: current_user.name} if user_signed_in?
+
     == javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
     == javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'
     == javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js'
