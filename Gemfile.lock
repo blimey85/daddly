@@ -286,7 +286,7 @@ GEM
       guard (~> 2.2)
       guard-compat (~> 1.1)
     guard-compat (1.2.1)
-    guard-rspec (4.6.5)
+    guard-rspec (4.7.3)
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
@@ -675,7 +675,7 @@ DEPENDENCIES
   goldiloader
   google-api-client (= 0.8.2)
   guard-bundler
-  guard-rspec (~> 4.6.4)
+  guard-rspec (~> 4.7.3)
   guard-rubocop
   guard-slimlint
   high_voltage

@@ -70,7 +70,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'guard-bundler', require: false
-  gem 'guard-rspec', '~> 4.6.4', require: false
+  gem 'guard-rspec', '~> 4.7.3', require: false
   gem 'guard-rubocop'
   gem 'guard-slimlint'
   gem 'irbtools-more', require: 'irbtools/binding'
