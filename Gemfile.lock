@@ -486,7 +486,7 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    redis (3.3.3)
+    redis (4.0.0)
     regexp_parser (0.4.4)
     require_all (1.4.0)
     responders (2.4.0)
@@ -704,7 +704,7 @@ DEPENDENCIES
   rails-jquery-autocomplete
   rails_best_practices
   ransack!
-  redis (~> 3.0)
+  redis (~> 4.0)
   responders (~> 2.0)
   rspec-rails
   rubocop

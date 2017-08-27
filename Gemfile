@@ -8,7 +8,7 @@ gem 'rails', '~> 5.1.2'
 
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
-gem 'redis', '~> 3.0'
+gem 'redis', '~> 4.0'
 
 gem 'active_enum', github: 'adzap/active_enum'
 gem 'active_model_serializers', '~> 0.10.0'
