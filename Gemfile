@@ -22,7 +22,7 @@ gem 'google-api-client', '0.8.2', require: 'google/api_client'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-gem 'omniauth-oauth2', '1.3.1'
+gem 'omniauth-oauth2', '1.4.0'
 gem 'omniauth-twitter'
 
 # Frontend Stuff
