@@ -46,7 +46,7 @@ gem 'jasny-bootstrap-rails'
 gem 'simple_form_jasny_fileupload'
 
 gem 'coffee-rails', '~> 4.2'
-gem 'counter_culture', '~> 1.0'
+gem 'counter_culture', '~> 1.8'
 gem 'decanter'
 gem 'geocoder'
 gem 'gibbon'

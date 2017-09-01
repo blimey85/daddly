@@ -198,7 +198,7 @@ GEM
     coffee-script-source (1.12.2)
     colorize (0.8.1)
     concurrent-ruby (1.0.5)
-    counter_culture (1.7.0)
+    counter_culture (1.8.0)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
       after_commit_action (~> 1.0)
@@ -662,7 +662,7 @@ DEPENDENCIES
   cloudinary
   cocoon
   coffee-rails (~> 4.2)
-  counter_culture (~> 1.0)
+  counter_culture (~> 1.8)
   database_cleaner
   decanter
   devise (~> 4.2)
