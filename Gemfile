@@ -18,7 +18,7 @@ gem 'bootsnap', require: false
 
 # Authentication and Authorization
 gem 'devise', '~> 4.2'
-gem 'google-api-client', '0.8.2', require: 'google/api_client'
+gem 'google-api-client', '0.13.4', require: 'google/api_client'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
