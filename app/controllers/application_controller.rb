@@ -2,6 +2,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
+  def after_sign_in_path_for(resource)
+    if resource.first_name.blank?
+      edit_user_url(resource.id)
+    else
+      super
+    end
+  end
+
   helper_method :mailbox
 
   def check_user_interactions(item, user_id)
