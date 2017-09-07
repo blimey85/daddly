@@ -9,6 +9,7 @@ gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'redis', '~> 3.0'
+gem 'sidekiq'
 
 gem 'active_enum', github: 'adzap/active_enum'
 gem 'active_model_serializers', '~> 0.10.0'
@@ -105,10 +106,10 @@ gem 'mailboxer', github: 'mailboxer/mailboxer'
 gem 'simple_discussion', github: 'excid3/simple_discussion'
 
 group :production do
-  gem 'sendgrid-actionmailer'
   gem 'sentry-raven'
   gem 'skylight'
 end
 
+gem 'sendgrid-actionmailer'
 gem 'timber', '~> 2.1'
 gem 'marginalia'

@@ -77,6 +77,10 @@ class User < ApplicationRecord
   devise :omniauthable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, omniauth_providers: [:facebook, :google_oauth2, :twitter]
 
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
+
   mount_uploader :avatar, AvatarUploader
   acts_as_messageable
 

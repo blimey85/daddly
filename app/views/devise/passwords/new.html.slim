@@ -1,9 +1,21 @@
-h2
-  | Forgot your password?
-= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, required: true, autofocus: true
-  .form-actions
-    = f.button :submit, 'Send me reset password instructions'
-= render 'devise/shared/links'
+.card
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'form-horizontal' }) do |f|
+    .card-body
+      h2.feature-title.text-center.mb-4.mt-2.font-bold
+        strong Forgot your password?
+      hr
+      .mt-3
+        = f.error_notification
+        .md-form
+          i.fa.fa-envelope.prefix
+          = f.text_field :email, class: 'form-control'
+          = f.label :email
+        .text-center
+          = f.button :submit, 'Send me reset password instructions', class: 'btn-rounded mt-2 mb-3', style: 'white-space: nowrap !important;'
+        .row.d-flex.justify-content-center
+          | or sign in with social media
+        .row.d-flex.justify-content-center
+          .inline-ul.text-center.d-flex.justify-content-center.mt-2.full-width
+            = link_to raw('<button class="btn btn-fb" type="button"><i class="fa fa-facebook left"></i> Facebook'), omniauth_authorize_path(resource_name, 'facebook')
+            = link_to raw('<button class="btn btn-tw" type="button"><i class="fa fa-twitter left"></i> Twitter'), omniauth_authorize_path(resource_name, 'twitter')
+            = link_to raw('<button class="btn btn-gplus" type="button"><i class="fa fa-google-plus left"></i> Google'), omniauth_authorize_path(resource_name, 'google_oauth2')

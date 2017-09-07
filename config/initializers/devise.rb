@@ -12,10 +12,11 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'no-reply@daddly.io'
+  config.mailer_sender = 'Daddly Support <support@daddly.io>'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
+  # config.mailer = 'MyMailer'
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
@@ -280,9 +281,10 @@ Devise.setup do |config|
 end
 
 Rails.application.config.to_prepare do
-  Devise::SessionsController.layout "devise"
-  Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "devise" }
-  Devise::ConfirmationsController.layout "devise"
-  Devise::UnlocksController.layout "devise"
-  Devise::PasswordsController.layout "devise"
+  Devise::SessionsController.layout 'devise'
+  Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? 'application' : 'devise' }
+  Devise::ConfirmationsController.layout 'devise'
+  Devise::UnlocksController.layout 'devise'
+  Devise::PasswordsController.layout 'devise'
+  Devise::Mailer.layout 'mailer'
 end

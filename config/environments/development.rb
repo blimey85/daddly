@@ -26,18 +26,9 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      :user_name => 'd1473b494f3a3f',
-      :password => 'd86588e380a312',
-      :address => 'smtp.mailtrap.io',
-      :domain => 'smtp.mailtrap.io',
-      :port => '2525',
-      :authentication => :cram_md5
-  }
+  # config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.delivery_method = :smtp
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
 
@@ -51,6 +42,19 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.smtp_settings = {
+      address: "smtp.sendgrid.net",
+      port: 587,
+      domain_name: "daddly.io",
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: "blimey85",
+      password: "Winzippo85"
+  }
+  config.action_mailer.default_url_options = { host: 'localhost' }
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
