@@ -29,10 +29,12 @@
 #
 
 class Event < ApplicationRecord
-  has_many :event_venues
-  has_many :venues, through: :event_venues
+  has_one :event_venue
+  has_one :venue, through: :event_venue
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
+
+  belongs_to :user
 
   # validates :name, :description, :starts_at, :ends_at, :user_id, :venue_id, presence: true
 

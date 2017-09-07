@@ -30,3 +30,4 @@
 //= require jquery-textcomplete/dist/jquery.textcomplete
 //= require jquery.atwho
 //= require timeago/jquery.timeago
+//= require gmaps

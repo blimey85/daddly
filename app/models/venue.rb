@@ -22,8 +22,12 @@ class Venue < ApplicationRecord
 
   validates :name, :address, :city, :state, :zipcode, :latitude, :longitude, presence: true
 
+  def full_address
+    "#{address}, #{city}, #{state} #{zipcode}"
+  end
+
   # Geo Location Block
-  geocoded_by :zipcode do |obj, results|
+  geocoded_by :full_address do |obj, results|
     if (geo = results.first)
       obj.city = geo.city
       obj.state = STATES.key(geo.state) # convert state to abbreviation

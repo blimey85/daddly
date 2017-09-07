@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   respond_to :html, :json, :js
 
   def index
-    @events = Event.page(params[:page]).per(2)
+    @events = Event.includes(:user).page(params[:page]).per(2)
     respond_to do |format|
       format.js
       format.html

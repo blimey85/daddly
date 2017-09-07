@@ -7,45 +7,62 @@
     strong> Description:
     = @event.description
   p
-    strong> Starts at:
-    = @event.starts_at
+    strong> Starts:
+    = timeago(@event.starts_at.to_datetime)
   p
-    strong> Ends at:
-    = @event.ends_at
+    strong> Ends:
+    = timeago(@event.ends_at.to_datetime)
+
   p
-    strong> Rsvp count:
-    = @event.rsvp_count
+    strong> Hosted By:
+    = @event&.user&.name
   p
-    strong> Rsvp min limit:
-    = @event.rsvp_min_limit
+    strong> Venue Name:
+    = @event&.venue&.name
   p
-    strong> Rsvp max limit:
-    = @event.rsvp_max_limit
-  p
-    strong> Waitlist:
-    = @event.waitlist
-  p
-    strong> Waitlist count:
-    = @event.waitlist_count
-  p
-    strong> Status:
-    = @event.status
-  p
-    strong> Type:
-    = @event.type
-  p
-    strong> Visibility:
-    = @event.visibility
-  p
-    strong> Created by current user:
-    = @event.created_by_current_user
-  p
-    strong> Upvoted by current user:
-    = @event.user_has_upvoted
+    strong> Venue Address:
+    = @event&.venue&.full_address
+  #map.z-depth-1-half.mb-5
+
+
+  /p
+  /  strong> Rsvp count:
+  /  = @event.rsvp_count
+  /p
+  /  strong> Rsvp min limit:
+  /  = @event.rsvp_min_limit
+  /p
+  /  strong> Rsvp max limit:
+  /  = @event.rsvp_max_limit
+  /p
+  /  strong> Waitlist:
+  /  = @event.waitlist
+  /p
+  /  strong> Waitlist count:
+  /  = @event.waitlist_count
+  /p
+  /  strong> Status:
+  /  = @event.status
+  /p
+  /  strong> Type:
+  /  = @event.type
+  /p
+  /  strong> Visibility:
+  /  = @event.visibility
+  /p
+  /  strong> Created by current user:
+  /  = @event.created_by_current_user
+  /p
+  /  strong> Upvoted by current user:
+  /  = @event.user_has_upvoted
 
   .event-comments id="comments-container-#{@event.id}"
 
 scss:
+  #map, #panorama {
+    height: 350px;
+  }
+
   span.delete {
     display: none;
   }
@@ -107,6 +124,34 @@ scss:
   }
 
 javascript:
+  // GOOGLE MAPS using gmaps.js
+  var coordinates = {
+      lat: #{@event&.venue&.latitude},
+      lng: #{@event&.venue&.longitude}
+  };
+  var map = new GMaps({
+      div: '#map',
+      lat: coordinates.lat,
+      lng: coordinates.lng
+  });
+  map.addMarker({
+      lat: coordinates.lat,
+      lng: coordinates.lng,
+      title: '#{@event.venue.name}',
+      infoWindow: {
+          content:  '<h3>#{@event.venue.name}</h3>' +
+                    '#{@event.venue.address}' +
+                    '<br>#{@event.venue.city}, #{@event.venue.state}, #{@event.venue.zipcode}'
+      }
+  });
+  $(window).resize(function () {
+      var lat = map.getCenter().lat(),
+          lng = map.getCenter().lng();
+      map.refresh();
+      map.setCenter(lat, lng);
+  });
+  // END GOOGLE MAPS
+
   $('.item-like').click(function () {
       var arr = this.id.split('-');
       var clickedType = arr[0];
@@ -281,7 +326,7 @@ javascript:
         remoteFilter: function (query, callback) {
           if (query.length < 1) { return; }
           $.getJSON("/user/mentions", {r: query}, function (data) {
-            callback(data)
+            callback(data);
             console.log(data);
           });
         }
