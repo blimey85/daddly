@@ -1,46 +1,76 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def facebook
-    generic_callback('facebook')
-  end
+  before_action :set_service
+  before_action :set_user
 
-  def google_oauth2
-    generic_callback('google_oauth2')
+  attr_reader :service, :user
+
+  def facebook
+    handle_auth 'Facebook'
   end
 
   def twitter
-    generic_callback('twitter')
+    handle_auth 'Twitter'
   end
 
-  def generic_callback(provider)
-    @identity = Identity.find_for_oauth request.env['omniauth.auth']
+  def google_oauth2
+    handle_auth 'Google_oauth2'
+  end
 
-    @user = @identity.user || current_user
+  private
 
-    if @user.nil?
-      @user = User.create(
-        email: @identity.email,
-        first_name: @identity.first_name,
-        last_name: @identity.last_name,
-        oauth_callback: true
-      )
-      @identity.update_attribute(:user_id, @user.id)
-    end
-
-    if @user.email.blank? && @identity.email
-      @user.update_attribute(:email, @identity.email)
-    end
-
-    if @user.first_name.blank? && @identity.first_name && @identity.last_name
-      @user.update_attributes(first_name: @identity.first_name, last_name: @identity.last_name)
-    end
-
-    if @user.persisted?
-      @identity.update_attribute(:user_id, @user.id)
-      sign_in_and_redirect @user, event: :authentication
-      set_flash_message(:notice, :success, kind: provider.capitalize) if is_navigational_format?
+  def handle_auth(kind)
+    if service.present?
+      service.update(service_attrs)
     else
-      session["devise.#{provider}_data"] = request.env['omniauth.auth'].except('extra')
-      redirect_to new_user_registration_url
+      user.services.create(service_attrs)
     end
+
+    if user_signed_in?
+      flash[:notice] = "Your #{kind} account was connected."
+      redirect_to edit_user_registration_path
+    else
+      sign_in_and_redirect user, event: :authentication
+      set_flash_message :notice, :success, kind: kind
+    end
+  end
+
+  def auth
+    request.env['omniauth.auth']
+  end
+
+  def set_service
+    @service = Service.where(provider: auth.provider, uid: auth.uid).first
+  end
+
+  def set_user
+    if user_signed_in?
+      @user = current_user
+    elsif service.present?
+      @user = service.user
+    elsif User.where(email: auth.info.email).any?
+      flash[:alert] = "An account with this email already exists. Please sign in with that account before connecting your #{auth.provider.titleize} account."
+      redirect_to new_user_session_path
+    else
+      @user = create_user
+    end
+  end
+
+  def service_attrs
+    expires_at = auth.credentials.expires_at.present? ? Time.at(auth.credentials.expires_at) : nil
+    {
+        provider: auth.provider,
+        uid: auth.uid,
+        expires_at: expires_at,
+        access_token: auth.credentials.token,
+        access_token_secret: auth.credentials.secret,
+    }
+  end
+
+  def create_user
+    User.create(
+        email: auth.info.email,
+        #name: auth.info.name,
+        password: Devise.friendly_token[0,20]
+    )
   end
 end

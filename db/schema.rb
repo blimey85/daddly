@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814035003) do
+ActiveRecord::Schema.define(version: 20170908022904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,8 +119,8 @@ ActiveRecord::Schema.define(version: 20170814035003) do
 
   create_table "interests", force: :cascade do |t|
     t.string "name"
-    t.bigint "subcategory_id"
-    t.index ["subcategory_id"], name: "index_interests_on_subcategory_id"
+    t.bigint "sub_category_id"
+    t.index ["sub_category_id"], name: "index_interests_on_sub_category_id"
   end
 
   create_table "kids", force: :cascade do |t|
@@ -186,8 +186,8 @@ ActiveRecord::Schema.define(version: 20170814035003) do
 
   create_table "pings", force: :cascade do |t|
     t.integer "pingable_id"
-    t.integer "pingable_type"
-    t.integer "pinger_id"
+    t.string "pingable_type"
+    t.bigint "pinger_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -197,19 +197,24 @@ ActiveRecord::Schema.define(version: 20170814035003) do
     t.index ["user_id"], name: "index_pings_on_user_id"
   end
 
+  create_table "services", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "provider"
+    t.string "uid"
+    t.string "access_token"
+    t.string "access_token_secret"
+    t.string "refresh_token"
+    t.datetime "expires_at"
+    t.text "auth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_services_on_user_id"
+  end
+
   create_table "sub_categories", force: :cascade do |t|
     t.string "name"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_sub_categories_on_category_id"
-  end
-
-  create_table "tests", force: :cascade do |t|
-    t.integer "test"
-    t.bigint "test2"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "user_interests", force: :cascade do |t|
@@ -245,7 +250,7 @@ ActiveRecord::Schema.define(version: 20170814035003) do
     t.integer "zipcode"
     t.float "latitude"
     t.float "longitude"
-    t.string "avater"
+    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "moderator"
@@ -285,4 +290,5 @@ ActiveRecord::Schema.define(version: 20170814035003) do
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+  add_foreign_key "services", "users"
 end

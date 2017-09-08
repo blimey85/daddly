@@ -66,7 +66,7 @@ class User < ApplicationRecord
   # validates :zipcode, presence: true, if: :zipcode_required?
 
   ### Associations ###
-  has_many :identities, dependent: :destroy
+  has_many :services, dependent: :destroy
   has_many :kids, dependent: :destroy, inverse_of: :user
   accepts_nested_attributes_for :kids, reject_if: :all_blank, allow_destroy: true
   has_many  :pings
@@ -75,7 +75,7 @@ class User < ApplicationRecord
 
   ### Devise ###
   devise :omniauthable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, omniauth_providers: [:facebook, :google_oauth2, :twitter]
+         :recoverable, :rememberable, :trackable #, omniauth_providers: [:facebook, :google_oauth2, :twitter]
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
@@ -84,29 +84,29 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   acts_as_messageable
 
-  def facebook
-    identities.find_by(provider: 'facebook')
-  end
-
-  def facebook_client
-    @facebook_client ||= Facebook.client(access_token: facebook.accesstoken)
-  end
-
-  def google_oauth2
-    identities.find_by(provider: 'google_oauth2')
-  end
-
-  def google_oauth2_client
-    @google_oauth2_client ||= GoogleAppsClient.client(google_oauth2)
-  end
-
-  def twitter
-    identities.find_by(provider: 'twitter')
-  end
-
-  def twitter_client
-    @twitter_client ||= Twitter.client(access_token: twitter.accesstoken)
-  end
+  # def facebook
+  #   identities.find_by(provider: 'facebook')
+  # end
+  #
+  # def facebook_client
+  #   @facebook_client ||= Facebook.client(access_token: facebook.accesstoken)
+  # end
+  #
+  # def google_oauth2
+  #   identities.find_by(provider: 'google_oauth2')
+  # end
+  #
+  # def google_oauth2_client
+  #   @google_oauth2_client ||= GoogleAppsClient.client(google_oauth2)
+  # end
+  #
+  # def twitter
+  #   identities.find_by(provider: 'twitter')
+  # end
+  #
+  # def twitter_client
+  #   @twitter_client ||= Twitter.client(access_token: twitter.accesstoken)
+  # end
 
   def password_required?
     return false if email.blank? || !email_required?

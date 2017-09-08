@@ -1,6 +1,14 @@
 # == Route Map
 #
 #                                Prefix Verb     URI Pattern                                  Controller#Action
+#                              services GET      /services(.:format)                          services#index
+#                                       POST     /services(.:format)                          services#create
+#                           new_service GET      /services/new(.:format)                      services#new
+#                          edit_service GET      /services/:id/edit(.:format)                 services#edit
+#                               service GET      /services/:id(.:format)                      services#show
+#                                       PATCH    /services/:id(.:format)                      services#update
+#                                       PUT      /services/:id(.:format)                      services#update
+#                                       DELETE   /services/:id(.:format)                      services#destroy
 #                         comments_show GET      /comments/show(.:format)                     comments#show
 #                              comments GET      /comments(.:format)                          comments#index
 #                                       POST     /comments(.:format)                          comments#create
@@ -33,7 +41,6 @@
 #                                       PATCH    /events/:id(.:format)                        events#update
 #                                       PUT      /events/:id(.:format)                        events#update
 #                                       DELETE   /events/:id(.:format)                        events#destroy
-#                                  root GET      /                                            visitors#index
 #                      new_user_session GET      /users/sign_in(.:format)                     devise/sessions#new
 #                          user_session POST     /users/sign_in(.:format)                     devise/sessions#create
 #                  destroy_user_session DELETE   /users/sign_out(.:format)                    devise/sessions#destroy
@@ -55,6 +62,8 @@
 #                                       PUT      /users(.:format)                             registrations#update
 #                                       DELETE   /users(.:format)                             registrations#destroy
 #                                       POST     /users(.:format)                             registrations#create
+#                                  root GET      /                                            visitors#index
+#                  unauthenticated_root GET      /                                            devise/registrations#new
 #                         user_mentions GET      /user/mentions(.:format)                     user#mentions
 #                            user_index GET      /user(.:format)                              user#index
 #                                       POST     /user(.:format)                              user#create
@@ -83,7 +92,41 @@
 #                                       PATCH    /votes/:id(.:format)                         votes#update
 #                                       PUT      /votes/:id(.:format)                         votes#update
 #                                       DELETE   /votes/:id(.:format)                         votes#destroy
+#                     simple_discussion          /community                                   SimpleDiscussion::Engine
 #                                  page GET      /pages/*id                                   high_voltage/pages#show
+#
+# Routes for SimpleDiscussion::Engine:
+#           answered_forum_threads GET    /threads/answered(.:format)                            simple_discussion/forum_threads#answered
+#         unanswered_forum_threads GET    /threads/unanswered(.:format)                          simple_discussion/forum_threads#unanswered
+#               mine_forum_threads GET    /threads/mine(.:format)                                simple_discussion/forum_threads#mine
+#      participating_forum_threads GET    /threads/participating(.:format)                       simple_discussion/forum_threads#participating
+#     forum_category_forum_threads GET    /threads/category/:id(.:format)                        simple_discussion/forum_categories#index
+#   solved_forum_thread_forum_post PUT    /threads/:forum_thread_id/posts/:id/solved(.:format)   simple_discussion/forum_posts#solved
+# unsolved_forum_thread_forum_post PUT    /threads/:forum_thread_id/posts/:id/unsolved(.:format) simple_discussion/forum_posts#unsolved
+#         forum_thread_forum_posts GET    /threads/:forum_thread_id/posts(.:format)              simple_discussion/forum_posts#index
+#                                  POST   /threads/:forum_thread_id/posts(.:format)              simple_discussion/forum_posts#create
+#      new_forum_thread_forum_post GET    /threads/:forum_thread_id/posts/new(.:format)          simple_discussion/forum_posts#new
+#     edit_forum_thread_forum_post GET    /threads/:forum_thread_id/posts/:id/edit(.:format)     simple_discussion/forum_posts#edit
+#          forum_thread_forum_post GET    /threads/:forum_thread_id/posts/:id(.:format)          simple_discussion/forum_posts#show
+#                                  PATCH  /threads/:forum_thread_id/posts/:id(.:format)          simple_discussion/forum_posts#update
+#                                  PUT    /threads/:forum_thread_id/posts/:id(.:format)          simple_discussion/forum_posts#update
+#                                  DELETE /threads/:forum_thread_id/posts/:id(.:format)          simple_discussion/forum_posts#destroy
+#   new_forum_thread_notifications GET    /threads/:forum_thread_id/notifications/new(.:format)  simple_discussion/notifications#new
+#  edit_forum_thread_notifications GET    /threads/:forum_thread_id/notifications/edit(.:format) simple_discussion/notifications#edit
+#       forum_thread_notifications GET    /threads/:forum_thread_id/notifications(.:format)      simple_discussion/notifications#show
+#                                  PATCH  /threads/:forum_thread_id/notifications(.:format)      simple_discussion/notifications#update
+#                                  PUT    /threads/:forum_thread_id/notifications(.:format)      simple_discussion/notifications#update
+#                                  DELETE /threads/:forum_thread_id/notifications(.:format)      simple_discussion/notifications#destroy
+#                                  POST   /threads/:forum_thread_id/notifications(.:format)      simple_discussion/notifications#create
+#                    forum_threads GET    /threads(.:format)                                     simple_discussion/forum_threads#index
+#                                  POST   /threads(.:format)                                     simple_discussion/forum_threads#create
+#                 new_forum_thread GET    /threads/new(.:format)                                 simple_discussion/forum_threads#new
+#                edit_forum_thread GET    /threads/:id/edit(.:format)                            simple_discussion/forum_threads#edit
+#                     forum_thread GET    /threads/:id(.:format)                                 simple_discussion/forum_threads#show
+#                                  PATCH  /threads/:id(.:format)                                 simple_discussion/forum_threads#update
+#                                  PUT    /threads/:id(.:format)                                 simple_discussion/forum_threads#update
+#                                  DELETE /threads/:id(.:format)                                 simple_discussion/forum_threads#destroy
+#                             root GET    /                                                      simple_discussion/forum_threads#index
 #
 
 Rails.application.routes.draw do
@@ -112,6 +155,9 @@ Rails.application.routes.draw do
 
   ### Root: Visitors ###
   # root to: 'visitors#index'
+
+  ### Services ###
+  resources :services
 
   ### Users ###
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
