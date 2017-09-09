@@ -104,7 +104,7 @@ group :test do
 end
 
 gem 'mailboxer', github: 'mailboxer/mailboxer'
-gem 'simple_discussion', github: 'excid3/simple_discussion'
+gem 'simple_discussion' #, github: 'excid3/simple_discussion'
 
 group :production do
   gem 'sentry-raven'

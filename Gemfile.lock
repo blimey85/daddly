@@ -43,17 +43,6 @@ GIT
       rake (>= 10.4, < 13.0)
 
 GIT
-  remote: https://github.com/excid3/simple_discussion.git
-  revision: 345f496ccd1bfb6696e36a4039168040027eebfc
-  specs:
-    simple_discussion (0.9.4)
-      font-awesome-sass (~> 4.7.0)
-      friendly_id (>= 5.2.0)
-      gravatar_image_tag
-      rails (>= 4.2)
-      will_paginate (>= 3.1.0)
-
-GIT
   remote: https://github.com/mailboxer/mailboxer.git
   revision: 81cd53d1d1e979d620980bd19ac049216e1d279a
   specs:
@@ -576,6 +565,12 @@ GEM
       faraday (~> 0.9)
       jwt (~> 1.5)
       multi_json (~> 1.10)
+    simple_discussion (0.9.5)
+      font-awesome-sass (~> 4.7.0)
+      friendly_id (>= 5.2.0)
+      gravatar_image_tag
+      rails (>= 4.2)
+      will_paginate (>= 3.1.0)
     simple_form (3.5.0)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
@@ -727,7 +722,7 @@ DEPENDENCIES
   sentry-raven
   shoulda-matchers!
   sidekiq
-  simple_discussion!
+  simple_discussion
   simple_form
   simple_form_jasny_fileupload
   skylight
