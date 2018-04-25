@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+// Bootstrap //
+
+@import "mdb/free/data/functions";
+@import "mdb/free/data/variables-b4";
+
+// MDB Framework //
+@import "mdb/free/data/prefixer";
+@import "mdb/free/data/mixins";
+@import "mdb/free/data/colors";
+@import "mdb/free/data/variables";
+@import "mdb/free/global";
+@import "mdb/free/animations";
+@import "mdb/free/helpers";
+@import "mdb/free/typography";
+@import "mdb/free/buttons";
+@import "mdb/free/cards-basic";
+@import "mdb/free/dropdowns";
+@import "mdb/free/navbar";
+@import "mdb/free/collapse";
+@import "mdb/free/waves";
+@import "mdb/free/forms-basic"; // use this for devise only
+@import "mdb/free/msc";
+@import "mdb/free/footer";
+@import "mdb/pro/variables-pro";
+@import "mdb/free/deprecated";
+@import "mdb/pro/deprecated";
+@import "mdb/pro/buttons-pro";
+@import "mdb/pro/social-buttons";
+@import "mdb/pro/cards-pro";
+@import "mdb/pro/dropdowns-pro";
+@import "mdb/pro/navbars-pro";
+@import "mdb/pro/chips";
+@import "mdb/pro/msc";
+@import "mdb/pro/radio";
+@import "mdb/pro/checkbox";
+@import "mdb/pro/toasts";
+@import "mdb/pro/skins";

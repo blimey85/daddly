@@ -1,6 +1,6 @@
 /*!
  * Material Design for Bootstrap 4
- * Version: MDB PRO 4.4.1
+ * Version: MDB PRO 4.5.1
  *
  *
  * Copyright: Material Design for Bootstrap
@@ -28,41 +28,42 @@
 
 /*
 
-jquery-easing.js
-global.js
-velocity.min.js
-chart.js
-wow.js
-scrolling-nav.js
-waves.js
-
-preloading.js
-card-reveal.js
-character-counter.js
-toasts.js
-smooth-scroll.js
-dropdown.js
-rotating-cards.js
-buttons.js
-hammer.js
-jquery.hammer.js
-sidenav.js
-collapsible.js
-jquery.easypiechart.js
-panel-popuot.js
-forms.js
-picker.js
-picker-date.js
-picker-time.js
-lightbox.js
-jquery.jsticky.js
-scrollbar.js
-animations.js
-chips.js
-autocomplete.js
-enhanced-modals.js
+  jquery.easing.js
+  velocity.min.js
+  chart.js
+  wow.js
+  scrolling-navbar.js
+  waves.js
+  forms-free.js
+  preloading.js
+  cards.js
+  character-counter.js
+  toastr.js
+  smooth-scroll.js
+  dropdown.js
+  buttons.js
+  hammer.js
+  jquery.hammer.js
+  sidenav.js
+  collapsible.js
+  jquery.easypiechart.js
+  range-input.js
+  file-input.js
+  material-select.js
+  picker.js
+  picker-date.js
+  picker-time.js
+  lightbox.js
+  jquery.sticky.js
+  scrollbar.js
+  chips.js
+  jarallax.js
+  jarallax-video.js
+  mdb-autocomplete.js
+  enhanced-modals.js
 
 */
+
 
 /*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
@@ -268,11 +269,17 @@ jQuery.extend( jQuery.easing,
  *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
+ */
+/*! VelocityJS.org (1.2.3). (C) 2014 Julian Shapiro. MIT @license: en.wikipedia.org/wiki/MIT_License */
+/*! VelocityJS.org jQuery Shim (1.0.1). (C) 2014 The jQuery Foundation. MIT @license: en.wikipedia.org/wiki/MIT_License. */
+/*! Note that this has been modified by Materialize to confirm that Velocity is not already being imported. */
+// jQuery.Velocity?console.log("Velocity is already loaded. You may be needlessly importing Velocity again; note that Materialize includes Velocity."):(!function(e){function t(e){var t=e.length,a=r.type(e);return"function"===a||r.isWindow(e)?!1:1===e.nodeType&&t?!0:"array"===a||0===t||"number"==typeof t&&t>0&&t-1 in e}if(!e.jQuery){var r=function(e,t){return new r.fn.init(e,t)};r.isWindow=function(e){return null!=e&&e==e.window},r.type=function(e){return null==e?e+"":"object"==typeof e||"function"==typeof e?n[i.call(e)]||"object":typeof e},r.isArray=Array.isArray||function(e){return"array"===r.type(e)},r.isPlainObject=function(e){var t;if(!e||"object"!==r.type(e)||e.nodeType||r.isWindow(e))return!1;try{if(e.constructor&&!o.call(e,"constructor")&&!o.call(e.constructor.prototype,"isPrototypeOf"))return!1}catch(a){return!1}for(t in e);return void 0===t||o.call(e,t)},r.each=function(e,r,a){var n,o=0,i=e.length,s=t(e);if(a){if(s)for(;i>o&&(n=r.apply(e[o],a),n!==!1);o++);else for(o in e)if(n=r.apply(e[o],a),n===!1)break}else if(s)for(;i>o&&(n=r.call(e[o],o,e[o]),n!==!1);o++);else for(o in e)if(n=r.call(e[o],o,e[o]),n===!1)break;return e},r.data=function(e,t,n){if(void 0===n){var o=e[r.expando],i=o&&a[o];if(void 0===t)return i;if(i&&t in i)return i[t]}else if(void 0!==t){var o=e[r.expando]||(e[r.expando]=++r.uuid);return a[o]=a[o]||{},a[o][t]=n,n}},r.removeData=function(e,t){var n=e[r.expando],o=n&&a[n];o&&r.each(t,function(e,t){delete o[t]})},r.extend=function(){var e,t,a,n,o,i,s=arguments[0]||{},l=1,u=arguments.length,c=!1;for("boolean"==typeof s&&(c=s,s=arguments[l]||{},l++),"object"!=typeof s&&"function"!==r.type(s)&&(s={}),l===u&&(s=this,l--);u>l;l++)if(null!=(o=arguments[l]))for(n in o)e=s[n],a=o[n],s!==a&&(c&&a&&(r.isPlainObject(a)||(t=r.isArray(a)))?(t?(t=!1,i=e&&r.isArray(e)?e:[]):i=e&&r.isPlainObject(e)?e:{},s[n]=r.extend(c,i,a)):void 0!==a&&(s[n]=a));return s},r.queue=function(e,a,n){function o(e,r){var a=r||[];return null!=e&&(t(Object(e))?!function(e,t){for(var r=+t.length,a=0,n=e.length;r>a;)e[n++]=t[a++];if(r!==r)for(;void 0!==t[a];)e[n++]=t[a++];return e.length=n,e}(a,"string"==typeof e?[e]:e):[].push.call(a,e)),a}if(e){a=(a||"fx")+"queue";var i=r.data(e,a);return n?(!i||r.isArray(n)?i=r.data(e,a,o(n)):i.push(n),i):i||[]}},r.dequeue=function(e,t){r.each(e.nodeType?[e]:e,function(e,a){t=t||"fx";var n=r.queue(a,t),o=n.shift();"inprogress"===o&&(o=n.shift()),o&&("fx"===t&&n.unshift("inprogress"),o.call(a,function(){r.dequeue(a,t)}))})},r.fn=r.prototype={init:function(e){if(e.nodeType)return this[0]=e,this;throw new Error("Not a DOM node.")},offset:function(){var t=this[0].getBoundingClientRect?this[0].getBoundingClientRect():{top:0,left:0};return{top:t.top+(e.pageYOffset||document.scrollTop||0)-(document.clientTop||0),left:t.left+(e.pageXOffset||document.scrollLeft||0)-(document.clientLeft||0)}},position:function(){function e(){for(var e=this.offsetParent||document;e&&"html"===!e.nodeType.toLowerCase&&"static"===e.style.position;)e=e.offsetParent;return e||document}var t=this[0],e=e.apply(t),a=this.offset(),n=/^(?:body|html)$/i.test(e.nodeName)?{top:0,left:0}:r(e).offset();return a.top-=parseFloat(t.style.marginTop)||0,a.left-=parseFloat(t.style.marginLeft)||0,e.style&&(n.top+=parseFloat(e.style.borderTopWidth)||0,n.left+=parseFloat(e.style.borderLeftWidth)||0),{top:a.top-n.top,left:a.left-n.left}}};var a={};r.expando="velocity"+(new Date).getTime(),r.uuid=0;for(var n={},o=n.hasOwnProperty,i=n.toString,s="Boolean Number String Function Array Date RegExp Object Error".split(" "),l=0;l<s.length;l++)n["[object "+s[l]+"]"]=s[l].toLowerCase();r.fn.init.prototype=r.fn,e.Velocity={Utilities:r}}}(window),function(e){"object"==typeof module&&"object"==typeof module.exports?module.exports=e():"function"==typeof define&&define.amd?define(e):e()}(function(){return function(e,t,r,a){function n(e){for(var t=-1,r=e?e.length:0,a=[];++t<r;){var n=e[t];n&&a.push(n)}return a}function o(e){return m.isWrapped(e)?e=[].slice.call(e):m.isNode(e)&&(e=[e]),e}function i(e){var t=f.data(e,"velocity");return null===t?a:t}function s(e){return function(t){return Math.round(t*e)*(1/e)}}function l(e,r,a,n){function o(e,t){return 1-3*t+3*e}function i(e,t){return 3*t-6*e}function s(e){return 3*e}function l(e,t,r){return((o(t,r)*e+i(t,r))*e+s(t))*e}function u(e,t,r){return 3*o(t,r)*e*e+2*i(t,r)*e+s(t)}function c(t,r){for(var n=0;m>n;++n){var o=u(r,e,a);if(0===o)return r;var i=l(r,e,a)-t;r-=i/o}return r}function p(){for(var t=0;b>t;++t)w[t]=l(t*x,e,a)}function f(t,r,n){var o,i,s=0;do i=r+(n-r)/2,o=l(i,e,a)-t,o>0?n=i:r=i;while(Math.abs(o)>h&&++s<v);return i}function d(t){for(var r=0,n=1,o=b-1;n!=o&&w[n]<=t;++n)r+=x;--n;var i=(t-w[n])/(w[n+1]-w[n]),s=r+i*x,l=u(s,e,a);return l>=y?c(t,s):0==l?s:f(t,r,r+x)}function g(){V=!0,(e!=r||a!=n)&&p()}var m=4,y=.001,h=1e-7,v=10,b=11,x=1/(b-1),S="Float32Array"in t;if(4!==arguments.length)return!1;for(var P=0;4>P;++P)if("number"!=typeof arguments[P]||isNaN(arguments[P])||!isFinite(arguments[P]))return!1;e=Math.min(e,1),a=Math.min(a,1),e=Math.max(e,0),a=Math.max(a,0);var w=S?new Float32Array(b):new Array(b),V=!1,C=function(t){return V||g(),e===r&&a===n?t:0===t?0:1===t?1:l(d(t),r,n)};C.getControlPoints=function(){return[{x:e,y:r},{x:a,y:n}]};var T="generateBezier("+[e,r,a,n]+")";return C.toString=function(){return T},C}function u(e,t){var r=e;return m.isString(e)?b.Easings[e]||(r=!1):r=m.isArray(e)&&1===e.length?s.apply(null,e):m.isArray(e)&&2===e.length?x.apply(null,e.concat([t])):m.isArray(e)&&4===e.length?l.apply(null,e):!1,r===!1&&(r=b.Easings[b.defaults.easing]?b.defaults.easing:v),r}function c(e){if(e){var t=(new Date).getTime(),r=b.State.calls.length;r>1e4&&(b.State.calls=n(b.State.calls));for(var o=0;r>o;o++)if(b.State.calls[o]){var s=b.State.calls[o],l=s[0],u=s[2],d=s[3],g=!!d,y=null;d||(d=b.State.calls[o][3]=t-16);for(var h=Math.min((t-d)/u.duration,1),v=0,x=l.length;x>v;v++){var P=l[v],V=P.element;if(i(V)){var C=!1;if(u.display!==a&&null!==u.display&&"none"!==u.display){if("flex"===u.display){var T=["-webkit-box","-moz-box","-ms-flexbox","-webkit-flex"];f.each(T,function(e,t){S.setPropertyValue(V,"display",t)})}S.setPropertyValue(V,"display",u.display)}u.visibility!==a&&"hidden"!==u.visibility&&S.setPropertyValue(V,"visibility",u.visibility);for(var k in P)if("element"!==k){var A,F=P[k],j=m.isString(F.easing)?b.Easings[F.easing]:F.easing;if(1===h)A=F.endValue;else{var E=F.endValue-F.startValue;if(A=F.startValue+E*j(h,u,E),!g&&A===F.currentValue)continue}if(F.currentValue=A,"tween"===k)y=A;else{if(S.Hooks.registered[k]){var H=S.Hooks.getRoot(k),N=i(V).rootPropertyValueCache[H];N&&(F.rootPropertyValue=N)}var L=S.setPropertyValue(V,k,F.currentValue+(0===parseFloat(A)?"":F.unitType),F.rootPropertyValue,F.scrollData);S.Hooks.registered[k]&&(i(V).rootPropertyValueCache[H]=S.Normalizations.registered[H]?S.Normalizations.registered[H]("extract",null,L[1]):L[1]),"transform"===L[0]&&(C=!0)}}u.mobileHA&&i(V).transformCache.translate3d===a&&(i(V).transformCache.translate3d="(0px, 0px, 0px)",C=!0),C&&S.flushTransformCache(V)}}u.display!==a&&"none"!==u.display&&(b.State.calls[o][2].display=!1),u.visibility!==a&&"hidden"!==u.visibility&&(b.State.calls[o][2].visibility=!1),u.progress&&u.progress.call(s[1],s[1],h,Math.max(0,d+u.duration-t),d,y),1===h&&p(o)}}b.State.isTicking&&w(c)}function p(e,t){if(!b.State.calls[e])return!1;for(var r=b.State.calls[e][0],n=b.State.calls[e][1],o=b.State.calls[e][2],s=b.State.calls[e][4],l=!1,u=0,c=r.length;c>u;u++){var p=r[u].element;if(t||o.loop||("none"===o.display&&S.setPropertyValue(p,"display",o.display),"hidden"===o.visibility&&S.setPropertyValue(p,"visibility",o.visibility)),o.loop!==!0&&(f.queue(p)[1]===a||!/\.velocityQueueEntryFlag/i.test(f.queue(p)[1]))&&i(p)){i(p).isAnimating=!1,i(p).rootPropertyValueCache={};var d=!1;f.each(S.Lists.transforms3D,function(e,t){var r=/^scale/.test(t)?1:0,n=i(p).transformCache[t];i(p).transformCache[t]!==a&&new RegExp("^\\("+r+"[^.]").test(n)&&(d=!0,delete i(p).transformCache[t])}),o.mobileHA&&(d=!0,delete i(p).transformCache.translate3d),d&&S.flushTransformCache(p),S.Values.removeClass(p,"velocity-animating")}if(!t&&o.complete&&!o.loop&&u===c-1)try{o.complete.call(n,n)}catch(g){setTimeout(function(){throw g},1)}s&&o.loop!==!0&&s(n),i(p)&&o.loop===!0&&!t&&(f.each(i(p).tweensContainer,function(e,t){/^rotate/.test(e)&&360===parseFloat(t.endValue)&&(t.endValue=0,t.startValue=360),/^backgroundPosition/.test(e)&&100===parseFloat(t.endValue)&&"%"===t.unitType&&(t.endValue=0,t.startValue=100)}),b(p,"reverse",{loop:!0,delay:o.delay})),o.queue!==!1&&f.dequeue(p,o.queue)}b.State.calls[e]=!1;for(var m=0,y=b.State.calls.length;y>m;m++)if(b.State.calls[m]!==!1){l=!0;break}l===!1&&(b.State.isTicking=!1,delete b.State.calls,b.State.calls=[])}var f,d=function(){if(r.documentMode)return r.documentMode;for(var e=7;e>4;e--){var t=r.createElement("div");if(t.innerHTML="<!--[if IE "+e+"]><span></span><![endif]-->",t.getElementsByTagName("span").length)return t=null,e}return a}(),g=function(){var e=0;return t.webkitRequestAnimationFrame||t.mozRequestAnimationFrame||function(t){var r,a=(new Date).getTime();return r=Math.max(0,16-(a-e)),e=a+r,setTimeout(function(){t(a+r)},r)}}(),m={isString:function(e){return"string"==typeof e},isArray:Array.isArray||function(e){return"[object Array]"===Object.prototype.toString.call(e)},isFunction:function(e){return"[object Function]"===Object.prototype.toString.call(e)},isNode:function(e){return e&&e.nodeType},isNodeList:function(e){return"object"==typeof e&&/^\[object (HTMLCollection|NodeList|Object)\]$/.test(Object.prototype.toString.call(e))&&e.length!==a&&(0===e.length||"object"==typeof e[0]&&e[0].nodeType>0)},isWrapped:function(e){return e&&(e.jquery||t.Zepto&&t.Zepto.zepto.isZ(e))},isSVG:function(e){return t.SVGElement&&e instanceof t.SVGElement},isEmptyObject:function(e){for(var t in e)return!1;return!0}},y=!1;if(e.fn&&e.fn.jquery?(f=e,y=!0):f=t.Velocity.Utilities,8>=d&&!y)throw new Error("Velocity: IE8 and below require jQuery to be loaded before Velocity.");if(7>=d)return void(jQuery.fn.velocity=jQuery.fn.animate);var h=400,v="swing",b={State:{isMobile:/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),isAndroid:/Android/i.test(navigator.userAgent),isGingerbread:/Android 2\.3\.[3-7]/i.test(navigator.userAgent),isChrome:t.chrome,isFirefox:/Firefox/i.test(navigator.userAgent),prefixElement:r.createElement("div"),prefixMatches:{},scrollAnchor:null,scrollPropertyLeft:null,scrollPropertyTop:null,isTicking:!1,calls:[]},CSS:{},Utilities:f,Redirects:{},Easings:{},Promise:t.Promise,defaults:{queue:"",duration:h,easing:v,begin:a,complete:a,progress:a,display:a,visibility:a,loop:!1,delay:!1,mobileHA:!0,_cacheValues:!0},init:function(e){f.data(e,"velocity",{isSVG:m.isSVG(e),isAnimating:!1,computedStyle:null,tweensContainer:null,rootPropertyValueCache:{},transformCache:{}})},hook:null,mock:!1,version:{major:1,minor:2,patch:2},debug:!1};t.pageYOffset!==a?(b.State.scrollAnchor=t,b.State.scrollPropertyLeft="pageXOffset",b.State.scrollPropertyTop="pageYOffset"):(b.State.scrollAnchor=r.documentElement||r.body.parentNode||r.body,b.State.scrollPropertyLeft="scrollLeft",b.State.scrollPropertyTop="scrollTop");var x=function(){function e(e){return-e.tension*e.x-e.friction*e.v}function t(t,r,a){var n={x:t.x+a.dx*r,v:t.v+a.dv*r,tension:t.tension,friction:t.friction};return{dx:n.v,dv:e(n)}}function r(r,a){var n={dx:r.v,dv:e(r)},o=t(r,.5*a,n),i=t(r,.5*a,o),s=t(r,a,i),l=1/6*(n.dx+2*(o.dx+i.dx)+s.dx),u=1/6*(n.dv+2*(o.dv+i.dv)+s.dv);return r.x=r.x+l*a,r.v=r.v+u*a,r}return function a(e,t,n){var o,i,s,l={x:-1,v:0,tension:null,friction:null},u=[0],c=0,p=1e-4,f=.016;for(e=parseFloat(e)||500,t=parseFloat(t)||20,n=n||null,l.tension=e,l.friction=t,o=null!==n,o?(c=a(e,t),i=c/n*f):i=f;s=r(s||l,i),u.push(1+s.x),c+=16,Math.abs(s.x)>p&&Math.abs(s.v)>p;);return o?function(e){return u[e*(u.length-1)|0]}:c}}();b.Easings={linear:function(e){return e},swing:function(e){return.5-Math.cos(e*Math.PI)/2},spring:function(e){return 1-Math.cos(4.5*e*Math.PI)*Math.exp(6*-e)}},f.each([["ease",[.25,.1,.25,1]],["ease-in",[.42,0,1,1]],["ease-out",[0,0,.58,1]],["ease-in-out",[.42,0,.58,1]],["easeInSine",[.47,0,.745,.715]],["easeOutSine",[.39,.575,.565,1]],["easeInOutSine",[.445,.05,.55,.95]],["easeInQuad",[.55,.085,.68,.53]],["easeOutQuad",[.25,.46,.45,.94]],["easeInOutQuad",[.455,.03,.515,.955]],["easeInCubic",[.55,.055,.675,.19]],["easeOutCubic",[.215,.61,.355,1]],["easeInOutCubic",[.645,.045,.355,1]],["easeInQuart",[.895,.03,.685,.22]],["easeOutQuart",[.165,.84,.44,1]],["easeInOutQuart",[.77,0,.175,1]],["easeInQuint",[.755,.05,.855,.06]],["easeOutQuint",[.23,1,.32,1]],["easeInOutQuint",[.86,0,.07,1]],["easeInExpo",[.95,.05,.795,.035]],["easeOutExpo",[.19,1,.22,1]],["easeInOutExpo",[1,0,0,1]],["easeInCirc",[.6,.04,.98,.335]],["easeOutCirc",[.075,.82,.165,1]],["easeInOutCirc",[.785,.135,.15,.86]]],function(e,t){b.Easings[t[0]]=l.apply(null,t[1])});var S=b.CSS={RegEx:{isHex:/^#([A-f\d]{3}){1,2}$/i,valueUnwrap:/^[A-z]+\((.*)\)$/i,wrappedValueAlreadyExtracted:/[0-9.]+ [0-9.]+ [0-9.]+( [0-9.]+)?/,valueSplit:/([A-z]+\(.+\))|(([A-z0-9#-.]+?)(?=\s|$))/gi},Lists:{colors:["fill","stroke","stopColor","color","backgroundColor","borderColor","borderTopColor","borderRightColor","borderBottomColor","borderLeftColor","outlineColor"],transformsBase:["translateX","translateY","scale","scaleX","scaleY","skewX","skewY","rotateZ"],transforms3D:["transformPerspective","translateZ","scaleZ","rotateX","rotateY"]},Hooks:{templates:{textShadow:["Color X Y Blur","black 0px 0px 0px"],boxShadow:["Color X Y Blur Spread","black 0px 0px 0px 0px"],clip:["Top Right Bottom Left","0px 0px 0px 0px"],backgroundPosition:["X Y","0% 0%"],transformOrigin:["X Y Z","50% 50% 0px"],perspectiveOrigin:["X Y","50% 50%"]},registered:{},register:function(){for(var e=0;e<S.Lists.colors.length;e++){var t="color"===S.Lists.colors[e]?"0 0 0 1":"255 255 255 1";S.Hooks.templates[S.Lists.colors[e]]=["Red Green Blue Alpha",t]}var r,a,n;if(d)for(r in S.Hooks.templates){a=S.Hooks.templates[r],n=a[0].split(" ");var o=a[1].match(S.RegEx.valueSplit);"Color"===n[0]&&(n.push(n.shift()),o.push(o.shift()),S.Hooks.templates[r]=[n.join(" "),o.join(" ")])}for(r in S.Hooks.templates){a=S.Hooks.templates[r],n=a[0].split(" ");for(var e in n){var i=r+n[e],s=e;S.Hooks.registered[i]=[r,s]}}},getRoot:function(e){var t=S.Hooks.registered[e];return t?t[0]:e},cleanRootPropertyValue:function(e,t){return S.RegEx.valueUnwrap.test(t)&&(t=t.match(S.RegEx.valueUnwrap)[1]),S.Values.isCSSNullValue(t)&&(t=S.Hooks.templates[e][1]),t},extractValue:function(e,t){var r=S.Hooks.registered[e];if(r){var a=r[0],n=r[1];return t=S.Hooks.cleanRootPropertyValue(a,t),t.toString().match(S.RegEx.valueSplit)[n]}return t},injectValue:function(e,t,r){var a=S.Hooks.registered[e];if(a){var n,o,i=a[0],s=a[1];return r=S.Hooks.cleanRootPropertyValue(i,r),n=r.toString().match(S.RegEx.valueSplit),n[s]=t,o=n.join(" ")}return r}},Normalizations:{registered:{clip:function(e,t,r){switch(e){case"name":return"clip";case"extract":var a;return S.RegEx.wrappedValueAlreadyExtracted.test(r)?a=r:(a=r.toString().match(S.RegEx.valueUnwrap),a=a?a[1].replace(/,(\s+)?/g," "):r),a;case"inject":return"rect("+r+")"}},blur:function(e,t,r){switch(e){case"name":return b.State.isFirefox?"filter":"-webkit-filter";case"extract":var a=parseFloat(r);if(!a&&0!==a){var n=r.toString().match(/blur\(([0-9]+[A-z]+)\)/i);a=n?n[1]:0}return a;case"inject":return parseFloat(r)?"blur("+r+")":"none"}},opacity:function(e,t,r){if(8>=d)switch(e){case"name":return"filter";case"extract":var a=r.toString().match(/alpha\(opacity=(.*)\)/i);return r=a?a[1]/100:1;case"inject":return t.style.zoom=1,parseFloat(r)>=1?"":"alpha(opacity="+parseInt(100*parseFloat(r),10)+")"}else switch(e){case"name":return"opacity";case"extract":return r;case"inject":return r}}},register:function(){9>=d||b.State.isGingerbread||(S.Lists.transformsBase=S.Lists.transformsBase.concat(S.Lists.transforms3D));for(var e=0;e<S.Lists.transformsBase.length;e++)!function(){var t=S.Lists.transformsBase[e];S.Normalizations.registered[t]=function(e,r,n){switch(e){case"name":return"transform";case"extract":return i(r)===a||i(r).transformCache[t]===a?/^scale/i.test(t)?1:0:i(r).transformCache[t].replace(/[()]/g,"");case"inject":var o=!1;switch(t.substr(0,t.length-1)){case"translate":o=!/(%|px|em|rem|vw|vh|\d)$/i.test(n);break;case"scal":case"scale":b.State.isAndroid&&i(r).transformCache[t]===a&&1>n&&(n=1),o=!/(\d)$/i.test(n);break;case"skew":o=!/(deg|\d)$/i.test(n);break;case"rotate":o=!/(deg|\d)$/i.test(n)}return o||(i(r).transformCache[t]="("+n+")"),i(r).transformCache[t]}}}();for(var e=0;e<S.Lists.colors.length;e++)!function(){var t=S.Lists.colors[e];S.Normalizations.registered[t]=function(e,r,n){switch(e){case"name":return t;case"extract":var o;if(S.RegEx.wrappedValueAlreadyExtracted.test(n))o=n;else{var i,s={black:"rgb(0, 0, 0)",blue:"rgb(0, 0, 255)",gray:"rgb(128, 128, 128)",green:"rgb(0, 128, 0)",red:"rgb(255, 0, 0)",white:"rgb(255, 255, 255)"};/^[A-z]+$/i.test(n)?i=s[n]!==a?s[n]:s.black:S.RegEx.isHex.test(n)?i="rgb("+S.Values.hexToRgb(n).join(" ")+")":/^rgba?\(/i.test(n)||(i=s.black),o=(i||n).toString().match(S.RegEx.valueUnwrap)[1].replace(/,(\s+)?/g," ")}return 8>=d||3!==o.split(" ").length||(o+=" 1"),o;case"inject":return 8>=d?4===n.split(" ").length&&(n=n.split(/\s+/).slice(0,3).join(" ")):3===n.split(" ").length&&(n+=" 1"),(8>=d?"rgb":"rgba")+"("+n.replace(/\s+/g,",").replace(/\.(\d)+(?=,)/g,"")+")"}}}()}},Names:{camelCase:function(e){return e.replace(/-(\w)/g,function(e,t){return t.toUpperCase()})},SVGAttribute:function(e){var t="width|height|x|y|cx|cy|r|rx|ry|x1|x2|y1|y2";return(d||b.State.isAndroid&&!b.State.isChrome)&&(t+="|transform"),new RegExp("^("+t+")$","i").test(e)},prefixCheck:function(e){if(b.State.prefixMatches[e])return[b.State.prefixMatches[e],!0];for(var t=["","Webkit","Moz","ms","O"],r=0,a=t.length;a>r;r++){var n;if(n=0===r?e:t[r]+e.replace(/^\w/,function(e){return e.toUpperCase()}),m.isString(b.State.prefixElement.style[n]))return b.State.prefixMatches[e]=n,[n,!0]}return[e,!1]}},Values:{hexToRgb:function(e){var t,r=/^#?([a-f\d])([a-f\d])([a-f\d])$/i,a=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;return e=e.replace(r,function(e,t,r,a){return t+t+r+r+a+a}),t=a.exec(e),t?[parseInt(t[1],16),parseInt(t[2],16),parseInt(t[3],16)]:[0,0,0]},isCSSNullValue:function(e){return 0==e||/^(none|auto|transparent|(rgba\(0, ?0, ?0, ?0\)))$/i.test(e)},getUnitType:function(e){return/^(rotate|skew)/i.test(e)?"deg":/(^(scale|scaleX|scaleY|scaleZ|alpha|flexGrow|flexHeight|zIndex|fontWeight)$)|((opacity|red|green|blue|alpha)$)/i.test(e)?"":"px"},getDisplayType:function(e){var t=e&&e.tagName.toString().toLowerCase();return/^(b|big|i|small|tt|abbr|acronym|cite|code|dfn|em|kbd|strong|samp|var|a|bdo|br|img|map|object|q|script|span|sub|sup|button|input|label|select|textarea)$/i.test(t)?"inline":/^(li)$/i.test(t)?"list-item":/^(tr)$/i.test(t)?"table-row":/^(table)$/i.test(t)?"table":/^(tbody)$/i.test(t)?"table-row-group":"block"},addClass:function(e,t){e.classList?e.classList.add(t):e.className+=(e.className.length?" ":"")+t},removeClass:function(e,t){e.classList?e.classList.remove(t):e.className=e.className.toString().replace(new RegExp("(^|\\s)"+t.split(" ").join("|")+"(\\s|$)","gi")," ")}},getPropertyValue:function(e,r,n,o){function s(e,r){function n(){u&&S.setPropertyValue(e,"display","none")}var l=0;if(8>=d)l=f.css(e,r);else{var u=!1;if(/^(width|height)$/.test(r)&&0===S.getPropertyValue(e,"display")&&(u=!0,S.setPropertyValue(e,"display",S.Values.getDisplayType(e))),!o){if("height"===r&&"border-box"!==S.getPropertyValue(e,"boxSizing").toString().toLowerCase()){var c=e.offsetHeight-(parseFloat(S.getPropertyValue(e,"borderTopWidth"))||0)-(parseFloat(S.getPropertyValue(e,"borderBottomWidth"))||0)-(parseFloat(S.getPropertyValue(e,"paddingTop"))||0)-(parseFloat(S.getPropertyValue(e,"paddingBottom"))||0);return n(),c}if("width"===r&&"border-box"!==S.getPropertyValue(e,"boxSizing").toString().toLowerCase()){var p=e.offsetWidth-(parseFloat(S.getPropertyValue(e,"borderLeftWidth"))||0)-(parseFloat(S.getPropertyValue(e,"borderRightWidth"))||0)-(parseFloat(S.getPropertyValue(e,"paddingLeft"))||0)-(parseFloat(S.getPropertyValue(e,"paddingRight"))||0);return n(),p}}var g;g=i(e)===a?t.getComputedStyle(e,null):i(e).computedStyle?i(e).computedStyle:i(e).computedStyle=t.getComputedStyle(e,null),"borderColor"===r&&(r="borderTopColor"),l=9===d&&"filter"===r?g.getPropertyValue(r):g[r],(""===l||null===l)&&(l=e.style[r]),n()}if("auto"===l&&/^(top|right|bottom|left)$/i.test(r)){var m=s(e,"position");("fixed"===m||"absolute"===m&&/top|left/i.test(r))&&(l=f(e).position()[r]+"px")}return l}var l;if(S.Hooks.registered[r]){var u=r,c=S.Hooks.getRoot(u);n===a&&(n=S.getPropertyValue(e,S.Names.prefixCheck(c)[0])),S.Normalizations.registered[c]&&(n=S.Normalizations.registered[c]("extract",e,n)),l=S.Hooks.extractValue(u,n)}else if(S.Normalizations.registered[r]){var p,g;p=S.Normalizations.registered[r]("name",e),"transform"!==p&&(g=s(e,S.Names.prefixCheck(p)[0]),S.Values.isCSSNullValue(g)&&S.Hooks.templates[r]&&(g=S.Hooks.templates[r][1])),l=S.Normalizations.registered[r]("extract",e,g)}if(!/^[\d-]/.test(l))if(i(e)&&i(e).isSVG&&S.Names.SVGAttribute(r))if(/^(height|width)$/i.test(r))try{l=e.getBBox()[r]}catch(m){l=0}else l=e.getAttribute(r);else l=s(e,S.Names.prefixCheck(r)[0]);return S.Values.isCSSNullValue(l)&&(l=0),b.debug>=2&&console.log("Get "+r+": "+l),l},setPropertyValue:function(e,r,a,n,o){var s=r;if("scroll"===r)o.container?o.container["scroll"+o.direction]=a:"Left"===o.direction?t.scrollTo(a,o.alternateValue):t.scrollTo(o.alternateValue,a);else if(S.Normalizations.registered[r]&&"transform"===S.Normalizations.registered[r]("name",e))S.Normalizations.registered[r]("inject",e,a),s="transform",a=i(e).transformCache[r];else{if(S.Hooks.registered[r]){var l=r,u=S.Hooks.getRoot(r);n=n||S.getPropertyValue(e,u),a=S.Hooks.injectValue(l,a,n),r=u}if(S.Normalizations.registered[r]&&(a=S.Normalizations.registered[r]("inject",e,a),r=S.Normalizations.registered[r]("name",e)),s=S.Names.prefixCheck(r)[0],8>=d)try{e.style[s]=a}catch(c){b.debug&&console.log("Browser does not support ["+a+"] for ["+s+"]")}else i(e)&&i(e).isSVG&&S.Names.SVGAttribute(r)?e.setAttribute(r,a):e.style[s]=a;b.debug>=2&&console.log("Set "+r+" ("+s+"): "+a)}return[s,a]},flushTransformCache:function(e){function t(t){return parseFloat(S.getPropertyValue(e,t))}var r="";if((d||b.State.isAndroid&&!b.State.isChrome)&&i(e).isSVG){var a={translate:[t("translateX"),t("translateY")],skewX:[t("skewX")],skewY:[t("skewY")],scale:1!==t("scale")?[t("scale"),t("scale")]:[t("scaleX"),t("scaleY")],rotate:[t("rotateZ"),0,0]};f.each(i(e).transformCache,function(e){/^translate/i.test(e)?e="translate":/^scale/i.test(e)?e="scale":/^rotate/i.test(e)&&(e="rotate"),a[e]&&(r+=e+"("+a[e].join(" ")+") ",delete a[e])})}else{var n,o;f.each(i(e).transformCache,function(t){return n=i(e).transformCache[t],"transformPerspective"===t?(o=n,!0):(9===d&&"rotateZ"===t&&(t="rotate"),void(r+=t+n+" "))}),o&&(r="perspective"+o+" "+r)}S.setPropertyValue(e,"transform",r)}};S.Hooks.register(),S.Normalizations.register(),b.hook=function(e,t,r){var n=a;return e=o(e),f.each(e,function(e,o){if(i(o)===a&&b.init(o),r===a)n===a&&(n=b.CSS.getPropertyValue(o,t));else{var s=b.CSS.setPropertyValue(o,t,r);"transform"===s[0]&&b.CSS.flushTransformCache(o),n=s}}),n};var P=function(){function e(){return s?k.promise||null:l}function n(){function e(e){function p(e,t){var r=a,n=a,i=a;return m.isArray(e)?(r=e[0],!m.isArray(e[1])&&/^[\d-]/.test(e[1])||m.isFunction(e[1])||S.RegEx.isHex.test(e[1])?i=e[1]:(m.isString(e[1])&&!S.RegEx.isHex.test(e[1])||m.isArray(e[1]))&&(n=t?e[1]:u(e[1],s.duration),e[2]!==a&&(i=e[2]))):r=e,t||(n=n||s.easing),m.isFunction(r)&&(r=r.call(o,V,w)),m.isFunction(i)&&(i=i.call(o,V,w)),[r||0,n,i]}function d(e,t){var r,a;return a=(t||"0").toString().toLowerCase().replace(/[%A-z]+$/,function(e){return r=e,""}),r||(r=S.Values.getUnitType(e)),[a,r]}function h(){var e={myParent:o.parentNode||r.body,position:S.getPropertyValue(o,"position"),fontSize:S.getPropertyValue(o,"fontSize")},a=e.position===L.lastPosition&&e.myParent===L.lastParent,n=e.fontSize===L.lastFontSize;L.lastParent=e.myParent,L.lastPosition=e.position,L.lastFontSize=e.fontSize;var s=100,l={};if(n&&a)l.emToPx=L.lastEmToPx,l.percentToPxWidth=L.lastPercentToPxWidth,l.percentToPxHeight=L.lastPercentToPxHeight;else{var u=i(o).isSVG?r.createElementNS("http://www.w3.org/2000/svg","rect"):r.createElement("div");b.init(u),e.myParent.appendChild(u),f.each(["overflow","overflowX","overflowY"],function(e,t){b.CSS.setPropertyValue(u,t,"hidden")}),b.CSS.setPropertyValue(u,"position",e.position),b.CSS.setPropertyValue(u,"fontSize",e.fontSize),b.CSS.setPropertyValue(u,"boxSizing","content-box"),f.each(["minWidth","maxWidth","width","minHeight","maxHeight","height"],function(e,t){b.CSS.setPropertyValue(u,t,s+"%")}),b.CSS.setPropertyValue(u,"paddingLeft",s+"em"),l.percentToPxWidth=L.lastPercentToPxWidth=(parseFloat(S.getPropertyValue(u,"width",null,!0))||1)/s,l.percentToPxHeight=L.lastPercentToPxHeight=(parseFloat(S.getPropertyValue(u,"height",null,!0))||1)/s,l.emToPx=L.lastEmToPx=(parseFloat(S.getPropertyValue(u,"paddingLeft"))||1)/s,e.myParent.removeChild(u)}return null===L.remToPx&&(L.remToPx=parseFloat(S.getPropertyValue(r.body,"fontSize"))||16),null===L.vwToPx&&(L.vwToPx=parseFloat(t.innerWidth)/100,L.vhToPx=parseFloat(t.innerHeight)/100),l.remToPx=L.remToPx,l.vwToPx=L.vwToPx,l.vhToPx=L.vhToPx,b.debug>=1&&console.log("Unit ratios: "+JSON.stringify(l),o),l}if(s.begin&&0===V)try{s.begin.call(g,g)}catch(x){setTimeout(function(){throw x},1)}if("scroll"===A){var P,C,T,F=/^x$/i.test(s.axis)?"Left":"Top",j=parseFloat(s.offset)||0;s.container?m.isWrapped(s.container)||m.isNode(s.container)?(s.container=s.container[0]||s.container,P=s.container["scroll"+F],T=P+f(o).position()[F.toLowerCase()]+j):s.container=null:(P=b.State.scrollAnchor[b.State["scrollProperty"+F]],C=b.State.scrollAnchor[b.State["scrollProperty"+("Left"===F?"Top":"Left")]],T=f(o).offset()[F.toLowerCase()]+j),l={scroll:{rootPropertyValue:!1,startValue:P,currentValue:P,endValue:T,unitType:"",easing:s.easing,scrollData:{container:s.container,direction:F,alternateValue:C}},element:o},b.debug&&console.log("tweensContainer (scroll): ",l.scroll,o)}else if("reverse"===A){if(!i(o).tweensContainer)return void f.dequeue(o,s.queue);"none"===i(o).opts.display&&(i(o).opts.display="auto"),"hidden"===i(o).opts.visibility&&(i(o).opts.visibility="visible"),i(o).opts.loop=!1,i(o).opts.begin=null,i(o).opts.complete=null,v.easing||delete s.easing,v.duration||delete s.duration,s=f.extend({},i(o).opts,s);var E=f.extend(!0,{},i(o).tweensContainer);for(var H in E)if("element"!==H){var N=E[H].startValue;E[H].startValue=E[H].currentValue=E[H].endValue,E[H].endValue=N,m.isEmptyObject(v)||(E[H].easing=s.easing),b.debug&&console.log("reverse tweensContainer ("+H+"): "+JSON.stringify(E[H]),o)}l=E}else if("start"===A){var E;i(o).tweensContainer&&i(o).isAnimating===!0&&(E=i(o).tweensContainer),f.each(y,function(e,t){if(RegExp("^"+S.Lists.colors.join("$|^")+"$").test(e)){var r=p(t,!0),n=r[0],o=r[1],i=r[2];if(S.RegEx.isHex.test(n)){for(var s=["Red","Green","Blue"],l=S.Values.hexToRgb(n),u=i?S.Values.hexToRgb(i):a,c=0;c<s.length;c++){var f=[l[c]];o&&f.push(o),u!==a&&f.push(u[c]),y[e+s[c]]=f}delete y[e]}}});for(var z in y){var O=p(y[z]),q=O[0],$=O[1],M=O[2];z=S.Names.camelCase(z);var I=S.Hooks.getRoot(z),B=!1;if(i(o).isSVG||"tween"===I||S.Names.prefixCheck(I)[1]!==!1||S.Normalizations.registered[I]!==a){(s.display!==a&&null!==s.display&&"none"!==s.display||s.visibility!==a&&"hidden"!==s.visibility)&&/opacity|filter/.test(z)&&!M&&0!==q&&(M=0),s._cacheValues&&E&&E[z]?(M===a&&(M=E[z].endValue+E[z].unitType),B=i(o).rootPropertyValueCache[I]):S.Hooks.registered[z]?M===a?(B=S.getPropertyValue(o,I),M=S.getPropertyValue(o,z,B)):B=S.Hooks.templates[I][1]:M===a&&(M=S.getPropertyValue(o,z));var W,G,Y,D=!1;if(W=d(z,M),M=W[0],Y=W[1],W=d(z,q),q=W[0].replace(/^([+-\/*])=/,function(e,t){return D=t,""}),G=W[1],M=parseFloat(M)||0,q=parseFloat(q)||0,"%"===G&&(/^(fontSize|lineHeight)$/.test(z)?(q/=100,G="em"):/^scale/.test(z)?(q/=100,G=""):/(Red|Green|Blue)$/i.test(z)&&(q=q/100*255,G="")),/[\/*]/.test(D))G=Y;else if(Y!==G&&0!==M)if(0===q)G=Y;else{n=n||h();var Q=/margin|padding|left|right|width|text|word|letter/i.test(z)||/X$/.test(z)||"x"===z?"x":"y";switch(Y){case"%":M*="x"===Q?n.percentToPxWidth:n.percentToPxHeight;break;case"px":break;default:M*=n[Y+"ToPx"]}switch(G){case"%":M*=1/("x"===Q?n.percentToPxWidth:n.percentToPxHeight);break;case"px":break;default:M*=1/n[G+"ToPx"]}}switch(D){case"+":q=M+q;break;case"-":q=M-q;break;case"*":q=M*q;break;case"/":q=M/q}l[z]={rootPropertyValue:B,startValue:M,currentValue:M,endValue:q,unitType:G,easing:$},b.debug&&console.log("tweensContainer ("+z+"): "+JSON.stringify(l[z]),o)}else b.debug&&console.log("Skipping ["+I+"] due to a lack of browser support.")}l.element=o}l.element&&(S.Values.addClass(o,"velocity-animating"),R.push(l),""===s.queue&&(i(o).tweensContainer=l,i(o).opts=s),i(o).isAnimating=!0,V===w-1?(b.State.calls.push([R,g,s,null,k.resolver]),b.State.isTicking===!1&&(b.State.isTicking=!0,c())):V++)}var n,o=this,s=f.extend({},b.defaults,v),l={};switch(i(o)===a&&b.init(o),parseFloat(s.delay)&&s.queue!==!1&&f.queue(o,s.queue,function(e){b.velocityQueueEntryFlag=!0,i(o).delayTimer={setTimeout:setTimeout(e,parseFloat(s.delay)),next:e}}),s.duration.toString().toLowerCase()){case"fast":s.duration=200;break;case"normal":s.duration=h;break;case"slow":s.duration=600;break;default:s.duration=parseFloat(s.duration)||1}b.mock!==!1&&(b.mock===!0?s.duration=s.delay=1:(s.duration*=parseFloat(b.mock)||1,s.delay*=parseFloat(b.mock)||1)),s.easing=u(s.easing,s.duration),s.begin&&!m.isFunction(s.begin)&&(s.begin=null),s.progress&&!m.isFunction(s.progress)&&(s.progress=null),s.complete&&!m.isFunction(s.complete)&&(s.complete=null),s.display!==a&&null!==s.display&&(s.display=s.display.toString().toLowerCase(),"auto"===s.display&&(s.display=b.CSS.Values.getDisplayType(o))),s.visibility!==a&&null!==s.visibility&&(s.visibility=s.visibility.toString().toLowerCase()),s.mobileHA=s.mobileHA&&b.State.isMobile&&!b.State.isGingerbread,s.queue===!1?s.delay?setTimeout(e,s.delay):e():f.queue(o,s.queue,function(t,r){return r===!0?(k.promise&&k.resolver(g),!0):(b.velocityQueueEntryFlag=!0,void e(t))}),""!==s.queue&&"fx"!==s.queue||"inprogress"===f.queue(o)[0]||f.dequeue(o)}var s,l,d,g,y,v,x=arguments[0]&&(arguments[0].p||f.isPlainObject(arguments[0].properties)&&!arguments[0].properties.names||m.isString(arguments[0].properties));if(m.isWrapped(this)?(s=!1,d=0,g=this,l=this):(s=!0,d=1,g=x?arguments[0].elements||arguments[0].e:arguments[0]),g=o(g)){x?(y=arguments[0].properties||arguments[0].p,v=arguments[0].options||arguments[0].o):(y=arguments[d],v=arguments[d+1]);var w=g.length,V=0;if(!/^(stop|finish)$/i.test(y)&&!f.isPlainObject(v)){var C=d+1;v={};for(var T=C;T<arguments.length;T++)m.isArray(arguments[T])||!/^(fast|normal|slow)$/i.test(arguments[T])&&!/^\d/.test(arguments[T])?m.isString(arguments[T])||m.isArray(arguments[T])?v.easing=arguments[T]:m.isFunction(arguments[T])&&(v.complete=arguments[T]):v.duration=arguments[T]}var k={promise:null,resolver:null,rejecter:null};s&&b.Promise&&(k.promise=new b.Promise(function(e,t){k.resolver=e,k.rejecter=t}));var A;switch(y){case"scroll":A="scroll";break;case"reverse":A="reverse";break;case"finish":case"stop":f.each(g,function(e,t){i(t)&&i(t).delayTimer&&(clearTimeout(i(t).delayTimer.setTimeout),i(t).delayTimer.next&&i(t).delayTimer.next(),delete i(t).delayTimer)});var F=[];return f.each(b.State.calls,function(e,t){t&&f.each(t[1],function(r,n){var o=v===a?"":v;return o===!0||t[2].queue===o||v===a&&t[2].queue===!1?void f.each(g,function(r,a){a===n&&((v===!0||m.isString(v))&&(f.each(f.queue(a,m.isString(v)?v:""),function(e,t){
+// m.isFunction(t)&&t(null,!0)}),f.queue(a,m.isString(v)?v:"",[])),"stop"===y?(i(a)&&i(a).tweensContainer&&o!==!1&&f.each(i(a).tweensContainer,function(e,t){t.endValue=t.currentValue}),F.push(e)):"finish"===y&&(t[2].duration=1))}):!0})}),"stop"===y&&(f.each(F,function(e,t){p(t,!0)}),k.promise&&k.resolver(g)),e();default:if(!f.isPlainObject(y)||m.isEmptyObject(y)){if(m.isString(y)&&b.Redirects[y]){var j=f.extend({},v),E=j.duration,H=j.delay||0;return j.backwards===!0&&(g=f.extend(!0,[],g).reverse()),f.each(g,function(e,t){parseFloat(j.stagger)?j.delay=H+parseFloat(j.stagger)*e:m.isFunction(j.stagger)&&(j.delay=H+j.stagger.call(t,e,w)),j.drag&&(j.duration=parseFloat(E)||(/^(callout|transition)/.test(y)?1e3:h),j.duration=Math.max(j.duration*(j.backwards?1-e/w:(e+1)/w),.75*j.duration,200)),b.Redirects[y].call(t,t,j||{},e,w,g,k.promise?k:a)}),e()}var N="Velocity: First argument ("+y+") was not a property map, a known action, or a registered redirect. Aborting.";return k.promise?k.rejecter(new Error(N)):console.log(N),e()}A="start"}var L={lastParent:null,lastPosition:null,lastFontSize:null,lastPercentToPxWidth:null,lastPercentToPxHeight:null,lastEmToPx:null,remToPx:null,vwToPx:null,vhToPx:null},R=[];f.each(g,function(e,t){m.isNode(t)&&n.call(t)});var z,j=f.extend({},b.defaults,v);if(j.loop=parseInt(j.loop),z=2*j.loop-1,j.loop)for(var O=0;z>O;O++){var q={delay:j.delay,progress:j.progress};O===z-1&&(q.display=j.display,q.visibility=j.visibility,q.complete=j.complete),P(g,"reverse",q)}return e()}};b=f.extend(P,b),b.animate=P;var w=t.requestAnimationFrame||g;return b.State.isMobile||r.hidden===a||r.addEventListener("visibilitychange",function(){r.hidden?(w=function(e){return setTimeout(function(){e(!0)},16)},c()):w=t.requestAnimationFrame||g}),e.Velocity=b,e!==t&&(e.fn.velocity=P,e.fn.velocity.defaults=b.defaults),f.each(["Down","Up"],function(e,t){b.Redirects["slide"+t]=function(e,r,n,o,i,s){var l=f.extend({},r),u=l.begin,c=l.complete,p={height:"",marginTop:"",marginBottom:"",paddingTop:"",paddingBottom:""},d={};l.display===a&&(l.display="Down"===t?"inline"===b.CSS.Values.getDisplayType(e)?"inline-block":"block":"none"),l.begin=function(){u&&u.call(i,i);for(var r in p){d[r]=e.style[r];var a=b.CSS.getPropertyValue(e,r);p[r]="Down"===t?[a,0]:[0,a]}d.overflow=e.style.overflow,e.style.overflow="hidden"},l.complete=function(){for(var t in d)e.style[t]=d[t];c&&c.call(i,i),s&&s.resolver(i)},b(e,p,l)}}),f.each(["In","Out"],function(e,t){b.Redirects["fade"+t]=function(e,r,n,o,i,s){var l=f.extend({},r),u={opacity:"In"===t?1:0},c=l.complete;l.complete=n!==o-1?l.begin=null:function(){c&&c.call(i,i),s&&s.resolver(i)},l.display===a&&(l.display="In"===t?"auto":"none"),b(this,u,l)}}),b}(window.jQuery||window.Zepto||window,window,document)}));
 
 /*!
  * Chart.js
  * http://chartjs.org/
- * Version: 2.6.0
+ * Version: 2.7.1
  *
  * Copyright 2017 Nick Downie
  * Released under the MIT license
@@ -307,10 +314,10 @@ function getRgba(string) {
    if (!string) {
       return;
    }
-   var abbr =  /^#([a-fA-F0-9]{3})$/,
-       hex =  /^#([a-fA-F0-9]{6})$/,
-       rgba = /^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/,
-       per = /^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/,
+   var abbr =  /^#([a-fA-F0-9]{3})$/i,
+       hex =  /^#([a-fA-F0-9]{6})$/i,
+       rgba = /^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/i,
+       per = /^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/i,
        keyword = /(\w+)/;
 
    var rgb = [0, 0, 0],
@@ -1784,6 +1791,8 @@ Converter.prototype.getValues = function(space) {
 
 module.exports = convert;
 },{"4":4}],6:[function(require,module,exports){
+'use strict'
+
 module.exports = {
 	"aliceblue": [240, 248, 255],
 	"antiquewhite": [250, 235, 215],
@@ -1934,38 +1943,39 @@ module.exports = {
 	"yellow": [255, 255, 0],
 	"yellowgreen": [154, 205, 50]
 };
+
 },{}],7:[function(require,module,exports){
 /**
  * @namespace Chart
  */
-var Chart = require(28)();
+var Chart = require(29)();
 
-require(26)(Chart);
-require(40)(Chart);
+Chart.helpers = require(45);
+
+// @todo dispatch these helpers into appropriated helpers/helpers.* file and write unit tests!
+require(27)(Chart);
+
+Chart.defaults = require(25);
+Chart.Element = require(26);
+Chart.elements = require(40);
+Chart.Interaction = require(28);
+Chart.platform = require(48);
+
+require(31)(Chart);
 require(22)(Chart);
-require(25)(Chart);
-require(30)(Chart);
-require(21)(Chart);
 require(23)(Chart);
 require(24)(Chart);
-require(29)(Chart);
-require(32)(Chart);
+require(30)(Chart);
 require(33)(Chart);
-require(31)(Chart);
-require(27)(Chart);
-require(34)(Chart);
-
+require(32)(Chart);
 require(35)(Chart);
-require(36)(Chart);
-require(37)(Chart);
-require(38)(Chart);
 
-require(46)(Chart);
-require(44)(Chart);
-require(45)(Chart);
-require(47)(Chart);
-require(48)(Chart);
-require(49)(Chart);
+require(54)(Chart);
+require(52)(Chart);
+require(53)(Chart);
+require(55)(Chart);
+require(56)(Chart);
+require(57)(Chart);
 
 // Controllers must be loaded after elements
 // See Chart.core.datasetController.dataElementType
@@ -1975,6 +1985,7 @@ require(17)(Chart);
 require(18)(Chart);
 require(19)(Chart);
 require(20)(Chart);
+require(21)(Chart);
 
 require(8)(Chart);
 require(9)(Chart);
@@ -1988,19 +1999,32 @@ require(14)(Chart);
 var plugins = [];
 
 plugins.push(
-    require(41)(Chart),
-    require(42)(Chart),
-    require(43)(Chart)
+	require(49)(Chart),
+	require(50)(Chart),
+	require(51)(Chart)
 );
 
 Chart.plugins.register(plugins);
+
+Chart.platform.initialize();
 
 module.exports = Chart;
 if (typeof window !== 'undefined') {
 	window.Chart = Chart;
 }
 
-},{"10":10,"11":11,"12":12,"13":13,"14":14,"15":15,"16":16,"17":17,"18":18,"19":19,"20":20,"21":21,"22":22,"23":23,"24":24,"25":25,"26":26,"27":27,"28":28,"29":29,"30":30,"31":31,"32":32,"33":33,"34":34,"35":35,"36":36,"37":37,"38":38,"40":40,"41":41,"42":42,"43":43,"44":44,"45":45,"46":46,"47":47,"48":48,"49":49,"8":8,"9":9}],8:[function(require,module,exports){
+// DEPRECATIONS
+
+/**
+ * Provided for backward compatibility, use Chart.helpers.canvas instead.
+ * @namespace Chart.canvasHelpers
+ * @deprecated since version 2.6.0
+ * @todo remove at version 3
+ * @private
+ */
+Chart.canvasHelpers = Chart.helpers.canvas;
+
+},{"10":10,"11":11,"12":12,"13":13,"14":14,"15":15,"16":16,"17":17,"18":18,"19":19,"20":20,"21":21,"22":22,"23":23,"24":24,"25":25,"26":26,"27":27,"28":28,"29":29,"30":30,"31":31,"32":32,"33":33,"35":35,"40":40,"45":45,"48":48,"49":49,"50":50,"51":51,"52":52,"53":53,"54":54,"55":55,"56":56,"57":57,"8":8,"9":9}],8:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -2081,85 +2105,115 @@ module.exports = function(Chart) {
 'use strict';
 
 module.exports = function(Chart) {
-
-	var defaultConfig = {
-		hover: {
-			mode: 'single'
-		},
-
-		scales: {
-			xAxes: [{
-				type: 'linear', // scatter should not use a category axis
-				position: 'bottom',
-				id: 'x-axis-1' // need an ID so datasets can reference the scale
-			}],
-			yAxes: [{
-				type: 'linear',
-				position: 'left',
-				id: 'y-axis-1'
-			}]
-		},
-
-		tooltips: {
-			callbacks: {
-				title: function() {
-					// Title doesn't make sense for scatter since we format the data as a point
-					return '';
-				},
-				label: function(tooltipItem) {
-					return '(' + tooltipItem.xLabel + ', ' + tooltipItem.yLabel + ')';
-				}
-			}
-		}
-	};
-
-	// Register the default config for this type
-	Chart.defaults.scatter = defaultConfig;
-
-	// Scatter charts use line controllers
-	Chart.controllers.scatter = Chart.controllers.line;
-
 	Chart.Scatter = function(context, config) {
 		config.type = 'scatter';
 		return new Chart(context, config);
 	};
-
 };
 
 },{}],15:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var defaults = require(25);
+var elements = require(40);
+var helpers = require(45);
 
-	var helpers = Chart.helpers;
+defaults._set('bar', {
+	hover: {
+		mode: 'label'
+	},
 
-	Chart.defaults.bar = {
-		hover: {
-			mode: 'label'
-		},
+	scales: {
+		xAxes: [{
+			type: 'category',
 
-		scales: {
-			xAxes: [{
-				type: 'category',
+			// Specific to Bar Controller
+			categoryPercentage: 0.8,
+			barPercentage: 0.9,
 
-				// Specific to Bar Controller
-				categoryPercentage: 0.8,
-				barPercentage: 0.9,
+			// offset settings
+			offset: true,
 
-				// grid line settings
-				gridLines: {
-					offsetGridLines: true
-				}
-			}],
-			yAxes: [{
-				type: 'linear'
-			}]
+			// grid line settings
+			gridLines: {
+				offsetGridLines: true
+			}
+		}],
+
+		yAxes: [{
+			type: 'linear'
+		}]
+	}
+});
+
+defaults._set('horizontalBar', {
+	hover: {
+		mode: 'index',
+		axis: 'y'
+	},
+
+	scales: {
+		xAxes: [{
+			type: 'linear',
+			position: 'bottom'
+		}],
+
+		yAxes: [{
+			position: 'left',
+			type: 'category',
+
+			// Specific to Horizontal Bar Controller
+			categoryPercentage: 0.8,
+			barPercentage: 0.9,
+
+			// offset settings
+			offset: true,
+
+			// grid line settings
+			gridLines: {
+				offsetGridLines: true
+			}
+		}]
+	},
+
+	elements: {
+		rectangle: {
+			borderSkipped: 'left'
 		}
-	};
+	},
+
+	tooltips: {
+		callbacks: {
+			title: function(item, data) {
+				// Pick first xLabel for now
+				var title = '';
+
+				if (item.length > 0) {
+					if (item[0].yLabel) {
+						title = item[0].yLabel;
+					} else if (data.labels.length > 0 && item[0].index < data.labels.length) {
+						title = data.labels[item[0].index];
+					}
+				}
+
+				return title;
+			},
+
+			label: function(item, data) {
+				var datasetLabel = data.datasets[item.datasetIndex].label || '';
+				return datasetLabel + ': ' + item.xLabel;
+			}
+		},
+		mode: 'index',
+		axis: 'y'
+	}
+});
+
+module.exports = function(Chart) {
 
 	Chart.controllers.bar = Chart.DatasetController.extend({
 
-		dataElementType: Chart.elements.Rectangle,
+		dataElementType: elements.Rectangle,
 
 		initialize: function() {
 			var me = this;
@@ -2174,13 +2228,13 @@ module.exports = function(Chart) {
 
 		update: function(reset) {
 			var me = this;
-			var elements = me.getMeta().data;
+			var rects = me.getMeta().data;
 			var i, ilen;
 
 			me._ruler = me.getRuler();
 
-			for (i = 0, ilen = elements.length; i < ilen; ++i) {
-				me.updateElement(elements[i], i, reset);
+			for (i = 0, ilen = rects.length; i < ilen; ++i) {
+				me.updateElement(rects[i], i, reset);
 			}
 		},
 
@@ -2201,9 +2255,9 @@ module.exports = function(Chart) {
 				datasetLabel: dataset.label,
 				label: chart.data.labels[index],
 				borderSkipped: custom.borderSkipped ? custom.borderSkipped : rectangleOptions.borderSkipped,
-				backgroundColor: custom.backgroundColor ? custom.backgroundColor : helpers.getValueAtIndexOrDefault(dataset.backgroundColor, index, rectangleOptions.backgroundColor),
-				borderColor: custom.borderColor ? custom.borderColor : helpers.getValueAtIndexOrDefault(dataset.borderColor, index, rectangleOptions.borderColor),
-				borderWidth: custom.borderWidth ? custom.borderWidth : helpers.getValueAtIndexOrDefault(dataset.borderWidth, index, rectangleOptions.borderWidth)
+				backgroundColor: custom.backgroundColor ? custom.backgroundColor : helpers.valueAtIndexOrDefault(dataset.backgroundColor, index, rectangleOptions.backgroundColor),
+				borderColor: custom.borderColor ? custom.borderColor : helpers.valueAtIndexOrDefault(dataset.borderColor, index, rectangleOptions.borderColor),
+				borderWidth: custom.borderWidth ? custom.borderWidth : helpers.valueAtIndexOrDefault(dataset.borderWidth, index, rectangleOptions.borderWidth)
 			};
 
 			me.updateElementGeometry(rectangle, index, reset);
@@ -2225,11 +2279,11 @@ module.exports = function(Chart) {
 			var ipixels = me.calculateBarIndexPixels(me.index, index, ruler);
 
 			model.horizontal = horizontal;
-			model.base = reset? base : vpixels.base;
-			model.x = horizontal? reset? base : vpixels.head : ipixels.center;
-			model.y = horizontal? ipixels.center : reset? base : vpixels.head;
-			model.height = horizontal? ipixels.size : undefined;
-			model.width = horizontal? undefined : ipixels.size;
+			model.base = reset ? base : vpixels.base;
+			model.x = horizontal ? reset ? base : vpixels.head : ipixels.center;
+			model.y = horizontal ? ipixels.center : reset ? base : vpixels.head;
+			model.height = horizontal ? ipixels.size : undefined;
+			model.width = horizontal ? undefined : ipixels.size;
 		},
 
 		/**
@@ -2269,7 +2323,7 @@ module.exports = function(Chart) {
 			var chart = me.chart;
 			var scale = me.getIndexScale();
 			var stacked = scale.options.stacked;
-			var ilen = last === undefined? chart.data.datasets.length : last + 1;
+			var ilen = last === undefined ? chart.data.datasets.length : last + 1;
 			var stacks = [];
 			var i, meta;
 
@@ -2300,26 +2354,23 @@ module.exports = function(Chart) {
 		getRuler: function() {
 			var me = this;
 			var scale = me.getIndexScale();
-			var options = scale.options;
 			var stackCount = me.getStackCount();
-			var fullSize = scale.isHorizontal()? scale.width : scale.height;
-			var tickSize = fullSize / scale.ticks.length;
-			var categorySize = tickSize * options.categoryPercentage;
-			var fullBarSize = categorySize / stackCount;
-			var barSize = fullBarSize * options.barPercentage;
+			var datasetIndex = me.index;
+			var pixels = [];
+			var isHorizontal = scale.isHorizontal();
+			var start = isHorizontal ? scale.left : scale.top;
+			var end = start + (isHorizontal ? scale.width : scale.height);
+			var i, ilen;
 
-			barSize = Math.min(
-				helpers.getValueOrDefault(options.barThickness, barSize),
-				helpers.getValueOrDefault(options.maxBarThickness, Infinity));
+			for (i = 0, ilen = me.getMeta().data.length; i < ilen; ++i) {
+				pixels.push(scale.getPixelForValue(null, i, datasetIndex));
+			}
 
 			return {
+				pixels: pixels,
+				start: start,
+				end: end,
 				stackCount: stackCount,
-				tickSize: tickSize,
-				categorySize: categorySize,
-				categorySpacing: tickSize - categorySize,
-				fullBarSize: fullBarSize,
-				barSize: barSize,
-				barSpacing: fullBarSize - barSize,
 				scale: scale
 			};
 		},
@@ -2334,7 +2385,7 @@ module.exports = function(Chart) {
 			var meta = me.getMeta();
 			var scale = me.getValueScale();
 			var datasets = chart.data.datasets;
-			var value = Number(datasets[datasetIndex].data[index]);
+			var value = scale.getRightValue(datasets[datasetIndex].data[index]);
 			var stacked = scale.options.stacked;
 			var stack = meta.stack;
 			var start = 0;
@@ -2349,7 +2400,7 @@ module.exports = function(Chart) {
 						imeta.controller.getValueScaleId() === scale.id &&
 						chart.isDatasetVisible(i)) {
 
-						ivalue = Number(datasets[i].data[index]);
+						ivalue = scale.getRightValue(datasets[i].data[index]);
 						if ((value < 0 && ivalue < 0) || (value >= 0 && ivalue > 0)) {
 							start += ivalue;
 						}
@@ -2374,16 +2425,45 @@ module.exports = function(Chart) {
 		 */
 		calculateBarIndexPixels: function(datasetIndex, index, ruler) {
 			var me = this;
-			var scale = ruler.scale;
-			var isCombo = me.chart.isCombo;
+			var options = ruler.scale.options;
 			var stackIndex = me.getStackIndex(datasetIndex);
-			var base = scale.getPixelForValue(null, index, datasetIndex, isCombo);
-			var size = ruler.barSize;
+			var pixels = ruler.pixels;
+			var base = pixels[index];
+			var length = pixels.length;
+			var start = ruler.start;
+			var end = ruler.end;
+			var leftSampleSize, rightSampleSize, leftCategorySize, rightCategorySize, fullBarSize, size;
 
-			base -= isCombo? ruler.tickSize / 2 : 0;
-			base += ruler.fullBarSize * stackIndex;
-			base += ruler.categorySpacing / 2;
-			base += ruler.barSpacing / 2;
+			if (length === 1) {
+				leftSampleSize = base > start ? base - start : end - base;
+				rightSampleSize = base < end ? end - base : base - start;
+			} else {
+				if (index > 0) {
+					leftSampleSize = (base - pixels[index - 1]) / 2;
+					if (index === length - 1) {
+						rightSampleSize = leftSampleSize;
+					}
+				}
+				if (index < length - 1) {
+					rightSampleSize = (pixels[index + 1] - base) / 2;
+					if (index === 0) {
+						leftSampleSize = rightSampleSize;
+					}
+				}
+			}
+
+			leftCategorySize = leftSampleSize * options.categoryPercentage;
+			rightCategorySize = rightSampleSize * options.categoryPercentage;
+			fullBarSize = (leftCategorySize + rightCategorySize) / ruler.stackCount;
+			size = fullBarSize * options.barPercentage;
+
+			size = Math.min(
+				helpers.valueOrDefault(options.barThickness, size),
+				helpers.valueOrDefault(options.maxBarThickness, Infinity));
+
+			base -= leftCategorySize;
+			base += fullBarSize * stackIndex;
+			base += (fullBarSize - size) / 2;
 
 			return {
 				size: size,
@@ -2396,18 +2476,17 @@ module.exports = function(Chart) {
 		draw: function() {
 			var me = this;
 			var chart = me.chart;
-			var elements = me.getMeta().data;
+			var scale = me.getValueScale();
+			var rects = me.getMeta().data;
 			var dataset = me.getDataset();
-			var ilen = elements.length;
+			var ilen = rects.length;
 			var i = 0;
-			var d;
 
 			helpers.canvas.clipArea(chart.ctx, chart.chartArea);
 
-			for (; i<ilen; ++i) {
-				d = dataset.data[i];
-				if (d !== null && d !== undefined && !isNaN(d)) {
-					elements[i].draw();
+			for (; i < ilen; ++i) {
+				if (!isNaN(scale.getRightValue(dataset.data[i]))) {
+					rects[i].draw();
 				}
 			}
 
@@ -2420,9 +2499,9 @@ module.exports = function(Chart) {
 			var custom = rectangle.custom || {};
 			var model = rectangle._model;
 
-			model.backgroundColor = custom.hoverBackgroundColor ? custom.hoverBackgroundColor : helpers.getValueAtIndexOrDefault(dataset.hoverBackgroundColor, index, helpers.getHoverColor(model.backgroundColor));
-			model.borderColor = custom.hoverBorderColor ? custom.hoverBorderColor : helpers.getValueAtIndexOrDefault(dataset.hoverBorderColor, index, helpers.getHoverColor(model.borderColor));
-			model.borderWidth = custom.hoverBorderWidth ? custom.hoverBorderWidth : helpers.getValueAtIndexOrDefault(dataset.hoverBorderWidth, index, model.borderWidth);
+			model.backgroundColor = custom.hoverBackgroundColor ? custom.hoverBackgroundColor : helpers.valueAtIndexOrDefault(dataset.hoverBackgroundColor, index, helpers.getHoverColor(model.backgroundColor));
+			model.borderColor = custom.hoverBorderColor ? custom.hoverBorderColor : helpers.valueAtIndexOrDefault(dataset.hoverBorderColor, index, helpers.getHoverColor(model.borderColor));
+			model.borderWidth = custom.hoverBorderWidth ? custom.hoverBorderWidth : helpers.valueAtIndexOrDefault(dataset.hoverBorderWidth, index, model.borderWidth);
 		},
 
 		removeHoverStyle: function(rectangle) {
@@ -2432,67 +2511,11 @@ module.exports = function(Chart) {
 			var model = rectangle._model;
 			var rectangleElementOptions = this.chart.options.elements.rectangle;
 
-			model.backgroundColor = custom.backgroundColor ? custom.backgroundColor : helpers.getValueAtIndexOrDefault(dataset.backgroundColor, index, rectangleElementOptions.backgroundColor);
-			model.borderColor = custom.borderColor ? custom.borderColor : helpers.getValueAtIndexOrDefault(dataset.borderColor, index, rectangleElementOptions.borderColor);
-			model.borderWidth = custom.borderWidth ? custom.borderWidth : helpers.getValueAtIndexOrDefault(dataset.borderWidth, index, rectangleElementOptions.borderWidth);
+			model.backgroundColor = custom.backgroundColor ? custom.backgroundColor : helpers.valueAtIndexOrDefault(dataset.backgroundColor, index, rectangleElementOptions.backgroundColor);
+			model.borderColor = custom.borderColor ? custom.borderColor : helpers.valueAtIndexOrDefault(dataset.borderColor, index, rectangleElementOptions.borderColor);
+			model.borderWidth = custom.borderWidth ? custom.borderWidth : helpers.valueAtIndexOrDefault(dataset.borderWidth, index, rectangleElementOptions.borderWidth);
 		}
 	});
-
-
-	// including horizontalBar in the bar file, instead of a file of its own
-	// it extends bar (like pie extends doughnut)
-	Chart.defaults.horizontalBar = {
-		hover: {
-			mode: 'label'
-		},
-
-		scales: {
-			xAxes: [{
-				type: 'linear',
-				position: 'bottom'
-			}],
-			yAxes: [{
-				position: 'left',
-				type: 'category',
-
-				// Specific to Horizontal Bar Controller
-				categoryPercentage: 0.8,
-				barPercentage: 0.9,
-
-				// grid line settings
-				gridLines: {
-					offsetGridLines: true
-				}
-			}]
-		},
-		elements: {
-			rectangle: {
-				borderSkipped: 'left'
-			}
-		},
-		tooltips: {
-			callbacks: {
-				title: function(tooltipItems, data) {
-					// Pick first xLabel for now
-					var title = '';
-
-					if (tooltipItems.length > 0) {
-						if (tooltipItems[0].yLabel) {
-							title = tooltipItems[0].yLabel;
-						} else if (data.labels.length > 0 && tooltipItems[0].index < data.labels.length) {
-							title = data.labels[tooltipItems[0].index];
-						}
-					}
-
-					return title;
-				},
-				label: function(tooltipItem, data) {
-					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-					return datasetLabel + ': ' + tooltipItem.xLabel;
-				}
-			}
-		}
-	};
 
 	Chart.controllers.horizontalBar = Chart.controllers.bar.extend({
 		/**
@@ -2511,50 +2534,58 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],16:[function(require,module,exports){
+},{"25":25,"40":40,"45":45}],16:[function(require,module,exports){
 'use strict';
+
+var defaults = require(25);
+var elements = require(40);
+var helpers = require(45);
+
+defaults._set('bubble', {
+	hover: {
+		mode: 'single'
+	},
+
+	scales: {
+		xAxes: [{
+			type: 'linear', // bubble should probably use a linear scale by default
+			position: 'bottom',
+			id: 'x-axis-0' // need an ID so datasets can reference the scale
+		}],
+		yAxes: [{
+			type: 'linear',
+			position: 'left',
+			id: 'y-axis-0'
+		}]
+	},
+
+	tooltips: {
+		callbacks: {
+			title: function() {
+				// Title doesn't make sense for scatter since we format the data as a point
+				return '';
+			},
+			label: function(item, data) {
+				var datasetLabel = data.datasets[item.datasetIndex].label || '';
+				var dataPoint = data.datasets[item.datasetIndex].data[item.index];
+				return datasetLabel + ': (' + item.xLabel + ', ' + item.yLabel + ', ' + dataPoint.r + ')';
+			}
+		}
+	}
+});
+
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers;
-
-	Chart.defaults.bubble = {
-		hover: {
-			mode: 'single'
-		},
-
-		scales: {
-			xAxes: [{
-				type: 'linear', // bubble should probably use a linear scale by default
-				position: 'bottom',
-				id: 'x-axis-0' // need an ID so datasets can reference the scale
-			}],
-			yAxes: [{
-				type: 'linear',
-				position: 'left',
-				id: 'y-axis-0'
-			}]
-		},
-
-		tooltips: {
-			callbacks: {
-				title: function() {
-					// Title doesn't make sense for scatter since we format the data as a point
-					return '';
-				},
-				label: function(tooltipItem, data) {
-					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-					var dataPoint = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-					return datasetLabel + ': (' + tooltipItem.xLabel + ', ' + tooltipItem.yLabel + ', ' + dataPoint.r + ')';
-				}
-			}
-		}
-	};
-
 	Chart.controllers.bubble = Chart.DatasetController.extend({
+		/**
+		 * @protected
+		 */
+		dataElementType: elements.Point,
 
-		dataElementType: Chart.elements.Point,
-
+		/**
+		 * @protected
+		 */
 		update: function(reset) {
 			var me = this;
 			var meta = me.getMeta();
@@ -2566,207 +2597,256 @@ module.exports = function(Chart) {
 			});
 		},
 
+		/**
+		 * @protected
+		 */
 		updateElement: function(point, index, reset) {
 			var me = this;
 			var meta = me.getMeta();
+			var custom = point.custom || {};
 			var xScale = me.getScaleForId(meta.xAxisID);
 			var yScale = me.getScaleForId(meta.yAxisID);
-
-			var custom = point.custom || {};
-			var dataset = me.getDataset();
-			var data = dataset.data[index];
-			var pointElementOptions = me.chart.options.elements.point;
+			var options = me._resolveElementOptions(point, index);
+			var data = me.getDataset().data[index];
 			var dsIndex = me.index;
 
-			helpers.extend(point, {
-				// Utility
-				_xScale: xScale,
-				_yScale: yScale,
-				_datasetIndex: dsIndex,
-				_index: index,
+			var x = reset ? xScale.getPixelForDecimal(0.5) : xScale.getPixelForValue(typeof data === 'object' ? data : NaN, index, dsIndex);
+			var y = reset ? yScale.getBasePixel() : yScale.getPixelForValue(data, index, dsIndex);
 
-				// Desired view properties
-				_model: {
-					x: reset ? xScale.getPixelForDecimal(0.5) : xScale.getPixelForValue(typeof data === 'object' ? data : NaN, index, dsIndex, me.chart.isCombo),
-					y: reset ? yScale.getBasePixel() : yScale.getPixelForValue(data, index, dsIndex),
-					// Appearance
-					radius: reset ? 0 : custom.radius ? custom.radius : me.getRadius(data),
-
-					// Tooltip
-					hitRadius: custom.hitRadius ? custom.hitRadius : helpers.getValueAtIndexOrDefault(dataset.hitRadius, index, pointElementOptions.hitRadius)
-				}
-			});
-
-			// Trick to reset the styles of the point
-			Chart.DatasetController.prototype.removeHoverStyle.call(me, point, pointElementOptions);
-
-			var model = point._model;
-			model.skip = custom.skip ? custom.skip : (isNaN(model.x) || isNaN(model.y));
+			point._xScale = xScale;
+			point._yScale = yScale;
+			point._options = options;
+			point._datasetIndex = dsIndex;
+			point._index = index;
+			point._model = {
+				backgroundColor: options.backgroundColor,
+				borderColor: options.borderColor,
+				borderWidth: options.borderWidth,
+				hitRadius: options.hitRadius,
+				pointStyle: options.pointStyle,
+				radius: reset ? 0 : options.radius,
+				skip: custom.skip || isNaN(x) || isNaN(y),
+				x: x,
+				y: y,
+			};
 
 			point.pivot();
 		},
 
-		getRadius: function(value) {
-			return value.r || this.chart.options.elements.point.radius;
-		},
-
+		/**
+		 * @protected
+		 */
 		setHoverStyle: function(point) {
-			var me = this;
-			Chart.DatasetController.prototype.setHoverStyle.call(me, point);
-
-			// Radius
-			var dataset = me.chart.data.datasets[point._datasetIndex];
-			var index = point._index;
-			var custom = point.custom || {};
 			var model = point._model;
-			model.radius = custom.hoverRadius ? custom.hoverRadius : (helpers.getValueAtIndexOrDefault(dataset.hoverRadius, index, me.chart.options.elements.point.hoverRadius)) + me.getRadius(dataset.data[index]);
+			var options = point._options;
+
+			model.backgroundColor = helpers.valueOrDefault(options.hoverBackgroundColor, helpers.getHoverColor(options.backgroundColor));
+			model.borderColor = helpers.valueOrDefault(options.hoverBorderColor, helpers.getHoverColor(options.borderColor));
+			model.borderWidth = helpers.valueOrDefault(options.hoverBorderWidth, options.borderWidth);
+			model.radius = options.radius + options.hoverRadius;
 		},
 
+		/**
+		 * @protected
+		 */
 		removeHoverStyle: function(point) {
-			var me = this;
-			Chart.DatasetController.prototype.removeHoverStyle.call(me, point, me.chart.options.elements.point);
-
-			var dataVal = me.chart.data.datasets[point._datasetIndex].data[point._index];
-			var custom = point.custom || {};
 			var model = point._model;
+			var options = point._options;
 
-			model.radius = custom.radius ? custom.radius : me.getRadius(dataVal);
+			model.backgroundColor = options.backgroundColor;
+			model.borderColor = options.borderColor;
+			model.borderWidth = options.borderWidth;
+			model.radius = options.radius;
+		},
+
+		/**
+		 * @private
+		 */
+		_resolveElementOptions: function(point, index) {
+			var me = this;
+			var chart = me.chart;
+			var datasets = chart.data.datasets;
+			var dataset = datasets[me.index];
+			var custom = point.custom || {};
+			var options = chart.options.elements.point;
+			var resolve = helpers.options.resolve;
+			var data = dataset.data[index];
+			var values = {};
+			var i, ilen, key;
+
+			// Scriptable options
+			var context = {
+				chart: chart,
+				dataIndex: index,
+				dataset: dataset,
+				datasetIndex: me.index
+			};
+
+			var keys = [
+				'backgroundColor',
+				'borderColor',
+				'borderWidth',
+				'hoverBackgroundColor',
+				'hoverBorderColor',
+				'hoverBorderWidth',
+				'hoverRadius',
+				'hitRadius',
+				'pointStyle'
+			];
+
+			for (i = 0, ilen = keys.length; i < ilen; ++i) {
+				key = keys[i];
+				values[key] = resolve([
+					custom[key],
+					dataset[key],
+					options[key]
+				], context, index);
+			}
+
+			// Custom radius resolution
+			values.radius = resolve([
+				custom.radius,
+				data ? data.r : undefined,
+				dataset.radius,
+				options.radius
+			], context, index);
+
+			return values;
 		}
 	});
 };
 
-},{}],17:[function(require,module,exports){
+},{"25":25,"40":40,"45":45}],17:[function(require,module,exports){
 'use strict';
+
+var defaults = require(25);
+var elements = require(40);
+var helpers = require(45);
+
+defaults._set('doughnut', {
+	animation: {
+		// Boolean - Whether we animate the rotation of the Doughnut
+		animateRotate: true,
+		// Boolean - Whether we animate scaling the Doughnut from the centre
+		animateScale: false
+	},
+	hover: {
+		mode: 'single'
+	},
+	legendCallback: function(chart) {
+		var text = [];
+		text.push('<ul class="' + chart.id + '-legend">');
+
+		var data = chart.data;
+		var datasets = data.datasets;
+		var labels = data.labels;
+
+		if (datasets.length) {
+			for (var i = 0; i < datasets[0].data.length; ++i) {
+				text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
+				if (labels[i]) {
+					text.push(labels[i]);
+				}
+				text.push('</li>');
+			}
+		}
+
+		text.push('</ul>');
+		return text.join('');
+	},
+	legend: {
+		labels: {
+			generateLabels: function(chart) {
+				var data = chart.data;
+				if (data.labels.length && data.datasets.length) {
+					return data.labels.map(function(label, i) {
+						var meta = chart.getDatasetMeta(0);
+						var ds = data.datasets[0];
+						var arc = meta.data[i];
+						var custom = arc && arc.custom || {};
+						var valueAtIndexOrDefault = helpers.valueAtIndexOrDefault;
+						var arcOpts = chart.options.elements.arc;
+						var fill = custom.backgroundColor ? custom.backgroundColor : valueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
+						var stroke = custom.borderColor ? custom.borderColor : valueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
+						var bw = custom.borderWidth ? custom.borderWidth : valueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
+
+						return {
+							text: label,
+							fillStyle: fill,
+							strokeStyle: stroke,
+							lineWidth: bw,
+							hidden: isNaN(ds.data[i]) || meta.data[i].hidden,
+
+							// Extra data used for toggling the correct item
+							index: i
+						};
+					});
+				}
+				return [];
+			}
+		},
+
+		onClick: function(e, legendItem) {
+			var index = legendItem.index;
+			var chart = this.chart;
+			var i, ilen, meta;
+
+			for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
+				meta = chart.getDatasetMeta(i);
+				// toggle visibility of index if exists
+				if (meta.data[index]) {
+					meta.data[index].hidden = !meta.data[index].hidden;
+				}
+			}
+
+			chart.update();
+		}
+	},
+
+	// The percentage of the chart that we cut out of the middle.
+	cutoutPercentage: 50,
+
+	// The rotation of the chart, where the first data arc begins.
+	rotation: Math.PI * -0.5,
+
+	// The total circumference of the chart.
+	circumference: Math.PI * 2.0,
+
+	// Need to override these to give a nice default
+	tooltips: {
+		callbacks: {
+			title: function() {
+				return '';
+			},
+			label: function(tooltipItem, data) {
+				var dataLabel = data.labels[tooltipItem.index];
+				var value = ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+
+				if (helpers.isArray(dataLabel)) {
+					// show value on first line of multiline label
+					// need to clone because we are changing the value
+					dataLabel = dataLabel.slice();
+					dataLabel[0] += value;
+				} else {
+					dataLabel += value;
+				}
+
+				return dataLabel;
+			}
+		}
+	}
+});
+
+defaults._set('pie', helpers.clone(defaults.doughnut));
+defaults._set('pie', {
+	cutoutPercentage: 0
+});
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers,
-		defaults = Chart.defaults;
-
-	defaults.doughnut = {
-		animation: {
-			// Boolean - Whether we animate the rotation of the Doughnut
-			animateRotate: true,
-			// Boolean - Whether we animate scaling the Doughnut from the centre
-			animateScale: false
-		},
-		aspectRatio: 1,
-		hover: {
-			mode: 'single'
-		},
-		legendCallback: function(chart) {
-			var text = [];
-			text.push('<ul class="' + chart.id + '-legend">');
-
-			var data = chart.data;
-			var datasets = data.datasets;
-			var labels = data.labels;
-
-			if (datasets.length) {
-				for (var i = 0; i < datasets[0].data.length; ++i) {
-					text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
-					if (labels[i]) {
-						text.push(labels[i]);
-					}
-					text.push('</li>');
-				}
-			}
-
-			text.push('</ul>');
-			return text.join('');
-		},
-		legend: {
-			labels: {
-				generateLabels: function(chart) {
-					var data = chart.data;
-					if (data.labels.length && data.datasets.length) {
-						return data.labels.map(function(label, i) {
-							var meta = chart.getDatasetMeta(0);
-							var ds = data.datasets[0];
-							var arc = meta.data[i];
-							var custom = arc && arc.custom || {};
-							var getValueAtIndexOrDefault = helpers.getValueAtIndexOrDefault;
-							var arcOpts = chart.options.elements.arc;
-							var fill = custom.backgroundColor ? custom.backgroundColor : getValueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
-							var stroke = custom.borderColor ? custom.borderColor : getValueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
-							var bw = custom.borderWidth ? custom.borderWidth : getValueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
-
-							return {
-								text: label,
-								fillStyle: fill,
-								strokeStyle: stroke,
-								lineWidth: bw,
-								hidden: isNaN(ds.data[i]) || meta.data[i].hidden,
-
-								// Extra data used for toggling the correct item
-								index: i
-							};
-						});
-					}
-					return [];
-				}
-			},
-
-			onClick: function(e, legendItem) {
-				var index = legendItem.index;
-				var chart = this.chart;
-				var i, ilen, meta;
-
-				for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
-					meta = chart.getDatasetMeta(i);
-					// toggle visibility of index if exists
-					if (meta.data[index]) {
-						meta.data[index].hidden = !meta.data[index].hidden;
-					}
-				}
-
-				chart.update();
-			}
-		},
-
-		// The percentage of the chart that we cut out of the middle.
-		cutoutPercentage: 50,
-
-		// The rotation of the chart, where the first data arc begins.
-		rotation: Math.PI * -0.5,
-
-		// The total circumference of the chart.
-		circumference: Math.PI * 2.0,
-
-		// Need to override these to give a nice default
-		tooltips: {
-			callbacks: {
-				title: function() {
-					return '';
-				},
-				label: function(tooltipItem, data) {
-					var dataLabel = data.labels[tooltipItem.index];
-					var value = ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-
-					if (helpers.isArray(dataLabel)) {
-						// show value on first line of multiline label
-						// need to clone because we are changing the value
-						dataLabel = dataLabel.slice();
-						dataLabel[0] += value;
-					} else {
-						dataLabel += value;
-					}
-
-					return dataLabel;
-				}
-			}
-		}
-	};
-
-	defaults.pie = helpers.clone(defaults.doughnut);
-	helpers.extend(defaults.pie, {
-		cutoutPercentage: 0
-	});
-
-
 	Chart.controllers.doughnut = Chart.controllers.pie = Chart.DatasetController.extend({
 
-		dataElementType: Chart.elements.Arc,
+		dataElementType: elements.Arc,
 
 		linkScales: helpers.noop,
 
@@ -2785,20 +2865,17 @@ module.exports = function(Chart) {
 
 		update: function(reset) {
 			var me = this;
-			var chart = me.chart,
-				chartArea = chart.chartArea,
-				opts = chart.options,
-				arcOpts = opts.elements.arc,
-				availableWidth = chartArea.right - chartArea.left - arcOpts.borderWidth,
-				availableHeight = chartArea.bottom - chartArea.top - arcOpts.borderWidth,
-				minSize = Math.min(availableWidth, availableHeight),
-				offset = {
-					x: 0,
-					y: 0
-				},
-				meta = me.getMeta(),
-				cutoutPercentage = opts.cutoutPercentage,
-				circumference = opts.circumference;
+			var chart = me.chart;
+			var chartArea = chart.chartArea;
+			var opts = chart.options;
+			var arcOpts = opts.elements.arc;
+			var availableWidth = chartArea.right - chartArea.left - arcOpts.borderWidth;
+			var availableHeight = chartArea.bottom - chartArea.top - arcOpts.borderWidth;
+			var minSize = Math.min(availableWidth, availableHeight);
+			var offset = {x: 0, y: 0};
+			var meta = me.getMeta();
+			var cutoutPercentage = opts.cutoutPercentage;
+			var circumference = opts.circumference;
 
 			// If the chart's circumference isn't a full circle, calculate minSize as a ratio of the width/height of the arc
 			if (circumference < Math.PI * 2.0) {
@@ -2807,7 +2884,7 @@ module.exports = function(Chart) {
 				var endAngle = startAngle + circumference;
 				var start = {x: Math.cos(startAngle), y: Math.sin(startAngle)};
 				var end = {x: Math.cos(endAngle), y: Math.sin(endAngle)};
-				var contains0 = (startAngle <= 0 && 0 <= endAngle) || (startAngle <= Math.PI * 2.0 && Math.PI * 2.0 <= endAngle);
+				var contains0 = (startAngle <= 0 && endAngle >= 0) || (startAngle <= Math.PI * 2.0 && Math.PI * 2.0 <= endAngle);
 				var contains90 = (startAngle <= Math.PI * 0.5 && Math.PI * 0.5 <= endAngle) || (startAngle <= Math.PI * 2.5 && Math.PI * 2.5 <= endAngle);
 				var contains180 = (startAngle <= -Math.PI && -Math.PI <= endAngle) || (startAngle <= Math.PI && Math.PI <= endAngle);
 				var contains270 = (startAngle <= -Math.PI * 0.5 && -Math.PI * 0.5 <= endAngle) || (startAngle <= Math.PI * 1.5 && Math.PI * 1.5 <= endAngle);
@@ -2838,19 +2915,19 @@ module.exports = function(Chart) {
 
 		updateElement: function(arc, index, reset) {
 			var me = this;
-			var chart = me.chart,
-				chartArea = chart.chartArea,
-				opts = chart.options,
-				animationOpts = opts.animation,
-				centerX = (chartArea.left + chartArea.right) / 2,
-				centerY = (chartArea.top + chartArea.bottom) / 2,
-				startAngle = opts.rotation, // non reset case handled later
-				endAngle = opts.rotation, // non reset case handled later
-				dataset = me.getDataset(),
-				circumference = reset && animationOpts.animateRotate ? 0 : arc.hidden ? 0 : me.calculateCircumference(dataset.data[index]) * (opts.circumference / (2.0 * Math.PI)),
-				innerRadius = reset && animationOpts.animateScale ? 0 : me.innerRadius,
-				outerRadius = reset && animationOpts.animateScale ? 0 : me.outerRadius,
-				valueAtIndexOrDefault = helpers.getValueAtIndexOrDefault;
+			var chart = me.chart;
+			var chartArea = chart.chartArea;
+			var opts = chart.options;
+			var animationOpts = opts.animation;
+			var centerX = (chartArea.left + chartArea.right) / 2;
+			var centerY = (chartArea.top + chartArea.bottom) / 2;
+			var startAngle = opts.rotation; // non reset case handled later
+			var endAngle = opts.rotation; // non reset case handled later
+			var dataset = me.getDataset();
+			var circumference = reset && animationOpts.animateRotate ? 0 : arc.hidden ? 0 : me.calculateCircumference(dataset.data[index]) * (opts.circumference / (2.0 * Math.PI));
+			var innerRadius = reset && animationOpts.animateScale ? 0 : me.innerRadius;
+			var outerRadius = reset && animationOpts.animateScale ? 0 : me.outerRadius;
+			var valueAtIndexOrDefault = helpers.valueAtIndexOrDefault;
 
 			helpers.extend(arc, {
 				// Utility
@@ -2921,16 +2998,16 @@ module.exports = function(Chart) {
 		},
 
 		// gets the max border or hover width to properly scale pie charts
-		getMaxBorderWidth: function(elements) {
-			var max = 0,
-				index = this.index,
-				length = elements.length,
-				borderWidth,
-				hoverWidth;
+		getMaxBorderWidth: function(arcs) {
+			var max = 0;
+			var index = this.index;
+			var length = arcs.length;
+			var borderWidth;
+			var hoverWidth;
 
 			for (var i = 0; i < length; i++) {
-				borderWidth = elements[i]._model ? elements[i]._model.borderWidth : 0;
-				hoverWidth = elements[i]._chart ? elements[i]._chart.config.data.datasets[index].hoverBorderWidth : 0;
+				borderWidth = arcs[i]._model ? arcs[i]._model.borderWidth : 0;
+				hoverWidth = arcs[i]._chart ? arcs[i]._chart.config.data.datasets[index].hoverBorderWidth : 0;
 
 				max = borderWidth > max ? borderWidth : max;
 				max = hoverWidth > max ? hoverWidth : max;
@@ -2940,42 +3017,44 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],18:[function(require,module,exports){
+},{"25":25,"40":40,"45":45}],18:[function(require,module,exports){
 'use strict';
+
+var defaults = require(25);
+var elements = require(40);
+var helpers = require(45);
+
+defaults._set('line', {
+	showLines: true,
+	spanGaps: false,
+
+	hover: {
+		mode: 'label'
+	},
+
+	scales: {
+		xAxes: [{
+			type: 'category',
+			id: 'x-axis-0'
+		}],
+		yAxes: [{
+			type: 'linear',
+			id: 'y-axis-0'
+		}]
+	}
+});
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers;
-
-	Chart.defaults.line = {
-		showLines: true,
-		spanGaps: false,
-
-		hover: {
-			mode: 'label'
-		},
-
-		scales: {
-			xAxes: [{
-				type: 'category',
-				id: 'x-axis-0'
-			}],
-			yAxes: [{
-				type: 'linear',
-				id: 'y-axis-0'
-			}]
-		}
-	};
-
 	function lineEnabled(dataset, options) {
-		return helpers.getValueOrDefault(dataset.showLine, options.showLines);
+		return helpers.valueOrDefault(dataset.showLine, options.showLines);
 	}
 
 	Chart.controllers.line = Chart.DatasetController.extend({
 
-		datasetElementType: Chart.elements.Line,
+		datasetElementType: elements.Line,
 
-		dataElementType: Chart.elements.Point,
+		dataElementType: elements.Point,
 
 		update: function(reset) {
 			var me = this;
@@ -3010,7 +3089,7 @@ module.exports = function(Chart) {
 					// to https://github.com/chartjs/Chart.js/issues/2435#issuecomment-216718158
 					// This option gives lines the ability to span gaps
 					spanGaps: dataset.spanGaps ? dataset.spanGaps : options.spanGaps,
-					tension: custom.tension ? custom.tension : helpers.getValueOrDefault(dataset.lineTension, lineElementOptions.tension),
+					tension: custom.tension ? custom.tension : helpers.valueOrDefault(dataset.lineTension, lineElementOptions.tension),
 					backgroundColor: custom.backgroundColor ? custom.backgroundColor : (dataset.backgroundColor || lineElementOptions.backgroundColor),
 					borderWidth: custom.borderWidth ? custom.borderWidth : (dataset.borderWidth || lineElementOptions.borderWidth),
 					borderColor: custom.borderColor ? custom.borderColor : (dataset.borderColor || lineElementOptions.borderColor),
@@ -3019,15 +3098,15 @@ module.exports = function(Chart) {
 					borderDashOffset: custom.borderDashOffset ? custom.borderDashOffset : (dataset.borderDashOffset || lineElementOptions.borderDashOffset),
 					borderJoinStyle: custom.borderJoinStyle ? custom.borderJoinStyle : (dataset.borderJoinStyle || lineElementOptions.borderJoinStyle),
 					fill: custom.fill ? custom.fill : (dataset.fill !== undefined ? dataset.fill : lineElementOptions.fill),
-					steppedLine: custom.steppedLine ? custom.steppedLine : helpers.getValueOrDefault(dataset.steppedLine, lineElementOptions.stepped),
-					cubicInterpolationMode: custom.cubicInterpolationMode ? custom.cubicInterpolationMode : helpers.getValueOrDefault(dataset.cubicInterpolationMode, lineElementOptions.cubicInterpolationMode),
+					steppedLine: custom.steppedLine ? custom.steppedLine : helpers.valueOrDefault(dataset.steppedLine, lineElementOptions.stepped),
+					cubicInterpolationMode: custom.cubicInterpolationMode ? custom.cubicInterpolationMode : helpers.valueOrDefault(dataset.cubicInterpolationMode, lineElementOptions.cubicInterpolationMode),
 				};
 
 				line.pivot();
 			}
 
 			// Update Points
-			for (i=0, ilen=points.length; i<ilen; ++i) {
+			for (i = 0, ilen = points.length; i < ilen; ++i) {
 				me.updateElement(points[i], i, reset);
 			}
 
@@ -3036,7 +3115,7 @@ module.exports = function(Chart) {
 			}
 
 			// Now pivot the point for animation
-			for (i=0, ilen=points.length; i<ilen; ++i) {
+			for (i = 0, ilen = points.length; i < ilen; ++i) {
 				points[i].pivot();
 			}
 		},
@@ -3049,7 +3128,7 @@ module.exports = function(Chart) {
 			if (custom.backgroundColor) {
 				backgroundColor = custom.backgroundColor;
 			} else if (dataset.pointBackgroundColor) {
-				backgroundColor = helpers.getValueAtIndexOrDefault(dataset.pointBackgroundColor, index, backgroundColor);
+				backgroundColor = helpers.valueAtIndexOrDefault(dataset.pointBackgroundColor, index, backgroundColor);
 			} else if (dataset.backgroundColor) {
 				backgroundColor = dataset.backgroundColor;
 			}
@@ -3065,7 +3144,7 @@ module.exports = function(Chart) {
 			if (custom.borderColor) {
 				borderColor = custom.borderColor;
 			} else if (dataset.pointBorderColor) {
-				borderColor = helpers.getValueAtIndexOrDefault(dataset.pointBorderColor, index, borderColor);
+				borderColor = helpers.valueAtIndexOrDefault(dataset.pointBorderColor, index, borderColor);
 			} else if (dataset.borderColor) {
 				borderColor = dataset.borderColor;
 			}
@@ -3080,8 +3159,8 @@ module.exports = function(Chart) {
 
 			if (!isNaN(custom.borderWidth)) {
 				borderWidth = custom.borderWidth;
-			} else if (!isNaN(dataset.pointBorderWidth)) {
-				borderWidth = helpers.getValueAtIndexOrDefault(dataset.pointBorderWidth, index, borderWidth);
+			} else if (!isNaN(dataset.pointBorderWidth) || helpers.isArray(dataset.pointBorderWidth)) {
+				borderWidth = helpers.valueAtIndexOrDefault(dataset.pointBorderWidth, index, borderWidth);
 			} else if (!isNaN(dataset.borderWidth)) {
 				borderWidth = dataset.borderWidth;
 			}
@@ -3100,8 +3179,6 @@ module.exports = function(Chart) {
 			var xScale = me.getScaleForId(meta.xAxisID);
 			var pointOptions = me.chart.options.elements.point;
 			var x, y;
-			var labels = me.chart.data.labels || [];
-			var includeOffset = (labels.length === 1 || dataset.data.length === 1) || me.chart.isCombo;
 
 			// Compatibility: If the properties are defined with only the old name, use those values
 			if ((dataset.radius !== undefined) && (dataset.pointRadius === undefined)) {
@@ -3111,7 +3188,7 @@ module.exports = function(Chart) {
 				dataset.pointHitRadius = dataset.hitRadius;
 			}
 
-			x = xScale.getPixelForValue(typeof value === 'object' ? value : NaN, index, datasetIndex, includeOffset);
+			x = xScale.getPixelForValue(typeof value === 'object' ? value : NaN, index, datasetIndex);
 			y = reset ? yScale.getBasePixel() : me.calculatePointY(value, index, datasetIndex);
 
 			// Utility
@@ -3126,15 +3203,15 @@ module.exports = function(Chart) {
 				y: y,
 				skip: custom.skip || isNaN(x) || isNaN(y),
 				// Appearance
-				radius: custom.radius || helpers.getValueAtIndexOrDefault(dataset.pointRadius, index, pointOptions.radius),
-				pointStyle: custom.pointStyle || helpers.getValueAtIndexOrDefault(dataset.pointStyle, index, pointOptions.pointStyle),
+				radius: custom.radius || helpers.valueAtIndexOrDefault(dataset.pointRadius, index, pointOptions.radius),
+				pointStyle: custom.pointStyle || helpers.valueAtIndexOrDefault(dataset.pointStyle, index, pointOptions.pointStyle),
 				backgroundColor: me.getPointBackgroundColor(point, index),
 				borderColor: me.getPointBorderColor(point, index),
 				borderWidth: me.getPointBorderWidth(point, index),
 				tension: meta.dataset._model ? meta.dataset._model.tension : 0,
 				steppedLine: meta.dataset._model ? meta.dataset._model.steppedLine : false,
 				// Tooltip
-				hitRadius: custom.hitRadius || helpers.getValueAtIndexOrDefault(dataset.pointHitRadius, index, pointOptions.hitRadius)
+				hitRadius: custom.hitRadius || helpers.valueAtIndexOrDefault(dataset.pointHitRadius, index, pointOptions.hitRadius)
 			};
 		},
 
@@ -3228,16 +3305,16 @@ module.exports = function(Chart) {
 			var ilen = points.length;
 			var i = 0;
 
-			Chart.canvasHelpers.clipArea(chart.ctx, area);
+			helpers.canvas.clipArea(chart.ctx, area);
 
 			if (lineEnabled(me.getDataset(), chart.options)) {
 				meta.dataset.draw();
 			}
 
-			Chart.canvasHelpers.unclipArea(chart.ctx);
+			helpers.canvas.unclipArea(chart.ctx);
 
 			// Draw the points
-			for (; i<ilen; ++i) {
+			for (; i < ilen; ++i) {
 				points[i].draw(area);
 			}
 		},
@@ -3249,10 +3326,10 @@ module.exports = function(Chart) {
 			var custom = point.custom || {};
 			var model = point._model;
 
-			model.radius = custom.hoverRadius || helpers.getValueAtIndexOrDefault(dataset.pointHoverRadius, index, this.chart.options.elements.point.hoverRadius);
-			model.backgroundColor = custom.hoverBackgroundColor || helpers.getValueAtIndexOrDefault(dataset.pointHoverBackgroundColor, index, helpers.getHoverColor(model.backgroundColor));
-			model.borderColor = custom.hoverBorderColor || helpers.getValueAtIndexOrDefault(dataset.pointHoverBorderColor, index, helpers.getHoverColor(model.borderColor));
-			model.borderWidth = custom.hoverBorderWidth || helpers.getValueAtIndexOrDefault(dataset.pointHoverBorderWidth, index, model.borderWidth);
+			model.radius = custom.hoverRadius || helpers.valueAtIndexOrDefault(dataset.pointHoverRadius, index, this.chart.options.elements.point.hoverRadius);
+			model.backgroundColor = custom.hoverBackgroundColor || helpers.valueAtIndexOrDefault(dataset.pointHoverBackgroundColor, index, helpers.getHoverColor(model.backgroundColor));
+			model.borderColor = custom.hoverBorderColor || helpers.valueAtIndexOrDefault(dataset.pointHoverBorderColor, index, helpers.getHoverColor(model.borderColor));
+			model.borderWidth = custom.hoverBorderWidth || helpers.valueAtIndexOrDefault(dataset.pointHoverBorderWidth, index, model.borderWidth);
 		},
 
 		removeHoverStyle: function(point) {
@@ -3267,7 +3344,7 @@ module.exports = function(Chart) {
 				dataset.pointRadius = dataset.radius;
 			}
 
-			model.radius = custom.radius || helpers.getValueAtIndexOrDefault(dataset.pointRadius, index, me.chart.options.elements.point.radius);
+			model.radius = custom.radius || helpers.valueAtIndexOrDefault(dataset.pointRadius, index, me.chart.options.elements.point.radius);
 			model.backgroundColor = me.getPointBackgroundColor(point, index);
 			model.borderColor = me.getPointBorderColor(point, index);
 			model.borderWidth = me.getPointBorderWidth(point, index);
@@ -3275,122 +3352,122 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],19:[function(require,module,exports){
+},{"25":25,"40":40,"45":45}],19:[function(require,module,exports){
 'use strict';
+
+var defaults = require(25);
+var elements = require(40);
+var helpers = require(45);
+
+defaults._set('polarArea', {
+	scale: {
+		type: 'radialLinear',
+		angleLines: {
+			display: false
+		},
+		gridLines: {
+			circular: true
+		},
+		pointLabels: {
+			display: false
+		},
+		ticks: {
+			beginAtZero: true
+		}
+	},
+
+	// Boolean - Whether to animate the rotation of the chart
+	animation: {
+		animateRotate: true,
+		animateScale: true
+	},
+
+	startAngle: -0.5 * Math.PI,
+	legendCallback: function(chart) {
+		var text = [];
+		text.push('<ul class="' + chart.id + '-legend">');
+
+		var data = chart.data;
+		var datasets = data.datasets;
+		var labels = data.labels;
+
+		if (datasets.length) {
+			for (var i = 0; i < datasets[0].data.length; ++i) {
+				text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
+				if (labels[i]) {
+					text.push(labels[i]);
+				}
+				text.push('</li>');
+			}
+		}
+
+		text.push('</ul>');
+		return text.join('');
+	},
+	legend: {
+		labels: {
+			generateLabels: function(chart) {
+				var data = chart.data;
+				if (data.labels.length && data.datasets.length) {
+					return data.labels.map(function(label, i) {
+						var meta = chart.getDatasetMeta(0);
+						var ds = data.datasets[0];
+						var arc = meta.data[i];
+						var custom = arc.custom || {};
+						var valueAtIndexOrDefault = helpers.valueAtIndexOrDefault;
+						var arcOpts = chart.options.elements.arc;
+						var fill = custom.backgroundColor ? custom.backgroundColor : valueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
+						var stroke = custom.borderColor ? custom.borderColor : valueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
+						var bw = custom.borderWidth ? custom.borderWidth : valueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
+
+						return {
+							text: label,
+							fillStyle: fill,
+							strokeStyle: stroke,
+							lineWidth: bw,
+							hidden: isNaN(ds.data[i]) || meta.data[i].hidden,
+
+							// Extra data used for toggling the correct item
+							index: i
+						};
+					});
+				}
+				return [];
+			}
+		},
+
+		onClick: function(e, legendItem) {
+			var index = legendItem.index;
+			var chart = this.chart;
+			var i, ilen, meta;
+
+			for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
+				meta = chart.getDatasetMeta(i);
+				meta.data[index].hidden = !meta.data[index].hidden;
+			}
+
+			chart.update();
+		}
+	},
+
+	// Need to override these to give a nice default
+	tooltips: {
+		callbacks: {
+			title: function() {
+				return '';
+			},
+			label: function(item, data) {
+				return data.labels[item.index] + ': ' + item.yLabel;
+			}
+		}
+	}
+});
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers;
-
-	Chart.defaults.polarArea = {
-
-		scale: {
-			type: 'radialLinear',
-			angleLines: {
-				display: false
-			},
-			gridLines: {
-				circular: true
-			},
-			pointLabels: {
-				display: false
-			},
-			ticks: {
-				beginAtZero: true
-			}
-		},
-
-		// Boolean - Whether to animate the rotation of the chart
-		animation: {
-			animateRotate: true,
-			animateScale: true
-		},
-
-		startAngle: -0.5 * Math.PI,
-		aspectRatio: 1,
-		legendCallback: function(chart) {
-			var text = [];
-			text.push('<ul class="' + chart.id + '-legend">');
-
-			var data = chart.data;
-			var datasets = data.datasets;
-			var labels = data.labels;
-
-			if (datasets.length) {
-				for (var i = 0; i < datasets[0].data.length; ++i) {
-					text.push('<li><span style="background-color:' + datasets[0].backgroundColor[i] + '"></span>');
-					if (labels[i]) {
-						text.push(labels[i]);
-					}
-					text.push('</li>');
-				}
-			}
-
-			text.push('</ul>');
-			return text.join('');
-		},
-		legend: {
-			labels: {
-				generateLabels: function(chart) {
-					var data = chart.data;
-					if (data.labels.length && data.datasets.length) {
-						return data.labels.map(function(label, i) {
-							var meta = chart.getDatasetMeta(0);
-							var ds = data.datasets[0];
-							var arc = meta.data[i];
-							var custom = arc.custom || {};
-							var getValueAtIndexOrDefault = helpers.getValueAtIndexOrDefault;
-							var arcOpts = chart.options.elements.arc;
-							var fill = custom.backgroundColor ? custom.backgroundColor : getValueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
-							var stroke = custom.borderColor ? custom.borderColor : getValueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
-							var bw = custom.borderWidth ? custom.borderWidth : getValueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
-
-							return {
-								text: label,
-								fillStyle: fill,
-								strokeStyle: stroke,
-								lineWidth: bw,
-								hidden: isNaN(ds.data[i]) || meta.data[i].hidden,
-
-								// Extra data used for toggling the correct item
-								index: i
-							};
-						});
-					}
-					return [];
-				}
-			},
-
-			onClick: function(e, legendItem) {
-				var index = legendItem.index;
-				var chart = this.chart;
-				var i, ilen, meta;
-
-				for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
-					meta = chart.getDatasetMeta(i);
-					meta.data[index].hidden = !meta.data[index].hidden;
-				}
-
-				chart.update();
-			}
-		},
-
-		// Need to override these to give a nice default
-		tooltips: {
-			callbacks: {
-				title: function() {
-					return '';
-				},
-				label: function(tooltipItem, data) {
-					return data.labels[tooltipItem.index] + ': ' + tooltipItem.yLabel;
-				}
-			}
-		}
-	};
-
 	Chart.controllers.polarArea = Chart.DatasetController.extend({
 
-		dataElementType: Chart.elements.Arc,
+		dataElementType: elements.Arc,
 
 		linkScales: helpers.noop,
 
@@ -3423,7 +3500,6 @@ module.exports = function(Chart) {
 			var opts = chart.options;
 			var animationOpts = opts.animation;
 			var scale = chart.scale;
-			var getValueAtIndexOrDefault = helpers.getValueAtIndexOrDefault;
 			var labels = chart.data.labels;
 
 			var circumference = me.calculateCircumference(dataset.data[index]);
@@ -3462,7 +3538,7 @@ module.exports = function(Chart) {
 					outerRadius: reset ? resetRadius : distance,
 					startAngle: reset && animationOpts.animateRotate ? datasetStartAngle : startAngle,
 					endAngle: reset && animationOpts.animateRotate ? datasetStartAngle : endAngle,
-					label: getValueAtIndexOrDefault(labels, index, labels[index])
+					label: helpers.valueAtIndexOrDefault(labels, index, labels[index])
 				}
 			});
 
@@ -3500,30 +3576,31 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],20:[function(require,module,exports){
+},{"25":25,"40":40,"45":45}],20:[function(require,module,exports){
 'use strict';
+
+var defaults = require(25);
+var elements = require(40);
+var helpers = require(45);
+
+defaults._set('radar', {
+	scale: {
+		type: 'radialLinear'
+	},
+	elements: {
+		line: {
+			tension: 0 // no bezier in radar
+		}
+	}
+});
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers;
-
-	Chart.defaults.radar = {
-		aspectRatio: 1,
-		scale: {
-			type: 'radialLinear'
-		},
-		elements: {
-			line: {
-				tension: 0 // no bezier in radar
-			}
-		}
-	};
-
 	Chart.controllers.radar = Chart.DatasetController.extend({
 
-		datasetElementType: Chart.elements.Line,
+		datasetElementType: elements.Line,
 
-		dataElementType: Chart.elements.Point,
+		dataElementType: elements.Point,
 
 		linkScales: helpers.noop,
 
@@ -3552,7 +3629,7 @@ module.exports = function(Chart) {
 				// Model
 				_model: {
 					// Appearance
-					tension: custom.tension ? custom.tension : helpers.getValueOrDefault(dataset.lineTension, lineElementOptions.tension),
+					tension: custom.tension ? custom.tension : helpers.valueOrDefault(dataset.lineTension, lineElementOptions.tension),
 					backgroundColor: custom.backgroundColor ? custom.backgroundColor : (dataset.backgroundColor || lineElementOptions.backgroundColor),
 					borderWidth: custom.borderWidth ? custom.borderWidth : (dataset.borderWidth || lineElementOptions.borderWidth),
 					borderColor: custom.borderColor ? custom.borderColor : (dataset.borderColor || lineElementOptions.borderColor),
@@ -3602,15 +3679,15 @@ module.exports = function(Chart) {
 					y: reset ? scale.yCenter : pointPosition.y,
 
 					// Appearance
-					tension: custom.tension ? custom.tension : helpers.getValueOrDefault(dataset.lineTension, me.chart.options.elements.line.tension),
-					radius: custom.radius ? custom.radius : helpers.getValueAtIndexOrDefault(dataset.pointRadius, index, pointElementOptions.radius),
-					backgroundColor: custom.backgroundColor ? custom.backgroundColor : helpers.getValueAtIndexOrDefault(dataset.pointBackgroundColor, index, pointElementOptions.backgroundColor),
-					borderColor: custom.borderColor ? custom.borderColor : helpers.getValueAtIndexOrDefault(dataset.pointBorderColor, index, pointElementOptions.borderColor),
-					borderWidth: custom.borderWidth ? custom.borderWidth : helpers.getValueAtIndexOrDefault(dataset.pointBorderWidth, index, pointElementOptions.borderWidth),
-					pointStyle: custom.pointStyle ? custom.pointStyle : helpers.getValueAtIndexOrDefault(dataset.pointStyle, index, pointElementOptions.pointStyle),
+					tension: custom.tension ? custom.tension : helpers.valueOrDefault(dataset.lineTension, me.chart.options.elements.line.tension),
+					radius: custom.radius ? custom.radius : helpers.valueAtIndexOrDefault(dataset.pointRadius, index, pointElementOptions.radius),
+					backgroundColor: custom.backgroundColor ? custom.backgroundColor : helpers.valueAtIndexOrDefault(dataset.pointBackgroundColor, index, pointElementOptions.backgroundColor),
+					borderColor: custom.borderColor ? custom.borderColor : helpers.valueAtIndexOrDefault(dataset.pointBorderColor, index, pointElementOptions.borderColor),
+					borderWidth: custom.borderWidth ? custom.borderWidth : helpers.valueAtIndexOrDefault(dataset.pointBorderWidth, index, pointElementOptions.borderWidth),
+					pointStyle: custom.pointStyle ? custom.pointStyle : helpers.valueAtIndexOrDefault(dataset.pointStyle, index, pointElementOptions.pointStyle),
 
 					// Tooltip
-					hitRadius: custom.hitRadius ? custom.hitRadius : helpers.getValueAtIndexOrDefault(dataset.pointHitRadius, index, pointElementOptions.hitRadius)
+					hitRadius: custom.hitRadius ? custom.hitRadius : helpers.valueAtIndexOrDefault(dataset.pointHitRadius, index, pointElementOptions.hitRadius)
 				}
 			});
 
@@ -3648,10 +3725,10 @@ module.exports = function(Chart) {
 			var index = point._index;
 			var model = point._model;
 
-			model.radius = custom.hoverRadius ? custom.hoverRadius : helpers.getValueAtIndexOrDefault(dataset.pointHoverRadius, index, this.chart.options.elements.point.hoverRadius);
-			model.backgroundColor = custom.hoverBackgroundColor ? custom.hoverBackgroundColor : helpers.getValueAtIndexOrDefault(dataset.pointHoverBackgroundColor, index, helpers.getHoverColor(model.backgroundColor));
-			model.borderColor = custom.hoverBorderColor ? custom.hoverBorderColor : helpers.getValueAtIndexOrDefault(dataset.pointHoverBorderColor, index, helpers.getHoverColor(model.borderColor));
-			model.borderWidth = custom.hoverBorderWidth ? custom.hoverBorderWidth : helpers.getValueAtIndexOrDefault(dataset.pointHoverBorderWidth, index, model.borderWidth);
+			model.radius = custom.hoverRadius ? custom.hoverRadius : helpers.valueAtIndexOrDefault(dataset.pointHoverRadius, index, this.chart.options.elements.point.hoverRadius);
+			model.backgroundColor = custom.hoverBackgroundColor ? custom.hoverBackgroundColor : helpers.valueAtIndexOrDefault(dataset.pointHoverBackgroundColor, index, helpers.getHoverColor(model.backgroundColor));
+			model.borderColor = custom.hoverBorderColor ? custom.hoverBorderColor : helpers.valueAtIndexOrDefault(dataset.pointHoverBorderColor, index, helpers.getHoverColor(model.borderColor));
+			model.borderWidth = custom.hoverBorderWidth ? custom.hoverBorderWidth : helpers.valueAtIndexOrDefault(dataset.pointHoverBorderWidth, index, model.borderWidth);
 		},
 
 		removeHoverStyle: function(point) {
@@ -3661,30 +3738,78 @@ module.exports = function(Chart) {
 			var model = point._model;
 			var pointElementOptions = this.chart.options.elements.point;
 
-			model.radius = custom.radius ? custom.radius : helpers.getValueAtIndexOrDefault(dataset.pointRadius, index, pointElementOptions.radius);
-			model.backgroundColor = custom.backgroundColor ? custom.backgroundColor : helpers.getValueAtIndexOrDefault(dataset.pointBackgroundColor, index, pointElementOptions.backgroundColor);
-			model.borderColor = custom.borderColor ? custom.borderColor : helpers.getValueAtIndexOrDefault(dataset.pointBorderColor, index, pointElementOptions.borderColor);
-			model.borderWidth = custom.borderWidth ? custom.borderWidth : helpers.getValueAtIndexOrDefault(dataset.pointBorderWidth, index, pointElementOptions.borderWidth);
+			model.radius = custom.radius ? custom.radius : helpers.valueAtIndexOrDefault(dataset.pointRadius, index, pointElementOptions.radius);
+			model.backgroundColor = custom.backgroundColor ? custom.backgroundColor : helpers.valueAtIndexOrDefault(dataset.pointBackgroundColor, index, pointElementOptions.backgroundColor);
+			model.borderColor = custom.borderColor ? custom.borderColor : helpers.valueAtIndexOrDefault(dataset.pointBorderColor, index, pointElementOptions.borderColor);
+			model.borderWidth = custom.borderWidth ? custom.borderWidth : helpers.valueAtIndexOrDefault(dataset.pointBorderWidth, index, pointElementOptions.borderWidth);
 		}
 	});
 };
 
-},{}],21:[function(require,module,exports){
-/* global window: false */
+},{"25":25,"40":40,"45":45}],21:[function(require,module,exports){
 'use strict';
+
+var defaults = require(25);
+
+defaults._set('scatter', {
+	hover: {
+		mode: 'single'
+	},
+
+	scales: {
+		xAxes: [{
+			id: 'x-axis-1',    // need an ID so datasets can reference the scale
+			type: 'linear',    // scatter should not use a category axis
+			position: 'bottom'
+		}],
+		yAxes: [{
+			id: 'y-axis-1',
+			type: 'linear',
+			position: 'left'
+		}]
+	},
+
+	showLines: false,
+
+	tooltips: {
+		callbacks: {
+			title: function() {
+				return '';     // doesn't make sense for scatter since data are formatted as a point
+			},
+			label: function(item) {
+				return '(' + item.xLabel + ', ' + item.yLabel + ')';
+			}
+		}
+	}
+});
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers;
+	// Scatter charts use line controllers
+	Chart.controllers.scatter = Chart.controllers.line;
 
-	Chart.defaults.global.animation = {
+};
+
+},{"25":25}],22:[function(require,module,exports){
+/* global window: false */
+'use strict';
+
+var defaults = require(25);
+var Element = require(26);
+var helpers = require(45);
+
+defaults._set('global', {
+	animation: {
 		duration: 1000,
 		easing: 'easeOutQuart',
 		onProgress: helpers.noop,
 		onComplete: helpers.noop
-	};
+	}
+});
 
-	Chart.Animation = Chart.Element.extend({
+module.exports = function(Chart) {
+
+	Chart.Animation = Element.extend({
 		chart: null, // the animation associated chart instance
 		currentStep: 0, // the current animation step
 		numSteps: 60, // default number of steps
@@ -3717,7 +3842,7 @@ module.exports = function(Chart) {
 				chart.animating = true;
 			}
 
-			for (i=0, ilen=animations.length; i < ilen; ++i) {
+			for (i = 0, ilen = animations.length; i < ilen; ++i) {
 				if (animations[i].chart === chart) {
 					animations[i] = animation;
 					return;
@@ -3839,166 +3964,16 @@ module.exports = function(Chart) {
 
 };
 
-},{}],22:[function(require,module,exports){
+},{"25":25,"26":26,"45":45}],23:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
-	// Global Chart canvas helpers object for drawing items to canvas
-	var helpers = Chart.canvasHelpers = {};
-
-	helpers.drawPoint = function(ctx, pointStyle, radius, x, y) {
-		var type, edgeLength, xOffset, yOffset, height, size;
-
-		if (typeof pointStyle === 'object') {
-			type = pointStyle.toString();
-			if (type === '[object HTMLImageElement]' || type === '[object HTMLCanvasElement]') {
-				ctx.drawImage(pointStyle, x - pointStyle.width / 2, y - pointStyle.height / 2, pointStyle.width, pointStyle.height);
-				return;
-			}
-		}
-
-		if (isNaN(radius) || radius <= 0) {
-			return;
-		}
-
-		switch (pointStyle) {
-		// Default includes circle
-		default:
-			ctx.beginPath();
-			ctx.arc(x, y, radius, 0, Math.PI * 2);
-			ctx.closePath();
-			ctx.fill();
-			break;
-		case 'triangle':
-			ctx.beginPath();
-			edgeLength = 3 * radius / Math.sqrt(3);
-			height = edgeLength * Math.sqrt(3) / 2;
-			ctx.moveTo(x - edgeLength / 2, y + height / 3);
-			ctx.lineTo(x + edgeLength / 2, y + height / 3);
-			ctx.lineTo(x, y - 2 * height / 3);
-			ctx.closePath();
-			ctx.fill();
-			break;
-		case 'rect':
-			size = 1 / Math.SQRT2 * radius;
-			ctx.beginPath();
-			ctx.fillRect(x - size, y - size, 2 * size, 2 * size);
-			ctx.strokeRect(x - size, y - size, 2 * size, 2 * size);
-			break;
-		case 'rectRounded':
-			var offset = radius / Math.SQRT2;
-			var leftX = x - offset;
-			var topY = y - offset;
-			var sideSize = Math.SQRT2 * radius;
-			Chart.helpers.drawRoundedRectangle(ctx, leftX, topY, sideSize, sideSize, radius / 2);
-			ctx.fill();
-			break;
-		case 'rectRot':
-			size = 1 / Math.SQRT2 * radius;
-			ctx.beginPath();
-			ctx.moveTo(x - size, y);
-			ctx.lineTo(x, y + size);
-			ctx.lineTo(x + size, y);
-			ctx.lineTo(x, y - size);
-			ctx.closePath();
-			ctx.fill();
-			break;
-		case 'cross':
-			ctx.beginPath();
-			ctx.moveTo(x, y + radius);
-			ctx.lineTo(x, y - radius);
-			ctx.moveTo(x - radius, y);
-			ctx.lineTo(x + radius, y);
-			ctx.closePath();
-			break;
-		case 'crossRot':
-			ctx.beginPath();
-			xOffset = Math.cos(Math.PI / 4) * radius;
-			yOffset = Math.sin(Math.PI / 4) * radius;
-			ctx.moveTo(x - xOffset, y - yOffset);
-			ctx.lineTo(x + xOffset, y + yOffset);
-			ctx.moveTo(x - xOffset, y + yOffset);
-			ctx.lineTo(x + xOffset, y - yOffset);
-			ctx.closePath();
-			break;
-		case 'star':
-			ctx.beginPath();
-			ctx.moveTo(x, y + radius);
-			ctx.lineTo(x, y - radius);
-			ctx.moveTo(x - radius, y);
-			ctx.lineTo(x + radius, y);
-			xOffset = Math.cos(Math.PI / 4) * radius;
-			yOffset = Math.sin(Math.PI / 4) * radius;
-			ctx.moveTo(x - xOffset, y - yOffset);
-			ctx.lineTo(x + xOffset, y + yOffset);
-			ctx.moveTo(x - xOffset, y + yOffset);
-			ctx.lineTo(x + xOffset, y - yOffset);
-			ctx.closePath();
-			break;
-		case 'line':
-			ctx.beginPath();
-			ctx.moveTo(x - radius, y);
-			ctx.lineTo(x + radius, y);
-			ctx.closePath();
-			break;
-		case 'dash':
-			ctx.beginPath();
-			ctx.moveTo(x, y);
-			ctx.lineTo(x + radius, y);
-			ctx.closePath();
-			break;
-		}
-
-		ctx.stroke();
-	};
-
-	helpers.clipArea = function(ctx, clipArea) {
-		ctx.save();
-		ctx.beginPath();
-		ctx.rect(clipArea.left, clipArea.top, clipArea.right - clipArea.left, clipArea.bottom - clipArea.top);
-		ctx.clip();
-	};
-
-	helpers.unclipArea = function(ctx) {
-		ctx.restore();
-	};
-
-	helpers.lineTo = function(ctx, previous, target, flip) {
-		if (target.steppedLine) {
-			if (target.steppedLine === 'after') {
-				ctx.lineTo(previous.x, target.y);
-			} else {
-				ctx.lineTo(target.x, previous.y);
-			}
-			ctx.lineTo(target.x, target.y);
-			return;
-		}
-
-		if (!target.tension) {
-			ctx.lineTo(target.x, target.y);
-			return;
-		}
-
-		ctx.bezierCurveTo(
-			flip? previous.controlPointPreviousX : previous.controlPointNextX,
-			flip? previous.controlPointPreviousY : previous.controlPointNextY,
-			flip? target.controlPointNextX : target.controlPointPreviousX,
-			flip? target.controlPointNextY : target.controlPointPreviousY,
-			target.x,
-			target.y);
-	};
-
-	Chart.helpers.canvas = helpers;
-};
-
-},{}],23:[function(require,module,exports){
-'use strict';
+var defaults = require(25);
+var helpers = require(45);
+var Interaction = require(28);
+var platform = require(48);
 
 module.exports = function(Chart) {
-
-	var helpers = Chart.helpers;
 	var plugins = Chart.plugins;
-	var platform = Chart.platform;
 
 	// Create a dictionary of chart types, to allow for extension of existing types
 	Chart.types = {};
@@ -4023,8 +3998,8 @@ module.exports = function(Chart) {
 		data.labels = data.labels || [];
 
 		config.options = helpers.configMerge(
-			Chart.defaults.global,
-			Chart.defaults[config.type],
+			defaults.global,
+			defaults[config.type],
 			config.options || {});
 
 		return config;
@@ -4074,7 +4049,7 @@ module.exports = function(Chart) {
 			me.config = config;
 			me.width = width;
 			me.height = height;
-			me.aspectRatio = height? width / height : null;
+			me.aspectRatio = height ? width / height : null;
 			me.options = config.options;
 			me._bufferedRender = false;
 
@@ -4087,7 +4062,7 @@ module.exports = function(Chart) {
 			 * @private
 			 */
 			me.chart = me;
-			me.controller = me;  // chart.chart.controller #inception
+			me.controller = me; // chart.chart.controller #inception
 
 			// Add the chart instance to the global namespace
 			Chart.instances[me.id] = me;
@@ -4124,7 +4099,7 @@ module.exports = function(Chart) {
 			// Before init plugin notification
 			plugins.notify(me, 'beforeInit');
 
-			helpers.retinaScale(me);
+			helpers.retinaScale(me, me.options.devicePixelRatio);
 
 			me.bindEvents();
 
@@ -4145,7 +4120,7 @@ module.exports = function(Chart) {
 		},
 
 		clear: function() {
-			helpers.clear(this);
+			helpers.canvas.clear(this);
 			return this;
 		},
 
@@ -4163,8 +4138,10 @@ module.exports = function(Chart) {
 
 			// the canvas render width and height will be casted to integers so make sure that
 			// the canvas display style uses the same integer values to avoid blurring effect.
-			var newWidth = Math.floor(helpers.getMaximumWidth(canvas));
-			var newHeight = Math.floor(aspectRatio? newWidth / aspectRatio : helpers.getMaximumHeight(canvas));
+
+			// Set to 0 instead of canvas.size because the size defaults to 300x150 if the element is collased
+			var newWidth = Math.max(0, Math.floor(helpers.getMaximumWidth(canvas)));
+			var newHeight = Math.max(0, Math.floor(aspectRatio ? newWidth / aspectRatio : helpers.getMaximumHeight(canvas)));
 
 			if (me.width === newWidth && me.height === newHeight) {
 				return;
@@ -4175,7 +4152,7 @@ module.exports = function(Chart) {
 			canvas.style.width = newWidth + 'px';
 			canvas.style.height = newHeight + 'px';
 
-			helpers.retinaScale(me);
+			helpers.retinaScale(me, options.devicePixelRatio);
 
 			if (!silent) {
 				// Notify any plugins about the resize
@@ -4241,7 +4218,7 @@ module.exports = function(Chart) {
 
 			helpers.each(items, function(item) {
 				var scaleOptions = item.options;
-				var scaleType = helpers.getValueOrDefault(scaleOptions.type, item.dtype);
+				var scaleType = helpers.valueOrDefault(scaleOptions.type, item.dtype);
 				var scaleClass = Chart.scaleService.getScaleConstructor(scaleType);
 				if (!scaleClass) {
 					return;
@@ -4259,6 +4236,7 @@ module.exports = function(Chart) {
 				});
 
 				scales[scale.id] = scale;
+				scale.mergeTicksOptions();
 
 				// TODO(SB): I think we should be able to remove this custom case (options.scale)
 				// and consider it as a regular scale part of the "scales"" map only! This would
@@ -4278,9 +4256,13 @@ module.exports = function(Chart) {
 
 			helpers.each(me.data.datasets, function(dataset, datasetIndex) {
 				var meta = me.getDatasetMeta(datasetIndex);
-				if (!meta.type) {
-					meta.type = dataset.type || me.config.type;
+				var type = dataset.type || me.config.type;
+
+				if (meta.type && meta.type !== type) {
+					me.destroyDatasetMeta(datasetIndex);
+					meta = me.getDatasetMeta(datasetIndex);
 				}
+				meta.type = type;
 
 				types.push(meta.type);
 
@@ -4296,15 +4278,6 @@ module.exports = function(Chart) {
 					newControllers.push(meta.controller);
 				}
 			}, me);
-
-			if (types.length > 1) {
-				for (var i = 1; i < types.length; i++) {
-					if (types[i] !== types[i - 1]) {
-						me.isCombo = true;
-						break;
-					}
-				}
-			}
 
 			return newControllers;
 		},
@@ -4328,8 +4301,16 @@ module.exports = function(Chart) {
 			this.tooltip.initialize();
 		},
 
-		update: function(animationDuration, lazy) {
+		update: function(config) {
 			var me = this;
+
+			if (!config || typeof config !== 'object') {
+				// backwards compatibility
+				config = {
+					duration: config,
+					lazy: arguments[1]
+				};
+			}
 
 			updateConfig(me);
 
@@ -4357,16 +4338,25 @@ module.exports = function(Chart) {
 
 			me.updateDatasets();
 
+			// Need to reset tooltip in case it is displayed with elements that are removed
+			// after update.
+			me.tooltip.initialize();
+
+			// Last active contains items that were previously in the tooltip.
+			// When we reset the tooltip, we need to clear it
+			me.lastActive = [];
+
 			// Do this before render so that any plugins that need final scale updates can use it
 			plugins.notify(me, 'afterUpdate');
 
 			if (me._bufferedRender) {
 				me._bufferedRequest = {
-					lazy: lazy,
-					duration: animationDuration
+					duration: config.duration,
+					easing: config.easing,
+					lazy: config.lazy
 				};
 			} else {
-				me.render(animationDuration, lazy);
+				me.render(config);
 			}
 		},
 
@@ -4436,8 +4426,19 @@ module.exports = function(Chart) {
 			plugins.notify(me, 'afterDatasetUpdate', [args]);
 		},
 
-		render: function(duration, lazy) {
+		render: function(config) {
 			var me = this;
+
+			if (!config || typeof config !== 'object') {
+				// backwards compatibility
+				config = {
+					duration: config,
+					lazy: arguments[1]
+				};
+			}
+
+			var duration = config.duration;
+			var lazy = config.lazy;
 
 			if (plugins.notify(me, 'beforeRender') === false) {
 				return;
@@ -4452,10 +4453,10 @@ module.exports = function(Chart) {
 			if (animationOptions && ((typeof duration !== 'undefined' && duration !== 0) || (typeof duration === 'undefined' && animationOptions.duration !== 0))) {
 				var animation = new Chart.Animation({
 					numSteps: (duration || animationOptions.duration) / 16.66, // 60 fps
-					easing: animationOptions.easing,
+					easing: config.easing || animationOptions.easing,
 
 					render: function(chart, animationObject) {
-						var easingFunction = helpers.easingEffects[animationObject.easing];
+						var easingFunction = helpers.easing.effects[animationObject.easing];
 						var currentStep = animationObject.currentStep;
 						var stepDecimal = currentStep / animationObject.numSteps;
 
@@ -4482,7 +4483,7 @@ module.exports = function(Chart) {
 
 			me.clear();
 
-			if (easingValue === undefined || easingValue === null) {
+			if (helpers.isNullOrUndef(easingValue)) {
 				easingValue = 1;
 			}
 
@@ -4502,9 +4503,7 @@ module.exports = function(Chart) {
 			}
 
 			me.drawDatasets(easingValue);
-
-			// Finally draw the tooltip
-			me.tooltip.draw();
+			me._drawTooltip(easingValue);
 
 			plugins.notify(me, 'afterDraw', [easingValue]);
 		},
@@ -4515,7 +4514,7 @@ module.exports = function(Chart) {
 		transition: function(easingValue) {
 			var me = this;
 
-			for (var i=0, ilen=(me.data.datasets || []).length; i<ilen; ++i) {
+			for (var i = 0, ilen = (me.data.datasets || []).length; i < ilen; ++i) {
 				if (me.isDatasetVisible(i)) {
 					me.getDatasetMeta(i).controller.transition(easingValue);
 				}
@@ -4537,7 +4536,7 @@ module.exports = function(Chart) {
 			}
 
 			// Draw datasets reversed to support proper line stacking
-			for (var i=(me.data.datasets || []).length - 1; i >= 0; --i) {
+			for (var i = (me.data.datasets || []).length - 1; i >= 0; --i) {
 				if (me.isDatasetVisible(i)) {
 					me.drawDataset(i, easingValue);
 				}
@@ -4569,22 +4568,44 @@ module.exports = function(Chart) {
 			plugins.notify(me, 'afterDatasetDraw', [args]);
 		},
 
+		/**
+		 * Draws tooltip unless a plugin returns `false` to the `beforeTooltipDraw`
+		 * hook, in which case, plugins will not be called on `afterTooltipDraw`.
+		 * @private
+		 */
+		_drawTooltip: function(easingValue) {
+			var me = this;
+			var tooltip = me.tooltip;
+			var args = {
+				tooltip: tooltip,
+				easingValue: easingValue
+			};
+
+			if (plugins.notify(me, 'beforeTooltipDraw', [args]) === false) {
+				return;
+			}
+
+			tooltip.draw();
+
+			plugins.notify(me, 'afterTooltipDraw', [args]);
+		},
+
 		// Get the single element that was clicked on
 		// @return : An object containing the dataset index and element index of the matching element. Also contains the rectangle that was draw
 		getElementAtEvent: function(e) {
-			return Chart.Interaction.modes.single(this, e);
+			return Interaction.modes.single(this, e);
 		},
 
 		getElementsAtEvent: function(e) {
-			return Chart.Interaction.modes.label(this, e, {intersect: true});
+			return Interaction.modes.label(this, e, {intersect: true});
 		},
 
 		getElementsAtXAxis: function(e) {
-			return Chart.Interaction.modes['x-axis'](this, e, {intersect: true});
+			return Interaction.modes['x-axis'](this, e, {intersect: true});
 		},
 
 		getElementsAtEventForMode: function(e, mode, options) {
-			var method = Chart.Interaction.modes[mode];
+			var method = Interaction.modes[mode];
 			if (typeof method === 'function') {
 				return method(this, e, options);
 			}
@@ -4593,7 +4614,7 @@ module.exports = function(Chart) {
 		},
 
 		getDatasetAtEvent: function(e) {
-			return Chart.Interaction.modes.dataset(this, e, {intersect: true});
+			return Interaction.modes.dataset(this, e, {intersect: true});
 		},
 
 		getDatasetMeta: function(datasetIndex) {
@@ -4621,7 +4642,7 @@ module.exports = function(Chart) {
 
 		getVisibleDatasetCount: function() {
 			var count = 0;
-			for (var i = 0, ilen = this.data.datasets.length; i<ilen; ++i) {
+			for (var i = 0, ilen = this.data.datasets.length; i < ilen; ++i) {
 				if (this.isDatasetVisible(i)) {
 					count++;
 				}
@@ -4634,32 +4655,42 @@ module.exports = function(Chart) {
 
 			// meta.hidden is a per chart dataset hidden flag override with 3 states: if true or false,
 			// the dataset.hidden value is ignored, else if null, the dataset hidden state is returned.
-			return typeof meta.hidden === 'boolean'? !meta.hidden : !this.data.datasets[datasetIndex].hidden;
+			return typeof meta.hidden === 'boolean' ? !meta.hidden : !this.data.datasets[datasetIndex].hidden;
 		},
 
 		generateLegend: function() {
 			return this.options.legendCallback(this);
 		},
 
+		/**
+		 * @private
+		 */
+		destroyDatasetMeta: function(datasetIndex) {
+			var id = this.id;
+			var dataset = this.data.datasets[datasetIndex];
+			var meta = dataset._meta && dataset._meta[id];
+
+			if (meta) {
+				meta.controller.destroy();
+				delete dataset._meta[id];
+			}
+		},
+
 		destroy: function() {
 			var me = this;
 			var canvas = me.canvas;
-			var meta, i, ilen;
+			var i, ilen;
 
 			me.stop();
 
 			// dataset controllers need to cleanup associated data
 			for (i = 0, ilen = me.data.datasets.length; i < ilen; ++i) {
-				meta = me.getDatasetMeta(i);
-				if (meta.controller) {
-					meta.controller.destroy();
-					meta.controller = null;
-				}
+				me.destroyDatasetMeta(i);
 			}
 
 			if (canvas) {
 				me.unbindEvents();
-				helpers.clear(me);
+				helpers.canvas.clear(me);
 				platform.releaseContext(me.ctx);
 				me.canvas = null;
 				me.ctx = null;
@@ -4678,11 +4709,10 @@ module.exports = function(Chart) {
 			var me = this;
 			me.tooltip = new Chart.Tooltip({
 				_chart: me,
-				_chartInstance: me,            // deprecated, backward compatibility
+				_chartInstance: me, // deprecated, backward compatibility
 				_data: me.data,
 				_options: me.options.tooltips
 			}, me);
-			me.tooltip.initialize();
 		},
 
 		/**
@@ -4700,9 +4730,7 @@ module.exports = function(Chart) {
 				listeners[type] = listener;
 			});
 
-			// Responsiveness is currently based on the use of an iframe, however this method causes
-			// performance issues and could be troublesome when used with ad blockers. So make sure
-			// that the user is still able to create a chart without iframe when responsive is false.
+			// Elements used to detect size change should not be injected for non responsive charts.
 			// See https://github.com/chartjs/Chart.js/issues/2210
 			if (me.options.responsive) {
 				listener = function() {
@@ -4731,10 +4759,10 @@ module.exports = function(Chart) {
 		},
 
 		updateHoverStyle: function(elements, mode, enabled) {
-			var method = enabled? 'setHoverStyle' : 'removeHoverStyle';
+			var method = enabled ? 'setHoverStyle' : 'removeHoverStyle';
 			var element, i, ilen;
 
-			for (i=0, ilen=elements.length; i<ilen; ++i) {
+			for (i = 0, ilen = elements.length; i < ilen; ++i) {
 				element = elements[i];
 				if (element) {
 					this.getDatasetMeta(element._datasetIndex).controller[method](element);
@@ -4765,7 +4793,7 @@ module.exports = function(Chart) {
 			var bufferedRequest = me._bufferedRequest;
 			if (bufferedRequest) {
 				// If we have an update that was triggered, we need to do a normal render
-				me.render(bufferedRequest.duration, bufferedRequest.lazy);
+				me.render(bufferedRequest);
 			} else if (changed && !me.animating) {
 				// If entering, leaving, or changing elements, animate the change via pivot
 				me.stop();
@@ -4802,11 +4830,9 @@ module.exports = function(Chart) {
 				me.active = me.getElementsAtEventForMode(e, hoverOptions.mode, hoverOptions);
 			}
 
-			// On Hover hook
-			if (hoverOptions.onHover) {
-				// Need to call with native event here to not break backwards compatibility
-				hoverOptions.onHover.call(me, e.native, me.active);
-			}
+			// Invoke onHover hook
+			// Need to call with native event here to not break backwards compatibility
+			helpers.callback(options.onHover || options.hover.onHover, [e.native, me.active], me);
 
 			if (e.type === 'mouseup' || e.type === 'click') {
 				if (options.onClick) {
@@ -4844,12 +4870,12 @@ module.exports = function(Chart) {
 	Chart.Controller = Chart;
 };
 
-},{}],24:[function(require,module,exports){
+},{"25":25,"28":28,"45":45,"48":48}],24:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var helpers = require(45);
 
-	var helpers = Chart.helpers;
+module.exports = function(Chart) {
 
 	var arrayEvents = ['push', 'pop', 'shift', 'splice', 'unshift'];
 
@@ -5017,7 +5043,7 @@ module.exports = function(Chart) {
 			var metaData = meta.data;
 			var i, ilen;
 
-			for (i=0, ilen=data.length; i<ilen; ++i) {
+			for (i = 0, ilen = data.length; i < ilen; ++i) {
 				metaData[i] = metaData[i] || me.createMetaData(i);
 			}
 
@@ -5061,7 +5087,7 @@ module.exports = function(Chart) {
 			var ilen = elements.length;
 			var i = 0;
 
-			for (; i<ilen; ++i) {
+			for (; i < ilen; ++i) {
 				elements[i].transition(easingValue);
 			}
 
@@ -5080,17 +5106,17 @@ module.exports = function(Chart) {
 				meta.dataset.draw();
 			}
 
-			for (; i<ilen; ++i) {
+			for (; i < ilen; ++i) {
 				elements[i].draw();
 			}
 		},
 
 		removeHoverStyle: function(element, elementOpts) {
-			var dataset = this.chart.data.datasets[element._datasetIndex],
-				index = element._index,
-				custom = element.custom || {},
-				valueOrDefault = helpers.getValueAtIndexOrDefault,
-				model = element._model;
+			var dataset = this.chart.data.datasets[element._datasetIndex];
+			var index = element._index;
+			var custom = element.custom || {};
+			var valueOrDefault = helpers.valueAtIndexOrDefault;
+			var model = element._model;
 
 			model.backgroundColor = custom.backgroundColor ? custom.backgroundColor : valueOrDefault(dataset.backgroundColor, index, elementOpts.backgroundColor);
 			model.borderColor = custom.borderColor ? custom.borderColor : valueOrDefault(dataset.borderColor, index, elementOpts.borderColor);
@@ -5098,12 +5124,12 @@ module.exports = function(Chart) {
 		},
 
 		setHoverStyle: function(element) {
-			var dataset = this.chart.data.datasets[element._datasetIndex],
-				index = element._index,
-				custom = element.custom || {},
-				valueOrDefault = helpers.getValueAtIndexOrDefault,
-				getHoverColor = helpers.getHoverColor,
-				model = element._model;
+			var dataset = this.chart.data.datasets[element._datasetIndex];
+			var index = element._index;
+			var custom = element.custom || {};
+			var valueOrDefault = helpers.valueAtIndexOrDefault;
+			var getHoverColor = helpers.getHoverColor;
+			var model = element._model;
 
 			model.backgroundColor = custom.hoverBackgroundColor ? custom.hoverBackgroundColor : valueOrDefault(dataset.hoverBackgroundColor, index, getHoverColor(model.backgroundColor));
 			model.borderColor = custom.hoverBorderColor ? custom.hoverBorderColor : valueOrDefault(dataset.hoverBorderColor, index, getHoverColor(model.borderColor));
@@ -5131,7 +5157,7 @@ module.exports = function(Chart) {
 		 * @private
 		 */
 		insertElements: function(start, count) {
-			for (var i=0; i<count; ++i) {
+			for (var i = 0; i < count; ++i) {
 				this.addElementAndReset(start + i);
 			}
 		},
@@ -5140,7 +5166,7 @@ module.exports = function(Chart) {
 		 * @private
 		 */
 		onDataPush: function() {
-			this.insertElements(this.getDataset().data.length-1, arguments.length);
+			this.insertElements(this.getDataset().data.length - 1, arguments.length);
 		},
 
 		/**
@@ -5176,279 +5202,204 @@ module.exports = function(Chart) {
 	Chart.DatasetController.extend = helpers.inherits;
 };
 
-},{}],25:[function(require,module,exports){
+},{"45":45}],25:[function(require,module,exports){
+'use strict';
+
+var helpers = require(45);
+
+module.exports = {
+	/**
+	 * @private
+	 */
+	_set: function(scope, values) {
+		return helpers.merge(this[scope] || (this[scope] = {}), values);
+	}
+};
+
+},{"45":45}],26:[function(require,module,exports){
 'use strict';
 
 var color = require(3);
+var helpers = require(45);
 
-module.exports = function(Chart) {
+function interpolate(start, view, model, ease) {
+	var keys = Object.keys(model);
+	var i, ilen, key, actual, origin, target, type, c0, c1;
 
-	var helpers = Chart.helpers;
+	for (i = 0, ilen = keys.length; i < ilen; ++i) {
+		key = keys[i];
 
-	function interpolate(start, view, model, ease) {
-		var keys = Object.keys(model);
-		var i, ilen, key, actual, origin, target, type, c0, c1;
+		target = model[key];
 
-		for (i=0, ilen=keys.length; i<ilen; ++i) {
-			key = keys[i];
-
-			target = model[key];
-
-			// if a value is added to the model after pivot() has been called, the view
-			// doesn't contain it, so let's initialize the view to the target value.
-			if (!view.hasOwnProperty(key)) {
-				view[key] = target;
-			}
-
-			actual = view[key];
-
-			if (actual === target || key[0] === '_') {
-				continue;
-			}
-
-			if (!start.hasOwnProperty(key)) {
-				start[key] = actual;
-			}
-
-			origin = start[key];
-
-			type = typeof(target);
-
-			if (type === typeof(origin)) {
-				if (type === 'string') {
-					c0 = color(origin);
-					if (c0.valid) {
-						c1 = color(target);
-						if (c1.valid) {
-							view[key] = c1.mix(c0, ease).rgbString();
-							continue;
-						}
-					}
-				} else if (type === 'number' && isFinite(origin) && isFinite(target)) {
-					view[key] = origin + (target - origin) * ease;
-					continue;
-				}
-			}
-
+		// if a value is added to the model after pivot() has been called, the view
+		// doesn't contain it, so let's initialize the view to the target value.
+		if (!view.hasOwnProperty(key)) {
 			view[key] = target;
 		}
-	}
 
-	Chart.elements = {};
+		actual = view[key];
 
-	Chart.Element = function(configuration) {
-		helpers.extend(this, configuration);
-		this.initialize.apply(this, arguments);
-	};
-
-	helpers.extend(Chart.Element.prototype, {
-
-		initialize: function() {
-			this.hidden = false;
-		},
-
-		pivot: function() {
-			var me = this;
-			if (!me._view) {
-				me._view = helpers.clone(me._model);
-			}
-			me._start = {};
-			return me;
-		},
-
-		transition: function(ease) {
-			var me = this;
-			var model = me._model;
-			var start = me._start;
-			var view = me._view;
-
-			// No animation -> No Transition
-			if (!model || ease === 1) {
-				me._view = model;
-				me._start = null;
-				return me;
-			}
-
-			if (!view) {
-				view = me._view = {};
-			}
-
-			if (!start) {
-				start = me._start = {};
-			}
-
-			interpolate(start, view, model, ease);
-
-			return me;
-		},
-
-		tooltipPosition: function() {
-			return {
-				x: this._model.x,
-				y: this._model.y
-			};
-		},
-
-		hasValue: function() {
-			return helpers.isNumber(this._model.x) && helpers.isNumber(this._model.y);
+		if (actual === target || key[0] === '_') {
+			continue;
 		}
-	});
 
-	Chart.Element.extend = helpers.inherits;
+		if (!start.hasOwnProperty(key)) {
+			start[key] = actual;
+		}
+
+		origin = start[key];
+
+		type = typeof target;
+
+		if (type === typeof origin) {
+			if (type === 'string') {
+				c0 = color(origin);
+				if (c0.valid) {
+					c1 = color(target);
+					if (c1.valid) {
+						view[key] = c1.mix(c0, ease).rgbString();
+						continue;
+					}
+				}
+			} else if (type === 'number' && isFinite(origin) && isFinite(target)) {
+				view[key] = origin + (target - origin) * ease;
+				continue;
+			}
+		}
+
+		view[key] = target;
+	}
+}
+
+var Element = function(configuration) {
+	helpers.extend(this, configuration);
+	this.initialize.apply(this, arguments);
 };
 
-},{"3":3}],26:[function(require,module,exports){
+helpers.extend(Element.prototype, {
+
+	initialize: function() {
+		this.hidden = false;
+	},
+
+	pivot: function() {
+		var me = this;
+		if (!me._view) {
+			me._view = helpers.clone(me._model);
+		}
+		me._start = {};
+		return me;
+	},
+
+	transition: function(ease) {
+		var me = this;
+		var model = me._model;
+		var start = me._start;
+		var view = me._view;
+
+		// No animation -> No Transition
+		if (!model || ease === 1) {
+			me._view = model;
+			me._start = null;
+			return me;
+		}
+
+		if (!view) {
+			view = me._view = {};
+		}
+
+		if (!start) {
+			start = me._start = {};
+		}
+
+		interpolate(start, view, model, ease);
+
+		return me;
+	},
+
+	tooltipPosition: function() {
+		return {
+			x: this._model.x,
+			y: this._model.y
+		};
+	},
+
+	hasValue: function() {
+		return helpers.isNumber(this._model.x) && helpers.isNumber(this._model.y);
+	}
+});
+
+Element.extend = helpers.inherits;
+
+module.exports = Element;
+
+},{"3":3,"45":45}],27:[function(require,module,exports){
 /* global window: false */
 /* global document: false */
 'use strict';
 
 var color = require(3);
+var defaults = require(25);
+var helpers = require(45);
 
 module.exports = function(Chart) {
-	// Global Chart helpers object for utility methods and classes
-	var helpers = Chart.helpers = {};
 
 	// -- Basic js utility methods
-	helpers.each = function(loopable, callback, self, reverse) {
-		// Check to see if null or undefined firstly.
-		var i, len;
-		if (helpers.isArray(loopable)) {
-			len = loopable.length;
-			if (reverse) {
-				for (i = len - 1; i >= 0; i--) {
-					callback.call(self, loopable[i], i);
-				}
-			} else {
-				for (i = 0; i < len; i++) {
-					callback.call(self, loopable[i], i);
-				}
-			}
-		} else if (typeof loopable === 'object') {
-			var keys = Object.keys(loopable);
-			len = keys.length;
-			for (i = 0; i < len; i++) {
-				callback.call(self, loopable[keys[i]], keys[i]);
-			}
-		}
-	};
-	helpers.clone = function(obj) {
-		var objClone = {};
-		helpers.each(obj, function(value, key) {
-			if (helpers.isArray(value)) {
-				objClone[key] = value.slice(0);
-			} else if (typeof value === 'object' && value !== null) {
-				objClone[key] = helpers.clone(value);
-			} else {
-				objClone[key] = value;
-			}
-		});
-		return objClone;
-	};
-	helpers.extend = function(base) {
-		var setFn = function(value, key) {
-			base[key] = value;
-		};
-		for (var i = 1, ilen = arguments.length; i < ilen; i++) {
-			helpers.each(arguments[i], setFn);
-		}
-		return base;
-	};
-	// Need a special merge function to chart configs since they are now grouped
-	helpers.configMerge = function(_base) {
-		var base = helpers.clone(_base);
-		helpers.each(Array.prototype.slice.call(arguments, 1), function(extension) {
-			helpers.each(extension, function(value, key) {
-				var baseHasProperty = base.hasOwnProperty(key);
-				var baseVal = baseHasProperty ? base[key] : {};
+
+	helpers.configMerge = function(/* objects ... */) {
+		return helpers.merge(helpers.clone(arguments[0]), [].slice.call(arguments, 1), {
+			merger: function(key, target, source, options) {
+				var tval = target[key] || {};
+				var sval = source[key];
 
 				if (key === 'scales') {
-					// Scale config merging is complex. Add our own function here for that
-					base[key] = helpers.scaleMerge(baseVal, value);
+					// scale config merging is complex. Add our own function here for that
+					target[key] = helpers.scaleMerge(tval, sval);
 				} else if (key === 'scale') {
-					// Used in polar area & radar charts since there is only one scale
-					base[key] = helpers.configMerge(baseVal, Chart.scaleService.getScaleDefaults(value.type), value);
-				} else if (baseHasProperty
-						&& typeof baseVal === 'object'
-						&& !helpers.isArray(baseVal)
-						&& baseVal !== null
-						&& typeof value === 'object'
-						&& !helpers.isArray(value)) {
-					// If we are overwriting an object with an object, do a merge of the properties.
-					base[key] = helpers.configMerge(baseVal, value);
+					// used in polar area & radar charts since there is only one scale
+					target[key] = helpers.merge(tval, [Chart.scaleService.getScaleDefaults(sval.type), sval]);
 				} else {
-					// can just overwrite the value in this case
-					base[key] = value;
+					helpers._merger(key, target, source, options);
 				}
-			});
+			}
 		});
-
-		return base;
 	};
-	helpers.scaleMerge = function(_base, extension) {
-		var base = helpers.clone(_base);
 
-		helpers.each(extension, function(value, key) {
-			if (key === 'xAxes' || key === 'yAxes') {
-				// These properties are arrays of items
-				if (base.hasOwnProperty(key)) {
-					helpers.each(value, function(valueObj, index) {
-						var axisType = helpers.getValueOrDefault(valueObj.type, key === 'xAxes' ? 'category' : 'linear');
-						var axisDefaults = Chart.scaleService.getScaleDefaults(axisType);
-						if (index >= base[key].length || !base[key][index].type) {
-							base[key].push(helpers.configMerge(axisDefaults, valueObj));
-						} else if (valueObj.type && valueObj.type !== base[key][index].type) {
-							// Type changed. Bring in the new defaults before we bring in valueObj so that valueObj can override the correct scale defaults
-							base[key][index] = helpers.configMerge(base[key][index], axisDefaults, valueObj);
-						} else {
-							// Type is the same
-							base[key][index] = helpers.configMerge(base[key][index], valueObj);
+	helpers.scaleMerge = function(/* objects ... */) {
+		return helpers.merge(helpers.clone(arguments[0]), [].slice.call(arguments, 1), {
+			merger: function(key, target, source, options) {
+				if (key === 'xAxes' || key === 'yAxes') {
+					var slen = source[key].length;
+					var i, type, scale;
+
+					if (!target[key]) {
+						target[key] = [];
+					}
+
+					for (i = 0; i < slen; ++i) {
+						scale = source[key][i];
+						type = helpers.valueOrDefault(scale.type, key === 'xAxes' ? 'category' : 'linear');
+
+						if (i >= target[key].length) {
+							target[key].push({});
 						}
-					});
-				} else {
-					base[key] = [];
-					helpers.each(value, function(valueObj) {
-						var axisType = helpers.getValueOrDefault(valueObj.type, key === 'xAxes' ? 'category' : 'linear');
-						base[key].push(helpers.configMerge(Chart.scaleService.getScaleDefaults(axisType), valueObj));
-					});
-				}
-			} else if (base.hasOwnProperty(key) && typeof base[key] === 'object' && base[key] !== null && typeof value === 'object') {
-				// If we are overwriting an object with an object, do a merge of the properties.
-				base[key] = helpers.configMerge(base[key], value);
 
-			} else {
-				// can just overwrite the value in this case
-				base[key] = value;
+						if (!target[key][i].type || (scale.type && scale.type !== target[key][i].type)) {
+							// new/untyped scale or type changed: let's apply the new defaults
+							// then merge source scale to correctly overwrite the defaults.
+							helpers.merge(target[key][i], [Chart.scaleService.getScaleDefaults(type), scale]);
+						} else {
+							// scales type are the same
+							helpers.merge(target[key][i], scale);
+						}
+					}
+				} else {
+					helpers._merger(key, target, source, options);
+				}
 			}
 		});
-
-		return base;
 	};
-	helpers.getValueAtIndexOrDefault = function(value, index, defaultValue) {
-		if (value === undefined || value === null) {
-			return defaultValue;
-		}
 
-		if (helpers.isArray(value)) {
-			return index < value.length ? value[index] : defaultValue;
-		}
-
-		return value;
-	};
-	helpers.getValueOrDefault = function(value, defaultValue) {
-		return value === undefined ? defaultValue : value;
-	};
-	helpers.indexOf = Array.prototype.indexOf?
-		function(array, item) {
-			return array.indexOf(item);
-		}:
-		function(array, item) {
-			for (var i = 0, ilen = array.length; i < ilen; ++i) {
-				if (array[i] === item) {
-					return i;
-				}
-			}
-			return -1;
-		};
 	helpers.where = function(collection, filterCallback) {
 		if (helpers.isArray(collection) && Array.prototype.filter) {
 			return collection.filter(filterCallback);
@@ -5463,12 +5414,12 @@ module.exports = function(Chart) {
 
 		return filtered;
 	};
-	helpers.findIndex = Array.prototype.findIndex?
+	helpers.findIndex = Array.prototype.findIndex ?
 		function(array, callback, scope) {
 			return array.findIndex(callback, scope);
 		} :
 		function(array, callback, scope) {
-			scope = scope === undefined? array : scope;
+			scope = scope === undefined ? array : scope;
 			for (var i = 0, ilen = array.length; i < ilen; ++i) {
 				if (callback.call(scope, array[i], i, array)) {
 					return i;
@@ -5478,7 +5429,7 @@ module.exports = function(Chart) {
 		};
 	helpers.findNextWhere = function(arrayToSearch, filterCallback, startIndex) {
 		// Default to start of the array
-		if (startIndex === undefined || startIndex === null) {
+		if (helpers.isNullOrUndef(startIndex)) {
 			startIndex = -1;
 		}
 		for (var i = startIndex + 1; i < arrayToSearch.length; i++) {
@@ -5490,7 +5441,7 @@ module.exports = function(Chart) {
 	};
 	helpers.findPreviousWhere = function(arrayToSearch, filterCallback, startIndex) {
 		// Default to end of the array
-		if (startIndex === undefined || startIndex === null) {
+		if (helpers.isNullOrUndef(startIndex)) {
 			startIndex = arrayToSearch.length;
 		}
 		for (var i = startIndex - 1; i >= 0; i--) {
@@ -5500,36 +5451,7 @@ module.exports = function(Chart) {
 			}
 		}
 	};
-	helpers.inherits = function(extensions) {
-		// Basic javascript inheritance based on the model created in Backbone.js
-		var me = this;
-		var ChartElement = (extensions && extensions.hasOwnProperty('constructor')) ? extensions.constructor : function() {
-			return me.apply(this, arguments);
-		};
 
-		var Surrogate = function() {
-			this.constructor = ChartElement;
-		};
-		Surrogate.prototype = me.prototype;
-		ChartElement.prototype = new Surrogate();
-
-		ChartElement.extend = helpers.inherits;
-
-		if (extensions) {
-			helpers.extend(ChartElement.prototype, extensions);
-		}
-
-		ChartElement.__super__ = me.prototype;
-
-		return ChartElement;
-	};
-	helpers.noop = function() {};
-	helpers.uid = (function() {
-		var id = 0;
-		return function() {
-			return id++;
-		};
-	}());
 	// -- Math methods
 	helpers.isNumber = function(n) {
 		return !isNaN(parseFloat(n)) && isFinite(n);
@@ -5557,7 +5479,7 @@ module.exports = function(Chart) {
 			return min;
 		}, Number.POSITIVE_INFINITY);
 	};
-	helpers.sign = Math.sign?
+	helpers.sign = Math.sign ?
 		function(x) {
 			return Math.sign(x);
 		} :
@@ -5568,7 +5490,7 @@ module.exports = function(Chart) {
 			}
 			return x > 0 ? 1 : -1;
 		};
-	helpers.log10 = Math.log10?
+	helpers.log10 = Math.log10 ?
 		function(x) {
 			return Math.log10(x);
 		} :
@@ -5583,9 +5505,9 @@ module.exports = function(Chart) {
 	};
 	// Gets the angle from vertical upright to the point about a centre.
 	helpers.getAngleFromPoint = function(centrePoint, anglePoint) {
-		var distanceFromXCenter = anglePoint.x - centrePoint.x,
-			distanceFromYCenter = anglePoint.y - centrePoint.y,
-			radialDistanceFromCenter = Math.sqrt(distanceFromXCenter * distanceFromXCenter + distanceFromYCenter * distanceFromYCenter);
+		var distanceFromXCenter = anglePoint.x - centrePoint.x;
+		var distanceFromYCenter = anglePoint.y - centrePoint.y;
+		var radialDistanceFromCenter = Math.sqrt(distanceFromXCenter * distanceFromXCenter + distanceFromYCenter * distanceFromYCenter);
 
 		var angle = Math.atan2(distanceFromYCenter, distanceFromXCenter);
 
@@ -5610,9 +5532,9 @@ module.exports = function(Chart) {
 
 		// This function must also respect "skipped" points
 
-		var previous = firstPoint.skip ? middlePoint : firstPoint,
-			current = middlePoint,
-			next = afterPoint.skip ? middlePoint : afterPoint;
+		var previous = firstPoint.skip ? middlePoint : firstPoint;
+		var current = middlePoint;
+		var next = afterPoint.skip ? middlePoint : afterPoint;
 
 		var d01 = Math.sqrt(Math.pow(current.x - previous.x, 2) + Math.pow(current.y - previous.y, 2));
 		var d12 = Math.sqrt(Math.pow(next.x - current.x, 2) + Math.pow(next.y - current.y, 2));
@@ -5770,203 +5692,6 @@ module.exports = function(Chart) {
 
 		return niceFraction * Math.pow(10, exponent);
 	};
-	// Easing functions adapted from Robert Penner's easing equations
-	// http://www.robertpenner.com/easing/
-	var easingEffects = helpers.easingEffects = {
-		linear: function(t) {
-			return t;
-		},
-		easeInQuad: function(t) {
-			return t * t;
-		},
-		easeOutQuad: function(t) {
-			return -1 * t * (t - 2);
-		},
-		easeInOutQuad: function(t) {
-			if ((t /= 1 / 2) < 1) {
-				return 1 / 2 * t * t;
-			}
-			return -1 / 2 * ((--t) * (t - 2) - 1);
-		},
-		easeInCubic: function(t) {
-			return t * t * t;
-		},
-		easeOutCubic: function(t) {
-			return 1 * ((t = t / 1 - 1) * t * t + 1);
-		},
-		easeInOutCubic: function(t) {
-			if ((t /= 1 / 2) < 1) {
-				return 1 / 2 * t * t * t;
-			}
-			return 1 / 2 * ((t -= 2) * t * t + 2);
-		},
-		easeInQuart: function(t) {
-			return t * t * t * t;
-		},
-		easeOutQuart: function(t) {
-			return -1 * ((t = t / 1 - 1) * t * t * t - 1);
-		},
-		easeInOutQuart: function(t) {
-			if ((t /= 1 / 2) < 1) {
-				return 1 / 2 * t * t * t * t;
-			}
-			return -1 / 2 * ((t -= 2) * t * t * t - 2);
-		},
-		easeInQuint: function(t) {
-			return 1 * (t /= 1) * t * t * t * t;
-		},
-		easeOutQuint: function(t) {
-			return 1 * ((t = t / 1 - 1) * t * t * t * t + 1);
-		},
-		easeInOutQuint: function(t) {
-			if ((t /= 1 / 2) < 1) {
-				return 1 / 2 * t * t * t * t * t;
-			}
-			return 1 / 2 * ((t -= 2) * t * t * t * t + 2);
-		},
-		easeInSine: function(t) {
-			return -1 * Math.cos(t / 1 * (Math.PI / 2)) + 1;
-		},
-		easeOutSine: function(t) {
-			return 1 * Math.sin(t / 1 * (Math.PI / 2));
-		},
-		easeInOutSine: function(t) {
-			return -1 / 2 * (Math.cos(Math.PI * t / 1) - 1);
-		},
-		easeInExpo: function(t) {
-			return (t === 0) ? 1 : 1 * Math.pow(2, 10 * (t / 1 - 1));
-		},
-		easeOutExpo: function(t) {
-			return (t === 1) ? 1 : 1 * (-Math.pow(2, -10 * t / 1) + 1);
-		},
-		easeInOutExpo: function(t) {
-			if (t === 0) {
-				return 0;
-			}
-			if (t === 1) {
-				return 1;
-			}
-			if ((t /= 1 / 2) < 1) {
-				return 1 / 2 * Math.pow(2, 10 * (t - 1));
-			}
-			return 1 / 2 * (-Math.pow(2, -10 * --t) + 2);
-		},
-		easeInCirc: function(t) {
-			if (t >= 1) {
-				return t;
-			}
-			return -1 * (Math.sqrt(1 - (t /= 1) * t) - 1);
-		},
-		easeOutCirc: function(t) {
-			return 1 * Math.sqrt(1 - (t = t / 1 - 1) * t);
-		},
-		easeInOutCirc: function(t) {
-			if ((t /= 1 / 2) < 1) {
-				return -1 / 2 * (Math.sqrt(1 - t * t) - 1);
-			}
-			return 1 / 2 * (Math.sqrt(1 - (t -= 2) * t) + 1);
-		},
-		easeInElastic: function(t) {
-			var s = 1.70158;
-			var p = 0;
-			var a = 1;
-			if (t === 0) {
-				return 0;
-			}
-			if ((t /= 1) === 1) {
-				return 1;
-			}
-			if (!p) {
-				p = 1 * 0.3;
-			}
-			if (a < Math.abs(1)) {
-				a = 1;
-				s = p / 4;
-			} else {
-				s = p / (2 * Math.PI) * Math.asin(1 / a);
-			}
-			return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * 1 - s) * (2 * Math.PI) / p));
-		},
-		easeOutElastic: function(t) {
-			var s = 1.70158;
-			var p = 0;
-			var a = 1;
-			if (t === 0) {
-				return 0;
-			}
-			if ((t /= 1) === 1) {
-				return 1;
-			}
-			if (!p) {
-				p = 1 * 0.3;
-			}
-			if (a < Math.abs(1)) {
-				a = 1;
-				s = p / 4;
-			} else {
-				s = p / (2 * Math.PI) * Math.asin(1 / a);
-			}
-			return a * Math.pow(2, -10 * t) * Math.sin((t * 1 - s) * (2 * Math.PI) / p) + 1;
-		},
-		easeInOutElastic: function(t) {
-			var s = 1.70158;
-			var p = 0;
-			var a = 1;
-			if (t === 0) {
-				return 0;
-			}
-			if ((t /= 1 / 2) === 2) {
-				return 1;
-			}
-			if (!p) {
-				p = 1 * (0.3 * 1.5);
-			}
-			if (a < Math.abs(1)) {
-				a = 1;
-				s = p / 4;
-			} else {
-				s = p / (2 * Math.PI) * Math.asin(1 / a);
-			}
-			if (t < 1) {
-				return -0.5 * (a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * 1 - s) * (2 * Math.PI) / p));
-			}
-			return a * Math.pow(2, -10 * (t -= 1)) * Math.sin((t * 1 - s) * (2 * Math.PI) / p) * 0.5 + 1;
-		},
-		easeInBack: function(t) {
-			var s = 1.70158;
-			return 1 * (t /= 1) * t * ((s + 1) * t - s);
-		},
-		easeOutBack: function(t) {
-			var s = 1.70158;
-			return 1 * ((t = t / 1 - 1) * t * ((s + 1) * t + s) + 1);
-		},
-		easeInOutBack: function(t) {
-			var s = 1.70158;
-			if ((t /= 1 / 2) < 1) {
-				return 1 / 2 * (t * t * (((s *= (1.525)) + 1) * t - s));
-			}
-			return 1 / 2 * ((t -= 2) * t * (((s *= (1.525)) + 1) * t + s) + 2);
-		},
-		easeInBounce: function(t) {
-			return 1 - easingEffects.easeOutBounce(1 - t);
-		},
-		easeOutBounce: function(t) {
-			if ((t /= 1) < (1 / 2.75)) {
-				return 1 * (7.5625 * t * t);
-			} else if (t < (2 / 2.75)) {
-				return 1 * (7.5625 * (t -= (1.5 / 2.75)) * t + 0.75);
-			} else if (t < (2.5 / 2.75)) {
-				return 1 * (7.5625 * (t -= (2.25 / 2.75)) * t + 0.9375);
-			}
-			return 1 * (7.5625 * (t -= (2.625 / 2.75)) * t + 0.984375);
-		},
-		easeInOutBounce: function(t) {
-			if (t < 1 / 2) {
-				return easingEffects.easeInBounce(t * 2) * 0.5;
-			}
-			return easingEffects.easeOutBounce(t * 2 - 1) * 0.5 + 1 * 0.5;
-		}
-	};
 	// Request animation polyfill - http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
 	helpers.requestAnimFrame = (function() {
 		if (typeof window === 'undefined') {
@@ -5986,9 +5711,9 @@ module.exports = function(Chart) {
 	// -- DOM methods
 	helpers.getRelativePosition = function(evt, chart) {
 		var mouseX, mouseY;
-		var e = evt.originalEvent || evt,
-			canvas = evt.currentTarget || evt.srcElement,
-			boundingRect = canvas.getBoundingClientRect();
+		var e = evt.originalEvent || evt;
+		var canvas = evt.currentTarget || evt.srcElement;
+		var boundingRect = canvas.getBoundingClientRect();
 
 		var touches = e.touches;
 		if (touches && touches.length > 0) {
@@ -6021,29 +5746,11 @@ module.exports = function(Chart) {
 		};
 
 	};
-	helpers.addEvent = function(node, eventType, method) {
-		if (node.addEventListener) {
-			node.addEventListener(eventType, method);
-		} else if (node.attachEvent) {
-			node.attachEvent('on' + eventType, method);
-		} else {
-			node['on' + eventType] = method;
-		}
-	};
-	helpers.removeEvent = function(node, eventType, handler) {
-		if (node.removeEventListener) {
-			node.removeEventListener(eventType, handler, false);
-		} else if (node.detachEvent) {
-			node.detachEvent('on' + eventType, handler);
-		} else {
-			node['on' + eventType] = helpers.noop;
-		}
-	};
 
 	// Private helper function to convert max-width/max-height values that may be percentages into a number
 	function parseMaxStyle(styleValue, node, parentProperty) {
 		var valueInPixels;
-		if (typeof(styleValue) === 'string') {
+		if (typeof styleValue === 'string') {
 			valueInPixels = parseInt(styleValue, 10);
 
 			if (styleValue.indexOf('%') !== -1) {
@@ -6081,8 +5788,8 @@ module.exports = function(Chart) {
 
 		if (hasCNode || hasCContainer) {
 			return Math.min(
-				hasCNode? parseMaxStyle(constrainedNode, domNode, percentageProperty) : infinity,
-				hasCContainer? parseMaxStyle(constrainedContainer, parentNode, percentageProperty) : infinity);
+				hasCNode ? parseMaxStyle(constrainedNode, domNode, percentageProperty) : infinity,
+				hasCContainer ? parseMaxStyle(constrainedContainer, parentNode, percentageProperty) : infinity);
 		}
 
 		return 'none';
@@ -6097,27 +5804,35 @@ module.exports = function(Chart) {
 	};
 	helpers.getMaximumWidth = function(domNode) {
 		var container = domNode.parentNode;
+		if (!container) {
+			return domNode.clientWidth;
+		}
+
 		var paddingLeft = parseInt(helpers.getStyle(container, 'padding-left'), 10);
 		var paddingRight = parseInt(helpers.getStyle(container, 'padding-right'), 10);
 		var w = container.clientWidth - paddingLeft - paddingRight;
 		var cw = helpers.getConstraintWidth(domNode);
-		return isNaN(cw)? w : Math.min(w, cw);
+		return isNaN(cw) ? w : Math.min(w, cw);
 	};
 	helpers.getMaximumHeight = function(domNode) {
 		var container = domNode.parentNode;
+		if (!container) {
+			return domNode.clientHeight;
+		}
+
 		var paddingTop = parseInt(helpers.getStyle(container, 'padding-top'), 10);
 		var paddingBottom = parseInt(helpers.getStyle(container, 'padding-bottom'), 10);
 		var h = container.clientHeight - paddingTop - paddingBottom;
 		var ch = helpers.getConstraintHeight(domNode);
-		return isNaN(ch)? h : Math.min(h, ch);
+		return isNaN(ch) ? h : Math.min(h, ch);
 	};
 	helpers.getStyle = function(el, property) {
 		return el.currentStyle ?
 			el.currentStyle[property] :
 			document.defaultView.getComputedStyle(el, null).getPropertyValue(property);
 	};
-	helpers.retinaScale = function(chart) {
-		var pixelRatio = chart.currentDevicePixelRatio = window.devicePixelRatio || 1;
+	helpers.retinaScale = function(chart, forceRatio) {
+		var pixelRatio = chart.currentDevicePixelRatio = forceRatio || window.devicePixelRatio || 1;
 		if (pixelRatio === 1) {
 			return;
 		}
@@ -6137,9 +5852,6 @@ module.exports = function(Chart) {
 		canvas.style.width = width + 'px';
 	};
 	// -- Canvas methods
-	helpers.clear = function(chart) {
-		chart.ctx.clearRect(0, 0, chart.width, chart.height);
-	};
 	helpers.fontString = function(pixelSize, fontStyle, fontFamily) {
 		return fontStyle + ' ' + pixelSize + 'px ' + fontFamily;
 	};
@@ -6203,21 +5915,8 @@ module.exports = function(Chart) {
 		});
 		return numberOfLines;
 	};
-	helpers.drawRoundedRectangle = function(ctx, x, y, width, height, radius) {
-		ctx.beginPath();
-		ctx.moveTo(x + radius, y);
-		ctx.lineTo(x + width - radius, y);
-		ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-		ctx.lineTo(x + width, y + height - radius);
-		ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-		ctx.lineTo(x + radius, y + height);
-		ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-		ctx.lineTo(x, y + radius);
-		ctx.quadraticCurveTo(x, y, x + radius, y);
-		ctx.closePath();
-	};
 
-	helpers.color = !color?
+	helpers.color = !color ?
 		function(value) {
 			console.error('Color.js not found!');
 			return value;
@@ -6225,384 +5924,389 @@ module.exports = function(Chart) {
 		function(value) {
 			/* global CanvasGradient */
 			if (value instanceof CanvasGradient) {
-				value = Chart.defaults.global.defaultColor;
+				value = defaults.global.defaultColor;
 			}
 
 			return color(value);
 		};
 
-	helpers.isArray = Array.isArray?
-		function(obj) {
-			return Array.isArray(obj);
-		} :
-		function(obj) {
-			return Object.prototype.toString.call(obj) === '[object Array]';
-		};
-	// ! @see http://stackoverflow.com/a/14853974
-	helpers.arrayEquals = function(a0, a1) {
-		var i, ilen, v0, v1;
-
-		if (!a0 || !a1 || a0.length !== a1.length) {
-			return false;
-		}
-
-		for (i = 0, ilen=a0.length; i < ilen; ++i) {
-			v0 = a0[i];
-			v1 = a1[i];
-
-			if (v0 instanceof Array && v1 instanceof Array) {
-				if (!helpers.arrayEquals(v0, v1)) {
-					return false;
-				}
-			} else if (v0 !== v1) {
-				// NOTE: two different object instances will never be equal: {x:20} != {x:20}
-				return false;
-			}
-		}
-
-		return true;
-	};
-	helpers.callback = function(fn, args, thisArg) {
-		if (fn && typeof fn.call === 'function') {
-			fn.apply(thisArg, args);
-		}
-	};
 	helpers.getHoverColor = function(colorValue) {
 		/* global CanvasPattern */
 		return (colorValue instanceof CanvasPattern) ?
 			colorValue :
 			helpers.color(colorValue).saturate(0.5).darken(0.1).rgbString();
 	};
-
-	/**
-	 * Provided for backward compatibility, use Chart.helpers#callback instead.
-	 * @function Chart.helpers#callCallback
-	 * @deprecated since version 2.6.0
-	 * @todo remove at version 3
-	 */
-	helpers.callCallback = helpers.callback;
 };
 
-},{"3":3}],27:[function(require,module,exports){
+},{"25":25,"3":3,"45":45}],28:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
-	var helpers = Chart.helpers;
+var helpers = require(45);
 
-	/**
-	 * Helper function to get relative position for an event
-	 * @param {Event|IEvent} event - The event to get the position for
-	 * @param {Chart} chart - The chart
-	 * @returns {Point} the event position
-	 */
-	function getRelativePosition(e, chart) {
-		if (e.native) {
-			return {
-				x: e.x,
-				y: e.y
-			};
-		}
-
-		return helpers.getRelativePosition(e, chart);
+/**
+ * Helper function to get relative position for an event
+ * @param {Event|IEvent} event - The event to get the position for
+ * @param {Chart} chart - The chart
+ * @returns {Point} the event position
+ */
+function getRelativePosition(e, chart) {
+	if (e.native) {
+		return {
+			x: e.x,
+			y: e.y
+		};
 	}
 
-	/**
-	 * Helper function to traverse all of the visible elements in the chart
-	 * @param chart {chart} the chart
-	 * @param handler {Function} the callback to execute for each visible item
-	 */
-	function parseVisibleItems(chart, handler) {
-		var datasets = chart.data.datasets;
-		var meta, i, j, ilen, jlen;
+	return helpers.getRelativePosition(e, chart);
+}
 
-		for (i = 0, ilen = datasets.length; i < ilen; ++i) {
-			if (!chart.isDatasetVisible(i)) {
-				continue;
-			}
+/**
+ * Helper function to traverse all of the visible elements in the chart
+ * @param chart {chart} the chart
+ * @param handler {Function} the callback to execute for each visible item
+ */
+function parseVisibleItems(chart, handler) {
+	var datasets = chart.data.datasets;
+	var meta, i, j, ilen, jlen;
 
-			meta = chart.getDatasetMeta(i);
-			for (j = 0, jlen = meta.data.length; j < jlen; ++j) {
-				var element = meta.data[j];
-				if (!element._view.skip) {
-					handler(element);
-				}
+	for (i = 0, ilen = datasets.length; i < ilen; ++i) {
+		if (!chart.isDatasetVisible(i)) {
+			continue;
+		}
+
+		meta = chart.getDatasetMeta(i);
+		for (j = 0, jlen = meta.data.length; j < jlen; ++j) {
+			var element = meta.data[j];
+			if (!element._view.skip) {
+				handler(element);
 			}
 		}
 	}
+}
 
-	/**
-	 * Helper function to get the items that intersect the event position
-	 * @param items {ChartElement[]} elements to filter
-	 * @param position {Point} the point to be nearest to
-	 * @return {ChartElement[]} the nearest items
-	 */
-	function getIntersectItems(chart, position) {
-		var elements = [];
+/**
+ * Helper function to get the items that intersect the event position
+ * @param items {ChartElement[]} elements to filter
+ * @param position {Point} the point to be nearest to
+ * @return {ChartElement[]} the nearest items
+ */
+function getIntersectItems(chart, position) {
+	var elements = [];
 
-		parseVisibleItems(chart, function(element) {
-			if (element.inRange(position.x, position.y)) {
+	parseVisibleItems(chart, function(element) {
+		if (element.inRange(position.x, position.y)) {
+			elements.push(element);
+		}
+	});
+
+	return elements;
+}
+
+/**
+ * Helper function to get the items nearest to the event position considering all visible items in teh chart
+ * @param chart {Chart} the chart to look at elements from
+ * @param position {Point} the point to be nearest to
+ * @param intersect {Boolean} if true, only consider items that intersect the position
+ * @param distanceMetric {Function} function to provide the distance between points
+ * @return {ChartElement[]} the nearest items
+ */
+function getNearestItems(chart, position, intersect, distanceMetric) {
+	var minDistance = Number.POSITIVE_INFINITY;
+	var nearestItems = [];
+
+	parseVisibleItems(chart, function(element) {
+		if (intersect && !element.inRange(position.x, position.y)) {
+			return;
+		}
+
+		var center = element.getCenterPoint();
+		var distance = distanceMetric(position, center);
+
+		if (distance < minDistance) {
+			nearestItems = [element];
+			minDistance = distance;
+		} else if (distance === minDistance) {
+			// Can have multiple items at the same distance in which case we sort by size
+			nearestItems.push(element);
+		}
+	});
+
+	return nearestItems;
+}
+
+/**
+ * Get a distance metric function for two points based on the
+ * axis mode setting
+ * @param {String} axis the axis mode. x|y|xy
+ */
+function getDistanceMetricForAxis(axis) {
+	var useX = axis.indexOf('x') !== -1;
+	var useY = axis.indexOf('y') !== -1;
+
+	return function(pt1, pt2) {
+		var deltaX = useX ? Math.abs(pt1.x - pt2.x) : 0;
+		var deltaY = useY ? Math.abs(pt1.y - pt2.y) : 0;
+		return Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+	};
+}
+
+function indexMode(chart, e, options) {
+	var position = getRelativePosition(e, chart);
+	// Default axis for index mode is 'x' to match old behaviour
+	options.axis = options.axis || 'x';
+	var distanceMetric = getDistanceMetricForAxis(options.axis);
+	var items = options.intersect ? getIntersectItems(chart, position) : getNearestItems(chart, position, false, distanceMetric);
+	var elements = [];
+
+	if (!items.length) {
+		return [];
+	}
+
+	chart.data.datasets.forEach(function(dataset, datasetIndex) {
+		if (chart.isDatasetVisible(datasetIndex)) {
+			var meta = chart.getDatasetMeta(datasetIndex);
+			var element = meta.data[items[0]._index];
+
+			// don't count items that are skipped (null data)
+			if (element && !element._view.skip) {
 				elements.push(element);
 			}
-		});
-
-		return elements;
-	}
-
-	/**
-	 * Helper function to get the items nearest to the event position considering all visible items in teh chart
-	 * @param chart {Chart} the chart to look at elements from
-	 * @param position {Point} the point to be nearest to
-	 * @param intersect {Boolean} if true, only consider items that intersect the position
-	 * @param distanceMetric {Function} Optional function to provide the distance between
-	 * @return {ChartElement[]} the nearest items
-	 */
-	function getNearestItems(chart, position, intersect, distanceMetric) {
-		var minDistance = Number.POSITIVE_INFINITY;
-		var nearestItems = [];
-
-		if (!distanceMetric) {
-			distanceMetric = helpers.distanceBetweenPoints;
 		}
+	});
 
-		parseVisibleItems(chart, function(element) {
-			if (intersect && !element.inRange(position.x, position.y)) {
-				return;
-			}
+	return elements;
+}
 
-			var center = element.getCenterPoint();
-			var distance = distanceMetric(position, center);
+/**
+ * @interface IInteractionOptions
+ */
+/**
+ * If true, only consider items that intersect the point
+ * @name IInterfaceOptions#boolean
+ * @type Boolean
+ */
 
-			if (distance < minDistance) {
-				nearestItems = [element];
-				minDistance = distance;
-			} else if (distance === minDistance) {
-				// Can have multiple items at the same distance in which case we sort by size
-				nearestItems.push(element);
-			}
-		});
+/**
+ * Contains interaction related functions
+ * @namespace Chart.Interaction
+ */
+module.exports = {
+	// Helper function for different modes
+	modes: {
+		single: function(chart, e) {
+			var position = getRelativePosition(e, chart);
+			var elements = [];
 
-		return nearestItems;
-	}
-
-	function indexMode(chart, e, options) {
-		var position = getRelativePosition(e, chart);
-		var distanceMetric = function(pt1, pt2) {
-			return Math.abs(pt1.x - pt2.x);
-		};
-		var items = options.intersect ? getIntersectItems(chart, position) : getNearestItems(chart, position, false, distanceMetric);
-		var elements = [];
-
-		if (!items.length) {
-			return [];
-		}
-
-		chart.data.datasets.forEach(function(dataset, datasetIndex) {
-			if (chart.isDatasetVisible(datasetIndex)) {
-				var meta = chart.getDatasetMeta(datasetIndex),
-					element = meta.data[items[0]._index];
-
-				// don't count items that are skipped (null data)
-				if (element && !element._view.skip) {
+			parseVisibleItems(chart, function(element) {
+				if (element.inRange(position.x, position.y)) {
 					elements.push(element);
+					return elements;
 				}
+			});
+
+			return elements.slice(0, 1);
+		},
+
+		/**
+		 * @function Chart.Interaction.modes.label
+		 * @deprecated since version 2.4.0
+		 * @todo remove at version 3
+		 * @private
+		 */
+		label: indexMode,
+
+		/**
+		 * Returns items at the same index. If the options.intersect parameter is true, we only return items if we intersect something
+		 * If the options.intersect mode is false, we find the nearest item and return the items at the same index as that item
+		 * @function Chart.Interaction.modes.index
+		 * @since v2.4.0
+		 * @param chart {chart} the chart we are returning items from
+		 * @param e {Event} the event we are find things at
+		 * @param options {IInteractionOptions} options to use during interaction
+		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 */
+		index: indexMode,
+
+		/**
+		 * Returns items in the same dataset. If the options.intersect parameter is true, we only return items if we intersect something
+		 * If the options.intersect is false, we find the nearest item and return the items in that dataset
+		 * @function Chart.Interaction.modes.dataset
+		 * @param chart {chart} the chart we are returning items from
+		 * @param e {Event} the event we are find things at
+		 * @param options {IInteractionOptions} options to use during interaction
+		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 */
+		dataset: function(chart, e, options) {
+			var position = getRelativePosition(e, chart);
+			options.axis = options.axis || 'xy';
+			var distanceMetric = getDistanceMetricForAxis(options.axis);
+			var items = options.intersect ? getIntersectItems(chart, position) : getNearestItems(chart, position, false, distanceMetric);
+
+			if (items.length > 0) {
+				items = chart.getDatasetMeta(items[0]._datasetIndex).data;
 			}
-		});
 
-		return elements;
-	}
+			return items;
+		},
 
-	/**
-	 * @interface IInteractionOptions
-	 */
-	/**
-	 * If true, only consider items that intersect the point
-	 * @name IInterfaceOptions#boolean
-	 * @type Boolean
-	 */
+		/**
+		 * @function Chart.Interaction.modes.x-axis
+		 * @deprecated since version 2.4.0. Use index mode and intersect == true
+		 * @todo remove at version 3
+		 * @private
+		 */
+		'x-axis': function(chart, e) {
+			return indexMode(chart, e, {intersect: false});
+		},
 
-	/**
-	 * Contains interaction related functions
-	 * @namespace Chart.Interaction
-	 */
-	Chart.Interaction = {
-		// Helper function for different modes
-		modes: {
-			single: function(chart, e) {
-				var position = getRelativePosition(e, chart);
-				var elements = [];
+		/**
+		 * Point mode returns all elements that hit test based on the event position
+		 * of the event
+		 * @function Chart.Interaction.modes.intersect
+		 * @param chart {chart} the chart we are returning items from
+		 * @param e {Event} the event we are find things at
+		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 */
+		point: function(chart, e) {
+			var position = getRelativePosition(e, chart);
+			return getIntersectItems(chart, position);
+		},
 
-				parseVisibleItems(chart, function(element) {
-					if (element.inRange(position.x, position.y)) {
-						elements.push(element);
-						return elements;
+		/**
+		 * nearest mode returns the element closest to the point
+		 * @function Chart.Interaction.modes.intersect
+		 * @param chart {chart} the chart we are returning items from
+		 * @param e {Event} the event we are find things at
+		 * @param options {IInteractionOptions} options to use
+		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 */
+		nearest: function(chart, e, options) {
+			var position = getRelativePosition(e, chart);
+			options.axis = options.axis || 'xy';
+			var distanceMetric = getDistanceMetricForAxis(options.axis);
+			var nearestItems = getNearestItems(chart, position, options.intersect, distanceMetric);
+
+			// We have multiple items at the same distance from the event. Now sort by smallest
+			if (nearestItems.length > 1) {
+				nearestItems.sort(function(a, b) {
+					var sizeA = a.getArea();
+					var sizeB = b.getArea();
+					var ret = sizeA - sizeB;
+
+					if (ret === 0) {
+						// if equal sort by dataset index
+						ret = a._datasetIndex - b._datasetIndex;
 					}
+
+					return ret;
 				});
-
-				return elements.slice(0, 1);
-			},
-
-			/**
-			 * @function Chart.Interaction.modes.label
-			 * @deprecated since version 2.4.0
-	 		 * @todo remove at version 3
-			 * @private
-			 */
-			label: indexMode,
-
-			/**
-			 * Returns items at the same index. If the options.intersect parameter is true, we only return items if we intersect something
-			 * If the options.intersect mode is false, we find the nearest item and return the items at the same index as that item
-			 * @function Chart.Interaction.modes.index
-			 * @since v2.4.0
-			 * @param chart {chart} the chart we are returning items from
-			 * @param e {Event} the event we are find things at
-			 * @param options {IInteractionOptions} options to use during interaction
-			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
-			 */
-			index: indexMode,
-
-			/**
-			 * Returns items in the same dataset. If the options.intersect parameter is true, we only return items if we intersect something
-			 * If the options.intersect is false, we find the nearest item and return the items in that dataset
-			 * @function Chart.Interaction.modes.dataset
-			 * @param chart {chart} the chart we are returning items from
-			 * @param e {Event} the event we are find things at
-			 * @param options {IInteractionOptions} options to use during interaction
-			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
-			 */
-			dataset: function(chart, e, options) {
-				var position = getRelativePosition(e, chart);
-				var items = options.intersect ? getIntersectItems(chart, position) : getNearestItems(chart, position, false);
-
-				if (items.length > 0) {
-					items = chart.getDatasetMeta(items[0]._datasetIndex).data;
-				}
-
-				return items;
-			},
-
-			/**
-			 * @function Chart.Interaction.modes.x-axis
-			 * @deprecated since version 2.4.0. Use index mode and intersect == true
-			 * @todo remove at version 3
-			 * @private
-			 */
-			'x-axis': function(chart, e) {
-				return indexMode(chart, e, true);
-			},
-
-			/**
-			 * Point mode returns all elements that hit test based on the event position
-			 * of the event
-			 * @function Chart.Interaction.modes.intersect
-			 * @param chart {chart} the chart we are returning items from
-			 * @param e {Event} the event we are find things at
-			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
-			 */
-			point: function(chart, e) {
-				var position = getRelativePosition(e, chart);
-				return getIntersectItems(chart, position);
-			},
-
-			/**
-			 * nearest mode returns the element closest to the point
-			 * @function Chart.Interaction.modes.intersect
-			 * @param chart {chart} the chart we are returning items from
-			 * @param e {Event} the event we are find things at
-			 * @param options {IInteractionOptions} options to use
-			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
-			 */
-			nearest: function(chart, e, options) {
-				var position = getRelativePosition(e, chart);
-				var nearestItems = getNearestItems(chart, position, options.intersect);
-
-				// We have multiple items at the same distance from the event. Now sort by smallest
-				if (nearestItems.length > 1) {
-					nearestItems.sort(function(a, b) {
-						var sizeA = a.getArea();
-						var sizeB = b.getArea();
-						var ret = sizeA - sizeB;
-
-						if (ret === 0) {
-							// if equal sort by dataset index
-							ret = a._datasetIndex - b._datasetIndex;
-						}
-
-						return ret;
-					});
-				}
-
-				// Return only 1 item
-				return nearestItems.slice(0, 1);
-			},
-
-			/**
-			 * x mode returns the elements that hit-test at the current x coordinate
-			 * @function Chart.Interaction.modes.x
-			 * @param chart {chart} the chart we are returning items from
-			 * @param e {Event} the event we are find things at
-			 * @param options {IInteractionOptions} options to use
-			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
-			 */
-			x: function(chart, e, options) {
-				var position = getRelativePosition(e, chart);
-				var items = [];
-				var intersectsItem = false;
-
-				parseVisibleItems(chart, function(element) {
-					if (element.inXRange(position.x)) {
-						items.push(element);
-					}
-
-					if (element.inRange(position.x, position.y)) {
-						intersectsItem = true;
-					}
-				});
-
-				// If we want to trigger on an intersect and we don't have any items
-				// that intersect the position, return nothing
-				if (options.intersect && !intersectsItem) {
-					items = [];
-				}
-				return items;
-			},
-
-			/**
-			 * y mode returns the elements that hit-test at the current y coordinate
-			 * @function Chart.Interaction.modes.y
-			 * @param chart {chart} the chart we are returning items from
-			 * @param e {Event} the event we are find things at
-			 * @param options {IInteractionOptions} options to use
-			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
-			 */
-			y: function(chart, e, options) {
-				var position = getRelativePosition(e, chart);
-				var items = [];
-				var intersectsItem = false;
-
-				parseVisibleItems(chart, function(element) {
-					if (element.inYRange(position.y)) {
-						items.push(element);
-					}
-
-					if (element.inRange(position.x, position.y)) {
-						intersectsItem = true;
-					}
-				});
-
-				// If we want to trigger on an intersect and we don't have any items
-				// that intersect the position, return nothing
-				if (options.intersect && !intersectsItem) {
-					items = [];
-				}
-				return items;
 			}
+
+			// Return only 1 item
+			return nearestItems.slice(0, 1);
+		},
+
+		/**
+		 * x mode returns the elements that hit-test at the current x coordinate
+		 * @function Chart.Interaction.modes.x
+		 * @param chart {chart} the chart we are returning items from
+		 * @param e {Event} the event we are find things at
+		 * @param options {IInteractionOptions} options to use
+		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 */
+		x: function(chart, e, options) {
+			var position = getRelativePosition(e, chart);
+			var items = [];
+			var intersectsItem = false;
+
+			parseVisibleItems(chart, function(element) {
+				if (element.inXRange(position.x)) {
+					items.push(element);
+				}
+
+				if (element.inRange(position.x, position.y)) {
+					intersectsItem = true;
+				}
+			});
+
+			// If we want to trigger on an intersect and we don't have any items
+			// that intersect the position, return nothing
+			if (options.intersect && !intersectsItem) {
+				items = [];
+			}
+			return items;
+		},
+
+		/**
+		 * y mode returns the elements that hit-test at the current y coordinate
+		 * @function Chart.Interaction.modes.y
+		 * @param chart {chart} the chart we are returning items from
+		 * @param e {Event} the event we are find things at
+		 * @param options {IInteractionOptions} options to use
+		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 */
+		y: function(chart, e, options) {
+			var position = getRelativePosition(e, chart);
+			var items = [];
+			var intersectsItem = false;
+
+			parseVisibleItems(chart, function(element) {
+				if (element.inYRange(position.y)) {
+					items.push(element);
+				}
+
+				if (element.inRange(position.x, position.y)) {
+					intersectsItem = true;
+				}
+			});
+
+			// If we want to trigger on an intersect and we don't have any items
+			// that intersect the position, return nothing
+			if (options.intersect && !intersectsItem) {
+				items = [];
+			}
+			return items;
 		}
-	};
+	}
 };
 
-},{}],28:[function(require,module,exports){
+},{"45":45}],29:[function(require,module,exports){
 'use strict';
+
+var defaults = require(25);
+
+defaults._set('global', {
+	responsive: true,
+	responsiveAnimationDuration: 0,
+	maintainAspectRatio: true,
+	events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+	hover: {
+		onHover: null,
+		mode: 'nearest',
+		intersect: true,
+		animationDuration: 400
+	},
+	onClick: null,
+	defaultColor: 'rgba(0,0,0,0.1)',
+	defaultFontColor: '#666',
+	defaultFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+	defaultFontSize: 12,
+	defaultFontStyle: 'normal',
+	showLines: true,
+
+	// Element defaults defined in element extensions
+	elements: {},
+
+	// Layout options such as padding
+	layout: {
+		padding: {
+			top: 0,
+			right: 0,
+			bottom: 0,
+			left: 0
+		}
+	}
+});
 
 module.exports = function() {
 
@@ -6612,59 +6316,17 @@ module.exports = function() {
 		return this;
 	};
 
-	// Globally expose the defaults to allow for user updating/changing
-	Chart.defaults = {
-		global: {
-			responsive: true,
-			responsiveAnimationDuration: 0,
-			maintainAspectRatio: true,
-			events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
-			hover: {
-				onHover: null,
-				mode: 'nearest',
-				intersect: true,
-				animationDuration: 400
-			},
-			onClick: null,
-			defaultColor: 'rgba(0,0,0,0.1)',
-			defaultFontColor: '#666',
-			defaultFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-			defaultFontSize: 12,
-			defaultFontStyle: 'normal',
-			showLines: true,
-
-			// Element defaults defined in element extensions
-			elements: {},
-
-			// Legend callback string
-			legendCallback: function(chart) {
-				var text = [];
-				text.push('<ul class="' + chart.id + '-legend">');
-				for (var i = 0; i < chart.data.datasets.length; i++) {
-					text.push('<li><span style="background-color:' + chart.data.datasets[i].backgroundColor + '"></span>');
-					if (chart.data.datasets[i].label) {
-						text.push(chart.data.datasets[i].label);
-					}
-					text.push('</li>');
-				}
-				text.push('</ul>');
-
-				return text.join('');
-			}
-		}
-	};
-
 	Chart.Chart = Chart;
 
 	return Chart;
 };
 
-},{}],29:[function(require,module,exports){
+},{"25":25}],30:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var helpers = require(45);
 
-	var helpers = Chart.helpers;
+module.exports = function(Chart) {
 
 	function filterByPosition(array, position) {
 		return helpers.where(array, function(v) {
@@ -6737,7 +6399,7 @@ module.exports = function(Chart) {
 		 * @param {Object} layoutItem - the item to remove from the layout
 		 */
 		removeBox: function(chart, layoutItem) {
-			var index = chart.boxes? chart.boxes.indexOf(layoutItem) : -1;
+			var index = chart.boxes ? chart.boxes.indexOf(layoutItem) : -1;
 			if (index !== -1) {
 				chart.boxes.splice(index, 1);
 			}
@@ -6755,7 +6417,7 @@ module.exports = function(Chart) {
 			var i = 0;
 			var prop;
 
-			for (; i<ilen; ++i) {
+			for (; i < ilen; ++i) {
 				prop = props[i];
 				if (options.hasOwnProperty(prop)) {
 					item[prop] = options[prop];
@@ -6775,26 +6437,12 @@ module.exports = function(Chart) {
 				return;
 			}
 
-			var layoutOptions = chart.options.layout;
-			var padding = layoutOptions ? layoutOptions.padding : null;
-
-			var leftPadding = 0;
-			var rightPadding = 0;
-			var topPadding = 0;
-			var bottomPadding = 0;
-
-			if (!isNaN(padding)) {
-				// options.layout.padding is a number. assign to all
-				leftPadding = padding;
-				rightPadding = padding;
-				topPadding = padding;
-				bottomPadding = padding;
-			} else {
-				leftPadding = padding.left || 0;
-				rightPadding = padding.right || 0;
-				topPadding = padding.top || 0;
-				bottomPadding = padding.bottom || 0;
-			}
+			var layoutOptions = chart.options.layout || {};
+			var padding = helpers.options.toPadding(layoutOptions.padding);
+			var leftPadding = padding.left;
+			var rightPadding = padding.right;
+			var topPadding = padding.top;
+			var bottomPadding = padding.bottom;
 
 			var leftBoxes = filterByPosition(chart.boxes, 'left');
 			var rightBoxes = filterByPosition(chart.boxes, 'right');
@@ -7097,14 +6745,18 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],30:[function(require,module,exports){
+},{"45":45}],31:[function(require,module,exports){
 'use strict';
 
+var defaults = require(25);
+var Element = require(26);
+var helpers = require(45);
+
+defaults._set('global', {
+	plugins: {}
+});
+
 module.exports = function(Chart) {
-
-	var helpers = Chart.helpers;
-
-	Chart.defaults.global.plugins = {};
 
 	/**
 	 * The plugin service singleton
@@ -7198,7 +6850,7 @@ module.exports = function(Chart) {
 			var ilen = descriptors.length;
 			var i, descriptor, plugin, params, method;
 
-			for (i=0; i<ilen; ++i) {
+			for (i = 0; i < ilen; ++i) {
 				descriptor = descriptors[i];
 				plugin = descriptor.plugin;
 				method = plugin[hook];
@@ -7228,7 +6880,6 @@ module.exports = function(Chart) {
 			var plugins = [];
 			var descriptors = [];
 			var config = (chart && chart.config) || {};
-			var defaults = Chart.defaults.global.plugins;
 			var options = (config.options && config.options.plugins) || {};
 
 			this._plugins.concat(config.plugins || []).forEach(function(plugin) {
@@ -7244,7 +6895,7 @@ module.exports = function(Chart) {
 				}
 
 				if (opts === true) {
-					opts = helpers.clone(defaults[id]);
+					opts = helpers.clone(defaults.global.plugins[id]);
 				}
 
 				plugins.push(plugin);
@@ -7315,8 +6966,8 @@ module.exports = function(Chart) {
 	 * returns `false`, the datasets update is cancelled until another `update` is triggered.
 	 * @param {Chart} chart - The chart instance.
 	 * @param {Object} args - The call arguments.
-	 * @param {Object} args.index - The dataset index.
-	 * @param {Number} args.meta - The dataset metadata.
+	 * @param {Number} args.index - The dataset index.
+	 * @param {Object} args.meta - The dataset metadata.
 	 * @param {Object} options - The plugin options.
 	 * @returns {Boolean} `false` to cancel the chart datasets drawing.
 	 */
@@ -7326,8 +6977,8 @@ module.exports = function(Chart) {
 	 * that this hook will not be called if the datasets update has been previously cancelled.
 	 * @param {Chart} chart - The chart instance.
 	 * @param {Object} args - The call arguments.
-	 * @param {Object} args.index - The dataset index.
-	 * @param {Number} args.meta - The dataset metadata.
+	 * @param {Number} args.index - The dataset index.
+	 * @param {Object} args.meta - The dataset metadata.
 	 * @param {Object} options - The plugin options.
 	 */
 	/**
@@ -7402,8 +7053,8 @@ module.exports = function(Chart) {
 	 * is cancelled until another `render` is triggered.
 	 * @param {Chart} chart - The chart instance.
 	 * @param {Object} args - The call arguments.
-	 * @param {Object} args.index - The dataset index.
-	 * @param {Number} args.meta - The dataset metadata.
+	 * @param {Number} args.index - The dataset index.
+	 * @param {Object} args.meta - The dataset metadata.
 	 * @param {Number} args.easingValue - The current animation value, between 0.0 and 1.0.
 	 * @param {Object} options - The plugin options.
 	 * @returns {Boolean} `false` to cancel the chart datasets drawing.
@@ -7415,11 +7066,32 @@ module.exports = function(Chart) {
 	 * if the datasets drawing has been previously cancelled.
 	 * @param {Chart} chart - The chart instance.
 	 * @param {Object} args - The call arguments.
-	 * @param {Object} args.index - The dataset index.
-	 * @param {Number} args.meta - The dataset metadata.
+	 * @param {Number} args.index - The dataset index.
+	 * @param {Object} args.meta - The dataset metadata.
 	 * @param {Number} args.easingValue - The current animation value, between 0.0 and 1.0.
 	 * @param {Object} options - The plugin options.
 	 */
+	/**
+  	 * @method IPlugin#beforeTooltipDraw
+	 * @desc Called before drawing the `tooltip`. If any plugin returns `false`,
+	 * the tooltip drawing is cancelled until another `render` is triggered.
+	 * @param {Chart} chart - The chart instance.
+	 * @param {Object} args - The call arguments.
+	 * @param {Object} args.tooltip - The tooltip.
+	 * @param {Number} args.easingValue - The current animation value, between 0.0 and 1.0.
+	 * @param {Object} options - The plugin options.
+	 * @returns {Boolean} `false` to cancel the chart tooltip drawing.
+  	 */
+	/**
+ 	 * @method IPlugin#afterTooltipDraw
+  	 * @desc Called after drawing the `tooltip`. Note that this hook will not
+ 	 * be called if the tooltip drawing has been previously cancelled.
+ 	 * @param {Chart} chart - The chart instance.
+ 	 * @param {Object} args - The call arguments.
+ 	 * @param {Object} args.tooltip - The tooltip.
+	 * @param {Number} args.easingValue - The current animation value, between 0.0 and 1.0.
+ 	 * @param {Object} options - The plugin options.
+ 	 */
 	/**
 	 * @method IPlugin#beforeEvent
  	 * @desc Called before processing the specified `event`. If any plugin returns `false`,
@@ -7467,63 +7139,102 @@ module.exports = function(Chart) {
 	 * @todo remove at version 3
 	 * @private
 	 */
-	Chart.PluginBase = Chart.Element.extend({});
+	Chart.PluginBase = Element.extend({});
 };
 
-},{}],31:[function(require,module,exports){
+},{"25":25,"26":26,"45":45}],32:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var defaults = require(25);
+var Element = require(26);
+var helpers = require(45);
+var Ticks = require(34);
 
-	var helpers = Chart.helpers;
+defaults._set('scale', {
+	display: true,
+	position: 'left',
+	offset: false,
 
-	Chart.defaults.scale = {
+	// grid line settings
+	gridLines: {
 		display: true,
-		position: 'left',
+		color: 'rgba(0, 0, 0, 0.1)',
+		lineWidth: 1,
+		drawBorder: true,
+		drawOnChartArea: true,
+		drawTicks: true,
+		tickMarkLength: 10,
+		zeroLineWidth: 1,
+		zeroLineColor: 'rgba(0,0,0,0.25)',
+		zeroLineBorderDash: [],
+		zeroLineBorderDashOffset: 0.0,
+		offsetGridLines: false,
+		borderDash: [],
+		borderDashOffset: 0.0
+	},
 
-		// grid line settings
-		gridLines: {
-			display: true,
-			color: 'rgba(0, 0, 0, 0.1)',
-			lineWidth: 1,
-			drawBorder: true,
-			drawOnChartArea: true,
-			drawTicks: true,
-			tickMarkLength: 10,
-			zeroLineWidth: 1,
-			zeroLineColor: 'rgba(0,0,0,0.25)',
-			zeroLineBorderDash: [],
-			zeroLineBorderDashOffset: 0.0,
-			offsetGridLines: false,
-			borderDash: [],
-			borderDashOffset: 0.0
-		},
+	// scale label
+	scaleLabel: {
+		// display property
+		display: false,
 
-		// scale label
-		scaleLabel: {
-			// actual label
-			labelString: '',
+		// actual label
+		labelString: '',
 
-			// display property
-			display: false
-		},
+		// line height
+		lineHeight: 1.2,
 
-		// label settings
-		ticks: {
-			beginAtZero: false,
-			minRotation: 0,
-			maxRotation: 50,
-			mirror: false,
-			padding: 0,
-			reverse: false,
-			display: true,
-			autoSkip: true,
-			autoSkipPadding: 0,
-			labelOffset: 0,
-			// We pass through arrays to be rendered as multiline labels, we convert Others to strings here.
-			callback: Chart.Ticks.formatters.values
+		// top/bottom padding
+		padding: {
+			top: 4,
+			bottom: 4
 		}
-	};
+	},
+
+	// label settings
+	ticks: {
+		beginAtZero: false,
+		minRotation: 0,
+		maxRotation: 50,
+		mirror: false,
+		padding: 0,
+		reverse: false,
+		display: true,
+		autoSkip: true,
+		autoSkipPadding: 0,
+		labelOffset: 0,
+		// We pass through arrays to be rendered as multiline labels, we convert Others to strings here.
+		callback: Ticks.formatters.values,
+		minor: {},
+		major: {}
+	}
+});
+
+function labelsFromTicks(ticks) {
+	var labels = [];
+	var i, ilen;
+
+	for (i = 0, ilen = ticks.length; i < ilen; ++i) {
+		labels.push(ticks[i].label);
+	}
+
+	return labels;
+}
+
+function getLineValue(scale, index, offsetGridLines) {
+	var lineValue = scale.getPixelForTick(index);
+
+	if (offsetGridLines) {
+		if (index === 0) {
+			lineValue -= (scale.getPixelForTick(1) - lineValue) / 2;
+		} else {
+			lineValue -= (lineValue - scale.getPixelForTick(index - 1)) / 2;
+		}
+	}
+	return lineValue;
+}
+
+module.exports = function(Chart) {
 
 	function computeTextSize(context, tick, font) {
 		return helpers.isArray(tick) ?
@@ -7532,11 +7243,11 @@ module.exports = function(Chart) {
 	}
 
 	function parseFontOptions(options) {
-		var getValueOrDefault = helpers.getValueOrDefault;
-		var globalDefaults = Chart.defaults.global;
-		var size = getValueOrDefault(options.fontSize, globalDefaults.defaultFontSize);
-		var style = getValueOrDefault(options.fontStyle, globalDefaults.defaultFontStyle);
-		var family = getValueOrDefault(options.fontFamily, globalDefaults.defaultFontFamily);
+		var valueOrDefault = helpers.valueOrDefault;
+		var globalDefaults = defaults.global;
+		var size = valueOrDefault(options.fontSize, globalDefaults.defaultFontSize);
+		var style = valueOrDefault(options.fontStyle, globalDefaults.defaultFontStyle);
+		var family = valueOrDefault(options.fontFamily, globalDefaults.defaultFontFamily);
 
 		return {
 			size: size,
@@ -7546,7 +7257,13 @@ module.exports = function(Chart) {
 		};
 	}
 
-	Chart.Scale = Chart.Element.extend({
+	function parseLineHeight(options) {
+		return helpers.options.toLineHeight(
+			helpers.valueOrDefault(options.lineHeight, 1.2),
+			helpers.valueOrDefault(options.fontSize, defaults.global.defaultFontSize));
+	}
+
+	Chart.Scale = Element.extend({
 		/**
 		 * Get the padding needed for the scale
 		 * @method getPadding
@@ -7563,15 +7280,47 @@ module.exports = function(Chart) {
 			};
 		},
 
+		/**
+		 * Returns the scale tick objects ({label, major})
+		 * @since 2.7
+		 */
+		getTicks: function() {
+			return this._ticks;
+		},
+
 		// These methods are ordered by lifecyle. Utilities then follow.
 		// Any function defined here is inherited by all scale types.
 		// Any function can be extended by the scale type
 
+		mergeTicksOptions: function() {
+			var ticks = this.options.ticks;
+			if (ticks.minor === false) {
+				ticks.minor = {
+					display: false
+				};
+			}
+			if (ticks.major === false) {
+				ticks.major = {
+					display: false
+				};
+			}
+			for (var key in ticks) {
+				if (key !== 'major' && key !== 'minor') {
+					if (typeof ticks.minor[key] === 'undefined') {
+						ticks.minor[key] = ticks[key];
+					}
+					if (typeof ticks.major[key] === 'undefined') {
+						ticks.major[key] = ticks[key];
+					}
+				}
+			}
+		},
 		beforeUpdate: function() {
 			helpers.callback(this.options.beforeUpdate, [this]);
 		},
 		update: function(maxWidth, maxHeight, margins) {
 			var me = this;
+			var i, ilen, labels, label, ticks, tick;
 
 			// Update Lifecycle - Probably don't want to ever extend or overwrite this function ;)
 			me.beforeUpdate();
@@ -7597,14 +7346,49 @@ module.exports = function(Chart) {
 			me.determineDataLimits();
 			me.afterDataLimits();
 
-			// Ticks
+			// Ticks - `this.ticks` is now DEPRECATED!
+			// Internal ticks are now stored as objects in the PRIVATE `this._ticks` member
+			// and must not be accessed directly from outside this class. `this.ticks` being
+			// around for long time and not marked as private, we can't change its structure
+			// without unexpected breaking changes. If you need to access the scale ticks,
+			// use scale.getTicks() instead.
+
 			me.beforeBuildTicks();
-			me.buildTicks();
+
+			// New implementations should return an array of objects but for BACKWARD COMPAT,
+			// we still support no return (`this.ticks` internally set by calling this method).
+			ticks = me.buildTicks() || [];
+
 			me.afterBuildTicks();
 
 			me.beforeTickToLabelConversion();
-			me.convertTicksToLabels();
+
+			// New implementations should return the formatted tick labels but for BACKWARD
+			// COMPAT, we still support no return (`this.ticks` internally changed by calling
+			// this method and supposed to contain only string values).
+			labels = me.convertTicksToLabels(ticks) || me.ticks;
+
 			me.afterTickToLabelConversion();
+
+			me.ticks = labels;   // BACKWARD COMPATIBILITY
+
+			// IMPORTANT: from this point, we consider that `this.ticks` will NEVER change!
+
+			// BACKWARD COMPAT: synchronize `_ticks` with labels (so potentially `this.ticks`)
+			for (i = 0, ilen = labels.length; i < ilen; ++i) {
+				label = labels[i];
+				tick = ticks[i];
+				if (!tick) {
+					ticks.push(tick = {
+						label: label,
+						major: false
+					});
+				} else {
+					tick.label = label;
+				}
+			}
+
+			me._ticks = ticks;
 
 			// Tick Rotation
 			me.beforeCalculateTickRotation();
@@ -7680,7 +7464,7 @@ module.exports = function(Chart) {
 			var me = this;
 			// Convert ticks to strings
 			var tickOpts = me.options.ticks;
-			me.ticks = me.ticks.map(tickOpts.userCallback || tickOpts.callback);
+			me.ticks = me.ticks.map(tickOpts.userCallback || tickOpts.callback, this);
 		},
 		afterTickToLabelConversion: function() {
 			helpers.callback(this.options.afterTickToLabelConversion, [this]);
@@ -7695,6 +7479,7 @@ module.exports = function(Chart) {
 			var me = this;
 			var context = me.ctx;
 			var tickOpts = me.options.ticks;
+			var labels = labelsFromTicks(me._ticks);
 
 			// Get the width of each grid by calculating the difference
 			// between x offsets between 0 and 1.
@@ -7703,11 +7488,10 @@ module.exports = function(Chart) {
 
 			var labelRotation = tickOpts.minRotation || 0;
 
-			if (me.options.display && me.isHorizontal()) {
-				var originalLabelWidth = helpers.longestText(context, tickFont.font, me.ticks, me.longestTextCache);
+			if (labels.length && me.options.display && me.isHorizontal()) {
+				var originalLabelWidth = helpers.longestText(context, tickFont.font, labels, me.longestTextCache);
 				var labelWidth = originalLabelWidth;
-				var cosRotation;
-				var sinRotation;
+				var cosRotation, sinRotation;
 
 				// Allow 3 pixels x2 padding either side for label readability
 				var tickWidth = me.getPixelForTick(1) - me.getPixelForTick(0) - 6;
@@ -7748,6 +7532,8 @@ module.exports = function(Chart) {
 				height: 0
 			};
 
+			var labels = labelsFromTicks(me._ticks);
+
 			var opts = me.options;
 			var tickOpts = opts.ticks;
 			var scaleLabelOpts = opts.scaleLabel;
@@ -7756,7 +7542,6 @@ module.exports = function(Chart) {
 			var isHorizontal = me.isHorizontal();
 
 			var tickFont = parseFontOptions(tickOpts);
-			var scaleLabelFontSize = parseFontOptions(scaleLabelOpts).size * 1.5;
 			var tickMarkLength = opts.gridLines.tickMarkLength;
 
 			// Width
@@ -7776,18 +7561,23 @@ module.exports = function(Chart) {
 
 			// Are we showing a title for the scale?
 			if (scaleLabelOpts.display && display) {
+				var scaleLabelLineHeight = parseLineHeight(scaleLabelOpts);
+				var scaleLabelPadding = helpers.options.toPadding(scaleLabelOpts.padding);
+				var deltaHeight = scaleLabelLineHeight + scaleLabelPadding.height;
+
 				if (isHorizontal) {
-					minSize.height += scaleLabelFontSize;
+					minSize.height += deltaHeight;
 				} else {
-					minSize.width += scaleLabelFontSize;
+					minSize.width += deltaHeight;
 				}
 			}
 
 			// Don't bother fitting the ticks if we are not showing them
 			if (tickOpts.display && display) {
-				var largestTextWidth = helpers.longestText(me.ctx, tickFont.font, me.ticks, me.longestTextCache);
-				var tallestLabelHeightInLines = helpers.numberOfLabelLines(me.ticks);
+				var largestTextWidth = helpers.longestText(me.ctx, tickFont.font, labels, me.longestTextCache);
+				var tallestLabelHeightInLines = helpers.numberOfLabelLines(labels);
 				var lineSpace = tickFont.size * 0.5;
+				var tickPadding = me.options.ticks.padding;
 
 				if (isHorizontal) {
 					// A horizontal axis is more constrained by the height.
@@ -7800,36 +7590,37 @@ module.exports = function(Chart) {
 					// TODO - improve this calculation
 					var labelHeight = (sinRotation * largestTextWidth)
 						+ (tickFont.size * tallestLabelHeightInLines)
-						+ (lineSpace * tallestLabelHeightInLines);
+						+ (lineSpace * (tallestLabelHeightInLines - 1))
+						+ lineSpace; // padding
 
-					minSize.height = Math.min(me.maxHeight, minSize.height + labelHeight);
+					minSize.height = Math.min(me.maxHeight, minSize.height + labelHeight + tickPadding);
+
 					me.ctx.font = tickFont.font;
+					var firstLabelWidth = computeTextSize(me.ctx, labels[0], tickFont.font);
+					var lastLabelWidth = computeTextSize(me.ctx, labels[labels.length - 1], tickFont.font);
 
-					var firstTick = me.ticks[0];
-					var firstLabelWidth = computeTextSize(me.ctx, firstTick, tickFont.font);
-
-					var lastTick = me.ticks[me.ticks.length - 1];
-					var lastLabelWidth = computeTextSize(me.ctx, lastTick, tickFont.font);
-
-					// Ensure that our ticks are always inside the canvas. When rotated, ticks are right aligned which means that the right padding is dominated
-					// by the font height
+					// Ensure that our ticks are always inside the canvas. When rotated, ticks are right aligned
+					// which means that the right padding is dominated by the font height
 					if (me.labelRotation !== 0) {
-						me.paddingLeft = opts.position === 'bottom'? (cosRotation * firstLabelWidth) + 3: (cosRotation * lineSpace) + 3; // add 3 px to move away from canvas edges
-						me.paddingRight = opts.position === 'bottom'? (cosRotation * lineSpace) + 3: (cosRotation * lastLabelWidth) + 3;
+						me.paddingLeft = opts.position === 'bottom' ? (cosRotation * firstLabelWidth) + 3 : (cosRotation * lineSpace) + 3; // add 3 px to move away from canvas edges
+						me.paddingRight = opts.position === 'bottom' ? (cosRotation * lineSpace) + 3 : (cosRotation * lastLabelWidth) + 3;
 					} else {
 						me.paddingLeft = firstLabelWidth / 2 + 3; // add 3 px to move away from canvas edges
 						me.paddingRight = lastLabelWidth / 2 + 3;
 					}
 				} else {
-					// A vertical axis is more constrained by the width. Labels are the dominant factor here, so get that length first
-					// Account for padding
-
+					// A vertical axis is more constrained by the width. Labels are the
+					// dominant factor here, so get that length first and account for padding
 					if (tickOpts.mirror) {
 						largestTextWidth = 0;
 					} else {
-						largestTextWidth += me.options.ticks.padding;
+						// use lineSpace for consistency with horizontal axis
+						// tickPadding is not implemented for horizontal
+						largestTextWidth += tickPadding + lineSpace;
 					}
+
 					minSize.width = Math.min(me.maxWidth, minSize.width + largestTextWidth);
+
 					me.paddingTop = tickFont.size / 2;
 					me.paddingBottom = tickFont.size / 2;
 				}
@@ -7870,44 +7661,64 @@ module.exports = function(Chart) {
 		// Get the correct value. NaN bad inputs, If the value type is object get the x or y based on whether we are horizontal or not
 		getRightValue: function(rawValue) {
 			// Null and undefined values first
-			if (rawValue === null || typeof(rawValue) === 'undefined') {
+			if (helpers.isNullOrUndef(rawValue)) {
 				return NaN;
 			}
 			// isNaN(object) returns true, so make sure NaN is checking for a number; Discard Infinite values
-			if (typeof(rawValue) === 'number' && !isFinite(rawValue)) {
+			if (typeof rawValue === 'number' && !isFinite(rawValue)) {
 				return NaN;
 			}
 			// If it is in fact an object, dive in one more level
-			if (typeof(rawValue) === 'object') {
-				if ((rawValue instanceof Date) || (rawValue.isValid)) {
-					return rawValue;
+			if (rawValue) {
+				if (this.isHorizontal()) {
+					if (rawValue.x !== undefined) {
+						return this.getRightValue(rawValue.x);
+					}
+				} else if (rawValue.y !== undefined) {
+					return this.getRightValue(rawValue.y);
 				}
-				return this.getRightValue(this.isHorizontal() ? rawValue.x : rawValue.y);
 			}
 
 			// Value is good, return it
 			return rawValue;
 		},
 
-		// Used to get the value to display in the tooltip for the data at the given index
-		// function getLabelForIndex(index, datasetIndex)
+		/**
+		 * Used to get the value to display in the tooltip for the data at the given index
+		 * @param index
+		 * @param datasetIndex
+		 */
 		getLabelForIndex: helpers.noop,
 
-		// Used to get data value locations.  Value can either be an index or a numerical value
+		/**
+		 * Returns the location of the given data point. Value can either be an index or a numerical value
+		 * The coordinate (0, 0) is at the upper-left corner of the canvas
+		 * @param value
+		 * @param index
+		 * @param datasetIndex
+		 */
 		getPixelForValue: helpers.noop,
 
-		// Used to get the data value from a given pixel. This is the inverse of getPixelForValue
+		/**
+		 * Used to get the data value from a given pixel. This is the inverse of getPixelForValue
+		 * The coordinate (0, 0) is at the upper-left corner of the canvas
+		 * @param pixel
+		 */
 		getValueForPixel: helpers.noop,
 
-		// Used for tick location, should
-		getPixelForTick: function(index, includeOffset) {
+		/**
+		 * Returns the location of the tick at the given index
+		 * The coordinate (0, 0) is at the upper-left corner of the canvas
+		 */
+		getPixelForTick: function(index) {
 			var me = this;
+			var offset = me.options.offset;
 			if (me.isHorizontal()) {
 				var innerWidth = me.width - (me.paddingLeft + me.paddingRight);
-				var tickWidth = innerWidth / Math.max((me.ticks.length - ((me.options.gridLines.offsetGridLines) ? 0 : 1)), 1);
+				var tickWidth = innerWidth / Math.max((me._ticks.length - (offset ? 0 : 1)), 1);
 				var pixel = (tickWidth * index) + me.paddingLeft;
 
-				if (includeOffset) {
+				if (offset) {
 					pixel += tickWidth / 2;
 				}
 
@@ -7916,11 +7727,14 @@ module.exports = function(Chart) {
 				return finalVal;
 			}
 			var innerHeight = me.height - (me.paddingTop + me.paddingBottom);
-			return me.top + (index * (innerHeight / (me.ticks.length - 1)));
+			return me.top + (index * (innerHeight / (me._ticks.length - 1)));
 		},
 
-		// Utility for getting the pixel location of a percentage of scale
-		getPixelForDecimal: function(decimal /* , includeOffset*/) {
+		/**
+		 * Utility for getting the pixel location of a percentage of scale
+		 * The coordinate (0, 0) is at the upper-left corner of the canvas
+		 */
+		getPixelForDecimal: function(decimal) {
 			var me = this;
 			if (me.isHorizontal()) {
 				var innerWidth = me.width - (me.paddingLeft + me.paddingRight);
@@ -7933,6 +7747,10 @@ module.exports = function(Chart) {
 			return me.top + (decimal * me.height);
 		},
 
+		/**
+		 * Returns the pixel for the minimum chart value
+		 * The coordinate (0, 0) is at the upper-left corner of the canvas
+		 */
 		getBasePixel: function() {
 			return this.getPixelForValue(this.getBaseValue());
 		},
@@ -7942,10 +7760,60 @@ module.exports = function(Chart) {
 			var min = me.min;
 			var max = me.max;
 
-			return me.beginAtZero ? 0:
-				min < 0 && max < 0? max :
-				min > 0 && max > 0? min :
+			return me.beginAtZero ? 0 :
+				min < 0 && max < 0 ? max :
+				min > 0 && max > 0 ? min :
 				0;
+		},
+
+		/**
+		 * Returns a subset of ticks to be plotted to avoid overlapping labels.
+		 * @private
+		 */
+		_autoSkip: function(ticks) {
+			var skipRatio;
+			var me = this;
+			var isHorizontal = me.isHorizontal();
+			var optionTicks = me.options.ticks.minor;
+			var tickCount = ticks.length;
+			var labelRotationRadians = helpers.toRadians(me.labelRotation);
+			var cosRotation = Math.cos(labelRotationRadians);
+			var longestRotatedLabel = me.longestLabelWidth * cosRotation;
+			var result = [];
+			var i, tick, shouldSkip;
+
+			// figure out the maximum number of gridlines to show
+			var maxTicks;
+			if (optionTicks.maxTicksLimit) {
+				maxTicks = optionTicks.maxTicksLimit;
+			}
+
+			if (isHorizontal) {
+				skipRatio = false;
+
+				if ((longestRotatedLabel + optionTicks.autoSkipPadding) * tickCount > (me.width - (me.paddingLeft + me.paddingRight))) {
+					skipRatio = 1 + Math.floor(((longestRotatedLabel + optionTicks.autoSkipPadding) * tickCount) / (me.width - (me.paddingLeft + me.paddingRight)));
+				}
+
+				// if they defined a max number of optionTicks,
+				// increase skipRatio until that number is met
+				if (maxTicks && tickCount > maxTicks) {
+					skipRatio = Math.max(skipRatio, Math.floor(tickCount / maxTicks));
+				}
+			}
+
+			for (i = 0; i < tickCount; i++) {
+				tick = ticks[i];
+
+				// Since we always show the last tick,we need may need to hide the last shown one before
+				shouldSkip = (skipRatio > 1 && i % skipRatio > 0) || (i % skipRatio === 0 && i + skipRatio >= tickCount);
+				if (shouldSkip && i !== tickCount - 1) {
+					// leave tick in place but make sure it's not displayed (#4635)
+					delete tick.label;
+				}
+				result.push(tick);
+			}
+			return result;
 		},
 
 		// Actually draw the scale on the canvas
@@ -7958,117 +7826,84 @@ module.exports = function(Chart) {
 			}
 
 			var context = me.ctx;
-			var globalDefaults = Chart.defaults.global;
-			var optionTicks = options.ticks;
+			var globalDefaults = defaults.global;
+			var optionTicks = options.ticks.minor;
+			var optionMajorTicks = options.ticks.major || optionTicks;
 			var gridLines = options.gridLines;
 			var scaleLabel = options.scaleLabel;
 
 			var isRotated = me.labelRotation !== 0;
-			var skipRatio;
-			var useAutoskipper = optionTicks.autoSkip;
 			var isHorizontal = me.isHorizontal();
 
-			// figure out the maximum number of gridlines to show
-			var maxTicks;
-			if (optionTicks.maxTicksLimit) {
-				maxTicks = optionTicks.maxTicksLimit;
-			}
-
-			var tickFontColor = helpers.getValueOrDefault(optionTicks.fontColor, globalDefaults.defaultFontColor);
+			var ticks = optionTicks.autoSkip ? me._autoSkip(me.getTicks()) : me.getTicks();
+			var tickFontColor = helpers.valueOrDefault(optionTicks.fontColor, globalDefaults.defaultFontColor);
 			var tickFont = parseFontOptions(optionTicks);
+			var majorTickFontColor = helpers.valueOrDefault(optionMajorTicks.fontColor, globalDefaults.defaultFontColor);
+			var majorTickFont = parseFontOptions(optionMajorTicks);
 
 			var tl = gridLines.drawTicks ? gridLines.tickMarkLength : 0;
 
-			var scaleLabelFontColor = helpers.getValueOrDefault(scaleLabel.fontColor, globalDefaults.defaultFontColor);
+			var scaleLabelFontColor = helpers.valueOrDefault(scaleLabel.fontColor, globalDefaults.defaultFontColor);
 			var scaleLabelFont = parseFontOptions(scaleLabel);
-
+			var scaleLabelPadding = helpers.options.toPadding(scaleLabel.padding);
 			var labelRotationRadians = helpers.toRadians(me.labelRotation);
-			var cosRotation = Math.cos(labelRotationRadians);
-			var longestRotatedLabel = me.longestLabelWidth * cosRotation;
-
-			// Make sure we draw text in the correct color and font
-			context.fillStyle = tickFontColor;
 
 			var itemsToDraw = [];
-
-			if (isHorizontal) {
-				skipRatio = false;
-
-				if ((longestRotatedLabel + optionTicks.autoSkipPadding) * me.ticks.length > (me.width - (me.paddingLeft + me.paddingRight))) {
-					skipRatio = 1 + Math.floor(((longestRotatedLabel + optionTicks.autoSkipPadding) * me.ticks.length) / (me.width - (me.paddingLeft + me.paddingRight)));
-				}
-
-				// if they defined a max number of optionTicks,
-				// increase skipRatio until that number is met
-				if (maxTicks && me.ticks.length > maxTicks) {
-					while (!skipRatio || me.ticks.length / (skipRatio || 1) > maxTicks) {
-						if (!skipRatio) {
-							skipRatio = 1;
-						}
-						skipRatio += 1;
-					}
-				}
-
-				if (!useAutoskipper) {
-					skipRatio = false;
-				}
-			}
-
 
 			var xTickStart = options.position === 'right' ? me.left : me.right - tl;
 			var xTickEnd = options.position === 'right' ? me.left + tl : me.right;
 			var yTickStart = options.position === 'bottom' ? me.top : me.bottom - tl;
 			var yTickEnd = options.position === 'bottom' ? me.top + tl : me.bottom;
 
-			helpers.each(me.ticks, function(label, index) {
-				// If the callback returned a null or undefined value, do not draw this line
-				if (label === undefined || label === null) {
+			helpers.each(ticks, function(tick, index) {
+				// autoskipper skipped this tick (#4635)
+				if (helpers.isNullOrUndef(tick.label)) {
 					return;
 				}
 
-				var isLastTick = me.ticks.length === index + 1;
-
-				// Since we always show the last tick,we need may need to hide the last shown one before
-				var shouldSkip = (skipRatio > 1 && index % skipRatio > 0) || (index % skipRatio === 0 && index + skipRatio >= me.ticks.length);
-				if (shouldSkip && !isLastTick || (label === undefined || label === null)) {
-					return;
-				}
-
+				var label = tick.label;
 				var lineWidth, lineColor, borderDash, borderDashOffset;
-				if (index === (typeof me.zeroLineIndex !== 'undefined' ? me.zeroLineIndex : 0)) {
+				if (index === me.zeroLineIndex && options.offset === gridLines.offsetGridLines) {
 					// Draw the first index specially
 					lineWidth = gridLines.zeroLineWidth;
 					lineColor = gridLines.zeroLineColor;
 					borderDash = gridLines.zeroLineBorderDash;
 					borderDashOffset = gridLines.zeroLineBorderDashOffset;
 				} else {
-					lineWidth = helpers.getValueAtIndexOrDefault(gridLines.lineWidth, index);
-					lineColor = helpers.getValueAtIndexOrDefault(gridLines.color, index);
-					borderDash = helpers.getValueOrDefault(gridLines.borderDash, globalDefaults.borderDash);
-					borderDashOffset = helpers.getValueOrDefault(gridLines.borderDashOffset, globalDefaults.borderDashOffset);
+					lineWidth = helpers.valueAtIndexOrDefault(gridLines.lineWidth, index);
+					lineColor = helpers.valueAtIndexOrDefault(gridLines.color, index);
+					borderDash = helpers.valueOrDefault(gridLines.borderDash, globalDefaults.borderDash);
+					borderDashOffset = helpers.valueOrDefault(gridLines.borderDashOffset, globalDefaults.borderDashOffset);
 				}
 
 				// Common properties
 				var tx1, ty1, tx2, ty2, x1, y1, x2, y2, labelX, labelY;
 				var textAlign = 'middle';
 				var textBaseline = 'middle';
+				var tickPadding = optionTicks.padding;
 
 				if (isHorizontal) {
+					var labelYOffset = tl + tickPadding;
 
 					if (options.position === 'bottom') {
 						// bottom
-						textBaseline = !isRotated? 'top':'middle';
-						textAlign = !isRotated? 'center': 'right';
-						labelY = me.top + tl;
+						textBaseline = !isRotated ? 'top' : 'middle';
+						textAlign = !isRotated ? 'center' : 'right';
+						labelY = me.top + labelYOffset;
 					} else {
 						// top
-						textBaseline = !isRotated? 'bottom':'middle';
-						textAlign = !isRotated? 'center': 'left';
-						labelY = me.bottom - tl;
+						textBaseline = !isRotated ? 'bottom' : 'middle';
+						textAlign = !isRotated ? 'center' : 'left';
+						labelY = me.bottom - labelYOffset;
 					}
 
-					var xLineValue = me.getPixelForTick(index) + helpers.aliasPixel(lineWidth); // xvalues for grid lines
-					labelX = me.getPixelForTick(index, gridLines.offsetGridLines) + optionTicks.labelOffset; // x values for optionTicks (need to consider offsetLabel option)
+					var xLineValue = getLineValue(me, index, gridLines.offsetGridLines && ticks.length > 1);
+					if (xLineValue < me.left) {
+						lineColor = 'rgba(0,0,0,0)';
+					}
+					xLineValue += helpers.aliasPixel(lineWidth);
+
+					labelX = me.getPixelForTick(index) + optionTicks.labelOffset; // x values for optionTicks (need to consider offsetLabel option)
 
 					tx1 = tx2 = x1 = x2 = xLineValue;
 					ty1 = yTickStart;
@@ -8077,7 +7912,6 @@ module.exports = function(Chart) {
 					y2 = chartArea.bottom;
 				} else {
 					var isLeft = options.position === 'left';
-					var tickPadding = optionTicks.padding;
 					var labelXOffset;
 
 					if (optionTicks.mirror) {
@@ -8090,9 +7924,13 @@ module.exports = function(Chart) {
 
 					labelX = isLeft ? me.right - labelXOffset : me.left + labelXOffset;
 
-					var yLineValue = me.getPixelForTick(index); // xvalues for grid lines
+					var yLineValue = getLineValue(me, index, gridLines.offsetGridLines && ticks.length > 1);
+					if (yLineValue < me.top) {
+						lineColor = 'rgba(0,0,0,0)';
+					}
 					yLineValue += helpers.aliasPixel(lineWidth);
-					labelY = me.getPixelForTick(index, gridLines.offsetGridLines);
+
+					labelY = me.getPixelForTick(index) + optionTicks.labelOffset;
 
 					tx1 = xTickStart;
 					tx2 = xTickEnd;
@@ -8118,6 +7956,7 @@ module.exports = function(Chart) {
 					glBorderDashOffset: borderDashOffset,
 					rotation: -1 * labelRotationRadians,
 					label: label,
+					major: tick.major,
 					textBaseline: textBaseline,
 					textAlign: textAlign
 				});
@@ -8151,10 +7990,12 @@ module.exports = function(Chart) {
 				}
 
 				if (optionTicks.display) {
+					// Make sure we draw text in the correct color and font
 					context.save();
 					context.translate(itemToDraw.labelX, itemToDraw.labelY);
 					context.rotate(itemToDraw.rotation);
-					context.font = tickFont.font;
+					context.font = itemToDraw.major ? majorTickFont.font : tickFont.font;
+					context.fillStyle = itemToDraw.major ? majorTickFontColor : tickFontColor;
 					context.textBaseline = itemToDraw.textBaseline;
 					context.textAlign = itemToDraw.textAlign;
 
@@ -8178,13 +8019,18 @@ module.exports = function(Chart) {
 				var scaleLabelX;
 				var scaleLabelY;
 				var rotation = 0;
+				var halfLineHeight = parseLineHeight(scaleLabel) / 2;
 
 				if (isHorizontal) {
 					scaleLabelX = me.left + ((me.right - me.left) / 2); // midpoint of the width
-					scaleLabelY = options.position === 'bottom' ? me.bottom - (scaleLabelFont.size / 2) : me.top + (scaleLabelFont.size / 2);
+					scaleLabelY = options.position === 'bottom'
+						? me.bottom - halfLineHeight - scaleLabelPadding.bottom
+						: me.top + halfLineHeight + scaleLabelPadding.top;
 				} else {
 					var isLeft = options.position === 'left';
-					scaleLabelX = isLeft ? me.left + (scaleLabelFont.size / 2) : me.right - (scaleLabelFont.size / 2);
+					scaleLabelX = isLeft
+						? me.left + halfLineHeight + scaleLabelPadding.top
+						: me.right - halfLineHeight - scaleLabelPadding.top;
 					scaleLabelY = me.top + ((me.bottom - me.top) / 2);
 					rotation = isLeft ? -0.5 * Math.PI : 0.5 * Math.PI;
 				}
@@ -8202,12 +8048,12 @@ module.exports = function(Chart) {
 
 			if (gridLines.drawBorder) {
 				// Draw the line at the edge of the axis
-				context.lineWidth = helpers.getValueAtIndexOrDefault(gridLines.lineWidth, 0);
-				context.strokeStyle = helpers.getValueAtIndexOrDefault(gridLines.color, 0);
-				var x1 = me.left,
-					x2 = me.right,
-					y1 = me.top,
-					y2 = me.bottom;
+				context.lineWidth = helpers.valueAtIndexOrDefault(gridLines.lineWidth, 0);
+				context.strokeStyle = helpers.valueAtIndexOrDefault(gridLines.color, 0);
+				var x1 = me.left;
+				var x2 = me.right;
+				var y1 = me.top;
+				var y2 = me.bottom;
 
 				var aliasPixel = helpers.aliasPixel(context.lineWidth);
 				if (isHorizontal) {
@@ -8229,12 +8075,13 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],32:[function(require,module,exports){
+},{"25":25,"26":26,"34":34,"45":45}],33:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var defaults = require(25);
+var helpers = require(45);
 
-	var helpers = Chart.helpers;
+module.exports = function(Chart) {
 
 	Chart.scaleService = {
 		// Scale registration object. Extensions can register new scale types (such as log or DB scales) and then
@@ -8245,21 +8092,21 @@ module.exports = function(Chart) {
 
 		// Scale config defaults
 		defaults: {},
-		registerScaleType: function(type, scaleConstructor, defaults) {
+		registerScaleType: function(type, scaleConstructor, scaleDefaults) {
 			this.constructors[type] = scaleConstructor;
-			this.defaults[type] = helpers.clone(defaults);
+			this.defaults[type] = helpers.clone(scaleDefaults);
 		},
 		getScaleConstructor: function(type) {
 			return this.constructors.hasOwnProperty(type) ? this.constructors[type] : undefined;
 		},
 		getScaleDefaults: function(type) {
 			// Return the scale defaults merged with the global settings so that we always use the latest ones
-			return this.defaults.hasOwnProperty(type) ? helpers.scaleMerge(Chart.defaults.scale, this.defaults[type]) : {};
+			return this.defaults.hasOwnProperty(type) ? helpers.merge({}, [defaults.scale, this.defaults[type]]) : {};
 		},
 		updateScaleDefaults: function(type, additions) {
-			var defaults = this.defaults;
-			if (defaults.hasOwnProperty(type)) {
-				defaults[type] = helpers.extend(defaults[type], additions);
+			var me = this;
+			if (me.defaults.hasOwnProperty(type)) {
+				me.defaults[type] = helpers.extend(me.defaults[type], additions);
 			}
 		},
 		addScalesToLayout: function(chart) {
@@ -8275,232 +8122,221 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],33:[function(require,module,exports){
+},{"25":25,"45":45}],34:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var helpers = require(45);
 
-	var helpers = Chart.helpers;
-
+/**
+ * Namespace to hold static tick generation functions
+ * @namespace Chart.Ticks
+ */
+module.exports = {
 	/**
-	 * Namespace to hold static tick generation functions
-	 * @namespace Chart.Ticks
+	 * Namespace to hold generators for different types of ticks
+	 * @namespace Chart.Ticks.generators
 	 */
-	Chart.Ticks = {
+	generators: {
 		/**
-		 * Namespace to hold generators for different types of ticks
-		 * @namespace Chart.Ticks.generators
+		 * Interface for the options provided to the numeric tick generator
+		 * @interface INumericTickGenerationOptions
 		 */
-		generators: {
-			/**
-			 * Interface for the options provided to the numeric tick generator
-			 * @interface INumericTickGenerationOptions
-			 */
-			/**
-			 * The maximum number of ticks to display
-			 * @name INumericTickGenerationOptions#maxTicks
-			 * @type Number
-			 */
-			/**
-			 * The distance between each tick.
-			 * @name INumericTickGenerationOptions#stepSize
-			 * @type Number
-			 * @optional
-			 */
-			/**
-			 * Forced minimum for the ticks. If not specified, the minimum of the data range is used to calculate the tick minimum
-			 * @name INumericTickGenerationOptions#min
-			 * @type Number
-			 * @optional
-			 */
-			/**
-			 * The maximum value of the ticks. If not specified, the maximum of the data range is used to calculate the tick maximum
-			 * @name INumericTickGenerationOptions#max
-			 * @type Number
-			 * @optional
-			 */
+		/**
+		 * The maximum number of ticks to display
+		 * @name INumericTickGenerationOptions#maxTicks
+		 * @type Number
+		 */
+		/**
+		 * The distance between each tick.
+		 * @name INumericTickGenerationOptions#stepSize
+		 * @type Number
+		 * @optional
+		 */
+		/**
+		 * Forced minimum for the ticks. If not specified, the minimum of the data range is used to calculate the tick minimum
+		 * @name INumericTickGenerationOptions#min
+		 * @type Number
+		 * @optional
+		 */
+		/**
+		 * The maximum value of the ticks. If not specified, the maximum of the data range is used to calculate the tick maximum
+		 * @name INumericTickGenerationOptions#max
+		 * @type Number
+		 * @optional
+		 */
 
-			/**
-			 * Generate a set of linear ticks
-			 * @method Chart.Ticks.generators.linear
-			 * @param generationOptions {INumericTickGenerationOptions} the options used to generate the ticks
-			 * @param dataRange {IRange} the range of the data
-			 * @returns {Array<Number>} array of tick values
-			 */
-			linear: function(generationOptions, dataRange) {
-				var ticks = [];
-				// To get a "nice" value for the tick spacing, we will use the appropriately named
-				// "nice number" algorithm. See http://stackoverflow.com/questions/8506881/nice-label-algorithm-for-charts-with-minimum-ticks
-				// for details.
+		/**
+		 * Generate a set of linear ticks
+		 * @method Chart.Ticks.generators.linear
+		 * @param generationOptions {INumericTickGenerationOptions} the options used to generate the ticks
+		 * @param dataRange {IRange} the range of the data
+		 * @returns {Array<Number>} array of tick values
+		 */
+		linear: function(generationOptions, dataRange) {
+			var ticks = [];
+			// To get a "nice" value for the tick spacing, we will use the appropriately named
+			// "nice number" algorithm. See http://stackoverflow.com/questions/8506881/nice-label-algorithm-for-charts-with-minimum-ticks
+			// for details.
 
-				var spacing;
-				if (generationOptions.stepSize && generationOptions.stepSize > 0) {
-					spacing = generationOptions.stepSize;
-				} else {
-					var niceRange = helpers.niceNum(dataRange.max - dataRange.min, false);
-					spacing = helpers.niceNum(niceRange / (generationOptions.maxTicks - 1), true);
-				}
-				var niceMin = Math.floor(dataRange.min / spacing) * spacing;
-				var niceMax = Math.ceil(dataRange.max / spacing) * spacing;
-
-				// If min, max and stepSize is set and they make an evenly spaced scale use it.
-				if (generationOptions.min && generationOptions.max && generationOptions.stepSize) {
-					// If very close to our whole number, use it.
-					if (helpers.almostWhole((generationOptions.max - generationOptions.min) / generationOptions.stepSize, spacing / 1000)) {
-						niceMin = generationOptions.min;
-						niceMax = generationOptions.max;
-					}
-				}
-
-				var numSpaces = (niceMax - niceMin) / spacing;
-				// If very close to our rounded value, use it.
-				if (helpers.almostEquals(numSpaces, Math.round(numSpaces), spacing / 1000)) {
-					numSpaces = Math.round(numSpaces);
-				} else {
-					numSpaces = Math.ceil(numSpaces);
-				}
-
-				// Put the values into the ticks array
-				ticks.push(generationOptions.min !== undefined ? generationOptions.min : niceMin);
-				for (var j = 1; j < numSpaces; ++j) {
-					ticks.push(niceMin + (j * spacing));
-				}
-				ticks.push(generationOptions.max !== undefined ? generationOptions.max : niceMax);
-
-				return ticks;
-			},
-
-			/**
-			 * Generate a set of logarithmic ticks
-			 * @method Chart.Ticks.generators.logarithmic
-			 * @param generationOptions {INumericTickGenerationOptions} the options used to generate the ticks
-			 * @param dataRange {IRange} the range of the data
-			 * @returns {Array<Number>} array of tick values
-			 */
-			logarithmic: function(generationOptions, dataRange) {
-				var ticks = [];
-				var getValueOrDefault = helpers.getValueOrDefault;
-
-				// Figure out what the max number of ticks we can support it is based on the size of
-				// the axis area. For now, we say that the minimum tick spacing in pixels must be 50
-				// We also limit the maximum number of ticks to 11 which gives a nice 10 squares on
-				// the graph
-				var tickVal = getValueOrDefault(generationOptions.min, Math.pow(10, Math.floor(helpers.log10(dataRange.min))));
-
-				var endExp = Math.floor(helpers.log10(dataRange.max));
-				var endSignificand = Math.ceil(dataRange.max / Math.pow(10, endExp));
-				var exp;
-				var significand;
-
-				if (tickVal === 0) {
-					exp = Math.floor(helpers.log10(dataRange.minNotZero));
-					significand = Math.floor(dataRange.minNotZero / Math.pow(10, exp));
-
-					ticks.push(tickVal);
-					tickVal = significand * Math.pow(10, exp);
-				} else {
-					exp = Math.floor(helpers.log10(tickVal));
-					significand = Math.floor(tickVal / Math.pow(10, exp));
-				}
-
-				do {
-					ticks.push(tickVal);
-
-					++significand;
-					if (significand === 10) {
-						significand = 1;
-						++exp;
-					}
-
-					tickVal = significand * Math.pow(10, exp);
-				} while (exp < endExp || (exp === endExp && significand < endSignificand));
-
-				var lastTick = getValueOrDefault(generationOptions.max, tickVal);
-				ticks.push(lastTick);
-
-				return ticks;
+			var spacing;
+			if (generationOptions.stepSize && generationOptions.stepSize > 0) {
+				spacing = generationOptions.stepSize;
+			} else {
+				var niceRange = helpers.niceNum(dataRange.max - dataRange.min, false);
+				spacing = helpers.niceNum(niceRange / (generationOptions.maxTicks - 1), true);
 			}
+			var niceMin = Math.floor(dataRange.min / spacing) * spacing;
+			var niceMax = Math.ceil(dataRange.max / spacing) * spacing;
+
+			// If min, max and stepSize is set and they make an evenly spaced scale use it.
+			if (generationOptions.min && generationOptions.max && generationOptions.stepSize) {
+				// If very close to our whole number, use it.
+				if (helpers.almostWhole((generationOptions.max - generationOptions.min) / generationOptions.stepSize, spacing / 1000)) {
+					niceMin = generationOptions.min;
+					niceMax = generationOptions.max;
+				}
+			}
+
+			var numSpaces = (niceMax - niceMin) / spacing;
+			// If very close to our rounded value, use it.
+			if (helpers.almostEquals(numSpaces, Math.round(numSpaces), spacing / 1000)) {
+				numSpaces = Math.round(numSpaces);
+			} else {
+				numSpaces = Math.ceil(numSpaces);
+			}
+
+			// Put the values into the ticks array
+			ticks.push(generationOptions.min !== undefined ? generationOptions.min : niceMin);
+			for (var j = 1; j < numSpaces; ++j) {
+				ticks.push(niceMin + (j * spacing));
+			}
+			ticks.push(generationOptions.max !== undefined ? generationOptions.max : niceMax);
+
+			return ticks;
 		},
 
 		/**
-		 * Namespace to hold formatters for different types of ticks
-		 * @namespace Chart.Ticks.formatters
+		 * Generate a set of logarithmic ticks
+		 * @method Chart.Ticks.generators.logarithmic
+		 * @param generationOptions {INumericTickGenerationOptions} the options used to generate the ticks
+		 * @param dataRange {IRange} the range of the data
+		 * @returns {Array<Number>} array of tick values
 		 */
-		formatters: {
-			/**
-			 * Formatter for value labels
-			 * @method Chart.Ticks.formatters.values
-			 * @param value the value to display
-			 * @return {String|Array} the label to display
-			 */
-			values: function(value) {
-				return helpers.isArray(value) ? value : '' + value;
-			},
+		logarithmic: function(generationOptions, dataRange) {
+			var ticks = [];
+			var valueOrDefault = helpers.valueOrDefault;
 
-			/**
-			 * Formatter for linear numeric ticks
-			 * @method Chart.Ticks.formatters.linear
-			 * @param tickValue {Number} the value to be formatted
-			 * @param index {Number} the position of the tickValue parameter in the ticks array
-			 * @param ticks {Array<Number>} the list of ticks being converted
-			 * @return {String} string representation of the tickValue parameter
-			 */
-			linear: function(tickValue, index, ticks) {
-				// If we have lots of ticks, don't use the ones
-				var delta = ticks.length > 3 ? ticks[2] - ticks[1] : ticks[1] - ticks[0];
+			// Figure out what the max number of ticks we can support it is based on the size of
+			// the axis area. For now, we say that the minimum tick spacing in pixels must be 50
+			// We also limit the maximum number of ticks to 11 which gives a nice 10 squares on
+			// the graph
+			var tickVal = valueOrDefault(generationOptions.min, Math.pow(10, Math.floor(helpers.log10(dataRange.min))));
 
-				// If we have a number like 2.5 as the delta, figure out how many decimal places we need
-				if (Math.abs(delta) > 1) {
-					if (tickValue !== Math.floor(tickValue)) {
-						// not an integer
-						delta = tickValue - Math.floor(tickValue);
-					}
-				}
+			var endExp = Math.floor(helpers.log10(dataRange.max));
+			var endSignificand = Math.ceil(dataRange.max / Math.pow(10, endExp));
+			var exp, significand;
 
-				var logDelta = helpers.log10(Math.abs(delta));
-				var tickString = '';
+			if (tickVal === 0) {
+				exp = Math.floor(helpers.log10(dataRange.minNotZero));
+				significand = Math.floor(dataRange.minNotZero / Math.pow(10, exp));
 
-				if (tickValue !== 0) {
-					var numDecimal = -1 * Math.floor(logDelta);
-					numDecimal = Math.max(Math.min(numDecimal, 20), 0); // toFixed has a max of 20 decimal places
-					tickString = tickValue.toFixed(numDecimal);
-				} else {
-					tickString = '0'; // never show decimal places for 0
-				}
-
-				return tickString;
-			},
-
-			logarithmic: function(tickValue, index, ticks) {
-				var remain = tickValue / (Math.pow(10, Math.floor(helpers.log10(tickValue))));
-
-				if (tickValue === 0) {
-					return '0';
-				} else if (remain === 1 || remain === 2 || remain === 5 || index === 0 || index === ticks.length - 1) {
-					return tickValue.toExponential();
-				}
-				return '';
+				ticks.push(tickVal);
+				tickVal = significand * Math.pow(10, exp);
+			} else {
+				exp = Math.floor(helpers.log10(tickVal));
+				significand = Math.floor(tickVal / Math.pow(10, exp));
 			}
+
+			do {
+				ticks.push(tickVal);
+
+				++significand;
+				if (significand === 10) {
+					significand = 1;
+					++exp;
+				}
+
+				tickVal = significand * Math.pow(10, exp);
+			} while (exp < endExp || (exp === endExp && significand < endSignificand));
+
+			var lastTick = valueOrDefault(generationOptions.max, tickVal);
+			ticks.push(lastTick);
+
+			return ticks;
 		}
-	};
-};
-
-},{}],34:[function(require,module,exports){
-'use strict';
-
-module.exports = function(Chart) {
-
-	var helpers = Chart.helpers;
+	},
 
 	/**
- 	 * Helper method to merge the opacity into a color
- 	 */
-	function mergeOpacity(colorString, opacity) {
-		var color = helpers.color(colorString);
-		return color.alpha(opacity * color.alpha()).rgbaString();
-	}
+	 * Namespace to hold formatters for different types of ticks
+	 * @namespace Chart.Ticks.formatters
+	 */
+	formatters: {
+		/**
+		 * Formatter for value labels
+		 * @method Chart.Ticks.formatters.values
+		 * @param value the value to display
+		 * @return {String|Array} the label to display
+		 */
+		values: function(value) {
+			return helpers.isArray(value) ? value : '' + value;
+		},
 
-	Chart.defaults.global.tooltips = {
+		/**
+		 * Formatter for linear numeric ticks
+		 * @method Chart.Ticks.formatters.linear
+		 * @param tickValue {Number} the value to be formatted
+		 * @param index {Number} the position of the tickValue parameter in the ticks array
+		 * @param ticks {Array<Number>} the list of ticks being converted
+		 * @return {String} string representation of the tickValue parameter
+		 */
+		linear: function(tickValue, index, ticks) {
+			// If we have lots of ticks, don't use the ones
+			var delta = ticks.length > 3 ? ticks[2] - ticks[1] : ticks[1] - ticks[0];
+
+			// If we have a number like 2.5 as the delta, figure out how many decimal places we need
+			if (Math.abs(delta) > 1) {
+				if (tickValue !== Math.floor(tickValue)) {
+					// not an integer
+					delta = tickValue - Math.floor(tickValue);
+				}
+			}
+
+			var logDelta = helpers.log10(Math.abs(delta));
+			var tickString = '';
+
+			if (tickValue !== 0) {
+				var numDecimal = -1 * Math.floor(logDelta);
+				numDecimal = Math.max(Math.min(numDecimal, 20), 0); // toFixed has a max of 20 decimal places
+				tickString = tickValue.toFixed(numDecimal);
+			} else {
+				tickString = '0'; // never show decimal places for 0
+			}
+
+			return tickString;
+		},
+
+		logarithmic: function(tickValue, index, ticks) {
+			var remain = tickValue / (Math.pow(10, Math.floor(helpers.log10(tickValue))));
+
+			if (tickValue === 0) {
+				return '0';
+			} else if (remain === 1 || remain === 2 || remain === 5 || index === 0 || index === ticks.length - 1) {
+				return tickValue.toExponential();
+			}
+			return '';
+		}
+	}
+};
+
+},{"45":45}],35:[function(require,module,exports){
+'use strict';
+
+var defaults = require(25);
+var Element = require(26);
+var helpers = require(45);
+
+defaults._set('global', {
+	tooltips: {
 		enabled: true,
 		custom: null,
 		mode: 'nearest',
@@ -8575,6 +8411,9 @@ module.exports = function(Chart) {
 					backgroundColor: view.backgroundColor
 				};
 			},
+			labelTextColor: function() {
+				return this._options.bodyFontColor;
+			},
 			afterLabel: helpers.noop,
 
 			// Args are: (tooltipItems, data)
@@ -8585,7 +8424,18 @@ module.exports = function(Chart) {
 			footer: helpers.noop,
 			afterFooter: helpers.noop
 		}
-	};
+	}
+});
+
+module.exports = function(Chart) {
+
+	/**
+ 	 * Helper method to merge the opacity into a color
+ 	 */
+	function mergeOpacity(colorString, opacity) {
+		var color = helpers.color(colorString);
+		return color.alpha(opacity * color.alpha()).rgbaString();
+	}
 
 	// Helper to push or concat based on if the 2nd parameter is an array or not
 	function pushOrConcat(base, toPush) {
@@ -8607,8 +8457,8 @@ module.exports = function(Chart) {
 	function createTooltipItem(element) {
 		var xScale = element._xScale;
 		var yScale = element._yScale || element._scale; // handle radar || polarArea charts
-		var index = element._index,
-			datasetIndex = element._datasetIndex;
+		var index = element._index;
+		var datasetIndex = element._datasetIndex;
 
 		return {
 			xLabel: xScale ? xScale.getLabelForIndex(index, datasetIndex) : '',
@@ -8625,8 +8475,8 @@ module.exports = function(Chart) {
 	 * @param tooltipOpts {Object} the tooltip options
 	 */
 	function getBaseModel(tooltipOpts) {
-		var globalDefaults = Chart.defaults.global;
-		var getValueOrDefault = helpers.getValueOrDefault;
+		var globalDefaults = defaults.global;
+		var valueOrDefault = helpers.valueOrDefault;
 
 		return {
 			// Positioning
@@ -8637,26 +8487,26 @@ module.exports = function(Chart) {
 
 			// Body
 			bodyFontColor: tooltipOpts.bodyFontColor,
-			_bodyFontFamily: getValueOrDefault(tooltipOpts.bodyFontFamily, globalDefaults.defaultFontFamily),
-			_bodyFontStyle: getValueOrDefault(tooltipOpts.bodyFontStyle, globalDefaults.defaultFontStyle),
+			_bodyFontFamily: valueOrDefault(tooltipOpts.bodyFontFamily, globalDefaults.defaultFontFamily),
+			_bodyFontStyle: valueOrDefault(tooltipOpts.bodyFontStyle, globalDefaults.defaultFontStyle),
 			_bodyAlign: tooltipOpts.bodyAlign,
-			bodyFontSize: getValueOrDefault(tooltipOpts.bodyFontSize, globalDefaults.defaultFontSize),
+			bodyFontSize: valueOrDefault(tooltipOpts.bodyFontSize, globalDefaults.defaultFontSize),
 			bodySpacing: tooltipOpts.bodySpacing,
 
 			// Title
 			titleFontColor: tooltipOpts.titleFontColor,
-			_titleFontFamily: getValueOrDefault(tooltipOpts.titleFontFamily, globalDefaults.defaultFontFamily),
-			_titleFontStyle: getValueOrDefault(tooltipOpts.titleFontStyle, globalDefaults.defaultFontStyle),
-			titleFontSize: getValueOrDefault(tooltipOpts.titleFontSize, globalDefaults.defaultFontSize),
+			_titleFontFamily: valueOrDefault(tooltipOpts.titleFontFamily, globalDefaults.defaultFontFamily),
+			_titleFontStyle: valueOrDefault(tooltipOpts.titleFontStyle, globalDefaults.defaultFontStyle),
+			titleFontSize: valueOrDefault(tooltipOpts.titleFontSize, globalDefaults.defaultFontSize),
 			_titleAlign: tooltipOpts.titleAlign,
 			titleSpacing: tooltipOpts.titleSpacing,
 			titleMarginBottom: tooltipOpts.titleMarginBottom,
 
 			// Footer
 			footerFontColor: tooltipOpts.footerFontColor,
-			_footerFontFamily: getValueOrDefault(tooltipOpts.footerFontFamily, globalDefaults.defaultFontFamily),
-			_footerFontStyle: getValueOrDefault(tooltipOpts.footerFontStyle, globalDefaults.defaultFontStyle),
-			footerFontSize: getValueOrDefault(tooltipOpts.footerFontSize, globalDefaults.defaultFontSize),
+			_footerFontFamily: valueOrDefault(tooltipOpts.footerFontFamily, globalDefaults.defaultFontFamily),
+			_footerFontStyle: valueOrDefault(tooltipOpts.footerFontStyle, globalDefaults.defaultFontStyle),
+			footerFontSize: valueOrDefault(tooltipOpts.footerFontSize, globalDefaults.defaultFontSize),
 			_footerAlign: tooltipOpts.footerAlign,
 			footerSpacing: tooltipOpts.footerSpacing,
 			footerMarginTop: tooltipOpts.footerMarginTop,
@@ -8691,9 +8541,9 @@ module.exports = function(Chart) {
 
 		var titleLineCount = model.title.length;
 		var footerLineCount = model.footer.length;
-		var titleFontSize = model.titleFontSize,
-			bodyFontSize = model.bodyFontSize,
-			footerFontSize = model.footerFontSize;
+		var titleFontSize = model.titleFontSize;
+		var bodyFontSize = model.bodyFontSize;
+		var footerFontSize = model.footerFontSize;
 
 		height += titleLineCount * titleFontSize; // Title Lines
 		height += titleLineCount ? (titleLineCount - 1) * model.titleSpacing : 0; // Title Line Spacing
@@ -8822,13 +8672,13 @@ module.exports = function(Chart) {
 		var x = vm.x;
 		var y = vm.y;
 
-		var caretSize = vm.caretSize,
-			caretPadding = vm.caretPadding,
-			cornerRadius = vm.cornerRadius,
-			xAlign = alignment.xAlign,
-			yAlign = alignment.yAlign,
-			paddingAndSize = caretSize + caretPadding,
-			radiusAndPadding = cornerRadius + caretPadding;
+		var caretSize = vm.caretSize;
+		var caretPadding = vm.caretPadding;
+		var cornerRadius = vm.cornerRadius;
+		var xAlign = alignment.xAlign;
+		var yAlign = alignment.yAlign;
+		var paddingAndSize = caretSize + caretPadding;
+		var radiusAndPadding = cornerRadius + caretPadding;
 
 		if (xAlign === 'right') {
 			x -= size.width;
@@ -8862,9 +8712,10 @@ module.exports = function(Chart) {
 		};
 	}
 
-	Chart.Tooltip = Chart.Element.extend({
+	Chart.Tooltip = Element.extend({
 		initialize: function() {
 			this._model = getBaseModel(this._options);
+			this._lastActive = [];
 		},
 
 		// Get the title
@@ -8874,9 +8725,9 @@ module.exports = function(Chart) {
 			var opts = me._options;
 			var callbacks = opts.callbacks;
 
-			var beforeTitle = callbacks.beforeTitle.apply(me, arguments),
-				title = callbacks.title.apply(me, arguments),
-				afterTitle = callbacks.afterTitle.apply(me, arguments);
+			var beforeTitle = callbacks.beforeTitle.apply(me, arguments);
+			var title = callbacks.title.apply(me, arguments);
+			var afterTitle = callbacks.afterTitle.apply(me, arguments);
 
 			var lines = [];
 			lines = pushOrConcat(lines, beforeTitle);
@@ -8975,7 +8826,8 @@ module.exports = function(Chart) {
 				model.opacity = 1;
 
 				var labelColors = [];
-				tooltipPosition = Chart.Tooltip.positioners[opts.position](active, me._eventPosition);
+				var labelTextColors = [];
+				tooltipPosition = Chart.Tooltip.positioners[opts.position].call(me, active, me._eventPosition);
 
 				var tooltipItems = [];
 				for (i = 0, len = active.length; i < len; ++i) {
@@ -8999,7 +8851,9 @@ module.exports = function(Chart) {
 				// Determine colors for boxes
 				helpers.each(tooltipItems, function(tooltipItem) {
 					labelColors.push(opts.callbacks.labelColor.call(me, tooltipItem, me._chart));
+					labelTextColors.push(opts.callbacks.labelTextColor.call(me, tooltipItem, me._chart));
 				});
+
 
 				// Build the Text Lines
 				model.title = me.getTitle(tooltipItems, data);
@@ -9013,6 +8867,7 @@ module.exports = function(Chart) {
 				model.y = Math.round(tooltipPosition.y);
 				model.caretPadding = opts.caretPadding;
 				model.labelColors = labelColors;
+				model.labelTextColors = labelTextColors;
 
 				// data points
 				model.dataPoints = tooltipItems;
@@ -9055,16 +8910,15 @@ module.exports = function(Chart) {
 			ctx.lineTo(caretPosition.x3, caretPosition.y3);
 		},
 		getCaretPosition: function(tooltipPoint, size, vm) {
-			var x1, x2, x3;
-			var y1, y2, y3;
+			var x1, x2, x3, y1, y2, y3;
 			var caretSize = vm.caretSize;
 			var cornerRadius = vm.cornerRadius;
-			var xAlign = vm.xAlign,
-				yAlign = vm.yAlign;
-			var ptX = tooltipPoint.x,
-				ptY = tooltipPoint.y;
-			var width = size.width,
-				height = size.height;
+			var xAlign = vm.xAlign;
+			var yAlign = vm.yAlign;
+			var ptX = tooltipPoint.x;
+			var ptY = tooltipPoint.y;
+			var width = size.width;
+			var height = size.height;
 
 			if (yAlign === 'center') {
 				y2 = ptY + (height / 2);
@@ -9121,8 +8975,8 @@ module.exports = function(Chart) {
 				ctx.textAlign = vm._titleAlign;
 				ctx.textBaseline = 'top';
 
-				var titleFontSize = vm.titleFontSize,
-					titleSpacing = vm.titleSpacing;
+				var titleFontSize = vm.titleFontSize;
+				var titleSpacing = vm.titleSpacing;
 
 				ctx.fillStyle = mergeOpacity(vm.titleFontColor, opacity);
 				ctx.font = helpers.fontString(titleFontSize, vm._titleFontStyle, vm._titleFontFamily);
@@ -9145,9 +8999,6 @@ module.exports = function(Chart) {
 
 			ctx.textAlign = vm._bodyAlign;
 			ctx.textBaseline = 'top';
-
-			var textColor = mergeOpacity(vm.bodyFontColor, opacity);
-			ctx.fillStyle = textColor;
 			ctx.font = helpers.fontString(bodyFontSize, vm._bodyFontStyle, vm._bodyFontFamily);
 
 			// Before Body
@@ -9158,6 +9009,7 @@ module.exports = function(Chart) {
 			};
 
 			// Before body lines
+			ctx.fillStyle = mergeOpacity(vm.bodyFontColor, opacity);
 			helpers.each(vm.beforeBody, fillLineOfText);
 
 			var drawColorBoxes = vm.displayColors;
@@ -9165,6 +9017,8 @@ module.exports = function(Chart) {
 
 			// Draw body lines now
 			helpers.each(body, function(bodyItem, i) {
+				var textColor = mergeOpacity(vm.labelTextColors[i], opacity);
+				ctx.fillStyle = textColor;
 				helpers.each(bodyItem.before, fillLineOfText);
 
 				helpers.each(bodyItem.lines, function(line) {
@@ -9175,13 +9029,13 @@ module.exports = function(Chart) {
 						ctx.fillRect(pt.x, pt.y, bodyFontSize, bodyFontSize);
 
 						// Border
+						ctx.lineWidth = 1;
 						ctx.strokeStyle = mergeOpacity(vm.labelColors[i].borderColor, opacity);
 						ctx.strokeRect(pt.x, pt.y, bodyFontSize, bodyFontSize);
 
 						// Inner square
 						ctx.fillStyle = mergeOpacity(vm.labelColors[i].backgroundColor, opacity);
 						ctx.fillRect(pt.x + 1, pt.y + 1, bodyFontSize - 2, bodyFontSize - 2);
-
 						ctx.fillStyle = textColor;
 					}
 
@@ -9394,10 +9248,9 @@ module.exports = function(Chart) {
 		nearest: function(elements, eventPosition) {
 			var x = eventPosition.x;
 			var y = eventPosition.y;
-
-			var nearestElement;
 			var minDistance = Number.POSITIVE_INFINITY;
-			var i, len;
+			var i, len, nearestElement;
+
 			for (i = 0, len = elements.length; i < len; ++i) {
 				var el = elements[i];
 				if (el && el.hasValue()) {
@@ -9425,884 +9278,2034 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],35:[function(require,module,exports){
+},{"25":25,"26":26,"45":45}],36:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var defaults = require(25);
+var Element = require(26);
+var helpers = require(45);
 
-	var helpers = Chart.helpers,
-		globalOpts = Chart.defaults.global;
-
-	globalOpts.elements.arc = {
-		backgroundColor: globalOpts.defaultColor,
-		borderColor: '#fff',
-		borderWidth: 2
-	};
-
-	Chart.elements.Arc = Chart.Element.extend({
-		inLabelRange: function(mouseX) {
-			var vm = this._view;
-
-			if (vm) {
-				return (Math.pow(mouseX - vm.x, 2) < Math.pow(vm.radius + vm.hoverRadius, 2));
-			}
-			return false;
-		},
-		inRange: function(chartX, chartY) {
-			var vm = this._view;
-
-			if (vm) {
-				var pointRelativePosition = helpers.getAngleFromPoint(vm, {
-						x: chartX,
-						y: chartY
-					}),
-					angle = pointRelativePosition.angle,
-					distance = pointRelativePosition.distance;
-
-				// Sanitise angle range
-				var startAngle = vm.startAngle;
-				var endAngle = vm.endAngle;
-				while (endAngle < startAngle) {
-					endAngle += 2.0 * Math.PI;
-				}
-				while (angle > endAngle) {
-					angle -= 2.0 * Math.PI;
-				}
-				while (angle < startAngle) {
-					angle += 2.0 * Math.PI;
-				}
-
-				// Check if within the range of the open/close angle
-				var betweenAngles = (angle >= startAngle && angle <= endAngle),
-					withinRadius = (distance >= vm.innerRadius && distance <= vm.outerRadius);
-
-				return (betweenAngles && withinRadius);
-			}
-			return false;
-		},
-		getCenterPoint: function() {
-			var vm = this._view;
-			var halfAngle = (vm.startAngle + vm.endAngle) / 2;
-			var halfRadius = (vm.innerRadius + vm.outerRadius) / 2;
-			return {
-				x: vm.x + Math.cos(halfAngle) * halfRadius,
-				y: vm.y + Math.sin(halfAngle) * halfRadius
-			};
-		},
-		getArea: function() {
-			var vm = this._view;
-			return Math.PI * ((vm.endAngle - vm.startAngle) / (2 * Math.PI)) * (Math.pow(vm.outerRadius, 2) - Math.pow(vm.innerRadius, 2));
-		},
-		tooltipPosition: function() {
-			var vm = this._view;
-
-			var centreAngle = vm.startAngle + ((vm.endAngle - vm.startAngle) / 2),
-				rangeFromCentre = (vm.outerRadius - vm.innerRadius) / 2 + vm.innerRadius;
-			return {
-				x: vm.x + (Math.cos(centreAngle) * rangeFromCentre),
-				y: vm.y + (Math.sin(centreAngle) * rangeFromCentre)
-			};
-		},
-		draw: function() {
-
-			var ctx = this._chart.ctx,
-				vm = this._view,
-				sA = vm.startAngle,
-				eA = vm.endAngle;
-
-			ctx.beginPath();
-
-			ctx.arc(vm.x, vm.y, vm.outerRadius, sA, eA);
-			ctx.arc(vm.x, vm.y, vm.innerRadius, eA, sA, true);
-
-			ctx.closePath();
-			ctx.strokeStyle = vm.borderColor;
-			ctx.lineWidth = vm.borderWidth;
-
-			ctx.fillStyle = vm.backgroundColor;
-
-			ctx.fill();
-			ctx.lineJoin = 'bevel';
-
-			if (vm.borderWidth) {
-				ctx.stroke();
-			}
+defaults._set('global', {
+	elements: {
+		arc: {
+			backgroundColor: defaults.global.defaultColor,
+			borderColor: '#fff',
+			borderWidth: 2
 		}
-	});
-};
+	}
+});
 
-},{}],36:[function(require,module,exports){
-'use strict';
+module.exports = Element.extend({
+	inLabelRange: function(mouseX) {
+		var vm = this._view;
 
-module.exports = function(Chart) {
+		if (vm) {
+			return (Math.pow(mouseX - vm.x, 2) < Math.pow(vm.radius + vm.hoverRadius, 2));
+		}
+		return false;
+	},
 
-	var helpers = Chart.helpers;
-	var globalDefaults = Chart.defaults.global;
+	inRange: function(chartX, chartY) {
+		var vm = this._view;
 
-	Chart.defaults.global.elements.line = {
-		tension: 0.4,
-		backgroundColor: globalDefaults.defaultColor,
-		borderWidth: 3,
-		borderColor: globalDefaults.defaultColor,
-		borderCapStyle: 'butt',
-		borderDash: [],
-		borderDashOffset: 0.0,
-		borderJoinStyle: 'miter',
-		capBezierPoints: true,
-		fill: true, // do we fill in the area between the line and its base axis
-	};
+		if (vm) {
+			var pointRelativePosition = helpers.getAngleFromPoint(vm, {x: chartX, y: chartY});
+			var	angle = pointRelativePosition.angle;
+			var distance = pointRelativePosition.distance;
 
-	Chart.elements.Line = Chart.Element.extend({
-		draw: function() {
-			var me = this;
-			var vm = me._view;
-			var ctx = me._chart.ctx;
-			var spanGaps = vm.spanGaps;
-			var points = me._children.slice(); // clone array
-			var globalOptionLineElements = globalDefaults.elements.line;
-			var lastDrawnIndex = -1;
-			var index, current, previous, currentVM;
-
-			// If we are looping, adding the first point again
-			if (me._loop && points.length) {
-				points.push(points[0]);
+			// Sanitise angle range
+			var startAngle = vm.startAngle;
+			var endAngle = vm.endAngle;
+			while (endAngle < startAngle) {
+				endAngle += 2.0 * Math.PI;
+			}
+			while (angle > endAngle) {
+				angle -= 2.0 * Math.PI;
+			}
+			while (angle < startAngle) {
+				angle += 2.0 * Math.PI;
 			}
 
-			ctx.save();
+			// Check if within the range of the open/close angle
+			var betweenAngles = (angle >= startAngle && angle <= endAngle);
+			var withinRadius = (distance >= vm.innerRadius && distance <= vm.outerRadius);
 
-			// Stroke Line Options
-			ctx.lineCap = vm.borderCapStyle || globalOptionLineElements.borderCapStyle;
+			return (betweenAngles && withinRadius);
+		}
+		return false;
+	},
 
-			// IE 9 and 10 do not support line dash
-			if (ctx.setLineDash) {
-				ctx.setLineDash(vm.borderDash || globalOptionLineElements.borderDash);
-			}
+	getCenterPoint: function() {
+		var vm = this._view;
+		var halfAngle = (vm.startAngle + vm.endAngle) / 2;
+		var halfRadius = (vm.innerRadius + vm.outerRadius) / 2;
+		return {
+			x: vm.x + Math.cos(halfAngle) * halfRadius,
+			y: vm.y + Math.sin(halfAngle) * halfRadius
+		};
+	},
 
-			ctx.lineDashOffset = vm.borderDashOffset || globalOptionLineElements.borderDashOffset;
-			ctx.lineJoin = vm.borderJoinStyle || globalOptionLineElements.borderJoinStyle;
-			ctx.lineWidth = vm.borderWidth || globalOptionLineElements.borderWidth;
-			ctx.strokeStyle = vm.borderColor || globalDefaults.defaultColor;
+	getArea: function() {
+		var vm = this._view;
+		return Math.PI * ((vm.endAngle - vm.startAngle) / (2 * Math.PI)) * (Math.pow(vm.outerRadius, 2) - Math.pow(vm.innerRadius, 2));
+	},
 
-			// Stroke Line
-			ctx.beginPath();
-			lastDrawnIndex = -1;
+	tooltipPosition: function() {
+		var vm = this._view;
+		var centreAngle = vm.startAngle + ((vm.endAngle - vm.startAngle) / 2);
+		var rangeFromCentre = (vm.outerRadius - vm.innerRadius) / 2 + vm.innerRadius;
 
-			for (index = 0; index < points.length; ++index) {
-				current = points[index];
-				previous = helpers.previousItem(points, index);
-				currentVM = current._view;
+		return {
+			x: vm.x + (Math.cos(centreAngle) * rangeFromCentre),
+			y: vm.y + (Math.sin(centreAngle) * rangeFromCentre)
+		};
+	},
 
-				// First point moves to it's starting position no matter what
-				if (index === 0) {
-					if (!currentVM.skip) {
-						ctx.moveTo(currentVM.x, currentVM.y);
-						lastDrawnIndex = index;
-					}
-				} else {
-					previous = lastDrawnIndex === -1 ? previous : points[lastDrawnIndex];
+	draw: function() {
+		var ctx = this._chart.ctx;
+		var vm = this._view;
+		var sA = vm.startAngle;
+		var eA = vm.endAngle;
 
-					if (!currentVM.skip) {
-						if ((lastDrawnIndex !== (index - 1) && !spanGaps) || lastDrawnIndex === -1) {
-							// There was a gap and this is the first point after the gap
-							ctx.moveTo(currentVM.x, currentVM.y);
-						} else {
-							// Line to next point
-							helpers.canvas.lineTo(ctx, previous._view, current._view);
-						}
-						lastDrawnIndex = index;
-					}
-				}
-			}
+		ctx.beginPath();
 
+		ctx.arc(vm.x, vm.y, vm.outerRadius, sA, eA);
+		ctx.arc(vm.x, vm.y, vm.innerRadius, eA, sA, true);
+
+		ctx.closePath();
+		ctx.strokeStyle = vm.borderColor;
+		ctx.lineWidth = vm.borderWidth;
+
+		ctx.fillStyle = vm.backgroundColor;
+
+		ctx.fill();
+		ctx.lineJoin = 'bevel';
+
+		if (vm.borderWidth) {
 			ctx.stroke();
-			ctx.restore();
 		}
-	});
-};
+	}
+});
 
-},{}],37:[function(require,module,exports){
+},{"25":25,"26":26,"45":45}],37:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var defaults = require(25);
+var Element = require(26);
+var helpers = require(45);
 
-	var helpers = Chart.helpers,
-		globalOpts = Chart.defaults.global,
-		defaultColor = globalOpts.defaultColor;
+var globalDefaults = defaults.global;
 
-	globalOpts.elements.point = {
-		radius: 3,
-		pointStyle: 'circle',
-		backgroundColor: defaultColor,
-		borderWidth: 1,
-		borderColor: defaultColor,
-		// Hover
-		hitRadius: 1,
-		hoverRadius: 4,
-		hoverBorderWidth: 1
-	};
-
-	function xRange(mouseX) {
-		var vm = this._view;
-		return vm ? (Math.pow(mouseX - vm.x, 2) < Math.pow(vm.radius + vm.hitRadius, 2)) : false;
+defaults._set('global', {
+	elements: {
+		line: {
+			tension: 0.4,
+			backgroundColor: globalDefaults.defaultColor,
+			borderWidth: 3,
+			borderColor: globalDefaults.defaultColor,
+			borderCapStyle: 'butt',
+			borderDash: [],
+			borderDashOffset: 0.0,
+			borderJoinStyle: 'miter',
+			capBezierPoints: true,
+			fill: true, // do we fill in the area between the line and its base axis
+		}
 	}
+});
 
-	function yRange(mouseY) {
-		var vm = this._view;
-		return vm ? (Math.pow(mouseY - vm.y, 2) < Math.pow(vm.radius + vm.hitRadius, 2)) : false;
-	}
+module.exports = Element.extend({
+	draw: function() {
+		var me = this;
+		var vm = me._view;
+		var ctx = me._chart.ctx;
+		var spanGaps = vm.spanGaps;
+		var points = me._children.slice(); // clone array
+		var globalOptionLineElements = globalDefaults.elements.line;
+		var lastDrawnIndex = -1;
+		var index, current, previous, currentVM;
 
-	Chart.elements.Point = Chart.Element.extend({
-		inRange: function(mouseX, mouseY) {
-			var vm = this._view;
-			return vm ? ((Math.pow(mouseX - vm.x, 2) + Math.pow(mouseY - vm.y, 2)) < Math.pow(vm.hitRadius + vm.radius, 2)) : false;
-		},
+		// If we are looping, adding the first point again
+		if (me._loop && points.length) {
+			points.push(points[0]);
+		}
 
-		inLabelRange: xRange,
-		inXRange: xRange,
-		inYRange: yRange,
+		ctx.save();
 
-		getCenterPoint: function() {
-			var vm = this._view;
-			return {
-				x: vm.x,
-				y: vm.y
-			};
-		},
-		getArea: function() {
-			return Math.PI * Math.pow(this._view.radius, 2);
-		},
-		tooltipPosition: function() {
-			var vm = this._view;
-			return {
-				x: vm.x,
-				y: vm.y,
-				padding: vm.radius + vm.borderWidth
-			};
-		},
-		draw: function(chartArea) {
-			var vm = this._view;
-			var model = this._model;
-			var ctx = this._chart.ctx;
-			var pointStyle = vm.pointStyle;
-			var radius = vm.radius;
-			var x = vm.x;
-			var y = vm.y;
-			var color = Chart.helpers.color;
-			var errMargin = 1.01; // 1.01 is margin for Accumulated error. (Especially Edge, IE.)
-			var ratio = 0;
+		// Stroke Line Options
+		ctx.lineCap = vm.borderCapStyle || globalOptionLineElements.borderCapStyle;
 
-			if (vm.skip) {
-				return;
-			}
+		// IE 9 and 10 do not support line dash
+		if (ctx.setLineDash) {
+			ctx.setLineDash(vm.borderDash || globalOptionLineElements.borderDash);
+		}
 
-			ctx.strokeStyle = vm.borderColor || defaultColor;
-			ctx.lineWidth = helpers.getValueOrDefault(vm.borderWidth, globalOpts.elements.point.borderWidth);
-			ctx.fillStyle = vm.backgroundColor || defaultColor;
+		ctx.lineDashOffset = vm.borderDashOffset || globalOptionLineElements.borderDashOffset;
+		ctx.lineJoin = vm.borderJoinStyle || globalOptionLineElements.borderJoinStyle;
+		ctx.lineWidth = vm.borderWidth || globalOptionLineElements.borderWidth;
+		ctx.strokeStyle = vm.borderColor || globalDefaults.defaultColor;
 
-			// Cliping for Points.
-			// going out from inner charArea?
-			if ((chartArea !== undefined) && ((model.x < chartArea.left) || (chartArea.right*errMargin < model.x) || (model.y < chartArea.top) || (chartArea.bottom*errMargin < model.y))) {
-				// Point fade out
-				if (model.x < chartArea.left) {
-					ratio = (x - model.x) / (chartArea.left - model.x);
-				} else if (chartArea.right*errMargin < model.x) {
-					ratio = (model.x - x) / (model.x - chartArea.right);
-				} else if (model.y < chartArea.top) {
-					ratio = (y - model.y) / (chartArea.top - model.y);
-				} else if (chartArea.bottom*errMargin < model.y) {
-					ratio = (model.y - y) / (model.y - chartArea.bottom);
+		// Stroke Line
+		ctx.beginPath();
+		lastDrawnIndex = -1;
+
+		for (index = 0; index < points.length; ++index) {
+			current = points[index];
+			previous = helpers.previousItem(points, index);
+			currentVM = current._view;
+
+			// First point moves to it's starting position no matter what
+			if (index === 0) {
+				if (!currentVM.skip) {
+					ctx.moveTo(currentVM.x, currentVM.y);
+					lastDrawnIndex = index;
 				}
-				ratio = Math.round(ratio*100) / 100;
-				ctx.strokeStyle = color(ctx.strokeStyle).alpha(ratio).rgbString();
-				ctx.fillStyle = color(ctx.fillStyle).alpha(ratio).rgbString();
-			}
-
-			Chart.canvasHelpers.drawPoint(ctx, pointStyle, radius, x, y);
-		}
-	});
-};
-
-},{}],38:[function(require,module,exports){
-'use strict';
-
-module.exports = function(Chart) {
-
-	var globalOpts = Chart.defaults.global;
-
-	globalOpts.elements.rectangle = {
-		backgroundColor: globalOpts.defaultColor,
-		borderWidth: 0,
-		borderColor: globalOpts.defaultColor,
-		borderSkipped: 'bottom'
-	};
-
-	function isVertical(bar) {
-		return bar._view.width !== undefined;
-	}
-
-	/**
-	 * Helper function to get the bounds of the bar regardless of the orientation
-	 * @private
-	 * @param bar {Chart.Element.Rectangle} the bar
-	 * @return {Bounds} bounds of the bar
-	 */
-	function getBarBounds(bar) {
-		var vm = bar._view;
-		var x1, x2, y1, y2;
-
-		if (isVertical(bar)) {
-			// vertical
-			var halfWidth = vm.width / 2;
-			x1 = vm.x - halfWidth;
-			x2 = vm.x + halfWidth;
-			y1 = Math.min(vm.y, vm.base);
-			y2 = Math.max(vm.y, vm.base);
-		} else {
-			// horizontal bar
-			var halfHeight = vm.height / 2;
-			x1 = Math.min(vm.x, vm.base);
-			x2 = Math.max(vm.x, vm.base);
-			y1 = vm.y - halfHeight;
-			y2 = vm.y + halfHeight;
-		}
-
-		return {
-			left: x1,
-			top: y1,
-			right: x2,
-			bottom: y2
-		};
-	}
-
-	Chart.elements.Rectangle = Chart.Element.extend({
-		draw: function() {
-			var ctx = this._chart.ctx;
-			var vm = this._view;
-			var left, right, top, bottom, signX, signY, borderSkipped;
-			var borderWidth = vm.borderWidth;
-
-			if (!vm.horizontal) {
-				// bar
-				left = vm.x - vm.width / 2;
-				right = vm.x + vm.width / 2;
-				top = vm.y;
-				bottom = vm.base;
-				signX = 1;
-				signY = bottom > top? 1: -1;
-				borderSkipped = vm.borderSkipped || 'bottom';
 			} else {
-				// horizontal bar
-				left = vm.base;
-				right = vm.x;
-				top = vm.y - vm.height / 2;
-				bottom = vm.y + vm.height / 2;
-				signX = right > left? 1: -1;
-				signY = 1;
-				borderSkipped = vm.borderSkipped || 'left';
-			}
+				previous = lastDrawnIndex === -1 ? previous : points[lastDrawnIndex];
 
-			// Canvas doesn't allow us to stroke inside the width so we can
-			// adjust the sizes to fit if we're setting a stroke on the line
-			if (borderWidth) {
-				// borderWidth shold be less than bar width and bar height.
-				var barSize = Math.min(Math.abs(left - right), Math.abs(top - bottom));
-				borderWidth = borderWidth > barSize? barSize: borderWidth;
-				var halfStroke = borderWidth / 2;
-				// Adjust borderWidth when bar top position is near vm.base(zero).
-				var borderLeft = left + (borderSkipped !== 'left'? halfStroke * signX: 0);
-				var borderRight = right + (borderSkipped !== 'right'? -halfStroke * signX: 0);
-				var borderTop = top + (borderSkipped !== 'top'? halfStroke * signY: 0);
-				var borderBottom = bottom + (borderSkipped !== 'bottom'? -halfStroke * signY: 0);
-				// not become a vertical line?
-				if (borderLeft !== borderRight) {
-					top = borderTop;
-					bottom = borderBottom;
-				}
-				// not become a horizontal line?
-				if (borderTop !== borderBottom) {
-					left = borderLeft;
-					right = borderRight;
-				}
-			}
-
-			ctx.beginPath();
-			ctx.fillStyle = vm.backgroundColor;
-			ctx.strokeStyle = vm.borderColor;
-			ctx.lineWidth = borderWidth;
-
-			// Corner points, from bottom-left to bottom-right clockwise
-			// | 1 2 |
-			// | 0 3 |
-			var corners = [
-				[left, bottom],
-				[left, top],
-				[right, top],
-				[right, bottom]
-			];
-
-			// Find first (starting) corner with fallback to 'bottom'
-			var borders = ['bottom', 'left', 'top', 'right'];
-			var startCorner = borders.indexOf(borderSkipped, 0);
-			if (startCorner === -1) {
-				startCorner = 0;
-			}
-
-			function cornerAt(index) {
-				return corners[(startCorner + index) % 4];
-			}
-
-			// Draw rectangle from 'startCorner'
-			var corner = cornerAt(0);
-			ctx.moveTo(corner[0], corner[1]);
-
-			for (var i = 1; i < 4; i++) {
-				corner = cornerAt(i);
-				ctx.lineTo(corner[0], corner[1]);
-			}
-
-			ctx.fill();
-			if (borderWidth) {
-				ctx.stroke();
-			}
-		},
-		height: function() {
-			var vm = this._view;
-			return vm.base - vm.y;
-		},
-		inRange: function(mouseX, mouseY) {
-			var inRange = false;
-
-			if (this._view) {
-				var bounds = getBarBounds(this);
-				inRange = mouseX >= bounds.left && mouseX <= bounds.right && mouseY >= bounds.top && mouseY <= bounds.bottom;
-			}
-
-			return inRange;
-		},
-		inLabelRange: function(mouseX, mouseY) {
-			var me = this;
-			if (!me._view) {
-				return false;
-			}
-
-			var inRange = false;
-			var bounds = getBarBounds(me);
-
-			if (isVertical(me)) {
-				inRange = mouseX >= bounds.left && mouseX <= bounds.right;
-			} else {
-				inRange = mouseY >= bounds.top && mouseY <= bounds.bottom;
-			}
-
-			return inRange;
-		},
-		inXRange: function(mouseX) {
-			var bounds = getBarBounds(this);
-			return mouseX >= bounds.left && mouseX <= bounds.right;
-		},
-		inYRange: function(mouseY) {
-			var bounds = getBarBounds(this);
-			return mouseY >= bounds.top && mouseY <= bounds.bottom;
-		},
-		getCenterPoint: function() {
-			var vm = this._view;
-			var x, y;
-			if (isVertical(this)) {
-				x = vm.x;
-				y = (vm.y + vm.base) / 2;
-			} else {
-				x = (vm.x + vm.base) / 2;
-				y = vm.y;
-			}
-
-			return {x: x, y: y};
-		},
-		getArea: function() {
-			var vm = this._view;
-			return vm.width * Math.abs(vm.y - vm.base);
-		},
-		tooltipPosition: function() {
-			var vm = this._view;
-			return {
-				x: vm.x,
-				y: vm.y
-			};
-		}
-	});
-
-};
-
-},{}],39:[function(require,module,exports){
-'use strict';
-
-// Chart.Platform implementation for targeting a web browser
-module.exports = function(Chart) {
-	var helpers = Chart.helpers;
-
-	// DOM event types -> Chart.js event types.
-	// Note: only events with different types are mapped.
-	// https://developer.mozilla.org/en-US/docs/Web/Events
-	var eventTypeMap = {
-		// Touch events
-		touchstart: 'mousedown',
-		touchmove: 'mousemove',
-		touchend: 'mouseup',
-
-		// Pointer events
-		pointerenter: 'mouseenter',
-		pointerdown: 'mousedown',
-		pointermove: 'mousemove',
-		pointerup: 'mouseup',
-		pointerleave: 'mouseout',
-		pointerout: 'mouseout'
-	};
-
-	/**
-	 * The "used" size is the final value of a dimension property after all calculations have
-	 * been performed. This method uses the computed style of `element` but returns undefined
-	 * if the computed style is not expressed in pixels. That can happen in some cases where
-	 * `element` has a size relative to its parent and this last one is not yet displayed,
-	 * for example because of `display: none` on a parent node.
-	 * @see https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
-	 * @returns {Number} Size in pixels or undefined if unknown.
-	 */
-	function readUsedSize(element, property) {
-		var value = helpers.getStyle(element, property);
-		var matches = value && value.match(/^(\d+)(\.\d+)?px$/);
-		return matches? Number(matches[1]) : undefined;
-	}
-
-	/**
-	 * Initializes the canvas style and render size without modifying the canvas display size,
-	 * since responsiveness is handled by the controller.resize() method. The config is used
-	 * to determine the aspect ratio to apply in case no explicit height has been specified.
-	 */
-	function initCanvas(canvas, config) {
-		var style = canvas.style;
-
-		// NOTE(SB) canvas.getAttribute('width') !== canvas.width: in the first case it
-		// returns null or '' if no explicit value has been set to the canvas attribute.
-		var renderHeight = canvas.getAttribute('height');
-		var renderWidth = canvas.getAttribute('width');
-
-		// Chart.js modifies some canvas values that we want to restore on destroy
-		canvas._chartjs = {
-			initial: {
-				height: renderHeight,
-				width: renderWidth,
-				style: {
-					display: style.display,
-					height: style.height,
-					width: style.width
-				}
-			}
-		};
-
-		// Force canvas to display as block to avoid extra space caused by inline
-		// elements, which would interfere with the responsive resize process.
-		// https://github.com/chartjs/Chart.js/issues/2538
-		style.display = style.display || 'block';
-
-		if (renderWidth === null || renderWidth === '') {
-			var displayWidth = readUsedSize(canvas, 'width');
-			if (displayWidth !== undefined) {
-				canvas.width = displayWidth;
-			}
-		}
-
-		if (renderHeight === null || renderHeight === '') {
-			if (canvas.style.height === '') {
-				// If no explicit render height and style height, let's apply the aspect ratio,
-				// which one can be specified by the user but also by charts as default option
-				// (i.e. options.aspectRatio). If not specified, use canvas aspect ratio of 2.
-				canvas.height = canvas.width / (config.options.aspectRatio || 2);
-			} else {
-				var displayHeight = readUsedSize(canvas, 'height');
-				if (displayWidth !== undefined) {
-					canvas.height = displayHeight;
-				}
-			}
-		}
-
-		return canvas;
-	}
-
-	function createEvent(type, chart, x, y, nativeEvent) {
-		return {
-			type: type,
-			chart: chart,
-			native: nativeEvent || null,
-			x: x !== undefined? x : null,
-			y: y !== undefined? y : null,
-		};
-	}
-
-	function fromNativeEvent(event, chart) {
-		var type = eventTypeMap[event.type] || event.type;
-		var pos = helpers.getRelativePosition(event, chart);
-		return createEvent(type, chart, pos.x, pos.y, event);
-	}
-
-	function createResizer(handler) {
-		var iframe = document.createElement('iframe');
-		iframe.className = 'chartjs-hidden-iframe';
-		iframe.style.cssText =
-			'display:block;'+
-			'overflow:hidden;'+
-			'border:0;'+
-			'margin:0;'+
-			'top:0;'+
-			'left:0;'+
-			'bottom:0;'+
-			'right:0;'+
-			'height:100%;'+
-			'width:100%;'+
-			'position:absolute;'+
-			'pointer-events:none;'+
-			'z-index:-1;';
-
-		// Prevent the iframe to gain focus on tab.
-		// https://github.com/chartjs/Chart.js/issues/3090
-		iframe.tabIndex = -1;
-
-		// If the iframe is re-attached to the DOM, the resize listener is removed because the
-		// content is reloaded, so make sure to install the handler after the iframe is loaded.
-		// https://github.com/chartjs/Chart.js/issues/3521
-		helpers.addEvent(iframe, 'load', function() {
-			helpers.addEvent(iframe.contentWindow || iframe, 'resize', handler);
-
-			// The iframe size might have changed while loading, which can also
-			// happen if the size has been changed while detached from the DOM.
-			handler();
-		});
-
-		return iframe;
-	}
-
-	function addResizeListener(node, listener, chart) {
-		var stub = node._chartjs = {
-			ticking: false
-		};
-
-		// Throttle the callback notification until the next animation frame.
-		var notify = function() {
-			if (!stub.ticking) {
-				stub.ticking = true;
-				helpers.requestAnimFrame.call(window, function() {
-					if (stub.resizer) {
-						stub.ticking = false;
-						return listener(createEvent('resize', chart));
+				if (!currentVM.skip) {
+					if ((lastDrawnIndex !== (index - 1) && !spanGaps) || lastDrawnIndex === -1) {
+						// There was a gap and this is the first point after the gap
+						ctx.moveTo(currentVM.x, currentVM.y);
+					} else {
+						// Line to next point
+						helpers.canvas.lineTo(ctx, previous._view, current._view);
 					}
-				});
+					lastDrawnIndex = index;
+				}
 			}
-		};
+		}
 
-		// Let's keep track of this added iframe and thus avoid DOM query when removing it.
-		stub.resizer = createResizer(notify);
-
-		node.insertBefore(stub.resizer, node.firstChild);
+		ctx.stroke();
+		ctx.restore();
 	}
+});
 
-	function removeResizeListener(node) {
-		if (!node || !node._chartjs) {
+},{"25":25,"26":26,"45":45}],38:[function(require,module,exports){
+'use strict';
+
+var defaults = require(25);
+var Element = require(26);
+var helpers = require(45);
+
+var defaultColor = defaults.global.defaultColor;
+
+defaults._set('global', {
+	elements: {
+		point: {
+			radius: 3,
+			pointStyle: 'circle',
+			backgroundColor: defaultColor,
+			borderColor: defaultColor,
+			borderWidth: 1,
+			// Hover
+			hitRadius: 1,
+			hoverRadius: 4,
+			hoverBorderWidth: 1
+		}
+	}
+});
+
+function xRange(mouseX) {
+	var vm = this._view;
+	return vm ? (Math.pow(mouseX - vm.x, 2) < Math.pow(vm.radius + vm.hitRadius, 2)) : false;
+}
+
+function yRange(mouseY) {
+	var vm = this._view;
+	return vm ? (Math.pow(mouseY - vm.y, 2) < Math.pow(vm.radius + vm.hitRadius, 2)) : false;
+}
+
+module.exports = Element.extend({
+	inRange: function(mouseX, mouseY) {
+		var vm = this._view;
+		return vm ? ((Math.pow(mouseX - vm.x, 2) + Math.pow(mouseY - vm.y, 2)) < Math.pow(vm.hitRadius + vm.radius, 2)) : false;
+	},
+
+	inLabelRange: xRange,
+	inXRange: xRange,
+	inYRange: yRange,
+
+	getCenterPoint: function() {
+		var vm = this._view;
+		return {
+			x: vm.x,
+			y: vm.y
+		};
+	},
+
+	getArea: function() {
+		return Math.PI * Math.pow(this._view.radius, 2);
+	},
+
+	tooltipPosition: function() {
+		var vm = this._view;
+		return {
+			x: vm.x,
+			y: vm.y,
+			padding: vm.radius + vm.borderWidth
+		};
+	},
+
+	draw: function(chartArea) {
+		var vm = this._view;
+		var model = this._model;
+		var ctx = this._chart.ctx;
+		var pointStyle = vm.pointStyle;
+		var radius = vm.radius;
+		var x = vm.x;
+		var y = vm.y;
+		var color = helpers.color;
+		var errMargin = 1.01; // 1.01 is margin for Accumulated error. (Especially Edge, IE.)
+		var ratio = 0;
+
+		if (vm.skip) {
 			return;
 		}
 
-		var resizer = node._chartjs.resizer;
-		if (resizer) {
-			resizer.parentNode.removeChild(resizer);
-			node._chartjs.resizer = null;
+		ctx.strokeStyle = vm.borderColor || defaultColor;
+		ctx.lineWidth = helpers.valueOrDefault(vm.borderWidth, defaults.global.elements.point.borderWidth);
+		ctx.fillStyle = vm.backgroundColor || defaultColor;
+
+		// Cliping for Points.
+		// going out from inner charArea?
+		if ((chartArea !== undefined) && ((model.x < chartArea.left) || (chartArea.right * errMargin < model.x) || (model.y < chartArea.top) || (chartArea.bottom * errMargin < model.y))) {
+			// Point fade out
+			if (model.x < chartArea.left) {
+				ratio = (x - model.x) / (chartArea.left - model.x);
+			} else if (chartArea.right * errMargin < model.x) {
+				ratio = (model.x - x) / (model.x - chartArea.right);
+			} else if (model.y < chartArea.top) {
+				ratio = (y - model.y) / (chartArea.top - model.y);
+			} else if (chartArea.bottom * errMargin < model.y) {
+				ratio = (model.y - y) / (model.y - chartArea.bottom);
+			}
+			ratio = Math.round(ratio * 100) / 100;
+			ctx.strokeStyle = color(ctx.strokeStyle).alpha(ratio).rgbString();
+			ctx.fillStyle = color(ctx.fillStyle).alpha(ratio).rgbString();
 		}
 
-		delete node._chartjs;
+		helpers.canvas.drawPoint(ctx, pointStyle, radius, x, y);
+	}
+});
+
+},{"25":25,"26":26,"45":45}],39:[function(require,module,exports){
+'use strict';
+
+var defaults = require(25);
+var Element = require(26);
+
+defaults._set('global', {
+	elements: {
+		rectangle: {
+			backgroundColor: defaults.global.defaultColor,
+			borderColor: defaults.global.defaultColor,
+			borderSkipped: 'bottom',
+			borderWidth: 0
+		}
+	}
+});
+
+function isVertical(bar) {
+	return bar._view.width !== undefined;
+}
+
+/**
+ * Helper function to get the bounds of the bar regardless of the orientation
+ * @param bar {Chart.Element.Rectangle} the bar
+ * @return {Bounds} bounds of the bar
+ * @private
+ */
+function getBarBounds(bar) {
+	var vm = bar._view;
+	var x1, x2, y1, y2;
+
+	if (isVertical(bar)) {
+		// vertical
+		var halfWidth = vm.width / 2;
+		x1 = vm.x - halfWidth;
+		x2 = vm.x + halfWidth;
+		y1 = Math.min(vm.y, vm.base);
+		y2 = Math.max(vm.y, vm.base);
+	} else {
+		// horizontal bar
+		var halfHeight = vm.height / 2;
+		x1 = Math.min(vm.x, vm.base);
+		x2 = Math.max(vm.x, vm.base);
+		y1 = vm.y - halfHeight;
+		y2 = vm.y + halfHeight;
 	}
 
 	return {
-		acquireContext: function(item, config) {
-			if (typeof item === 'string') {
-				item = document.getElementById(item);
-			} else if (item.length) {
-				// Support for array based queries (such as jQuery)
-				item = item[0];
+		left: x1,
+		top: y1,
+		right: x2,
+		bottom: y2
+	};
+}
+
+module.exports = Element.extend({
+	draw: function() {
+		var ctx = this._chart.ctx;
+		var vm = this._view;
+		var left, right, top, bottom, signX, signY, borderSkipped;
+		var borderWidth = vm.borderWidth;
+
+		if (!vm.horizontal) {
+			// bar
+			left = vm.x - vm.width / 2;
+			right = vm.x + vm.width / 2;
+			top = vm.y;
+			bottom = vm.base;
+			signX = 1;
+			signY = bottom > top ? 1 : -1;
+			borderSkipped = vm.borderSkipped || 'bottom';
+		} else {
+			// horizontal bar
+			left = vm.base;
+			right = vm.x;
+			top = vm.y - vm.height / 2;
+			bottom = vm.y + vm.height / 2;
+			signX = right > left ? 1 : -1;
+			signY = 1;
+			borderSkipped = vm.borderSkipped || 'left';
+		}
+
+		// Canvas doesn't allow us to stroke inside the width so we can
+		// adjust the sizes to fit if we're setting a stroke on the line
+		if (borderWidth) {
+			// borderWidth shold be less than bar width and bar height.
+			var barSize = Math.min(Math.abs(left - right), Math.abs(top - bottom));
+			borderWidth = borderWidth > barSize ? barSize : borderWidth;
+			var halfStroke = borderWidth / 2;
+			// Adjust borderWidth when bar top position is near vm.base(zero).
+			var borderLeft = left + (borderSkipped !== 'left' ? halfStroke * signX : 0);
+			var borderRight = right + (borderSkipped !== 'right' ? -halfStroke * signX : 0);
+			var borderTop = top + (borderSkipped !== 'top' ? halfStroke * signY : 0);
+			var borderBottom = bottom + (borderSkipped !== 'bottom' ? -halfStroke * signY : 0);
+			// not become a vertical line?
+			if (borderLeft !== borderRight) {
+				top = borderTop;
+				bottom = borderBottom;
 			}
-
-			if (item && item.canvas) {
-				// Support for any object associated to a canvas (including a context2d)
-				item = item.canvas;
+			// not become a horizontal line?
+			if (borderTop !== borderBottom) {
+				left = borderLeft;
+				right = borderRight;
 			}
+		}
 
-			// To prevent canvas fingerprinting, some add-ons undefine the getContext
-			// method, for example: https://github.com/kkapsner/CanvasBlocker
-			// https://github.com/chartjs/Chart.js/issues/2807
-			var context = item && item.getContext && item.getContext('2d');
+		ctx.beginPath();
+		ctx.fillStyle = vm.backgroundColor;
+		ctx.strokeStyle = vm.borderColor;
+		ctx.lineWidth = borderWidth;
 
-			// `instanceof HTMLCanvasElement/CanvasRenderingContext2D` fails when the item is
-			// inside an iframe or when running in a protected environment. We could guess the
-			// types from their toString() value but let's keep things flexible and assume it's
-			// a sufficient condition if the item has a context2D which has item as `canvas`.
-			// https://github.com/chartjs/Chart.js/issues/3887
-			// https://github.com/chartjs/Chart.js/issues/4102
-			// https://github.com/chartjs/Chart.js/issues/4152
-			if (context && context.canvas === item) {
-				initCanvas(item, config);
-				return context;
-			}
+		// Corner points, from bottom-left to bottom-right clockwise
+		// | 1 2 |
+		// | 0 3 |
+		var corners = [
+			[left, bottom],
+			[left, top],
+			[right, top],
+			[right, bottom]
+		];
 
-			return null;
-		},
+		// Find first (starting) corner with fallback to 'bottom'
+		var borders = ['bottom', 'left', 'top', 'right'];
+		var startCorner = borders.indexOf(borderSkipped, 0);
+		if (startCorner === -1) {
+			startCorner = 0;
+		}
 
-		releaseContext: function(context) {
-			var canvas = context.canvas;
-			if (!canvas._chartjs) {
+		function cornerAt(index) {
+			return corners[(startCorner + index) % 4];
+		}
+
+		// Draw rectangle from 'startCorner'
+		var corner = cornerAt(0);
+		ctx.moveTo(corner[0], corner[1]);
+
+		for (var i = 1; i < 4; i++) {
+			corner = cornerAt(i);
+			ctx.lineTo(corner[0], corner[1]);
+		}
+
+		ctx.fill();
+		if (borderWidth) {
+			ctx.stroke();
+		}
+	},
+
+	height: function() {
+		var vm = this._view;
+		return vm.base - vm.y;
+	},
+
+	inRange: function(mouseX, mouseY) {
+		var inRange = false;
+
+		if (this._view) {
+			var bounds = getBarBounds(this);
+			inRange = mouseX >= bounds.left && mouseX <= bounds.right && mouseY >= bounds.top && mouseY <= bounds.bottom;
+		}
+
+		return inRange;
+	},
+
+	inLabelRange: function(mouseX, mouseY) {
+		var me = this;
+		if (!me._view) {
+			return false;
+		}
+
+		var inRange = false;
+		var bounds = getBarBounds(me);
+
+		if (isVertical(me)) {
+			inRange = mouseX >= bounds.left && mouseX <= bounds.right;
+		} else {
+			inRange = mouseY >= bounds.top && mouseY <= bounds.bottom;
+		}
+
+		return inRange;
+	},
+
+	inXRange: function(mouseX) {
+		var bounds = getBarBounds(this);
+		return mouseX >= bounds.left && mouseX <= bounds.right;
+	},
+
+	inYRange: function(mouseY) {
+		var bounds = getBarBounds(this);
+		return mouseY >= bounds.top && mouseY <= bounds.bottom;
+	},
+
+	getCenterPoint: function() {
+		var vm = this._view;
+		var x, y;
+		if (isVertical(this)) {
+			x = vm.x;
+			y = (vm.y + vm.base) / 2;
+		} else {
+			x = (vm.x + vm.base) / 2;
+			y = vm.y;
+		}
+
+		return {x: x, y: y};
+	},
+
+	getArea: function() {
+		var vm = this._view;
+		return vm.width * Math.abs(vm.y - vm.base);
+	},
+
+	tooltipPosition: function() {
+		var vm = this._view;
+		return {
+			x: vm.x,
+			y: vm.y
+		};
+	}
+});
+
+},{"25":25,"26":26}],40:[function(require,module,exports){
+'use strict';
+
+module.exports = {};
+module.exports.Arc = require(36);
+module.exports.Line = require(37);
+module.exports.Point = require(38);
+module.exports.Rectangle = require(39);
+
+},{"36":36,"37":37,"38":38,"39":39}],41:[function(require,module,exports){
+'use strict';
+
+var helpers = require(42);
+
+/**
+ * @namespace Chart.helpers.canvas
+ */
+var exports = module.exports = {
+	/**
+	 * Clears the entire canvas associated to the given `chart`.
+	 * @param {Chart} chart - The chart for which to clear the canvas.
+	 */
+	clear: function(chart) {
+		chart.ctx.clearRect(0, 0, chart.width, chart.height);
+	},
+
+	/**
+	 * Creates a "path" for a rectangle with rounded corners at position (x, y) with a
+	 * given size (width, height) and the same `radius` for all corners.
+	 * @param {CanvasRenderingContext2D} ctx - The canvas 2D Context.
+	 * @param {Number} x - The x axis of the coordinate for the rectangle starting point.
+	 * @param {Number} y - The y axis of the coordinate for the rectangle starting point.
+	 * @param {Number} width - The rectangle's width.
+	 * @param {Number} height - The rectangle's height.
+	 * @param {Number} radius - The rounded amount (in pixels) for the four corners.
+	 * @todo handle `radius` as top-left, top-right, bottom-right, bottom-left array/object?
+	 */
+	roundedRect: function(ctx, x, y, width, height, radius) {
+		if (radius) {
+			var rx = Math.min(radius, width / 2);
+			var ry = Math.min(radius, height / 2);
+
+			ctx.moveTo(x + rx, y);
+			ctx.lineTo(x + width - rx, y);
+			ctx.quadraticCurveTo(x + width, y, x + width, y + ry);
+			ctx.lineTo(x + width, y + height - ry);
+			ctx.quadraticCurveTo(x + width, y + height, x + width - rx, y + height);
+			ctx.lineTo(x + rx, y + height);
+			ctx.quadraticCurveTo(x, y + height, x, y + height - ry);
+			ctx.lineTo(x, y + ry);
+			ctx.quadraticCurveTo(x, y, x + rx, y);
+		} else {
+			ctx.rect(x, y, width, height);
+		}
+	},
+
+	drawPoint: function(ctx, style, radius, x, y) {
+		var type, edgeLength, xOffset, yOffset, height, size;
+
+		if (style && typeof style === 'object') {
+			type = style.toString();
+			if (type === '[object HTMLImageElement]' || type === '[object HTMLCanvasElement]') {
+				ctx.drawImage(style, x - style.width / 2, y - style.height / 2, style.width, style.height);
 				return;
 			}
+		}
 
-			var initial = canvas._chartjs.initial;
-			['height', 'width'].forEach(function(prop) {
-				var value = initial[prop];
-				if (value === undefined || value === null) {
-					canvas.removeAttribute(prop);
-				} else {
-					canvas.setAttribute(prop, value);
+		if (isNaN(radius) || radius <= 0) {
+			return;
+		}
+
+		switch (style) {
+		// Default includes circle
+		default:
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, Math.PI * 2);
+			ctx.closePath();
+			ctx.fill();
+			break;
+		case 'triangle':
+			ctx.beginPath();
+			edgeLength = 3 * radius / Math.sqrt(3);
+			height = edgeLength * Math.sqrt(3) / 2;
+			ctx.moveTo(x - edgeLength / 2, y + height / 3);
+			ctx.lineTo(x + edgeLength / 2, y + height / 3);
+			ctx.lineTo(x, y - 2 * height / 3);
+			ctx.closePath();
+			ctx.fill();
+			break;
+		case 'rect':
+			size = 1 / Math.SQRT2 * radius;
+			ctx.beginPath();
+			ctx.fillRect(x - size, y - size, 2 * size, 2 * size);
+			ctx.strokeRect(x - size, y - size, 2 * size, 2 * size);
+			break;
+		case 'rectRounded':
+			var offset = radius / Math.SQRT2;
+			var leftX = x - offset;
+			var topY = y - offset;
+			var sideSize = Math.SQRT2 * radius;
+			ctx.beginPath();
+			this.roundedRect(ctx, leftX, topY, sideSize, sideSize, radius / 2);
+			ctx.closePath();
+			ctx.fill();
+			break;
+		case 'rectRot':
+			size = 1 / Math.SQRT2 * radius;
+			ctx.beginPath();
+			ctx.moveTo(x - size, y);
+			ctx.lineTo(x, y + size);
+			ctx.lineTo(x + size, y);
+			ctx.lineTo(x, y - size);
+			ctx.closePath();
+			ctx.fill();
+			break;
+		case 'cross':
+			ctx.beginPath();
+			ctx.moveTo(x, y + radius);
+			ctx.lineTo(x, y - radius);
+			ctx.moveTo(x - radius, y);
+			ctx.lineTo(x + radius, y);
+			ctx.closePath();
+			break;
+		case 'crossRot':
+			ctx.beginPath();
+			xOffset = Math.cos(Math.PI / 4) * radius;
+			yOffset = Math.sin(Math.PI / 4) * radius;
+			ctx.moveTo(x - xOffset, y - yOffset);
+			ctx.lineTo(x + xOffset, y + yOffset);
+			ctx.moveTo(x - xOffset, y + yOffset);
+			ctx.lineTo(x + xOffset, y - yOffset);
+			ctx.closePath();
+			break;
+		case 'star':
+			ctx.beginPath();
+			ctx.moveTo(x, y + radius);
+			ctx.lineTo(x, y - radius);
+			ctx.moveTo(x - radius, y);
+			ctx.lineTo(x + radius, y);
+			xOffset = Math.cos(Math.PI / 4) * radius;
+			yOffset = Math.sin(Math.PI / 4) * radius;
+			ctx.moveTo(x - xOffset, y - yOffset);
+			ctx.lineTo(x + xOffset, y + yOffset);
+			ctx.moveTo(x - xOffset, y + yOffset);
+			ctx.lineTo(x + xOffset, y - yOffset);
+			ctx.closePath();
+			break;
+		case 'line':
+			ctx.beginPath();
+			ctx.moveTo(x - radius, y);
+			ctx.lineTo(x + radius, y);
+			ctx.closePath();
+			break;
+		case 'dash':
+			ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.lineTo(x + radius, y);
+			ctx.closePath();
+			break;
+		}
+
+		ctx.stroke();
+	},
+
+	clipArea: function(ctx, area) {
+		ctx.save();
+		ctx.beginPath();
+		ctx.rect(area.left, area.top, area.right - area.left, area.bottom - area.top);
+		ctx.clip();
+	},
+
+	unclipArea: function(ctx) {
+		ctx.restore();
+	},
+
+	lineTo: function(ctx, previous, target, flip) {
+		if (target.steppedLine) {
+			if ((target.steppedLine === 'after' && !flip) || (target.steppedLine !== 'after' && flip)) {
+				ctx.lineTo(previous.x, target.y);
+			} else {
+				ctx.lineTo(target.x, previous.y);
+			}
+			ctx.lineTo(target.x, target.y);
+			return;
+		}
+
+		if (!target.tension) {
+			ctx.lineTo(target.x, target.y);
+			return;
+		}
+
+		ctx.bezierCurveTo(
+			flip ? previous.controlPointPreviousX : previous.controlPointNextX,
+			flip ? previous.controlPointPreviousY : previous.controlPointNextY,
+			flip ? target.controlPointNextX : target.controlPointPreviousX,
+			flip ? target.controlPointNextY : target.controlPointPreviousY,
+			target.x,
+			target.y);
+	}
+};
+
+// DEPRECATIONS
+
+/**
+ * Provided for backward compatibility, use Chart.helpers.canvas.clear instead.
+ * @namespace Chart.helpers.clear
+ * @deprecated since version 2.7.0
+ * @todo remove at version 3
+ * @private
+ */
+helpers.clear = exports.clear;
+
+/**
+ * Provided for backward compatibility, use Chart.helpers.canvas.roundedRect instead.
+ * @namespace Chart.helpers.drawRoundedRectangle
+ * @deprecated since version 2.7.0
+ * @todo remove at version 3
+ * @private
+ */
+helpers.drawRoundedRectangle = function(ctx) {
+	ctx.beginPath();
+	exports.roundedRect.apply(exports, arguments);
+	ctx.closePath();
+};
+
+},{"42":42}],42:[function(require,module,exports){
+'use strict';
+
+/**
+ * @namespace Chart.helpers
+ */
+var helpers = {
+	/**
+	 * An empty function that can be used, for example, for optional callback.
+	 */
+	noop: function() {},
+
+	/**
+	 * Returns a unique id, sequentially generated from a global variable.
+	 * @returns {Number}
+	 * @function
+	 */
+	uid: (function() {
+		var id = 0;
+		return function() {
+			return id++;
+		};
+	}()),
+
+	/**
+	 * Returns true if `value` is neither null nor undefined, else returns false.
+	 * @param {*} value - The value to test.
+	 * @returns {Boolean}
+	 * @since 2.7.0
+	 */
+	isNullOrUndef: function(value) {
+		return value === null || typeof value === 'undefined';
+	},
+
+	/**
+	 * Returns true if `value` is an array, else returns false.
+	 * @param {*} value - The value to test.
+	 * @returns {Boolean}
+	 * @function
+	 */
+	isArray: Array.isArray ? Array.isArray : function(value) {
+		return Object.prototype.toString.call(value) === '[object Array]';
+	},
+
+	/**
+	 * Returns true if `value` is an object (excluding null), else returns false.
+	 * @param {*} value - The value to test.
+	 * @returns {Boolean}
+	 * @since 2.7.0
+	 */
+	isObject: function(value) {
+		return value !== null && Object.prototype.toString.call(value) === '[object Object]';
+	},
+
+	/**
+	 * Returns `value` if defined, else returns `defaultValue`.
+	 * @param {*} value - The value to return if defined.
+	 * @param {*} defaultValue - The value to return if `value` is undefined.
+	 * @returns {*}
+	 */
+	valueOrDefault: function(value, defaultValue) {
+		return typeof value === 'undefined' ? defaultValue : value;
+	},
+
+	/**
+	 * Returns value at the given `index` in array if defined, else returns `defaultValue`.
+	 * @param {Array} value - The array to lookup for value at `index`.
+	 * @param {Number} index - The index in `value` to lookup for value.
+	 * @param {*} defaultValue - The value to return if `value[index]` is undefined.
+	 * @returns {*}
+	 */
+	valueAtIndexOrDefault: function(value, index, defaultValue) {
+		return helpers.valueOrDefault(helpers.isArray(value) ? value[index] : value, defaultValue);
+	},
+
+	/**
+	 * Calls `fn` with the given `args` in the scope defined by `thisArg` and returns the
+	 * value returned by `fn`. If `fn` is not a function, this method returns undefined.
+	 * @param {Function} fn - The function to call.
+	 * @param {Array|undefined|null} args - The arguments with which `fn` should be called.
+	 * @param {Object} [thisArg] - The value of `this` provided for the call to `fn`.
+	 * @returns {*}
+	 */
+	callback: function(fn, args, thisArg) {
+		if (fn && typeof fn.call === 'function') {
+			return fn.apply(thisArg, args);
+		}
+	},
+
+	/**
+	 * Note(SB) for performance sake, this method should only be used when loopable type
+	 * is unknown or in none intensive code (not called often and small loopable). Else
+	 * it's preferable to use a regular for() loop and save extra function calls.
+	 * @param {Object|Array} loopable - The object or array to be iterated.
+	 * @param {Function} fn - The function to call for each item.
+	 * @param {Object} [thisArg] - The value of `this` provided for the call to `fn`.
+	 * @param {Boolean} [reverse] - If true, iterates backward on the loopable.
+	 */
+	each: function(loopable, fn, thisArg, reverse) {
+		var i, len, keys;
+		if (helpers.isArray(loopable)) {
+			len = loopable.length;
+			if (reverse) {
+				for (i = len - 1; i >= 0; i--) {
+					fn.call(thisArg, loopable[i], i);
 				}
-			});
+			} else {
+				for (i = 0; i < len; i++) {
+					fn.call(thisArg, loopable[i], i);
+				}
+			}
+		} else if (helpers.isObject(loopable)) {
+			keys = Object.keys(loopable);
+			len = keys.length;
+			for (i = 0; i < len; i++) {
+				fn.call(thisArg, loopable[keys[i]], keys[i]);
+			}
+		}
+	},
 
-			helpers.each(initial.style || {}, function(value, key) {
-				canvas.style[key] = value;
-			});
+	/**
+	 * Returns true if the `a0` and `a1` arrays have the same content, else returns false.
+	 * @see http://stackoverflow.com/a/14853974
+	 * @param {Array} a0 - The array to compare
+	 * @param {Array} a1 - The array to compare
+	 * @returns {Boolean}
+	 */
+	arrayEquals: function(a0, a1) {
+		var i, ilen, v0, v1;
 
-			// The canvas render size might have been changed (and thus the state stack discarded),
-			// we can't use save() and restore() to restore the initial state. So make sure that at
-			// least the canvas context is reset to the default state by setting the canvas width.
-			// https://www.w3.org/TR/2011/WD-html5-20110525/the-canvas-element.html
-			canvas.width = canvas.width;
+		if (!a0 || !a1 || a0.length !== a1.length) {
+			return false;
+		}
 
-			delete canvas._chartjs;
-		},
+		for (i = 0, ilen = a0.length; i < ilen; ++i) {
+			v0 = a0[i];
+			v1 = a1[i];
 
-		addEventListener: function(chart, type, listener) {
-			var canvas = chart.canvas;
-			if (type === 'resize') {
-				// Note: the resize event is not supported on all browsers.
-				addResizeListener(canvas.parentNode, listener, chart);
-				return;
+			if (v0 instanceof Array && v1 instanceof Array) {
+				if (!helpers.arrayEquals(v0, v1)) {
+					return false;
+				}
+			} else if (v0 !== v1) {
+				// NOTE: two different object instances will never be equal: {x:20} != {x:20}
+				return false;
+			}
+		}
+
+		return true;
+	},
+
+	/**
+	 * Returns a deep copy of `source` without keeping references on objects and arrays.
+	 * @param {*} source - The value to clone.
+	 * @returns {*}
+	 */
+	clone: function(source) {
+		if (helpers.isArray(source)) {
+			return source.map(helpers.clone);
+		}
+
+		if (helpers.isObject(source)) {
+			var target = {};
+			var keys = Object.keys(source);
+			var klen = keys.length;
+			var k = 0;
+
+			for (; k < klen; ++k) {
+				target[keys[k]] = helpers.clone(source[keys[k]]);
 			}
 
-			var stub = listener._chartjs || (listener._chartjs = {});
-			var proxies = stub.proxies || (stub.proxies = {});
-			var proxy = proxies[chart.id + '_' + type] = function(event) {
-				listener(fromNativeEvent(event, chart));
-			};
+			return target;
+		}
 
-			helpers.addEvent(canvas, type, proxy);
-		},
+		return source;
+	},
 
-		removeEventListener: function(chart, type, listener) {
-			var canvas = chart.canvas;
-			if (type === 'resize') {
-				// Note: the resize event is not supported on all browsers.
-				removeResizeListener(canvas.parentNode, listener);
-				return;
+	/**
+	 * The default merger when Chart.helpers.merge is called without merger option.
+	 * Note(SB): this method is also used by configMerge and scaleMerge as fallback.
+	 * @private
+	 */
+	_merger: function(key, target, source, options) {
+		var tval = target[key];
+		var sval = source[key];
+
+		if (helpers.isObject(tval) && helpers.isObject(sval)) {
+			helpers.merge(tval, sval, options);
+		} else {
+			target[key] = helpers.clone(sval);
+		}
+	},
+
+	/**
+	 * Merges source[key] in target[key] only if target[key] is undefined.
+	 * @private
+	 */
+	_mergerIf: function(key, target, source) {
+		var tval = target[key];
+		var sval = source[key];
+
+		if (helpers.isObject(tval) && helpers.isObject(sval)) {
+			helpers.mergeIf(tval, sval);
+		} else if (!target.hasOwnProperty(key)) {
+			target[key] = helpers.clone(sval);
+		}
+	},
+
+	/**
+	 * Recursively deep copies `source` properties into `target` with the given `options`.
+	 * IMPORTANT: `target` is not cloned and will be updated with `source` properties.
+	 * @param {Object} target - The target object in which all sources are merged into.
+	 * @param {Object|Array(Object)} source - Object(s) to merge into `target`.
+	 * @param {Object} [options] - Merging options:
+	 * @param {Function} [options.merger] - The merge method (key, target, source, options)
+	 * @returns {Object} The `target` object.
+	 */
+	merge: function(target, source, options) {
+		var sources = helpers.isArray(source) ? source : [source];
+		var ilen = sources.length;
+		var merge, i, keys, klen, k;
+
+		if (!helpers.isObject(target)) {
+			return target;
+		}
+
+		options = options || {};
+		merge = options.merger || helpers._merger;
+
+		for (i = 0; i < ilen; ++i) {
+			source = sources[i];
+			if (!helpers.isObject(source)) {
+				continue;
 			}
 
-			var stub = listener._chartjs || {};
-			var proxies = stub.proxies || {};
-			var proxy = proxies[chart.id + '_' + type];
-			if (!proxy) {
-				return;
+			keys = Object.keys(source);
+			for (k = 0, klen = keys.length; k < klen; ++k) {
+				merge(keys[k], target, source, options);
 			}
+		}
 
-			helpers.removeEvent(canvas, type, proxy);
+		return target;
+	},
+
+	/**
+	 * Recursively deep copies `source` properties into `target` *only* if not defined in target.
+	 * IMPORTANT: `target` is not cloned and will be updated with `source` properties.
+	 * @param {Object} target - The target object in which all sources are merged into.
+	 * @param {Object|Array(Object)} source - Object(s) to merge into `target`.
+	 * @returns {Object} The `target` object.
+	 */
+	mergeIf: function(target, source) {
+		return helpers.merge(target, source, {merger: helpers._mergerIf});
+	},
+
+	/**
+	 * Applies the contents of two or more objects together into the first object.
+	 * @param {Object} target - The target object in which all objects are merged into.
+	 * @param {Object} arg1 - Object containing additional properties to merge in target.
+	 * @param {Object} argN - Additional objects containing properties to merge in target.
+	 * @returns {Object} The `target` object.
+	 */
+	extend: function(target) {
+		var setFn = function(value, key) {
+			target[key] = value;
+		};
+		for (var i = 1, ilen = arguments.length; i < ilen; ++i) {
+			helpers.each(arguments[i], setFn);
+		}
+		return target;
+	},
+
+	/**
+	 * Basic javascript inheritance based on the model created in Backbone.js
+	 */
+	inherits: function(extensions) {
+		var me = this;
+		var ChartElement = (extensions && extensions.hasOwnProperty('constructor')) ? extensions.constructor : function() {
+			return me.apply(this, arguments);
+		};
+
+		var Surrogate = function() {
+			this.constructor = ChartElement;
+		};
+
+		Surrogate.prototype = me.prototype;
+		ChartElement.prototype = new Surrogate();
+		ChartElement.extend = helpers.inherits;
+
+		if (extensions) {
+			helpers.extend(ChartElement.prototype, extensions);
+		}
+
+		ChartElement.__super__ = me.prototype;
+		return ChartElement;
+	}
+};
+
+module.exports = helpers;
+
+// DEPRECATIONS
+
+/**
+ * Provided for backward compatibility, use Chart.helpers.callback instead.
+ * @function Chart.helpers.callCallback
+ * @deprecated since version 2.6.0
+ * @todo remove at version 3
+ * @private
+ */
+helpers.callCallback = helpers.callback;
+
+/**
+ * Provided for backward compatibility, use Array.prototype.indexOf instead.
+ * Array.prototype.indexOf compatibility: Chrome, Opera, Safari, FF1.5+, IE9+
+ * @function Chart.helpers.indexOf
+ * @deprecated since version 2.7.0
+ * @todo remove at version 3
+ * @private
+ */
+helpers.indexOf = function(array, item, fromIndex) {
+	return Array.prototype.indexOf.call(array, item, fromIndex);
+};
+
+/**
+ * Provided for backward compatibility, use Chart.helpers.valueOrDefault instead.
+ * @function Chart.helpers.getValueOrDefault
+ * @deprecated since version 2.7.0
+ * @todo remove at version 3
+ * @private
+ */
+helpers.getValueOrDefault = helpers.valueOrDefault;
+
+/**
+ * Provided for backward compatibility, use Chart.helpers.valueAtIndexOrDefault instead.
+ * @function Chart.helpers.getValueAtIndexOrDefault
+ * @deprecated since version 2.7.0
+ * @todo remove at version 3
+ * @private
+ */
+helpers.getValueAtIndexOrDefault = helpers.valueAtIndexOrDefault;
+
+},{}],43:[function(require,module,exports){
+'use strict';
+
+var helpers = require(42);
+
+/**
+ * Easing functions adapted from Robert Penner's easing equations.
+ * @namespace Chart.helpers.easingEffects
+ * @see http://www.robertpenner.com/easing/
+ */
+var effects = {
+	linear: function(t) {
+		return t;
+	},
+
+	easeInQuad: function(t) {
+		return t * t;
+	},
+
+	easeOutQuad: function(t) {
+		return -t * (t - 2);
+	},
+
+	easeInOutQuad: function(t) {
+		if ((t /= 0.5) < 1) {
+			return 0.5 * t * t;
+		}
+		return -0.5 * ((--t) * (t - 2) - 1);
+	},
+
+	easeInCubic: function(t) {
+		return t * t * t;
+	},
+
+	easeOutCubic: function(t) {
+		return (t = t - 1) * t * t + 1;
+	},
+
+	easeInOutCubic: function(t) {
+		if ((t /= 0.5) < 1) {
+			return 0.5 * t * t * t;
+		}
+		return 0.5 * ((t -= 2) * t * t + 2);
+	},
+
+	easeInQuart: function(t) {
+		return t * t * t * t;
+	},
+
+	easeOutQuart: function(t) {
+		return -((t = t - 1) * t * t * t - 1);
+	},
+
+	easeInOutQuart: function(t) {
+		if ((t /= 0.5) < 1) {
+			return 0.5 * t * t * t * t;
+		}
+		return -0.5 * ((t -= 2) * t * t * t - 2);
+	},
+
+	easeInQuint: function(t) {
+		return t * t * t * t * t;
+	},
+
+	easeOutQuint: function(t) {
+		return (t = t - 1) * t * t * t * t + 1;
+	},
+
+	easeInOutQuint: function(t) {
+		if ((t /= 0.5) < 1) {
+			return 0.5 * t * t * t * t * t;
+		}
+		return 0.5 * ((t -= 2) * t * t * t * t + 2);
+	},
+
+	easeInSine: function(t) {
+		return -Math.cos(t * (Math.PI / 2)) + 1;
+	},
+
+	easeOutSine: function(t) {
+		return Math.sin(t * (Math.PI / 2));
+	},
+
+	easeInOutSine: function(t) {
+		return -0.5 * (Math.cos(Math.PI * t) - 1);
+	},
+
+	easeInExpo: function(t) {
+		return (t === 0) ? 0 : Math.pow(2, 10 * (t - 1));
+	},
+
+	easeOutExpo: function(t) {
+		return (t === 1) ? 1 : -Math.pow(2, -10 * t) + 1;
+	},
+
+	easeInOutExpo: function(t) {
+		if (t === 0) {
+			return 0;
+		}
+		if (t === 1) {
+			return 1;
+		}
+		if ((t /= 0.5) < 1) {
+			return 0.5 * Math.pow(2, 10 * (t - 1));
+		}
+		return 0.5 * (-Math.pow(2, -10 * --t) + 2);
+	},
+
+	easeInCirc: function(t) {
+		if (t >= 1) {
+			return t;
+		}
+		return -(Math.sqrt(1 - t * t) - 1);
+	},
+
+	easeOutCirc: function(t) {
+		return Math.sqrt(1 - (t = t - 1) * t);
+	},
+
+	easeInOutCirc: function(t) {
+		if ((t /= 0.5) < 1) {
+			return -0.5 * (Math.sqrt(1 - t * t) - 1);
+		}
+		return 0.5 * (Math.sqrt(1 - (t -= 2) * t) + 1);
+	},
+
+	easeInElastic: function(t) {
+		var s = 1.70158;
+		var p = 0;
+		var a = 1;
+		if (t === 0) {
+			return 0;
+		}
+		if (t === 1) {
+			return 1;
+		}
+		if (!p) {
+			p = 0.3;
+		}
+		if (a < 1) {
+			a = 1;
+			s = p / 4;
+		} else {
+			s = p / (2 * Math.PI) * Math.asin(1 / a);
+		}
+		return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t - s) * (2 * Math.PI) / p));
+	},
+
+	easeOutElastic: function(t) {
+		var s = 1.70158;
+		var p = 0;
+		var a = 1;
+		if (t === 0) {
+			return 0;
+		}
+		if (t === 1) {
+			return 1;
+		}
+		if (!p) {
+			p = 0.3;
+		}
+		if (a < 1) {
+			a = 1;
+			s = p / 4;
+		} else {
+			s = p / (2 * Math.PI) * Math.asin(1 / a);
+		}
+		return a * Math.pow(2, -10 * t) * Math.sin((t - s) * (2 * Math.PI) / p) + 1;
+	},
+
+	easeInOutElastic: function(t) {
+		var s = 1.70158;
+		var p = 0;
+		var a = 1;
+		if (t === 0) {
+			return 0;
+		}
+		if ((t /= 0.5) === 2) {
+			return 1;
+		}
+		if (!p) {
+			p = 0.45;
+		}
+		if (a < 1) {
+			a = 1;
+			s = p / 4;
+		} else {
+			s = p / (2 * Math.PI) * Math.asin(1 / a);
+		}
+		if (t < 1) {
+			return -0.5 * (a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t - s) * (2 * Math.PI) / p));
+		}
+		return a * Math.pow(2, -10 * (t -= 1)) * Math.sin((t - s) * (2 * Math.PI) / p) * 0.5 + 1;
+	},
+	easeInBack: function(t) {
+		var s = 1.70158;
+		return t * t * ((s + 1) * t - s);
+	},
+
+	easeOutBack: function(t) {
+		var s = 1.70158;
+		return (t = t - 1) * t * ((s + 1) * t + s) + 1;
+	},
+
+	easeInOutBack: function(t) {
+		var s = 1.70158;
+		if ((t /= 0.5) < 1) {
+			return 0.5 * (t * t * (((s *= (1.525)) + 1) * t - s));
+		}
+		return 0.5 * ((t -= 2) * t * (((s *= (1.525)) + 1) * t + s) + 2);
+	},
+
+	easeInBounce: function(t) {
+		return 1 - effects.easeOutBounce(1 - t);
+	},
+
+	easeOutBounce: function(t) {
+		if (t < (1 / 2.75)) {
+			return 7.5625 * t * t;
+		}
+		if (t < (2 / 2.75)) {
+			return 7.5625 * (t -= (1.5 / 2.75)) * t + 0.75;
+		}
+		if (t < (2.5 / 2.75)) {
+			return 7.5625 * (t -= (2.25 / 2.75)) * t + 0.9375;
+		}
+		return 7.5625 * (t -= (2.625 / 2.75)) * t + 0.984375;
+	},
+
+	easeInOutBounce: function(t) {
+		if (t < 0.5) {
+			return effects.easeInBounce(t * 2) * 0.5;
+		}
+		return effects.easeOutBounce(t * 2 - 1) * 0.5 + 0.5;
+	}
+};
+
+module.exports = {
+	effects: effects
+};
+
+// DEPRECATIONS
+
+/**
+ * Provided for backward compatibility, use Chart.helpers.easing.effects instead.
+ * @function Chart.helpers.easingEffects
+ * @deprecated since version 2.7.0
+ * @todo remove at version 3
+ * @private
+ */
+helpers.easingEffects = effects;
+
+},{"42":42}],44:[function(require,module,exports){
+'use strict';
+
+var helpers = require(42);
+
+/**
+ * @alias Chart.helpers.options
+ * @namespace
+ */
+module.exports = {
+	/**
+	 * Converts the given line height `value` in pixels for a specific font `size`.
+	 * @param {Number|String} value - The lineHeight to parse (eg. 1.6, '14px', '75%', '1.6em').
+	 * @param {Number} size - The font size (in pixels) used to resolve relative `value`.
+	 * @returns {Number} The effective line height in pixels (size * 1.2 if value is invalid).
+	 * @see https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+	 * @since 2.7.0
+	 */
+	toLineHeight: function(value, size) {
+		var matches = ('' + value).match(/^(normal|(\d+(?:\.\d+)?)(px|em|%)?)$/);
+		if (!matches || matches[1] === 'normal') {
+			return size * 1.2;
+		}
+
+		value = +matches[2];
+
+		switch (matches[3]) {
+		case 'px':
+			return value;
+		case '%':
+			value /= 100;
+			break;
+		default:
+			break;
+		}
+
+		return size * value;
+	},
+
+	/**
+	 * Converts the given value into a padding object with pre-computed width/height.
+	 * @param {Number|Object} value - If a number, set the value to all TRBL component,
+	 *  else, if and object, use defined properties and sets undefined ones to 0.
+	 * @returns {Object} The padding values (top, right, bottom, left, width, height)
+	 * @since 2.7.0
+	 */
+	toPadding: function(value) {
+		var t, r, b, l;
+
+		if (helpers.isObject(value)) {
+			t = +value.top || 0;
+			r = +value.right || 0;
+			b = +value.bottom || 0;
+			l = +value.left || 0;
+		} else {
+			t = r = b = l = +value || 0;
+		}
+
+		return {
+			top: t,
+			right: r,
+			bottom: b,
+			left: l,
+			height: t + b,
+			width: l + r
+		};
+	},
+
+	/**
+	 * Evaluates the given `inputs` sequentially and returns the first defined value.
+	 * @param {Array[]} inputs - An array of values, falling back to the last value.
+	 * @param {Object} [context] - If defined and the current value is a function, the value
+	 * is called with `context` as first argument and the result becomes the new input.
+	 * @param {Number} [index] - If defined and the current value is an array, the value
+	 * at `index` become the new input.
+	 * @since 2.7.0
+	 */
+	resolve: function(inputs, context, index) {
+		var i, ilen, value;
+
+		for (i = 0, ilen = inputs.length; i < ilen; ++i) {
+			value = inputs[i];
+			if (value === undefined) {
+				continue;
+			}
+			if (context !== undefined && typeof value === 'function') {
+				value = value(context);
+			}
+			if (index !== undefined && helpers.isArray(value)) {
+				value = value[index];
+			}
+			if (value !== undefined) {
+				return value;
+			}
+		}
+	}
+};
+
+},{"42":42}],45:[function(require,module,exports){
+'use strict';
+
+module.exports = require(42);
+module.exports.easing = require(43);
+module.exports.canvas = require(41);
+module.exports.options = require(44);
+
+},{"41":41,"42":42,"43":43,"44":44}],46:[function(require,module,exports){
+/**
+ * Platform fallback implementation (minimal).
+ * @see https://github.com/chartjs/Chart.js/pull/4591#issuecomment-319575939
+ */
+
+module.exports = {
+	acquireContext: function(item) {
+		if (item && item.canvas) {
+			// Support for any object associated to a canvas (including a context2d)
+			item = item.canvas;
+		}
+
+		return item && item.getContext('2d') || null;
+	}
+};
+
+},{}],47:[function(require,module,exports){
+/**
+ * Chart.Platform implementation for targeting a web browser
+ */
+
+'use strict';
+
+var helpers = require(45);
+
+var EXPANDO_KEY = '$chartjs';
+var CSS_PREFIX = 'chartjs-';
+var CSS_RENDER_MONITOR = CSS_PREFIX + 'render-monitor';
+var CSS_RENDER_ANIMATION = CSS_PREFIX + 'render-animation';
+var ANIMATION_START_EVENTS = ['animationstart', 'webkitAnimationStart'];
+
+/**
+ * DOM event types -> Chart.js event types.
+ * Note: only events with different types are mapped.
+ * @see https://developer.mozilla.org/en-US/docs/Web/Events
+ */
+var EVENT_TYPES = {
+	touchstart: 'mousedown',
+	touchmove: 'mousemove',
+	touchend: 'mouseup',
+	pointerenter: 'mouseenter',
+	pointerdown: 'mousedown',
+	pointermove: 'mousemove',
+	pointerup: 'mouseup',
+	pointerleave: 'mouseout',
+	pointerout: 'mouseout'
+};
+
+/**
+ * The "used" size is the final value of a dimension property after all calculations have
+ * been performed. This method uses the computed style of `element` but returns undefined
+ * if the computed style is not expressed in pixels. That can happen in some cases where
+ * `element` has a size relative to its parent and this last one is not yet displayed,
+ * for example because of `display: none` on a parent node.
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
+ * @returns {Number} Size in pixels or undefined if unknown.
+ */
+function readUsedSize(element, property) {
+	var value = helpers.getStyle(element, property);
+	var matches = value && value.match(/^(\d+)(\.\d+)?px$/);
+	return matches ? Number(matches[1]) : undefined;
+}
+
+/**
+ * Initializes the canvas style and render size without modifying the canvas display size,
+ * since responsiveness is handled by the controller.resize() method. The config is used
+ * to determine the aspect ratio to apply in case no explicit height has been specified.
+ */
+function initCanvas(canvas, config) {
+	var style = canvas.style;
+
+	// NOTE(SB) canvas.getAttribute('width') !== canvas.width: in the first case it
+	// returns null or '' if no explicit value has been set to the canvas attribute.
+	var renderHeight = canvas.getAttribute('height');
+	var renderWidth = canvas.getAttribute('width');
+
+	// Chart.js modifies some canvas values that we want to restore on destroy
+	canvas[EXPANDO_KEY] = {
+		initial: {
+			height: renderHeight,
+			width: renderWidth,
+			style: {
+				display: style.display,
+				height: style.height,
+				width: style.width
+			}
 		}
 	};
+
+	// Force canvas to display as block to avoid extra space caused by inline
+	// elements, which would interfere with the responsive resize process.
+	// https://github.com/chartjs/Chart.js/issues/2538
+	style.display = style.display || 'block';
+
+	if (renderWidth === null || renderWidth === '') {
+		var displayWidth = readUsedSize(canvas, 'width');
+		if (displayWidth !== undefined) {
+			canvas.width = displayWidth;
+		}
+	}
+
+	if (renderHeight === null || renderHeight === '') {
+		if (canvas.style.height === '') {
+			// If no explicit render height and style height, let's apply the aspect ratio,
+			// which one can be specified by the user but also by charts as default option
+			// (i.e. options.aspectRatio). If not specified, use canvas aspect ratio of 2.
+			canvas.height = canvas.width / (config.options.aspectRatio || 2);
+		} else {
+			var displayHeight = readUsedSize(canvas, 'height');
+			if (displayWidth !== undefined) {
+				canvas.height = displayHeight;
+			}
+		}
+	}
+
+	return canvas;
+}
+
+/**
+ * Detects support for options object argument in addEventListener.
+ * https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
+ * @private
+ */
+var supportsEventListenerOptions = (function() {
+	var supports = false;
+	try {
+		var options = Object.defineProperty({}, 'passive', {
+			get: function() {
+				supports = true;
+			}
+		});
+		window.addEventListener('e', null, options);
+	} catch (e) {
+		// continue regardless of error
+	}
+	return supports;
+}());
+
+// Default passive to true as expected by Chrome for 'touchstart' and 'touchend' events.
+// https://github.com/chartjs/Chart.js/issues/4287
+var eventListenerOptions = supportsEventListenerOptions ? {passive: true} : false;
+
+function addEventListener(node, type, listener) {
+	node.addEventListener(type, listener, eventListenerOptions);
+}
+
+function removeEventListener(node, type, listener) {
+	node.removeEventListener(type, listener, eventListenerOptions);
+}
+
+function createEvent(type, chart, x, y, nativeEvent) {
+	return {
+		type: type,
+		chart: chart,
+		native: nativeEvent || null,
+		x: x !== undefined ? x : null,
+		y: y !== undefined ? y : null,
+	};
+}
+
+function fromNativeEvent(event, chart) {
+	var type = EVENT_TYPES[event.type] || event.type;
+	var pos = helpers.getRelativePosition(event, chart);
+	return createEvent(type, chart, pos.x, pos.y, event);
+}
+
+function throttled(fn, thisArg) {
+	var ticking = false;
+	var args = [];
+
+	return function() {
+		args = Array.prototype.slice.call(arguments);
+		thisArg = thisArg || this;
+
+		if (!ticking) {
+			ticking = true;
+			helpers.requestAnimFrame.call(window, function() {
+				ticking = false;
+				fn.apply(thisArg, args);
+			});
+		}
+	};
+}
+
+// Implementation based on https://github.com/marcj/css-element-queries
+function createResizer(handler) {
+	var resizer = document.createElement('div');
+	var cls = CSS_PREFIX + 'size-monitor';
+	var maxSize = 1000000;
+	var style =
+		'position:absolute;' +
+		'left:0;' +
+		'top:0;' +
+		'right:0;' +
+		'bottom:0;' +
+		'overflow:hidden;' +
+		'pointer-events:none;' +
+		'visibility:hidden;' +
+		'z-index:-1;';
+
+	resizer.style.cssText = style;
+	resizer.className = cls;
+	resizer.innerHTML =
+		'<div class="' + cls + '-expand" style="' + style + '">' +
+			'<div style="' +
+				'position:absolute;' +
+				'width:' + maxSize + 'px;' +
+				'height:' + maxSize + 'px;' +
+				'left:0;' +
+				'top:0">' +
+			'</div>' +
+		'</div>' +
+		'<div class="' + cls + '-shrink" style="' + style + '">' +
+			'<div style="' +
+				'position:absolute;' +
+				'width:200%;' +
+				'height:200%;' +
+				'left:0; ' +
+				'top:0">' +
+			'</div>' +
+		'</div>';
+
+	var expand = resizer.childNodes[0];
+	var shrink = resizer.childNodes[1];
+
+	resizer._reset = function() {
+		expand.scrollLeft = maxSize;
+		expand.scrollTop = maxSize;
+		shrink.scrollLeft = maxSize;
+		shrink.scrollTop = maxSize;
+	};
+	var onScroll = function() {
+		resizer._reset();
+		handler();
+	};
+
+	addEventListener(expand, 'scroll', onScroll.bind(expand, 'expand'));
+	addEventListener(shrink, 'scroll', onScroll.bind(shrink, 'shrink'));
+
+	return resizer;
+}
+
+// https://davidwalsh.name/detect-node-insertion
+function watchForRender(node, handler) {
+	var expando = node[EXPANDO_KEY] || (node[EXPANDO_KEY] = {});
+	var proxy = expando.renderProxy = function(e) {
+		if (e.animationName === CSS_RENDER_ANIMATION) {
+			handler();
+		}
+	};
+
+	helpers.each(ANIMATION_START_EVENTS, function(type) {
+		addEventListener(node, type, proxy);
+	});
+
+	// #4737: Chrome might skip the CSS animation when the CSS_RENDER_MONITOR class
+	// is removed then added back immediately (same animation frame?). Accessing the
+	// `offsetParent` property will force a reflow and re-evaluate the CSS animation.
+	// https://gist.github.com/paulirish/5d52fb081b3570c81e3a#box-metrics
+	// https://github.com/chartjs/Chart.js/issues/4737
+	expando.reflow = !!node.offsetParent;
+
+	node.classList.add(CSS_RENDER_MONITOR);
+}
+
+function unwatchForRender(node) {
+	var expando = node[EXPANDO_KEY] || {};
+	var proxy = expando.renderProxy;
+
+	if (proxy) {
+		helpers.each(ANIMATION_START_EVENTS, function(type) {
+			removeEventListener(node, type, proxy);
+		});
+
+		delete expando.renderProxy;
+	}
+
+	node.classList.remove(CSS_RENDER_MONITOR);
+}
+
+function addResizeListener(node, listener, chart) {
+	var expando = node[EXPANDO_KEY] || (node[EXPANDO_KEY] = {});
+
+	// Let's keep track of this added resizer and thus avoid DOM query when removing it.
+	var resizer = expando.resizer = createResizer(throttled(function() {
+		if (expando.resizer) {
+			return listener(createEvent('resize', chart));
+		}
+	}));
+
+	// The resizer needs to be attached to the node parent, so we first need to be
+	// sure that `node` is attached to the DOM before injecting the resizer element.
+	watchForRender(node, function() {
+		if (expando.resizer) {
+			var container = node.parentNode;
+			if (container && container !== resizer.parentNode) {
+				container.insertBefore(resizer, container.firstChild);
+			}
+
+			// The container size might have changed, let's reset the resizer state.
+			resizer._reset();
+		}
+	});
+}
+
+function removeResizeListener(node) {
+	var expando = node[EXPANDO_KEY] || {};
+	var resizer = expando.resizer;
+
+	delete expando.resizer;
+	unwatchForRender(node);
+
+	if (resizer && resizer.parentNode) {
+		resizer.parentNode.removeChild(resizer);
+	}
+}
+
+function injectCSS(platform, css) {
+	// http://stackoverflow.com/q/3922139
+	var style = platform._style || document.createElement('style');
+	if (!platform._style) {
+		platform._style = style;
+		css = '/* Chart.js */\n' + css;
+		style.setAttribute('type', 'text/css');
+		document.getElementsByTagName('head')[0].appendChild(style);
+	}
+
+	style.appendChild(document.createTextNode(css));
+}
+
+module.exports = {
+	/**
+	 * This property holds whether this platform is enabled for the current environment.
+	 * Currently used by platform.js to select the proper implementation.
+	 * @private
+	 */
+	_enabled: typeof window !== 'undefined' && typeof document !== 'undefined',
+
+	initialize: function() {
+		var keyframes = 'from{opacity:0.99}to{opacity:1}';
+
+		injectCSS(this,
+			// DOM rendering detection
+			// https://davidwalsh.name/detect-node-insertion
+			'@-webkit-keyframes ' + CSS_RENDER_ANIMATION + '{' + keyframes + '}' +
+			'@keyframes ' + CSS_RENDER_ANIMATION + '{' + keyframes + '}' +
+			'.' + CSS_RENDER_MONITOR + '{' +
+				'-webkit-animation:' + CSS_RENDER_ANIMATION + ' 0.001s;' +
+				'animation:' + CSS_RENDER_ANIMATION + ' 0.001s;' +
+			'}'
+		);
+	},
+
+	acquireContext: function(item, config) {
+		if (typeof item === 'string') {
+			item = document.getElementById(item);
+		} else if (item.length) {
+			// Support for array based queries (such as jQuery)
+			item = item[0];
+		}
+
+		if (item && item.canvas) {
+			// Support for any object associated to a canvas (including a context2d)
+			item = item.canvas;
+		}
+
+		// To prevent canvas fingerprinting, some add-ons undefine the getContext
+		// method, for example: https://github.com/kkapsner/CanvasBlocker
+		// https://github.com/chartjs/Chart.js/issues/2807
+		var context = item && item.getContext && item.getContext('2d');
+
+		// `instanceof HTMLCanvasElement/CanvasRenderingContext2D` fails when the item is
+		// inside an iframe or when running in a protected environment. We could guess the
+		// types from their toString() value but let's keep things flexible and assume it's
+		// a sufficient condition if the item has a context2D which has item as `canvas`.
+		// https://github.com/chartjs/Chart.js/issues/3887
+		// https://github.com/chartjs/Chart.js/issues/4102
+		// https://github.com/chartjs/Chart.js/issues/4152
+		if (context && context.canvas === item) {
+			initCanvas(item, config);
+			return context;
+		}
+
+		return null;
+	},
+
+	releaseContext: function(context) {
+		var canvas = context.canvas;
+		if (!canvas[EXPANDO_KEY]) {
+			return;
+		}
+
+		var initial = canvas[EXPANDO_KEY].initial;
+		['height', 'width'].forEach(function(prop) {
+			var value = initial[prop];
+			if (helpers.isNullOrUndef(value)) {
+				canvas.removeAttribute(prop);
+			} else {
+				canvas.setAttribute(prop, value);
+			}
+		});
+
+		helpers.each(initial.style || {}, function(value, key) {
+			canvas.style[key] = value;
+		});
+
+		// The canvas render size might have been changed (and thus the state stack discarded),
+		// we can't use save() and restore() to restore the initial state. So make sure that at
+		// least the canvas context is reset to the default state by setting the canvas width.
+		// https://www.w3.org/TR/2011/WD-html5-20110525/the-canvas-element.html
+		canvas.width = canvas.width;
+
+		delete canvas[EXPANDO_KEY];
+	},
+
+	addEventListener: function(chart, type, listener) {
+		var canvas = chart.canvas;
+		if (type === 'resize') {
+			// Note: the resize event is not supported on all browsers.
+			addResizeListener(canvas, listener, chart);
+			return;
+		}
+
+		var expando = listener[EXPANDO_KEY] || (listener[EXPANDO_KEY] = {});
+		var proxies = expando.proxies || (expando.proxies = {});
+		var proxy = proxies[chart.id + '_' + type] = function(event) {
+			listener(fromNativeEvent(event, chart));
+		};
+
+		addEventListener(canvas, type, proxy);
+	},
+
+	removeEventListener: function(chart, type, listener) {
+		var canvas = chart.canvas;
+		if (type === 'resize') {
+			// Note: the resize event is not supported on all browsers.
+			removeResizeListener(canvas, listener);
+			return;
+		}
+
+		var expando = listener[EXPANDO_KEY] || {};
+		var proxies = expando.proxies || {};
+		var proxy = proxies[chart.id + '_' + type];
+		if (!proxy) {
+			return;
+		}
+
+		removeEventListener(canvas, type, proxy);
+	}
 };
 
-},{}],40:[function(require,module,exports){
+// DEPRECATIONS
+
+/**
+ * Provided for backward compatibility, use EventTarget.addEventListener instead.
+ * EventTarget.addEventListener compatibility: Chrome, Opera 7, Safari, FF1.5+, IE9+
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+ * @function Chart.helpers.addEvent
+ * @deprecated since version 2.7.0
+ * @todo remove at version 3
+ * @private
+ */
+helpers.addEvent = addEventListener;
+
+/**
+ * Provided for backward compatibility, use EventTarget.removeEventListener instead.
+ * EventTarget.removeEventListener compatibility: Chrome, Opera 7, Safari, FF1.5+, IE9+
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
+ * @function Chart.helpers.removeEvent
+ * @deprecated since version 2.7.0
+ * @todo remove at version 3
+ * @private
+ */
+helpers.removeEvent = removeEventListener;
+
+},{"45":45}],48:[function(require,module,exports){
 'use strict';
 
-// By default, select the browser (DOM) platform.
+var helpers = require(45);
+var basic = require(46);
+var dom = require(47);
+
 // @TODO Make possible to select another platform at build time.
-var implementation = require(39);
+var implementation = dom._enabled ? dom : basic;
 
-module.exports = function(Chart) {
+/**
+ * @namespace Chart.platform
+ * @see https://chartjs.gitbooks.io/proposals/content/Platform.html
+ * @since 2.4.0
+ */
+module.exports = helpers.extend({
 	/**
-	 * @namespace Chart.platform
-	 * @see https://chartjs.gitbooks.io/proposals/content/Platform.html
-	 * @since 2.4.0
+	 * @since 2.7.0
 	 */
-	Chart.platform = {
-		/**
-		 * Called at chart construction time, returns a context2d instance implementing
-		 * the [W3C Canvas 2D Context API standard]{@link https://www.w3.org/TR/2dcontext/}.
-		 * @param {*} item - The native item from which to acquire context (platform specific)
-		 * @param {Object} options - The chart options
-		 * @returns {CanvasRenderingContext2D} context2d instance
-		 */
-		acquireContext: function() {},
-
-		/**
-		 * Called at chart destruction time, releases any resources associated to the context
-		 * previously returned by the acquireContext() method.
-		 * @param {CanvasRenderingContext2D} context - The context2d instance
-		 * @returns {Boolean} true if the method succeeded, else false
-		 */
-		releaseContext: function() {},
-
-		/**
-		 * Registers the specified listener on the given chart.
-		 * @param {Chart} chart - Chart from which to listen for event
-		 * @param {String} type - The ({@link IEvent}) type to listen for
-		 * @param {Function} listener - Receives a notification (an object that implements
-		 * the {@link IEvent} interface) when an event of the specified type occurs.
-		 */
-		addEventListener: function() {},
-
-		/**
-		 * Removes the specified listener previously registered with addEventListener.
-		 * @param {Chart} chart -Chart from which to remove the listener
-		 * @param {String} type - The ({@link IEvent}) type to remove
-		 * @param {Function} listener - The listener function to remove from the event target.
-		 */
-		removeEventListener: function() {}
-	};
+	initialize: function() {},
 
 	/**
-	 * @interface IPlatform
-	 * Allows abstracting platform dependencies away from the chart
-	 * @borrows Chart.platform.acquireContext as acquireContext
-	 * @borrows Chart.platform.releaseContext as releaseContext
-	 * @borrows Chart.platform.addEventListener as addEventListener
-	 * @borrows Chart.platform.removeEventListener as removeEventListener
+	 * Called at chart construction time, returns a context2d instance implementing
+	 * the [W3C Canvas 2D Context API standard]{@link https://www.w3.org/TR/2dcontext/}.
+	 * @param {*} item - The native item from which to acquire context (platform specific)
+	 * @param {Object} options - The chart options
+	 * @returns {CanvasRenderingContext2D} context2d instance
 	 */
+	acquireContext: function() {},
 
 	/**
-	 * @interface IEvent
-	 * @prop {String} type - The event type name, possible values are:
-	 * 'contextmenu', 'mouseenter', 'mousedown', 'mousemove', 'mouseup', 'mouseout',
-	 * 'click', 'dblclick', 'keydown', 'keypress', 'keyup' and 'resize'
-	 * @prop {*} native - The original native event (null for emulated events, e.g. 'resize')
-	 * @prop {Number} x - The mouse x position, relative to the canvas (null for incompatible events)
-	 * @prop {Number} y - The mouse y position, relative to the canvas (null for incompatible events)
+	 * Called at chart destruction time, releases any resources associated to the context
+	 * previously returned by the acquireContext() method.
+	 * @param {CanvasRenderingContext2D} context - The context2d instance
+	 * @returns {Boolean} true if the method succeeded, else false
 	 */
+	releaseContext: function() {},
 
-	Chart.helpers.extend(Chart.platform, implementation(Chart));
-};
+	/**
+	 * Registers the specified listener on the given chart.
+	 * @param {Chart} chart - Chart from which to listen for event
+	 * @param {String} type - The ({@link IEvent}) type to listen for
+	 * @param {Function} listener - Receives a notification (an object that implements
+	 * the {@link IEvent} interface) when an event of the specified type occurs.
+	 */
+	addEventListener: function() {},
 
-},{"39":39}],41:[function(require,module,exports){
+	/**
+	 * Removes the specified listener previously registered with addEventListener.
+	 * @param {Chart} chart -Chart from which to remove the listener
+	 * @param {String} type - The ({@link IEvent}) type to remove
+	 * @param {Function} listener - The listener function to remove from the event target.
+	 */
+	removeEventListener: function() {}
+
+}, implementation);
+
+/**
+ * @interface IPlatform
+ * Allows abstracting platform dependencies away from the chart
+ * @borrows Chart.platform.acquireContext as acquireContext
+ * @borrows Chart.platform.releaseContext as releaseContext
+ * @borrows Chart.platform.addEventListener as addEventListener
+ * @borrows Chart.platform.removeEventListener as removeEventListener
+ */
+
+/**
+ * @interface IEvent
+ * @prop {String} type - The event type name, possible values are:
+ * 'contextmenu', 'mouseenter', 'mousedown', 'mousemove', 'mouseup', 'mouseout',
+ * 'click', 'dblclick', 'keydown', 'keypress', 'keyup' and 'resize'
+ * @prop {*} native - The original native event (null for emulated events, e.g. 'resize')
+ * @prop {Number} x - The mouse x position, relative to the canvas (null for incompatible events)
+ * @prop {Number} y - The mouse y position, relative to the canvas (null for incompatible events)
+ */
+
+},{"45":45,"46":46,"47":47}],49:[function(require,module,exports){
+/**
+ * Plugin based on discussion from the following Chart.js issues:
+ * @see https://github.com/chartjs/Chart.js/issues/2380#issuecomment-279961569
+ * @see https://github.com/chartjs/Chart.js/issues/2440#issuecomment-256461897
+ */
+
 'use strict';
 
-module.exports = function(Chart) {
-	/**
-	 * Plugin based on discussion from the following Chart.js issues:
-	 * @see https://github.com/chartjs/Chart.js/issues/2380#issuecomment-279961569
-	 * @see https://github.com/chartjs/Chart.js/issues/2440#issuecomment-256461897
-	 */
-	Chart.defaults.global.plugins.filler = {
-		propagate: true
-	};
+var defaults = require(25);
+var elements = require(40);
+var helpers = require(45);
 
-	var defaults = Chart.defaults;
-	var helpers = Chart.helpers;
+defaults._set('global', {
+	plugins: {
+		filler: {
+			propagate: true
+		}
+	}
+});
+
+module.exports = function() {
+
 	var mappers = {
 		dataset: function(source) {
 			var index = source.fill;
@@ -10310,21 +11313,22 @@ module.exports = function(Chart) {
 			var meta = chart.getDatasetMeta(index);
 			var visible = meta && chart.isDatasetVisible(index);
 			var points = (visible && meta.dataset._children) || [];
+			var length = points.length || 0;
 
-			return !points.length? null : function(point, i) {
-				return points[i]._view || null;
+			return !length ? null : function(point, i) {
+				return (i < length && points[i]._view) || null;
 			};
 		},
 
 		boundary: function(source) {
 			var boundary = source.boundary;
-			var x = boundary? boundary.x : null;
-			var y = boundary? boundary.y : null;
+			var x = boundary ? boundary.x : null;
+			var y = boundary ? boundary.y : null;
 
 			return function(point) {
 				return {
-					x: x === null? point.x : x,
-					y: y === null? point.y : y,
+					x: x === null ? point.x : x,
+					y: y === null ? point.y : y,
 				};
 			};
 		}
@@ -10396,9 +11400,9 @@ module.exports = function(Chart) {
 		// controllers might still use it (e.g. the Smith chart).
 
 		if (fill === 'start') {
-			target = model.scaleBottom === undefined? scale.bottom : model.scaleBottom;
+			target = model.scaleBottom === undefined ? scale.bottom : model.scaleBottom;
 		} else if (fill === 'end') {
-			target = model.scaleTop === undefined? scale.top : model.scaleTop;
+			target = model.scaleTop === undefined ? scale.top : model.scaleTop;
 		} else if (model.scaleZero !== undefined) {
 			target = model.scaleZero;
 		} else if (scale.getBasePosition) {
@@ -10415,8 +11419,8 @@ module.exports = function(Chart) {
 			if (typeof target === 'number' && isFinite(target)) {
 				horizontal = scale.isHorizontal();
 				return {
-					x: horizontal? target : null,
-					y: horizontal? null : target
+					x: horizontal ? target : null,
+					y: horizontal ? null : target
 				};
 			}
 		}
@@ -10483,16 +11487,16 @@ module.exports = function(Chart) {
 
 		// building first area curve (normal)
 		ctx.moveTo(curve0[0].x, curve0[0].y);
-		for (i=1; i<len0; ++i) {
-			helpers.canvas.lineTo(ctx, curve0[i-1], curve0[i]);
+		for (i = 1; i < len0; ++i) {
+			helpers.canvas.lineTo(ctx, curve0[i - 1], curve0[i]);
 		}
 
 		// joining the two area curves
-		ctx.lineTo(curve1[len1-1].x, curve1[len1-1].y);
+		ctx.lineTo(curve1[len1 - 1].x, curve1[len1 - 1].y);
 
 		// building opposite area curve (reverse)
-		for (i=len1-1; i>0; --i) {
-			helpers.canvas.lineTo(ctx, curve1[i], curve1[i-1], true);
+		for (i = len1 - 1; i > 0; --i) {
+			helpers.canvas.lineTo(ctx, curve1[i], curve1[i - 1], true);
 		}
 	}
 
@@ -10508,7 +11512,7 @@ module.exports = function(Chart) {
 		ctx.beginPath();
 
 		for (i = 0, ilen = (count + !!loop); i < ilen; ++i) {
-			index = i%count;
+			index = i % count;
 			p0 = points[index]._view;
 			p1 = mapper(p0, index, view);
 			d0 = isDrawable(p0);
@@ -10555,7 +11559,7 @@ module.exports = function(Chart) {
 				el = meta.dataset;
 				source = null;
 
-				if (el && el._model && el instanceof Chart.elements.Line) {
+				if (el && el._model && el instanceof elements.Line) {
 					source = {
 						visible: chart.isDatasetVisible(i),
 						fill: decodeFill(el, i, count),
@@ -10568,7 +11572,7 @@ module.exports = function(Chart) {
 				sources.push(source);
 			}
 
-			for (i=0; i<count; ++i) {
+			for (i = 0; i < count; ++i) {
 				source = sources[i];
 				if (!source) {
 					continue;
@@ -10586,6 +11590,7 @@ module.exports = function(Chart) {
 				return;
 			}
 
+			var ctx = chart.ctx;
 			var el = meta.el;
 			var view = el._view;
 			var points = el._children || [];
@@ -10593,22 +11598,23 @@ module.exports = function(Chart) {
 			var color = view.backgroundColor || defaults.global.defaultColor;
 
 			if (mapper && color && points.length) {
-				doFill(chart.ctx, points, mapper, view, color, el._loop);
+				helpers.canvas.clipArea(ctx, chart.chartArea);
+				doFill(ctx, points, mapper, view, color, el._loop);
+				helpers.canvas.unclipArea(ctx);
 			}
 		}
 	};
 };
 
-},{}],42:[function(require,module,exports){
+},{"25":25,"40":40,"45":45}],50:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var defaults = require(25);
+var Element = require(26);
+var helpers = require(45);
 
-	var helpers = Chart.helpers;
-	var layout = Chart.layoutService;
-	var noop = helpers.noop;
-
-	Chart.defaults.global.legend = {
+defaults._set('global', {
+	legend: {
 		display: true,
 		position: 'top',
 		fullWidth: true,
@@ -10622,7 +11628,7 @@ module.exports = function(Chart) {
 			var meta = ci.getDatasetMeta(index);
 
 			// See controller.isDatasetVisible comment
-			meta.hidden = meta.hidden === null? !ci.data.datasets[index].hidden : null;
+			meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
 
 			// We hid a dataset ... rerender the chart
 			ci.update();
@@ -10665,7 +11671,27 @@ module.exports = function(Chart) {
 				}, this) : [];
 			}
 		}
-	};
+	},
+
+	legendCallback: function(chart) {
+		var text = [];
+		text.push('<ul class="' + chart.id + '-legend">');
+		for (var i = 0; i < chart.data.datasets.length; i++) {
+			text.push('<li><span style="background-color:' + chart.data.datasets[i].backgroundColor + '"></span>');
+			if (chart.data.datasets[i].label) {
+				text.push(chart.data.datasets[i].label);
+			}
+			text.push('</li>');
+		}
+		text.push('</ul>');
+		return text.join('');
+	}
+});
+
+module.exports = function(Chart) {
+
+	var layout = Chart.layoutService;
+	var noop = helpers.noop;
 
 	/**
 	 * Helper function to get the box width based on the usePointStyle option
@@ -10679,7 +11705,7 @@ module.exports = function(Chart) {
 			labelOpts.boxWidth;
 	}
 
-	Chart.Legend = Chart.Element.extend({
+	Chart.Legend = Element.extend({
 
 		initialize: function(config) {
 			helpers.extend(this, config);
@@ -10765,8 +11791,8 @@ module.exports = function(Chart) {
 		beforeBuildLabels: noop,
 		buildLabels: function() {
 			var me = this;
-			var labelOpts = me.options.labels;
-			var legendItems = labelOpts.generateLabels.call(me, me.chart);
+			var labelOpts = me.options.labels || {};
+			var legendItems = helpers.callback(labelOpts.generateLabels, [me.chart], me) || [];
 
 			if (labelOpts.filter) {
 				legendItems = legendItems.filter(function(item) {
@@ -10793,12 +11819,12 @@ module.exports = function(Chart) {
 
 			var ctx = me.ctx;
 
-			var globalDefault = Chart.defaults.global,
-				itemOrDefault = helpers.getValueOrDefault,
-				fontSize = itemOrDefault(labelOpts.fontSize, globalDefault.defaultFontSize),
-				fontStyle = itemOrDefault(labelOpts.fontStyle, globalDefault.defaultFontStyle),
-				fontFamily = itemOrDefault(labelOpts.fontFamily, globalDefault.defaultFontFamily),
-				labelFont = helpers.fontString(fontSize, fontStyle, fontFamily);
+			var globalDefault = defaults.global;
+			var valueOrDefault = helpers.valueOrDefault;
+			var fontSize = valueOrDefault(labelOpts.fontSize, globalDefault.defaultFontSize);
+			var fontStyle = valueOrDefault(labelOpts.fontStyle, globalDefault.defaultFontStyle);
+			var fontFamily = valueOrDefault(labelOpts.fontFamily, globalDefault.defaultFontFamily);
+			var labelFont = helpers.fontString(fontSize, fontStyle, fontFamily);
 
 			// Reset hit boxes
 			var hitboxes = me.legendHitBoxes = [];
@@ -10905,31 +11931,31 @@ module.exports = function(Chart) {
 			var me = this;
 			var opts = me.options;
 			var labelOpts = opts.labels;
-			var globalDefault = Chart.defaults.global,
-				lineDefault = globalDefault.elements.line,
-				legendWidth = me.width,
-				lineWidths = me.lineWidths;
+			var globalDefault = defaults.global;
+			var lineDefault = globalDefault.elements.line;
+			var legendWidth = me.width;
+			var lineWidths = me.lineWidths;
 
 			if (opts.display) {
-				var ctx = me.ctx,
-					cursor,
-					itemOrDefault = helpers.getValueOrDefault,
-					fontColor = itemOrDefault(labelOpts.fontColor, globalDefault.defaultFontColor),
-					fontSize = itemOrDefault(labelOpts.fontSize, globalDefault.defaultFontSize),
-					fontStyle = itemOrDefault(labelOpts.fontStyle, globalDefault.defaultFontStyle),
-					fontFamily = itemOrDefault(labelOpts.fontFamily, globalDefault.defaultFontFamily),
-					labelFont = helpers.fontString(fontSize, fontStyle, fontFamily);
+				var ctx = me.ctx;
+				var valueOrDefault = helpers.valueOrDefault;
+				var fontColor = valueOrDefault(labelOpts.fontColor, globalDefault.defaultFontColor);
+				var fontSize = valueOrDefault(labelOpts.fontSize, globalDefault.defaultFontSize);
+				var fontStyle = valueOrDefault(labelOpts.fontStyle, globalDefault.defaultFontStyle);
+				var fontFamily = valueOrDefault(labelOpts.fontFamily, globalDefault.defaultFontFamily);
+				var labelFont = helpers.fontString(fontSize, fontStyle, fontFamily);
+				var cursor;
 
 				// Canvas setup
 				ctx.textAlign = 'left';
-				ctx.textBaseline = 'top';
+				ctx.textBaseline = 'middle';
 				ctx.lineWidth = 0.5;
 				ctx.strokeStyle = fontColor; // for strikethrough effect
 				ctx.fillStyle = fontColor; // render in correct colour
 				ctx.font = labelFont;
 
-				var boxWidth = getBoxWidth(labelOpts, fontSize),
-					hitboxes = me.legendHitBoxes;
+				var boxWidth = getBoxWidth(labelOpts, fontSize);
+				var hitboxes = me.legendHitBoxes;
 
 				// current position
 				var drawLegendBox = function(x, y, legendItem) {
@@ -10940,17 +11966,17 @@ module.exports = function(Chart) {
 					// Set the ctx for the box
 					ctx.save();
 
-					ctx.fillStyle = itemOrDefault(legendItem.fillStyle, globalDefault.defaultColor);
-					ctx.lineCap = itemOrDefault(legendItem.lineCap, lineDefault.borderCapStyle);
-					ctx.lineDashOffset = itemOrDefault(legendItem.lineDashOffset, lineDefault.borderDashOffset);
-					ctx.lineJoin = itemOrDefault(legendItem.lineJoin, lineDefault.borderJoinStyle);
-					ctx.lineWidth = itemOrDefault(legendItem.lineWidth, lineDefault.borderWidth);
-					ctx.strokeStyle = itemOrDefault(legendItem.strokeStyle, globalDefault.defaultColor);
-					var isLineWidthZero = (itemOrDefault(legendItem.lineWidth, lineDefault.borderWidth) === 0);
+					ctx.fillStyle = valueOrDefault(legendItem.fillStyle, globalDefault.defaultColor);
+					ctx.lineCap = valueOrDefault(legendItem.lineCap, lineDefault.borderCapStyle);
+					ctx.lineDashOffset = valueOrDefault(legendItem.lineDashOffset, lineDefault.borderDashOffset);
+					ctx.lineJoin = valueOrDefault(legendItem.lineJoin, lineDefault.borderJoinStyle);
+					ctx.lineWidth = valueOrDefault(legendItem.lineWidth, lineDefault.borderWidth);
+					ctx.strokeStyle = valueOrDefault(legendItem.strokeStyle, globalDefault.defaultColor);
+					var isLineWidthZero = (valueOrDefault(legendItem.lineWidth, lineDefault.borderWidth) === 0);
 
 					if (ctx.setLineDash) {
 						// IE 9 and 10 do not support line dash
-						ctx.setLineDash(itemOrDefault(legendItem.lineDash, lineDefault.borderDash));
+						ctx.setLineDash(valueOrDefault(legendItem.lineDash, lineDefault.borderDash));
 					}
 
 					if (opts.labels && opts.labels.usePointStyle) {
@@ -10962,7 +11988,7 @@ module.exports = function(Chart) {
 						var centerY = y + offSet;
 
 						// Draw pointStyle as legend symbol
-						Chart.canvasHelpers.drawPoint(ctx, legendItem.pointStyle, radius, centerX, centerY);
+						helpers.canvas.drawPoint(ctx, legendItem.pointStyle, radius, centerX, centerY);
 					} else {
 						// Draw box as legend symbol
 						if (!isLineWidthZero) {
@@ -10974,14 +12000,18 @@ module.exports = function(Chart) {
 					ctx.restore();
 				};
 				var fillText = function(x, y, legendItem, textWidth) {
-					ctx.fillText(legendItem.text, boxWidth + (fontSize / 2) + x, y);
+					var halfFontSize = fontSize / 2;
+					var xLeft = boxWidth + halfFontSize + x;
+					var yMiddle = y + halfFontSize;
+
+					ctx.fillText(legendItem.text, xLeft, yMiddle);
 
 					if (legendItem.hidden) {
 						// Strikethrough the text if hidden
 						ctx.beginPath();
 						ctx.lineWidth = 2;
-						ctx.moveTo(boxWidth + (fontSize / 2) + x, y + (fontSize / 2));
-						ctx.lineTo(boxWidth + (fontSize / 2) + x + textWidth, y + (fontSize / 2));
+						ctx.moveTo(xLeft, yMiddle);
+						ctx.lineTo(xLeft + textWidth, yMiddle);
 						ctx.stroke();
 					}
 				};
@@ -11004,10 +12034,10 @@ module.exports = function(Chart) {
 
 				var itemHeight = fontSize + labelOpts.padding;
 				helpers.each(me.legendItems, function(legendItem, i) {
-					var textWidth = ctx.measureText(legendItem.text).width,
-						width = boxWidth + (fontSize / 2) + textWidth,
-						x = cursor.x,
-						y = cursor.y;
+					var textWidth = ctx.measureText(legendItem.text).width;
+					var width = boxWidth + (fontSize / 2) + textWidth;
+					var x = cursor.x;
+					var y = cursor.y;
 
 					if (isHorizontal) {
 						if (x + width >= legendWidth) {
@@ -11064,8 +12094,8 @@ module.exports = function(Chart) {
 			}
 
 			// Chart event already has relative position in it
-			var x = e.x,
-				y = e.y;
+			var x = e.x;
+			var y = e.y;
 
 			if (x >= me.left && x <= me.right && y >= me.top && y <= me.bottom) {
 				// See if we are touching one of the dataset boxes
@@ -11122,7 +12152,7 @@ module.exports = function(Chart) {
 			var legend = chart.legend;
 
 			if (legendOpts) {
-				legendOpts = helpers.configMerge(Chart.defaults.global.legend, legendOpts);
+				helpers.mergeIf(legendOpts, defaults.global.legend);
 
 				if (legend) {
 					layout.configure(chart, legend, legendOpts);
@@ -11145,28 +12175,32 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],43:[function(require,module,exports){
+},{"25":25,"26":26,"45":45}],51:[function(require,module,exports){
 'use strict';
+
+var defaults = require(25);
+var Element = require(26);
+var helpers = require(45);
+
+defaults._set('global', {
+	title: {
+		display: false,
+		fontStyle: 'bold',
+		fullWidth: true,
+		lineHeight: 1.2,
+		padding: 10,
+		position: 'top',
+		text: '',
+		weight: 2000         // by default greater than legend (1000) to be above
+	}
+});
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers;
 	var layout = Chart.layoutService;
 	var noop = helpers.noop;
 
-	Chart.defaults.global.title = {
-		display: false,
-		position: 'top',
-		fullWidth: true,
-		weight: 2000,        // by default greater than legend (1000) to be above
-		fontStyle: 'bold',
-		padding: 10,
-
-		// actual title
-		text: ''
-	};
-
-	Chart.Title = Chart.Element.extend({
+	Chart.Title = Element.extend({
 		initialize: function(config) {
 			var me = this;
 			helpers.extend(me, config);
@@ -11253,19 +12287,21 @@ module.exports = function(Chart) {
 
 		beforeFit: noop,
 		fit: function() {
-			var me = this,
-				valueOrDefault = helpers.getValueOrDefault,
-				opts = me.options,
-				globalDefaults = Chart.defaults.global,
-				display = opts.display,
-				fontSize = valueOrDefault(opts.fontSize, globalDefaults.defaultFontSize),
-				minSize = me.minSize;
+			var me = this;
+			var valueOrDefault = helpers.valueOrDefault;
+			var opts = me.options;
+			var display = opts.display;
+			var fontSize = valueOrDefault(opts.fontSize, defaults.global.defaultFontSize);
+			var minSize = me.minSize;
+			var lineCount = helpers.isArray(opts.text) ? opts.text.length : 1;
+			var lineHeight = helpers.options.toLineHeight(opts.lineHeight, fontSize);
+			var textSize = display ? (lineCount * lineHeight) + (opts.padding * 2) : 0;
 
 			if (me.isHorizontal()) {
 				minSize.width = me.maxWidth; // fill all the width
-				minSize.height = display ? fontSize + (opts.padding * 2) : 0;
+				minSize.height = textSize;
 			} else {
-				minSize.width = display ? fontSize + (opts.padding * 2) : 0;
+				minSize.width = textSize;
 				minSize.height = me.maxHeight; // fill all the height
 			}
 
@@ -11283,25 +12319,25 @@ module.exports = function(Chart) {
 
 		// Actually draw the title block on the canvas
 		draw: function() {
-			var me = this,
-				ctx = me.ctx,
-				valueOrDefault = helpers.getValueOrDefault,
-				opts = me.options,
-				globalDefaults = Chart.defaults.global;
+			var me = this;
+			var ctx = me.ctx;
+			var valueOrDefault = helpers.valueOrDefault;
+			var opts = me.options;
+			var globalDefaults = defaults.global;
 
 			if (opts.display) {
-				var fontSize = valueOrDefault(opts.fontSize, globalDefaults.defaultFontSize),
-					fontStyle = valueOrDefault(opts.fontStyle, globalDefaults.defaultFontStyle),
-					fontFamily = valueOrDefault(opts.fontFamily, globalDefaults.defaultFontFamily),
-					titleFont = helpers.fontString(fontSize, fontStyle, fontFamily),
-					rotation = 0,
-					titleX,
-					titleY,
-					top = me.top,
-					left = me.left,
-					bottom = me.bottom,
-					right = me.right,
-					maxWidth;
+				var fontSize = valueOrDefault(opts.fontSize, globalDefaults.defaultFontSize);
+				var fontStyle = valueOrDefault(opts.fontStyle, globalDefaults.defaultFontStyle);
+				var fontFamily = valueOrDefault(opts.fontFamily, globalDefaults.defaultFontFamily);
+				var titleFont = helpers.fontString(fontSize, fontStyle, fontFamily);
+				var lineHeight = helpers.options.toLineHeight(opts.lineHeight, fontSize);
+				var offset = lineHeight / 2 + opts.padding;
+				var rotation = 0;
+				var top = me.top;
+				var left = me.left;
+				var bottom = me.bottom;
+				var right = me.right;
+				var maxWidth, titleX, titleY;
 
 				ctx.fillStyle = valueOrDefault(opts.fontColor, globalDefaults.defaultFontColor); // render in correct colour
 				ctx.font = titleFont;
@@ -11309,10 +12345,10 @@ module.exports = function(Chart) {
 				// Horizontal
 				if (me.isHorizontal()) {
 					titleX = left + ((right - left) / 2); // midpoint of the width
-					titleY = top + ((bottom - top) / 2); // midpoint of the height
+					titleY = top + offset;
 					maxWidth = right - left;
 				} else {
-					titleX = opts.position === 'left' ? left + (fontSize / 2) : right - (fontSize / 2);
+					titleX = opts.position === 'left' ? left + offset : right - offset;
 					titleY = top + ((bottom - top) / 2);
 					maxWidth = bottom - top;
 					rotation = Math.PI * (opts.position === 'left' ? -0.5 : 0.5);
@@ -11323,7 +12359,18 @@ module.exports = function(Chart) {
 				ctx.rotate(rotation);
 				ctx.textAlign = 'center';
 				ctx.textBaseline = 'middle';
-				ctx.fillText(opts.text, 0, 0, maxWidth);
+
+				var text = opts.text;
+				if (helpers.isArray(text)) {
+					var y = 0;
+					for (var i = 0; i < text.length; ++i) {
+						ctx.fillText(text[i], 0, y, maxWidth);
+						y += lineHeight;
+					}
+				} else {
+					ctx.fillText(text, 0, 0, maxWidth);
+				}
+
 				ctx.restore();
 			}
 		}
@@ -11357,7 +12404,7 @@ module.exports = function(Chart) {
 			var titleBlock = chart.titleBlock;
 
 			if (titleOpts) {
-				titleOpts = helpers.configMerge(Chart.defaults.global.title, titleOpts);
+				helpers.mergeIf(titleOpts, defaults.global.title);
 
 				if (titleBlock) {
 					layout.configure(chart, titleBlock, titleOpts);
@@ -11373,12 +12420,11 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],44:[function(require,module,exports){
+},{"25":25,"26":26,"45":45}],52:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers;
 	// Default config for a category scale
 	var defaultConfig = {
 		position: 'bottom'
@@ -11392,7 +12438,7 @@ module.exports = function(Chart) {
 		*/
 		getLabels: function() {
 			var data = this.chart.data;
-			return (this.isHorizontal() ? data.xLabels : data.yLabels) || data.labels;
+			return this.options.labels || (this.isHorizontal() ? data.xLabels : data.yLabels) || data.labels;
 		},
 
 		determineDataLimits: function() {
@@ -11404,13 +12450,13 @@ module.exports = function(Chart) {
 
 			if (me.options.ticks.min !== undefined) {
 				// user specified min value
-				findIndex = helpers.indexOf(labels, me.options.ticks.min);
+				findIndex = labels.indexOf(me.options.ticks.min);
 				me.minIndex = findIndex !== -1 ? findIndex : me.minIndex;
 			}
 
 			if (me.options.ticks.max !== undefined) {
 				// user specified max value
-				findIndex = helpers.indexOf(labels, me.options.ticks.max);
+				findIndex = labels.indexOf(me.options.ticks.max);
 				me.maxIndex = findIndex !== -1 ? findIndex : me.maxIndex;
 			}
 
@@ -11437,10 +12483,11 @@ module.exports = function(Chart) {
 		},
 
 		// Used to get data value locations.  Value can either be an index or a numerical value
-		getPixelForValue: function(value, index, datasetIndex, includeOffset) {
+		getPixelForValue: function(value, index) {
 			var me = this;
+			var offset = me.options.offset;
 			// 1 is added because we need the length but we have the indexes
-			var offsetAmt = Math.max((me.maxIndex + 1 - me.minIndex - ((me.options.gridLines.offsetGridLines) ? 0 : 1)), 1);
+			var offsetAmt = Math.max((me.maxIndex + 1 - me.minIndex - (offset ? 0 : 1)), 1);
 
 			// If value is a data object, then index is the index in the data array,
 			// not the index of the scale. We need to change that.
@@ -11459,7 +12506,7 @@ module.exports = function(Chart) {
 				var valueWidth = me.width / offsetAmt;
 				var widthOffset = (valueWidth * (index - me.minIndex));
 
-				if (me.options.gridLines.offsetGridLines && includeOffset || me.maxIndex === me.minIndex && includeOffset) {
+				if (offset) {
 					widthOffset += (valueWidth / 2);
 				}
 
@@ -11468,25 +12515,26 @@ module.exports = function(Chart) {
 			var valueHeight = me.height / offsetAmt;
 			var heightOffset = (valueHeight * (index - me.minIndex));
 
-			if (me.options.gridLines.offsetGridLines && includeOffset) {
+			if (offset) {
 				heightOffset += (valueHeight / 2);
 			}
 
 			return me.top + Math.round(heightOffset);
 		},
-		getPixelForTick: function(index, includeOffset) {
-			return this.getPixelForValue(this.ticks[index], index + this.minIndex, null, includeOffset);
+		getPixelForTick: function(index) {
+			return this.getPixelForValue(this.ticks[index], index + this.minIndex, null);
 		},
 		getValueForPixel: function(pixel) {
 			var me = this;
+			var offset = me.options.offset;
 			var value;
-			var offsetAmt = Math.max((me.ticks.length - ((me.options.gridLines.offsetGridLines) ? 0 : 1)), 1);
+			var offsetAmt = Math.max((me._ticks.length - (offset ? 0 : 1)), 1);
 			var horz = me.isHorizontal();
 			var valueDimension = (horz ? me.width : me.height) / offsetAmt;
 
 			pixel -= horz ? me.left : me.top;
 
-			if (me.options.gridLines.offsetGridLines) {
+			if (offset) {
 				pixel -= (valueDimension / 2);
 			}
 
@@ -11496,7 +12544,7 @@ module.exports = function(Chart) {
 				value = Math.round(pixel / valueDimension);
 			}
 
-			return value;
+			return value + me.minIndex;
 		},
 		getBasePixel: function() {
 			return this.bottom;
@@ -11507,17 +12555,19 @@ module.exports = function(Chart) {
 
 };
 
-},{}],45:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var defaults = require(25);
+var helpers = require(45);
+var Ticks = require(34);
 
-	var helpers = Chart.helpers;
+module.exports = function(Chart) {
 
 	var defaultConfig = {
 		position: 'left',
 		ticks: {
-			callback: Chart.Ticks.formatters.linear
+			callback: Ticks.formatters.linear
 		}
 	};
 
@@ -11634,8 +12684,8 @@ module.exports = function(Chart) {
 				});
 			}
 
-			me.min = isFinite(me.min) ? me.min : DEFAULT_MIN;
-			me.max = isFinite(me.max) ? me.max : DEFAULT_MAX;
+			me.min = isFinite(me.min) && !isNaN(me.min) ? me.min : DEFAULT_MIN;
+			me.max = isFinite(me.max) && !isNaN(me.max) ? me.max : DEFAULT_MAX;
 
 			// Common base implementation to handle ticks.min, ticks.max, ticks.beginAtZero
 			this.handleTickRangeOptions();
@@ -11649,7 +12699,7 @@ module.exports = function(Chart) {
 				maxTicks = Math.min(tickOpts.maxTicksLimit ? tickOpts.maxTicksLimit : 11, Math.ceil(me.width / 50));
 			} else {
 				// The factor of 2 used to scale the font size has been experimentally determined.
-				var tickFontSize = helpers.getValueOrDefault(tickOpts.fontSize, Chart.defaults.global.defaultFontSize);
+				var tickFontSize = helpers.valueOrDefault(tickOpts.fontSize, defaults.global.defaultFontSize);
 				maxTicks = Math.min(tickOpts.maxTicksLimit ? tickOpts.maxTicksLimit : 11, Math.ceil(me.height / (2 * tickFontSize)));
 			}
 
@@ -11699,15 +12749,24 @@ module.exports = function(Chart) {
 
 };
 
-},{}],46:[function(require,module,exports){
+},{"25":25,"34":34,"45":45}],54:[function(require,module,exports){
 'use strict';
+
+var helpers = require(45);
+var Ticks = require(34);
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers,
-		noop = helpers.noop;
+	var noop = helpers.noop;
 
 	Chart.LinearScaleBase = Chart.Scale.extend({
+		getRightValue: function(value) {
+			if (typeof value === 'string') {
+				return +value;
+			}
+			return Chart.Scale.prototype.getRightValue.call(this, value);
+		},
+
 		handleTickRangeOptions: function() {
 			var me = this;
 			var opts = me.options;
@@ -11729,6 +12788,9 @@ module.exports = function(Chart) {
 				}
 			}
 
+			var setMin = tickOpts.min !== undefined || tickOpts.suggestedMin !== undefined;
+			var setMax = tickOpts.max !== undefined || tickOpts.suggestedMax !== undefined;
+
 			if (tickOpts.min !== undefined) {
 				me.min = tickOpts.min;
 			} else if (tickOpts.suggestedMin !== undefined) {
@@ -11746,6 +12808,20 @@ module.exports = function(Chart) {
 					me.max = tickOpts.suggestedMax;
 				} else {
 					me.max = Math.max(me.max, tickOpts.suggestedMax);
+				}
+			}
+
+			if (setMin !== setMax) {
+				// We set the min or the max but not both.
+				// So ensure that our range is good
+				// Inverted or 0 length range can happen when
+				// ticks.min is set, and no datasets are visible
+				if (me.min >= me.max) {
+					if (setMin) {
+						me.max = me.min + 1;
+					} else {
+						me.min = me.max - 1;
+					}
 				}
 			}
 
@@ -11776,9 +12852,9 @@ module.exports = function(Chart) {
 				maxTicks: maxTicks,
 				min: tickOpts.min,
 				max: tickOpts.max,
-				stepSize: helpers.getValueOrDefault(tickOpts.fixedStepSize, tickOpts.stepSize)
+				stepSize: helpers.valueOrDefault(tickOpts.fixedStepSize, tickOpts.stepSize)
 			};
-			var ticks = me.ticks = Chart.Ticks.generators.linear(numericGeneratorOptions, me);
+			var ticks = me.ticks = Ticks.generators.linear(numericGeneratorOptions, me);
 
 			me.handleDirectionalChanges();
 
@@ -11807,19 +12883,20 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],47:[function(require,module,exports){
+},{"34":34,"45":45}],55:[function(require,module,exports){
 'use strict';
 
-module.exports = function(Chart) {
+var helpers = require(45);
+var Ticks = require(34);
 
-	var helpers = Chart.helpers;
+module.exports = function(Chart) {
 
 	var defaultConfig = {
 		position: 'left',
 
 		// label settings
 		ticks: {
-			callback: Chart.Ticks.formatters.logarithmic
+			callback: Ticks.formatters.logarithmic
 		}
 	};
 
@@ -11831,7 +12908,7 @@ module.exports = function(Chart) {
 			var chart = me.chart;
 			var data = chart.data;
 			var datasets = data.datasets;
-			var getValueOrDefault = helpers.getValueOrDefault;
+			var valueOrDefault = helpers.valueOrDefault;
 			var isHorizontal = me.isHorizontal();
 			function IDMatches(meta) {
 				return isHorizontal ? meta.xAxisID === me.id : meta.yAxisID === me.id;
@@ -11930,8 +13007,8 @@ module.exports = function(Chart) {
 				});
 			}
 
-			me.min = getValueOrDefault(tickOpts.min, me.min);
-			me.max = getValueOrDefault(tickOpts.max, me.max);
+			me.min = valueOrDefault(tickOpts.min, me.min);
+			me.max = valueOrDefault(tickOpts.max, me.max);
 
 			if (me.min === me.max) {
 				if (me.min !== 0 && me.min !== null) {
@@ -11952,7 +13029,7 @@ module.exports = function(Chart) {
 				min: tickOpts.min,
 				max: tickOpts.max
 			};
-			var ticks = me.ticks = Chart.Ticks.generators.logarithmic(generationOptions, me);
+			var ticks = me.ticks = Ticks.generators.logarithmic(generationOptions, me);
 
 			if (!me.isHorizontal()) {
 				// We are in a vertical orientation. The top value is the highest. So reverse the array
@@ -11988,14 +13065,11 @@ module.exports = function(Chart) {
 		},
 		getPixelForValue: function(value) {
 			var me = this;
-			var innerDimension;
-			var pixel;
-
 			var start = me.start;
 			var newVal = +me.getRightValue(value);
-			var range;
 			var opts = me.options;
 			var tickOpts = opts.ticks;
+			var innerDimension, pixel, range;
 
 			if (me.isHorizontal()) {
 				range = helpers.log10(me.end) - helpers.log10(start); // todo: if start === 0
@@ -12015,7 +13089,7 @@ module.exports = function(Chart) {
 					} else if (newVal === me.minNotZero) {
 						pixel = me.bottom - innerDimension * 0.02;
 					} else {
-						pixel = me.bottom - innerDimension * 0.02 - (innerDimension * 0.98/ range * (helpers.log10(newVal)-helpers.log10(me.minNotZero)));
+						pixel = me.bottom - innerDimension * 0.02 - (innerDimension * 0.98 / range * (helpers.log10(newVal) - helpers.log10(me.minNotZero)));
 					}
 				} else if (me.end === 0 && tickOpts.reverse) {
 					range = helpers.log10(me.start) - helpers.log10(me.minNotZero);
@@ -12024,7 +13098,7 @@ module.exports = function(Chart) {
 					} else if (newVal === me.minNotZero) {
 						pixel = me.top + innerDimension * 0.02;
 					} else {
-						pixel = me.top + innerDimension * 0.02 + (innerDimension * 0.98/ range * (helpers.log10(newVal)-helpers.log10(me.minNotZero)));
+						pixel = me.top + innerDimension * 0.02 + (innerDimension * 0.98 / range * (helpers.log10(newVal) - helpers.log10(me.minNotZero)));
 					}
 				} else if (newVal === 0) {
 					pixel = tickOpts.reverse ? me.top : me.bottom;
@@ -12044,7 +13118,7 @@ module.exports = function(Chart) {
 			if (me.isHorizontal()) {
 				innerDimension = me.width;
 				value = me.start * Math.pow(10, (pixel - me.left) * range / innerDimension);
-			} else {  // todo: if start === 0
+			} else { // todo: if start === 0
 				innerDimension = me.height;
 				value = Math.pow(10, (me.bottom - pixel) * range / innerDimension) / me.start;
 			}
@@ -12055,13 +13129,16 @@ module.exports = function(Chart) {
 
 };
 
-},{}],48:[function(require,module,exports){
+},{"34":34,"45":45}],56:[function(require,module,exports){
 'use strict';
+
+var defaults = require(25);
+var helpers = require(45);
+var Ticks = require(34);
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers;
-	var globalDefaults = Chart.defaults.global;
+	var globalDefaults = defaults.global;
 
 	var defaultConfig = {
 		display: true,
@@ -12094,7 +13171,7 @@ module.exports = function(Chart) {
 			// Number - The backdrop padding to the side of the label in pixels
 			backdropPaddingX: 2,
 
-			callback: Chart.Ticks.formatters.linear
+			callback: Ticks.formatters.linear
 		},
 
 		pointLabels: {
@@ -12118,9 +13195,9 @@ module.exports = function(Chart) {
 
 	function getPointLabelFontOptions(scale) {
 		var pointLabelOptions = scale.options.pointLabels;
-		var fontSize = helpers.getValueOrDefault(pointLabelOptions.fontSize, globalDefaults.defaultFontSize);
-		var fontStyle = helpers.getValueOrDefault(pointLabelOptions.fontStyle, globalDefaults.defaultFontStyle);
-		var fontFamily = helpers.getValueOrDefault(pointLabelOptions.fontFamily, globalDefaults.defaultFontFamily);
+		var fontSize = helpers.valueOrDefault(pointLabelOptions.fontSize, globalDefaults.defaultFontSize);
+		var fontStyle = helpers.valueOrDefault(pointLabelOptions.fontStyle, globalDefaults.defaultFontStyle);
+		var fontFamily = helpers.valueOrDefault(pointLabelOptions.fontFamily, globalDefaults.defaultFontFamily);
 		var font = helpers.fontString(fontSize, fontStyle, fontFamily);
 
 		return {
@@ -12208,9 +13285,7 @@ module.exports = function(Chart) {
 			b: 0
 		};
 		var furthestAngles = {};
-		var i;
-		var textSize;
-		var pointPosition;
+		var i, textSize, pointPosition;
 
 		scale.ctx.font = plFont.font;
 		scale._pointLabelSizes = [];
@@ -12277,7 +13352,7 @@ module.exports = function(Chart) {
 
 			for (var i = 0; i < text.length; ++i) {
 				ctx.fillText(text[i], position.x, y);
-				y+= spacing;
+				y += spacing;
 			}
 		} else {
 			ctx.fillText(text, position.x, position.y);
@@ -12294,7 +13369,7 @@ module.exports = function(Chart) {
 
 	function drawPointLabels(scale) {
 		var ctx = scale.ctx;
-		var getValueOrDefault = helpers.getValueOrDefault;
+		var valueOrDefault = helpers.valueOrDefault;
 		var opts = scale.options;
 		var angleLineOpts = opts.angleLines;
 		var pointLabelOpts = opts.pointLabels;
@@ -12302,7 +13377,7 @@ module.exports = function(Chart) {
 		ctx.lineWidth = angleLineOpts.lineWidth;
 		ctx.strokeStyle = angleLineOpts.color;
 
-		var outerDistance = scale.getDistanceFromCenterForValue(opts.reverse ? scale.min : scale.max);
+		var outerDistance = scale.getDistanceFromCenterForValue(opts.ticks.reverse ? scale.min : scale.max);
 
 		// Point Label Font
 		var plFont = getPointLabelFontOptions(scale);
@@ -12324,7 +13399,7 @@ module.exports = function(Chart) {
 				var pointLabelPosition = scale.getPointPosition(i, outerDistance + 5);
 
 				// Keep this in loop since we may support array properties here
-				var pointLabelFontColor = getValueOrDefault(pointLabelOpts.fontColor, globalDefaults.defaultFontColor);
+				var pointLabelFontColor = valueOrDefault(pointLabelOpts.fontColor, globalDefaults.defaultFontColor);
 				ctx.font = plFont.font;
 				ctx.fillStyle = pointLabelFontColor;
 
@@ -12339,8 +13414,8 @@ module.exports = function(Chart) {
 
 	function drawRadiusLine(scale, gridLineOpts, radius, index) {
 		var ctx = scale.ctx;
-		ctx.strokeStyle = helpers.getValueAtIndexOrDefault(gridLineOpts.color, index - 1);
-		ctx.lineWidth = helpers.getValueAtIndexOrDefault(gridLineOpts.lineWidth, index - 1);
+		ctx.strokeStyle = helpers.valueAtIndexOrDefault(gridLineOpts.color, index - 1);
+		ctx.lineWidth = helpers.valueAtIndexOrDefault(gridLineOpts.lineWidth, index - 1);
 
 		if (scale.options.gridLines.circular) {
 			// Draw circular arcs between the points
@@ -12386,7 +13461,7 @@ module.exports = function(Chart) {
 			me.yCenter = Math.round(me.height / 2);
 
 			var minSize = helpers.min([me.height, me.width]);
-			var tickFontSize = helpers.getValueOrDefault(tickOpts.fontSize, globalDefaults.defaultFontSize);
+			var tickFontSize = helpers.valueOrDefault(tickOpts.fontSize, globalDefaults.defaultFontSize);
 			me.drawingArea = opts.display ? (minSize / 2) - (tickFontSize / 2 + tickOpts.backdropPaddingY) : (minSize / 2);
 		},
 		determineDataLimits: function() {
@@ -12419,11 +13494,12 @@ module.exports = function(Chart) {
 		},
 		getTickLimit: function() {
 			var tickOpts = this.options.ticks;
-			var tickFontSize = helpers.getValueOrDefault(tickOpts.fontSize, globalDefaults.defaultFontSize);
+			var tickFontSize = helpers.valueOrDefault(tickOpts.fontSize, globalDefaults.defaultFontSize);
 			return Math.min(tickOpts.maxTicksLimit ? tickOpts.maxTicksLimit : 11, Math.ceil(this.drawingArea / (1.5 * tickFontSize)));
 		},
 		convertTicksToLabels: function() {
 			var me = this;
+
 			Chart.LinearScaleBase.prototype.convertTicksToLabels.call(me);
 
 			// Point labels
@@ -12462,10 +13538,10 @@ module.exports = function(Chart) {
 		},
 		setCenterPoint: function(leftMovement, rightMovement, topMovement, bottomMovement) {
 			var me = this;
-			var maxRight = me.width - rightMovement - me.drawingArea,
-				maxLeft = leftMovement + me.drawingArea,
-				maxTop = topMovement + me.drawingArea,
-				maxBottom = me.height - bottomMovement - me.drawingArea;
+			var maxRight = me.width - rightMovement - me.drawingArea;
+			var maxLeft = leftMovement + me.drawingArea;
+			var maxTop = topMovement + me.drawingArea;
+			var maxBottom = me.height - bottomMovement - me.drawingArea;
 
 			me.xCenter = Math.round(((maxLeft + maxRight) / 2) + me.left);
 			me.yCenter = Math.round(((maxTop + maxBottom) / 2) + me.top);
@@ -12491,7 +13567,7 @@ module.exports = function(Chart) {
 
 			// Take into account half font size + the yPadding of the top value
 			var scalingFactor = me.drawingArea / (me.max - me.min);
-			if (me.options.reverse) {
+			if (me.options.ticks.reverse) {
 				return (me.max - value) * scalingFactor;
 			}
 			return (value - me.min) * scalingFactor;
@@ -12514,9 +13590,9 @@ module.exports = function(Chart) {
 			var max = me.max;
 
 			return me.getPointPositionForValue(0,
-				me.beginAtZero? 0:
-				min < 0 && max < 0? max :
-				min > 0 && max > 0? min :
+				me.beginAtZero ? 0 :
+				min < 0 && max < 0 ? max :
+				min > 0 && max > 0 ? min :
 				0);
 		},
 
@@ -12525,22 +13601,22 @@ module.exports = function(Chart) {
 			var opts = me.options;
 			var gridLineOpts = opts.gridLines;
 			var tickOpts = opts.ticks;
-			var getValueOrDefault = helpers.getValueOrDefault;
+			var valueOrDefault = helpers.valueOrDefault;
 
 			if (opts.display) {
 				var ctx = me.ctx;
+				var startAngle = this.getIndexAngle(0);
 
 				// Tick Font
-				var tickFontSize = getValueOrDefault(tickOpts.fontSize, globalDefaults.defaultFontSize);
-				var tickFontStyle = getValueOrDefault(tickOpts.fontStyle, globalDefaults.defaultFontStyle);
-				var tickFontFamily = getValueOrDefault(tickOpts.fontFamily, globalDefaults.defaultFontFamily);
+				var tickFontSize = valueOrDefault(tickOpts.fontSize, globalDefaults.defaultFontSize);
+				var tickFontStyle = valueOrDefault(tickOpts.fontStyle, globalDefaults.defaultFontStyle);
+				var tickFontFamily = valueOrDefault(tickOpts.fontFamily, globalDefaults.defaultFontFamily);
 				var tickLabelFont = helpers.fontString(tickFontSize, tickFontStyle, tickFontFamily);
 
 				helpers.each(me.ticks, function(label, index) {
 					// Don't draw a centre value (if it is minimum)
-					if (index > 0 || opts.reverse) {
+					if (index > 0 || tickOpts.reverse) {
 						var yCenterOffset = me.getDistanceFromCenterForValue(me.ticksAsNumbers[index]);
-						var yHeight = me.yCenter - yCenterOffset;
 
 						// Draw circular lines around the scale
 						if (gridLineOpts.display && index !== 0) {
@@ -12548,15 +13624,19 @@ module.exports = function(Chart) {
 						}
 
 						if (tickOpts.display) {
-							var tickFontColor = getValueOrDefault(tickOpts.fontColor, globalDefaults.defaultFontColor);
+							var tickFontColor = valueOrDefault(tickOpts.fontColor, globalDefaults.defaultFontColor);
 							ctx.font = tickLabelFont;
+
+							ctx.save();
+							ctx.translate(me.xCenter, me.yCenter);
+							ctx.rotate(startAngle);
 
 							if (tickOpts.showLabelBackdrop) {
 								var labelWidth = ctx.measureText(label).width;
 								ctx.fillStyle = tickOpts.backdropColor;
 								ctx.fillRect(
-									me.xCenter - labelWidth / 2 - tickOpts.backdropPaddingX,
-									yHeight - tickFontSize / 2 - tickOpts.backdropPaddingY,
+									-labelWidth / 2 - tickOpts.backdropPaddingX,
+									-yCenterOffset - tickFontSize / 2 - tickOpts.backdropPaddingY,
 									labelWidth + tickOpts.backdropPaddingX * 2,
 									tickFontSize + tickOpts.backdropPaddingY * 2
 								);
@@ -12565,7 +13645,8 @@ module.exports = function(Chart) {
 							ctx.textAlign = 'center';
 							ctx.textBaseline = 'middle';
 							ctx.fillStyle = tickFontColor;
-							ctx.fillText(label, me.xCenter, yHeight);
+							ctx.fillText(label, 0, -yCenterOffset);
+							ctx.restore();
 						}
 					}
 				});
@@ -12580,57 +13661,434 @@ module.exports = function(Chart) {
 
 };
 
-},{}],49:[function(require,module,exports){
+},{"25":25,"34":34,"45":45}],57:[function(require,module,exports){
 /* global window: false */
 'use strict';
 
 var moment = require(1);
-moment = typeof(moment) === 'function' ? moment : window.moment;
+moment = typeof moment === 'function' ? moment : window.moment;
+
+var defaults = require(25);
+var helpers = require(45);
+
+// Integer constants are from the ES6 spec.
+var MIN_INTEGER = Number.MIN_SAFE_INTEGER || -9007199254740991;
+var MAX_INTEGER = Number.MAX_SAFE_INTEGER || 9007199254740991;
+
+var INTERVALS = {
+	millisecond: {
+		common: true,
+		size: 1,
+		steps: [1, 2, 5, 10, 20, 50, 100, 250, 500]
+	},
+	second: {
+		common: true,
+		size: 1000,
+		steps: [1, 2, 5, 10, 30]
+	},
+	minute: {
+		common: true,
+		size: 60000,
+		steps: [1, 2, 5, 10, 30]
+	},
+	hour: {
+		common: true,
+		size: 3600000,
+		steps: [1, 2, 3, 6, 12]
+	},
+	day: {
+		common: true,
+		size: 86400000,
+		steps: [1, 2, 5]
+	},
+	week: {
+		common: false,
+		size: 604800000,
+		steps: [1, 2, 3, 4]
+	},
+	month: {
+		common: true,
+		size: 2.628e9,
+		steps: [1, 2, 3]
+	},
+	quarter: {
+		common: false,
+		size: 7.884e9,
+		steps: [1, 2, 3, 4]
+	},
+	year: {
+		common: true,
+		size: 3.154e10
+	}
+};
+
+var UNITS = Object.keys(INTERVALS);
+
+function sorter(a, b) {
+	return a - b;
+}
+
+function arrayUnique(items) {
+	var hash = {};
+	var out = [];
+	var i, ilen, item;
+
+	for (i = 0, ilen = items.length; i < ilen; ++i) {
+		item = items[i];
+		if (!hash[item]) {
+			hash[item] = true;
+			out.push(item);
+		}
+	}
+
+	return out;
+}
+
+/**
+ * Returns an array of {time, pos} objects used to interpolate a specific `time` or position
+ * (`pos`) on the scale, by searching entries before and after the requested value. `pos` is
+ * a decimal between 0 and 1: 0 being the start of the scale (left or top) and 1 the other
+ * extremity (left + width or top + height). Note that it would be more optimized to directly
+ * store pre-computed pixels, but the scale dimensions are not guaranteed at the time we need
+ * to create the lookup table. The table ALWAYS contains at least two items: min and max.
+ *
+ * @param {Number[]} timestamps - timestamps sorted from lowest to highest.
+ * @param {String} distribution - If 'linear', timestamps will be spread linearly along the min
+ * and max range, so basically, the table will contains only two items: {min, 0} and {max, 1}.
+ * If 'series', timestamps will be positioned at the same distance from each other. In this
+ * case, only timestamps that break the time linearity are registered, meaning that in the
+ * best case, all timestamps are linear, the table contains only min and max.
+ */
+function buildLookupTable(timestamps, min, max, distribution) {
+	if (distribution === 'linear' || !timestamps.length) {
+		return [
+			{time: min, pos: 0},
+			{time: max, pos: 1}
+		];
+	}
+
+	var table = [];
+	var items = [min];
+	var i, ilen, prev, curr, next;
+
+	for (i = 0, ilen = timestamps.length; i < ilen; ++i) {
+		curr = timestamps[i];
+		if (curr > min && curr < max) {
+			items.push(curr);
+		}
+	}
+
+	items.push(max);
+
+	for (i = 0, ilen = items.length; i < ilen; ++i) {
+		next = items[i + 1];
+		prev = items[i - 1];
+		curr = items[i];
+
+		// only add points that breaks the scale linearity
+		if (prev === undefined || next === undefined || Math.round((next + prev) / 2) !== curr) {
+			table.push({time: curr, pos: i / (ilen - 1)});
+		}
+	}
+
+	return table;
+}
+
+// @see adapted from http://www.anujgakhar.com/2014/03/01/binary-search-in-javascript/
+function lookup(table, key, value) {
+	var lo = 0;
+	var hi = table.length - 1;
+	var mid, i0, i1;
+
+	while (lo >= 0 && lo <= hi) {
+		mid = (lo + hi) >> 1;
+		i0 = table[mid - 1] || null;
+		i1 = table[mid];
+
+		if (!i0) {
+			// given value is outside table (before first item)
+			return {lo: null, hi: i1};
+		} else if (i1[key] < value) {
+			lo = mid + 1;
+		} else if (i0[key] > value) {
+			hi = mid - 1;
+		} else {
+			return {lo: i0, hi: i1};
+		}
+	}
+
+	// given value is outside table (after last item)
+	return {lo: i1, hi: null};
+}
+
+/**
+ * Linearly interpolates the given source `value` using the table items `skey` values and
+ * returns the associated `tkey` value. For example, interpolate(table, 'time', 42, 'pos')
+ * returns the position for a timestamp equal to 42. If value is out of bounds, values at
+ * index [0, 1] or [n - 1, n] are used for the interpolation.
+ */
+function interpolate(table, skey, sval, tkey) {
+	var range = lookup(table, skey, sval);
+
+	// Note: the lookup table ALWAYS contains at least 2 items (min and max)
+	var prev = !range.lo ? table[0] : !range.hi ? table[table.length - 2] : range.lo;
+	var next = !range.lo ? table[1] : !range.hi ? table[table.length - 1] : range.hi;
+
+	var span = next[skey] - prev[skey];
+	var ratio = span ? (sval - prev[skey]) / span : 0;
+	var offset = (next[tkey] - prev[tkey]) * ratio;
+
+	return prev[tkey] + offset;
+}
+
+/**
+ * Convert the given value to a moment object using the given time options.
+ * @see http://momentjs.com/docs/#/parsing/
+ */
+function momentify(value, options) {
+	var parser = options.parser;
+	var format = options.parser || options.format;
+
+	if (typeof parser === 'function') {
+		return parser(value);
+	}
+
+	if (typeof value === 'string' && typeof format === 'string') {
+		return moment(value, format);
+	}
+
+	if (!(value instanceof moment)) {
+		value = moment(value);
+	}
+
+	if (value.isValid()) {
+		return value;
+	}
+
+	// Labels are in an incompatible moment format and no `parser` has been provided.
+	// The user might still use the deprecated `format` option to convert his inputs.
+	if (typeof format === 'function') {
+		return format(value);
+	}
+
+	return value;
+}
+
+function parse(input, scale) {
+	if (helpers.isNullOrUndef(input)) {
+		return null;
+	}
+
+	var options = scale.options.time;
+	var value = momentify(scale.getRightValue(input), options);
+	if (!value.isValid()) {
+		return null;
+	}
+
+	if (options.round) {
+		value.startOf(options.round);
+	}
+
+	return value.valueOf();
+}
+
+/**
+ * Returns the number of unit to skip to be able to display up to `capacity` number of ticks
+ * in `unit` for the given `min` / `max` range and respecting the interval steps constraints.
+ */
+function determineStepSize(min, max, unit, capacity) {
+	var range = max - min;
+	var interval = INTERVALS[unit];
+	var milliseconds = interval.size;
+	var steps = interval.steps;
+	var i, ilen, factor;
+
+	if (!steps) {
+		return Math.ceil(range / ((capacity || 1) * milliseconds));
+	}
+
+	for (i = 0, ilen = steps.length; i < ilen; ++i) {
+		factor = steps[i];
+		if (Math.ceil(range / (milliseconds * factor)) <= capacity) {
+			break;
+		}
+	}
+
+	return factor;
+}
+
+/**
+ * Figures out what unit results in an appropriate number of auto-generated ticks
+ */
+function determineUnitForAutoTicks(minUnit, min, max, capacity) {
+	var ilen = UNITS.length;
+	var i, interval, factor;
+
+	for (i = UNITS.indexOf(minUnit); i < ilen - 1; ++i) {
+		interval = INTERVALS[UNITS[i]];
+		factor = interval.steps ? interval.steps[interval.steps.length - 1] : MAX_INTEGER;
+
+		if (interval.common && Math.ceil((max - min) / (factor * interval.size)) <= capacity) {
+			return UNITS[i];
+		}
+	}
+
+	return UNITS[ilen - 1];
+}
+
+/**
+ * Figures out what unit to format a set of ticks with
+ */
+function determineUnitForFormatting(ticks, minUnit, min, max) {
+	var duration = moment.duration(moment(max).diff(moment(min)));
+	var ilen = UNITS.length;
+	var i, unit;
+
+	for (i = ilen - 1; i >= UNITS.indexOf(minUnit); i--) {
+		unit = UNITS[i];
+		if (INTERVALS[unit].common && duration.as(unit) >= ticks.length) {
+			return unit;
+		}
+	}
+
+	return UNITS[minUnit ? UNITS.indexOf(minUnit) : 0];
+}
+
+function determineMajorUnit(unit) {
+	for (var i = UNITS.indexOf(unit) + 1, ilen = UNITS.length; i < ilen; ++i) {
+		if (INTERVALS[UNITS[i]].common) {
+			return UNITS[i];
+		}
+	}
+}
+
+/**
+ * Generates a maximum of `capacity` timestamps between min and max, rounded to the
+ * `minor` unit, aligned on the `major` unit and using the given scale time `options`.
+ * Important: this method can return ticks outside the min and max range, it's the
+ * responsibility of the calling code to clamp values if needed.
+ */
+function generate(min, max, capacity, options) {
+	var timeOpts = options.time;
+	var minor = timeOpts.unit || determineUnitForAutoTicks(timeOpts.minUnit, min, max, capacity);
+	var major = determineMajorUnit(minor);
+	var stepSize = helpers.valueOrDefault(timeOpts.stepSize, timeOpts.unitStepSize);
+	var weekday = minor === 'week' ? timeOpts.isoWeekday : false;
+	var majorTicksEnabled = options.ticks.major.enabled;
+	var interval = INTERVALS[minor];
+	var first = moment(min);
+	var last = moment(max);
+	var ticks = [];
+	var time;
+
+	if (!stepSize) {
+		stepSize = determineStepSize(min, max, minor, capacity);
+	}
+
+	// For 'week' unit, handle the first day of week option
+	if (weekday) {
+		first = first.isoWeekday(weekday);
+		last = last.isoWeekday(weekday);
+	}
+
+	// Align first/last ticks on unit
+	first = first.startOf(weekday ? 'day' : minor);
+	last = last.startOf(weekday ? 'day' : minor);
+
+	// Make sure that the last tick include max
+	if (last < max) {
+		last.add(1, minor);
+	}
+
+	time = moment(first);
+
+	if (majorTicksEnabled && major && !weekday && !timeOpts.round) {
+		// Align the first tick on the previous `minor` unit aligned on the `major` unit:
+		// we first aligned time on the previous `major` unit then add the number of full
+		// stepSize there is between first and the previous major time.
+		time.startOf(major);
+		time.add(~~((first - time) / (interval.size * stepSize)) * stepSize, minor);
+	}
+
+	for (; time < last; time.add(stepSize, minor)) {
+		ticks.push(+time);
+	}
+
+	ticks.push(+time);
+
+	return ticks;
+}
+
+/**
+ * Returns the right and left offsets from edges in the form of {left, right}.
+ * Offsets are added when the `offset` option is true.
+ */
+function computeOffsets(table, ticks, min, max, options) {
+	var left = 0;
+	var right = 0;
+	var upper, lower;
+
+	if (options.offset && ticks.length) {
+		if (!options.time.min) {
+			upper = ticks.length > 1 ? ticks[1] : max;
+			lower = ticks[0];
+			left = (
+				interpolate(table, 'time', upper, 'pos') -
+				interpolate(table, 'time', lower, 'pos')
+			) / 2;
+		}
+		if (!options.time.max) {
+			upper = ticks[ticks.length - 1];
+			lower = ticks.length > 1 ? ticks[ticks.length - 2] : min;
+			right = (
+				interpolate(table, 'time', upper, 'pos') -
+				interpolate(table, 'time', lower, 'pos')
+			) / 2;
+		}
+	}
+
+	return {left: left, right: right};
+}
+
+function ticksFromTimestamps(values, majorUnit) {
+	var ticks = [];
+	var i, ilen, value, major;
+
+	for (i = 0, ilen = values.length; i < ilen; ++i) {
+		value = values[i];
+		major = majorUnit ? value === +moment(value).startOf(majorUnit) : false;
+
+		ticks.push({
+			value: value,
+			major: major
+		});
+	}
+
+	return ticks;
+}
 
 module.exports = function(Chart) {
 
-	var helpers = Chart.helpers;
-	var interval = {
-		millisecond: {
-			size: 1,
-			steps: [1, 2, 5, 10, 20, 50, 100, 250, 500]
-		},
-		second: {
-			size: 1000,
-			steps: [1, 2, 5, 10, 30]
-		},
-		minute: {
-			size: 60000,
-			steps: [1, 2, 5, 10, 30]
-		},
-		hour: {
-			size: 3600000,
-			steps: [1, 2, 3, 6, 12]
-		},
-		day: {
-			size: 86400000,
-			steps: [1, 2, 5]
-		},
-		week: {
-			size: 604800000,
-			maxStep: 4
-		},
-		month: {
-			size: 2.628e9,
-			maxStep: 3
-		},
-		quarter: {
-			size: 7.884e9,
-			maxStep: 4
-		},
-		year: {
-			size: 3.154e10,
-			maxStep: false
-		}
-	};
-
 	var defaultConfig = {
 		position: 'bottom',
+
+		/**
+		 * Data distribution along the scale:
+		 * - 'linear': data are spread according to their time (distances can vary),
+		 * - 'series': data are spread at the same distance from each other.
+		 * @see https://github.com/chartjs/Chart.js/pull/4507
+		 * @since 2.7.0
+		 */
+		distribution: 'linear',
+
+		/**
+		 * Scale boundary strategy (bypassed by min/max time options)
+		 * - `data`: make sure data are fully visible, ticks outside are removed
+		 * - `ticks`: make sure ticks are fully visible, data outside are truncated
+		 * @see https://github.com/chartjs/Chart.js/pull/4556
+		 * @since 2.7.0
+		 */
+		bounds: 'data',
 
 		time: {
 			parser: false, // false == a pattern string from http://momentjs.com/docs/#/parsing/string-format/ or a custom callback that converts its argument to a moment
@@ -12645,9 +14103,9 @@ module.exports = function(Chart) {
 			displayFormats: {
 				millisecond: 'h:mm:ss.SSS a', // 11:20:01.123 AM,
 				second: 'h:mm:ss a', // 11:20:01 AM
-				minute: 'h:mm:ss a', // 11:20:01 AM
-				hour: 'MMM D, hA', // Sept 4, 5PM
-				day: 'll', // Sep 4 2015
+				minute: 'h:mm a', // 11:20 AM
+				hour: 'hA', // 5PM
+				day: 'MMM D', // Sep 4
 				week: 'll', // Week 46, or maybe "[W]WW - YYYY" ?
 				month: 'MMM YYYY', // Sept 2015
 				quarter: '[Q]Q - YYYY', // Q3
@@ -12655,151 +14113,22 @@ module.exports = function(Chart) {
 			},
 		},
 		ticks: {
-			autoSkip: false
-		}
-	};
+			autoSkip: false,
 
-	/**
-	 * Helper function to parse time to a moment object
-	 * @param axis {TimeAxis} the time axis
-	 * @param label {Date|string|number|Moment} The thing to parse
-	 * @return {Moment} parsed time
-	 */
-	function parseTime(axis, label) {
-		var timeOpts = axis.options.time;
-		if (typeof timeOpts.parser === 'string') {
-			return moment(label, timeOpts.parser);
-		}
-		if (typeof timeOpts.parser === 'function') {
-			return timeOpts.parser(label);
-		}
-		if (typeof label.getMonth === 'function' || typeof label === 'number') {
-			// Date objects
-			return moment(label);
-		}
-		if (label.isValid && label.isValid()) {
-			// Moment support
-			return label;
-		}
-		var format = timeOpts.format;
-		if (typeof format !== 'string' && format.call) {
-			// Custom parsing (return an instance of moment)
-			console.warn('options.time.format is deprecated and replaced by options.time.parser.');
-			return format(label);
-		}
-		// Moment format parsing
-		return moment(label, format);
-	}
+			/**
+			 * Ticks generation input values:
+			 * - 'auto': generates "optimal" ticks based on scale size and time options.
+			 * - 'data': generates ticks from data (including labels from data {t|x|y} objects).
+			 * - 'labels': generates ticks from user given `data.labels` values ONLY.
+			 * @see https://github.com/chartjs/Chart.js/pull/4507
+			 * @since 2.7.0
+			 */
+			source: 'auto',
 
-	/**
-	 * Figure out which is the best unit for the scale
-	 * @param minUnit {String} minimum unit to use
-	 * @param min {Number} scale minimum
-	 * @param max {Number} scale maximum
-	 * @return {String} the unit to use
-	 */
-	function determineUnit(minUnit, min, max, maxTicks) {
-		var units = Object.keys(interval);
-		var unit;
-		var numUnits = units.length;
-
-		for (var i = units.indexOf(minUnit); i < numUnits; i++) {
-			unit = units[i];
-			var unitDetails = interval[unit];
-			var steps = (unitDetails.steps && unitDetails.steps[unitDetails.steps.length - 1]) || unitDetails.maxStep;
-			if (steps === undefined || Math.ceil((max - min) / (steps * unitDetails.size)) <= maxTicks) {
-				break;
+			major: {
+				enabled: false
 			}
 		}
-
-		return unit;
-	}
-
-	/**
-	 * Determines how we scale the unit
-	 * @param min {Number} the scale minimum
-	 * @param max {Number} the scale maximum
-	 * @param unit {String} the unit determined by the {@see determineUnit} method
-	 * @return {Number} the axis step size as a multiple of unit
-	 */
-	function determineStepSize(min, max, unit, maxTicks) {
-		// Using our unit, figoure out what we need to scale as
-		var unitDefinition = interval[unit];
-		var unitSizeInMilliSeconds = unitDefinition.size;
-		var sizeInUnits = Math.ceil((max - min) / unitSizeInMilliSeconds);
-		var multiplier = 1;
-		var range = max - min;
-
-		if (unitDefinition.steps) {
-			// Have an array of steps
-			var numSteps = unitDefinition.steps.length;
-			for (var i = 0; i < numSteps && sizeInUnits > maxTicks; i++) {
-				multiplier = unitDefinition.steps[i];
-				sizeInUnits = Math.ceil(range / (unitSizeInMilliSeconds * multiplier));
-			}
-		} else {
-			while (sizeInUnits > maxTicks && maxTicks > 0) {
-				++multiplier;
-				sizeInUnits = Math.ceil(range / (unitSizeInMilliSeconds * multiplier));
-			}
-		}
-
-		return multiplier;
-	}
-
-	/**
-	 * Helper for generating axis labels.
-	 * @param options {ITimeGeneratorOptions} the options for generation
-	 * @param dataRange {IRange} the data range
-	 * @param niceRange {IRange} the pretty range to display
-	 * @return {Number[]} ticks
-	 */
-	function generateTicks(options, dataRange, niceRange) {
-		var ticks = [];
-		if (options.maxTicks) {
-			var stepSize = options.stepSize;
-			ticks.push(options.min !== undefined ? options.min : niceRange.min);
-			var cur = moment(niceRange.min);
-			while (cur.add(stepSize, options.unit).valueOf() < niceRange.max) {
-				ticks.push(cur.valueOf());
-			}
-			var realMax = options.max || niceRange.max;
-			if (ticks[ticks.length - 1] !== realMax) {
-				ticks.push(realMax);
-			}
-		}
-		return ticks;
-	}
-
-	/**
-	 * @function Chart.Ticks.generators.time
-	 * @param options {ITimeGeneratorOptions} the options for generation
-	 * @param dataRange {IRange} the data range
-	 * @return {Number[]} ticks
-	 */
-	Chart.Ticks.generators.time = function(options, dataRange) {
-		var niceMin;
-		var niceMax;
-		var isoWeekday = options.isoWeekday;
-		if (options.unit === 'week' && isoWeekday !== false) {
-			niceMin = moment(dataRange.min).startOf('isoWeek').isoWeekday(isoWeekday).valueOf();
-			niceMax = moment(dataRange.max).startOf('isoWeek').isoWeekday(isoWeekday);
-			if (dataRange.max - niceMax > 0) {
-				niceMax.add(1, 'week');
-			}
-			niceMax = niceMax.valueOf();
-		} else {
-			niceMin = moment(dataRange.min).startOf(options.unit).valueOf();
-			niceMax = moment(dataRange.max).startOf(options.unit);
-			if (dataRange.max - niceMax > 0) {
-				niceMax.add(1, options.unit);
-			}
-			niceMax = niceMax.valueOf();
-		}
-		return generateTicks(options, dataRange, {
-			min: niceMin,
-			max: niceMax
-		});
 	};
 
 	var TimeScale = Chart.Scale.extend({
@@ -12808,593 +14137,486 @@ module.exports = function(Chart) {
 				throw new Error('Chart.js - Moment.js could not be found! You must include it before Chart.js to use the time scale. Download at https://momentjs.com');
 			}
 
+			this.mergeTicksOptions();
+
 			Chart.Scale.prototype.initialize.call(this);
 		},
+
+		update: function() {
+			var me = this;
+			var options = me.options;
+
+			// DEPRECATIONS: output a message only one time per update
+			if (options.time && options.time.format) {
+				console.warn('options.time.format is deprecated and replaced by options.time.parser.');
+			}
+
+			return Chart.Scale.prototype.update.apply(me, arguments);
+		},
+
+		/**
+		 * Allows data to be referenced via 't' attribute
+		 */
+		getRightValue: function(rawValue) {
+			if (rawValue && rawValue.t !== undefined) {
+				rawValue = rawValue.t;
+			}
+			return Chart.Scale.prototype.getRightValue.call(this, rawValue);
+		},
+
 		determineDataLimits: function() {
 			var me = this;
+			var chart = me.chart;
 			var timeOpts = me.options.time;
+			var min = MAX_INTEGER;
+			var max = MIN_INTEGER;
+			var timestamps = [];
+			var datasets = [];
+			var labels = [];
+			var i, j, ilen, jlen, data, timestamp;
 
-			// We store the data range as unix millisecond timestamps so dataMin and dataMax will always be integers.
-			var dataMin = Number.MAX_SAFE_INTEGER;
-			var dataMax = Number.MIN_SAFE_INTEGER;
+			// Convert labels to timestamps
+			for (i = 0, ilen = chart.data.labels.length; i < ilen; ++i) {
+				labels.push(parse(chart.data.labels[i], me));
+			}
 
-			var chartData = me.chart.data;
-			var parsedData = {
-				labels: [],
-				datasets: []
-			};
+			// Convert data to timestamps
+			for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
+				if (chart.isDatasetVisible(i)) {
+					data = chart.data.datasets[i].data;
 
-			var timestamp;
+					// Let's consider that all data have the same format.
+					if (helpers.isObject(data[0])) {
+						datasets[i] = [];
 
-			helpers.each(chartData.labels, function(label, labelIndex) {
-				var labelMoment = parseTime(me, label);
-
-				if (labelMoment.isValid()) {
-					// We need to round the time
-					if (timeOpts.round) {
-						labelMoment.startOf(timeOpts.round);
-					}
-
-					timestamp = labelMoment.valueOf();
-					dataMin = Math.min(timestamp, dataMin);
-					dataMax = Math.max(timestamp, dataMax);
-
-					// Store this value for later
-					parsedData.labels[labelIndex] = timestamp;
-				}
-			});
-
-			helpers.each(chartData.datasets, function(dataset, datasetIndex) {
-				var timestamps = [];
-
-				if (typeof dataset.data[0] === 'object' && dataset.data[0] !== null && me.chart.isDatasetVisible(datasetIndex)) {
-					// We have potential point data, so we need to parse this
-					helpers.each(dataset.data, function(value, dataIndex) {
-						var dataMoment = parseTime(me, me.getRightValue(value));
-
-						if (dataMoment.isValid()) {
-							if (timeOpts.round) {
-								dataMoment.startOf(timeOpts.round);
-							}
-
-							timestamp = dataMoment.valueOf();
-							dataMin = Math.min(timestamp, dataMin);
-							dataMax = Math.max(timestamp, dataMax);
-							timestamps[dataIndex] = timestamp;
+						for (j = 0, jlen = data.length; j < jlen; ++j) {
+							timestamp = parse(data[j], me);
+							timestamps.push(timestamp);
+							datasets[i][j] = timestamp;
 						}
-					});
+					} else {
+						timestamps.push.apply(timestamps, labels);
+						datasets[i] = labels.slice(0);
+					}
 				} else {
-					// We have no x coordinates, so use the ones from the labels
-					timestamps = parsedData.labels.slice();
+					datasets[i] = [];
 				}
+			}
 
-				parsedData.datasets[datasetIndex] = timestamps;
-			});
+			if (labels.length) {
+				// Sort labels **after** data have been converted
+				labels = arrayUnique(labels).sort(sorter);
+				min = Math.min(min, labels[0]);
+				max = Math.max(max, labels[labels.length - 1]);
+			}
 
-			me.dataMin = dataMin;
-			me.dataMax = dataMax;
-			me._parsedData = parsedData;
+			if (timestamps.length) {
+				timestamps = arrayUnique(timestamps).sort(sorter);
+				min = Math.min(min, timestamps[0]);
+				max = Math.max(max, timestamps[timestamps.length - 1]);
+			}
+
+			min = parse(timeOpts.min, me) || min;
+			max = parse(timeOpts.max, me) || max;
+
+			// In case there is no valid min/max, let's use today limits
+			min = min === MAX_INTEGER ? +moment().startOf('day') : min;
+			max = max === MIN_INTEGER ? +moment().endOf('day') + 1 : max;
+
+			// Make sure that max is strictly higher than min (required by the lookup table)
+			me.min = Math.min(min, max);
+			me.max = Math.max(min + 1, max);
+
+			// PRIVATE
+			me._horizontal = me.isHorizontal();
+			me._table = [];
+			me._timestamps = {
+				data: timestamps,
+				datasets: datasets,
+				labels: labels
+			};
 		},
+
 		buildTicks: function() {
 			var me = this;
-			var timeOpts = me.options.time;
+			var min = me.min;
+			var max = me.max;
+			var options = me.options;
+			var timeOpts = options.time;
+			var timestamps = [];
+			var ticks = [];
+			var i, ilen, timestamp;
 
-			var minTimestamp;
-			var maxTimestamp;
-			var dataMin = me.dataMin;
-			var dataMax = me.dataMax;
+			switch (options.ticks.source) {
+			case 'data':
+				timestamps = me._timestamps.data;
+				break;
+			case 'labels':
+				timestamps = me._timestamps.labels;
+				break;
+			case 'auto':
+			default:
+				timestamps = generate(min, max, me.getLabelCapacity(min), options);
+			}
 
-			if (timeOpts.min) {
-				var minMoment = parseTime(me, timeOpts.min);
-				if (timeOpts.round) {
-					minMoment.round(timeOpts.round);
+			if (options.bounds === 'ticks' && timestamps.length) {
+				min = timestamps[0];
+				max = timestamps[timestamps.length - 1];
+			}
+
+			// Enforce limits with user min/max options
+			min = parse(timeOpts.min, me) || min;
+			max = parse(timeOpts.max, me) || max;
+
+			// Remove ticks outside the min/max range
+			for (i = 0, ilen = timestamps.length; i < ilen; ++i) {
+				timestamp = timestamps[i];
+				if (timestamp >= min && timestamp <= max) {
+					ticks.push(timestamp);
 				}
-				minTimestamp = minMoment.valueOf();
 			}
 
-			if (timeOpts.max) {
-				maxTimestamp = parseTime(me, timeOpts.max).valueOf();
-			}
+			me.min = min;
+			me.max = max;
 
-			var maxTicks = me.getLabelCapacity(minTimestamp || dataMin);
-			var unit = timeOpts.unit || determineUnit(timeOpts.minUnit, minTimestamp || dataMin, maxTimestamp || dataMax, maxTicks);
-			me.displayFormat = timeOpts.displayFormats[unit];
+			// PRIVATE
+			me._unit = timeOpts.unit || determineUnitForFormatting(ticks, timeOpts.minUnit, me.min, me.max);
+			me._majorUnit = determineMajorUnit(me._unit);
+			me._table = buildLookupTable(me._timestamps.data, min, max, options.distribution);
+			me._offsets = computeOffsets(me._table, ticks, min, max, options);
 
-			var stepSize = timeOpts.stepSize || determineStepSize(minTimestamp || dataMin, maxTimestamp || dataMax, unit, maxTicks);
-			me.ticks = Chart.Ticks.generators.time({
-				maxTicks: maxTicks,
-				min: minTimestamp,
-				max: maxTimestamp,
-				stepSize: stepSize,
-				unit: unit,
-				isoWeekday: timeOpts.isoWeekday
-			}, {
-				min: dataMin,
-				max: dataMax
-			});
-
-			// At this point, we need to update our max and min given the tick values since we have expanded the
-			// range of the scale
-			me.max = helpers.max(me.ticks);
-			me.min = helpers.min(me.ticks);
+			return ticksFromTimestamps(ticks, me._majorUnit);
 		},
-		// Get tooltip label
+
 		getLabelForIndex: function(index, datasetIndex) {
 			var me = this;
-			var label = me.chart.data.labels && index < me.chart.data.labels.length ? me.chart.data.labels[index] : '';
-			var value = me.chart.data.datasets[datasetIndex].data[index];
+			var data = me.chart.data;
+			var timeOpts = me.options.time;
+			var label = data.labels && index < data.labels.length ? data.labels[index] : '';
+			var value = data.datasets[datasetIndex].data[index];
 
-			if (value !== null && typeof value === 'object') {
+			if (helpers.isObject(value)) {
 				label = me.getRightValue(value);
 			}
-
-			// Format nicely
-			if (me.options.time.tooltipFormat) {
-				label = parseTime(me, label).format(me.options.time.tooltipFormat);
+			if (timeOpts.tooltipFormat) {
+				label = momentify(label, timeOpts).format(timeOpts.tooltipFormat);
 			}
 
 			return label;
 		},
-		// Function to format an individual tick mark
-		tickFormatFunction: function(tick, index, ticks) {
-			var formattedTick = tick.format(this.displayFormat);
-			var tickOpts = this.options.ticks;
-			var callback = helpers.getValueOrDefault(tickOpts.callback, tickOpts.userCallback);
 
-			if (callback) {
-				return callback(formattedTick, index, ticks);
-			}
-			return formattedTick;
-		},
-		convertTicksToLabels: function() {
+		/**
+		 * Function to format an individual tick mark
+		 * @private
+		 */
+		tickFormatFunction: function(tick, index, ticks, formatOverride) {
 			var me = this;
-			me.ticksAsTimestamps = me.ticks;
-			me.ticks = me.ticks.map(function(tick) {
-				return moment(tick);
-			}).map(me.tickFormatFunction, me);
-		},
-		getPixelForOffset: function(offset) {
-			var me = this;
-			var epochWidth = me.max - me.min;
-			var decimal = epochWidth ? (offset - me.min) / epochWidth : 0;
+			var options = me.options;
+			var time = tick.valueOf();
+			var formats = options.time.displayFormats;
+			var minorFormat = formats[me._unit];
+			var majorUnit = me._majorUnit;
+			var majorFormat = formats[majorUnit];
+			var majorTime = tick.clone().startOf(majorUnit).valueOf();
+			var majorTickOpts = options.ticks.major;
+			var major = majorTickOpts.enabled && majorUnit && majorFormat && time === majorTime;
+			var label = tick.format(formatOverride ? formatOverride : major ? majorFormat : minorFormat);
+			var tickOpts = major ? majorTickOpts : options.ticks.minor;
+			var formatter = helpers.valueOrDefault(tickOpts.callback, tickOpts.userCallback);
 
-			if (me.isHorizontal()) {
-				var valueOffset = (me.width * decimal);
-				return me.left + Math.round(valueOffset);
+			return formatter ? formatter(label, index, ticks) : label;
+		},
+
+		convertTicksToLabels: function(ticks) {
+			var labels = [];
+			var i, ilen;
+
+			for (i = 0, ilen = ticks.length; i < ilen; ++i) {
+				labels.push(this.tickFormatFunction(moment(ticks[i].value), i, ticks));
 			}
 
-			var heightOffset = (me.height * decimal);
-			return me.top + Math.round(heightOffset);
+			return labels;
 		},
+
+		/**
+		 * @private
+		 */
+		getPixelForOffset: function(time) {
+			var me = this;
+			var size = me._horizontal ? me.width : me.height;
+			var start = me._horizontal ? me.left : me.top;
+			var pos = interpolate(me._table, 'time', time, 'pos');
+
+			return start + size * (me._offsets.left + pos) / (me._offsets.left + 1 + me._offsets.right);
+		},
+
 		getPixelForValue: function(value, index, datasetIndex) {
 			var me = this;
-			var offset = null;
+			var time = null;
+
 			if (index !== undefined && datasetIndex !== undefined) {
-				offset = me._parsedData.datasets[datasetIndex][index];
+				time = me._timestamps.datasets[datasetIndex][index];
 			}
 
-			if (offset === null) {
-				if (!value || !value.isValid) {
-					// not already a moment object
-					value = parseTime(me, me.getRightValue(value));
-				}
-
-				if (value && value.isValid && value.isValid()) {
-					offset = value.valueOf();
-				}
+			if (time === null) {
+				time = parse(value, me);
 			}
 
-			if (offset !== null) {
-				return me.getPixelForOffset(offset);
+			if (time !== null) {
+				return me.getPixelForOffset(time);
 			}
 		},
+
 		getPixelForTick: function(index) {
-			return this.getPixelForOffset(this.ticksAsTimestamps[index]);
+			var ticks = this.getTicks();
+			return index >= 0 && index < ticks.length ?
+				this.getPixelForOffset(ticks[index].value) :
+				null;
 		},
+
 		getValueForPixel: function(pixel) {
 			var me = this;
-			var innerDimension = me.isHorizontal() ? me.width : me.height;
-			var offset = (pixel - (me.isHorizontal() ? me.left : me.top)) / innerDimension;
-			return moment(me.min + (offset * (me.max - me.min)));
+			var size = me._horizontal ? me.width : me.height;
+			var start = me._horizontal ? me.left : me.top;
+			var pos = (size ? (pixel - start) / size : 0) * (me._offsets.left + 1 + me._offsets.left) - me._offsets.right;
+			var time = interpolate(me._table, 'pos', pos, 'time');
+
+			return moment(time);
 		},
-		// Crude approximation of what the label width might be
+
+		/**
+		 * Crude approximation of what the label width might be
+		 * @private
+		 */
 		getLabelWidth: function(label) {
 			var me = this;
-			var ticks = me.options.ticks;
-
+			var ticksOpts = me.options.ticks;
 			var tickLabelWidth = me.ctx.measureText(label).width;
-			var cosRotation = Math.cos(helpers.toRadians(ticks.maxRotation));
-			var sinRotation = Math.sin(helpers.toRadians(ticks.maxRotation));
-			var tickFontSize = helpers.getValueOrDefault(ticks.fontSize, Chart.defaults.global.defaultFontSize);
+			var angle = helpers.toRadians(ticksOpts.maxRotation);
+			var cosRotation = Math.cos(angle);
+			var sinRotation = Math.sin(angle);
+			var tickFontSize = helpers.valueOrDefault(ticksOpts.fontSize, defaults.global.defaultFontSize);
+
 			return (tickLabelWidth * cosRotation) + (tickFontSize * sinRotation);
 		},
+
+		/**
+		 * @private
+		 */
 		getLabelCapacity: function(exampleTime) {
 			var me = this;
 
-			me.displayFormat = me.options.time.displayFormats.millisecond;	// Pick the longest format for guestimation
-			var exampleLabel = me.tickFormatFunction(moment(exampleTime), 0, []);
-			var tickLabelWidth = me.getLabelWidth(exampleLabel);
+			var formatOverride = me.options.time.displayFormats.millisecond;	// Pick the longest format for guestimation
 
+			var exampleLabel = me.tickFormatFunction(moment(exampleTime), 0, [], formatOverride);
+			var tickLabelWidth = me.getLabelWidth(exampleLabel);
 			var innerWidth = me.isHorizontal() ? me.width : me.height;
-			var labelCapacity = innerWidth / tickLabelWidth;
-			return labelCapacity;
+
+			return Math.floor(innerWidth / tickLabelWidth);
 		}
 	});
+
 	Chart.scaleService.registerScaleType('time', TimeScale, defaultConfig);
-
 };
 
-},{"1":1}]},{},[7])(7)
-});var WOW = function (properties) {
+},{"1":1,"25":25,"45":45}]},{},[7])(7)
+});
+'use strict';
 
-  var config = properties || {};
+var WOW;
 
-  this._boxClass = config.boxClass || 'wow';
-  this._animateClass = config.animateClass || 'animated',
-  this._offset = config.offset || 0,
-  this._mobile = (config.mobile === undefined) ? true : false;
-  this._live = (config.live === undefined) ? true : false;
+(function($) {
 
-  this._seoFixEnabled = (config.seoFixEnabled === undefined) ? true : false;
-  this._animationDuration = config.animationDuration || "1s";
-  this._animationDelay = config.animationDelay || "0s";
+    WOW = function WOW() {
 
-  this._initStorageVariables();
+        return {
 
-};
+            init: function init() {
 
-WOW.prototype._initStorageVariables = function () {
+                var animationName = [];
 
-  this._animation = [];
-  this._boxes = [];
-  this._cleanupBoxListener = [];
-  this._cleanupBoxVisibleListener = [];
+                var once = 1;
 
-};
+                function mdbWow() {
 
-WOW.prototype.init = function () {
+                    var windowHeight = window.innerHeight;
+                    var scroll = window.scrollY;
 
-  if (!this._mobile && this._isMobile()) {
-    return;
-  }
+                    $('.wow').each(function() {
 
-  this._eachBoxInit(this._prepareBox.bind(this));
+                        if ($(this).css('visibility') == 'visible') {
+                            return;
+                        }
 
-  this._startWow();
+                        if (windowHeight + scroll - 100 > getOffset(this) && scroll < getOffset(this) || windowHeight + scroll - 100 > getOffset(this) + $(this).height() && scroll < getOffset(this) + $(this).height() || windowHeight + scroll == $(document).height() && getOffset(this) + 100 > $(document).height()) {
 
-};
+                            var index = $(this).index('.wow');
 
-WOW.prototype._isMobile = function () {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-};
+                            var delay = $(this).attr('data-wow-delay');
 
+                            if (delay) {
 
-WOW.prototype._eachBoxInit = function (each) {
+                                delay = $(this).attr('data-wow-delay').slice(0, -1
 
-  var boxes = document.getElementsByClassName(this._boxClass);
+                                );
+                                var self = this;
 
-  for (var i = 0; i < boxes.length; i++) {
+                                var timeout = parseFloat(delay) * 1000;
 
-    (function (i) {
-      each(boxes[i], i);
-    })(i);
+                                $(self).addClass('animated');
+                                $(self).css({ 'visibility': 'visible' });
+                                $(self).css({ 'animation-delay': delay });
+                                $(self).css({ 'animation-name': animationName[index] });
 
-  }
+                                var removeTime = $(this).css('animation-duration').slice(0, -1) * 1000;
 
-};
+                                if ($(this).attr('data-wow-delay')) {
 
-WOW.prototype._prepareBox = function (box) {
+                                    removeTime += $(this).attr('data-wow-delay').slice(0, -1) * 1000;
+                                }
 
-  var index = this._boxes.push(box) - 1;
-  this._animation[index] = {
-    animationName: box.style.animationName || window.getComputedStyle(box, null).animationName
-  };
-  box.style.animationName = 'none';
-  box.style.visibility = 'hidden';
+                                var self = this;
 
-};
+                                setTimeout(function() {
 
-WOW.prototype._startWow = function () {
+                                    $(self).removeClass('animated');
+                                }, removeTime);
+                            } else {
 
-  if (this._live) {
-    this._checkForChanges();
-  }
-  if (window.scrollY === 0 && this._seoFixEnabled) {
-    this._seoFix();
-  }
+                                $(this).addClass('animated');
+                                $(this).css({ 'visibility': 'visible' });
+                                $(this).css({ 'animation-name': animationName[index] });
 
-  this._appearInView();
+                                var removeTime = $(this).css('animation-duration').slice(0, -1) * 1000;
 
-  this._scrollHandler();
+                                var self = this;
 
-};
+                                setTimeout(function() {
 
-WOW.prototype._seoFix = function () {
+                                    $(self).removeClass('animated');
+                                }, removeTime);
+                            }
+                        }
+                    });
+                }
 
-  this._showNotInView();
+                function appear() {
 
-};
+                    $('.wow').each(function() {
 
+                        var index = $(this).index('.wow');
 
-WOW.prototype._appear = function (box, i) {
+                        var delay = $(this).attr('data-wow-delay');
 
-  var animationState = box.style.animationPlayState || box.style.WebkitAnimationPlayState;
+                        if (delay) {
 
-  if (box.className.indexOf(this._animateClass) === -1) {
+                            delay = $(this).attr('data-wow-delay').slice(0, -1);
 
-    delete this._boxes[i];
+                            var timeout = parseFloat(delay) * 1000;
 
-    this._onStartAnimation(box, i);
-    this._onStopAnimation(box, i);
+                            $(this).addClass('animated');
+                            $(this).css({ 'visibility': 'visible' });
+                            $(this).css({ 'animation-delay': delay + 's' });
+                            $(this).css({ 'animation-name': animationName[index] });
+                        } else {
 
-    this._animate(box, i, this._getAnimationConfig(box));
+                            $(this).addClass('animated');
+                            $(this).css({ 'visibility': 'visible' });
+                            $(this).css({ 'animation-name': animationName[index] });
+                        }
+                    });
+                }
 
-  }
+                function hide() {
 
-};
+                    var windowHeight = window.innerHeight;
+                    var scroll = window.scrollY;
 
-WOW.prototype._onStartAnimation = function (box, i) {
+                    $('.wow.animated').each(function() {
 
-  this._cleanupBoxVisibleListener[i] = this._boxVisible.bind(this, box, i);
+                        if (windowHeight + scroll - 100 > getOffset(this) && scroll > getOffset(this) + 100 || windowHeight + scroll - 100 < getOffset(this) && scroll < getOffset(this) + 100 || getOffset(this) + $(this).height > $(document).height() - 100) {
 
-  box.addEventListener('animationstart', this._cleanupBoxVisibleListener[i]);
-  box.addEventListener('webkitAnimationStart', this._cleanupBoxVisibleListener[i]);
+                            $(this).removeClass('animated');
+                            $(this).css({ 'animation-name': 'none' });
+                            $(this).css({ 'visibility': 'hidden' });
+                        } else {
 
-};
+                            var removeTime = $(this).css('animation-duration').slice(0, -1) * 1000;
 
-WOW.prototype._onStopAnimation = function (box, i) {
+                            if ($(this).attr('data-wow-delay')) {
 
-  this._cleanupBoxListener[i] = this._cleanupBox.bind(this, box, i);
+                                removeTime += $(this).attr('data-wow-delay').slice(0, -1) * 1000;
+                            }
 
-  box.addEventListener('animationend', this._cleanupBoxListener[i]);
-  box.addEventListener('webkitAnimationEnd', this._cleanupBoxListener[i]);
+                            var self = this;
 
-};
+                            setTimeout(function() {
 
-WOW.prototype._getAnimationConfig = function (box) {
+                                $(self).removeClass('animated');
+                            }, removeTime);
+                        }
+                    });
 
-  return {
+                    mdbWow();
 
-    delay: this._getDelay(box),
-    duration: this._getDuration(box),
-    iterations: this._getIterations(box)
+                    once--;
+                }
 
-  }
+                function getOffset(elem) {
 
-};
+                    var box = elem.getBoundingClientRect();
 
-WOW.prototype._getDelay = function (box) {
+                    var body = document.body;
+                    var docEl = document.documentElement;
 
-  return box.getAttribute('data-wow-delay') || this._animationDelay;
+                    var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
 
-};
+                    var clientTop = docEl.clientTop || body.clientTop || 0;
 
-WOW.prototype._getDuration = function (box) {
+                    var top = box.top + scrollTop - clientTop;
 
-  return box.getAttribute('data-wow-duration') || this._animationDuration;
+                    return Math.round(top);
+                }
 
-};
+                $('.wow').each(function() {
 
-WOW.prototype._getIterations = function (box) {
+                    $(this).css({ 'visibility': 'hidden' });
+                    animationName[$(this).index('.wow')] = $(this).css('animation-name');
+                    $(this).css({ 'animation-name': 'none' });
+                });
 
-  return box.getAttribute('data-wow-iteration') ||
-    box.style.animationIterationCount ||
-    window.getComputedStyle(box, null).animationIterationCount ||
-    1;
+                $(window).scroll(function() {
 
-};
+                    if (once) {
 
-WOW.prototype._animate = function (box, i, config) {
+                        hide();
+                    } else {
 
-  box.style.animationDelay = config.delay;
-  box.style.animationDuration = config.duration;
-  box.style.animationIterationCount = config.iterations;
-  box.style.animationName = this._animation[i].animationName;
-  box.className += (' ' + this._animateClass);
+                        mdbWow();
+                    }
+                });
 
-};
+                appear();
+            }
+        };
+    };
+})(jQuery);
 
-WOW.prototype._boxVisible = function (box, i) {
-
-  box.style.visibility = 'visible';
-
-  box.removeEventListener('animationstart', this._cleanupBoxVisibleListener[i]);
-  box.removeEventListener('webkitAnimationStart', this._cleanupBoxVisibleListener[i]);
-
-  delete this._cleanupBoxVisibleListener[i];
-
-};
-
-WOW.prototype._cleanupBox = function (box, i) {
-
-  box.style.animationDelay = '';
-  box.style.animationDuration = '';
-  box.style.animationIterationCount = '';
-  box.style.animationName = 'none';
-
-  this._cleanupClass(box);
-
-  box.removeEventListener('animationend', this._cleanupBoxListener[i]);
-  box.removeEventListener('webkitAnimationEnd', this._cleanupBoxListener[i]);
-
-  delete this._cleanupBoxListener[i];
-
-};
-
-WOW.prototype._cleanupClass = function (box) {
-
-  var classArray = box.className.split(' ');
-  var animateIndex = classArray.indexOf(this._animateClass);
-
-  if (animateIndex !== -1) {
-
-    classArray.splice(animateIndex, 1);
-    box.className = classArray.join(' ');
-
-  }
-
-};
-
-WOW.prototype._eachBox = function (each) {
-
-  for (var i = 0; i < this._boxes.length; i++) {
-
-    var box = this._boxes[i];
-
-    if (box) {
-
-      (function (i) {
-         each(this._boxes[i], i);
-      }.bind(this))(i);
-
-    }
-
-  }
-
-};
-
-WOW.prototype._scrollHandler = function () {
-
-  this._hideSeoFixListener = this._hideSeoFix.bind(this);
-
-  window.addEventListener('scroll', this._hideSeoFixListener);
-  window.addEventListener('scroll', this._appearInView.bind(this));
-  window.addEventListener('resize', this._appearInView.bind(this));
-
-};
-
-WOW.prototype._hideSeoFix = function () {
-
-  window.removeEventListener('scroll', this._hideSeoFixListener);
-  delete this._hideSeoFixListener;
-
-  this._eachBox(function (box, i) {
-
-    if (!this._isInView(box)) {
-      box.style.visibility = "hidden";
-    }
-
-  }.bind(this));
-
-};
-
-WOW.prototype._appearInView = function () {
-
-  this._eachBox(function (box, i) {
-    this._animateBox(box, i);
-  }.bind(this));
-
-};
-
-WOW.prototype._animateBox = function (box, i) {
-
-  if (this._isInView(box)) {
-    delete this._boxes[i];
-    this._appear(box, i);
-  }
-
-};
-
-WOW.prototype._showNotInView = function () {
-
-  this._eachBox(function (box, i) {
-    this._makeVisible(box, i);
-  }.bind(this));
-
-};
-
-WOW.prototype._makeVisible = function (box, i) {
-
-  if (!this._isInView(box)) {
-    this._boxes[i].style.visibility = 'visible';
-  }
-
-};
-
-WOW.prototype._isInView = function (box) {
-
-  var offset = box.getAttribute('data-wow-offset') || this._offset;
-  var boxTopOffset = this._getElementOffset(box);
-
-  var triggerOffset = boxTopOffset + ~~offset;
-
-  var bottomPosition = window.innerHeight + window.scrollY;
-
-  return triggerOffset <= bottomPosition && (triggerOffset === 0 ? 10 : triggerOffset) >= window.scrollY;
-
-};
-
-WOW.prototype._getElementOffset = function (box) {
-
-  var clientRect = box.getBoundingClientRect();
-
-  var body = document.body;
-
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop || body.scrollTop;
-  var clientTop = document.documentElement.clientTop || body.clientTop || 0;
-
-  var top  = clientRect.top +  scrollTop - clientTop;
-
-  return Math.round(top);
-
-};
-
-WOW.prototype._checkForChanges = function () {
-
-  var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-
-  var observer = new MutationObserver(this._mutations.bind(this));
-
-  var config = {
-    childList: true,
-    subtree: true
-  };
-
-  observer.observe(document.body, config);
-
-};
-
-WOW.prototype._mutations = function (mutations) {
-
-  mutations.forEach(function (mutation) {
-
-    for (var i = 0; i < mutation.addedNodes.length; i++) {
-      this.doSync(mutation.addedNodes[i]);
-    }
-
-  }.bind(this));
-
-};
-
-WOW.prototype.doSync = function (node) {
-
-  if (node.className) {
-
-    var classes = node.className.split(' ');
-
-    if (classes.indexOf(this._boxClass) !== -1) {
-      this._prepareBox(node);
-    }
-
-  }
-
-};
 'use strict';
 
 /* SCROLLING NAVBAR */
-
 var OFFSET_TOP = 50;
-var TRANSITION_DURATION = 1500;
 
 $(window).scroll(function () {
-    if($('.navbar').length) {
-    	if ($('.navbar').offset().top > OFFSET_TOP) {
-    		$('.scrolling-navbar').addClass("top-nav-collapse");
-    	} else {
-    		$('.scrolling-navbar').removeClass("top-nav-collapse");
-    	}
+  if ($('.navbar').length) {
+    if ($('.navbar').offset().top > OFFSET_TOP) {
+      $('.scrolling-navbar').addClass("top-nav-collapse");
+    } else {
+      $('.scrolling-navbar').removeClass("top-nav-collapse");
     }
-});/*!
+  }
+});
+/*!
  * Waves v0.7.5
  * http://fian.my.id/Waves
  *
@@ -13601,16 +14823,27 @@ $(window).scroll(function () {
 
             var parent = element.parentNode;
 
-            // // If input already have parent just pass through
-            // if (parent.tagName.toLowerCase() === 'i' && parent.classList.contains('waves-effect')) {
-            //     return;
-            // }
+            // If input already have parent just pass through
+            if (parent.tagName.toLowerCase() === 'div' && parent.classList.contains('waves-effect')) {
+                return;
+            }
 
+            // Put element class and style to the specified parent
             var wrapper = document.createElement('div');
             wrapper.className = 'waves-input-wrapper';
+            // element.className = element.className + ' waves-button-input';
 
+            // Put element as child
             parent.replaceChild(wrapper, element);
             wrapper.appendChild(element);
+
+            // Apply element color and background color to wrapper
+            var elementStyle = window.getComputedStyle(element, null);
+            var color = elementStyle.color;
+            var backgroundColor = elementStyle.backgroundColor;
+
+            // wrapper.setAttribute('style', 'color:' + color + ';background:' + backgroundColor);
+            // element.setAttribute('style', 'background-color:rgba(0,0,0,0);');
 
         },
 
@@ -13974,285 +15207,337 @@ $(window).scroll(function () {
 //Initialization
 Waves.attach('.btn:not(.btn-flat), .btn-floating', ['waves-light']);
 Waves.attach('.btn-flat', ['waves-effect']);
-Waves.attach('.view .mask', ['waves-light']);
+Waves.attach('.view a .mask', ['waves-light']);
 Waves.attach('.waves-light', ['waves-light']);
-Waves.attach('.waves-effect', ['waves-effect']);
-Waves.attach('.navbar-nav a:not(.navbar-brand), .nav-icons li a, .navbar form, .nav-tabs .nav-item', ['waves-light']);
+Waves.attach('.navbar-nav a:not(.navbar-brand), .nav-icons li a, .navbar input, .nav-tabs .nav-item:not(.dropdown)', ['waves-light']);
 Waves.attach('.pager li a', ['waves-light']);
 Waves.attach('.pagination .page-item .page-link', ['waves-effect']);
 Waves.init();
-"use strict";
+
+'use strict';
 
 /* FORMS */
 (function ($) {
-    $(document).ready(function () {
+  $(document).ready(function () {
 
-        // Text based inputs
-        var input_selector = ["text", "password", "email", "url", "tel", "number", "search", "search-md"].map(function (selector) {
-            return "input[type=" + selector + "]";
-        }).join(", ") + ", textarea";
+    // Text based inputs
+    var input_selector = ['text', 'password', 'email', 'url', 'tel', 'number', 'search', 'search-md'].map(function (selector) {
+      return 'input[type=' + selector + ']';
+    }).join(', ') + ', textarea';
 
-        var text_area_selector = '.materialize-textarea';
+    var text_area_selector = '.materialize-textarea';
 
-        var update_text_fields = function update_text_fields($input) {
+    var update_text_fields = function update_text_fields($input) {
 
-            var $labelAndIcon = $input.siblings("label, i");
-            var hasValue = $input.val().length;
-            var hasPlaceholder = $input.attr("placeholder");
-            // let isValid     = $input.validity.badInput === true;
-            var addOrRemove = (hasValue || hasPlaceholder ? "add" : "remove") + "Class";
+      var $labelAndIcon = $input.siblings('label, i');
+      var hasValue = $input.val().length;
+      var hasPlaceholder = $input.attr('placeholder');
+      // let isValid     = $input.validity.badInput === true;
+      var addOrRemove = (hasValue || hasPlaceholder ? 'add' : 'remove') + 'Class';
 
-            $labelAndIcon[addOrRemove]("active");
-        };
+      $labelAndIcon[addOrRemove]('active');
+    };
 
-        var validate_field = function validate_field($input) {
+    var validate_field = function validate_field($input) {
 
-            if ($input.hasClass("validate")) {
-                var value = $input.val();
-                var noValue = !value.length;
-                var isValid = !$input[0].validity.badInput;
+      if ($input.hasClass('validate')) {
+        var value = $input.val();
+        var noValue = !value.length;
+        var isValid = !$input[0].validity.badInput;
 
-                if (noValue && isValid) $input.removeClass("valid").removeClass("invalid");else {
-                    var valid = $input.is(":valid");
-                    var length = +$input.attr("length") || 0;
+        if (noValue && isValid) {
+          $input.removeClass('valid').removeClass('invalid');
+        } else {
+          var valid = $input.is(':valid');
+          var length = Number($input.attr('length')) || 0;
 
-                    if (valid && (!length || length > value.length)) $input.removeClass("invalid").addClass("valid");else $input.removeClass("valid").addClass("invalid");
-                }
-            }
-        };
+          if (valid && (!length || length > value.length)) {
+            $input.removeClass('invalid').addClass('valid');
+          } else {
+            $input.removeClass('valid').addClass('invalid');
+          }
+        }
+      }
+    };
 
-        var textarea_auto_resize = function textarea_auto_resize() {
+    var textarea_auto_resize = function textarea_auto_resize() {
 
-            var $textarea = $(undefined);
-            if ($textarea.val().length) {
-                var _$hiddenDiv = $(".hiddendiv");
-                var fontFamily = $textarea.css('font-family');
-                var fontSize = $textarea.css('font-size');
+      var $textarea = $(undefined);
+      if ($textarea.val().length) {
+        var _$hiddenDiv = $('.hiddendiv');
+        var fontFamily = $textarea.css('font-family');
+        var fontSize = $textarea.css('font-size');
 
-                if (fontSize) hiddenDiv.css('font-size', fontSize);
-                if (fontFamily) hiddenDiv.css('font-family', fontFamily);
-                if ($textarea.attr('wrap') === "off") hiddenDiv.css('overflow-wrap', "normal").css('white-space', "pre");
-
-                _$hiddenDiv.text($textarea.val() + '\n');
-                var content = hiddenDiv.html().replace(/\n/g, '<br>');
-                _$hiddenDiv.html(content);
-
-                // When textarea is hidden, width goes crazy.
-                // Approximate with half of window size
-                _$hiddenDiv.css('width', $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2);
-                $textarea.css('height', _$hiddenDiv.height());
-            }
-        };
-
-        // Set active on labels and icons (DOM ready scope);
-        $(input_selector).each(function (index, input) {
-            var $this = $(input);
-            var $labelAndIcon = $this.siblings("label, i");
-            update_text_fields($this);
-            var isValid = input.validity.badInput; // pure js
-            if (isValid) $labelAndIcon.addClass("active");
-        });
-
-        // Add active when element has focus
-        $(document).on('focus', input_selector, function (e) {
-            $(e.target).siblings('label, i').addClass('active');
-        });
-
-        // Remove active on blur when not needed or invalid
-        $(document).on('blur', input_selector, function (e) {
-            var $this = $(e.target);
-            var noValue = !$this.val();
-            var invalid = !e.target.validity.badInput;
-            var noPlaceholder = $this.attr("placeholder") === undefined;
-
-            if (noValue && invalid && noPlaceholder) $this.siblings('label, i').removeClass('active');
-
-            validate_field($this);
-        });
-
-        // Add active if form auto complete
-        $(document).on('change', input_selector, function (e) {
-            var $this = $(e.target);
-            update_text_fields($this);
-            validate_field($this);
-        });
-
-        // Handle HTML5 autofocus
-        $("input[autofocus]").siblings("label, i").addClass("active");
-
-        // HTML form reset
-        $(document).on('reset', function (e) {
-            var $formReset = $(e.target);
-            if ($formReset.is('form')) {
-
-                var $formInputs = $formReset.find(input_selector);
-                // Reset inputs
-                $formInputs.removeClass("valid").removeClass("invalid").each(function (index, input) {
-                    var $this = $(input);
-                    var noDefaultValue = !$this.val();
-                    var noPlaceholder = !$this.attr("placeholder");
-                    if (noDefaultValue && noPlaceholder) $this.siblings("label, i").removeClass("active");
-                });
-
-                // Reset select
-                $formReset.find('select.initialized').each(function (index, select) {
-                    var $select = $(select);
-                    var $visible_input = $select.siblings("input.select-dropdown");
-                    var default_value = $select.children("[selected]").val();
-
-                    $select.val(default_value);
-                    $visible_input.val(default_value);
-                });
-            }
-        });
-
-        // Textarea Auto Resize
-        if (!$('.hiddendiv').first().length) {
-            $hiddenDiv = $('<div class="hiddendiv common"></div>');
-            $('body').append($hiddenDiv);
+        if (fontSize) {
+          _$hiddenDiv.css('font-size', fontSize);
+        }
+        if (fontFamily) {
+          _$hiddenDiv.css('font-family', fontFamily);
+        }
+        if ($textarea.attr('wrap') === 'off') {
+          _$hiddenDiv.css('overflow-wrap', 'normal').css('white-space', 'pre');
         }
 
-        $(text_area_selector).each(textarea_auto_resize);
-        $('body').on('keyup keydown', text_area_selector, textarea_auto_resize);
+        _$hiddenDiv.text($textarea.val() + '\n');
+        var content = _$hiddenDiv.html().replace(/\n/g, '<br>');
+        _$hiddenDiv.html(content);
+
+        // When textarea is hidden, width goes crazy.
+        // Approximate with half of window size
+        _$hiddenDiv.css('width', $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2);
+        $textarea.css('height', _$hiddenDiv.height());
+      }
+    };
+
+    // Set active on labels and icons (DOM ready scope);
+    $(input_selector).each(function (index, input) {
+      var $this = $(input);
+      var $labelAndIcon = $this.siblings('label, i');
+      update_text_fields($this);
+      var isValid = input.validity.badInput; // pure js
+      if (isValid) {
+        $labelAndIcon.addClass('active');
+      }
     });
-})(jQuery);//Preloading script
+
+    // Add active when element has focus
+    $(document).on('focus', input_selector, function (e) {
+      $(e.target).siblings('label, i').addClass('active');
+    });
+
+    // Remove active on blur when not needed or invalid
+    $(document).on('blur', input_selector, function (e) {
+      var $this = $(e.target);
+      var noValue = !$this.val();
+      var invalid = !e.target.validity.badInput;
+      var noPlaceholder = $this.attr('placeholder') === undefined;
+
+      if (noValue && invalid && noPlaceholder) {
+        $this.siblings('label, i').removeClass('active');
+      }
+
+      validate_field($this);
+    });
+
+    // Add active if form auto complete
+    $(document).on('change', input_selector, function (e) {
+      var $this = $(e.target);
+      update_text_fields($this);
+      validate_field($this);
+    });
+
+    // Handle HTML5 autofocus
+    $('input[autofocus]').siblings('label, i').addClass('active');
+
+    // HTML form reset
+    $(document).on('reset', function (e) {
+      var $formReset = $(e.target);
+      if ($formReset.is('form')) {
+
+        var $formInputs = $formReset.find(input_selector);
+        // Reset inputs
+        $formInputs.removeClass('valid').removeClass('invalid').each(function (index, input) {
+          var $this = $(input);
+          var noDefaultValue = !$this.val();
+          var noPlaceholder = !$this.attr('placeholder');
+          if (noDefaultValue && noPlaceholder) {
+            $this.siblings('label, i').removeClass('active');
+          }
+        });
+
+        // Reset select
+        $formReset.find('select.initialized').each(function (index, select) {
+          var $select = $(select);
+          var $visible_input = $select.siblings('input.select-dropdown');
+          var default_value = $select.children('[selected]').val();
+
+          $select.val(default_value);
+          $visible_input.val(default_value);
+        });
+      }
+    });
+
+    // Textarea auto extend
+    if ($('.md-textarea-auto').length) {
+      var init = function init() {
+        var text = $('.md-textarea-auto');
+        text.each(function () {
+          var _this = this;
+          function resize() {
+            _this.style.height = 'auto';
+            _this.style.height = _this.scrollHeight + 'px';
+          }
+          /* 0-timeout to get the already changed text */
+          function delayedResize() {
+            window.setTimeout(resize, 0);
+          }
+          observe(_this, 'change', resize);
+          observe(_this, 'cut', delayedResize);
+          observe(_this, 'paste', delayedResize);
+          observe(_this, 'drop', delayedResize);
+          observe(_this, 'keydown', delayedResize);
+          resize();
+        });
+      };
+
+      var observe;
+      if (window.attachEvent) {
+        observe = function observe(element, event, handler) {
+          element.attachEvent('on' + event, handler);
+        };
+      } else {
+        observe = function observe(element, event, handler) {
+          element.addEventListener(event, handler, false);
+        };
+      }
+
+      init();
+    }
+
+    // Textarea Auto Resize
+    if (!$('.hiddendiv').first().length) {
+      $hiddenDiv = $('<div class="hiddendiv common"></div>');
+      $('body').append($hiddenDiv);
+    }
+
+    $(text_area_selector).each(textarea_auto_resize);
+    $('body').on('keyup keydown', text_area_selector, textarea_auto_resize);
+  });
+})(jQuery);
+'use strict';
+
+// Preloading script
 
 $(document).ready(function () {
-    $('#preloader-markup').load("mdb-addons/preloader.html", function () {
-        $('#mdb-preloader').fadeOut('slow');
+  $('#preloader-markup').load('mdb-addons/preloader.html', function () {
+    $(window).on('load', function () {
+      $('#mdb-preloader').fadeOut('slow');
     });
-});/* CARD REVEAL */
+  });
+});
+'use strict';
+
+/* CARD REVEAL */
 (function ($) {
-    $(document).ready(function () {
+  $(document).ready(function () {
 
-        $(document).on('click.card', '.card', function (e) {
+    $(document).on('click.card', '.card', function (e) {
 
-            var $this    = $(this);
-            var isReveal = $this.find(".card-reveal").length;
+      var $this = $(this);
+      var isReveal = $this.find('.card-reveal').length;
 
-            if(isReveal) {
+      if (isReveal) {
 
-                var $clicked        = $(e.target);
-                var isTitle         = $clicked.is(".card-reveal .card-title");
-                var isTitleIcon     = $clicked.is(".card-reveal .card-title i");
-                var isActivator     = $clicked.is(".card .activator");
-                var isActivatorIcon = $clicked.is(".card .activator i");
+        var $clicked = $(e.target);
+        var isTitle = $clicked.is('.card-reveal .card-title');
+        var isTitleIcon = $clicked.is('.card-reveal .card-title i');
+        var isActivator = $clicked.is('.card .activator');
+        var isActivatorIcon = $clicked.is('.card .activator i');
 
-                if(isTitle || isTitleIcon) { // down
+        if (isTitle || isTitleIcon) {
+          // down
 
-                    $this.find(".card-reveal")
-                        .velocity(
-                            { translateY: 0 },
-                            {
-                                duration: 225,
-                                queue   : false,
-                                easing  : 'easeInOutQuad',
-                                complete: function () {
-                                    $(this).css({ display: 'none' });
-                                }
-                            }
-                        );
-
-                } else if(isActivator || isActivatorIcon) { // up
-
-                    $this.find(".card-reveal")
-                        .css({ display: 'block' })
-                        .velocity("stop", false)
-                        .velocity(
-                            { translateY: '-100%' },
-                            {
-                                duration: 300,
-                                queue: false,
-                                easing: 'easeInOutQuad'
-                            }
-                        );
-
-                }
-
+          $this.find('.card-reveal').velocity({
+            translateY: 0
+          }, {
+            duration: 225,
+            queue: false,
+            easing: 'easeInOutQuad',
+            complete: function complete() {
+              $(this).css({
+                display: 'none'
+              });
             }
+          });
+        } else if (isActivator || isActivatorIcon) {
+          // up
 
-
-        });
-
-        $('.rotate-btn').on('click', function () {
-
-            var cardId = $(this).attr('data-card');
-            $('#' + cardId).toggleClass('flipped');
-
-        });
-
+          $this.find('.card-reveal').css({
+            display: 'block'
+          }).velocity('stop', false).velocity({
+            translateY: '-100%'
+          }, {
+            duration: 300,
+            queue: false,
+            easing: 'easeInOutQuad'
+          });
+        }
+      }
     });
-}(jQuery));
 
-//Social reveal
+    $('.rotate-btn').on('click', function () {
+
+      var cardId = $(this).attr('data-card');
+      $('#' + cardId).toggleClass('flipped');
+    });
+  });
+})(jQuery);
+
+// Social reveal
 $(document).ready(function ($) {
 
-    $('.card-share > a').on('click', function (e) {
-        e.preventDefault() // prevent default action - hash doesn't appear in url
-        $(this).parent().find('div').toggleClass('social-reveal-active');
-        $(this).toggleClass('share-expanded');
-    });
+  $('.card-share > a').on('click', function (e) {
+    e.preventDefault(); // prevent default action - hash doesn't appear in url
+    $(this).parent().find('div').toggleClass('social-reveal-active');
+    $(this).toggleClass('share-expanded');
+  });
 });
+'use strict';
+
 /* CHARACTER COUNTER */
 
 (function ($) {
 
-    $.fn.characterCounter = function () {
-        return this.each(function () {
+  $.fn.characterCounter = function () {
+    return this.each(function () {
 
-            var itHasLengthAttribute = $(this).attr('length') !== undefined;
+      var itHasLengthAttribute = $(this).attr('length') !== undefined;
 
-            if (itHasLengthAttribute) {
-                $(this).on('input', updateCounter);
-                $(this).on('focus', updateCounter);
-                $(this).on('blur', removeCounterElement);
+      if (itHasLengthAttribute) {
+        $(this).on('input', updateCounter);
+        $(this).on('focus', updateCounter);
+        $(this).on('blur', removeCounterElement);
 
-                addCounterElement($(this));
-            }
-
-        });
-    };
-
-    function updateCounter() {
-        var maxLength = +$(this).attr('length'),
-            actualLength = +$(this).val().length,
-            isValidLength = actualLength <= maxLength;
-
-        $(this).parent().find('span[class="character-counter"]')
-            .html(actualLength + '/' + maxLength);
-
-        addInputStyle(isValidLength, $(this));
-    }
-
-    function addCounterElement($input) {
-        var $counterElement = $('<span/>')
-            .addClass('character-counter')
-            .css('float', 'right')
-            .css('font-size', '12px')
-            .css('height', 1);
-
-        $input.parent().append($counterElement);
-    }
-
-    function removeCounterElement() {
-        $(this).parent().find('span[class="character-counter"]').html('');
-    }
-
-    function addInputStyle(isValidLength, $input) {
-        var inputHasInvalidClass = $input.hasClass('invalid');
-        if (isValidLength && inputHasInvalidClass) {
-            $input.removeClass('invalid');
-        } else if (!isValidLength && !inputHasInvalidClass) {
-            $input.removeClass('valid');
-            $input.addClass('invalid');
-        }
-    }
-
-    $(document).ready(function () {
-        $('input, textarea').characterCounter();
+        addCounterElement($(this));
+      }
     });
+  };
 
-}(jQuery));/*
+  function updateCounter() {
+    var maxLength = Number($(this).attr('length'));
+    var actualLength = Number($(this).val().length);
+    var isValidLength = actualLength <= maxLength;
+
+    $(this).parent().find('span[class="character-counter"]').html(actualLength + '/' + maxLength);
+
+    addInputStyle(isValidLength, $(this));
+  }
+
+  function addCounterElement($input) {
+    var $counterElement = $('<span/>').addClass('character-counter').css('float', 'right').css('font-size', '12px').css('height', 1);
+
+    $input.parent().append($counterElement);
+  }
+
+  function removeCounterElement() {
+    $(this).parent().find('span[class="character-counter"]').html('');
+  }
+
+  function addInputStyle(isValidLength, $input) {
+    var inputHasInvalidClass = $input.hasClass('invalid');
+    if (isValidLength && inputHasInvalidClass) {
+      $input.removeClass('invalid');
+    } else if (!isValidLength && !inputHasInvalidClass) {
+      $input.removeClass('valid');
+      $input.addClass('invalid');
+    }
+  }
+
+  $(document).ready(function () {
+    $('input, textarea').characterCounter();
+  });
+})(jQuery);
+/*
  * Toastr
  * Copyright 2012-2015
  * Authors: John Papa, Hans Fjällemark, and Tim Ferrell.
@@ -14667,26 +15952,38 @@ $(document).ready(function ($) {
         window['toastr'] = factory(window['jQuery']);
     }
 }));
-//SMOOTH SCROLL
-$(".smooth-scroll").on('click', 'a', function(event) {
-    event.preventDefault();
-    var elAttr = $(this).attr('href');
-    var offset = ($(this).attr('data-offset') ? $(this).attr('data-offset') : 0);
+
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+// SMOOTH SCROLL
+var SMOOTH_SCROLL_DURATION = 700;
+
+$('.smooth-scroll').on('click', 'a', function () {
+  var elAttr = $(this).attr('href');
+  if ((typeof elAttr === 'undefined' ? 'undefined' : _typeof(elAttr)) !== (typeof undefined === 'undefined' ? 'undefined' : _typeof(undefined)) && elAttr.indexOf('#') == 0) {
+    var offset = $(this).attr('data-offset') ? $(this).attr('data-offset') : 0;
     var setHash = $(this).closest('ul').attr('data-allow-hashes');
     $('body,html').animate({
-        scrollTop: $(elAttr).offset().top - offset
-    }, 700);
-    if (typeof setHash !== typeof undefined && setHash !== false) {
-    	history.replaceState(null, null, elAttr);
-	}
+      scrollTop: $(elAttr).offset().top - offset
+    }, SMOOTH_SCROLL_DURATION);
+    if ((typeof setHash === 'undefined' ? 'undefined' : _typeof(setHash)) !== (typeof undefined === 'undefined' ? 'undefined' : _typeof(undefined)) && setHash !== false) {
+      history.replaceState(null, null, elAttr);
+    }
+
+    return false;
+  }
 });
+'use strict';
+
 /* DROPDOWN */
 
 (function ($) {
 
   // Add posibility to scroll to selected option
   // usefull for select for example
-  $.fn.scrollTo = function(elem) {
+  $.fn.scrollTo = function (elem) {
     $(this).scrollTop($(this).scrollTop() - $(this).offset().top + $(elem).offset().top);
     return this;
   };
@@ -14696,473 +15993,476 @@ $(".smooth-scroll").on('click', 'a', function(event) {
       inDuration: 300,
       outDuration: 225,
       constrain_width: true, // Constrains width of dropdown to the activator
-      hover: true,
+      hover: false,
       gutter: 0, // Spacing from edge
       belowOrigin: false,
       alignment: 'left'
     };
 
-    this.each(function(){
-    var origin = $(this);
-    var options = $.extend({}, defaults, option);
-    var isFocused = false;
+    this.each(function () {
+      var origin = $(this);
+      var options = $.extend({}, defaults, option);
+      var isFocused = false;
 
-    // Dropdown menu
-    var activates = $("#"+ origin.attr('data-activates'));
+      // Dropdown menu
+      var activates = $('#' + origin.attr('data-activates'));
 
-    function updateOptions() {
-      if (origin.data('induration') !== undefined)
-        options.inDuration = origin.data('inDuration');
-      if (origin.data('outduration') !== undefined)
-        options.outDuration = origin.data('outDuration');
-      if (origin.data('constrainwidth') !== undefined)
-        options.constrain_width = origin.data('constrainwidth');
-      if (origin.data('hover') !== undefined)
-        options.hover = origin.data('hover');
-      if (origin.data('gutter') !== undefined)
-        options.gutter = origin.data('gutter');
-      if (origin.data('beloworigin') !== undefined)
-        options.belowOrigin = origin.data('beloworigin');
-      if (origin.data('alignment') !== undefined)
-        options.alignment = origin.data('alignment');
-    }
-
-    updateOptions();
-
-    // Attach dropdown to its activator
-    origin.after(activates);
-
-    /*
-      Helper function to position and resize dropdown.
-      Used in hover and click handler.
-    */
-    function placeDropdown(eventType) {
-      // Check for simultaneous focus and click events.
-      if (eventType === 'focus') {
-        isFocused = true;
+      function updateOptions() {
+        if (origin.data('induration') !== undefined) {
+          options.inDuration = origin.data('inDuration');
+        }
+        if (origin.data('outduration') !== undefined) {
+          options.outDuration = origin.data('outDuration');
+        }
+        if (origin.data('constrainwidth') !== undefined) {
+          options.constrain_width = origin.data('constrainwidth');
+        }
+        if (origin.data('hover') !== undefined) {
+          options.hover = origin.data('hover');
+        }
+        if (origin.data('gutter') !== undefined) {
+          options.gutter = origin.data('gutter');
+        }
+        if (origin.data('beloworigin') !== undefined) {
+          options.belowOrigin = origin.data('beloworigin');
+        }
+        if (origin.data('alignment') !== undefined) {
+          options.alignment = origin.data('alignment');
+        }
       }
 
-      // Check html data attributes
       updateOptions();
 
-      // Set Dropdown state
-      activates.addClass('active');
-      origin.addClass('active');
+      // Attach dropdown to its activator
+      origin.after(activates);
 
-      // Constrain width
-      if (options.constrain_width === true) {
-        activates.css('width', origin.outerWidth());
+      /*
+      Helper function to position and resize dropdown.
+      Used in hover and click handler.
+      */
+      function placeDropdown(eventType) {
+        // Check for simultaneous focus and click events.
+        if (eventType === 'focus') {
+          isFocused = true;
+        }
 
-      } else {
-        activates.css('white-space', 'nowrap');
-      }
+        // Check html data attributes
+        updateOptions();
 
-      // Offscreen detection
-      var windowHeight = window.innerHeight;
-      var originHeight = origin.innerHeight();
-      var offsetLeft = origin.offset().left;
-      var offsetTop = origin.offset().top - $(window).scrollTop();
-      var currAlignment = options.alignment;
-      var gutterSpacing = 0;
-      var leftPosition = 0;
+        // Set Dropdown state
+        activates.addClass('active');
+        origin.addClass('active');
 
-      // Below Origin
-      var verticalOffset = 0;
-      if (options.belowOrigin === true) {
-        verticalOffset = originHeight;
-      }
-
-      // Check for scrolling positioned container.
-      var scrollOffset = 0;
-      var wrapper = origin.parent();
-      if (!wrapper.is('body') && wrapper[0].scrollHeight > wrapper[0].clientHeight) {
-        scrollOffset = wrapper[0].scrollTop;
-      }
-
-
-      if (offsetLeft + activates.innerWidth() > $(window).width()) {
-        // Dropdown goes past screen on right, force right alignment
-        currAlignment = 'right';
-
-      } else if (offsetLeft - activates.innerWidth() + origin.innerWidth() < 0) {
-        // Dropdown goes past screen on left, force left alignment
-        currAlignment = 'left';
-      }
-      // Vertical bottom offscreen detection
-      if (offsetTop + activates.innerHeight() > windowHeight) {
-        // If going upwards still goes offscreen, just crop height of dropdown.
-        if (offsetTop + originHeight - activates.innerHeight() < 0) {
-          var adjustedHeight = windowHeight - offsetTop - verticalOffset;
-          activates.css('max-height', adjustedHeight);
+        // Constrain width
+        if (options.constrain_width === true) {
+          activates.css('width', origin.outerWidth());
         } else {
-          // Flow upwards.
-          if (!verticalOffset) {
-            verticalOffset += originHeight;
+          activates.css('white-space', 'nowrap');
+        }
+
+        // Offscreen detection
+        var windowHeight = window.innerHeight;
+        var originHeight = origin.innerHeight();
+        var offsetLeft = origin.offset().left;
+        var offsetTop = origin.offset().top - $(window).scrollTop();
+        var currAlignment = options.alignment;
+        var gutterSpacing = 0;
+        var leftPosition = 0;
+
+        // Below Origin
+        var verticalOffset = 0;
+        if (options.belowOrigin === true) {
+          verticalOffset = originHeight;
+        }
+
+        // Check for scrolling positioned container.
+        var scrollOffset = 0;
+        var wrapper = origin.parent();
+        if (!wrapper.is('body') && wrapper[0].scrollHeight > wrapper[0].clientHeight) {
+          scrollOffset = wrapper[0].scrollTop;
+        }
+
+        if (offsetLeft + activates.innerWidth() > $(window).width()) {
+          // Dropdown goes past screen on right, force right alignment
+          currAlignment = 'right';
+        } else if (offsetLeft - activates.innerWidth() + origin.innerWidth() < 0) {
+          // Dropdown goes past screen on left, force left alignment
+          currAlignment = 'left';
+        }
+        // Vertical bottom offscreen detection
+        if (offsetTop + activates.innerHeight() > windowHeight) {
+          // If going upwards still goes offscreen, just crop height of dropdown.
+          if (offsetTop + originHeight - activates.innerHeight() < 0) {
+            var adjustedHeight = windowHeight - offsetTop - verticalOffset;
+            activates.css('max-height', adjustedHeight);
+          } else {
+            // Flow upwards.
+            if (!verticalOffset) {
+              verticalOffset += originHeight;
+            }
+            verticalOffset -= activates.innerHeight();
           }
-          verticalOffset -= activates.innerHeight();
         }
-      }
 
-      // Handle edge alignment
-      if (currAlignment === 'left') {
-        gutterSpacing = options.gutter;
-        leftPosition = origin.position().left + gutterSpacing;
-      }
-      else if (currAlignment === 'right') {
-        var offsetRight = origin.position().left + origin.outerWidth() - activates.outerWidth();
-        gutterSpacing = -options.gutter;
-        leftPosition =  offsetRight + gutterSpacing;
-      }
-
-      // Position dropdown
-      activates.css({
-        position: 'absolute',
-        top: origin.position().top + verticalOffset + scrollOffset,
-        left: leftPosition
-      });
-
-
-      // Show dropdown
-      activates.stop(true, true).css('opacity', 0)
-        .slideDown({
-        queue: false,
-        duration: options.inDuration,
-        easing: 'easeOutCubic',
-        complete: function() {
-          $(this).css('height', '');
+        // Handle edge alignment
+        if (currAlignment === 'left') {
+          gutterSpacing = options.gutter;
+          leftPosition = origin.position().left + gutterSpacing;
+        } else if (currAlignment === 'right') {
+          var offsetRight = origin.position().left + origin.outerWidth() - activates.outerWidth();
+          gutterSpacing = -options.gutter;
+          leftPosition = offsetRight + gutterSpacing;
         }
-      })
-        .animate( {opacity: 1}, {queue: false, duration: options.inDuration, easing: 'easeOutSine'});
-    }
 
-    function hideDropdown() {
-      // Check for simultaneous focus and click events.
-      isFocused = false;
-      activates.fadeOut(options.outDuration);
-      activates.removeClass('active');
-      origin.removeClass('active');
-      setTimeout(function() { activates.css('max-height', ''); }, options.outDuration);
-    }
+        // Position dropdown
+        activates.css({
+          position: 'absolute',
+          top: origin.position().top + verticalOffset + scrollOffset,
+          left: leftPosition
+        });
 
-    // Hover
-    if (options.hover) {
-      var open = false;
-      origin.unbind('click.' + origin.attr('id'));
-      // Hover handler to show dropdown
-      origin.on('mouseenter', function(e){ // Mouse over
-        if (open === false) {
-          placeDropdown();
-          open = true;
-        }
-      });
-      origin.on('mouseleave', function(e){
-        // If hover on origin then to something other than dropdown content, then close
-        var toEl = e.toElement || e.relatedTarget; // added browser compatibility for target element
-        if(!$(toEl).closest('.dropdown-content').is(activates)) {
-          activates.stop(true, true);
-          hideDropdown();
-          open = false;
-        }
-      });
-
-      activates.on('mouseleave', function(e){ // Mouse out
-        var toEl = e.toElement || e.relatedTarget;
-        if(!$(toEl).closest('.dropdown-button').is(origin)) {
-          activates.stop(true, true);
-          hideDropdown();
-          open = false;
-        }
-      });
-
-    // Click
-    } else {
-      // Click handler to show dropdown
-      origin.unbind('click.' + origin.attr('id'));
-      origin.bind('click.'+origin.attr('id'), function(e){
-        if (!isFocused) {
-          if ( origin[0] == e.currentTarget &&
-               !origin.hasClass('active') &&
-               ($(e.target).closest('.dropdown-content').length === 0)) {
-            e.preventDefault(); // Prevents button click from moving window
-            placeDropdown('click');
+        // Show dropdown
+        activates.stop(true, true).css('opacity', 0).slideDown({
+          queue: false,
+          duration: options.inDuration,
+          easing: 'easeOutCubic',
+          complete: function complete() {
+            $(this).css('height', '');
           }
-          // If origin is clicked and menu is open, close menu
-          else if (origin.hasClass('active')) {
+        }).animate({
+          opacity: 1,
+          scrollTop: 0
+        }, {
+          queue: false,
+          duration: options.inDuration,
+          easing: 'easeOutSine'
+        });
+      }
+
+      function hideDropdown() {
+        // Check for simultaneous focus and click events.
+        isFocused = false;
+        activates.fadeOut(options.outDuration);
+        activates.removeClass('active');
+        origin.removeClass('active');
+        setTimeout(function () {
+          activates.css('max-height', '');
+        }, options.outDuration);
+      }
+
+      // Hover
+      if (options.hover) {
+        var open = false;
+        origin.unbind('click.' + origin.attr('id'));
+        // Hover handler to show dropdown
+        origin.on('mouseenter', function () {
+          // Mouse over
+          if (open === false) {
+            placeDropdown();
+            open = true;
+          }
+        });
+        origin.on('mouseleave', function (e) {
+          // If hover on origin then to something other than dropdown content, then close
+          var toEl = e.toElement || e.relatedTarget; // added browser compatibility for target element
+          if (!$(toEl).closest('.dropdown-content').is(activates)) {
+            activates.stop(true, true);
             hideDropdown();
-            $(document).unbind('click.'+ activates.attr('id') + ' touchstart.' + activates.attr('id'));
+            open = false;
           }
-          // If menu open, add click close handler to document
-          if (activates.hasClass('active')) {
-            $(document).bind('click.'+ activates.attr('id') + ' touchstart.' + activates.attr('id'), function (e) {
-              if (!activates.is(e.target) && !origin.is(e.target) && (!origin.find(e.target).length) ) {
+        });
+
+        activates.on('mouseleave', function (e) {
+          // Mouse out
+          var toEl = e.toElement || e.relatedTarget;
+          if (!$(toEl).closest('.dropdown-button').is(origin)) {
+            activates.stop(true, true);
+            hideDropdown();
+            open = false;
+          }
+        });
+
+        // Click
+      } else {
+        // Click handler to show dropdown
+        origin.unbind('click.' + origin.attr('id'));
+        origin.bind('click.' + origin.attr('id'), function (e) {
+          if (!isFocused) {
+            if (origin[0] === e.currentTarget && !origin.hasClass('active') && $(e.target).closest('.dropdown-content').length === 0) {
+              e.preventDefault(); // Prevents button click from moving window
+              placeDropdown('click');
+            }
+            // If origin is clicked and menu is open, close menu
+            else if (origin.hasClass('active')) {
                 hideDropdown();
-                $(document).unbind('click.'+ activates.attr('id') + ' touchstart.' + activates.attr('id'));
+                $(document).unbind('click.' + activates.attr('id') + ' touchstart.' + activates.attr('id'));
               }
-            });
+            // If menu open, add click close handler to document
+            if (activates.hasClass('active')) {
+              $(document).bind('click.' + activates.attr('id') + ' touchstart.' + activates.attr('id'), function (e) {
+                if (!activates.is(e.target) && !origin.is(e.target) && !origin.find(e.target).length) {
+                  hideDropdown();
+                  $(document).unbind('click.' + activates.attr('id') + ' touchstart.' + activates.attr('id'));
+                }
+              });
+            }
           }
-        }
+        });
+      } // End else
+
+      // Listen to open and close event - useful for select component
+      origin.on('open', function (e, eventType) {
+        placeDropdown(eventType);
       });
-
-    } // End else
-
-    // Listen to open and close event - useful for select component
-    origin.on('open', function(e, eventType) {
-      placeDropdown(eventType);
+      origin.on('close', hideDropdown);
     });
-    origin.on('close', hideDropdown);
-
-
-   });
   }; // End dropdown plugin
 
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('.dropdown-button').dropdown();
   });
-}( jQuery ));
-
+})(jQuery);
 
 var dropdownSelectors = $('.dropdown, .dropup');
 
-        // Custom function to read dropdown data
-        // =========================
-        function dropdownEffectData(target) {
-            // @todo - page level global?
-            var effectInDefault = null,
-                effectOutDefault = null;
-            var dropdown = $(target),
-                dropdownMenu = $('.dropdown-menu', target);
-            var parentUl = dropdown.parents('ul.nav');
+// Custom function to read dropdown data
+// =========================
+function dropdownEffectData(target) {
+  // @todo - page level global?
+  var effectInDefault = 'fadeIn';
+  var effectOutDefault = 'fadeOut';
+  var dropdown = $(target);
+  var dropdownMenu = $('.dropdown-menu', target);
+  var parentUl = dropdown.parents('ul.nav');
 
-            // If parent is ul.nav allow global effect settings
-            if (parentUl.height > 0) {
-                effectInDefault = parentUl.data('dropdown-in') || null;
-                effectOutDefault = parentUl.data('dropdown-out') || null;
-            }
+  // If parent is ul.nav allow global effect settings
+  if (parentUl.height > 0) {
+    effectInDefault = parentUl.data('dropdown-in') || null;
+    effectOutDefault = parentUl.data('dropdown-out') || null;
+  }
 
-            return {
-                target: target,
-                dropdown: dropdown,
-                dropdownMenu: dropdownMenu,
-                effectIn: dropdownMenu.data('dropdown-in') || effectInDefault,
-                effectOut: dropdownMenu.data('dropdown-out') || effectOutDefault,
-            };
-        }
+  return {
+    target: target,
+    dropdown: dropdown,
+    dropdownMenu: dropdownMenu,
+    effectIn: dropdownMenu.data('dropdown-in') || effectInDefault,
+    effectOut: dropdownMenu.data('dropdown-out') || effectOutDefault
+  };
+}
 
-        // Custom function to start effect (in or out)
-        // =========================
-        function dropdownEffectStart(data, effectToStart) {
-            if (effectToStart) {
-                data.dropdown.addClass('dropdown-animating');
-                data.dropdownMenu.addClass('animated');
-                data.dropdownMenu.addClass(effectToStart);
-            }
-        }
+// Custom function to start effect (in or out)
+// =========================
+function dropdownEffectStart(data, effectToStart) {
+  if (effectToStart) {
+    data.dropdown.addClass('dropdown-animating');
+    data.dropdownMenu.addClass('animated');
+    data.dropdownMenu.addClass(effectToStart);
+  }
+}
 
-        // Custom function to read when animation is over
-        // =========================
-        function dropdownEffectEnd(data, callbackFunc) {
-            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-            data.dropdown.one(animationEnd, function () {
-                data.dropdown.removeClass('dropdown-animating');
-                data.dropdownMenu.removeClass('animated');
-                data.dropdownMenu.removeClass(data.effectIn);
-                data.dropdownMenu.removeClass(data.effectOut);
+// Custom function to read when animation is over
+// =========================
+function dropdownEffectEnd(data, callbackFunc) {
+  var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+  data.dropdown.one(animationEnd, function () {
+    data.dropdown.removeClass('dropdown-animating');
+    data.dropdownMenu.removeClass('animated');
+    data.dropdownMenu.removeClass(data.effectIn);
+    data.dropdownMenu.removeClass(data.effectOut);
 
-                // Custom callback option, used to remove open class in out effect
-                if (typeof callbackFunc == 'function') {
-                    callbackFunc();
-                }
-            });
-        }
+    // Custom callback option, used to remove open class in out effect
+    if (typeof callbackFunc === 'function') {
+      callbackFunc();
+    }
+  });
+}
 
-        // Bootstrap API hooks
-        // =========================
-        dropdownSelectors.on({
-            "show.bs.dropdown": function () {
-                // On show, start in effect
-                $(this).find('.dropdown-menu').first().stop(true, true).fadeIn();
-                var dropdown = dropdownEffectData(this);
-                dropdownEffectStart(dropdown, dropdown.effectIn);
-            },
-            "shown.bs.dropdown": function () {
-                // On shown, remove in effect once complete
-                var dropdown = dropdownEffectData(this);
-                if (dropdown.effectIn && dropdown.effectOut) {
-                    dropdownEffectEnd(dropdown, function () {});
-                }
-            },
-            "hide.bs.dropdown": function (e) {
-                // On hide, start out effect
-                    $(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
+// Bootstrap API hooks
+// =========================
+dropdownSelectors.on({
+  'show.bs.dropdown': function showBsDropdown() {
+    // On show, start in effect
+    var dropdown = dropdownEffectData(this);
+    dropdownEffectStart(dropdown, dropdown.effectIn);
+  },
+  'shown.bs.dropdown': function shownBsDropdown() {
+    // On shown, remove in effect once complete
+    var dropdown = dropdownEffectData(this);
+    if (dropdown.effectIn && dropdown.effectOut) {
+      dropdownEffectEnd(dropdown);
+    }
+  },
+  'hide.bs.dropdown': function hideBsDropdown(e) {
+    // On hide, start out effect
+    var dropdown = dropdownEffectData(this);
+    if (dropdown.effectOut) {
+      e.preventDefault();
+      dropdownEffectStart(dropdown, dropdown.effectOut);
+      dropdownEffectEnd(dropdown, function () {
+        dropdown.dropdown.removeClass('show');
+        dropdown.dropdownMenu.removeClass('show');
+      });
+    }
+  }
+});
+'use strict';
 
-                var dropdown = dropdownEffectData(this);
-                if (dropdown.effectOut) {
-                    e.preventDefault();
-                    dropdownEffectStart(dropdown, dropdown.effectOut);
-                    dropdownEffectEnd(dropdown, function () {
-                        dropdown.dropdown.removeClass('open');
-                        dropdown.dropdown.removeClass('show');
-                    });
-                }
-            },
-        });
 (function ($) {
-    $(document).ready(function () {
+  $(document).ready(function () {
 
-        // jQuery reverse
-        $.fn.reverse = [].reverse;
+    // jQuery reverse
+    $.fn.reverse = [].reverse;
 
-        // Hover behaviour: make sure this doesn't work on .click-to-toggle FABs!
-        $(document).on('mouseenter.fixedActionBtn', '.fixed-action-btn:not(.click-to-toggle)', function (e) {
-            var $this = $(this);
-            openFABMenu($this);
-        });
-        $(document).on('mouseleave.fixedActionBtn', '.fixed-action-btn:not(.click-to-toggle)', function (e) {
-            var $this = $(this);
-            closeFABMenu($this);
-        });
-
-        // Toggle-on-click behaviour.
-        $(document).on('click.fixedActionBtn', '.fixed-action-btn.click-to-toggle > a', function (e) {
-            var $this = $(this);
-            var $menu = $this.parent();
-            if ($menu.hasClass('active')) {
-                closeFABMenu($menu);
-            } else {
-                openFABMenu($menu);
-            }
-        });
-
+    // Hover behaviour: make sure this doesn't work on .click-to-toggle FABs!
+    $(document).on('mouseenter.fixedActionBtn', '.fixed-action-btn:not(.click-to-toggle)', function () {
+      var $this = $(this);
+      openFABMenu($this);
+    });
+    $(document).on('mouseleave.fixedActionBtn', '.fixed-action-btn:not(.click-to-toggle)', function () {
+      var $this = $(this);
+      closeFABMenu($this);
     });
 
-    $.fn.extend({
-        openFAB: function () {
-            openFABMenu($(this));
-        },
-        closeFAB: function () {
-            closeFABMenu($(this));
-        }
+    // Toggle-on-click behaviour.
+    $(document).on('click.fixedActionBtn', '.fixed-action-btn.click-to-toggle > a', function () {
+      var $this = $(this);
+      var $menu = $this.parent();
+      if ($menu.hasClass('active')) {
+        closeFABMenu($menu);
+      } else {
+        openFABMenu($menu);
+      }
     });
+  });
 
+  $.fn.extend({
+    openFAB: function openFAB() {
+      openFABMenu($(this));
+    },
+    closeFAB: function closeFAB() {
+      closeFABMenu($(this));
+    }
+  });
 
-    var openFABMenu = function (btn) {
-        $this = btn;
-        if ($this.hasClass('active') === false) {
+  var openFABMenu = function openFABMenu(btn) {
+    var $this = btn;
+    if ($this.hasClass('active') === false) {
 
-            // Get direction option
-            var horizontal = $this.hasClass('horizontal');
-            var offsetY, offsetX;
+      // Get direction option
+      var horizontal = $this.hasClass('horizontal');
+      var offsetY = void 0,
+          offsetX = void 0;
 
-            if (horizontal === true) {
-                offsetX = 40;
-            } else {
-                offsetY = 40;
-            }
+      if (horizontal === true) {
+        offsetX = 40;
+      } else {
+        offsetY = 40;
+      }
 
-            $this.addClass('active');
-            $this.find('ul .btn-floating').velocity({
-                scaleY: ".4",
-                scaleX: ".4",
-                translateY: offsetY + 'px',
-                translateX: offsetX + 'px'
-            }, {
-                duration: 0
-            });
+      $this.addClass('active');
+      $this.find('ul .btn-floating').velocity({
+        scaleY: '.4',
+        scaleX: '.4',
+        translateY: offsetY + 'px',
+        translateX: offsetX + 'px'
+      }, {
+        duration: 0
+      });
 
-            var time = 0;
-            $this.find('ul .btn-floating').reverse().each(function () {
-                $(this).velocity({
-                    opacity: "1",
-                    scaleX: "1",
-                    scaleY: "1",
-                    translateY: "0",
-                    translateX: '0'
-                }, {
-                    duration: 80,
-                    delay: time
-                });
-                time += 40;
-            });
-        }
-    };
-
-    var closeFABMenu = function (btn) {
-        $this = btn;
-        // Get direction option
-        var horizontal = $this.hasClass('horizontal');
-        var offsetY, offsetX;
-
-        if (horizontal === true) {
-            offsetX = 40;
-        } else {
-            offsetY = 40;
-        }
-
-        $this.removeClass('active');
-        var time = 0;
-        $this.find('ul .btn-floating').velocity("stop", true);
-        $this.find('ul .btn-floating').velocity({
-            opacity: "0",
-            scaleX: ".4",
-            scaleY: ".4",
-            translateY: offsetY + 'px',
-            translateX: offsetX + 'px'
+      var time = 0;
+      $this.find('ul .btn-floating').reverse().each(function () {
+        $(this).velocity({
+          opacity: '1',
+          scaleX: '1',
+          scaleY: '1',
+          translateY: '0',
+          translateX: '0'
         }, {
-            duration: 80
+          duration: 80,
+          delay: time
         });
-    };
+        time += 40;
+      });
+    }
+  };
 
-    $('.fixed-action-btn').on({
-        click: function (e) {
-            e.preventDefault();
-            toggleFABMenu($('.fixed-action-btn'));
-            return false;
-        }
-    });
+  var closeFABMenu = function closeFABMenu(btn) {
+    $this = btn;
+    // Get direction option
+    var horizontal = $this.hasClass('horizontal');
+    var offsetY = void 0,
+        offsetX = void 0;
 
-    function toggleFABMenu(btn) {
-
-        $this = btn;
-        if ($this.hasClass('active') === false) {
-            $this.addClass('active');
-            $this.find('ul .btn-floating').velocity({
-                scaleY: ".4",
-                scaleX: ".4",
-                translateY: "40px"
-            }, {
-                duration: 0
-            });
-
-            var time = 0;
-            $this.find('ul .btn-floating').reverse().each(function () {
-                $(this).velocity({
-                    opacity: "1",
-                    scaleX: "1",
-                    scaleY: "1",
-                    translateY: "0"
-                }, {
-                    duration: 80,
-                    delay: time
-                });
-                time += 40;
-            });
-        } else {
-            $this.removeClass('active');
-            var time = 0;
-            $this.find('ul .btn-floating').velocity("stop", true);
-            $this.find('ul .btn-floating').velocity({
-                opacity: "0",
-                scaleX: ".4",
-                scaleY: ".4",
-                translateY: "40px"
-            }, {
-                duration: 80
-            });
-        }
+    if (horizontal === true) {
+      offsetX = 40;
+    } else {
+      offsetY = 40;
     }
 
+    $this.removeClass('active');
+    var time = 0;
+    $this.find('ul .btn-floating').velocity('stop', true);
+    $this.find('ul .btn-floating').velocity({
+      opacity: '0',
+      scaleX: '.4',
+      scaleY: '.4',
+      translateY: offsetY + 'px',
+      translateX: offsetX + 'px'
+    }, {
+      duration: 80
+    });
+  };
 
-}(jQuery));/*! Hammer.JS - v2.0.7 - 2016-04-22
+  $('.fixed-action-btn').on({
+    click: function click(e) {
+      e.preventDefault();
+      toggleFABMenu($('.fixed-action-btn'));
+      return false;
+    }
+  });
+
+  function toggleFABMenu(btn) {
+
+    $this = btn;
+    if ($this.hasClass('active') === false) {
+      $this.addClass('active');
+      $this.find('ul .btn-floating').velocity({
+        scaleY: '.4',
+        scaleX: '.4',
+        translateY: '40px'
+      }, {
+        duration: 0
+      });
+
+      var time = 0;
+      $this.find('ul .btn-floating').reverse().each(function () {
+        $(this).velocity({
+          opacity: '1',
+          scaleX: '1',
+          scaleY: '1',
+          translateY: '0'
+        }, {
+          duration: 80,
+          delay: time
+        });
+        time += 40;
+      });
+    } else {
+      $this.removeClass('active');
+      var _time = 0;
+      $this.find('ul .btn-floating').velocity('stop', true);
+      $this.find('ul .btn-floating').velocity({
+        opacity: '0',
+        scaleX: '.4',
+        scaleY: '.4',
+        translateY: '40px'
+      }, {
+        duration: 80
+      });
+    }
+  }
+})(jQuery);
+/*! Hammer.JS - v2.0.7 - 2016-04-22
  * http://hammerjs.github.io/
  *
  * Copyright (c) 2016 Jorik Tangelder;
@@ -17804,7 +19104,8 @@ if (typeof define === 'function' && define.amd) {
     window[exportName] = Hammer;
 }
 
-})(window, document, 'Hammer');(function(factory) {
+})(window, document, 'Hammer');
+(function(factory) {
     if (typeof define === 'function' && define.amd) {
         define(['jquery', 'hammerjs'], factory);
     } else if (typeof exports === 'object') {
@@ -17837,6 +19138,7 @@ if (typeof define === 'function' && define.amd) {
         };
     })(Hammer.Manager.prototype.emit);
 }));
+
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -17846,576 +19148,570 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /* SideNav */
 (function ($) {
 
-    var menuWidth = 240;
-    var sn_breakpoint = 1440;
+  var MENU_WIDTH = 240;
+  var SN_BREAKPOINT = 1440;
+  var MENU_WIDTH_HALF = 2;
+  var MENU_LEFT_MIN_BORDER = 0.3;
+  var MENU_LEFT_MAX_BORDER = -0.5;
+  var MENU_RIGHT_MIN_BORDER = -0.3;
+  var MENU_RIGHT_MAX_BORDER = 0.5;
+  var MENU_VELOCITY_OFFSET = 10;
 
-    var SideNav = function () {
-        function SideNav(element, options) {
-            var _this = this;
+  var SideNav = function () {
+    function SideNav(element, options) {
+      var _this = this;
 
-            _classCallCheck(this, SideNav);
+      _classCallCheck(this, SideNav);
 
-            var menuOut = false;
+      var menuOut = false;
 
-            var defaults = {
-                menuWidth: menuWidth,
-                edge: 'left',
-                closeOnClick: false
-            };
+      var defaults = {
+        MENU_WIDTH: MENU_WIDTH,
+        edge: 'left',
+        closeOnClick: false
+      };
 
-            options = $.extend(defaults, options);
+      options = $.extend(defaults, options);
 
-            this.options = options;
+      this.options = options;
 
-            var $element = element;
-            this.menu_id = $('#' + $element.attr('data-activates'));
-            var mask_id = $('#' + this.menu_id.attr('id') + '> .sidenav-bg');
+      var $element = element;
+      this.menu_id = $('#' + $element.attr('data-activates'));
+      var mask_id = $('#' + this.menu_id.attr('id') + '> .sidenav-bg');
 
-            // let menuOut = false;
+      // let menuOut = false;
 
-            if (options.menuWidth != menuWidth) {
-                this.menu_id.css('width', options.menuWidth);
-                mask_id.css('width', options.menuWidth);
-            }
+      if (options.MENU_WIDTH !== MENU_WIDTH) {
+        this.menu_id.css('width', options.MENU_WIDTH);
+        mask_id.css('width', options.MENU_WIDTH);
+      }
 
-            var dragTarget = $('<div class="drag-target"></div>');
-            $('body').append(dragTarget);
+      var dragTarget = $('<div class="drag-target"></div>');
+      $('body').append(dragTarget);
 
-            if (options.edge == 'left') {
-                this.menu_id.css('transform', 'translateX(-100%)');
-                dragTarget.css({
-                    'left': 0
-                });
-            } else {
-                this.menu_id.addClass('right-aligned').css('transform', 'translateX(100%)');
-                dragTarget.css({
-                    'right': 0
-                });
-            }
+      if (options.edge === 'left') {
+        this.menu_id.css('transform', 'translateX(-100%)');
+        dragTarget.css({
+          left: 0
+        });
+      } else {
+        this.menu_id.addClass('right-aligned').css('transform', 'translateX(100%)');
+        dragTarget.css({
+          right: 0
+        });
+      }
 
-            if (this.menu_id.hasClass('fixed')) {
+      if (this.menu_id.hasClass('fixed')) {
 
-                if (window.innerWidth > sn_breakpoint) {
-                    this.menu_id.css('transform', 'translateX(0)');
-                }
-
-                $(window).resize(function () {
-                    if (window.innerWidth > sn_breakpoint) {
-                        if ($('#sidenav-overlay').length) {
-                            _this.removeMenu(true);
-                        } else {
-                            _this.menu_id.css('transform', 'translateX(0%)');
-                        }
-                    } else if (menuOut === false) {
-                        if (options.edge === 'left') {
-                            _this.menu_id.css('transform', 'translateX(-100%)');
-                        } else {
-                            _this.menu_id.css('transform', 'translateX(100%)');
-                        }
-                    }
-                });
-            }
-
-            if (this.options.closeOnClick === true) {
-                this.menu_id.on("click", "a:not(.collapsible-header)", function () {
-                    sn.removeMenu();
-                });
-            }
-
-            $element.click(function (e) {
-                e.preventDefault();
-                if (menuOut === true) {
-                    menuOut = false;
-                    _this.removeMenu();
-                } else {
-                    var $body = $('body');
-                    var overlay = $('<div id="sidenav-overlay"></div>');
-                    $body.append(overlay);
-
-                    if (_this.options.edge === 'left') {
-                        _this.menu_id.velocity({
-                            'translateX': [0, -1 * options.menuWidth]
-                        }, {
-                            duration: 300,
-                            queue: false,
-                            easing: 'easeOutQuad'
-                        });
-                    } else {
-                        _this.menu_id.velocity({
-                            'translateX': [0, options.menuWidth]
-                        }, {
-                            duration: 300,
-                            queue: false,
-                            easing: 'easeOutQuad'
-                        });
-                    }
-
-                    overlay.click(function () {
-                        _this.removeMenu();
-                    });
-                }
-            });
-
-            // Touch Event
-            dragTarget.click(function (e) {
-                _this.removeMenu();
-            });
-
-            dragTarget.hammer({
-                prevent_default: false
-            }).bind('pan', function (e) {
-
-                if (e.gesture.pointerType == "touch") {
-
-                    var direction = e.gesture.direction;
-                    var x = e.gesture.center.x;
-                    var y = e.gesture.center.y;
-                    var velocityX = e.gesture.velocityX;
-
-                    // Disable Scrolling
-                    var $body = $('body');
-                    var oldWidth = $body.innerWidth();
-                    $body.css('overflow', 'hidden');
-                    $body.width(oldWidth);
-
-                    // If overlay does not exist, create one and if it is clicked, close menu
-                    if ($('#sidenav-overlay').length === 0) {
-                        var overlay = $('<div id="sidenav-overlay"></div>');
-                        overlay.css('opacity', 0).click(function (e) {
-                            _this.removeMenu();
-                        });
-                        $('body').append(overlay);
-                    }
-
-                    // Keep within boundaries
-                    if (options.edge === 'left') {
-                        if (x > options.menuWidth) {
-                            x = options.menuWidth;
-                        } else if (x < 0) {
-                            x = 0;
-                        }
-                    }
-
-                    if (options.edge === 'left') {
-                        // Left Direction
-                        if (x < options.menuWidth / 2) {
-                            menuOut = false;
-                        }
-                        // Right Direction
-                        else if (x >= options.menuWidth / 2) {
-                                menuOut = true;
-                            }
-                        _this.menu_id.css('transform', 'translateX(' + (x - options.menuWidth) + 'px)');
-                    } else {
-                        // Left Direction
-                        if (x < window.innerWidth - options.menuWidth / 2) {
-                            menuOut = true;
-                        }
-                        // Right Direction
-                        else if (x >= window.innerWidth - options.menuWidth / 2) {
-                                menuOut = false;
-                            }
-                        var rightPos = x - options.menuWidth / 2;
-                        if (rightPos < 0) {
-                            rightPos = 0;
-                        }
-
-                        _this.menu_id.css('transform', 'translateX(' + rightPos + 'px)');
-                    }
-
-                    // Percentage overlay
-                    var overlayPerc;
-                    if (options.edge === 'left') {
-                        overlayPerc = x / options.menuWidth;
-                        $('#sidenav-overlay').velocity({
-                            opacity: overlayPerc
-                        }, {
-                            duration: 10,
-                            queue: false,
-                            easing: 'easeOutQuad'
-                        });
-                    } else {
-                        overlayPerc = Math.abs((x - window.innerWidth) / options.menuWidth);
-                        $('#sidenav-overlay').velocity({
-                            opacity: overlayPerc
-                        }, {
-                            duration: 10,
-                            queue: false,
-                            easing: 'easeOutQuad'
-                        });
-                    }
-                }
-            }).bind('panend', function (e) {
-
-                if (e.gesture.pointerType == "touch") {
-                    var velocityX = e.gesture.velocityX;
-                    var x = e.gesture.center.x;
-                    var leftPos = x - options.menuWidth;
-                    var rightPos = x - options.menuWidth / 2;
-                    if (leftPos > 0) {
-                        leftPos = 0;
-                    }
-                    if (rightPos < 0) {
-                        rightPos = 0;
-                    }
-                    //panning = false;
-
-                    if (options.edge === 'left') {
-                        // If velocityX <= 0.3 then the user is flinging the menu closed so ignore menuOut
-                        if (menuOut && velocityX <= 0.3 || velocityX < -0.5) {
-                            if (leftPos != 0) {
-                                _this.menu_id.velocity({
-                                    'translateX': [0, leftPos]
-                                }, {
-                                    duration: 300,
-                                    queue: false,
-                                    easing: 'easeOutQuad'
-                                });
-                            }
-
-                            // menu_id.css({'translateX': 0});
-                            $('#sidenav-overlay').velocity({
-                                opacity: 1
-                            }, {
-                                duration: 50,
-                                queue: false,
-                                easing: 'easeOutQuad'
-                            });
-                            // dragTarget.css({width: '50%', right: 0, left: ''});
-                            dragTarget.css({
-                                width: '10px',
-                                right: '',
-                                left: 0
-                            });
-                        } else if (!menuOut || velocityX > 0.3) {
-                            // Enable Scrolling
-                            $('body').css({
-                                overflow: '',
-                                width: ''
-                            });
-                            // Slide menu closed
-                            _this.menu_id.velocity({
-                                'translateX': [-1 * options.menuWidth - 10, leftPos]
-                            }, {
-                                duration: 200,
-                                queue: false,
-                                easing: 'easeOutQuad'
-                            });
-                            $('#sidenav-overlay').velocity({
-                                opacity: 0
-                            }, {
-                                duration: 200,
-                                queue: false,
-                                easing: 'easeOutQuad',
-                                complete: function complete() {
-                                    $(this).remove();
-                                }
-                            });
-                            // dragTarget.css({width: '50%', right: 0, left: ''});
-                            dragTarget.css({
-                                width: '10px',
-                                right: '',
-                                left: 0
-                            });
-                        }
-                    } else {
-                        if (menuOut && velocityX >= -0.3 || velocityX > 0.5) {
-
-                            _this.menu_id.velocity({
-                                'translateX': [0, rightPos]
-                            }, {
-                                duration: 300,
-                                queue: false,
-                                easing: 'easeOutQuad'
-                            });
-                            $('#sidenav-overlay').velocity({
-                                opacity: 1
-                            }, {
-                                duration: 50,
-                                queue: false,
-                                easing: 'easeOutQuad'
-                            });
-                            dragTarget.css({
-                                width: '50%',
-                                right: '',
-                                left: 0
-                            });
-                        } else if (!menuOut || velocityX < -0.3) {
-                            // Enable Scrolling
-                            $('body').css({
-                                overflow: '',
-                                width: ''
-                            });
-
-                            // Slide menu closed
-                            _this.menu_id.velocity({
-                                'translateX': [options.menuWidth + 10, rightPos]
-                            }, {
-                                duration: 200,
-                                queue: false,
-                                easing: 'easeOutQuad'
-                            });
-                            $('#sidenav-overlay').velocity({
-                                opacity: 0
-                            }, {
-                                duration: 200,
-                                queue: false,
-                                easing: 'easeOutQuad',
-                                complete: function complete() {
-                                    $(_this).remove();
-                                }
-                            });
-                            dragTarget.css({
-                                width: '10px',
-                                right: 0,
-                                left: ''
-                            });
-                        }
-                    }
-                }
-            });
+        if (window.innerWidth > SN_BREAKPOINT) {
+          this.menu_id.css('transform', 'translateX(0)');
         }
 
-        _createClass(SideNav, [{
-            key: 'removeMenu',
-            value: function removeMenu(restoreMenu) {
-                var _this2 = this;
+        $(window).resize(function () {
+          if (window.innerWidth > SN_BREAKPOINT) {
+            if ($('#sidenav-overlay').length) {
+              _this.removeMenu(true);
+            } else {
+              _this.menu_id.css('transform', 'translateX(0%)');
+            }
+          } else if (menuOut === false) {
+            if (options.edge === 'left') {
+              _this.menu_id.css('transform', 'translateX(-100%)');
+            } else {
+              _this.menu_id.css('transform', 'translateX(100%)');
+            }
+          }
+        });
+      }
 
-                var panning = false;
-                var menuOut = false;
+      if (this.options.closeOnClick === true) {
+        this.menu_id.on('click', 'a:not(.collapsible-header)', function () {
+          _this.removeMenu();
+        });
+      }
 
-                var leftPos = '-' + this.options.menuWidth;
-                var rightPos = window.innerWidth;
+      $element.click(function (e) {
+        e.preventDefault();
+        if (menuOut === true) {
+          menuOut = false;
+          _this.removeMenu();
+        } else {
+          var $body = $('body');
+          var overlay = $('<div id="sidenav-overlay"></div>');
+          $body.append(overlay);
 
-                $('body').css({
-                    overflow: '',
-                    width: ''
-                });
+          if (_this.options.edge === 'left') {
+            _this.menu_id.velocity({
+              translateX: [0, -1 * options.MENU_WIDTH]
+            }, {
+              duration: 300,
+              queue: false,
+              easing: 'easeOutQuad'
+            });
+          } else {
+            _this.menu_id.velocity({
+              translateX: [0, options.MENU_WIDTH]
+            }, {
+              duration: 300,
+              queue: false,
+              easing: 'easeOutQuad'
+            });
+          }
 
-                if (this.options.edge === 'left') {
-                    this.menu_id.velocity({
-                        'translateX': '-100%'
-                    }, {
-                        duration: 200,
-                        queue: false,
-                        easing: 'easeOutCubic',
-                        complete: function complete() {
-                            if (restoreMenu === true) {
-                                _this2.menu_id.removeAttr('style');
-                                _this2.menu_id.css('width', _this2.options.menuWidth);
-                            }
-                        }
-                    });
-                } else {
-                    this.menu_id.velocity({
-                        'translateX': '100%'
-                    }, {
-                        duration: 200,
-                        queue: false,
-                        easing: 'easeOutCubic',
-                        complete: function complete() {
-                            if (restoreMenu === true) {
-                                _this2.menu_id.removeAttr('style');
-                                _this2.menu_id.css('width', _this2.options.menuWidth);
-                            }
-                        }
-                    });
-                }
+          overlay.click(function () {
+            _this.removeMenu();
+          });
+        }
+      });
 
-                $('#sidenav-overlay').velocity({
-                    opacity: 0
+      // Touch Event
+      dragTarget.click(function () {
+        _this.removeMenu();
+      });
+
+      dragTarget.hammer({
+        prevent_default: false
+      }).bind('pan', function (e) {
+
+        if (e.gesture.pointerType === 'touch') {
+
+          var x = e.gesture.center.x;
+
+          // Disable Scrolling
+          var $body = $('body');
+          var oldWidth = $body.innerWidth();
+          $body.css('overflow', 'hidden');
+          $body.width(oldWidth);
+
+          // If overlay does not exist, create one and if it is clicked, close menu
+          if ($('#sidenav-overlay').length === 0) {
+            var overlay = $('<div id="sidenav-overlay"></div>');
+            overlay.css('opacity', 0).click(function () {
+              _this.removeMenu();
+            });
+            $('body').append(overlay);
+          }
+
+          // Keep within boundaries
+          if (options.edge === 'left') {
+            if (x > options.MENU_WIDTH) {
+              x = options.MENU_WIDTH;
+            } else if (x < 0) {
+              x = 0;
+            }
+          }
+
+          if (options.edge === 'left') {
+            // Left Direction
+            if (x < options.MENU_WIDTH / MENU_WIDTH_HALF) {
+              menuOut = false;
+            }
+            // Right Direction
+            else if (x >= options.MENU_WIDTH / MENU_WIDTH_HALF) {
+                menuOut = true;
+              }
+            _this.menu_id.css('transform', 'translateX(' + (x - options.MENU_WIDTH) + 'px)');
+          } else {
+            // Left Direction
+            if (x < window.innerWidth - options.MENU_WIDTH / MENU_WIDTH_HALF) {
+              menuOut = true;
+            }
+            // Right Direction
+            else if (x >= window.innerWidth - options.MENU_WIDTH / MENU_WIDTH_HALF) {
+                menuOut = false;
+              }
+            var rightPos = x - options.MENU_WIDTH / MENU_WIDTH_HALF;
+            if (rightPos < 0) {
+              rightPos = 0;
+            }
+
+            _this.menu_id.css('transform', 'translateX(' + rightPos + 'px)');
+          }
+
+          // Percentage overlay
+          var overlayPerc = void 0;
+          if (options.edge === 'left') {
+            overlayPerc = x / options.MENU_WIDTH;
+            $('#sidenav-overlay').velocity({
+              opacity: overlayPerc
+            }, {
+              duration: 10,
+              queue: false,
+              easing: 'easeOutQuad'
+            });
+          } else {
+            overlayPerc = Math.abs((x - window.innerWidth) / options.MENU_WIDTH);
+            $('#sidenav-overlay').velocity({
+              opacity: overlayPerc
+            }, {
+              duration: 10,
+              queue: false,
+              easing: 'easeOutQuad'
+            });
+          }
+        }
+      }).bind('panend', function (e) {
+
+        if (e.gesture.pointerType === 'touch') {
+          var velocityX = e.gesture.velocityX;
+          var x = e.gesture.center.x;
+          var leftPos = x - options.MENU_WIDTH;
+          var rightPos = x - options.MENU_WIDTH / MENU_WIDTH_HALF;
+          if (leftPos > 0) {
+            leftPos = 0;
+          }
+          if (rightPos < 0) {
+            rightPos = 0;
+          }
+          // panning = false;
+
+          if (options.edge === 'left') {
+            // If velocityX <= 0.3 then the user is flinging the menu closed so ignore menuOut
+            if (menuOut && velocityX <= MENU_LEFT_MIN_BORDER || velocityX < MENU_LEFT_MAX_BORDER) {
+              if (leftPos !== 0) {
+                _this.menu_id.velocity({
+                  translateX: [0, leftPos]
                 }, {
-                    duration: 200,
-                    queue: false,
-                    easing: 'easeOutQuad',
-                    complete: function complete() {
-                        $('#sidenav-overlay').remove();
-                    }
+                  duration: 300,
+                  queue: false,
+                  easing: 'easeOutQuad'
                 });
-            }
-        }, {
-            key: 'show',
-            value: function show() {
-                this.trigger('click');
-            }
-        }, {
-            key: 'hide',
-            value: function hide() {
-                $('#sidenav-overlay').trigger('click');
-            }
-        }]);
+              }
 
-        return SideNav;
-    }();
+              // menu_id.css({'translateX': 0});
+              $('#sidenav-overlay').velocity({
+                opacity: 1
+              }, {
+                duration: 50,
+                queue: false,
+                easing: 'easeOutQuad'
+              });
+              // dragTarget.css({width: '50%', right: 0, left: ''});
+              dragTarget.css({
+                width: '10px',
+                right: '',
+                left: 0
+              });
+            } else if (!menuOut || velocityX > MENU_LEFT_MIN_BORDER) {
+              // Enable Scrolling
+              $('body').css({
+                overflow: '',
+                width: ''
+              });
+              // Slide menu closed
+              _this.menu_id.velocity({
+                translateX: [-1 * options.MENU_WIDTH - MENU_VELOCITY_OFFSET, leftPos]
+              }, {
+                duration: 200,
+                queue: false,
+                easing: 'easeOutQuad'
+              });
+              $('#sidenav-overlay').velocity({
+                opacity: 0
+              }, {
+                duration: 200,
+                queue: false,
+                easing: 'easeOutQuad',
+                complete: function complete() {
+                  $(this).remove();
+                }
+              });
+              // dragTarget.css({width: '50%', right: 0, left: ''});
+              dragTarget.css({
+                width: '10px',
+                right: '',
+                left: 0
+              });
+            }
+          } else if (menuOut && velocityX >= MENU_RIGHT_MIN_BORDER || velocityX > MENU_RIGHT_MAX_BORDER) {
 
-    $.fn.sideNav = function (options) {
-        return this.each(function () {
-            new SideNav($(this), options);
+            _this.menu_id.velocity({
+              translateX: [0, rightPos]
+            }, {
+              duration: 300,
+              queue: false,
+              easing: 'easeOutQuad'
+            });
+            $('#sidenav-overlay').velocity({
+              opacity: 1
+            }, {
+              duration: 50,
+              queue: false,
+              easing: 'easeOutQuad'
+            });
+            dragTarget.css({
+              width: '50%',
+              right: '',
+              left: 0
+            });
+          } else if (!menuOut || velocityX < MENU_RIGHT_MIN_BORDER) {
+            // Enable Scrolling
+            $('body').css({
+              overflow: '',
+              width: ''
+            });
+
+            // Slide menu closed
+            _this.menu_id.velocity({
+              translateX: [options.MENU_WIDTH + MENU_VELOCITY_OFFSET, rightPos]
+            }, {
+              duration: 200,
+              queue: false,
+              easing: 'easeOutQuad'
+            });
+            $('#sidenav-overlay').velocity({
+              opacity: 0
+            }, {
+              duration: 200,
+              queue: false,
+              easing: 'easeOutQuad',
+              complete: function complete() {
+                $(_this).remove();
+              }
+            });
+            dragTarget.css({
+              width: '10px',
+              right: 0,
+              left: ''
+            });
+          }
+        }
+      });
+    }
+
+    _createClass(SideNav, [{
+      key: 'removeMenu',
+      value: function removeMenu(restoreMenu) {
+        var _this2 = this;
+
+        $('body').css({
+          overflow: '',
+          width: ''
         });
 
-    };
-})(jQuery);/* COLLAPSIBLE */
+        if (this.options.edge === 'left') {
+          this.menu_id.velocity({
+            translateX: '-100%'
+          }, {
+            duration: 200,
+            queue: false,
+            easing: 'easeOutCubic',
+            complete: function complete() {
+              if (restoreMenu === true) {
+                _this2.menu_id.removeAttr('style');
+                _this2.menu_id.css('width', _this2.options.MENU_WIDTH);
+              }
+            }
+          });
+        } else {
+          this.menu_id.velocity({
+            translateX: '100%'
+          }, {
+            duration: 200,
+            queue: false,
+            easing: 'easeOutCubic',
+            complete: function complete() {
+              if (restoreMenu === true) {
+                _this2.menu_id.removeAttr('style');
+                _this2.menu_id.css('width', _this2.options.MENU_WIDTH);
+              }
+            }
+          });
+        }
+
+        $('#sidenav-overlay').velocity({
+          opacity: 0
+        }, {
+          duration: 200,
+          queue: false,
+          easing: 'easeOutQuad',
+          complete: function complete() {
+            $('#sidenav-overlay').remove();
+          }
+        });
+      }
+    }, {
+      key: 'show',
+      value: function show() {
+        this.trigger('click');
+      }
+    }, {
+      key: 'hide',
+      value: function hide() {
+        $('#sidenav-overlay').trigger('click');
+      }
+    }]);
+
+    return SideNav;
+  }();
+
+  $.fn.sideNav = function (options) {
+    return this.each(function () {
+      new SideNav($(this), options);
+    });
+  };
+})(jQuery);
+'use strict';
+
+/* COLLAPSIBLE */
 
 (function ($) {
-    $.fn.collapsible = function (options) {
-        var defaults = {
-            accordion: undefined
-        };
+  $.fn.collapsible = function (options) {
+    var defaults = {
+      accordion: undefined
+    };
 
-        options = $.extend(defaults, options);
+    options = $.extend(defaults, options);
 
+    return this.each(function () {
 
-        return this.each(function () {
+      var $this = $(this);
 
-            var $this = $(this);
+      var $panel_headers = $(this).find('> li > .collapsible-header');
 
-            var $panel_headers = $(this).find('> li > .collapsible-header');
+      var collapsible_type = $this.data('collapsible');
 
-            var collapsible_type = $this.data("collapsible");
+      // Turn off any existing event handlers
+      $this.off('click.collapse', '.collapsible-header');
+      $panel_headers.off('click.collapse');
 
-            // Turn off any existing event handlers
-            $this.off('click.collapse', '.collapsible-header');
-            $panel_headers.off('click.collapse');
-
-
-            /****************
+      /** **************
             Helper Functions
             ****************/
 
-            // Accordion Open
-            function accordionOpen(object) {
-                $panel_headers = $this.find('> li > .collapsible-header');
-                if (object.hasClass('active')) {
-                    object.parent().addClass('active');
-                } else {
-                    object.parent().removeClass('active');
-                }
-                if (object.parent().hasClass('active')) {
-                    object.siblings('.collapsible-body').stop(true, false).slideDown({
-                        duration: 350,
-                        easing: "easeOutQuart",
-                        queue: false,
-                        complete: function () {
-                            $(this).css('height', '');
-                        }
-                    });
-                } else {
-                    object.siblings('.collapsible-body').stop(true, false).slideUp({
-                        duration: 350,
-                        easing: "easeOutQuart",
-                        queue: false,
-                        complete: function () {
-                            $(this).css('height', '');
-                        }
-                    });
-                }
-
-                $panel_headers.not(object).removeClass('active').parent().removeClass('active');
-                $panel_headers.not(object).parent().children('.collapsible-body').stop(true, false).slideUp({
-                    duration: 350,
-                    easing: "easeOutQuart",
-                    queue: false,
-                    complete: function () {
-                        $(this).css('height', '');
-                    }
-                });
+      // Accordion Open
+      function accordionOpen(object) {
+        $panel_headers = $this.find('> li > .collapsible-header');
+        if (object.hasClass('active')) {
+          object.parent().addClass('active');
+        } else {
+          object.parent().removeClass('active');
+        }
+        if (object.parent().hasClass('active')) {
+          object.siblings('.collapsible-body').stop(true, false).slideDown({
+            duration: 350,
+            easing: 'easeOutQuart',
+            queue: false,
+            complete: function complete() {
+              $(this).css('height', '');
             }
-
-            // Expandable Open
-            function expandableOpen(object) {
-                if (object.hasClass('active')) {
-                    object.parent().addClass('active');
-                } else {
-                    object.parent().removeClass('active');
-                }
-                if (object.parent().hasClass('active')) {
-                    object.siblings('.collapsible-body').stop(true, false).slideDown({
-                        duration: 350,
-                        easing: "easeOutQuart",
-                        queue: false,
-                        complete: function () {
-                            $(this).css('height', '');
-                        }
-                    });
-                } else {
-                    object.siblings('.collapsible-body').stop(true, false).slideUp({
-                        duration: 350,
-                        easing: "easeOutQuart",
-                        queue: false,
-                        complete: function () {
-                            $(this).css('height', '');
-                        }
-                    });
-                }
+          });
+        } else {
+          object.siblings('.collapsible-body').stop(true, false).slideUp({
+            duration: 350,
+            easing: 'easeOutQuart',
+            queue: false,
+            complete: function complete() {
+              $(this).css('height', '');
             }
+          });
+        }
 
-            /**
+        $panel_headers.not(object).removeClass('active').parent().removeClass('active');
+        $panel_headers.not(object).parent().children('.collapsible-body').stop(true, false).slideUp({
+          duration: 350,
+          easing: 'easeOutQuart',
+          queue: false,
+          complete: function complete() {
+            $(this).css('height', '');
+          }
+        });
+      }
+
+      // Expandable Open
+      function expandableOpen(object) {
+        if (object.hasClass('active')) {
+          object.parent().addClass('active');
+        } else {
+          object.parent().removeClass('active');
+        }
+        if (object.parent().hasClass('active')) {
+          object.siblings('.collapsible-body').stop(true, false).slideDown({
+            duration: 350,
+            easing: 'easeOutQuart',
+            queue: false,
+            complete: function complete() {
+              $(this).css('height', '');
+            }
+          });
+        } else {
+          object.siblings('.collapsible-body').stop(true, false).slideUp({
+            duration: 350,
+            easing: 'easeOutQuart',
+            queue: false,
+            complete: function complete() {
+              $(this).css('height', '');
+            }
+          });
+        }
+      }
+
+      /**
              * Check if object is children of panel header
              * @param  {Object}  object Jquery object
              * @return {Boolean} true if it is children
              */
-            function isChildrenOfPanelHeader(object) {
+      function isChildrenOfPanelHeader(object) {
 
-                var panelHeader = getPanelHeader(object);
+        var panelHeader = getPanelHeader(object);
 
-                return panelHeader.length > 0;
-            }
+        return panelHeader.length > 0;
+      }
 
-            /**
+      /**
              * Get panel header from a children element
              * @param  {Object} object Jquery object
              * @return {Object} panel header object
              */
-            function getPanelHeader(object) {
+      function getPanelHeader(object) {
 
-                return object.closest('li > .collapsible-header');
-            }
+        return object.closest('li > .collapsible-header');
+      }
 
-            /*****  End Helper Functions  *****/
+      /** ***  End Helper Functions  *****/
 
+      if (options.accordion || collapsible_type === 'accordion' || collapsible_type === undefined) {
+        // Handle Accordion
+        // Add click handler to only direct collapsible header children
+        $panel_headers = $this.find('> li > .collapsible-header');
+        $panel_headers.on('click.collapse', function (e) {
+          var element = $(e.target);
 
+          if (isChildrenOfPanelHeader(element)) {
+            element = getPanelHeader(element);
+          }
 
-            if (options.accordion || collapsible_type === "accordion" || collapsible_type === undefined) { // Handle Accordion
-                // Add click handler to only direct collapsible header children
-                $panel_headers = $this.find('> li > .collapsible-header');
-                $panel_headers.on('click.collapse', function (e) {
-                    var element = $(e.target);
-
-                    if (isChildrenOfPanelHeader(element)) {
-                        element = getPanelHeader(element);
-                    }
-
-                    element.toggleClass('active');
-                    accordionOpen(element);
-                });
-                // Open first active
-                accordionOpen($panel_headers.filter('.active').first());
-            } else { // Handle Expandables
-                $panel_headers.each(function () {
-                    // Add click handler to only direct collapsible header children
-                    $(this).on('click.collapse', function (e) {
-                        var element = $(e.target);
-                        if (isChildrenOfPanelHeader(element)) {
-                            element = getPanelHeader(element);
-                        }
-                        element.toggleClass('active');
-                        expandableOpen(element);
-                    });
-                    // Open any bodies that have the active class
-                    if ($(this).hasClass('active')) {
-                        expandableOpen($(this));
-                    }
-
-                });
-            }
-
+          element.toggleClass('active');
+          accordionOpen(element);
         });
-    };
-
-    $(document).ready(function () {
-        $('.collapsible').collapsible();
+        // Open first active
+        accordionOpen($panel_headers.filter('.active').first());
+      } else {
+        // Handle Expandables
+        $panel_headers.each(function () {
+          // Add click handler to only direct collapsible header children
+          $(this).on('click.collapse', function (e) {
+            var element = $(e.target);
+            if (isChildrenOfPanelHeader(element)) {
+              element = getPanelHeader(element);
+            }
+            element.toggleClass('active');
+            expandableOpen(element);
+          });
+          // Open any bodies that have the active class
+          if ($(this).hasClass('active')) {
+            expandableOpen($(this));
+          }
+        });
+      }
     });
-}(jQuery));/**!
+  };
+
+  $(document).ready(function () {
+    $('.collapsible').collapsible();
+  });
+})(jQuery);
+/**!
  * easy-pie-chart
  * Lightweight plugin to render simple, animated and retina optimized pie charts
  *
@@ -18779,132 +20075,174 @@ $.fn.easyPieChart = function(options) {
 
 
 }));
+
 'use strict';
 
-/****************
+/** **************
 *  Range Input  *
 ****************/
 (function ($) {
 
-    var range_wrapper = '.range-field';
-    var range_type = 'input[type=range]';
-    var thumb_html = '<span class="thumb"><span class="value"></span></span>';
-    var range_mousedown = false;
+  var range_wrapper = '.range-field';
+  var range_type = 'input[type=range]';
+  var thumb_html = '<span class="thumb"><span class="value"></span></span>';
+  var range_mousedown = false;
+  var left = void 0;
+
+  var add_thumb = function add_thumb() {
+    var $thumb = $(thumb_html);
+    $(range_type).after($thumb);
+  };
+
+  // Add thumbs;
+  // $(range_type).each(add_thumb)
+
+  $(document).on('change', range_type, function () {
+    var $thumb = $(this);
+    var $thumb_value = $thumb.siblings('.thumb').find('.value');
+    $thumb_value.html($thumb.val());
+  });
+
+  $(document).on('input mousedown touchstart', range_type, function (e) {
+    var $this = $(this);
+    var $thumb = $this.siblings('.thumb');
+    var width = $this.outerWidth();
+    var noThumb = !$thumb.length;
+    // If thumb indicator does not exist yet, create it
+    if (noThumb) {
+      add_thumb();
+    }
+
+    // Set indicator value
+    $thumb.find('.value').html($this.val());
+
+    range_mousedown = true;
+    $this.addClass('active');
+
+    if (!$thumb.hasClass('active')) {
+      $thumb.velocity({
+        height: '30px',
+        width: '30px',
+        top: '-20px',
+        marginLeft: '-15px'
+      }, {
+        duration: 300,
+        easing: 'easeOutExpo'
+      });
+    }
+
+    if (e.type !== 'input') {
+      var isMobile = e.pageX === undefined || e.pageX === null;
+      if (isMobile) {
+        left = e.originalEvent.touches[0].pageX - $(this).offset().left;
+      } else {
+        left = e.pageX - $(this).offset().left;
+      }
+
+      if (left < 0) {
+        left = 0;
+      } else if (left > width) {
+        left = width;
+      }
+      $thumb.addClass('active').css('left', left);
+    }
+
+    $thumb.find('.value').html($this.val());
+  });
+
+  $(document).on('mouseup touchend', range_wrapper, function () {
+    range_mousedown = false;
+    $(this).removeClass('active');
+  });
+
+  $(document).on('mousemove touchmove', range_wrapper, function (e) {
+    var $thumb = $(this).children('.thumb');
     var left = void 0;
 
-    var add_thumb = function add_thumb() {
-        var $thumb = $(thumb_html);
-        $(this).after($thumb);
-    };
+    if (range_mousedown) {
+      if (!$thumb.hasClass('active')) {
+        $thumb.velocity({
+          height: '30px',
+          width: '30px',
+          top: '-20px',
+          marginLeft: '-15px'
+        }, {
+          duration: 300,
+          easing: 'easeOutExpo'
+        });
+      }
+      var isMobile = e.pageX === undefined || e.pageX === null;
+      if (isMobile) {
+        left = e.originalEvent.touches[0].pageX - $(this).offset().left;
+      } else {
+        left = e.pageX - $(this).offset().left;
+      }
 
-    // Add thumbs;
-    $(range_type).each(add_thumb);
+      var width = $(this).outerWidth();
+      if (left < 0) {
+        left = 0;
+      } else if (left > width) {
+        left = width;
+      }
 
-    $(document).on('change', range_type, function (e) {
-        var $thumb = $(this);
-        var $thumb_value = $thumb.siblings('.thumb').find('.value');
-        $thumb_value.html($thumb.val());
-    });
+      $thumb.addClass('active').css('left', left);
+      $thumb.find('.value').html($thumb.siblings(range_type).val());
+    }
+  });
 
-    $(document).on('input mousedown touchstart', range_type, function (e) {
-        var $this = $(this);
-        var $thumb = $this.siblings('.thumb');
-        var $thumb_value = $thumb.find(".value");
-        var width = $this.outerWidth();
-        var noThumb = !$thumb.length;
-        // If thumb indicator does not exist yet, create it
-        if (noThumb) add_thumb();
+  $(document).on('mouseout touchleave', range_wrapper, function () {
+    if (!range_mousedown) {
+      var $thumb = $(this).children('.thumb');
 
-        // Set indicator value
-        $thumb.find('.value').html($this.val());
+      if ($thumb.hasClass('active')) {
+        $thumb.velocity({
+          height: '0',
+          width: '0',
+          top: '10px',
+          marginLeft: '-6px'
+        }, {
+          duration: 100
+        });
+      }
+      $thumb.removeClass('active');
+    }
+  });
+})(jQuery);
+'use strict';
 
-        range_mousedown = true;
-        $this.addClass('active');
-
-        if (!$thumb.hasClass('active')) {
-            $thumb.velocity({ height: '30px', width: '30px', top: '-20px', marginLeft: '-15px' }, { duration: 300, easing: 'easeOutExpo' });
-        }
-
-        if (e.type !== 'input') {
-            var isMobile = e.pageX === undefined || e.pageX === null;
-            if (isMobile) left = e.originalEvent.touches[0].pageX - $(this).offset().left;else left = e.pageX - $(this).offset().left;
-
-            if (left < 0) left = 0;else if (left > width) left = width;
-            $thumb.addClass('active').css('left', left);
-        }
-
-        $thumb.find('.value').html($this.val());
-    });
-
-    $(document).on('mouseup touchend', range_wrapper, function (e) {
-        range_mousedown = false;
-        $(this).removeClass('active');
-    });
-
-    $(document).on('mousemove touchmove', range_wrapper, function (e) {
-        var $thumb = $(this).children('.thumb');
-        var left = void 0;
-
-        if (range_mousedown) {
-            if (!$thumb.hasClass('active')) {
-                $thumb.velocity({ height: '30px', width: '30px', top: '-20px', marginLeft: '-15px' }, { duration: 300, easing: 'easeOutExpo' });
-            }
-            var isMobile = e.pageX === undefined || e.pageX === null;
-            if (isMobile) left = e.originalEvent.touches[0].pageX - $(this).offset().left;else left = e.pageX - $(this).offset().left;
-
-            var width = $(this).outerWidth();
-            if (left < 0) left = 0;else if (left > width) left = width;
-
-            $thumb.addClass('active').css('left', left);
-            $thumb.find('.value').html($thumb.siblings(range_type).val());
-        }
-    });
-
-    $(document).on('mouseout touchleave', range_wrapper, function (e) {
-        if (!range_mousedown) {
-            var $thumb = $(this).children('.thumb');
-
-            if ($thumb.hasClass('active')) {
-                $thumb.velocity({ height: '0', width: '0', top: '10px', marginLeft: '-6px' }, { duration: 100 });
-            }
-            $thumb.removeClass('active');
-        }
-    });
-})(jQuery);'use strict';
-
-/*******************
+/** *****************
 *  File input     *
 ******************/
 (function ($) {
 
-    $(document).on('change', '.file-field input[type="file"]', function (e) {
+  $(document).on('change', '.file-field input[type="file"]', function (e) {
 
-        var $this = $(e.target);
-        var $file_field = $this.closest('.file-field');
-        var $path_input = $file_field.find('input.file-path');
-        var files = $this[0].files;
-        var file_names = [];
-        for (var i = 0; i < files.length; i++) {
-            var file_name = files[i]["name"];
-            file_names.push(file_name);
-        }
-        $path_input.val(file_names.join(', '));
-        $path_input.trigger('change');
-    });
-})(jQuery);(function($){
+    var $this = $(e.target);
+    var $file_field = $this.closest('.file-field');
+    var $path_input = $file_field.find('input.file-path');
+    var files = $this[0].files;
+    var file_names = [];
+    for (var i = 0; i < files.length; i++) {
+      var file_name = files[i].name;
+      file_names.push(file_name);
+    }
+    $path_input.val(file_names.join(', '));
+    $path_input.trigger('change');
+  });
+})(jQuery);
+'use strict';
 
+(function ($) {
 
-    $.fn.material_select = function (callback) {
-    $(this).each(function(){
+  $.fn.material_select = function (callback) {
+    $(this).each(function () {
       var $select = $(this);
 
       if ($select.hasClass('browser-default')) {
         return; // Continue to next (return false breaks out of entire loop)
       }
 
-      var multiple = $select.attr('multiple') ? true : false,
-          optHasMultiple = false,
-          searchMultiple = false,
+      var multiple = Boolean($select.attr('multiple')),
           lastID = $select.data('select-id'); // Tear down structure if Select needs to be rebuilt
 
       if (lastID) {
@@ -18912,89 +20250,84 @@ $.fn.easyPieChart = function(options) {
         $select.parent().find('input').remove();
 
         $select.unwrap();
-        $('ul#select-options-'+lastID).remove();
+        $('ul#select-options-' + lastID).remove();
       }
 
       // If destroying the select, remove the selelct-id and reset it to it's uninitialized state.
-      if(callback === 'destroy') {
+      if (callback === 'destroy') {
         $select.data('select-id', null).removeClass('initialized');
         return;
       }
 
-      var uniqueID = guid(); //Materialize.guid();
+      var uniqueID = guid(); // Materialize.guid();
       $select.data('select-id', uniqueID);
       var wrapper = $('<div class="select-wrapper"></div>');
       wrapper.addClass($select.attr('class'));
-      var options = $('<ul id="select-options-' + uniqueID +'" class="dropdown-content select-dropdown ' + (multiple ? 'multiple-select-dropdown' : '') + '"></ul>'),
+      var options = $('<ul id="select-options-' + uniqueID + '" class="dropdown-content select-dropdown ' + (multiple ? 'multiple-select-dropdown' : '') + '"></ul>'),
           selectChildren = $select.children('option, optgroup'),
           valuesSelected = [],
           optionsHover = false;
 
-      var label = $select.find('option:selected').html() || $select.find('option:first').html() || "";
+      var label = $select.find('option:selected').html() || $select.find('option:first').html() || '';
 
-      //Added to search
-      var applySeachInList = function() {
+      // Added to search
+      var applySeachInList = function applySeachInList() {
 
         var ul = $(this).closest('ul');
         var searchValue = $(this).val();
-        var options = ul.find('li')
-                        .find('span.filtrable');
+        var options = ul.find('li').find('span.filtrable');
 
-        options.each(function() {
-          if (typeof(this.outerText) == 'string') {
-            var liValue = this.outerText.toLowerCase();
+        options.each(function () {
+          if (typeof this.outerHTML === 'string') {
+            var liValue = this.textContent.toLowerCase();
 
-            if (liValue.startsWith(searchValue.toLowerCase())) {
-              $(this).show();
-              $(this).parent().show();
-            } else {
+            if (liValue.indexOf(searchValue.toLowerCase()) === -1) {
               $(this).hide();
               $(this).parent().hide();
+            } else {
+              $(this).show();
+              $(this).parent().show();
             }
           }
         });
-      }
+      };
 
-      //Added to search
-      var setSearchableOption = function () {
+      // Added to search
+      var setSearchableOption = function setSearchableOption() {
         var placeholder = $select.attr('searchable');
-        var element = $('<span class="search-wrap"><input type="text" class="search" placeholder="' + placeholder + '"></span>');
+        var element = $('<span class="search-wrap"><div class="md-form"><input type="text" class="search form-control" placeholder="' + placeholder + '"></div></span>');
         options.append(element);
         element.find('.search').keyup(applySeachInList);
-      }
+      };
 
-      //Added to search
-      var searchable = $select.attr('searchable') ? true : false;
+      // Added to search
+      var searchable = Boolean($select.attr('searchable'));
 
-      //Added to search
+      // Added to search
       if (searchable) {
         setSearchableOption();
       }
 
       // Function that renders and appends the option taking into
       // account type and possible image icon.
-      var appendOptionWithIcon = function(select, option, type) {
+      var appendOptionWithIcon = function appendOptionWithIcon(select, option, type) {
         // Add disabled attr if disabled
-        searchMultiple = select.attr("searchable");
-        var disabledClass = (option.is(':disabled')) ? 'disabled ' : '';
-        var optgroupClass = (type === 'optgroup-option') ? 'optgroup-option ' : '';
-        // check if optgroup have multiple attribiute if have got add a checkbox
-        if (optgroupClass !== ''){
-            type = (select.attr("multiple") === 'multiple') ? 'multiple' : type;
-            optHasMultiple = true;
-        }
+        var disabledClass = option.is(':disabled') ? 'disabled ' : '';
+        var optgroupClass = type === 'optgroup-option' ? 'optgroup-option ' : '';
+
         // add icons
         var icon_url = option.data('icon');
         var classes = option.attr('class');
-        if (!!icon_url) {
+        if (icon_url) {
           var classString = '';
-          if (!!classes) classString = ' class="' + classes + '"';
+          if (classes) {
+            classString = ' class="' + classes + '"';
+          }
 
           // Check for multiple type.
           if (type === 'multiple') {
             options.append($('<li class="' + disabledClass + '"><img alt="" src="' + icon_url + '"' + classString + '><span class="filtrable"><input type="checkbox"' + disabledClass + '/><label></label>' + option.html() + '</span></li>'));
           } else {
-
             options.append($('<li class="' + disabledClass + optgroupClass + '"><img alt="" src="' + icon_url + '"' + classString + '><span class="filtrable">' + option.html() + '</span></li>'));
           }
           return true;
@@ -19010,7 +20343,7 @@ $.fn.easyPieChart = function(options) {
 
       /* Create dropdown structure. */
       if (selectChildren.length) {
-        selectChildren.each(function() {
+        selectChildren.each(function () {
           if ($(this).is('option')) {
             // Direct descendant option.
             if (multiple) {
@@ -19023,10 +20356,30 @@ $.fn.easyPieChart = function(options) {
             var selectOptions = $(this).children('option');
             options.append($('<li class="optgroup"><span>' + $(this).attr('label') + '</span></li>'));
 
-            selectOptions.each(function() {
+            selectOptions.each(function () {
               appendOptionWithIcon($select, $(this), 'optgroup-option');
             });
           }
+        });
+      }
+
+      // Check for optgroups
+      var optgroup = false;
+      if ($select.find('optgroup').length) {
+        optgroup = true;
+      }
+
+      // Added to save
+      var saveSelect = $select.parent().find('button.btn-save');
+      var setSaveOption = function setSaveOption() {
+        options.append(saveSelect);
+      };
+
+      // Save click trigger
+      if (saveSelect.length) {
+        setSaveOption();
+        saveSelect.on('click', function () {
+          $('input.select-dropdown').trigger('close');
         });
       }
 
@@ -19035,37 +20388,36 @@ $.fn.easyPieChart = function(options) {
           // Check if option element is disabled
           if (!$(this).hasClass('disabled') && !$(this).hasClass('optgroup')) {
             var selected = true;
-            if(multiple && optHasMultiple) {
-              $('input[type="checkbox"]', this).prop('checked', function(i, v) { return !v; });
-              // selected = toggleEntryFromArray(valuesSelected, $(this).index(), $select);
-              selected = toggleEntryFromArray(valuesSelected, $(this).index() , $select);
-              // $newSelect.trigger('click');
 
-
-            } else if (multiple && searchMultiple) {
-              $('input[type="checkbox"]', this).prop('checked', function(i, v) { return !v; });
-              // selected = toggleEntryFromArray(valuesSelected, $(this).index(), $select);
-              selected = toggleEntryFromArray(valuesSelected, $(this).index() - 1 , $select);
+            if (multiple) {
+              $('input[type="checkbox"]', this).prop('checked', function (i, v) {
+                return !v;
+              });
+              if (searchable) {
+                if (optgroup) {
+                  selected = toggleEntryFromArray(valuesSelected, $(this).index() - $(this).prevAll('.optgroup').length - 1, $select);
+                } else {
+                  selected = toggleEntryFromArray(valuesSelected, $(this).index() - 1, $select);
+                }
+              } else if (optgroup) {
+                selected = toggleEntryFromArray(valuesSelected, $(this).index() - $(this).prevAll('.optgroup').length, $select);
+              } else {
+                selected = toggleEntryFromArray(valuesSelected, $(this).index(), $select);
+              }
               $newSelect.trigger('focus');
-
-            } else if (multiple) {
-              $('input[type="checkbox"]', this).prop('checked', function(i, v) { return !v; });
-              selected = toggleEntryFromArray(valuesSelected, $(this).index(), $select);
-              // selected = toggleEntryFromArray(valuesSelected, $(this).index() - 1, $select);
-              $newSelect.trigger('focus');
-
             } else {
               options.find('li').removeClass('active');
               $(this).toggleClass('active');
               $newSelect.val($(this).text());
-
             }
 
             activateOption(options, $(this));
             $select.find('option').eq(i).prop('selected', selected);
             // Trigger onchange() event
             $select.trigger('change');
-            if (typeof callback !== 'undefined') callback();
+            if (typeof callback !== 'undefined') {
+              callback();
+            }
           }
 
           e.stopPropagation();
@@ -19076,20 +20428,24 @@ $.fn.easyPieChart = function(options) {
       $select.wrap(wrapper);
       // Add Select Display Element
       var dropdownIcon = $('<span class="caret">&#9660;</span>');
-      if ($select.is(':disabled'))
+      if ($select.is(':disabled')) {
         dropdownIcon.addClass('disabled');
+      }
 
       // escape double quotes
       var sanitizedLabelHtml = label.replace(/"/g, '&quot;');
 
-      var $newSelect = $('<input type="text" class="select-dropdown" readonly="true" ' + (($select.is(':disabled')) ? 'disabled' : '') + ' data-activates="select-options-' + uniqueID +'" value="'+ sanitizedLabelHtml +'"/>');
+      var $newSelect = $('<input type="text" class="select-dropdown" readonly="true" ' + ($select.is(':disabled') ? 'disabled' : '') + ' data-activates="select-options-' + uniqueID + '" value="' + sanitizedLabelHtml + '"/>');
       $select.before($newSelect);
       $newSelect.before(dropdownIcon);
 
       $newSelect.after(options);
       // Check if section element is disabled
       if (!$select.is(':disabled')) {
-        $newSelect.dropdown({'hover': false, 'closeOnClick': false});
+        $newSelect.dropdown({
+          hover: false,
+          closeOnClick: false
+        });
       }
 
       // Copy tabindex
@@ -19100,26 +20456,26 @@ $.fn.easyPieChart = function(options) {
       $select.addClass('initialized');
 
       $newSelect.on({
-        'focus': function (){
+        focus: function focus() {
           if ($('ul.select-dropdown').not(options[0]).is(':visible')) {
             $('input.select-dropdown').trigger('close');
           }
           if (!options.is(':visible')) {
             $(this).trigger('open', ['focus']);
-            var label = $(this).val();
-            var selectedOption = options.find('li').filter(function() {
-              return $(this).text().toLowerCase() === label.toLowerCase();
+            var _label = $(this).val();
+            var selectedOption = options.find('li').filter(function () {
+              return $(this).text().toLowerCase() === _label.toLowerCase();
             })[0];
             activateOption(options, selectedOption);
           }
         },
-        'click': function (e){
+        click: function click(e) {
           e.stopPropagation();
         }
       });
 
-      //Changed to search to treat search
-      $newSelect.on('blur', function() {
+      // Changed to search to treat search
+      $newSelect.on('blur', function () {
 
         if (!multiple && !searchable) {
           $(this).trigger('close');
@@ -19127,121 +20483,134 @@ $.fn.easyPieChart = function(options) {
         options.find('li.selected').removeClass('selected');
       });
 
-      //Added to search
+      // Added to search
       if (!multiple && searchable) {
-          options.find('li').on('click', function() {
-              $newSelect.trigger('close');
-          });
+        options.find('li').on('click', function () {
+          $newSelect.trigger('close');
+        });
       }
 
-      options.hover(function() {
+      options.hover(function () {
         optionsHover = true;
       }, function () {
         optionsHover = false;
       });
 
-      //Changed to search to treat search
+      // if select is wrapped in modal prevent hiding
+      options.on('mousedown', function (e) {
+        if ($('.modal-content').find(options).length) {
+          if (this.scrollHeight > this.offsetHeight) {
+            e.preventDefault();
+          }
+        }
+      });
+
+      // Changed to search to treat search
       $(window).on({
-        'click': function () {
+        click: function click() {
           (multiple || searchable) && (optionsHover || $newSelect.trigger('close'));
         }
       });
 
       // Add initial multiple selections.
       if (multiple) {
-        $select.find("option:selected:not(:disabled)").each(function () {
+        $select.find('option:selected:not(:disabled)').each(function () {
           var index = $(this).index();
 
           toggleEntryFromArray(valuesSelected, index, $select);
-          options.find("li").eq(index).find(":checkbox").prop("checked", true);
+          options.find('li').eq(index).find(':checkbox').prop('checked', true);
         });
       }
 
       // Make option as selected and scroll to selected position
-      var activateOption = function(collection, newOption) {
+      var activateOption = function activateOption(collection, newOption) {
         if (newOption) {
           collection.find('li.selected').removeClass('selected');
           var option = $(newOption);
           option.addClass('selected');
-          options.scrollTo(option);
+          // commented because it causes problems in multiselect with many options
+          // options.scrollTo(option)
         }
       };
 
       // Allow user to search by typing
       // this array is cleared after 1 second
       var filterQuery = [],
-          onKeyDown = function(e){
-            // TAB - switch to another input
-            if(e.which == 9){
-              $newSelect.trigger('close');
-              return;
-            }
+          onKeyDown = function onKeyDown(e) {
+        // TAB - switch to another input
+        if (e.which == 9) {
+          $newSelect.trigger('close');
+          return;
+        }
 
-            // ARROW DOWN WHEN SELECT IS CLOSED - open select options
-            if(e.which == 40 && !options.is(':visible')){
-              $newSelect.trigger('open');
-              return;
-            }
+        // ARROW DOWN WHEN SELECT IS CLOSED - open select options
+        if (e.which == 40 && !options.is(':visible')) {
+          $newSelect.trigger('open');
+          return;
+        }
 
-            // ENTER WHEN SELECT IS CLOSED - submit form
-            if(e.which == 13 && !options.is(':visible')){
-              return;
-            }
+        // ENTER WHEN SELECT IS CLOSED - submit form
+        if (e.which == 13 && !options.is(':visible')) {
+          return;
+        }
 
-            e.preventDefault();
+        e.preventDefault();
 
-            // CASE WHEN USER TYPE LETTERS
-            var letter = String.fromCharCode(e.which).toLowerCase(),
-                nonLetters = [9,13,27,38,40];
-            if (letter && (nonLetters.indexOf(e.which) === -1)) {
-              filterQuery.push(letter);
+        // CASE WHEN USER TYPE LETTERS
+        var letter = String.fromCharCode(e.which).toLowerCase(),
+            nonLetters = [9, 13, 27, 38, 40];
+        if (letter && nonLetters.indexOf(e.which) === -1) {
+          filterQuery.push(letter);
 
-              var string = filterQuery.join(''),
-                  newOption = options.find('li').filter(function() {
-                    return $(this).text().toLowerCase().indexOf(string) === 0;
-                  })[0];
+          var string = filterQuery.join(''),
+              newOption = options.find('li').filter(function () {
+            return $(this).text().toLowerCase().indexOf(string) === 0;
+          })[0];
 
-              if (newOption) {
-                activateOption(options, newOption);
-              }
-            }
+          if (newOption) {
+            activateOption(options, newOption);
+          }
+        }
 
-            // ENTER - select option and close when select options are opened
-            if (e.which == 13) {
-              var activeOption = options.find('li.selected:not(.disabled)')[0];
-              if(activeOption){
-                $(activeOption).trigger('click');
-                if (!multiple) {
-                  $newSelect.trigger('close');
-                }
-              }
-            }
-
-            // ARROW DOWN - move to next not disabled option
-            if (e.which == 40) {
-              if (options.find('li.selected').length) {
-                newOption = options.find('li.selected').next('li:not(.disabled)')[0];
-              } else {
-                newOption = options.find('li:not(.disabled)')[0];
-              }
-              activateOption(options, newOption);
-            }
-
-            // ESC - close options
-            if (e.which == 27) {
+        // ENTER - select option and close when select options are opened
+        if (e.which == 13) {
+          var activeOption = options.find('li.selected:not(.disabled)')[0];
+          if (activeOption) {
+            $(activeOption).trigger('click');
+            if (!multiple) {
               $newSelect.trigger('close');
             }
+          }
+        }
 
-            // ARROW UP - move to previous not disabled option
-            if (e.which == 38) {
-              newOption = options.find('li.selected').prev('li:not(.disabled)')[0];
-              if(newOption)
-                activateOption(options, newOption);
-            }
+        // ARROW DOWN - move to next not disabled option
+        if (e.which == 40) {
+          if (options.find('li.selected').length) {
+            newOption = options.find('li.selected').next('li:not(.disabled)')[0];
+          } else {
+            newOption = options.find('li:not(.disabled)')[0];
+          }
+          activateOption(options, newOption);
+        }
 
-            // Automaticaly clean filter query so user can search again by starting letters
-            setTimeout(function(){ filterQuery = []; }, 1000);
-          };
+        // ESC - close options
+        if (e.which == 27) {
+          $newSelect.trigger('close');
+        }
+
+        // ARROW UP - move to previous not disabled option
+        if (e.which == 38) {
+          newOption = options.find('li.selected').prev('li:not(.disabled)')[0];
+          if (newOption) {
+            activateOption(options, newOption);
+          }
+        }
+
+        // Automaticaly clean filter query so user can search again by starting letters
+        setTimeout(function () {
+          filterQuery = [];
+        }, 1000);
+      };
 
       $newSelect.on('keydown', onKeyDown);
     });
@@ -19256,7 +20625,7 @@ $.fn.easyPieChart = function(options) {
         entriesArray.splice(index, 1);
       }
 
-      select.siblings('ul.dropdown-content').find('li').eq(entryIndex).toggleClass('active');
+      select.siblings('ul.dropdown-content').find('li:not(.optgroup)').eq(entryIndex).toggleClass('active');
 
       // use notAdded instead of true (to detect if the option is selected or not)
       select.find('option').eq(entryIndex).prop('selected', notAdded);
@@ -19283,53 +20652,24 @@ $.fn.easyPieChart = function(options) {
     // };
 
     function guid() {
-        var d = new Date().getTime();
-        var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = (d + Math.random() * 16) % 16 | 0;
-            d = Math.floor(d / 16);
-            return (c == 'x' ? r : r & 0x3 | 0x8).toString(16);
-        });
-        return uuid;
+      var d = new Date().getTime();
+      var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c == 'x' ? r : r & 0x3 | 0x8).toString(16);
+      });
+      return uuid;
     }
-
-  }
-
-
+  };
 })(jQuery);
 
 jQuery('select').siblings('input.select-dropdown').on('mousedown', function (e) {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     if (e.clientX >= e.target.clientWidth || e.clientY >= e.target.clientHeight) {
-      e.preventDefault()
+      e.preventDefault();
     }
   }
 });
-
-/* How it Works !!!!
-
-<select class="mdb-select" searchable="search here..">
-<option value="" disabled selected>Choose your option</option>
-<option value="1">Yellow</option>
-<option value="2">Green</option>
-<option value="3">Pink</option>
-<option value="4">Orange</option>
-</select>
-<label>Example label</label>
-
-Without searchable it's a normal material select
-
-*/
-
-
-
-
-
-
-
-
-
-
-
 /*!
  * pickadate.js v3.5.6, 2015/04/20
  * By Amsul, http://amsul.ca
@@ -20490,6 +21830,7 @@ return PickerConstructor
 
 
 }));
+
 
 
 
@@ -21873,6 +23214,7 @@ $.extend($.fn.pickadate.defaults, {
           $pickerInstance.find('.picker__header').prepend('<div class="picker__date-display"><div class="picker__weekday-display">' + labelday + '</div><div class="picker__month-display"><div>' + month + '</div></div><div class="picker__day-display"><div>' + day + '</div></div><div    class="picker__year-display"><div>' + year + '</div></div></div>');
       }
   });
+
 /*!
  * ClockPicker v0.0.7 (http://weareoutman.github.io/clockpicker/)
  * Copyright 2014 Wang Shenwei.
@@ -21987,7 +23329,8 @@ $.extend($.fn.pickadate.defaults, {
 				minutesView = popover.find('.clockpicker-minutes'),
 				amPmBlock = popover.find('.clockpicker-am-pm-block'),
 				isInput = element.prop('tagName') === 'INPUT',
-				input = isInput ? element : element.find('input'),
+        input = isInput ? element : element.find('input'),
+        isHTML5 = input.prop('type') === 'time',
 				label = $("label[for=" + input.attr("id") + "]"),
 				self = this,
 				timer;
@@ -22011,7 +23354,7 @@ $.extend($.fn.pickadate.defaults, {
 		this.spanMinutes = popover.find('.clockpicker-span-minutes');
 		this.spanAmPm = popover.find('.clockpicker-span-am-pm');
 		this.footer = popover.find('.picker__footer');
-		this.amOrPm = "PM";
+		this.amOrPm = "";
 
 		// Setup for for 12 hour clock if option is selected
 		if (options.twelvehour) {
@@ -22028,7 +23371,7 @@ $.extend($.fn.pickadate.defaults, {
 
 			var amPmButtons = $(amPmButtonsTemplate);
 
-			if(!options.ampmclickable) {
+			if (!options.ampmclickable) {
 				$('<button type="button" class="btn-floating btn-flat clockpicker-button am-button" tabindex="1">' + "AM" + '</button>').on("click", function() {
 					self.amOrPm = "AM";
 					self.amPmBlock.children('.pm-button').removeClass('active');
@@ -22061,7 +23404,7 @@ $.extend($.fn.pickadate.defaults, {
 			popover.addClass('darktheme');
 
 			// If autoclose is not setted, append a button
-		$('<button type="button" class="btn-flat clockpicker-button" tabindex="' + (options.twelvehour? '3' : '1') + '">' + options.donetext + '</button>').click($.proxy(this.done, this)).appendTo(this.footer);
+		$('<button type="button" class="btn btn-flat clockpicker-button" tabindex="' + (options.twelvehour? '3' : '1') + '">' + options.donetext + '</button>').click($.proxy(this.done, this)).appendTo(this.footer);
 
 		this.spanHours.click($.proxy(this.toggleView, this, 'hours'));
 		this.spanMinutes.click($.proxy(this.toggleView, this, 'minutes'));
@@ -22074,51 +23417,55 @@ $.extend($.fn.pickadate.defaults, {
 				i, tick, radian, radius;
 
 		// Hours view
-		if (options.twelvehour) {
-			for (i = 1; i < 13; i += 1) {
-				tick = tickTpl.clone();
-				radian = i / 6 * Math.PI;
-				radius = outerRadius;
-				tick.css('font-size', '140%');
-				tick.css({
-					left: dialRadius + Math.sin(radian) * radius - tickRadius,
-					top: dialRadius - Math.cos(radian) * radius - tickRadius
-				});
-				tick.html(i === 0 ? '00' : i);
-				hoursView.append(tick);
-				tick.on(mousedownEvent, mousedown);
-			}
+    if (options.twelvehour) {
+      for (i = 0; i < 12; i += options.hourstep) {
+          tick = tickTpl.clone();
+          radian = i / 6 * Math.PI;
+          radius = outerRadius;
+          tick.css('font-size', '140%');
+          tick.css({
+              left: dialRadius + Math.sin(radian) * radius - tickRadius,
+              top: dialRadius - Math.cos(radian) * radius - tickRadius
+          });
+          tick.html(i === 0 ? 12 : i);
+          hoursView.append(tick);
+          tick.on(mousedownEvent, mousedown);
+      }
 		} else {
-			for (i = 0; i < 24; i += 1) {
-				tick = tickTpl.clone();
-				radian = i / 6 * Math.PI;
-				var inner = i > 0 && i < 13;
-				radius = inner ? innerRadius : outerRadius;
-				tick.css({
-					left: dialRadius + Math.sin(radian) * radius - tickRadius,
-					top: dialRadius - Math.cos(radian) * radius - tickRadius
-				});
-				if (inner)
-					tick.css('font-size', '120%');
-				tick.html(i === 0 ? '00' : i);
-				hoursView.append(tick);
-				tick.on(mousedownEvent, mousedown);
+      for (i = 0; i < 24; i += options.hourstep) {
+        tick = tickTpl.clone();
+        radian = i / 6 * Math.PI;
+        var inner = i > 0 && i < 13;
+        radius = inner ? innerRadius : outerRadius;
+        tick.css({
+            left: dialRadius + Math.sin(radian) * radius - tickRadius,
+            top: dialRadius - Math.cos(radian) * radius - tickRadius
+        });
+        if (inner) {
+            tick.css('font-size', '120%');
+        }
+        tick.html(i === 0 ? '00' : i);
+        hoursView.append(tick);
+        tick.on(mousedownEvent, mousedown);
 			}
 		}
 
-		// Minutes view
-		for (i = 0; i < 60; i += 5) {
-			tick = tickTpl.clone();
-			radian = i / 30 * Math.PI;
-			tick.css({
-				left: dialRadius + Math.sin(radian) * outerRadius - tickRadius,
-				top: dialRadius - Math.cos(radian) * outerRadius - tickRadius
-			});
-			tick.css('font-size', '140%');
-			tick.html(leadingZero(i));
-			minutesView.append(tick);
-			tick.on(mousedownEvent, mousedown);
-		}
+    // Minutes view
+    var incrementValue = Math.max(options.minutestep, 5);
+    for (i = 0; i < 60; i += incrementValue) {
+      for (i = 0; i < 60; i += 5) {
+        tick = tickTpl.clone();
+        radian = i / 30 * Math.PI;
+        tick.css({
+          left: dialRadius + Math.sin(radian) * outerRadius - tickRadius,
+          top: dialRadius - Math.cos(radian) * outerRadius - tickRadius
+        });
+        tick.css('font-size', '140%');
+        tick.html(leadingZero(i));
+        minutesView.append(tick);
+        tick.on(mousedownEvent, mousedown);
+      }
+    }
 
 		// Clicking on minutes view space
 		plate.on(mousedownEvent, function(e) {
@@ -22250,8 +23597,11 @@ $.extend($.fn.pickadate.defaults, {
 		autoclose: false,      // auto close when minute is selected
 		ampmclickable: false,  // set am/pm button on itself
 		darktheme: false,			 // set to dark theme
-		twelvehour: true,      // change to 12 hour AM/PM clock from 24 hour
-		vibrate: true          // vibrate the device when dragging clock hand
+		twelvehour: false,     // change to 12 hour AM/PM clock from 24 hour
+    vibrate: true,         // vibrate the device when dragging clock hand
+    hourstep: 1,           // allow to multi increment the hour
+    minutestep: 1,         // allow to multi increment the minute
+    ampmSubmit: false,     // allow submit with AM and PM buttons instead of the minute selection/picker
 	};
 
 	// Show or hide popover
@@ -22270,7 +23620,34 @@ $.extend($.fn.pickadate.defaults, {
 				self = this;
 
 		popover.show();
-	};
+  };
+
+    // The input can be changed by the user
+    // So before we can use this.hours/this.minutes we must update it
+ClockPicker.prototype.parseInputValue = function(){
+  var value = this.input.prop('value') || this.options['default'] || '';
+
+  if (value === 'now') {
+      value = new Date(+ new Date() + this.options.fromnow);
+  }
+  if (value instanceof Date) {
+      value = value.getHours() + ':' + value.getMinutes();
+  }
+
+  value = value.split(':');
+
+  // Minutes can have AM/PM that needs to be removed
+  this.hours = + value[0] || 0;
+  this.minutes = + (value[1] + '').replace(/\D/g, '') || 0;
+
+  this.hours = Math.round(this.hours / this.options.hourstep) * this.options.hourstep;
+  this.minutes = Math.round(this.minutes / this.options.minutestep) * this.options.minutestep;
+
+  if (this.options.twelvehour) {
+      var period = (value[1] + '').replace(/\d+/g, '').toLowerCase();
+      this.amOrPm = this.hours > 12 || period === 'pm' ? 'PM' : 'AM';
+  }
+};
 
 	// Show popover
 	ClockPicker.prototype.show = function(e){
@@ -22312,21 +23689,14 @@ $.extend($.fn.pickadate.defaults, {
 			this.isAppended = true;
 		}
 		// Get the time
-		var value = ((this.input.prop('value') || this.options['default'] || '') + '').split(':');
-		if(this.options.twelvehour && !(typeof value[1] === 'undefined')) {
-			value[1] = value[1].replace("AM", "").replace("PM", "");
-		}
-		if (value[0] === 'now') {
-			var now = new Date(+ new Date() + this.options.fromnow);
-			value = [
-				now.getHours(),
-				now.getMinutes()
-			];
-		}
-		this.hours = + value[0] || 0;
-		this.minutes = + value[1] || 0;
+		this.parseInputValue();
 		this.spanHours.html(leadingZero(this.hours));
-		this.spanMinutes.html(leadingZero(this.minutes));
+    this.spanMinutes.html(leadingZero(this.minutes));
+
+    if (this.options.twelvehour) {
+      this.spanAmPm.empty().append(this.amOrPm);
+    }
+
 		// Toggle to hours view
 		this.toggleView('hours');
 		// Set position
@@ -22419,12 +23789,19 @@ $.extend($.fn.pickadate.defaults, {
 	ClockPicker.prototype.setHand = function(x, y, roundBy5, dragging) {
 		var radian = Math.atan2(x, - y),
 				isHours = this.currentView === 'hours',
-				unit = Math.PI / (isHours || roundBy5? 6 : 30),
 				z = Math.sqrt(x * x + y * y),
 				options = this.options,
 				inner = isHours && z < (outerRadius + innerRadius) / 2,
 				radius = inner ? innerRadius : outerRadius,
-				value;
+				unit,
+        value;
+
+        // Calculate the unit
+        if (isHours) {
+            unit = options.hourstep / 6 * Math.PI
+        } else {
+            unit = options.minutestep / 30 * Math.PI
+        }
 
 		if (options.twelvehour)
 			radius = outerRadius;
@@ -22440,28 +23817,23 @@ $.extend($.fn.pickadate.defaults, {
 		radian = value * unit;
 
 		// Correct the hours or minutes
-		if(options.twelvehour) {
-			if(isHours) {
-				if(value === 0)
-					value = 12;
-			} else {
-				if(roundBy5)
-					value *= 5;
-				if(value === 60)
-					value = 0;
-			}
-		} else {
-			if(isHours) {
-				if(value === 12)
-					value = 0;
-				value = inner ? (value === 0 ? 12 : value) : value === 0 ? 0 : value + 12;
-			} else {
-				if(roundBy5)
-					value *= 5;
-				if(value === 60)
-					value = 0;
-			}
-		}
+    if (isHours) {
+      value *= options.hourstep;
+      if (! options.twelvehour && (!inner)==(value>0)) {
+          value += 12;
+      }
+      if (options.twelvehour && value === 0) {
+          value = 12;
+      }
+      if (value === 24) {
+          value = 0;
+      }
+    } else {
+      value *= options.minutestep;
+      if (value === 60) {
+          value = 0;
+      }
+    }
 		if (isHours)
 			this.fg.setAttribute('class', 'clockpicker-canvas-fg');
 		else {
@@ -22507,17 +23879,32 @@ $.extend($.fn.pickadate.defaults, {
 		}
 
 		// Set clock hand and others' position
-		var cx1 = Math.sin(radian) * (radius - tickRadius),
-			  cy1 = - Math.cos(radian) * (radius - tickRadius),
-		    cx2 = Math.sin(radian) * radius,
-			  cy2 = - Math.cos(radian) * radius;
-		this.hand.setAttribute('x2', cx1);
-		this.hand.setAttribute('y2', cy1);
-		this.bg.setAttribute('cx', cx2);
-		this.bg.setAttribute('cy', cy2);
-		this.fg.setAttribute('cx', cx2);
-		this.fg.setAttribute('cy', cy2);
+    var cx = Math.sin(radian) * radius,
+      cy = - Math.cos(radian) * radius;
+    this.hand.setAttribute('x2', cx);
+    this.hand.setAttribute('y2', cy);
+    this.bg.setAttribute('cx', cx);
+    this.bg.setAttribute('cy', cy);
+    this.fg.setAttribute('cx', cx);
+    this.fg.setAttribute('cy', cy);
 	};
+
+    // Allow user to get time as Date object
+    ClockPicker.prototype.getTime = function(callback) {
+      this.parseInputValue();
+
+      var hours = this.hours;
+      if (this.options.twelvehour && hours < 12 && this.amOrPm === 'PM') {
+          hours += 12;
+      }
+
+      var selectedTime = new Date();
+      selectedTime.setMinutes(this.minutes)
+      selectedTime.setHours(hours);
+      selectedTime.setSeconds(0);
+
+      return callback && callback.apply(this.element, selectedTime) || selectedTime;
+  }
 
 	// Hours and minutes are selected
 	ClockPicker.prototype.done = function() {
@@ -22526,13 +23913,27 @@ $.extend($.fn.pickadate.defaults, {
 		this.label.addClass('active');
 
 		var last = this.input.prop('value'),
-				value = leadingZero(this.hours) + ':' + leadingZero(this.minutes);
-		if (this.options.twelvehour)
-			value = value + this.amOrPm;
+      outHours = this.hours,
+      value = ':' + leadingZero(this.minutes);
+
+    if (this.isHTML5 && this.options.twelvehour) {
+        if (this.hours < 12 && this.amOrPm === 'PM') {
+            outHours += 12;
+        }
+        if (this.hours === 12 && this.amOrPm === 'AM') {
+            outHours = 0;
+        }
+    }
+
+    value = leadingZero(outHours) + value;
+
+    if (!this.isHTML5 && this.options.twelvehour) {
+          value = value + this.amOrPm;
+    }
 
 		this.input.prop('value', value);
 		if(value !== last) {
-			this.input.triggerHandler('change');
+			this.input.trigger('change');
 			if(!this.isInput)
 				this.element.trigger('change');
 		}
@@ -22558,20 +23959,32 @@ $.extend($.fn.pickadate.defaults, {
 	// Extends $.fn.clockpicker
 	$.fn.pickatime = function(option){
 		var args = Array.prototype.slice.call(arguments, 1);
-		return this.each(function(){
+		function handleClockPickerRequest(){
 			var $this = $(this),
 					data = $this.data('clockpicker');
 			if (!data) {
 				var options = $.extend({}, ClockPicker.DEFAULTS, $this.data(), typeof option == 'object' && option);
 				$this.data('clockpicker', new ClockPicker($this, options));
 			} else {
-				// Manual operatsions. show, hide, remove, e.g.
+				// Manual operations. show, hide, remove, e.g.
 				if (typeof data[option] === 'function')
 					data[option].apply(data, args);
 			}
-		});
-	};
+    }
+    // If we explicitly do a call on a single element then we can return the value (if needed)
+    // This allows us, for example, to return the value of getTime
+    if (this.length == 1) {
+      var returnValue = handleClockPickerRequest.apply(this[0]);
+
+      // If we do not have any return value then return the object itself so you can chain
+      return returnValue !== undefined ? returnValue : this;
+    }
+
+    // If we do have a list then we do not care about return values
+    return this.each(handleClockPickerRequest);
+    };
 }());
+
 /*! PhotoSwipe - v4.1.1 - 2015-12-24
  * http://photoswipe.com
  * Copyright (c) 2015 Dmitry Semenov; */
@@ -24179,7 +25592,8 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
 };
 
 // execute above function
-initPhotoSwipeFromDOM('.mdb-lightbox');/* jSticky Plugin
+initPhotoSwipeFromDOM('.mdb-lightbox');
+/* jSticky Plugin
  * =============
  * Author: Andrew Henderson (@AndrewHenderson)
  * Contributor: Mike Street (@mikestreety)
@@ -24295,288 +25709,293 @@ initPhotoSwipeFromDOM('.mdb-lightbox');/* jSticky Plugin
       }
     });
   };
-})(jQuery);/* perfect-scrollbar v0.7.1 */
-!function t(e,n,r){function o(i,s){if(!n[i]){if(!e[i]){var a="function"==typeof require&&require;if(!s&&a)return a(i,!0);if(l)return l(i,!0);var c=new Error("Cannot find module '"+i+"'");throw c.code="MODULE_NOT_FOUND",c}var u=n[i]={exports:{}};e[i][0].call(u.exports,function(t){var n=e[i][1][t];return o(n?n:t)},u,u.exports,t,e,n,r)}return n[i].exports}for(var l="function"==typeof require&&require,i=0;i<r.length;i++)o(r[i]);return o}({1:[function(t,e,n){"use strict";var r=t("../main");"function"==typeof define&&define.amd?define(r):(window.PerfectScrollbar=r,"undefined"==typeof window.Ps&&(window.Ps=r))},{"../main":7}],2:[function(t,e,n){"use strict";function r(t,e){var n=t.className.split(" ");n.indexOf(e)<0&&n.push(e),t.className=n.join(" ")}function o(t,e){var n=t.className.split(" "),r=n.indexOf(e);r>=0&&n.splice(r,1),t.className=n.join(" ")}n.add=function(t,e){t.classList?t.classList.add(e):r(t,e)},n.remove=function(t,e){t.classList?t.classList.remove(e):o(t,e)},n.list=function(t){return t.classList?Array.prototype.slice.apply(t.classList):t.className.split(" ")}},{}],3:[function(t,e,n){"use strict";function r(t,e){return window.getComputedStyle(t)[e]}function o(t,e,n){return"number"==typeof n&&(n=n.toString()+"px"),t.style[e]=n,t}function l(t,e){for(var n in e){var r=e[n];"number"==typeof r&&(r=r.toString()+"px"),t.style[n]=r}return t}var i={};i.e=function(t,e){var n=document.createElement(t);return n.className=e,n},i.appendTo=function(t,e){return e.appendChild(t),t},i.css=function(t,e,n){return"object"==typeof e?l(t,e):"undefined"==typeof n?r(t,e):o(t,e,n)},i.matches=function(t,e){return"undefined"!=typeof t.matches?t.matches(e):"undefined"!=typeof t.matchesSelector?t.matchesSelector(e):"undefined"!=typeof t.webkitMatchesSelector?t.webkitMatchesSelector(e):"undefined"!=typeof t.mozMatchesSelector?t.mozMatchesSelector(e):"undefined"!=typeof t.msMatchesSelector?t.msMatchesSelector(e):void 0},i.remove=function(t){"undefined"!=typeof t.remove?t.remove():t.parentNode&&t.parentNode.removeChild(t)},i.queryChildren=function(t,e){return Array.prototype.filter.call(t.childNodes,function(t){return i.matches(t,e)})},e.exports=i},{}],4:[function(t,e,n){"use strict";var r=function(t){this.element=t,this.events={}};r.prototype.bind=function(t,e){"undefined"==typeof this.events[t]&&(this.events[t]=[]),this.events[t].push(e),this.element.addEventListener(t,e,!1)},r.prototype.unbind=function(t,e){var n="undefined"!=typeof e;this.events[t]=this.events[t].filter(function(r){return!(!n||r===e)||(this.element.removeEventListener(t,r,!1),!1)},this)},r.prototype.unbindAll=function(){for(var t in this.events)this.unbind(t)};var o=function(){this.eventElements=[]};o.prototype.eventElement=function(t){var e=this.eventElements.filter(function(e){return e.element===t})[0];return"undefined"==typeof e&&(e=new r(t),this.eventElements.push(e)),e},o.prototype.bind=function(t,e,n){this.eventElement(t).bind(e,n)},o.prototype.unbind=function(t,e,n){this.eventElement(t).unbind(e,n)},o.prototype.unbindAll=function(){for(var t=0;t<this.eventElements.length;t++)this.eventElements[t].unbindAll()},o.prototype.once=function(t,e,n){var r=this.eventElement(t),o=function(t){r.unbind(e,o),n(t)};r.bind(e,o)},e.exports=o},{}],5:[function(t,e,n){"use strict";e.exports=function(){function t(){return Math.floor(65536*(1+Math.random())).toString(16).substring(1)}return function(){return t()+t()+"-"+t()+"-"+t()+"-"+t()+"-"+t()+t()+t()}}()},{}],6:[function(t,e,n){"use strict";function r(t){return function(e,n){t(e,"ps--in-scrolling"),"undefined"!=typeof n?t(e,"ps--"+n):(t(e,"ps--x"),t(e,"ps--y"))}}var o=t("./class"),l=t("./dom"),i=n.toInt=function(t){return parseInt(t,10)||0},s=n.clone=function(t){if(t){if(Array.isArray(t))return t.map(s);if("object"==typeof t){var e={};for(var n in t)e[n]=s(t[n]);return e}return t}return null};n.extend=function(t,e){var n=s(t);for(var r in e)n[r]=s(e[r]);return n},n.isEditable=function(t){return l.matches(t,"input,[contenteditable]")||l.matches(t,"select,[contenteditable]")||l.matches(t,"textarea,[contenteditable]")||l.matches(t,"button,[contenteditable]")},n.removePsClasses=function(t){for(var e=o.list(t),n=0;n<e.length;n++){var r=e[n];0===r.indexOf("ps-")&&o.remove(t,r)}},n.outerWidth=function(t){return i(l.css(t,"width"))+i(l.css(t,"paddingLeft"))+i(l.css(t,"paddingRight"))+i(l.css(t,"borderLeftWidth"))+i(l.css(t,"borderRightWidth"))},n.startScrolling=r(o.add),n.stopScrolling=r(o.remove),n.env={isWebKit:"undefined"!=typeof document&&"WebkitAppearance"in document.documentElement.style,supportsTouch:"undefined"!=typeof window&&("ontouchstart"in window||window.DocumentTouch&&document instanceof window.DocumentTouch),supportsIePointer:"undefined"!=typeof window&&null!==window.navigator.msMaxTouchPoints}},{"./class":2,"./dom":3}],7:[function(t,e,n){"use strict";var r=t("./plugin/destroy"),o=t("./plugin/initialize"),l=t("./plugin/update");e.exports={initialize:o,update:l,destroy:r}},{"./plugin/destroy":9,"./plugin/initialize":17,"./plugin/update":21}],8:[function(t,e,n){"use strict";e.exports={handlers:["click-rail","drag-scrollbar","keyboard","wheel","touch"],maxScrollbarLength:null,minScrollbarLength:null,scrollXMarginOffset:0,scrollYMarginOffset:0,suppressScrollX:!1,suppressScrollY:!1,swipePropagation:!0,swipeEasing:!0,useBothWheelAxes:!1,wheelPropagation:!1,wheelSpeed:1,theme:"default"}},{}],9:[function(t,e,n){"use strict";var r=t("../lib/helper"),o=t("../lib/dom"),l=t("./instances");e.exports=function(t){var e=l.get(t);e&&(e.event.unbindAll(),o.remove(e.scrollbarX),o.remove(e.scrollbarY),o.remove(e.scrollbarXRail),o.remove(e.scrollbarYRail),r.removePsClasses(t),l.remove(t))}},{"../lib/dom":3,"../lib/helper":6,"./instances":18}],10:[function(t,e,n){"use strict";function r(t,e){function n(t){return t.getBoundingClientRect()}var r=function(t){t.stopPropagation()};e.event.bind(e.scrollbarY,"click",r),e.event.bind(e.scrollbarYRail,"click",function(r){var o=r.pageY-window.pageYOffset-n(e.scrollbarYRail).top,s=o>e.scrollbarYTop?1:-1;i(t,"top",t.scrollTop+s*e.containerHeight),l(t),r.stopPropagation()}),e.event.bind(e.scrollbarX,"click",r),e.event.bind(e.scrollbarXRail,"click",function(r){var o=r.pageX-window.pageXOffset-n(e.scrollbarXRail).left,s=o>e.scrollbarXLeft?1:-1;i(t,"left",t.scrollLeft+s*e.containerWidth),l(t),r.stopPropagation()})}var o=t("../instances"),l=t("../update-geometry"),i=t("../update-scroll");e.exports=function(t){var e=o.get(t);r(t,e)}},{"../instances":18,"../update-geometry":19,"../update-scroll":20}],11:[function(t,e,n){"use strict";function r(t,e){function n(n){var o=r+n*e.railXRatio,i=Math.max(0,e.scrollbarXRail.getBoundingClientRect().left)+e.railXRatio*(e.railXWidth-e.scrollbarXWidth);o<0?e.scrollbarXLeft=0:o>i?e.scrollbarXLeft=i:e.scrollbarXLeft=o;var s=l.toInt(e.scrollbarXLeft*(e.contentWidth-e.containerWidth)/(e.containerWidth-e.railXRatio*e.scrollbarXWidth))-e.negativeScrollAdjustment;c(t,"left",s)}var r=null,o=null,s=function(e){n(e.pageX-o),a(t),e.stopPropagation(),e.preventDefault()},u=function(){l.stopScrolling(t,"x"),e.event.unbind(e.ownerDocument,"mousemove",s)};e.event.bind(e.scrollbarX,"mousedown",function(n){o=n.pageX,r=l.toInt(i.css(e.scrollbarX,"left"))*e.railXRatio,l.startScrolling(t,"x"),e.event.bind(e.ownerDocument,"mousemove",s),e.event.once(e.ownerDocument,"mouseup",u),n.stopPropagation(),n.preventDefault()})}function o(t,e){function n(n){var o=r+n*e.railYRatio,i=Math.max(0,e.scrollbarYRail.getBoundingClientRect().top)+e.railYRatio*(e.railYHeight-e.scrollbarYHeight);o<0?e.scrollbarYTop=0:o>i?e.scrollbarYTop=i:e.scrollbarYTop=o;var s=l.toInt(e.scrollbarYTop*(e.contentHeight-e.containerHeight)/(e.containerHeight-e.railYRatio*e.scrollbarYHeight));c(t,"top",s)}var r=null,o=null,s=function(e){n(e.pageY-o),a(t),e.stopPropagation(),e.preventDefault()},u=function(){l.stopScrolling(t,"y"),e.event.unbind(e.ownerDocument,"mousemove",s)};e.event.bind(e.scrollbarY,"mousedown",function(n){o=n.pageY,r=l.toInt(i.css(e.scrollbarY,"top"))*e.railYRatio,l.startScrolling(t,"y"),e.event.bind(e.ownerDocument,"mousemove",s),e.event.once(e.ownerDocument,"mouseup",u),n.stopPropagation(),n.preventDefault()})}var l=t("../../lib/helper"),i=t("../../lib/dom"),s=t("../instances"),a=t("../update-geometry"),c=t("../update-scroll");e.exports=function(t){var e=s.get(t);r(t,e),o(t,e)}},{"../../lib/dom":3,"../../lib/helper":6,"../instances":18,"../update-geometry":19,"../update-scroll":20}],12:[function(t,e,n){"use strict";function r(t,e){function n(n,r){var o=t.scrollTop;if(0===n){if(!e.scrollbarYActive)return!1;if(0===o&&r>0||o>=e.contentHeight-e.containerHeight&&r<0)return!e.settings.wheelPropagation}var l=t.scrollLeft;if(0===r){if(!e.scrollbarXActive)return!1;if(0===l&&n<0||l>=e.contentWidth-e.containerWidth&&n>0)return!e.settings.wheelPropagation}return!0}var r=!1;e.event.bind(t,"mouseenter",function(){r=!0}),e.event.bind(t,"mouseleave",function(){r=!1});var i=!1;e.event.bind(e.ownerDocument,"keydown",function(c){if(!(c.isDefaultPrevented&&c.isDefaultPrevented()||c.defaultPrevented)){var u=l.matches(e.scrollbarX,":focus")||l.matches(e.scrollbarY,":focus");if(r||u){var d=document.activeElement?document.activeElement:e.ownerDocument.activeElement;if(d){if("IFRAME"===d.tagName)d=d.contentDocument.activeElement;else for(;d.shadowRoot;)d=d.shadowRoot.activeElement;if(o.isEditable(d))return}var p=0,f=0;switch(c.which){case 37:p=c.metaKey?-e.contentWidth:c.altKey?-e.containerWidth:-30;break;case 38:f=c.metaKey?e.contentHeight:c.altKey?e.containerHeight:30;break;case 39:p=c.metaKey?e.contentWidth:c.altKey?e.containerWidth:30;break;case 40:f=c.metaKey?-e.contentHeight:c.altKey?-e.containerHeight:-30;break;case 33:f=90;break;case 32:f=c.shiftKey?90:-90;break;case 34:f=-90;break;case 35:f=c.ctrlKey?-e.contentHeight:-e.containerHeight;break;case 36:f=c.ctrlKey?t.scrollTop:e.containerHeight;break;default:return}a(t,"top",t.scrollTop-f),a(t,"left",t.scrollLeft+p),s(t),i=n(p,f),i&&c.preventDefault()}}})}var o=t("../../lib/helper"),l=t("../../lib/dom"),i=t("../instances"),s=t("../update-geometry"),a=t("../update-scroll");e.exports=function(t){var e=i.get(t);r(t,e)}},{"../../lib/dom":3,"../../lib/helper":6,"../instances":18,"../update-geometry":19,"../update-scroll":20}],13:[function(t,e,n){"use strict";function r(t,e){function n(n,r){var o=t.scrollTop;if(0===n){if(!e.scrollbarYActive)return!1;if(0===o&&r>0||o>=e.contentHeight-e.containerHeight&&r<0)return!e.settings.wheelPropagation}var l=t.scrollLeft;if(0===r){if(!e.scrollbarXActive)return!1;if(0===l&&n<0||l>=e.contentWidth-e.containerWidth&&n>0)return!e.settings.wheelPropagation}return!0}function r(t){var e=t.deltaX,n=-1*t.deltaY;return"undefined"!=typeof e&&"undefined"!=typeof n||(e=-1*t.wheelDeltaX/6,n=t.wheelDeltaY/6),t.deltaMode&&1===t.deltaMode&&(e*=10,n*=10),e!==e&&n!==n&&(e=0,n=t.wheelDelta),t.shiftKey?[-n,-e]:[e,n]}function o(e,n){var r=t.querySelector("textarea:hover, select[multiple]:hover, .ps-child:hover");if(r){var o=window.getComputedStyle(r),l=[o.overflow,o.overflowX,o.overflowY].join("");if(!l.match(/(scroll|auto)/))return!1;var i=r.scrollHeight-r.clientHeight;if(i>0&&!(0===r.scrollTop&&n>0||r.scrollTop===i&&n<0))return!0;var s=r.scrollLeft-r.clientWidth;if(s>0&&!(0===r.scrollLeft&&e<0||r.scrollLeft===s&&e>0))return!0}return!1}function s(s){var c=r(s),u=c[0],d=c[1];o(u,d)||(a=!1,e.settings.useBothWheelAxes?e.scrollbarYActive&&!e.scrollbarXActive?(d?i(t,"top",t.scrollTop-d*e.settings.wheelSpeed):i(t,"top",t.scrollTop+u*e.settings.wheelSpeed),a=!0):e.scrollbarXActive&&!e.scrollbarYActive&&(u?i(t,"left",t.scrollLeft+u*e.settings.wheelSpeed):i(t,"left",t.scrollLeft-d*e.settings.wheelSpeed),a=!0):(i(t,"top",t.scrollTop-d*e.settings.wheelSpeed),i(t,"left",t.scrollLeft+u*e.settings.wheelSpeed)),l(t),a=a||n(u,d),a&&(s.stopPropagation(),s.preventDefault()))}var a=!1;"undefined"!=typeof window.onwheel?e.event.bind(t,"wheel",s):"undefined"!=typeof window.onmousewheel&&e.event.bind(t,"mousewheel",s)}var o=t("../instances"),l=t("../update-geometry"),i=t("../update-scroll");e.exports=function(t){var e=o.get(t);r(t,e)}},{"../instances":18,"../update-geometry":19,"../update-scroll":20}],14:[function(t,e,n){"use strict";function r(t,e){e.event.bind(t,"scroll",function(){l(t)})}var o=t("../instances"),l=t("../update-geometry");e.exports=function(t){var e=o.get(t);r(t,e)}},{"../instances":18,"../update-geometry":19}],15:[function(t,e,n){"use strict";function r(t,e){function n(){var t=window.getSelection?window.getSelection():document.getSelection?document.getSelection():"";return 0===t.toString().length?null:t.getRangeAt(0).commonAncestorContainer}function r(){c||(c=setInterval(function(){return l.get(t)?(s(t,"top",t.scrollTop+u.top),s(t,"left",t.scrollLeft+u.left),void i(t)):void clearInterval(c)},50))}function a(){c&&(clearInterval(c),c=null),o.stopScrolling(t)}var c=null,u={top:0,left:0},d=!1;e.event.bind(e.ownerDocument,"selectionchange",function(){t.contains(n())?d=!0:(d=!1,a())}),e.event.bind(window,"mouseup",function(){d&&(d=!1,a())}),e.event.bind(window,"keyup",function(){d&&(d=!1,a())}),e.event.bind(window,"mousemove",function(e){if(d){var n={x:e.pageX,y:e.pageY},l={left:t.offsetLeft,right:t.offsetLeft+t.offsetWidth,top:t.offsetTop,bottom:t.offsetTop+t.offsetHeight};n.x<l.left+3?(u.left=-5,o.startScrolling(t,"x")):n.x>l.right-3?(u.left=5,o.startScrolling(t,"x")):u.left=0,n.y<l.top+3?(l.top+3-n.y<5?u.top=-5:u.top=-20,o.startScrolling(t,"y")):n.y>l.bottom-3?(n.y-l.bottom+3<5?u.top=5:u.top=20,o.startScrolling(t,"y")):u.top=0,0===u.top&&0===u.left?a():r()}})}var o=t("../../lib/helper"),l=t("../instances"),i=t("../update-geometry"),s=t("../update-scroll");e.exports=function(t){var e=l.get(t);r(t,e)}},{"../../lib/helper":6,"../instances":18,"../update-geometry":19,"../update-scroll":20}],16:[function(t,e,n){"use strict";function r(t,e,n,r){function o(n,r){var o=t.scrollTop,l=t.scrollLeft,i=Math.abs(n),s=Math.abs(r);if(s>i){if(r<0&&o===e.contentHeight-e.containerHeight||r>0&&0===o)return!e.settings.swipePropagation}else if(i>s&&(n<0&&l===e.contentWidth-e.containerWidth||n>0&&0===l))return!e.settings.swipePropagation;return!0}function a(e,n){s(t,"top",t.scrollTop-n),s(t,"left",t.scrollLeft-e),i(t)}function c(){w=!0}function u(){w=!1}function d(t){return t.targetTouches?t.targetTouches[0]:t}function p(t){return!(!t.targetTouches||1!==t.targetTouches.length)||!(!t.pointerType||"mouse"===t.pointerType||t.pointerType===t.MSPOINTER_TYPE_MOUSE)}function f(t){if(p(t)){Y=!0;var e=d(t);g.pageX=e.pageX,g.pageY=e.pageY,v=(new Date).getTime(),null!==y&&clearInterval(y),t.stopPropagation()}}function h(t){if(!Y&&e.settings.swipePropagation&&f(t),!w&&Y&&p(t)){var n=d(t),r={pageX:n.pageX,pageY:n.pageY},l=r.pageX-g.pageX,i=r.pageY-g.pageY;a(l,i),g=r;var s=(new Date).getTime(),c=s-v;c>0&&(m.x=l/c,m.y=i/c,v=s),o(l,i)&&(t.stopPropagation(),t.preventDefault())}}function b(){!w&&Y&&(Y=!1,e.settings.swipeEasing&&(clearInterval(y),y=setInterval(function(){return l.get(t)&&(m.x||m.y)?Math.abs(m.x)<.01&&Math.abs(m.y)<.01?void clearInterval(y):(a(30*m.x,30*m.y),m.x*=.8,void(m.y*=.8)):void clearInterval(y)},10)))}var g={},v=0,m={},y=null,w=!1,Y=!1;n?(e.event.bind(window,"touchstart",c),e.event.bind(window,"touchend",u),e.event.bind(t,"touchstart",f),e.event.bind(t,"touchmove",h),e.event.bind(t,"touchend",b)):r&&(window.PointerEvent?(e.event.bind(window,"pointerdown",c),e.event.bind(window,"pointerup",u),e.event.bind(t,"pointerdown",f),e.event.bind(t,"pointermove",h),e.event.bind(t,"pointerup",b)):window.MSPointerEvent&&(e.event.bind(window,"MSPointerDown",c),e.event.bind(window,"MSPointerUp",u),e.event.bind(t,"MSPointerDown",f),e.event.bind(t,"MSPointerMove",h),e.event.bind(t,"MSPointerUp",b)))}var o=t("../../lib/helper"),l=t("../instances"),i=t("../update-geometry"),s=t("../update-scroll");e.exports=function(t){if(o.env.supportsTouch||o.env.supportsIePointer){var e=l.get(t);r(t,e,o.env.supportsTouch,o.env.supportsIePointer)}}},{"../../lib/helper":6,"../instances":18,"../update-geometry":19,"../update-scroll":20}],17:[function(t,e,n){"use strict";var r=t("../lib/helper"),o=t("../lib/class"),l=t("./instances"),i=t("./update-geometry"),s={"click-rail":t("./handler/click-rail"),"drag-scrollbar":t("./handler/drag-scrollbar"),keyboard:t("./handler/keyboard"),wheel:t("./handler/mouse-wheel"),touch:t("./handler/touch"),selection:t("./handler/selection")},a=t("./handler/native-scroll");e.exports=function(t,e){e="object"==typeof e?e:{},o.add(t,"ps");var n=l.add(t);n.settings=r.extend(n.settings,e),o.add(t,"ps--theme_"+n.settings.theme),n.settings.handlers.forEach(function(e){s[e](t)}),a(t),i(t)}},{"../lib/class":2,"../lib/helper":6,"./handler/click-rail":10,"./handler/drag-scrollbar":11,"./handler/keyboard":12,"./handler/mouse-wheel":13,"./handler/native-scroll":14,"./handler/selection":15,"./handler/touch":16,"./instances":18,"./update-geometry":19}],18:[function(t,e,n){"use strict";function r(t){function e(){a.add(t,"ps--focus")}function n(){a.remove(t,"ps--focus")}var r=this;r.settings=s.clone(c),r.containerWidth=null,r.containerHeight=null,r.contentWidth=null,r.contentHeight=null,r.isRtl="rtl"===u.css(t,"direction"),r.isNegativeScroll=function(){var e=t.scrollLeft,n=null;return t.scrollLeft=-1,n=t.scrollLeft<0,t.scrollLeft=e,n}(),r.negativeScrollAdjustment=r.isNegativeScroll?t.scrollWidth-t.clientWidth:0,r.event=new d,r.ownerDocument=t.ownerDocument||document,r.scrollbarXRail=u.appendTo(u.e("div","ps__scrollbar-x-rail"),t),r.scrollbarX=u.appendTo(u.e("div","ps__scrollbar-x"),r.scrollbarXRail),r.scrollbarX.setAttribute("tabindex",0),r.event.bind(r.scrollbarX,"focus",e),r.event.bind(r.scrollbarX,"blur",n),r.scrollbarXActive=null,r.scrollbarXWidth=null,r.scrollbarXLeft=null,r.scrollbarXBottom=s.toInt(u.css(r.scrollbarXRail,"bottom")),r.isScrollbarXUsingBottom=r.scrollbarXBottom===r.scrollbarXBottom,r.scrollbarXTop=r.isScrollbarXUsingBottom?null:s.toInt(u.css(r.scrollbarXRail,"top")),r.railBorderXWidth=s.toInt(u.css(r.scrollbarXRail,"borderLeftWidth"))+s.toInt(u.css(r.scrollbarXRail,"borderRightWidth")),u.css(r.scrollbarXRail,"display","block"),r.railXMarginWidth=s.toInt(u.css(r.scrollbarXRail,"marginLeft"))+s.toInt(u.css(r.scrollbarXRail,"marginRight")),u.css(r.scrollbarXRail,"display",""),r.railXWidth=null,r.railXRatio=null,r.scrollbarYRail=u.appendTo(u.e("div","ps__scrollbar-y-rail"),t),r.scrollbarY=u.appendTo(u.e("div","ps__scrollbar-y"),r.scrollbarYRail),r.scrollbarY.setAttribute("tabindex",0),r.event.bind(r.scrollbarY,"focus",e),r.event.bind(r.scrollbarY,"blur",n),r.scrollbarYActive=null,r.scrollbarYHeight=null,r.scrollbarYTop=null,r.scrollbarYRight=s.toInt(u.css(r.scrollbarYRail,"right")),r.isScrollbarYUsingRight=r.scrollbarYRight===r.scrollbarYRight,r.scrollbarYLeft=r.isScrollbarYUsingRight?null:s.toInt(u.css(r.scrollbarYRail,"left")),r.scrollbarYOuterWidth=r.isRtl?s.outerWidth(r.scrollbarY):null,r.railBorderYWidth=s.toInt(u.css(r.scrollbarYRail,"borderTopWidth"))+s.toInt(u.css(r.scrollbarYRail,"borderBottomWidth")),u.css(r.scrollbarYRail,"display","block"),r.railYMarginHeight=s.toInt(u.css(r.scrollbarYRail,"marginTop"))+s.toInt(u.css(r.scrollbarYRail,"marginBottom")),u.css(r.scrollbarYRail,"display",""),r.railYHeight=null,r.railYRatio=null}function o(t){return t.getAttribute("data-ps-id")}function l(t,e){t.setAttribute("data-ps-id",e)}function i(t){t.removeAttribute("data-ps-id")}var s=t("../lib/helper"),a=t("../lib/class"),c=t("./default-setting"),u=t("../lib/dom"),d=t("../lib/event-manager"),p=t("../lib/guid"),f={};n.add=function(t){var e=p();return l(t,e),f[e]=new r(t),f[e]},n.remove=function(t){delete f[o(t)],i(t)},n.get=function(t){return f[o(t)]}},{"../lib/class":2,"../lib/dom":3,"../lib/event-manager":4,"../lib/guid":5,"../lib/helper":6,"./default-setting":8}],19:[function(t,e,n){"use strict";function r(t,e){return t.settings.minScrollbarLength&&(e=Math.max(e,t.settings.minScrollbarLength)),t.settings.maxScrollbarLength&&(e=Math.min(e,t.settings.maxScrollbarLength)),e}function o(t,e){var n={width:e.railXWidth};e.isRtl?n.left=e.negativeScrollAdjustment+t.scrollLeft+e.containerWidth-e.contentWidth:n.left=t.scrollLeft,e.isScrollbarXUsingBottom?n.bottom=e.scrollbarXBottom-t.scrollTop:n.top=e.scrollbarXTop+t.scrollTop,s.css(e.scrollbarXRail,n);var r={top:t.scrollTop,height:e.railYHeight};e.isScrollbarYUsingRight?e.isRtl?r.right=e.contentWidth-(e.negativeScrollAdjustment+t.scrollLeft)-e.scrollbarYRight-e.scrollbarYOuterWidth:r.right=e.scrollbarYRight-t.scrollLeft:e.isRtl?r.left=e.negativeScrollAdjustment+t.scrollLeft+2*e.containerWidth-e.contentWidth-e.scrollbarYLeft-e.scrollbarYOuterWidth:r.left=e.scrollbarYLeft+t.scrollLeft,s.css(e.scrollbarYRail,r),s.css(e.scrollbarX,{left:e.scrollbarXLeft,width:e.scrollbarXWidth-e.railBorderXWidth}),s.css(e.scrollbarY,{top:e.scrollbarYTop,height:e.scrollbarYHeight-e.railBorderYWidth})}var l=t("../lib/helper"),i=t("../lib/class"),s=t("../lib/dom"),a=t("./instances"),c=t("./update-scroll");e.exports=function(t){var e=a.get(t);e.containerWidth=t.clientWidth,e.containerHeight=t.clientHeight,e.contentWidth=t.scrollWidth,e.contentHeight=t.scrollHeight;var n;t.contains(e.scrollbarXRail)||(n=s.queryChildren(t,".ps__scrollbar-x-rail"),n.length>0&&n.forEach(function(t){s.remove(t)}),s.appendTo(e.scrollbarXRail,t)),t.contains(e.scrollbarYRail)||(n=s.queryChildren(t,".ps__scrollbar-y-rail"),n.length>0&&n.forEach(function(t){s.remove(t)}),s.appendTo(e.scrollbarYRail,t)),!e.settings.suppressScrollX&&e.containerWidth+e.settings.scrollXMarginOffset<e.contentWidth?(e.scrollbarXActive=!0,e.railXWidth=e.containerWidth-e.railXMarginWidth,e.railXRatio=e.containerWidth/e.railXWidth,e.scrollbarXWidth=r(e,l.toInt(e.railXWidth*e.containerWidth/e.contentWidth)),e.scrollbarXLeft=l.toInt((e.negativeScrollAdjustment+t.scrollLeft)*(e.railXWidth-e.scrollbarXWidth)/(e.contentWidth-e.containerWidth))):e.scrollbarXActive=!1,!e.settings.suppressScrollY&&e.containerHeight+e.settings.scrollYMarginOffset<e.contentHeight?(e.scrollbarYActive=!0,e.railYHeight=e.containerHeight-e.railYMarginHeight,e.railYRatio=e.containerHeight/e.railYHeight,e.scrollbarYHeight=r(e,l.toInt(e.railYHeight*e.containerHeight/e.contentHeight)),e.scrollbarYTop=l.toInt(t.scrollTop*(e.railYHeight-e.scrollbarYHeight)/(e.contentHeight-e.containerHeight))):e.scrollbarYActive=!1,e.scrollbarXLeft>=e.railXWidth-e.scrollbarXWidth&&(e.scrollbarXLeft=e.railXWidth-e.scrollbarXWidth),e.scrollbarYTop>=e.railYHeight-e.scrollbarYHeight&&(e.scrollbarYTop=e.railYHeight-e.scrollbarYHeight),o(t,e),e.scrollbarXActive?i.add(t,"ps--active-x"):(i.remove(t,"ps--active-x"),e.scrollbarXWidth=0,e.scrollbarXLeft=0,c(t,"left",0)),e.scrollbarYActive?i.add(t,"ps--active-y"):(i.remove(t,"ps--active-y"),e.scrollbarYHeight=0,e.scrollbarYTop=0,c(t,"top",0))}},{"../lib/class":2,"../lib/dom":3,"../lib/helper":6,"./instances":18,"./update-scroll":20}],20:[function(t,e,n){"use strict";var r=t("./instances"),o=function(t){var e=document.createEvent("Event");return e.initEvent(t,!0,!0),e};e.exports=function(t,e,n){if("undefined"==typeof t)throw"You must provide an element to the update-scroll function";if("undefined"==typeof e)throw"You must provide an axis to the update-scroll function";if("undefined"==typeof n)throw"You must provide a value to the update-scroll function";"top"===e&&n<=0&&(t.scrollTop=n=0,t.dispatchEvent(o("ps-y-reach-start"))),"left"===e&&n<=0&&(t.scrollLeft=n=0,t.dispatchEvent(o("ps-x-reach-start")));var l=r.get(t);"top"===e&&n>=l.contentHeight-l.containerHeight&&(n=l.contentHeight-l.containerHeight,n-t.scrollTop<=1?n=t.scrollTop:t.scrollTop=n,t.dispatchEvent(o("ps-y-reach-end"))),"left"===e&&n>=l.contentWidth-l.containerWidth&&(n=l.contentWidth-l.containerWidth,n-t.scrollLeft<=1?n=t.scrollLeft:t.scrollLeft=n,t.dispatchEvent(o("ps-x-reach-end"))),void 0===l.lastTop&&(l.lastTop=t.scrollTop),void 0===l.lastLeft&&(l.lastLeft=t.scrollLeft),"top"===e&&n<l.lastTop&&t.dispatchEvent(o("ps-scroll-up")),"top"===e&&n>l.lastTop&&t.dispatchEvent(o("ps-scroll-down")),"left"===e&&n<l.lastLeft&&t.dispatchEvent(o("ps-scroll-left")),"left"===e&&n>l.lastLeft&&t.dispatchEvent(o("ps-scroll-right")),"top"===e&&n!==l.lastTop&&(t.scrollTop=l.lastTop=n,t.dispatchEvent(o("ps-scroll-y"))),"left"===e&&n!==l.lastLeft&&(t.scrollLeft=l.lastLeft=n,t.dispatchEvent(o("ps-scroll-x")))}},{"./instances":18}],21:[function(t,e,n){"use strict";var r=t("../lib/helper"),o=t("../lib/dom"),l=t("./instances"),i=t("./update-geometry"),s=t("./update-scroll");e.exports=function(t){var e=l.get(t);e&&(e.negativeScrollAdjustment=e.isNegativeScroll?t.scrollWidth-t.clientWidth:0,o.css(e.scrollbarXRail,"display","block"),o.css(e.scrollbarYRail,"display","block"),e.railXMarginWidth=r.toInt(o.css(e.scrollbarXRail,"marginLeft"))+r.toInt(o.css(e.scrollbarXRail,"marginRight")),e.railYMarginHeight=r.toInt(o.css(e.scrollbarYRail,"marginTop"))+r.toInt(o.css(e.scrollbarYRail,"marginBottom")),o.css(e.scrollbarXRail,"display","none"),o.css(e.scrollbarYRail,"display","none"),i(t),s(t,"top",t.scrollTop),s(t,"left",t.scrollLeft),o.css(e.scrollbarXRail,"display",""),o.css(e.scrollbarYRail,"display",""))}},{"../lib/dom":3,"../lib/helper":6,"./instances":18,"./update-geometry":19,"./update-scroll":20}]},{},[1]);;(function ($) {
+})(jQuery);
+/* perfect-scrollbar v0.7.1 */
+!function t(e,n,r){function o(i,s){if(!n[i]){if(!e[i]){var a="function"==typeof require&&require;if(!s&&a)return a(i,!0);if(l)return l(i,!0);var c=new Error("Cannot find module '"+i+"'");throw c.code="MODULE_NOT_FOUND",c}var u=n[i]={exports:{}};e[i][0].call(u.exports,function(t){var n=e[i][1][t];return o(n?n:t)},u,u.exports,t,e,n,r)}return n[i].exports}for(var l="function"==typeof require&&require,i=0;i<r.length;i++)o(r[i]);return o}({1:[function(t,e,n){"use strict";var r=t("../main");"function"==typeof define&&define.amd?define(r):(window.PerfectScrollbar=r,"undefined"==typeof window.Ps&&(window.Ps=r))},{"../main":7}],2:[function(t,e,n){"use strict";function r(t,e){var n=t.className.split(" ");n.indexOf(e)<0&&n.push(e),t.className=n.join(" ")}function o(t,e){var n=t.className.split(" "),r=n.indexOf(e);r>=0&&n.splice(r,1),t.className=n.join(" ")}n.add=function(t,e){t.classList?t.classList.add(e):r(t,e)},n.remove=function(t,e){t.classList?t.classList.remove(e):o(t,e)},n.list=function(t){return t.classList?Array.prototype.slice.apply(t.classList):t.className.split(" ")}},{}],3:[function(t,e,n){"use strict";function r(t,e){return window.getComputedStyle(t)[e]}function o(t,e,n){return"number"==typeof n&&(n=n.toString()+"px"),t.style[e]=n,t}function l(t,e){for(var n in e){var r=e[n];"number"==typeof r&&(r=r.toString()+"px"),t.style[n]=r}return t}var i={};i.e=function(t,e){var n=document.createElement(t);return n.className=e,n},i.appendTo=function(t,e){return e.appendChild(t),t},i.css=function(t,e,n){return"object"==typeof e?l(t,e):"undefined"==typeof n?r(t,e):o(t,e,n)},i.matches=function(t,e){return"undefined"!=typeof t.matches?t.matches(e):"undefined"!=typeof t.matchesSelector?t.matchesSelector(e):"undefined"!=typeof t.webkitMatchesSelector?t.webkitMatchesSelector(e):"undefined"!=typeof t.mozMatchesSelector?t.mozMatchesSelector(e):"undefined"!=typeof t.msMatchesSelector?t.msMatchesSelector(e):void 0},i.remove=function(t){"undefined"!=typeof t.remove?t.remove():t.parentNode&&t.parentNode.removeChild(t)},i.queryChildren=function(t,e){return Array.prototype.filter.call(t.childNodes,function(t){return i.matches(t,e)})},e.exports=i},{}],4:[function(t,e,n){"use strict";var r=function(t){this.element=t,this.events={}};r.prototype.bind=function(t,e){"undefined"==typeof this.events[t]&&(this.events[t]=[]),this.events[t].push(e),this.element.addEventListener(t,e,!1)},r.prototype.unbind=function(t,e){var n="undefined"!=typeof e;this.events[t]=this.events[t].filter(function(r){return!(!n||r===e)||(this.element.removeEventListener(t,r,!1),!1)},this)},r.prototype.unbindAll=function(){for(var t in this.events)this.unbind(t)};var o=function(){this.eventElements=[]};o.prototype.eventElement=function(t){var e=this.eventElements.filter(function(e){return e.element===t})[0];return"undefined"==typeof e&&(e=new r(t),this.eventElements.push(e)),e},o.prototype.bind=function(t,e,n){this.eventElement(t).bind(e,n)},o.prototype.unbind=function(t,e,n){this.eventElement(t).unbind(e,n)},o.prototype.unbindAll=function(){for(var t=0;t<this.eventElements.length;t++)this.eventElements[t].unbindAll()},o.prototype.once=function(t,e,n){var r=this.eventElement(t),o=function(t){r.unbind(e,o),n(t)};r.bind(e,o)},e.exports=o},{}],5:[function(t,e,n){"use strict";e.exports=function(){function t(){return Math.floor(65536*(1+Math.random())).toString(16).substring(1)}return function(){return t()+t()+"-"+t()+"-"+t()+"-"+t()+"-"+t()+t()+t()}}()},{}],6:[function(t,e,n){"use strict";function r(t){return function(e,n){t(e,"ps--in-scrolling"),"undefined"!=typeof n?t(e,"ps--"+n):(t(e,"ps--x"),t(e,"ps--y"))}}var o=t("./class"),l=t("./dom"),i=n.toInt=function(t){return parseInt(t,10)||0},s=n.clone=function(t){if(t){if(Array.isArray(t))return t.map(s);if("object"==typeof t){var e={};for(var n in t)e[n]=s(t[n]);return e}return t}return null};n.extend=function(t,e){var n=s(t);for(var r in e)n[r]=s(e[r]);return n},n.isEditable=function(t){return l.matches(t,"input,[contenteditable]")||l.matches(t,"select,[contenteditable]")||l.matches(t,"textarea,[contenteditable]")||l.matches(t,"button,[contenteditable]")},n.removePsClasses=function(t){for(var e=o.list(t),n=0;n<e.length;n++){var r=e[n];0===r.indexOf("ps-")&&o.remove(t,r)}},n.outerWidth=function(t){return i(l.css(t,"width"))+i(l.css(t,"paddingLeft"))+i(l.css(t,"paddingRight"))+i(l.css(t,"borderLeftWidth"))+i(l.css(t,"borderRightWidth"))},n.startScrolling=r(o.add),n.stopScrolling=r(o.remove),n.env={isWebKit:"undefined"!=typeof document&&"WebkitAppearance"in document.documentElement.style,supportsTouch:"undefined"!=typeof window&&("ontouchstart"in window||window.DocumentTouch&&document instanceof window.DocumentTouch),supportsIePointer:"undefined"!=typeof window&&null!==window.navigator.msMaxTouchPoints}},{"./class":2,"./dom":3}],7:[function(t,e,n){"use strict";var r=t("./plugin/destroy"),o=t("./plugin/initialize"),l=t("./plugin/update");e.exports={initialize:o,update:l,destroy:r}},{"./plugin/destroy":9,"./plugin/initialize":17,"./plugin/update":21}],8:[function(t,e,n){"use strict";e.exports={handlers:["click-rail","drag-scrollbar","keyboard","wheel","touch"],maxScrollbarLength:null,minScrollbarLength:null,scrollXMarginOffset:0,scrollYMarginOffset:0,suppressScrollX:!1,suppressScrollY:!1,swipePropagation:!0,swipeEasing:!0,useBothWheelAxes:!1,wheelPropagation:!1,wheelSpeed:1,theme:"default"}},{}],9:[function(t,e,n){"use strict";var r=t("../lib/helper"),o=t("../lib/dom"),l=t("./instances");e.exports=function(t){var e=l.get(t);e&&(e.event.unbindAll(),o.remove(e.scrollbarX),o.remove(e.scrollbarY),o.remove(e.scrollbarXRail),o.remove(e.scrollbarYRail),r.removePsClasses(t),l.remove(t))}},{"../lib/dom":3,"../lib/helper":6,"./instances":18}],10:[function(t,e,n){"use strict";function r(t,e){function n(t){return t.getBoundingClientRect()}var r=function(t){t.stopPropagation()};e.event.bind(e.scrollbarY,"click",r),e.event.bind(e.scrollbarYRail,"click",function(r){var o=r.pageY-window.pageYOffset-n(e.scrollbarYRail).top,s=o>e.scrollbarYTop?1:-1;i(t,"top",t.scrollTop+s*e.containerHeight),l(t),r.stopPropagation()}),e.event.bind(e.scrollbarX,"click",r),e.event.bind(e.scrollbarXRail,"click",function(r){var o=r.pageX-window.pageXOffset-n(e.scrollbarXRail).left,s=o>e.scrollbarXLeft?1:-1;i(t,"left",t.scrollLeft+s*e.containerWidth),l(t),r.stopPropagation()})}var o=t("../instances"),l=t("../update-geometry"),i=t("../update-scroll");e.exports=function(t){var e=o.get(t);r(t,e)}},{"../instances":18,"../update-geometry":19,"../update-scroll":20}],11:[function(t,e,n){"use strict";function r(t,e){function n(n){var o=r+n*e.railXRatio,i=Math.max(0,e.scrollbarXRail.getBoundingClientRect().left)+e.railXRatio*(e.railXWidth-e.scrollbarXWidth);o<0?e.scrollbarXLeft=0:o>i?e.scrollbarXLeft=i:e.scrollbarXLeft=o;var s=l.toInt(e.scrollbarXLeft*(e.contentWidth-e.containerWidth)/(e.containerWidth-e.railXRatio*e.scrollbarXWidth))-e.negativeScrollAdjustment;c(t,"left",s)}var r=null,o=null,s=function(e){n(e.pageX-o),a(t),e.stopPropagation(),e.preventDefault()},u=function(){l.stopScrolling(t,"x"),e.event.unbind(e.ownerDocument,"mousemove",s)};e.event.bind(e.scrollbarX,"mousedown",function(n){o=n.pageX,r=l.toInt(i.css(e.scrollbarX,"left"))*e.railXRatio,l.startScrolling(t,"x"),e.event.bind(e.ownerDocument,"mousemove",s),e.event.once(e.ownerDocument,"mouseup",u),n.stopPropagation(),n.preventDefault()})}function o(t,e){function n(n){var o=r+n*e.railYRatio,i=Math.max(0,e.scrollbarYRail.getBoundingClientRect().top)+e.railYRatio*(e.railYHeight-e.scrollbarYHeight);o<0?e.scrollbarYTop=0:o>i?e.scrollbarYTop=i:e.scrollbarYTop=o;var s=l.toInt(e.scrollbarYTop*(e.contentHeight-e.containerHeight)/(e.containerHeight-e.railYRatio*e.scrollbarYHeight));c(t,"top",s)}var r=null,o=null,s=function(e){n(e.pageY-o),a(t),e.stopPropagation(),e.preventDefault()},u=function(){l.stopScrolling(t,"y"),e.event.unbind(e.ownerDocument,"mousemove",s)};e.event.bind(e.scrollbarY,"mousedown",function(n){o=n.pageY,r=l.toInt(i.css(e.scrollbarY,"top"))*e.railYRatio,l.startScrolling(t,"y"),e.event.bind(e.ownerDocument,"mousemove",s),e.event.once(e.ownerDocument,"mouseup",u),n.stopPropagation(),n.preventDefault()})}var l=t("../../lib/helper"),i=t("../../lib/dom"),s=t("../instances"),a=t("../update-geometry"),c=t("../update-scroll");e.exports=function(t){var e=s.get(t);r(t,e),o(t,e)}},{"../../lib/dom":3,"../../lib/helper":6,"../instances":18,"../update-geometry":19,"../update-scroll":20}],12:[function(t,e,n){"use strict";function r(t,e){function n(n,r){var o=t.scrollTop;if(0===n){if(!e.scrollbarYActive)return!1;if(0===o&&r>0||o>=e.contentHeight-e.containerHeight&&r<0)return!e.settings.wheelPropagation}var l=t.scrollLeft;if(0===r){if(!e.scrollbarXActive)return!1;if(0===l&&n<0||l>=e.contentWidth-e.containerWidth&&n>0)return!e.settings.wheelPropagation}return!0}var r=!1;e.event.bind(t,"mouseenter",function(){r=!0}),e.event.bind(t,"mouseleave",function(){r=!1});var i=!1;e.event.bind(e.ownerDocument,"keydown",function(c){if(!(c.isDefaultPrevented&&c.isDefaultPrevented()||c.defaultPrevented)){var u=l.matches(e.scrollbarX,":focus")||l.matches(e.scrollbarY,":focus");if(r||u){var d=document.activeElement?document.activeElement:e.ownerDocument.activeElement;if(d){if("IFRAME"===d.tagName)d=d.contentDocument.activeElement;else for(;d.shadowRoot;)d=d.shadowRoot.activeElement;if(o.isEditable(d))return}var p=0,f=0;switch(c.which){case 37:p=c.metaKey?-e.contentWidth:c.altKey?-e.containerWidth:-30;break;case 38:f=c.metaKey?e.contentHeight:c.altKey?e.containerHeight:30;break;case 39:p=c.metaKey?e.contentWidth:c.altKey?e.containerWidth:30;break;case 40:f=c.metaKey?-e.contentHeight:c.altKey?-e.containerHeight:-30;break;case 33:f=90;break;case 32:f=c.shiftKey?90:-90;break;case 34:f=-90;break;case 35:f=c.ctrlKey?-e.contentHeight:-e.containerHeight;break;case 36:f=c.ctrlKey?t.scrollTop:e.containerHeight;break;default:return}a(t,"top",t.scrollTop-f),a(t,"left",t.scrollLeft+p),s(t),i=n(p,f),i&&c.preventDefault()}}})}var o=t("../../lib/helper"),l=t("../../lib/dom"),i=t("../instances"),s=t("../update-geometry"),a=t("../update-scroll");e.exports=function(t){var e=i.get(t);r(t,e)}},{"../../lib/dom":3,"../../lib/helper":6,"../instances":18,"../update-geometry":19,"../update-scroll":20}],13:[function(t,e,n){"use strict";function r(t,e){function n(n,r){var o=t.scrollTop;if(0===n){if(!e.scrollbarYActive)return!1;if(0===o&&r>0||o>=e.contentHeight-e.containerHeight&&r<0)return!e.settings.wheelPropagation}var l=t.scrollLeft;if(0===r){if(!e.scrollbarXActive)return!1;if(0===l&&n<0||l>=e.contentWidth-e.containerWidth&&n>0)return!e.settings.wheelPropagation}return!0}function r(t){var e=t.deltaX,n=-1*t.deltaY;return"undefined"!=typeof e&&"undefined"!=typeof n||(e=-1*t.wheelDeltaX/6,n=t.wheelDeltaY/6),t.deltaMode&&1===t.deltaMode&&(e*=10,n*=10),e!==e&&n!==n&&(e=0,n=t.wheelDelta),t.shiftKey?[-n,-e]:[e,n]}function o(e,n){var r=t.querySelector("textarea:hover, select[multiple]:hover, .ps-child:hover");if(r){var o=window.getComputedStyle(r),l=[o.overflow,o.overflowX,o.overflowY].join("");if(!l.match(/(scroll|auto)/))return!1;var i=r.scrollHeight-r.clientHeight;if(i>0&&!(0===r.scrollTop&&n>0||r.scrollTop===i&&n<0))return!0;var s=r.scrollLeft-r.clientWidth;if(s>0&&!(0===r.scrollLeft&&e<0||r.scrollLeft===s&&e>0))return!0}return!1}function s(s){var c=r(s),u=c[0],d=c[1];o(u,d)||(a=!1,e.settings.useBothWheelAxes?e.scrollbarYActive&&!e.scrollbarXActive?(d?i(t,"top",t.scrollTop-d*e.settings.wheelSpeed):i(t,"top",t.scrollTop+u*e.settings.wheelSpeed),a=!0):e.scrollbarXActive&&!e.scrollbarYActive&&(u?i(t,"left",t.scrollLeft+u*e.settings.wheelSpeed):i(t,"left",t.scrollLeft-d*e.settings.wheelSpeed),a=!0):(i(t,"top",t.scrollTop-d*e.settings.wheelSpeed),i(t,"left",t.scrollLeft+u*e.settings.wheelSpeed)),l(t),a=a||n(u,d),a&&(s.stopPropagation(),s.preventDefault()))}var a=!1;"undefined"!=typeof window.onwheel?e.event.bind(t,"wheel",s):"undefined"!=typeof window.onmousewheel&&e.event.bind(t,"mousewheel",s)}var o=t("../instances"),l=t("../update-geometry"),i=t("../update-scroll");e.exports=function(t){var e=o.get(t);r(t,e)}},{"../instances":18,"../update-geometry":19,"../update-scroll":20}],14:[function(t,e,n){"use strict";function r(t,e){e.event.bind(t,"scroll",function(){l(t)})}var o=t("../instances"),l=t("../update-geometry");e.exports=function(t){var e=o.get(t);r(t,e)}},{"../instances":18,"../update-geometry":19}],15:[function(t,e,n){"use strict";function r(t,e){function n(){var t=window.getSelection?window.getSelection():document.getSelection?document.getSelection():"";return 0===t.toString().length?null:t.getRangeAt(0).commonAncestorContainer}function r(){c||(c=setInterval(function(){return l.get(t)?(s(t,"top",t.scrollTop+u.top),s(t,"left",t.scrollLeft+u.left),void i(t)):void clearInterval(c)},50))}function a(){c&&(clearInterval(c),c=null),o.stopScrolling(t)}var c=null,u={top:0,left:0},d=!1;e.event.bind(e.ownerDocument,"selectionchange",function(){t.contains(n())?d=!0:(d=!1,a())}),e.event.bind(window,"mouseup",function(){d&&(d=!1,a())}),e.event.bind(window,"keyup",function(){d&&(d=!1,a())}),e.event.bind(window,"mousemove",function(e){if(d){var n={x:e.pageX,y:e.pageY},l={left:t.offsetLeft,right:t.offsetLeft+t.offsetWidth,top:t.offsetTop,bottom:t.offsetTop+t.offsetHeight};n.x<l.left+3?(u.left=-5,o.startScrolling(t,"x")):n.x>l.right-3?(u.left=5,o.startScrolling(t,"x")):u.left=0,n.y<l.top+3?(l.top+3-n.y<5?u.top=-5:u.top=-20,o.startScrolling(t,"y")):n.y>l.bottom-3?(n.y-l.bottom+3<5?u.top=5:u.top=20,o.startScrolling(t,"y")):u.top=0,0===u.top&&0===u.left?a():r()}})}var o=t("../../lib/helper"),l=t("../instances"),i=t("../update-geometry"),s=t("../update-scroll");e.exports=function(t){var e=l.get(t);r(t,e)}},{"../../lib/helper":6,"../instances":18,"../update-geometry":19,"../update-scroll":20}],16:[function(t,e,n){"use strict";function r(t,e,n,r){function o(n,r){var o=t.scrollTop,l=t.scrollLeft,i=Math.abs(n),s=Math.abs(r);if(s>i){if(r<0&&o===e.contentHeight-e.containerHeight||r>0&&0===o)return!e.settings.swipePropagation}else if(i>s&&(n<0&&l===e.contentWidth-e.containerWidth||n>0&&0===l))return!e.settings.swipePropagation;return!0}function a(e,n){s(t,"top",t.scrollTop-n),s(t,"left",t.scrollLeft-e),i(t)}function c(){w=!0}function u(){w=!1}function d(t){return t.targetTouches?t.targetTouches[0]:t}function p(t){return!(!t.targetTouches||1!==t.targetTouches.length)||!(!t.pointerType||"mouse"===t.pointerType||t.pointerType===t.MSPOINTER_TYPE_MOUSE)}function f(t){if(p(t)){Y=!0;var e=d(t);g.pageX=e.pageX,g.pageY=e.pageY,v=(new Date).getTime(),null!==y&&clearInterval(y),t.stopPropagation()}}function h(t){if(!Y&&e.settings.swipePropagation&&f(t),!w&&Y&&p(t)){var n=d(t),r={pageX:n.pageX,pageY:n.pageY},l=r.pageX-g.pageX,i=r.pageY-g.pageY;a(l,i),g=r;var s=(new Date).getTime(),c=s-v;c>0&&(m.x=l/c,m.y=i/c,v=s),o(l,i)&&(t.stopPropagation(),t.preventDefault())}}function b(){!w&&Y&&(Y=!1,e.settings.swipeEasing&&(clearInterval(y),y=setInterval(function(){return l.get(t)&&(m.x||m.y)?Math.abs(m.x)<.01&&Math.abs(m.y)<.01?void clearInterval(y):(a(30*m.x,30*m.y),m.x*=.8,void(m.y*=.8)):void clearInterval(y)},10)))}var g={},v=0,m={},y=null,w=!1,Y=!1;n?(e.event.bind(window,"touchstart",c),e.event.bind(window,"touchend",u),e.event.bind(t,"touchstart",f),e.event.bind(t,"touchmove",h),e.event.bind(t,"touchend",b)):r&&(window.PointerEvent?(e.event.bind(window,"pointerdown",c),e.event.bind(window,"pointerup",u),e.event.bind(t,"pointerdown",f),e.event.bind(t,"pointermove",h),e.event.bind(t,"pointerup",b)):window.MSPointerEvent&&(e.event.bind(window,"MSPointerDown",c),e.event.bind(window,"MSPointerUp",u),e.event.bind(t,"MSPointerDown",f),e.event.bind(t,"MSPointerMove",h),e.event.bind(t,"MSPointerUp",b)))}var o=t("../../lib/helper"),l=t("../instances"),i=t("../update-geometry"),s=t("../update-scroll");e.exports=function(t){if(o.env.supportsTouch||o.env.supportsIePointer){var e=l.get(t);r(t,e,o.env.supportsTouch,o.env.supportsIePointer)}}},{"../../lib/helper":6,"../instances":18,"../update-geometry":19,"../update-scroll":20}],17:[function(t,e,n){"use strict";var r=t("../lib/helper"),o=t("../lib/class"),l=t("./instances"),i=t("./update-geometry"),s={"click-rail":t("./handler/click-rail"),"drag-scrollbar":t("./handler/drag-scrollbar"),keyboard:t("./handler/keyboard"),wheel:t("./handler/mouse-wheel"),touch:t("./handler/touch"),selection:t("./handler/selection")},a=t("./handler/native-scroll");e.exports=function(t,e){e="object"==typeof e?e:{},o.add(t,"ps");var n=l.add(t);n.settings=r.extend(n.settings,e),o.add(t,"ps--theme_"+n.settings.theme),n.settings.handlers.forEach(function(e){s[e](t)}),a(t),i(t)}},{"../lib/class":2,"../lib/helper":6,"./handler/click-rail":10,"./handler/drag-scrollbar":11,"./handler/keyboard":12,"./handler/mouse-wheel":13,"./handler/native-scroll":14,"./handler/selection":15,"./handler/touch":16,"./instances":18,"./update-geometry":19}],18:[function(t,e,n){"use strict";function r(t){function e(){a.add(t,"ps--focus")}function n(){a.remove(t,"ps--focus")}var r=this;r.settings=s.clone(c),r.containerWidth=null,r.containerHeight=null,r.contentWidth=null,r.contentHeight=null,r.isRtl="rtl"===u.css(t,"direction"),r.isNegativeScroll=function(){var e=t.scrollLeft,n=null;return t.scrollLeft=-1,n=t.scrollLeft<0,t.scrollLeft=e,n}(),r.negativeScrollAdjustment=r.isNegativeScroll?t.scrollWidth-t.clientWidth:0,r.event=new d,r.ownerDocument=t.ownerDocument||document,r.scrollbarXRail=u.appendTo(u.e("div","ps__scrollbar-x-rail"),t),r.scrollbarX=u.appendTo(u.e("div","ps__scrollbar-x"),r.scrollbarXRail),r.scrollbarX.setAttribute("tabindex",0),r.event.bind(r.scrollbarX,"focus",e),r.event.bind(r.scrollbarX,"blur",n),r.scrollbarXActive=null,r.scrollbarXWidth=null,r.scrollbarXLeft=null,r.scrollbarXBottom=s.toInt(u.css(r.scrollbarXRail,"bottom")),r.isScrollbarXUsingBottom=r.scrollbarXBottom===r.scrollbarXBottom,r.scrollbarXTop=r.isScrollbarXUsingBottom?null:s.toInt(u.css(r.scrollbarXRail,"top")),r.railBorderXWidth=s.toInt(u.css(r.scrollbarXRail,"borderLeftWidth"))+s.toInt(u.css(r.scrollbarXRail,"borderRightWidth")),u.css(r.scrollbarXRail,"display","block"),r.railXMarginWidth=s.toInt(u.css(r.scrollbarXRail,"marginLeft"))+s.toInt(u.css(r.scrollbarXRail,"marginRight")),u.css(r.scrollbarXRail,"display",""),r.railXWidth=null,r.railXRatio=null,r.scrollbarYRail=u.appendTo(u.e("div","ps__scrollbar-y-rail"),t),r.scrollbarY=u.appendTo(u.e("div","ps__scrollbar-y"),r.scrollbarYRail),r.scrollbarY.setAttribute("tabindex",0),r.event.bind(r.scrollbarY,"focus",e),r.event.bind(r.scrollbarY,"blur",n),r.scrollbarYActive=null,r.scrollbarYHeight=null,r.scrollbarYTop=null,r.scrollbarYRight=s.toInt(u.css(r.scrollbarYRail,"right")),r.isScrollbarYUsingRight=r.scrollbarYRight===r.scrollbarYRight,r.scrollbarYLeft=r.isScrollbarYUsingRight?null:s.toInt(u.css(r.scrollbarYRail,"left")),r.scrollbarYOuterWidth=r.isRtl?s.outerWidth(r.scrollbarY):null,r.railBorderYWidth=s.toInt(u.css(r.scrollbarYRail,"borderTopWidth"))+s.toInt(u.css(r.scrollbarYRail,"borderBottomWidth")),u.css(r.scrollbarYRail,"display","block"),r.railYMarginHeight=s.toInt(u.css(r.scrollbarYRail,"marginTop"))+s.toInt(u.css(r.scrollbarYRail,"marginBottom")),u.css(r.scrollbarYRail,"display",""),r.railYHeight=null,r.railYRatio=null}function o(t){return t.getAttribute("data-ps-id")}function l(t,e){t.setAttribute("data-ps-id",e)}function i(t){t.removeAttribute("data-ps-id")}var s=t("../lib/helper"),a=t("../lib/class"),c=t("./default-setting"),u=t("../lib/dom"),d=t("../lib/event-manager"),p=t("../lib/guid"),f={};n.add=function(t){var e=p();return l(t,e),f[e]=new r(t),f[e]},n.remove=function(t){delete f[o(t)],i(t)},n.get=function(t){return f[o(t)]}},{"../lib/class":2,"../lib/dom":3,"../lib/event-manager":4,"../lib/guid":5,"../lib/helper":6,"./default-setting":8}],19:[function(t,e,n){"use strict";function r(t,e){return t.settings.minScrollbarLength&&(e=Math.max(e,t.settings.minScrollbarLength)),t.settings.maxScrollbarLength&&(e=Math.min(e,t.settings.maxScrollbarLength)),e}function o(t,e){var n={width:e.railXWidth};e.isRtl?n.left=e.negativeScrollAdjustment+t.scrollLeft+e.containerWidth-e.contentWidth:n.left=t.scrollLeft,e.isScrollbarXUsingBottom?n.bottom=e.scrollbarXBottom-t.scrollTop:n.top=e.scrollbarXTop+t.scrollTop,s.css(e.scrollbarXRail,n);var r={top:t.scrollTop,height:e.railYHeight};e.isScrollbarYUsingRight?e.isRtl?r.right=e.contentWidth-(e.negativeScrollAdjustment+t.scrollLeft)-e.scrollbarYRight-e.scrollbarYOuterWidth:r.right=e.scrollbarYRight-t.scrollLeft:e.isRtl?r.left=e.negativeScrollAdjustment+t.scrollLeft+2*e.containerWidth-e.contentWidth-e.scrollbarYLeft-e.scrollbarYOuterWidth:r.left=e.scrollbarYLeft+t.scrollLeft,s.css(e.scrollbarYRail,r),s.css(e.scrollbarX,{left:e.scrollbarXLeft,width:e.scrollbarXWidth-e.railBorderXWidth}),s.css(e.scrollbarY,{top:e.scrollbarYTop,height:e.scrollbarYHeight-e.railBorderYWidth})}var l=t("../lib/helper"),i=t("../lib/class"),s=t("../lib/dom"),a=t("./instances"),c=t("./update-scroll");e.exports=function(t){var e=a.get(t);e.containerWidth=t.clientWidth,e.containerHeight=t.clientHeight,e.contentWidth=t.scrollWidth,e.contentHeight=t.scrollHeight;var n;t.contains(e.scrollbarXRail)||(n=s.queryChildren(t,".ps__scrollbar-x-rail"),n.length>0&&n.forEach(function(t){s.remove(t)}),s.appendTo(e.scrollbarXRail,t)),t.contains(e.scrollbarYRail)||(n=s.queryChildren(t,".ps__scrollbar-y-rail"),n.length>0&&n.forEach(function(t){s.remove(t)}),s.appendTo(e.scrollbarYRail,t)),!e.settings.suppressScrollX&&e.containerWidth+e.settings.scrollXMarginOffset<e.contentWidth?(e.scrollbarXActive=!0,e.railXWidth=e.containerWidth-e.railXMarginWidth,e.railXRatio=e.containerWidth/e.railXWidth,e.scrollbarXWidth=r(e,l.toInt(e.railXWidth*e.containerWidth/e.contentWidth)),e.scrollbarXLeft=l.toInt((e.negativeScrollAdjustment+t.scrollLeft)*(e.railXWidth-e.scrollbarXWidth)/(e.contentWidth-e.containerWidth))):e.scrollbarXActive=!1,!e.settings.suppressScrollY&&e.containerHeight+e.settings.scrollYMarginOffset<e.contentHeight?(e.scrollbarYActive=!0,e.railYHeight=e.containerHeight-e.railYMarginHeight,e.railYRatio=e.containerHeight/e.railYHeight,e.scrollbarYHeight=r(e,l.toInt(e.railYHeight*e.containerHeight/e.contentHeight)),e.scrollbarYTop=l.toInt(t.scrollTop*(e.railYHeight-e.scrollbarYHeight)/(e.contentHeight-e.containerHeight))):e.scrollbarYActive=!1,e.scrollbarXLeft>=e.railXWidth-e.scrollbarXWidth&&(e.scrollbarXLeft=e.railXWidth-e.scrollbarXWidth),e.scrollbarYTop>=e.railYHeight-e.scrollbarYHeight&&(e.scrollbarYTop=e.railYHeight-e.scrollbarYHeight),o(t,e),e.scrollbarXActive?i.add(t,"ps--active-x"):(i.remove(t,"ps--active-x"),e.scrollbarXWidth=0,e.scrollbarXLeft=0,c(t,"left",0)),e.scrollbarYActive?i.add(t,"ps--active-y"):(i.remove(t,"ps--active-y"),e.scrollbarYHeight=0,e.scrollbarYTop=0,c(t,"top",0))}},{"../lib/class":2,"../lib/dom":3,"../lib/helper":6,"./instances":18,"./update-scroll":20}],20:[function(t,e,n){"use strict";var r=t("./instances"),o=function(t){var e=document.createEvent("Event");return e.initEvent(t,!0,!0),e};e.exports=function(t,e,n){if("undefined"==typeof t)throw"You must provide an element to the update-scroll function";if("undefined"==typeof e)throw"You must provide an axis to the update-scroll function";if("undefined"==typeof n)throw"You must provide a value to the update-scroll function";"top"===e&&n<=0&&(t.scrollTop=n=0,t.dispatchEvent(o("ps-y-reach-start"))),"left"===e&&n<=0&&(t.scrollLeft=n=0,t.dispatchEvent(o("ps-x-reach-start")));var l=r.get(t);"top"===e&&n>=l.contentHeight-l.containerHeight&&(n=l.contentHeight-l.containerHeight,n-t.scrollTop<=1?n=t.scrollTop:t.scrollTop=n,t.dispatchEvent(o("ps-y-reach-end"))),"left"===e&&n>=l.contentWidth-l.containerWidth&&(n=l.contentWidth-l.containerWidth,n-t.scrollLeft<=1?n=t.scrollLeft:t.scrollLeft=n,t.dispatchEvent(o("ps-x-reach-end"))),void 0===l.lastTop&&(l.lastTop=t.scrollTop),void 0===l.lastLeft&&(l.lastLeft=t.scrollLeft),"top"===e&&n<l.lastTop&&t.dispatchEvent(o("ps-scroll-up")),"top"===e&&n>l.lastTop&&t.dispatchEvent(o("ps-scroll-down")),"left"===e&&n<l.lastLeft&&t.dispatchEvent(o("ps-scroll-left")),"left"===e&&n>l.lastLeft&&t.dispatchEvent(o("ps-scroll-right")),"top"===e&&n!==l.lastTop&&(t.scrollTop=l.lastTop=n,t.dispatchEvent(o("ps-scroll-y"))),"left"===e&&n!==l.lastLeft&&(t.scrollLeft=l.lastLeft=n,t.dispatchEvent(o("ps-scroll-x")))}},{"./instances":18}],21:[function(t,e,n){"use strict";var r=t("../lib/helper"),o=t("../lib/dom"),l=t("./instances"),i=t("./update-geometry"),s=t("./update-scroll");e.exports=function(t){var e=l.get(t);e&&(e.negativeScrollAdjustment=e.isNegativeScroll?t.scrollWidth-t.clientWidth:0,o.css(e.scrollbarXRail,"display","block"),o.css(e.scrollbarYRail,"display","block"),e.railXMarginWidth=r.toInt(o.css(e.scrollbarXRail,"marginLeft"))+r.toInt(o.css(e.scrollbarXRail,"marginRight")),e.railYMarginHeight=r.toInt(o.css(e.scrollbarYRail,"marginTop"))+r.toInt(o.css(e.scrollbarYRail,"marginBottom")),o.css(e.scrollbarXRail,"display","none"),o.css(e.scrollbarYRail,"display","none"),i(t),s(t,"top",t.scrollTop),s(t,"left",t.scrollLeft),o.css(e.scrollbarXRail,"display",""),o.css(e.scrollbarYRail,"display",""))}},{"../lib/dom":3,"../lib/helper":6,"./instances":18,"./update-geometry":19,"./update-scroll":20}]},{},[1]);
+'use strict';
 
-  var chipsHandleEvents     = false;
+(function ($) {
+
+  var chipsHandleEvents = false;
   var materialChipsDefaults = {
-    data                : [],
-    placeholder         : '',
+    data: [],
+    placeholder: '',
     secondaryPlaceholder: ''
-  }
+  };
 
-    $(document).ready(function () {
-        // Handle removal of static chips.
-        $(document).on('click', '.chip .close', function (e) {
+  $(document).ready(function () {
+    // Handle removal of static chips.
+    $(document).on('click', '.chip .close', function () {
 
-            var $this  = $(this);
-            var $chips = $this.closest('.chips');
+      var $this = $(this);
+      var $chips = $this.closest('.chips');
 
-            if($chips.data('initialized'))
-                return;
+      if ($chips.data('initialized')) {
+        return;
+      }
 
-            $this.closest('.chip').remove();
+      $this.closest('.chip').remove();
+    });
+  });
 
-        });
-    })
+  $.fn.material_chip = function (options) {
+    var self = this;
+    this.$el = $(this);
+    this.$document = $(document);
+    this.SELS = {
+      CHIPS: '.chips',
+      CHIP: '.chip',
+      INPUT: 'input',
+      DELETE: '.fa',
+      SELECTED_CHIP: '.selected'
+    };
 
-    $.fn.material_chip = function (options) {
-        var self       = this;
-        this.$el       = $(this);
-        this.$document = $(document);
-        this.SELS      = {
-            CHIPS        : '.chips',
-            CHIP         : '.chip',
-            INPUT        : 'input',
-            DELETE       : '.fa',
-            SELECTED_CHIP: '.selected'
-        }
-
-        if('data' === options)
-            return this.$el.data('chips')
-
-        if('options' === options)
-          return this.$el.data('options')
-
-        this.$el.data('options', $.extend({}, materialChipsDefaults, options));
-
-        // Initialize
-        this.init = function () {
-            var i = 0;
-            var chips;
-            self.$el.each(function () {
-
-                var $chips = $(this);
-                if ($chips.data('initialized'))
-                    return; // Prevent double initialization.
-
-                var options = $chips.data('options');
-                if (!options.data || !options.data instanceof Array)
-                    options.data = [];
-
-                $chips.data('chips', options.data);
-                $chips.data('index', i);
-                $chips.data('initialized', true);
-
-                if (!$chips.hasClass(self.SELS.CHIPS))
-                    $chips.addClass('chips');
-
-                self.chips($chips);
-                i++;
-
-            });
-        }
-
-        this.handleEvents = function () {
-            var SELS = self.SELS
-
-            self.$document.on('click', SELS.CHIPS, function (e) {
-                $(e.target).find(SELS.INPUT).focus();
-            })
-
-            self.$document.on('click', SELS.CHIP, function (e) {
-                $(SELS.CHIP).removeClass('selected');
-                $(this).toggleClass('selected');
-            })
-
-            self.$document.on('keydown', function (e) {
-                if ($(e.target).is('input, textarea'))
-                    return;
-
-                // delete
-                var $chip  = self.$document.find(SELS.CHIP + SELS.SELECTED_CHIP);
-                var $chips = $chip.closest(SELS.CHIPS);
-                var length = $chip.siblings(SELS.CHIP).length;
-                var index;
-
-                if (!$chip.length)
-                    return;
-
-                var isBackspaceOrDelete = e.which === 8 || e.which === 46;
-                var isLeftArrow         = e.which === 37;
-                var isRightArrow        = e.which === 39;
-
-                if (isBackspaceOrDelete) {
-                    e.preventDefault();
-                    var chipsIndex = $chips.data('index');
-                    index          = $chip.index();
-                    self.deleteChip(chipsIndex, index, $chips);
-                    var selectIndex = null
-
-                    if ((index + 1) < length)
-                        selectIndex = index
-                    else if (index === length || (index + 1) === length)
-                        selectIndex = length - 1
-
-                    if (selectIndex < 0)
-                        selectIndex = null
-
-                    if (null !== selectIndex)
-                        self.selectChip(chipsIndex, selectIndex, $chips)
-                    if (!length)
-                        $chips.find('input').focus()
-
-                } else if (isLeftArrow) {
-
-                    index = $chip.index() - 1
-                    if (index < 0)
-                        return
-                    $(SELS.CHIP).removeClass('selected')
-                    self.selectChip($chips.data('index'), index, $chips)
-
-                } else if (isRightArrow) {
-
-                    index = $chip.index() + 1;
-                    $(SELS.CHIP).removeClass('selected');
-                    if (index > length) {
-                        $chips.find('input').focus();
-                        return;
-                    }
-                    self.selectChip($chips.data('index'), index, $chips);
-
-                }
-            });
-
-            self.$document.on('focusin', SELS.CHIPS + ' ' + SELS.INPUT, function (e) {
-                $(e.target).closest(SELS.CHIPS).addClass('focus')
-                $(SELS.CHIP).removeClass('selected')
-            })
-
-            self.$document.on('focusout', SELS.CHIPS + ' ' + SELS.INPUT, function (e) {
-                $(e.target).closest(SELS.CHIPS).removeClass('focus')
-            })
-
-            self.$document.on('keydown', SELS.CHIPS + ' ' + SELS.INPUT, function (e) {
-                var $target = $(e.target)
-                var $chips = $target.closest(SELS.CHIPS)
-                var chipsIndex = $chips.data('index')
-                var chipsLength = $chips.children(SELS.CHIP).length
-
-                var isEnter = 13 === e.which;
-
-                if (isEnter) {
-                    e.preventDefault();
-                    self.addChip(
-                        chipsIndex,
-                        { tag: $target.val() },
-                        $chips
-                    );
-                    $target.val('');
-                    return;
-                }
-
-                var isLeftArrowOrDelete = (8 === e.keyCode || 37 === e.keyCode);
-                var isValueEmpty = '' === $target.val();
-
-                if (isLeftArrowOrDelete && isValueEmpty && chipsLength) {
-                    self.selectChip(chipsIndex, chipsLength - 1, $chips)
-                    $target.blur()
-                    return
-                }
-            });
-
-            self.$document.on('click', SELS.CHIPS + ' ' + SELS.DELETE, function (e) {
-                var $target = $(e.target);
-                var $chips = $target.closest(SELS.CHIPS);
-                var $chip = $target.closest(SELS.CHIP);
-                e.stopPropagation();
-                self.deleteChip(
-                    $chips.data('index'),
-                    $chip.index(),
-                    $chips
-                );
-                $chips.find('input').focus();
-            });
-
-        }
-
-        this.chips = function ($chips) {
-            var html    = '';
-            var options = $chips.data('options');
-            $chips.data('chips').forEach(function (elem) {
-                html += self.renderChip(elem);
-            });
-            html += '<input class="input" placeholder="">';
-            $chips.html(html);
-            self.setPlaceholder($chips);
-        }
-
-        this.renderChip = function (elem) {
-            if (!elem.tag)
-                return;
-
-            var html = '<div class="chip">' + elem.tag;
-
-            if (elem.image)
-                html += ' <img src="' + elem.image + '"> ';
-
-            html += '<i class="close fa fa-times"></i>';
-            html += '</div>';
-            return html;
-
-        }
-
-        this.setPlaceholder = function ($chips) {
-            var options = $chips.data('options');
-            if ($chips.data('chips').length && options.placeholder)
-                $chips.find('input').prop('placeholder', options.placeholder);
-            else if (!$chips.data('chips').length && options.secondaryPlaceholder)
-                $chips.find('input').prop('placeholder', options.secondaryPlaceholder);
-        }
-
-        this.isValid = function ($chips, elem) {
-            var chips = $chips.data('chips');
-            var exists = false;
-            for (var i = 0; i < chips.length; i++) {
-                if (chips[i].tag === elem.tag) {
-                    exists = true;
-                    return;
-                }
-            }
-            return '' !== elem.tag && !exists;
-        }
-
-        this.addChip = function (chipsIndex, elem, $chips) {
-            if (!self.isValid($chips, elem))
-                return;
-
-            var options  = $chips.data('options');
-            var chipHtml = self.renderChip(elem);
-            $chips.data('chips').push(elem);
-            $(chipHtml).insertBefore($chips.find('input'));
-            $chips.trigger('chip.add', elem);
-            self.setPlaceholder($chips);
-        }
-
-        this.deleteChip = function (chipsIndex, chipIndex, $chips) {
-            var chip = $chips.data('chips')[chipIndex];
-            $chips.find('.chip').eq(chipIndex).remove();
-            $chips.data('chips').splice(chipIndex, 1);
-            $chips.trigger('chip.delete', chip);
-            self.setPlaceholder($chips);
-        }
-
-        this.selectChip = function (chipsIndex, chipIndex, $chips) {
-            var $chip = $chips.find('.chip').eq(chipIndex)
-                if ($chip && false === $chip.hasClass('selected')) {
-                $chip.addClass('selected')
-                $chips.trigger('chip.select', $chips.data('chips')[chipIndex])
-            }
-        }
-
-        this.getChipsElement = function (index, $chips) {
-            return $chips.eq(index);
-        }
-
-        // init
-        this.init()
-
-        if (!chipsHandleEvents) {
-            this.handleEvents();
-            chipsHandleEvents = true;
-        }
+    if (options === 'data') {
+      return this.$el.data('chips');
     }
-}(jQuery));
+
+    if (options === 'options') {
+      return this.$el.data('options');
+    }
+
+    this.$el.data('options', $.extend({}, materialChipsDefaults, options));
+
+    // Initialize
+    this.init = function () {
+      var i = 0;
+      self.$el.each(function () {
+
+        var $chips = $(this);
+        if ($chips.data('initialized')) {
+          return;
+        } // Prevent double initialization.
+
+        var options = $chips.data('options');
+        if (!options.data || !(options.data instanceof Array)) {
+          options.data = [];
+        }
+
+        $chips.data('chips', options.data);
+        $chips.data('index', i);
+        $chips.data('initialized', true);
+
+        if (!$chips.hasClass(self.SELS.CHIPS)) {
+          $chips.addClass('chips');
+        }
+
+        self.chips($chips);
+        i++;
+      });
+    };
+
+    this.handleEvents = function () {
+      var SELS = self.SELS;
+
+      self.$document.on('click', SELS.CHIPS, function (e) {
+        $(e.target).find(SELS.INPUT).focus();
+      });
+
+      self.$document.on('click', SELS.CHIP, function () {
+        $(SELS.CHIP).removeClass('selected');
+        $(this).toggleClass('selected');
+      });
+
+      self.$document.on('keydown', function (e) {
+        if ($(e.target).is('input, textarea')) {
+          return;
+        }
+
+        // delete
+        var $chip = self.$document.find(SELS.CHIP + SELS.SELECTED_CHIP);
+        var $chips = $chip.closest(SELS.CHIPS);
+        var length = $chip.siblings(SELS.CHIP).length;
+        var index = void 0;
+
+        if (!$chip.length) {
+          return;
+        }
+
+        var isBackspaceOrDelete = e.which === 8 || e.which === 46;
+        var isLeftArrow = e.which === 37;
+        var isRightArrow = e.which === 39;
+
+        if (isBackspaceOrDelete) {
+          e.preventDefault();
+          var chipsIndex = $chips.data('index');
+          index = $chip.index();
+          self.deleteChip(chipsIndex, index, $chips);
+          var selectIndex = null;
+
+          if (index + 1 < length) {
+            selectIndex = index;
+          } else if (index === length || index + 1 === length) {
+            selectIndex = length - 1;
+          }
+
+          if (selectIndex < 0) {
+            selectIndex = null;
+          }
+
+          if (selectIndex !== null) {
+            self.selectChip(chipsIndex, selectIndex, $chips);
+          }
+          if (!length) {
+            $chips.find('input').focus();
+          }
+        } else if (isLeftArrow) {
+
+          index = $chip.index() - 1;
+          if (index < 0) {
+            return;
+          }
+          $(SELS.CHIP).removeClass('selected');
+          self.selectChip($chips.data('index'), index, $chips);
+        } else if (isRightArrow) {
+
+          index = $chip.index() + 1;
+          $(SELS.CHIP).removeClass('selected');
+          if (index > length) {
+            $chips.find('input').focus();
+            return;
+          }
+          self.selectChip($chips.data('index'), index, $chips);
+        }
+      });
+
+      self.$document.on('focusin', SELS.CHIPS + ' ' + SELS.INPUT, function (e) {
+        $(e.target).closest(SELS.CHIPS).addClass('focus');
+        $(SELS.CHIP).removeClass('selected');
+      });
+
+      self.$document.on('focusout', SELS.CHIPS + ' ' + SELS.INPUT, function (e) {
+        $(e.target).closest(SELS.CHIPS).removeClass('focus');
+      });
+
+      self.$document.on('keydown', SELS.CHIPS + ' ' + SELS.INPUT, function (e) {
+        var $target = $(e.target);
+        var $chips = $target.closest(SELS.CHIPS);
+        var chipsIndex = $chips.data('index');
+        var chipsLength = $chips.children(SELS.CHIP).length;
+
+        var isEnter = e.which === 13;
+
+        if (isEnter) {
+          e.preventDefault();
+          self.addChip(chipsIndex, {
+            tag: $target.val()
+          }, $chips);
+          $target.val('');
+          return;
+        }
+
+        var isLeftArrowOrDelete = e.keyCode === 8 || e.keyCode === 37;
+        var isValueEmpty = $target.val() === '';
+
+        if (isLeftArrowOrDelete && isValueEmpty && chipsLength) {
+          self.selectChip(chipsIndex, chipsLength - 1, $chips);
+          $target.blur();
+          return;
+        }
+      });
+
+      self.$document.on('click', SELS.CHIPS + ' ' + SELS.DELETE, function (e) {
+        var $target = $(e.target);
+        var $chips = $target.closest(SELS.CHIPS);
+        var $chip = $target.closest(SELS.CHIP);
+        e.stopPropagation();
+        self.deleteChip($chips.data('index'), $chip.index(), $chips);
+        $chips.find('input').focus();
+      });
+    };
+
+    this.chips = function ($chips) {
+      var html = '';
+      $chips.data('chips').forEach(function (elem) {
+        html += self.renderChip(elem);
+      });
+      html += '<input class="input" placeholder="">';
+      $chips.html(html);
+      self.setPlaceholder($chips);
+    };
+
+    this.renderChip = function (elem) {
+      if (!elem.tag) {
+        return;
+      }
+
+      var html = '<div class="chip">' + elem.tag;
+
+      if (elem.image) {
+        html += ' <img src="' + elem.image + '"> ';
+      }
+
+      html += '<i class="close fa fa-times"></i>';
+      html += '</div>';
+      return html;
+    };
+
+    this.setPlaceholder = function ($chips) {
+      var options = $chips.data('options');
+      if ($chips.data('chips').length && options.placeholder) {
+        $chips.find('input').prop('placeholder', options.placeholder);
+      } else if (!$chips.data('chips').length && options.secondaryPlaceholder) {
+        $chips.find('input').prop('placeholder', options.secondaryPlaceholder);
+      }
+    };
+
+    this.isValid = function ($chips, elem) {
+      var chips = $chips.data('chips');
+      var exists = false;
+      for (var i = 0; i < chips.length; i++) {
+        if (chips[i].tag === elem.tag) {
+          exists = true;
+          return;
+        }
+      }
+      return elem.tag !== '' && !exists;
+    };
+
+    this.addChip = function (chipsIndex, elem, $chips) {
+      if (!self.isValid($chips, elem)) {
+        return;
+      }
+
+      var chipHtml = self.renderChip(elem);
+      $chips.data('chips').push(elem);
+      $(chipHtml).insertBefore($chips.find('input'));
+      $chips.trigger('chip.add', elem);
+      self.setPlaceholder($chips);
+    };
+
+    this.deleteChip = function (chipsIndex, chipIndex, $chips) {
+      var chip = $chips.data('chips')[chipIndex];
+      $chips.find('.chip').eq(chipIndex).remove();
+      $chips.data('chips').splice(chipIndex, 1);
+      $chips.trigger('chip.delete', chip);
+      self.setPlaceholder($chips);
+    };
+
+    this.selectChip = function (chipsIndex, chipIndex, $chips) {
+      var $chip = $chips.find('.chip').eq(chipIndex);
+      if ($chip && $chip.hasClass('selected') === false) {
+        $chip.addClass('selected');
+        $chips.trigger('chip.select', $chips.data('chips')[chipIndex]);
+      }
+    };
+
+    this.getChipsElement = function (index, $chips) {
+      return $chips.eq(index);
+    };
+
+    // init
+    this.init();
+
+    if (!chipsHandleEvents) {
+      this.handleEvents();
+      chipsHandleEvents = true;
+    }
+  };
+})(jQuery);
 /*!
  * Name    : Just Another Parallax [Jarallax]
  * Version : 1.8.0
@@ -25272,6 +26691,7 @@ initPhotoSwipeFromDOM('.mdb-lightbox');/* jSticky Plugin
         plugin(document.querySelectorAll('[data-jarallax], [data-jarallax-video]'));
     });
 }(window));
+
 /*!
  * Name    : Video Worker (wrapper for Youtube, Vimeo and Local videos)
  * Version : 1.2.1
@@ -26071,6 +27491,9 @@ initPhotoSwipeFromDOM('.mdb-lightbox');/* jSticky Plugin
         def_destroy.apply(_this);
     };
 }());
+
+'use strict';
+
 /*
  * Material Design for Bootstrap
  * MDB Autocomplete Plugin
@@ -26078,78 +27501,107 @@ initPhotoSwipeFromDOM('.mdb-lightbox');/* jSticky Plugin
 
 $.fn.mdb_autocomplete = function (options) {
 
-    // Default options
-    var defaults = {
-        data: {}
+  // Default options
+  var defaults = {
+    data: {}
+  };
+
+  var ENTER_CHAR_CODE = 13;
+
+  // Get options
+  options = $.extend(defaults, options);
+
+  return this.each(function () {
+
+    // text input
+    var $input = $(this);
+    var $autocomplete = void 0;
+
+    // assign data from options
+    var data = options.data;
+
+    if (Object.keys(data).length) {
+
+      $autocomplete = $('<ul class="mdb-autocomplete-wrap"></ul>');
+
+      $autocomplete.insertAfter($(this));
     };
 
-    // Get options
-    options = $.extend(defaults, options);
+    // Listen if key was pressed
+    $input.on('keyup', function (e) {
 
-    return this.each(function () {
+      // get value from input
+      var q = $input.val();
 
-        // text input
-        var $input = $(this);
+      $autocomplete.empty();
 
-        // assign data from options
-        var data = options.data;
+      // check if input isn't empty
+      if (q.length) {
 
-        if (Object.keys(data).length) {
+        for (var item in data) {
 
-            var $autocomplete = $('<ul class="mdb-autocomplete-wrap"></ul>');
+          // check if item contains value that we're looking for
+          if (data[item].toLowerCase().indexOf(q.toLowerCase()) !== -1) {
+            var option = $('<li>' + data[item] + '</li>');
 
-            $autocomplete.insertAfter($(this));
-        };
+            $autocomplete.append(option);
+          }
+        }
+      }
 
-        // Listen if key was pressed
-        $input.on('keyup', function (e) {
+      if (e.which === ENTER_CHAR_CODE) {
+        $autocomplete.children(":first").trigger('click');
+        $autocomplete.empty();
+      }
 
-            // get value from input
-            var q = $input.val();
-
-            $autocomplete.empty();
-
-            // check if input isn't empty
-            if (q.length) {
-
-                for (var item in data) {
-
-                    // check if item contains value that we're looking for
-                    if (data[item].toLowerCase().indexOf(q.toLowerCase()) !== -1) {
-                        var option = $('<li>' + data[item] + '</li>');
-
-                        $autocomplete.append(option);
-                    }
-                }
-            }
-
-            if (e.which == 13) {
-                $autocomplete.children(":first").trigger('click');
-                $autocomplete.empty();
-            }
-
-            if (q.length == 0) {
-                $('.mdb-autocomplete-clear').css('visibility', 'hidden');
-            } else {
-                $('.mdb-autocomplete-clear').css('visibility', 'visible');
-            }
-        });
-
-        $autocomplete.on('click', 'li', function () {
-
-            // Set input value after click
-            $input.val($(this).text());
-
-            // Clear autocomplete
-            $autocomplete.empty();
-        });
-
-        $('.mdb-autocomplete-clear').on('click', function (e) {
-            e.preventDefault();
-            $input.val('');
-            $(this).css('visibility', 'hidden');
-            $autocomplete.empty();
-            $(this).parent().find('label').removeClass('active');
-        });
+      if (q.length === 0) {
+        $('.mdb-autocomplete-clear').css('visibility', 'hidden');
+      } else {
+        $('.mdb-autocomplete-clear').css('visibility', 'visible');
+      }
     });
+
+    $autocomplete.on('click', 'li', function () {
+
+      // Set input value after click
+      $input.val($(this).text());
+
+      // Clear autocomplete
+      $autocomplete.empty();
+    });
+
+    $('.mdb-autocomplete-clear').on('click', function (e) {
+      e.preventDefault();
+      $input.val('');
+      $(this).css('visibility', 'hidden');
+      $autocomplete.empty();
+      $(this).parent().find('label').removeClass('active');
+    });
+  });
 };
+/*
+    Enhanced Bootstrap Modals
+    https://mdbootstrap.com
+    office@mdbootstrap.com
+*/
+
+$('body').on('shown.bs.modal', '.modal', function() {
+    if($('.modal-backdrop').length) {
+    } else {
+
+        $modal_dialog = $(this).children('.modal-dialog')
+
+        if($modal_dialog.hasClass('modal-side')) {
+            $(this).addClass('modal-scrolling');
+            $('body').addClass('scrollable');
+        }
+
+        if($modal_dialog.hasClass('modal-frame')) {
+            $(this).addClass('modal-content-clickable');
+            $('body').addClass('scrollable');
+        }
+    }
+});
+$('body').on('hidden.bs.modal', '.modal', function() {
+    $('body').removeClass('scrollable');
+});

@@ -13,9 +13,9 @@
  */
 @import "jasny-bootstrap.min";
 @import "bootstrap-social";
-@import "font-path-overwrite";
-@import "font-awesome-sprockets";
-@import "font-awesome";
+//@import "font-path-overwrite";
+//@import "font-awesome-sprockets";
+//@import "font-awesome";
 @import "fullcalendar/dist/fullcalendar";
 @import "selectize";
 @import "selectize.default";
@@ -30,6 +30,10 @@
 
 body {
   color: #3C4858;
+}
+
+label {
+  text-transform: capitalize;
 }
 
 .navbar {

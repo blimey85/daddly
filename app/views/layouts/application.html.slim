@@ -15,13 +15,16 @@ html
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Daddly.io'}"
     = tag :meta, name: 'current-user', content: current_user.id, data: {email: current_user.email, name: current_user.name} if user_signed_in?
 
-    == stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
+    script src="https://pro.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-+1nLPoB0gaUktsZJP+ycZectl3GX7wP8Xf2PE/JHrb7X1u7Emm+v7wJMbAcPr8Ge" crossorigin="anonymous"
+    script src="https://pro.fontawesome.com/releases/v5.0.10/js/v4-shims.js" integrity="sha384-+1nLPoB0gaUktsZJP+ycZectl3GX7wP8Xf2PE/JHrb7X1u7Emm+v7wJMbAcPr8Ge" crossorigin="anonymous"
+
+    == stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'
     == stylesheet_link_tag 'mdb', :media => 'all', 'data-turbolinks-track' => 'reload'
     == stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => 'reload'
 
     == javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
     == javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'
-    == javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js'
+    == javascript_include_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'
     == javascript_include_tag 'http://maps.google.com/maps/api/js?key=AIzaSyABz6UZcGOQGv-0UUXp6aV4LVs0dI9eTlU'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == segment_javascript_include
