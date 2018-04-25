@@ -18,6 +18,8 @@ class EventDecanter < Decanter::Base
   input :rsvp_max_limit, :integer
   input :venue_id, :integer
 
+  has_many :event_categories
+
   input [:start_date, :start_time], :squash_date_time, key: :starts_at
   input [:end_date, :end_time], :squash_date_time, key: :ends_at
 end

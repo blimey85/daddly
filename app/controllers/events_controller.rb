@@ -12,9 +12,25 @@ class EventsController < ApplicationController
     end
   end
 
+  def mine
+    @events = Event.where(user: current_user.id).includes(:user).page(params[:page]).per(2)
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
+  def rsvp
+    @events = Reservation.where(user: current_user.id).includes(:events).page(params[:page]).per(2)
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
   def show
     # @event = Event.includes(:votes, comments: [:pings, :votes]).find(params[:id])
-    @event = Event.includes(:votes).find(params[:id])
+    @event = Event.includes(:votes, :event_categories).find(params[:id])
     check_user_interactions(@event, current_user.id)
   end
 
@@ -26,8 +42,11 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.decant_new(event_params)
+    # @event = Event.decant_new(event_params)
+    @event = Event.new(event_params)
+    @event.user_id=current_user.id
     @event.save
+    @event_categories = @event.event_categories.build
     respond_with(@event)
   end
 
@@ -54,6 +73,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :description, :starts_at, :ends_at, :start_date, :start_time, :end_date, :end_time, :rsvp_count, :rsvp_min_limit, :rsvp_max_limit, :waitlist, :waitlist_count, :status, :type, :visibility, :venue_id)
+    params.require(:event).permit(:name, :description, :starts_at, :ends_at, :start_date, :start_time, :end_date, :end_time, :rsvp_count, :rsvp_min_limit, :rsvp_max_limit, :waitlist, :waitlist_count, :status, :type, :visibility, :venue_id, event_category_ids:[] )
   end
 end

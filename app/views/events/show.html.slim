@@ -8,10 +8,14 @@
     = @event.description
   p
     strong> Starts:
-    = timeago(@event.starts_at.to_datetime)
+    = timeago(@event&.starts_at&.to_datetime)
   p
     strong> Ends:
-    = timeago(@event.ends_at.to_datetime)
+    = timeago(@event&.ends_at&.to_datetime)
+
+  p
+    strong> Categories:
+    = @event.event_categories.map(&:name).join(", ")
 
   p
     strong> Hosted By:
@@ -137,11 +141,11 @@ javascript:
   map.addMarker({
       lat: coordinates.lat,
       lng: coordinates.lng,
-      title: '#{@event.venue.name}',
+      title: '#{@event&.venue&.name}',
       infoWindow: {
-          content:  '<h3>#{@event.venue.name}</h3>' +
-                    '#{@event.venue.address}' +
-                    '<br>#{@event.venue.city}, #{@event.venue.state}, #{@event.venue.zipcode}'
+          content:  '<h3>#{@event&.venue&.name}</h3>' +
+                    '#{@event&.venue&.address}' +
+                    '<br>#{@event&.venue&.city}, #{@event&.venue&.state}, #{@event&.venue&.zipcode}'
       }
   });
   $(window).resize(function () {

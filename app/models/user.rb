@@ -73,6 +73,9 @@ class User < ApplicationRecord
   has_many  :user_interests
   has_many  :interests, through: :user_interests
 
+  has_many  :reservations
+  has_many  :events, through: :reservations
+
   ### Devise ###
   devise :omniauthable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable #, omniauth_providers: [:facebook, :google_oauth2, :twitter]

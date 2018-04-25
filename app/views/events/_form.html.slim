@@ -1,12 +1,7 @@
 css:
-  /*.selectize-control.venues {*/
-    /*width: 90%;*/
-    /*margin-left: 10%;*/
-    /*padding-top: 10px;*/
-  /*}*/
-
   label {
     margin-bottom: 0;
+    white-space: nowrap;
   }
 
   .selectize-control.venues .selectize-input [data-value] .address {
@@ -24,6 +19,8 @@ css:
     opacity: 1;
   }
 
+
+
 = simple_form_for @event, html: { class: 'form-horizontal' } do |f|
 
   - if @event.errors.any?
@@ -34,58 +31,54 @@ css:
           li = message
 
   .form-group
+    = f.association :event_categories, collection: EventCategory.order('name asc'), as: :check_boxes, wrapper: :horizontal_collection
+
+  .form-group
     = f.input :name, required: false
   .form-group
     = f.input :description, required: false
 
   .row
-    .col-lg-3
+    .col-md-3
       = f.label :start_date
       .input-group
-        span.input-group-addon
-          i.fa.fa-calendar
+        .input-group-prepend: span.input-group-text: i.fa.fa-calendar
         = f.text_field :start_date, class: 'form-control datepicker', id: 'test', placeholder: 'Start Date', tabindex: '-1'
-    .col-lg-3
+    .col-md-3
       = f.label :start_time
       .input-group
-        span.input-group-addon
-          i.fa.fa-clock-o
+        .input-group-prepend: span.input-group-text: i.fa.fa-clock-o
         = f.text_field :start_time, class: 'form-control timepicker', id: 'starttime', placeholder: 'Start Time', tabindex: '-1'
-    .col-lg-3
+    .col-md-3
       = f.label :end_date
       .input-group
-        span.input-group-addon
-          i.fa.fa-calendar
+        .input-group-prepend: span.input-group-text: i.fa.fa-calendar
         = f.text_field :end_date, class: 'form-control datepicker', placeholder: 'End Date', tabindex: '-1'
-    .col-lg-3
+    .col-md-3
       = f.label :end_time
       .input-group
-        span.input-group-addon
-          i.fa.fa-clock-o
+        .input-group-prepend: span.input-group-text: i.fa.fa-clock-o
         = f.text_field :end_time, class: 'form-control timepicker', id: 'endtime', placeholder: 'End Time', tabindex: '-1'
 
   .row.mt-3
-    .col-md-6
+    .col-md-5
       .form-group
         = f.label :rsvp_min_limit
         = f.number_field :rsvp_min_limit, class: 'form-control'
-    .col-md-6
+    .col-md-5
       .form-group
         = f.label :rsvp_max_limit
         = f.number_field :rsvp_max_limit, class: 'form-control'
-
-  .form-group
-    = f.check_box :waitlist
-    = f.label :waitlist
-  .form-group
-    = f.label :status
-    = f.number_field :status, class: 'form-control'
-  .form-group
-    = f.label :type
-    = f.number_field :type, class: 'form-control'
-  .form-group
-    = f.label :visibility
-    = f.number_field :visibility, class: 'form-control'
+    .col-md-2
+      .form-group
+        = f.check_box :waitlist
+        = f.label :waitlist
+  / .form-group
+  /   = f.label :status
+  /   = f.number_field :status, class: 'form-control'
+  / .form-group
+  /   = f.label :visibility
+  /   = f.number_field :visibility, class: 'form-control'
   .form-group
     = f.label :venue_id, 'Select venue', class: 'active'
     = f.select :venue_id, {}, {}, multiple: false, class: 'selectize venues'
@@ -105,38 +98,25 @@ css:
           i.fa.fa-address-card-o.ml-1
           | Add New Venue
       .modal-body.mb-0
-        = form_for Venue.new do |f|
-          .md-form
-            i.fa.fa-envelope.prefix
-            = f.text_field :name, class: 'form-control'
-            = f.label :name
-
-            .md-form
-              i.fa.fa-envelope.prefix
-              = f.text_field :address, class: 'form-control'
-              = f.label :address
-            .md-form
-              i.fa.fa-envelope.prefix
-              = f.text_field :city, class: 'form-control'
-              = f.label :city
-
-            .md-form
-              i.fa.fa-envelope.prefix
-              = f.text_field :state, class: 'form-control'
-              = f.label :state
-
-            .md-form
-              i.fa.fa-envelope.prefix
-              = f.number_field :zipcode, class: 'form-control'
-              = f.label :zipcode
-
-            .md-form
-              .switch
-                label
-                  | Public
-                  = f.check_box :visibility
-                  span.lever
-                  | Private
+        = simple_form_for Venue.new do |f|
+          .form-group
+            = f.input :name, required: false
+          .form-group
+            = f.input :address, required: false
+          .form-group
+            = f.input :city, required: false
+          .form-group
+            / = f.input :state, required: false
+            = f.input :state, as: :select, collection: STATES, input_html: { class: 'selectize-states' }, required: false, label_method: :second, value_method: :first
+          .form-group
+            = f.input :zipcode, as: :string, required: false
+          .form-group
+            .switch
+              label
+                | Public
+                = f.check_box :visibility
+                span.lever
+                | Private
             br
             br
           .text-center.mt-1-half

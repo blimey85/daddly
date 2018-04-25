@@ -13,26 +13,99 @@
             = icon "bars"
             |  All Events
         div
-          = forum_link_to simple_discussion.answered_forum_threads_path do
-            = icon "check"
-            |  Answered
+          = link_to events_mine_path do
+            = icon "user"
+            |  My Events
         div
-          = forum_link_to simple_discussion.unanswered_forum_threads_path do
-            = icon "question"
-            |  Unanswered
+          = link_to events_rsvp_path do
+            = icon "check"
+            |  RSVP'd Events
       hr
       .forum-thread-filters
         h6
           strong By Category
         div
           = forum_link_to simple_discussion.forum_threads_path, exact: true do
-            = icon "circle"
+            |<i class="far fa-bars"></i>
             |  All
-        - ForumCategory.sorted.each do |category|
+        / - ForumCategory.sorted.each do |category|
+        /   div
+        /     = forum_link_to simple_discussion.forum_category_forum_threads_path(category) do
+        /       = icon "circle", style: "color: #{category.color}"
+        /       =< category.name
+        - EventCategory.order('name asc').each do |category|
           div
-            = forum_link_to simple_discussion.forum_category_forum_threads_path(category) do
-              = icon "circle", style: "color: #{category.color}"
-              =< category.name
+            / a href="#" id="cat-#{category.id}"
+            input.calFilter.form-check-input type="checkbox" value="#{category.name}" id="cat-#{category.id}"
+            label.form-check-label for="cat-#{category.id}"
+              / |<i class="#{category.icon}" style="color:##{category.color}"></i>
+              |<span style="color:##{category.color}"> #{category.name}</span>
   .col-md-9.mb-3
     .card.card-body
-      = yield
+      / = yield
+      #calendar
+
+javascript:
+    $(document).ready(function () {
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,listDay,listWeek,listMonth'
+            },
+            views: { // customize button names
+                month: {buttonText: 'Calendar'},
+                listDay: {buttonText: 'Day List'},
+                listWeek: {buttonText: 'Week List'},
+                listMonth: {buttonText: 'Month List'}
+            },
+            eventRender: function (calEvent, element, view) {
+                var cats = [];
+                $.map(calEvent.categories, function (key) {
+                    if (key['name'] != '') {
+                        cats.push(key['name']);
+                    }
+                });
+                calEvent.cat = cats;
+                return filter(calEvent); // Only show if appropriate checkbox is checked
+            },
+            allDaySlot: true,
+            displayEventTime: true,
+            displayEventEnd: true,
+            editable: false,
+            firstDay: 1,
+            weekNumbers: false,
+            selectable: false,
+            weekNumberCalculation: "ISO",
+            eventLimit: true,
+            events: {
+                url: '/events/calendar',
+                type: 'GET',
+                error: function () {
+                    alert('there was an error while fetching events!');
+                }
+            }
+        });
+
+        /* When a checkbox changes, re-render events */
+        $('input:checkbox.calFilter').on('change', function () {
+            $('#calendar').fullCalendar('rerenderEvents');
+        });
+    });
+
+    function filter(calEvent) {
+        var vals = [];
+        $('input:checkbox.calFilter:checked').each(function () {
+            vals.push($(this).val());
+        });
+        return arrayContainsArray(vals, calEvent.cat) !== false;
+    }
+
+    function arrayContainsArray(superset, subset) {
+        if (0 === subset.length) {
+            return false;
+        }
+        return subset.every(function (value) {
+            return (superset.indexOf(value) >= 0);
+        });
+    }

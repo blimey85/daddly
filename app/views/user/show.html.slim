@@ -92,33 +92,147 @@ scss:
   br
   .row.justify-content-center
     .col-10
+      .form-check
+        input.calFilter.form-check-input checked="checked" type="checkbox" value="normal" id="test"
+        label.form-check-label for="test"
+          | Normal
+      .form-check
+        input.calFilter.form-check-input type="checkbox" value="event" id="test2"
+        label.form-check-label for="test2"
+          | Event
+      .form-check
+        input.calFilter.form-check-input type="checkbox" value="whisper" id="test3"
+        label.form-check-label for="test3"
+          | Whisper
       #calendar
   br
   br
 
+/ SHOW ALL
+/ ARTS
+/ CHARITY
+/ CLASSES
+/ FOOD & DRINK
+/ MUSIC
+/ NETWORKING
+/ OUTDOORS
+/ RELIGIOUS
+/ SPORT & WELLNESS
+
+
+  / .row
+  /   .col-md-3
+  /     ul.nav.md-pills.pills-primary.flex-column role="tablist"
+  /       li.nav-item
+  /         a.nav-link.active data-toggle="tab" href="#panel21" role="tab"
+  /           | Downloads
+  /           i.fa.fa-download.ml-2
+  /       li.nav-item
+  /         a.nav-link data-toggle="tab" href="#panel22" role="tab"
+  /           | Orders  invoices
+  /           i.fa.fa-file-text.ml-2
+  /       li.nav-item
+  /         a.nav-link data-toggle="tab" href="#panel23" role="tab"
+  /           | Billing details
+  /           i.fa.fa-address-card.ml-2
+  /   .col-md-9
+  /     .tab-content.vertical
+  /       #panel21.tab-pane.fade.in.show.active role="tabpanel"
+  /         h5.my-2.h5 Panel 1
+  /       #panel22.tab-pane.fade role="tabpanel"
+  /         h5.my-2.h5 Panel 2
+  /       #panel23.tab-pane.fade role="tabpanel"
+  /         h5.my-2.h5 Panel 3
+
+
+
 javascript:
+  // $(document).ready(function() {
+  //     $('#calendar').fullCalendar({
+  //         eventRender: function (calEvent, element, view) {
+  //             if (calEvent.risk == "normal") {
+  //                 element.css('background-color', '#99FF99');
+  //             }
+  //             if (calEvent.risk == "event") {
+  //                 element.css('background-color', '#415eec');
+  //             }
+  //             if (calEvent.risk == "whisper") {
+  //                 element.css('background-color', '#D7CDD5');
+  //             }
+  //             return filter(calEvent); // Only show if appropriate checkbox is checked
+  //         },
+  //         allDaySlot: true,
+  //         displayEventTime: true,
+  //         displayEventEnd: true,
+  //         editable: false,
+  //         firstDay: 1,
+  //         weekNumbers: false,
+  //         selectable: false,
+  //         weekNumberCalculation: "ISO",
+  //         eventLimit: true,
+  //         events: 'parts/events22.php',
+  //         events: [{
+  //             start: moment().add(1, 'day'),
+  //             title: 'Normal',
+  //             risk: 'normal'
+  //         }, {
+  //             start: moment().add(2, 'day'),
+  //             title: 'Event',
+  //             risk: 'event'
+  //         }, {
+  //             start: moment().add(3, 'day'),
+  //             title: 'Whisper',
+  //             risk: 'whisper'
+  //         }]
+  //     });
+  //
+  //     /* When a checkbox changes, re-render events */
+  //     $('input:checkbox.calFilter').on('change', function () {
+  //         $('#calendar').fullCalendar('rerenderEvents');
+  //     });
+  // });
+
+  // function filter(calEvent) {
+  //     var vals = [];
+  //     $('input:checkbox.calFilter:checked').each(function () {
+  //         vals.push($(this).val());
+  //     });
+  //     return vals.indexOf(calEvent.risk) !== -1;
+  // }
   $(document).ready(function() {
     $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay,listWeek'
+        right: 'month,listDay,listWeek,listMonth'
+      },
+      views: { // customize button names
+          month: { buttonText: 'Calendar' },
+          listDay: { buttonText: 'Day List' },
+          listWeek: { buttonText: 'Week List' },
+          listMonth: { buttonText: 'Month List' }
       },
       editable: false,
       events: {
         url: '/events/calendar',
         type: 'GET',
-        data: {
-          //custom_param1: 'something',
-          //custom_param2: 'somethingelse'
-        },
         error: function () {
           alert('there was an error while fetching events!');
         }
       },
       eventRender: function (event, element) {
+        console.log(event);
+        console.log(event.categories);
+
+        var x = event.categories;
+        for (var i = 0; i < x.length; i++) {
+            console.log(x[i].id);
+            console.log(x[i].name);
+        }
+
+
+
         element.qtip({
-          //content: event.description
           content: {
             text: event.title,
             title: "<div class='qtip-title-content'>" +
@@ -138,10 +252,7 @@ javascript:
               scroll: false
             }
           },
-          style: 'qtip-blue' //,
-          //hide: {
-          //  event: false
-          //}
+          style: 'qtip-blue'
         });
       }
     });

@@ -1,14 +1,14 @@
 # == Route Map
 #
 #                                Prefix Verb     URI Pattern                                  Controller#Action
-#                              services GET      /services(.:format)                          services#index
-#                                       POST     /services(.:format)                          services#create
-#                           new_service GET      /services/new(.:format)                      services#new
-#                          edit_service GET      /services/:id/edit(.:format)                 services#edit
-#                               service GET      /services/:id(.:format)                      services#show
-#                                       PATCH    /services/:id(.:format)                      services#update
-#                                       PUT      /services/:id(.:format)                      services#update
-#                                       DELETE   /services/:id(.:format)                      services#destroy
+#                          reservations GET      /reservations(.:format)                      reservations#index
+#                                       POST     /reservations(.:format)                      reservations#create
+#                       new_reservation GET      /reservations/new(.:format)                  reservations#new
+#                      edit_reservation GET      /reservations/:id/edit(.:format)             reservations#edit
+#                           reservation GET      /reservations/:id(.:format)                  reservations#show
+#                                       PATCH    /reservations/:id(.:format)                  reservations#update
+#                                       PUT      /reservations/:id(.:format)                  reservations#update
+#                                       DELETE   /reservations/:id(.:format)                  reservations#destroy
 #                         comments_show GET      /comments/show(.:format)                     comments#show
 #                              comments GET      /comments(.:format)                          comments#index
 #                                       POST     /comments(.:format)                          comments#create
@@ -33,6 +33,8 @@
 #                                       PUT      /conversations/:id(.:format)                 conversations#update
 #                                       DELETE   /conversations/:id(.:format)                 conversations#destroy
 #                       events_calendar GET      /events/calendar(.:format)                   events#calendar
+#                           events_mine GET      /events/mine(.:format)                       events#mine
+#                           events_rsvp GET      /events/rsvp(.:format)                       events#rsvp
 #                                events GET      /events(.:format)                            events#index
 #                                       POST     /events(.:format)                            events#create
 #                             new_event GET      /events/new(.:format)                        events#new
@@ -41,6 +43,14 @@
 #                                       PATCH    /events/:id(.:format)                        events#update
 #                                       PUT      /events/:id(.:format)                        events#update
 #                                       DELETE   /events/:id(.:format)                        events#destroy
+#                              services GET      /services(.:format)                          services#index
+#                                       POST     /services(.:format)                          services#create
+#                           new_service GET      /services/new(.:format)                      services#new
+#                          edit_service GET      /services/:id/edit(.:format)                 services#edit
+#                               service GET      /services/:id(.:format)                      services#show
+#                                       PATCH    /services/:id(.:format)                      services#update
+#                                       PUT      /services/:id(.:format)                      services#update
+#                                       DELETE   /services/:id(.:format)                      services#destroy
 #                      new_user_session GET      /users/sign_in(.:format)                     devise/sessions#new
 #                          user_session POST     /users/sign_in(.:format)                     devise/sessions#create
 #                  destroy_user_session DELETE   /users/sign_out(.:format)                    devise/sessions#destroy
@@ -94,7 +104,7 @@
 #                                       DELETE   /votes/:id(.:format)                         votes#destroy
 #                     simple_discussion          /community                                   SimpleDiscussion::Engine
 #                                  page GET      /pages/*id                                   high_voltage/pages#show
-#
+# 
 # Routes for SimpleDiscussion::Engine:
 #           answered_forum_threads GET    /threads/answered(.:format)                            simple_discussion/forum_threads#answered
 #         unanswered_forum_threads GET    /threads/unanswered(.:format)                          simple_discussion/forum_threads#unanswered
@@ -127,9 +137,10 @@
 #                                  PUT    /threads/:id(.:format)                                 simple_discussion/forum_threads#update
 #                                  DELETE /threads/:id(.:format)                                 simple_discussion/forum_threads#destroy
 #                             root GET    /                                                      simple_discussion/forum_threads#index
-#
+# 
 
 Rails.application.routes.draw do
+  resources :reservations
   ### Comments ###
   get 'comments/show', controller: :comments
   resources :comments, except: :show
@@ -151,6 +162,8 @@ Rails.application.routes.draw do
 
   ### Events ###
   get 'events/calendar', controller: :events
+  get 'events/mine', to: 'events#mine'
+  get 'events/rsvp', to: 'events#rsvp'
   resources :events
 
   ### Root: Visitors ###

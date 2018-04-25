@@ -37,7 +37,8 @@ class EventSerializer < ActiveModel::Serializer
              :comments_count,
              :votes_count,
              :created_by_current_user,
-             :user_has_upvoted
+             :user_has_upvoted,
+             :categories
 
   def title
     object.name
@@ -59,4 +60,16 @@ class EventSerializer < ActiveModel::Serializer
     upvoted = object.votes.select { |x| x.user_id == current_user.id }
     upvoted.present?
   end
+
+  # def categories
+  #   # object.event_categories
+  #   [ 'ARTS', 'CHARITY' ]
+  # end
+
+  def categories
+    object.event_categories.map do |category|
+      EventCategoriesSerializer.new(category)
+    end
+  end
+
 end

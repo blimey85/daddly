@@ -29,12 +29,19 @@
 #
 
 class Event < ApplicationRecord
-  has_one :event_venue
-  has_one :venue, through: :event_venue
+  before_save :convert_to_datetime
+  belongs_to :venue
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
 
   belongs_to :user
+
+  has_many  :reservations
+  has_many  :users, through: :reservations
+
+  has_many  :event_event_categories
+  has_many  :event_categories, through: :event_event_categories
+  accepts_nested_attributes_for :event_categories
 
   # validates :name, :description, :starts_at, :ends_at, :user_id, :venue_id, presence: true
 
@@ -43,6 +50,11 @@ class Event < ApplicationRecord
   attr_accessor :start_time
   attr_accessor :end_date
   attr_accessor :end_time
+
+  def convert_to_datetime
+    self.starts_at = DateTime.parse("#{start_date} #{start_time}") if start_date.present? && start_time.present?
+    self.ends_at = DateTime.parse("#{end_date} #{end_time}") if end_date.present? && end_time.present?
+  end
 
   # used for virtual attributes
   include VirtusAttributes

@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170908022904) do
+ActiveRecord::Schema.define(version: 20180421183220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.string "cat_type"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -31,6 +32,19 @@ ActiveRecord::Schema.define(version: 20170908022904) do
     t.datetime "updated_at", null: false
     t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "event_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "color", default: "000000"
+    t.string "icon", default: "fas fa-circle"
+  end
+
+  create_table "event_event_categories", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "event_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "event_venues", force: :cascade do |t|
@@ -195,6 +209,16 @@ ActiveRecord::Schema.define(version: 20170908022904) do
     t.string "pingable_parent_type"
     t.index ["pingable_id", "pingable_type", "pinger_id"], name: "index_pings_on_pingable_id_and_pingable_type_and_pinger_id", unique: true
     t.index ["user_id"], name: "index_pings_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "user_id"
+    t.string "reservation_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_reservations_on_event_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "services", force: :cascade do |t|

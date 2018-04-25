@@ -34,7 +34,9 @@ $(document).on("ready page:load turbolinks:load", function() {
             }
         });
     });
-
+    $(function() {
+        $('.selectize-states').selectize();
+    });
     $(".selectize").selectize({
         valueField: 'id',
         labelField: 'name',
