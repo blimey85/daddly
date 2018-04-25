@@ -11,7 +11,7 @@
 #  index_interests_on_sub_category_id  (sub_category_id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :interest do
   end
 end

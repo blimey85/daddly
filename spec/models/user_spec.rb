@@ -65,7 +65,7 @@ RSpec.describe User, type: :model do
 
   describe User, '#fullname' do
     it 'returns the concatenated first and last names' do
-      user = FactoryGirl.build(:user, first_name: 'Josh', last_name: 'Steiner')
+      user = FactoryBot.build(:user, first_name: 'Josh', last_name: 'Steiner')
       expect(user.fullname).to eq 'Josh Steiner'
     end
   end

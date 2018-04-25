@@ -28,7 +28,7 @@
 #  index_events_on_venue_id  (venue_id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :event do
   end
 end

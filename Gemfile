@@ -3,7 +3,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-ruby '2.4.1'
+ruby '2.5.1'
 gem 'rails', '~> 5.1.2'
 
 gem 'pg', '~> 0.18'
@@ -89,7 +89,7 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara', '~> 2.13'
   gem 'dotenv-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
@@ -114,3 +114,5 @@ end
 gem 'sendgrid-actionmailer'
 gem 'timber', '~> 2.1'
 gem 'marginalia'
+
+gem 'searchkick'

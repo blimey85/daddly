@@ -15,7 +15,7 @@
 #  index_votes_on_votable_id_and_votable_type  (votable_id,votable_type)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :vote do
   end
 end

@@ -6,6 +6,7 @@ Bundler.require(*Rails.groups)
 module Daddly
   class Application < Rails::Application
     config.generators do |g|
+      # g.test_framework nil
       g.test_framework :rspec,
                        fixtures: true,
                        view_specs: false,
@@ -13,7 +14,13 @@ module Daddly
                        routing_specs: false,
                        controller_specs: false,
                        request_specs: false
-      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
+      g.stylesheets false
+      g.javascripts false
+      g.decanter false
+      g.helper false
+      g.assets false
+      g.system_tests = nil
     end
 
     # Initialize configuration defaults for originally generated Rails version.

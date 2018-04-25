@@ -11,7 +11,7 @@
 #  index_sub_categories_on_category_id  (category_id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :sub_category do
     name 'MyString'
     category nil

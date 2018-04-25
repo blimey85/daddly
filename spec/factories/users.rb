@@ -38,7 +38,7 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     username    { Faker::Internet.user_name(8) }
     age         { Faker::Number.between(13, 103) }

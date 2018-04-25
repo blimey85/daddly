@@ -18,7 +18,7 @@
 #  index_pings_on_user_id                                      (user_id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :ping do
     pingable_id 1
     pingable_type 1

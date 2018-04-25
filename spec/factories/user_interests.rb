@@ -13,7 +13,7 @@
 #  index_user_interests_on_user_id      (user_id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :user_interest do
   end
 end

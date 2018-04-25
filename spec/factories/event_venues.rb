@@ -12,7 +12,7 @@
 #  index_event_venues_on_venue_id  (venue_id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :event_venue do
   end
 end

@@ -19,7 +19,7 @@
 #  index_comments_on_user_id                              (user_id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :comment do
   end
 end

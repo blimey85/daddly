@@ -22,7 +22,7 @@
 #  index_identities_on_user_id  (user_id)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :identity do
   end
 end
