@@ -1,2 +1,2 @@
 li.page-item
-  = link_to_unless current_page.last?, '<span class="pagination-icons">&rsaquo;</span>'.html_safe, url, rel: 'next', remote: remote, class: 'page-link', title: 'Next Page', data: { toggle: 'tooltip', placement: 'bottom' }
+  = link_to_unless current_page.last?, '<i class="fas fa-chevron-right"></i>'.html_safe, url, rel: 'next', remote: remote, class: 'page-link', title: 'Next Page', data: { toggle: 'tooltip', placement: 'bottom' }
