@@ -15,41 +15,40 @@ html
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Daddly.io'}"
     = tag :meta, name: 'current-user', content: current_user.id, data: {email: current_user.email, name: current_user.name} if user_signed_in?
 
-    script src="https://pro.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-+1nLPoB0gaUktsZJP+ycZectl3GX7wP8Xf2PE/JHrb7X1u7Emm+v7wJMbAcPr8Ge" crossorigin="anonymous"
-    script src="https://pro.fontawesome.com/releases/v5.0.10/js/v4-shims.js" integrity="sha384-+1nLPoB0gaUktsZJP+ycZectl3GX7wP8Xf2PE/JHrb7X1u7Emm+v7wJMbAcPr8Ge" crossorigin="anonymous"
+    script defer="defer" src="https://pro.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-+1nLPoB0gaUktsZJP+ycZectl3GX7wP8Xf2PE/JHrb7X1u7Emm+v7wJMbAcPr8Ge" crossorigin="anonymous"
+    script defer="defer" src="https://pro.fontawesome.com/releases/v5.0.10/js/v4-shims.js" crossorigin="anonymous"
 
     == stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'
-    == stylesheet_link_tag 'mdb', :media => 'all', 'data-turbolinks-track' => 'reload'
-    == stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => 'reload'
+    == stylesheet_link_tag 'mdb'
+    == stylesheet_link_tag 'application'
 
     == javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
     == javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'
     == javascript_include_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'
     == javascript_include_tag 'http://maps.google.com/maps/api/js?key=AIzaSyABz6UZcGOQGv-0UUXp6aV4LVs0dI9eTlU'
-    == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    == javascript_include_tag 'application'
     == segment_javascript_include
 
     == csrf_meta_tags
   body class="mdb-skin-custom"
     == render 'layouts/header'
-    <main class="pb-5">
-      <div class="container pt-5 mt-3">
-        /<div class="row pt-5 mt-3">
+    |<main class="pb-5">
+      |<div class="container pt-5 mt-3">
+
     == javascript_include_tag 'mdb'
     == render 'layouts/messages'
     == yield
     == render 'layouts/footer'
 
+javascript:
+    // document.addEventListener("turbolinks:load", function (event) {
+    //     FontAwesome.dom.i2svg();
+    // });
+
 css:
   .intro-2 {
       background: url("http://mdbootstrap.com/img/Photos/Others/forest1.jpg")no-repeat center center;
       background-size: cover;
-  }
-
-  .hm-gradient .full-bg-img {
-      background: -webkit-linear-gradient(98deg, rgba(22, 91, 231, 0.5), rgba(255, 32, 32, 0.5) 100%);
-      background: -webkit-gradient(linear, 98deg, from(rgba(22, 91, 231, 0.5)), to(rgba(255, 32, 32, 0.5)));
-      background: linear-gradient(to 98deg, rgba(22, 91, 231, 0.5), rgba(255, 32, 32, 0.5) 100%);
   }
 
   .card {
