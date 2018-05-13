@@ -2,6 +2,25 @@
 # Also, .html_safe is used on occasion so Rails/OutputSafety is disabled
 # Other ignored_cops is the default list
 
+AllCops:
+  TargetRubyVersion: 2.5.0
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Exclude:
+      - db/*
+      - db/migrate/*
+      - config/*
+      - config/environments/*
+      - config/initializers/*
+      - Gemfile
+      - lib/tasks/*
+      - Rakefile
+      - 'vendor/**/*'
+      - 'node_modules/**/*'
+      - 'db/fixtures/**/*'
+      - 'tmp/**/*'
+      - 'bin/**/*'
+
 linters:
   LineLength:
     enabled: false
