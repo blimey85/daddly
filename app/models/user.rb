@@ -69,19 +69,19 @@ class User < ApplicationRecord
   has_many :services, dependent: :destroy
   has_many :kids, dependent: :destroy, inverse_of: :user
   accepts_nested_attributes_for :kids, reject_if: :all_blank, allow_destroy: true
-  has_many  :pings
-  has_many  :user_interests
+  has_many  :pings, dependent: :destroy
+  has_many  :user_interests, dependent: :destroy
   has_many  :interests, through: :user_interests
 
-  has_many  :reservations
+  has_many  :reservations, dependent: :destroy
   has_many  :events, through: :reservations
 
   ### Devise ###
-  devise :omniauthable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable #, omniauth_providers: [:facebook, :google_oauth2, :twitter]
+  devise :confirmable, :database_authenticatable, :omniauthable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
   def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
+    devise_mailer.send(notification, self, *args).deliver_now
   end
 
   mount_uploader :avatar, AvatarUploader
@@ -141,5 +141,5 @@ class User < ApplicationRecord
       obj.longitude = geo.longitude
     end
   end
-  after_validation :geocode, if: :zipcode_changed?
+  # after_validation :geocode, if: :zipcode_changed?
 end

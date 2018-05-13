@@ -10,5 +10,5 @@
 
 class EventCategory < ApplicationRecord
   has_many  :events, through: :event_event_categories
-  has_many  :event_event_categories
+  has_many  :event_event_categories, dependent: :destroy
 end

@@ -26,8 +26,8 @@
 class Service < ApplicationRecord
   belongs_to :user
 
-  %w{ facebook twitter google_oauth2 }.each do |provider|
-    scope provider, ->{ where(provider: provider) }
+  %w[facebook twitter google_oauth2].each do |provider|
+    scope provider, -> { where(provider: provider) }
   end
 
   def client
@@ -49,7 +49,7 @@ class Service < ApplicationRecord
 
   def facebook_refresh_token!(token)
     new_token_info = Koala::Facebook::OAuth.new.exchange_access_token_info(token)
-    update(access_token: new_token_info["access_token"], expires_at: Time.zone.now + new_token_info["expires_in"])
+    update(access_token: new_token_info['access_token'], expires_at: Time.zone.now + new_token_info['expires_in'])
   end
 
   def twitter_client
@@ -61,5 +61,6 @@ class Service < ApplicationRecord
     end
   end
 
-  def twitter_refresh_token!(token); end
+  def twitter_refresh_token!(token);
+  end
 end

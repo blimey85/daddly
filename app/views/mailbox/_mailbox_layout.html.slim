@@ -24,14 +24,12 @@
 /    #messages.card.card-body
 /      = yield
 
-
-
 .row.col-md-12
   h1 Mailbox
 .row.simple_discussion
   .col-md-3.mb-3
     .card.card-body
-      = link_to 'New Message', new_conversation_path, class: "btn btn-outline-primary btn-block"
+      = link_to 'New Message', new_conversation_path, class: 'btn btn-outline-primary btn-block'
       hr
       .forum-thread-filters[role="tablist"]
         h5

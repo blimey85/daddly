@@ -42,9 +42,9 @@ class Identity < ApplicationRecord
     identity
   end
 
-  # With example: Gary A. Traffanstedt
-  # first_name: Gary A.
-  # last_name: Traffanstedt
+  # With example: Josh M. Steiner
+  # first_name: Josh M.
+  # last_name: Steiner
   def first_name
     name.split(' ')[0..-2].join(' ')
   end
