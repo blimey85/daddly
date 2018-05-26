@@ -27,6 +27,8 @@
 @import "uploads";
 @import "simple_discussion";
 @import "_simple_discussion";
+@import "noty/lib/noty.css";
+@import "noty/lib/themes/semanticui";
 
 body {
   color: #3C4858;
@@ -37,9 +39,9 @@ label {
 }
 
 .navbar {
+  border-radius: 0 !important;
   min-height: 50px;
   padding: 0 1rem;
-  border-radius: 0 !important;
 }
 
 #header_icon {
@@ -85,7 +87,7 @@ div.fileinput-preview img {
 // styles used for events and mailbox
 .flex-center ul,
 .card-overlay ul,
-.section.team-section
+.section.team-section,
 .avatar ul,
 .section.team-section div.fileinput-preview img ul,
 div.fileinput-preview .section.team-section img ul,

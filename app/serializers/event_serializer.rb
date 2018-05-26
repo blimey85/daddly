@@ -61,11 +61,6 @@ class EventSerializer < ActiveModel::Serializer
     upvoted.present?
   end
 
-  # def categories
-  #   # object.event_categories
-  #   [ 'ARTS', 'CHARITY' ]
-  # end
-
   def categories
     object.event_categories.map do |category|
       EventCategoriesSerializer.new(category)

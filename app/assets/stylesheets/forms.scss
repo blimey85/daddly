@@ -1,3 +1,13 @@
+.form-control::placeholder {
+  color: #ced4da;
+  opacity: 1;
+}
+
+.form-control::-moz-placeholder {
+  color: #ced4da;
+  opacity: 1;
+}
+
 .waves-input-wrapper {
   padding-bottom: 5px;
 }

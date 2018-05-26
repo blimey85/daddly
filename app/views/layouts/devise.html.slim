@@ -12,18 +12,20 @@ html.full-height
     title
       = content_for?(:title) ? yield(:title) : 'Daddly.io'
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Daddly.io'}"
-    = tag :meta, name: 'current-user', content: current_user.id, data: {email: current_user.email, name: current_user.name} if user_signed_in?
+    = tag :meta, name: 'current-user', content: current_user.id, data: { email: current_user.email, name: current_user.name } if user_signed_in?
 
-    == stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
-    == stylesheet_link_tag 'mdb_devise', :media => 'all', 'data-turbolinks-track' => 'reload'
-    == stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => 'reload'
+    script defer="defer" src="https://pro.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-+1nLPoB0gaUktsZJP+ycZectl3GX7wP8Xf2PE/JHrb7X1u7Emm+v7wJMbAcPr8Ge" crossorigin="anonymous"
+    script defer="defer" src="https://pro.fontawesome.com/releases/v5.0.10/js/v4-shims.js" crossorigin="anonymous"
+
+    == stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'
+    == stylesheet_link_tag 'mdb_devise'
+    == stylesheet_link_tag 'application'
 
     == javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js'
     == javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'
-    == javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js'
-    == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    == javascript_include_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'
+    == javascript_include_tag 'application'
     == segment_javascript_include
-
     == csrf_meta_tags
   body class="mdb-skin-custom"
     == render 'layouts/devise_header'
@@ -36,11 +38,6 @@ html.full-height
     == render 'layouts/devise_footer'
 
 css:
-  /*.intro-2 {*/
-    /*background: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img%20(11).jpg") no-repeat center center;*/
-    /*background-size: cover;*/
-  /*}*/
-
   @media (max-width: 543px) {
     .intro-2 {
       background: url("/beach_544.jpg") no-repeat;
@@ -83,7 +80,6 @@ css:
 
   .md-form .prefix {
     font-size: 1.5rem;
-    margin-top: 1rem;
   }
 
   h6 {

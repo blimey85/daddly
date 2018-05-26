@@ -14,16 +14,16 @@
 // require turbolinks
 // require jquery3
 // require jquery_ujs
-//= require sweetalert2/dist/sweetalert2
-//= require sweet-alert2-rails
+// require sweetalert2/dist/sweetalert2.all.min
+// require sweet-alert2-rails
 //= require cloudinary/jquery.cloudinary
 //= require jasny-bootstrap/dist/js/jasny-bootstrap
 //= require moment/min/moment.min
 //= require fullcalendar/dist/fullcalendar
 //= require selectize
 //= require cocoon
-//= require rails.validations
-//= require rails.validations.simple_form
+//  require rails.validations
+//  require rails.validations.simple_form
 //= require jquery-comments
 //= require qtip2/dist/jquery.qtip
 //= require events
@@ -31,3 +31,5 @@
 //= require jquery.atwho
 //= require timeago/jquery.timeago
 //= require gmaps
+//= require parsley.min
+//= require noty/lib/noty.min

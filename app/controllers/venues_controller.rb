@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_action :set_venue, only: [:show, :edit, :update, :destroy]
+  before_action :set_venue, only: [:edit, :update, :destroy]
   respond_to :html, :json, :js
 
   def index
@@ -7,7 +7,7 @@ class VenuesController < ApplicationController
   end
 
   def show
-    render json: @venue
+    @venue = Venue.includes(:past_events, :future_events).find(params[:id])
   end
 
   def new
@@ -19,7 +19,11 @@ class VenuesController < ApplicationController
 
   def create
     @venue = Venue.new(venue_params)
-    render json: @venue if @venue.save
+    if @venue.save
+      render json: @venue, status: :ok
+    else
+      render json: { error: @venue.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update

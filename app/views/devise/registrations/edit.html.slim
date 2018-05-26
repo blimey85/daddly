@@ -43,7 +43,7 @@
               .row.mb-2
                 - if current_user.services.twitter.any?
                   = link_to current_user.services.twitter.last, method: :delete, class: 'btn btn-block btn-social btn-twitter'
-                    i.fa.fa-facebook
+                    i.fa.fa-twitter
                     | Connected to Twitter
                 - else
                   = link_to user_twitter_omniauth_authorize_path, class: 'btn btn-block btn-social btn-outline-twitter'
@@ -186,7 +186,7 @@ scss:
       > :first-child {
           position: absolute;
           left: 0;
-          top: 0;
+          top: 7px;
           bottom: 0;
           width: 32px;
           line-height: 31px;
