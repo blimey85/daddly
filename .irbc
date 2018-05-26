@@ -1,0 +1,1 @@
+Hirb.enable :output => {"ActiveRecord::Base" => {:class => :auto_table, :ancestor => true, :options => {:vertical => true}}}

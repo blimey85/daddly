@@ -2,13 +2,34 @@
 # yarn lockfile v1
 
 
+abbrev@1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
+
+balanced-match@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
+
+brace-expansion@^1.1.7:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
+  dependencies:
+    balanced-match "^1.0.0"
+    concat-map "0.0.1"
+
+concat-map@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
+
 ev-emitter@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ev-emitter/-/ev-emitter-1.1.1.tgz#8f18b0ce5c76a5d18017f71c0a795c65b9138f2a"
 
-font-awesome@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
+findup-sync@~0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/findup-sync/-/findup-sync-0.3.0.tgz#37930aa5d816b777c03445e1966cc6790a4c0b16"
+  dependencies:
+    glob "~5.0.0"
 
 fullcalendar@^3.4.0:
   version "3.9.0"
@@ -17,31 +38,89 @@ fullcalendar@^3.4.0:
     jquery "2 - 3"
     moment "^2.20.1"
 
+glob@~5.0.0:
+  version "5.0.15"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-5.0.15.tgz#1bc936b9e02f4a603fcc222ecf7633d30b8b93b1"
+  dependencies:
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "2 || 3"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
+grunt-cli@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/grunt-cli/-/grunt-cli-1.2.0.tgz#562b119ebb069ddb464ace2845501be97b35b6a8"
+  dependencies:
+    findup-sync "~0.3.0"
+    grunt-known-options "~1.1.0"
+    nopt "~3.0.6"
+    resolve "~1.1.0"
+
+grunt-known-options@~1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/grunt-known-options/-/grunt-known-options-1.1.0.tgz#a4274eeb32fa765da5a7a3b1712617ce3b144149"
+
 imagesloaded@>=3.0.0:
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/imagesloaded/-/imagesloaded-4.1.3.tgz#94b82a069e532c9da112a4ea3960e58424a42be4"
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/imagesloaded/-/imagesloaded-4.1.4.tgz#1376efcd162bb768c34c3727ac89cc04051f3cc7"
   dependencies:
     ev-emitter "^1.0.0"
+
+inflight@^1.0.4:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
+  dependencies:
+    once "^1.3.0"
+    wrappy "1"
+
+inherits@2:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
 
 jasny-bootstrap@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/jasny-bootstrap/-/jasny-bootstrap-3.1.3.tgz#b072a681d50c649762c9543c7a6093d9baa2f87b"
 
 jquery-textcomplete@^1.8.1:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/jquery-textcomplete/-/jquery-textcomplete-1.8.2.tgz#225c5f6aac7c09c0e7b210cb004f8017b0ab0367"
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/jquery-textcomplete/-/jquery-textcomplete-1.8.4.tgz#6307cf538d3efec23e8e21d10c560cd75e55bf5c"
+  dependencies:
+    grunt-cli "^1.2.0"
 
-"jquery@2 - 3":
+"jquery@2 - 3", jquery@>=1.2.3, jquery@>=1.6.0, jquery@^3.2.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
-jquery@>=1.2.3, jquery@>=1.6.0, jquery@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
+"minimatch@2 || 3":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
+  dependencies:
+    brace-expansion "^1.1.7"
 
 moment@^2.20.1:
-  version "2.22.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.0.tgz#7921ade01017dd45186e7fee5f424f0b8663a730"
+  version "2.22.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
+
+nopt@~3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
+  dependencies:
+    abbrev "1"
+
+noty@^3.2.0-beta:
+  version "3.2.0-beta"
+  resolved "https://registry.yarnpkg.com/noty/-/noty-3.2.0-beta.tgz#cd1117277a1b83c9b08dfc78f968c6c5960d3cfa"
+
+once@^1.3.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
+  dependencies:
+    wrappy "1"
+
+path-is-absolute@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
 
 qtip2@^3.0.3:
   version "3.0.3"
@@ -50,20 +129,28 @@ qtip2@^3.0.3:
     imagesloaded ">=3.0.0"
     jquery ">=1.6.0"
 
+resolve@~1.1.0:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
+
 sweetalert2@^6.6.5:
-  version "6.6.6"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.6.6.tgz#3630279d98f04fb8b89f2e8b098fc42f03bcb555"
+  version "6.11.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.11.5.tgz#a1ede34089225eb864898f4b613db4fec5dbe334"
 
 tether@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/tether/-/tether-1.4.0.tgz#0f9fa171f75bf58485d8149e94799d7ae74d1c1a"
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/tether/-/tether-1.4.4.tgz#9dc6eb2b3e601da2098fd264e7f7a8b264de1125"
 
 timeago@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/timeago/-/timeago-1.6.1.tgz#fa9aa932e6cfae1f0c9b62f49d8a6071fdf69c5b"
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/timeago/-/timeago-1.6.3.tgz#162a1adae99356297df59339837d09f1b0f36465"
   dependencies:
     jquery ">=1.2.3"
 
 trix@^0.10.2:
   version "0.10.2"
   resolved "https://registry.yarnpkg.com/trix/-/trix-0.10.2.tgz#85fc61bfed5d29676e400cc70cbd9040b753f5b6"
+
+wrappy@1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
