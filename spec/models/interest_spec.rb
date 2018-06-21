@@ -11,8 +11,6 @@
 #  index_interests_on_sub_category_id  (sub_category_id)
 #
 
-require 'rails_helper'
-
 RSpec.describe Interest, type: :model do
   context 'Model Associations' do
     it { is_expected.to have_many(:user_interests) }

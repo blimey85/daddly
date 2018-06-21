@@ -21,8 +21,10 @@
 FactoryBot.define do
   factory :ping do
     pingable_id 1
-    pingable_type 1
+    pingable_type 'Comment'
     pinger_id 1
-    user nil
+    user_id 1
+    pingable_parent_id 1
+    pingable_parent_type 'Event'
   end
 end

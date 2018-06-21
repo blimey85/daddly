@@ -179,5 +179,47 @@ SimpleForm.setup do |config|
   # Defines validation classes to the input_field. By default it's nil.
   # config.input_field_valid_class = 'is-valid'
   # config.input_field_error_class = 'is-invalid'
+
+  # config.button_class = 'btn'
+  #
+  # # Define the default class of the input wrapper of the boolean input.
+  # config.boolean_label_class = 'form-check-label'
+  #
+  # # How the label text should be generated altogether with the required text.
+  # config.label_text = lambda { |label, required, explicit_label| "#{label} #{required}" }
+  #
+  # # Define the way to render check boxes / radio buttons with labels.
+  # config.boolean_style = :inline
+  #
+  # # You can wrap each item in a collection of radio/check boxes with a tag
+  # config.item_wrapper_tag = :div
+  #
+  # # Defines if the default input wrapper class should be included in radio
+  # # collection wrappers.
+  # config.include_default_input_wrapper_class = false
+  #
+  # # CSS class to add for error notification helper.
+  # config.error_notification_class = 'alert alert-danger'
+  #
+  # # Method used to tidy up errors. Specify any Rails Array method.
+  # # :first lists the first message for each field.
+  # # :to_sentence to list all errors for each field.
+  # config.error_method = :to_sentence
+  #
+  # # add validation classes to `input_field`
+  # config.input_field_error_class = 'is-invalid'
+  # config.input_field_valid_class = 'is-valid'
+  #
+  # # horizontal input for radio buttons and check boxes
+  # config.wrappers :horizontal_collection, item_wrapper_class: 'col', tag: 'fieldset', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
+  #   b.use :html5
+  #   b.optional :readonly
+  #   b.use :label, class: 'form-control-label'
+  #   b.wrapper :grid_wrapper, tag: 'div', class: 'row justify-content-md-center' do |ba|
+  #     ba.use :input, class: 'form-check-input', error_class: 'is-invalid', valid_class: 'is-valid'
+  #     ba.use :error, wrap_with: { tag: 'div', class: 'invalid-feedback d-block' }
+  #     ba.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
+  #   end
+  # end
 end
 SimpleForm::FormBuilder.map_type :jasnyfile, to: SimpleForm::Inputs::JasnyfileInput

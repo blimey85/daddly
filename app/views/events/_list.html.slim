@@ -1,0 +1,108 @@
+/ check if we have distance data for each venue
+- if defined? @events.with_hit
+  = tag.div id: 'events-list', data: { events: @events.with_hit.to_json(include: [:venues]), l: params[:l] } do
+    ul.list-group
+      - @events.with_hit.each do |event|
+        li.list-group-item
+          h1= link_to event[0].name, event[0]
+          .sr-venue
+            span.sr-venue-distance
+              = event[1]['sort'][0].round(2)
+              | miles
+            span.sr-venue-name
+              h2
+                i.far.fa-location-arrow
+                = event[0].venues&.first&.name
+          .sr-description
+            = event[0].description
+          .sr-date-location
+            span.sr-calendar
+              i.far.fa-calendar-alt
+              |&nbsp;
+              = event[0].starts_at.strftime('%A, %b %d, %Y')
+            span.sr-city-state
+              i.far.fa-map-marker-alt
+              |&nbsp;
+              = event[0].venues&.first&.street_address_city_state
+      li.list-group-item
+        = paginate @events, remote: true
+
+/ no distance data for each venue
+- else
+  / = tag.div id: "events-list", data: {events: @events.to_json(include: [:venues]), l: params[:l]} do
+  ul.list-group
+    - @events.each do |event|
+      li.list-group-item
+        h1= link_to event.name, event
+        h2
+          i.far.fa-location-arrow
+          = event.venues&.first&.name
+        .sr-description
+          = event.description
+        .sr-date-location
+          span.sr-calendar
+            i.far.fa-calendar-alt
+            |&nbsp;
+            = event.starts_at.strftime('%A, %b %d, %Y')
+          span.sr-city-state
+            i.far.fa-map-marker-alt
+            |&nbsp;
+            = event.venues&.first&.street_address_city_state
+    li.list-group-item
+      = paginate @events, remote: true
+
+scss:
+  .list-group-item {
+    color: #333;
+    font-family: "SF Text";
+    font-size: 12px;
+    height: 110px;
+    padding: 8px;
+    letter-spacing: 0;
+    line-height: 1.5;
+
+    address {
+      margin: 0;
+    }
+    h1 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+      padding: 0;
+      line-height: 18px;
+    }
+    h2 {
+      font-size: 12px;
+      font-weight: 600;
+      margin: 0;
+      padding: 0;
+    }
+    .svg-inline--fa {
+      margin-right: 3px;
+    }
+    .sr-city-state {
+      margin-left: 10px;
+      padding-right: 15px;
+      float: right;
+    }
+    .sr-date-location {
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+    }
+    .sr-description {
+      /*white-space: nowrap;*/
+      /*text-overflow: ellipsis;*/
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .sr-venue-distance {
+      float: right;
+    }
+
+    &:last-child {
+      height: 48px;
+    }
+  }

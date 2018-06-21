@@ -12,6 +12,6 @@
 FactoryBot.define do
   factory :event_event_category do
     event_id 1
-    event_category 1
+    event_category_id 1
   end
 end

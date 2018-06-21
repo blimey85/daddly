@@ -66,5 +66,4 @@ class EventSerializer < ActiveModel::Serializer
       EventCategoriesSerializer.new(category)
     end
   end
-
 end

@@ -21,5 +21,9 @@
 
 FactoryBot.define do
   factory :comment do
+    commentable_id    1
+    commentable_type  'Event'
+    body              { Faker::TheITCrowd.quote }
+    user_id           1
   end
 end

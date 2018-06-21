@@ -17,6 +17,8 @@
 
 FactoryBot.define do
   factory :reservation do
-    
+    event_id 1
+    user_id 1
+    reservation_type 'Some Type' # FIXME: Update this to an actual type
   end
 end

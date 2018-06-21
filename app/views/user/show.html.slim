@@ -1,253 +1,297 @@
 scss:
-  .card img.rounded-circle {
-    border-radius: 50%;
-  }
-  .fc-event {
-    color: #fff !important;
-  }
-  .qtip {
-    font-size: 1em;
-    max-width: 350px;
-  }
-  .qtip-titlebar {
-    padding: 10px;
-    font-size: .85em;
-  }
-  .qtip-content {
-    font-size: .85em;
-  }
-  .qtip-title-content {
-    float: left;
-    max-width: 250px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .qtip-title-interactions {
-    float: right;
-    margin-left: 10px;
+  .svg-inline--fa {
+    font-size: 20px;
   }
 
-  @mixin avatar($size) {
-    width: $size;
-    height: $size;
-    background-color: #3f729b;
-    text-align: center;
+//  .card img.rounded-circle {
+//    border-radius: 50%;
+//  }
+//  .fc-event {
+//    color: #fff !important;
+//  }
+//  .qtip {
+//    font-size: 1em;
+//    max-width: 350px;
+//  }
+//  .qtip-titlebar {
+//    padding: 10px;
+//    font-size: .85em;
+//  }
+//  .qtip-content {
+//    font-size: .85em;
+//  }
+//  .qtip-title-content {
+//    float: left;
+//    max-width: 250px;
+//    overflow: hidden;
+//    text-overflow: ellipsis;
+//    white-space: nowrap;
+//  }
+//  .qtip-title-interactions {
+//    float: right;
+//    margin-left: 10px;
+//  }
+//
+//  @mixin avatar($size) {
+//    width: $size;
+//    height: $size;
+//    background-color: #3f729b;
+//    text-align: center;
+//
+//    .initials {
+//      position: relative;
+//      top: $size*0.25;
+//      font-size: $size*0.5;
+//      line-height: $size*0.5;
+//      color: #fff;
+//      font-family: "Arial Black", Gadget, sans-serif;
+//      font-weight: bold;
+//    }
+//  }
+//  .circle {
+//    border-radius: 50%;
+//    -webkit-border-radius: 50%;
+//    -moz-border-radius: 50%;
+//  }
+//
+//  .avatar {
+//    @include avatar(100px);
+//  }
+//
+//  .avatar-sm {
+//    @include avatar(50px);
+//  }
+//
+//  .avatar-lg {
+//    @include avatar(250px);
+//  }
 
-    .initials {
-      position: relative;
-      top: $size*0.25;
-      font-size: $size*0.5;
-      line-height: $size*0.5;
-      color: #fff;
-      font-family: "Arial Black", Gadget, sans-serif;
-      font-weight: bold;
-    }
-  }
-  .circle {
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-  }
 
-  .avatar {
-    @include avatar(100px);
-  }
 
-  .avatar-sm {
-    @include avatar(50px);
-  }
+.row
+  .col-md-6.col-lg-4
+    .card.card-personal
+      img.card-img-top alt="Card image cap" src="#{@user.avatar.url}"
+      .card-body
+        a
+          h4.card-title.title-one = @user.first_name
+        p.card-meta Joined in 2013
+        p.card-text Clara is an photographer living in Madrid.
+        hr
+        a.card-meta
+          span
+            i.fa.fa-user>
+            | 22 Friends
+      .rounded-bottom.mdb-color.lighten-3.text-center.pt-3
+        ul.list-unstyled.list-inline.font-small
+          li.list-inline-item.pr-2.white-text
+            i.fa.fa-clock-o.pr-1
+            | 05/10/2015
+          li.list-inline-item.pr-2
+            a.white-text href="#"
+              i.fa.far-comments.pr-1
+              | 12
+          li.list-inline-item.pr-2
+            a.white-text href="#"
+              i.fab.fa-facebook-f.pr-1
+              | 21
+          li.list-inline-item
+            a.white-text href="#"
+              i.fa.far-twitter.pr-1
+              | 5
 
-  .avatar-lg {
-    @include avatar(250px);
-  }
 
-.container
-  .row.justify-content-center
-    .col-7
-      .card
-        p
-          = image_tag(@user.avatar.url, size: '100', class: 'img-thumbnail')
-        p
-          .avatar-sm.circle
-            span.initials
-              | GT
-        p
-          strong First Name:
-          = @user.first_name
-        p
-          strong Last Name:
-          = @user.last_name
-        p
-          strong Location:
-          = "#{@user.city}, #{@user.state}"
-        p
-          strong Age:
-          = @user.age
-        p
-          strong Bio:
-          = @user.bio
-  br
-  br
-  .row.justify-content-center
-    .col-10
-      .form-check
-        input.calFilter.form-check-input checked="checked" type="checkbox" value="normal" id="test"
-        label.form-check-label for="test"
-          | Normal
-      .form-check
-        input.calFilter.form-check-input type="checkbox" value="event" id="test2"
-        label.form-check-label for="test2"
-          | Event
-      .form-check
-        input.calFilter.form-check-input type="checkbox" value="whisper" id="test3"
-        label.form-check-label for="test3"
-          | Whisper
-      #calendar
-  br
-  br
 
-/ SHOW ALL
-/ ARTS
-/ CHARITY
-/ CLASSES
-/ FOOD & DRINK
-/ MUSIC
-/ NETWORKING
-/ OUTDOORS
-/ RELIGIOUS
-/ SPORT & WELLNESS
 
-  / .row
-  /   .col-md-3
-  /     ul.nav.md-pills.pills-primary.flex-column role="tablist"
-  /       li.nav-item
-  /         a.nav-link.active data-toggle="tab" href="#panel21" role="tab"
-  /           | Downloads
-  /           i.fa.fa-download.ml-2
-  /       li.nav-item
-  /         a.nav-link data-toggle="tab" href="#panel22" role="tab"
-  /           | Orders  invoices
-  /           i.fa.fa-file-text.ml-2
-  /       li.nav-item
-  /         a.nav-link data-toggle="tab" href="#panel23" role="tab"
-  /           | Billing details
-  /           i.fa.fa-address-card.ml-2
-  /   .col-md-9
-  /     .tab-content.vertical
-  /       #panel21.tab-pane.fade.in.show.active role="tabpanel"
-  /         h5.my-2.h5 Panel 1
-  /       #panel22.tab-pane.fade role="tabpanel"
-  /         h5.my-2.h5 Panel 2
-  /       #panel23.tab-pane.fade role="tabpanel"
-  /         h5.my-2.h5 Panel 3
 
-javascript:
-  // $(document).ready(function() {
-  //     $('#calendar').fullCalendar({
-  //         eventRender: function (calEvent, element, view) {
-  //             if (calEvent.risk == "normal") {
-  //                 element.css('background-color', '#99FF99');
-  //             }
-  //             if (calEvent.risk == "event") {
-  //                 element.css('background-color', '#415eec');
-  //             }
-  //             if (calEvent.risk == "whisper") {
-  //                 element.css('background-color', '#D7CDD5');
-  //             }
-  //             return filter(calEvent); // Only show if appropriate checkbox is checked
-  //         },
-  //         allDaySlot: true,
-  //         displayEventTime: true,
-  //         displayEventEnd: true,
-  //         editable: false,
-  //         firstDay: 1,
-  //         weekNumbers: false,
-  //         selectable: false,
-  //         weekNumberCalculation: "ISO",
-  //         eventLimit: true,
-  //         events: 'parts/events22.php',
-  //         events: [{
-  //             start: moment().add(1, 'day'),
-  //             title: 'Normal',
-  //             risk: 'normal'
-  //         }, {
-  //             start: moment().add(2, 'day'),
-  //             title: 'Event',
-  //             risk: 'event'
-  //         }, {
-  //             start: moment().add(3, 'day'),
-  //             title: 'Whisper',
-  //             risk: 'whisper'
-  //         }]
-  //     });
-  //
-  //     /* When a checkbox changes, re-render events */
-  //     $('input:checkbox.calFilter').on('change', function () {
-  //         $('#calendar').fullCalendar('rerenderEvents');
-  //     });
-  // });
 
-  // function filter(calEvent) {
-  //     var vals = [];
-  //     $('input:checkbox.calFilter:checked').each(function () {
-  //         vals.push($(this).val());
-  //     });
-  //     return vals.indexOf(calEvent.risk) !== -1;
-  // }
-  $(document).ready(function() {
-    $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,listDay,listWeek,listMonth'
-      },
-      views: { // customize button names
-          month: { buttonText: 'Calendar' },
-          listDay: { buttonText: 'Day List' },
-          listWeek: { buttonText: 'Week List' },
-          listMonth: { buttonText: 'Month List' }
-      },
-      editable: false,
-      events: {
-        url: '/events/calendar',
-        type: 'GET',
-        error: function () {
-          alert('there was an error while fetching events!');
-        }
-      },
-      eventRender: function (event, element) {
-        console.log(event);
-        console.log(event.categories);
 
-        var x = event.categories;
-        for (var i = 0; i < x.length; i++) {
-            console.log(x[i].id);
-            console.log(x[i].name);
-        }
-
-        element.qtip({
-          content: {
-            text: event.title,
-            title: "<div class='qtip-title-content'>" +
-              event.description +
-              "</div>" +
-              "<div class='qtip-title-interactions'><i class='fa fa-heart fa-lg'></i> " + event.votes_count +
-              "&nbsp;&nbsp;" +
-              "<i class='fa fa-comments fa-lg'></i> " + event.comments_count +
-              "</div>"
-          },
-          position: {
-            my: 'bottom center',
-            at: 'top center',
-            viewport: $('#calendar'),
-            adjust: {
-              mouse: false,
-              scroll: false
-            }
-          },
-          style: 'qtip-blue'
-        });
-      }
-    });
-  });
+/ .container
+/   .row.justify-content-center
+/     .col-7
+/       .card.card-body
+/         p
+/           = image_tag(@user.avatar.url, size: '100', class: 'img-thumbnail')
+/         p
+/           .avatar-sm.circle
+/             span.initials
+/               | GT
+/         p
+/           strong First Name:
+/           =< @user.first_name
+/         p
+/           strong Last Name:
+/           =< @user.last_name
+/         p
+/           strong Location:
+/           =< "#{@user.city}, #{@user.state}"
+/         p
+/           strong Age:
+/           =< @user.age
+/         p
+/           strong Bio:
+/           =< @user.bio
+/   br
+/   br
+/   .row.justify-content-center
+/     .col-10
+/       .form-check
+/         input.calFilter.form-check-input checked="checked" type="checkbox" value="normal" id="test"
+/         label.form-check-label for="test"
+/           | Normal
+/       .form-check
+/         input.calFilter.form-check-input type="checkbox" value="event" id="test2"
+/         label.form-check-label for="test2"
+/           | Event
+/       .form-check
+/         input.calFilter.form-check-input type="checkbox" value="whisper" id="test3"
+/         label.form-check-label for="test3"
+/           | Whisper
+/       #calendar
+/   br
+/   br
+/
+/ / SHOW ALL
+/ / ARTS
+/ / CHARITY
+/ / CLASSES
+/ / FOOD & DRINK
+/ / MUSIC
+/ / NETWORKING
+/ / OUTDOORS
+/ / RELIGIOUS
+/ / SPORT & WELLNESS
+/
+/   / .row
+/   /   .col-md-3
+/   /     ul.nav.md-pills.pills-primary.flex-column role="tablist"
+/   /       li.nav-item
+/   /         a.nav-link.active data-toggle="tab" href="#panel21" role="tab"
+/   /           | Downloads
+/   /           i.fa.fa-download.ml-2
+/   /       li.nav-item
+/   /         a.nav-link data-toggle="tab" href="#panel22" role="tab"
+/   /           | Orders  invoices
+/   /           i.fa.fa-file-text.ml-2
+/   /       li.nav-item
+/   /         a.nav-link data-toggle="tab" href="#panel23" role="tab"
+/   /           | Billing details
+/   /           i.fa.fa-address-card.ml-2
+/   /   .col-md-9
+/   /     .tab-content.vertical
+/   /       #panel21.tab-pane.fade.in.show.active role="tabpanel"
+/   /         h5.my-2.h5 Panel 1
+/   /       #panel22.tab-pane.fade role="tabpanel"
+/   /         h5.my-2.h5 Panel 2
+/   /       #panel23.tab-pane.fade role="tabpanel"
+/   /         h5.my-2.h5 Panel 3
+/
+//javascript:
+//  // $(document).ready(function() {
+//  //     $('#calendar').fullCalendar({
+//  //         eventRender: function (calEvent, element, view) {
+//  //             if (calEvent.risk == "normal") {
+//  //                 element.css('background-color', '#99FF99');
+//  //             }
+//  //             if (calEvent.risk == "event") {
+//  //                 element.css('background-color', '#415eec');
+//  //             }
+//  //             if (calEvent.risk == "whisper") {
+//  //                 element.css('background-color', '#D7CDD5');
+//  //             }
+//  //             return filter(calEvent); // Only show if appropriate checkbox is checked
+//  //         },
+//  //         allDaySlot: true,
+//  //         displayEventTime: true,
+//  //         displayEventEnd: true,
+//  //         editable: false,
+//  //         firstDay: 1,
+//  //         weekNumbers: false,
+//  //         selectable: false,
+//  //         weekNumberCalculation: "ISO",
+//  //         eventLimit: true,
+//  //         events: 'parts/events22.php',
+//  //         events: [{
+//  //             start: moment().add(1, 'day'),
+//  //             title: 'Normal',
+//  //             risk: 'normal'
+//  //         }, {
+//  //             start: moment().add(2, 'day'),
+//  //             title: 'Event',
+//  //             risk: 'event'
+//  //         }, {
+//  //             start: moment().add(3, 'day'),
+//  //             title: 'Whisper',
+//  //             risk: 'whisper'
+//  //         }]
+//  //     });
+//  //
+//  //     /* When a checkbox changes, re-render events */
+//  //     $('input:checkbox.calFilter').on('change', function () {
+//  //         $('#calendar').fullCalendar('rerenderEvents');
+//  //     });
+//  // });
+//
+//  // function filter(calEvent) {
+//  //     var vals = [];
+//  //     $('input:checkbox.calFilter:checked').each(function () {
+//  //         vals.push($(this).val());
+//  //     });
+//  //     return vals.indexOf(calEvent.risk) !== -1;
+//  // }
+//  $(document).ready(function() {
+//    $('#calendar').fullCalendar({
+//      header: {
+//        left: 'prev,next today',
+//        center: 'title',
+//        right: 'month,listDay,listWeek,listMonth'
+//      },
+//      views: { // customize button names
+//          month: { buttonText: 'Calendar' },
+//          listDay: { buttonText: 'Day List' },
+//          listWeek: { buttonText: 'Week List' },
+//          listMonth: { buttonText: 'Month List' }
+//      },
+//      editable: false,
+//      events: {
+//        url: '/events/calendar',
+//        type: 'GET',
+//        error: function () {
+//          alert('there was an error while fetching events!');
+//        }
+//      },
+//      eventRender: function (event, element) {
+//        console.log(event);
+//        console.log(event.categories);
+//
+//        var x = event.categories;
+//        for (var i = 0; i < x.length; i++) {
+//            console.log(x[i].id);
+//            console.log(x[i].name);
+//        }
+//
+//        element.qtip({
+//          content: {
+//            text: event.title,
+//            title: "<div class='qtip-title-content'>" +
+//              event.description +
+//              "</div>" +
+//              "<div class='qtip-title-interactions'><i class='fa fa-heart fa-lg'></i> " + event.votes_count +
+//              "&nbsp;&nbsp;" +
+//              "<i class='fa fa-comments fa-lg'></i> " + event.comments_count +
+//              "</div>"
+//          },
+//          position: {
+//            my: 'bottom center',
+//            at: 'top center',
+//            viewport: $('#calendar'),
+//            adjust: {
+//              mouse: false,
+//              scroll: false
+//            }
+//          },
+//          style: 'qtip-blue'
+//        });
+//      }
+//    });
+//  });

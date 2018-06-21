@@ -13,7 +13,7 @@
 
 FactoryBot.define do
   factory :sub_category do
-    name 'MyString'
-    category nil
+    name 'My Sub Category'
+    category_id 1
   end
 end

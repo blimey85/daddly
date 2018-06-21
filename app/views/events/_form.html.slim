@@ -1,113 +1,130 @@
-css:
-  label {
-    margin-bottom: 0;
-    white-space: nowrap;
-  }
-
-  .selectize-control.venues .selectize-input [data-value] .address {
-    opacity: 0.5;
-  }
-
-  .selectize-control.venues .selectize-dropdown .caption {
-    font-size: 12px;
-    display: block;
-    opacity: 0.5;
-  }
-
-  .form-control:disabled, .form-control[readonly] {
-    background-color: #fff;
-    opacity: 1;
-  }
-
-= simple_form_for @event, html: { class: 'form-horizontal' } do |f|
-
-  - if @event.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@event.errors.count, 'error')} prohibited this event from being saved:"
-      ul
-        - @event.errors.full_messages.each do |message|
-          li = message
+= simple_form_for @event, class: 'form-horizontal', html: { novalidate: true, 'data-parsley-focus' => 'none' } do |f|
 
   .form-group
-    = f.association :event_categories, collection: EventCategory.order('name asc'), as: :check_boxes, wrapper: :horizontal_collection
+    = f.association :event_categories,
+            collection: EventCategory.order('name asc'),
+            as: :check_boxes,
+            wrapper: :horizontal_collection,
+            input_html: { 'data-parsley-mincheck' => 1,
+                    'data-parsley-errors-container' => '.checkbox-errors',
+                    'data-parsley-class-handler': '.event_event_categories label.collection_check_boxes',
+                    'data-parsley-required-message': 'Please select at least one category for your event.' },
+            required: true,
+            hint: ''
 
   .form-group
-    = f.input :name, required: false
+    = f.label :name
+    .input-group
+      = f.input_field :name,
+              required: true,
+              placeholder: 'Enter name of event...',
+              'data-parsley-errors-container' => '#name-errors',
+              'data-parsley-required-message': 'Please enter a name for the event.'
+    #name-errors
+
   .form-group
-    = f.input :description, required: false
+    = f.input :description,
+            required: true,
+            placeholder: 'Enter description of event...',
+            input_html: { 'data-parsley-required-message': 'Please enter a description for the event.' }
 
   .row
     .col-md-3
       = f.label :start_date
-      .input-group
+      #start_date-ig.input-group
         .input-group-prepend: span.input-group-text: i.fa.fa-calendar
-        = f.text_field :start_date, class: 'form-control datepicker', id: 'test', placeholder: 'Start Date', tabindex: '-1'
+        = f.text_field :start_date, class: 'form-control datepicker',
+                placeholder: 'Start Date', tabindex: '-1', required: true,
+                'data-parsley-errors-container' => '#start_date-errors',
+                'data-parsley-class-handler': '#start_date-ig',
+                'data-parsley-required-message': 'Start Date is required.'
+      #start_date-errors
+
     .col-md-3
       = f.label :start_time
-      .input-group
+      #start_time-ig.input-group
         .input-group-prepend: span.input-group-text: i.fa.fa-clock-o
-        = f.text_field :start_time, class: 'form-control timepicker', id: 'starttime', placeholder: 'Start Time', tabindex: '-1'
+        = f.text_field :start_time, class: 'form-control timepicker', placeholder: 'Start Time', tabindex: '-1', required: true,
+                'data-parsley-errors-container' => '#start_time-errors',
+                'data-parsley-class-handler': '#start_time-ig',
+                'data-parsley-required-message': 'Start Time is required.'
+      #start_time-errors
+
     .col-md-3
       = f.label :end_date
-      .input-group
+      #end_date-ig.input-group
         .input-group-prepend: span.input-group-text: i.fa.fa-calendar
-        = f.text_field :end_date, class: 'form-control datepicker', placeholder: 'End Date', tabindex: '-1'
+        = f.text_field :end_date, class: 'form-control datepicker', placeholder: 'End Date', tabindex: '-1', required: true,
+                'data-parsley-errors-container' => '#end_date-errors',
+                'data-parsley-class-handler': '#end_date-ig',
+                'data-parsley-required-message': 'End Date is required.'
+      #end_date-errors
+
     .col-md-3
       = f.label :end_time
-      .input-group
+      #end_time-ig.input-group
         .input-group-prepend: span.input-group-text: i.fa.fa-clock-o
-        = f.text_field :end_time, class: 'form-control timepicker', id: 'endtime', placeholder: 'End Time', tabindex: '-1'
+        = f.text_field :end_time, class: 'form-control timepicker', placeholder: 'End Time', tabindex: '-1', required: true,
+                'data-parsley-errors-container' => '#end_time-errors',
+                'data-parsley-class-handler': '#end_time-ig',
+                'data-parsley-required-message': 'End Time is required.'
+      #end_time-errors
 
-  .row.mt-3
-    .col-md-5
-      .form-group
-        = f.label :rsvp_min_limit
-        = f.number_field :rsvp_min_limit, class: 'form-control'
-    .col-md-5
-      .form-group
-        = f.label :rsvp_max_limit
-        = f.number_field :rsvp_max_limit, class: 'form-control'
-    .col-md-2
-      .form-group
-        = f.check_box :waitlist
-        = f.label :waitlist
+  / .row.mt-3
+  /   .col-md-5
+  /     .form-group
+  /       = f.label :rsvp_min_limit
+  /       = f.number_field :rsvp_min_limit, class: 'form-control'
+  /   .col-md-5
+  /     .form-group
+  /       = f.label :rsvp_max_limit
+  /       = f.number_field :rsvp_max_limit, class: 'form-control'
+  /   .col-md-2
+  /     .form-group
+  /       = f.check_box :waitlist
+  /       = f.label :waitlist
   / .form-group
   /   = f.label :status
   /   = f.number_field :status, class: 'form-control'
   / .form-group
   /   = f.label :visibility
   /   = f.number_field :visibility, class: 'form-control'
-  .form-group
+  .form-group.mt-3
     = f.label :venue_id, 'Select venue', class: 'active'
-    = f.select :venue_id, {}, {}, multiple: false, class: 'selectize venues'
+    = f.select :venue_id, {}, {}, multiple: false, class: 'selectize venues', required: true, placeholder: 'Enter name of venue...'
+    #errors-venue
 
+  / Form submit button
   .text-center.mt-1-half
     button.btn.btn-info.mb-2
       i.fa.fa-calendar.ml-1
       | &nbsp;&nbsp;Add Event
 
-.modal.fade.venue-modal aria-labelledby="mySmallModalLabel" role="dialog" tabindex="-1"
+
+  / Modal window with form for adding new venue
+#venueModal.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
   .modal-dialog.cascading-modal role="document"
     .modal-content
-      .modal-header.light-blue.darken-3.white-text
-        button.close.waves-effect.waves-light aria-label="Close" data-dismiss="modal" type="button"
-          span aria-hidden='true'  ×
+      .modal-header.light-blue.darkenex-3.white-text
         h4.title
-          i.fa.fa-address-card-o.ml-1
+          i.far.fa-address-card.mr-2
           | Add New Venue
+        button.close aria-label="Close" data-dismiss="modal" type="button"
+          span aria-hidden="true"  ×
       .modal-body.mb-0
         = simple_form_for Venue.new do |f|
           .form-group
-            = f.input :name, required: false
+            = f.input :name, required: true, placeholder: 'Enter name of venue...', input_html: { 'data-parsley-required-message': 'Please enter the name of the venue.' }
           .form-group
-            = f.input :address, required: false
+            = f.input :address, required: true, placeholder: 'Enter address of venue...', input_html: { 'data-parsley-required-message': 'Please enter the address of the venue.' }
           .form-group
-            = f.input :city, required: false
+            = f.input :city, required: true, placeholder: 'Enter city of venue...', input_html: { 'data-parsley-required-message': 'Please enter the city of the venue.' }
           .form-group
-            / = f.input :state, required: false
-            = f.input :state, as: :select, collection: STATES, input_html: { class: 'selectize-states' }, required: false, label_method: :second, value_method: :first
+            = f.label :state, 'State', class: 'active form-control-label required'
+            = f.select :state, options_for_select(us_states, 'FL'), {}, multiple: false, class: 'selectize-states required', placeholder: 'Select state of venue...', required: true
+            #errors-state
           .form-group
-            = f.input :zipcode, as: :string, required: false
+            = f.input :zipcode, as: :string, required: true, placeholder: 'Enter zipcode of venue...', input_html: { 'data-parsley-required-message': 'Please enter the zipcode of the venue.' }
           .form-group
             .switch
               label
@@ -115,9 +132,111 @@ css:
                 = f.check_box :visibility
                 span.lever
                 | Private
-            br
-            br
-          .text-center.mt-1-half
+          / Submit button for venue form
+          .text-center
             button.btn.btn-info.mb-2
+              i.far.fa-address-card.mr-1
               | Create Venue
-              i.fa.fa-address-card-o.ml-1
+
+scss:
+  //#errors {
+  //  margin-top: -5px;
+  //}
+  //
+  //label {
+  //  margin-bottom: 0;
+  //  white-space: nowrap;
+  //}
+  //
+  //.selectize-control.venues .selectize-input [data-value] .address {
+  //  opacity: 0.5;
+  //}
+  //
+  //.selectize-control.venues .selectize-dropdown .caption {
+  //  font-size: 16px;
+  //  display: block;
+  //  opacity: 0.5;
+  //}
+  //
+  //.selectize-dropdown, .selectize-input, .selectize-input input {
+  //  color: #303030;
+  //  font-family: inherit;
+  //  font-size: 16px;
+  //  line-height: 18px;
+  //  -webkit-font-smoothing: inherit;
+  //}
+  //
+  //.checkbox-errors {
+  //  flex-basis: 100%;
+  //  margin-left: 15px;
+  //}
+  //
+  //.event_event_categories .parsley-error {
+  //  margin-left: 0;
+  //  margin-right: 0;
+  //
+  //  .col:nth-of-type(1) {
+  //    padding-left: 5px;
+  //  }
+  //
+  //  .col:last-child {
+  //    padding-right: 5px;
+  //  }
+  //}
+  //
+  //.form-control:disabled, .form-control[readonly] {
+  //  background-color: #fff;
+  //  opacity: 1;
+  //}
+  //
+  //.invalid-message {
+  //  color: red;
+  //}
+  //
+  //label.parsley-error::before {
+  //  border-color: red;
+  //}
+  //
+  //div.parsley-error,
+  //input.parsley-error,
+  //textarea.parsley-error {
+  //  border: 1px solid red;
+  //  border-radius: .25rem;
+  //}
+  //
+  //.selectize-control.single .selectize-input.parsley-error {
+  //  border-color: red;
+  //}
+  //
+  //.parsley-errors-list {
+  //  margin: 2px 0 3px;
+  //  padding: 0;
+  //  list-style-type: none;
+  //  font-size: 0.9em;
+  //  line-height: 0.9em;
+  //  opacity: 0;
+  //  color: red;
+  //
+  //  transition: all .3s ease-in;
+  //  -o-transition: all .3s ease-in;
+  //  -moz-transition: all .3s ease-in;
+  //  -webkit-transition: all .3s ease-in;
+  //}
+  //
+  //.parsley-errors-list.filled {
+  //  opacity: 1;
+  //}
+  //input#event_name {
+  //  height: 38px;
+  //}
+  //
+  //input.datepicker, input.timepicker {
+  //  height: 38px;
+  //  border-top-right-radius: .25rem;
+  //  border-bottom-right-radius: .25rem;
+  //}
+  //
+  //.input-group > .custom-select:not(:last-child), .input-group > .form-control:not(:last-child) {
+  //  border-top-right-radius: .25rem;
+  //  border-bottom-right-radius: .25rem;
+  //}

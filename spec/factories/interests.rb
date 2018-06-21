@@ -13,5 +13,7 @@
 
 FactoryBot.define do
   factory :interest do
+    name 'Card Games'
+    sub_category_id 1
   end
 end

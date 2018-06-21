@@ -13,7 +13,8 @@
 
 class SubCategory < ApplicationRecord
   belongs_to :category
-  has_many :interests
+
+  has_many :interests, dependent: destroy
 
   validates :name, :category_id, presence: true
 end

@@ -1,0 +1,16 @@
+.card
+  .card-body
+    h4.card-title = event.name
+
+    p.card-text = event.description
+  .rounded-bottom.mdb-color.lighten-3.text-center.pt-3
+    ul.list-unstyled.list-inline.font-small
+      li.list-inline-item.pr-2.white-text
+        i.fa.fa-calendar.pr-1
+        = timeago(event.starts_at.to_datetime)
+
+      li.list-inline-item
+        a.white-text href="#"
+          i.fa.fa-map-marker.pr-1
+          |#{@venue.city}, #{@venue.state}
+br

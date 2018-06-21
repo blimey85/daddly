@@ -13,12 +13,13 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
+  # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
+      'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
@@ -26,9 +27,11 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # config.action_mailer.raise_delivery_errors = false
-  # config.action_mailer.delivery_method = :smtp
+  # Store uploaded files on the local file system (see config/storage.yml for options)
+  config.active_storage.service = :local
 
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
 
@@ -37,6 +40,9 @@ Rails.application.configure do
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
+
+  # Highlight code that triggered database queries in logs.
+  config.active_record.verbose_query_logs = true
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
@@ -73,9 +79,9 @@ Rails.application.configure do
                              #       But do not remove the logger code below! The log_device should
                              #       be set to STDOUT if you want to disable sending logs.
 
-  log_device = send_logs_to_timber ? Timber::LogDevices::HTTP.new('786_3ce348681265c1b2:32fa20dacdcf3ac9a4d91d902b5b2ebd0a61ba9bb1bc3d3dde2515aff192dd69') : STDOUT
-  logger = Timber::Logger.new(log_device)
-  logger.level = config.log_level
-  config.logger = ActiveSupport::TaggedLogging.new(logger)
+  # log_device = send_logs_to_timber ? Timber::LogDevices::HTTP.new('786_3ce348681265c1b2:32fa20dacdcf3ac9a4d91d902b5b2ebd0a61ba9bb1bc3d3dde2515aff192dd69') : STDOUT
+  # logger = Timber::Logger.new(log_device)
+  # logger.level = config.log_level
+  # config.logger = ActiveSupport::TaggedLogging.new(logger)
 
 end

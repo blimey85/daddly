@@ -15,19 +15,28 @@
 
   p
     strong> Categories:
-    = @event.event_categories.map(&:name).join(", ")
+    = @event.event_categories.map(&:name).join(', ')
 
   p
     strong> Hosted By:
     = @event&.user&.name
   p
-    strong> Venue Name:
-    = @event&.venue&.name
-  p
-    strong> Venue Address:
-    = @event&.venue&.full_address
-  #map.z-depth-1-half.mb-5
+    - unless @event.venues.empty?
+      - if @event.venues.length > 1
+        strong> Venues:
+        br
+      - else
+        strong> Venue:
+        br
 
+      - @event.venues.each do |venue|
+        = link_to venue&.name, venue
+        |:&nbsp;
+        = venue&.full_address
+        br
+  p
+
+  #map.z-depth-1-half.mb-5
 
   /p
   /  strong> Rsvp count:
@@ -130,24 +139,30 @@ scss:
 javascript:
   // GOOGLE MAPS using gmaps.js
   var coordinates = {
-      lat: #{@event&.venue&.latitude},
-      lng: #{@event&.venue&.longitude}
+      lat: #{@event&.venues&.first&.latitude},
+      lng: #{@event&.venues&.first&.longitude}
   };
   var map = new GMaps({
       div: '#map',
       lat: coordinates.lat,
       lng: coordinates.lng
   });
-  map.addMarker({
-      lat: coordinates.lat,
-      lng: coordinates.lng,
-      title: '#{@event&.venue&.name}',
-      infoWindow: {
-          content:  '<h3>#{@event&.venue&.name}</h3>' +
-                    '#{@event&.venue&.address}' +
-                    '<br>#{@event&.venue&.city}, #{@event&.venue&.state}, #{@event&.venue&.zipcode}'
-      }
+  var venues = #{@event.venues.to_json.html_safe};
+  venues.forEach(function (venue) {
+      map.addMarker({
+          lat: venue.latitude,
+          lng: venue.longitude,
+          title: venue.name,
+          infoWindow: {
+              content: "<h4>" + venue.name + "</h4>" +
+              venue.address +
+              "<br> " + venue.city + ", " + venue.state + ", " + venue.zipcode
+          }
+      });
   });
+  if (venues.length > 1) { // default zoom level for one marker, fitZoom for multiple markers
+      map.fitZoom();
+  }
   $(window).resize(function () {
       var lat = map.getCenter().lat(),
           lng = map.getCenter().lng();
@@ -339,4 +354,3 @@ javascript:
   }
 
   ats();
-

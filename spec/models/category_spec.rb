@@ -7,8 +7,6 @@
 #  cat_type :string
 #
 
-require 'rails_helper'
-
 RSpec.describe Category, type: :model do
   context 'Model Associations' do
     it { is_expected.to have_many(:sub_categories) }

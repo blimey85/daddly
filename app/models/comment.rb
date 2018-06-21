@@ -21,12 +21,10 @@
 
 class Comment < ApplicationRecord
   belongs_to :commentable, polymorphic: true, counter_cache: :comments_count
-  has_many :comments, as: :commentable, inverse_of: :commentable, dependent: :destroy
-
-  has_many :pings, as: :pingable, inverse_of: :pingable, dependent: :destroy
-
   belongs_to :user
 
+  has_many :comments, as: :commentable, inverse_of: :commentable, dependent: :destroy
+  has_many :pings, as: :pingable, inverse_of: :pingable, dependent: :destroy
   has_many :votes, as: :votable, inverse_of: :votable, dependent: :destroy
 
   # used for virtual attributes

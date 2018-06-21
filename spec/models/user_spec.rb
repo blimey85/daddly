@@ -38,14 +38,15 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
-require 'rails_helper'
-
 RSpec.describe User, type: :model do
   context 'Model Associations' do
-    it { is_expected.to have_many(:identities) }
-    it { is_expected.to have_many(:kids) }
+    it { is_expected.to have_many(:interests).through(:user_interests) }
+    it { is_expected.to have_many(:kids).inverse_of(:user) }
+    it { is_expected.to have_many(:pings) }
+    it { is_expected.to have_many(:reservations) }
+    it { is_expected.to have_many(:events).through(:reservations) }
+    it { is_expected.to have_many(:services) }
     it { is_expected.to have_many(:user_interests) }
-    it { is_expected.to have_many(:interests) }
   end
 
   context 'Model Validations' do
@@ -64,8 +65,9 @@ RSpec.describe User, type: :model do
   end
 
   describe User, '#fullname' do
+    include_context 'user'
     it 'returns the concatenated first and last names' do
-      user = FactoryBot.build(:user, first_name: 'Josh', last_name: 'Steiner')
+      # user = FactoryBot.build_stubbed(:user, first_name: 'Josh', last_name: 'Steiner')
       expect(user.fullname).to eq 'Josh Steiner'
     end
   end

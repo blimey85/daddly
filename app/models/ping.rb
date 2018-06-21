@@ -19,8 +19,9 @@
 #
 
 class Ping < ApplicationRecord
-  belongs_to :user, foreign_key: :pinger_id, optional: true
+  belongs_to :user, foreign_key: :pinger_id, optional: true, inverse_of: :pings
   belongs_to :pingable, polymorphic: true
+
   has_many :pings, as: :pingable, inverse_of: :pingable, dependent: :destroy
 
   validates :pingable_id, :pingable_type, :pinger_id, :user_id, presence: true

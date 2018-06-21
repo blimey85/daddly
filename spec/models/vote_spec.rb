@@ -15,8 +15,6 @@
 #  index_votes_on_votable_id_and_votable_type  (votable_id,votable_type)
 #
 
-require 'rails_helper'
-
 RSpec.describe Vote, type: :model do
   context 'Model Associations' do
     it { is_expected.to belong_to(:votable) }

@@ -1,23 +1,23 @@
 #inherit_from: .rubocop_todo.yml
 
 AllCops:
-  TargetRubyVersion: 2.5.0
+  TargetRubyVersion: 2.5.1
   DisplayCopNames: true
   DisplayStyleGuide: true
   Exclude:
-    - db/*
-    - db/migrate/*
     - config/*
     - config/environments/*
     - config/initializers/*
-    - Gemfile
+    - db/*
+    - db/fixtures/**/*
+    - db/migrate/*
+    - db/seeds/*
     - lib/tasks/*
+    - node_modules/**/*
     - Rakefile
-    - 'vendor/**/*'
-    - 'node_modules/**/*'
-    - 'db/fixtures/**/*'
-    - 'tmp/**/*'
-    - 'bin/**/*'
+    - tmp/**/*
+    - vendor/**/*
+    - bin/**/*
 
 Documentation:
   Enabled: false
@@ -60,6 +60,10 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Enabled: false
 
+Metrics/ModuleLength:
+  Enabled: true
+  Max: 120
+
 Metrics/ParameterLists:
   Enabled: true
   Max: 8
@@ -84,6 +88,9 @@ Style/BlockComments:
 
 Style/EmptyMethod:
   EnforcedStyle: expanded
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
 
 Style/FrozenStringLiteralComment:
   Enabled: false

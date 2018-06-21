@@ -70,6 +70,12 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "SF Text";
+  font-weight: 400;
+  src: url("../font/SF-UI-Text-Regular.otf") format("opentype");
+}
+
 body {
   font-family: 'Amerika', sans-serif;
   font-weight: normal;

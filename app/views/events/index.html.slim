@@ -1,8 +1,156 @@
-= render layout: 'event_layout' do
-  #events
-    = render 'events'
+br
+br
+.row.justify-content-md-center
+  .col-6.col-md-auto
+    h1 Find an Event
+    br
+
+.row
+  .col-12
+    nav.navbar.navbar-expand-lg.navbar-dark.blue.lighten-2.mb-4
+      #navbarSupportedContent.collapse.navbar-collapse
+        #search.row.col-12.no-gutters.pr-0.pl-0
+          .col-3
+          .col-6
+            = simple_form_for(:event, url: events_path, html: { class: 'form form-inline mr-auto ml-auto' }, local: true, method: :get) do |f|
+              .input-group
+                .input-group-prepend
+                  span.input-group-text.white.black-text
+                    i.far.fa-search
+                = f.text_field :search, class: 'form-control search-input', placeholder: 'Find Events...'
+              = f.input_field :distance, collection: [['Within 5 Miles', '5mi'], ['Within 10 Miles', '10mi'], ['Within 25 Miles', '25mi'], ['Within 50 Miles', '50mi']], prompt: 'Distance', class: 'selectize-default'
+              = f.submit 'Search', class: 'button btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2'
+          .col-3.d-flex.justify-content-end
+            = link_to 'Create Event', new_event_path, class: 'button btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2'
+
+.row.no-gutters.search-contents style='height: 600px;'
+  .col-4 style='height: 100%'
+    = render partial: 'list'
+  .col-8.map-map
+    #map style='height: 100%;'
+
+scss:
+  .btn.btn-sm {
+    font-size: 12px;
+    padding: 0 1.25rem;
+    height: 35px;
+    line-height: 35px;
+  }
+  .form-control {
+    font-size: 14px;
+  }
+  input.btn-rounded { /* kill search button right margin so everything is centered properly */
+    margin-right: 0;
+  }
+  #event_search, #search {
+    height: 35px;
+  }
+  .search-contents {
+    border: 1px solid #43b6fc;
+  }
+  .input-group .form-control.search-input {
+    margin-right: 10px;
+    padding-left: 8px;
+  }
+  .selectize-default {  /* distance drop down */
+    border-radius: 4px !important;
+    width: 150px !important;
+    height: 35px;
+  }
+  .selectize-dropdown-content {
+    background-color: #fff;
+  }
+  .selectize-dropdown .active {
+    background-color: #6bc4ef;
+    color: #fff;
+  }
+  .selectize-dropdown, .selectize-input, .selectize-input input {
+    color: #495057 !important;
+    font-size: 14px !important;
+  }
+  .selectize-input {
+    border-radius: 4px !important;
+  }
+  .list-group .list-group-item {
+    border: 0;
+    border-bottom: 1px solid #43b6fc;
+    margin-bottom: 0;
+
+    &:first-child {
+      border-radius: 0;
+    }
+
+    &:last-child {
+      border-radius: 0;
+      border-bottom: 0;
+    }
+  }
+  #map {
+    border-left: 1px solid #43b6fc;
+    /*border-left: 0;*/
+  }
 
 javascript:
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  });
+    var map;
+
+    window.addMarkers = function addMarkers() {
+        var element = document.querySelector("#events-list");
+        var events = window.events = JSON.parse(element.dataset.events);
+
+        map.removeMarkers();
+
+        events.forEach(function (event) {
+            // set the event letter here for the map
+            event[0].venues.forEach(function (venue) {
+              if (venue.latitude && venue.longitude) {
+                  var marker = map.addMarker({
+                      lat: venue.latitude,
+                      lng: venue.longitude,
+                      // label: '1',
+                      title: venue.address,
+                      infoWindow: {
+                          content: "<h4>" + venue.name + "</h4>" +
+                          venue.address +
+                          "<br> " + venue.city + ", " + venue.state + ", " + venue.zipcode
+                      }
+                  });
+              }
+            });
+        });
+        setSafeBounds(element);
+    };
+
+    function setSafeBounds(element) {
+        var l = element.dataset.l;
+        if (l) {
+            var latlngs = l.split(',');
+            var southWest = new google.maps.LatLng(latlngs[0], latlngs[1]);
+            var northEast = new google.maps.LatLng(latlngs[2], latlngs[3]);
+            var bounds = new google.maps.LatLngBounds(southWest, northEast);
+            map.fitBounds(bounds, 0);
+        } else {
+            map.fitZoom();
+            // TODO: fix the max zoom so it's no closer than 200m
+        }
+    }
+
+    // document.addEventListener("turbolinks:load", function () {
+    $( document ).ready(function() {
+        console.log("hit this too!");
+        $('.selectize-default').selectize();
+
+        map = window.map = new GMaps({
+            div: '#map',
+            lat: 38.5816,
+            lng: -121.4944
+        });
+
+        addMarkers();
+
+        map.addListener("dragend", function () {
+            var bounds = map.getBounds();
+            var location = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
+
+            window.location.replace('/events?l=' + location + "&event[search]=#{params[:event][:search] if params[:event].present?}");
+        });
+    });

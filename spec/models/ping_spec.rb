@@ -18,8 +18,6 @@
 #  index_pings_on_user_id                                      (user_id)
 #
 
-require 'rails_helper'
-
 RSpec.describe Ping, type: :model do
   context 'Model Associations' do
     it { is_expected.to belong_to(:user) }

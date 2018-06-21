@@ -28,13 +28,17 @@
 #  index_events_on_venue_id  (venue_id)
 #
 
-require 'rails_helper'
-
 RSpec.describe Event, type: :model do
   context 'Model Associations' do
+    it { is_expected.to have_many(:comments) } # does not need as: :commentable - this is automatic
+    it { is_expected.to have_many(:event_categories).through(:event_event_categories) }
+    it { is_expected.to have_many(:event_event_categories) }
     it { is_expected.to have_many(:event_venues) }
-    it { is_expected.to have_many(:venues) }
-    it { is_expected.to have_many(:comments) }
+    it { is_expected.to have_many(:reservations) }
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to have_many(:users).through(:reservations) }
+    it { is_expected.to have_many(:venues).through(:event_venues) }
+    it { is_expected.to have_many(:votes) } # does not need as: :votable - this is automatic
   end
 
   context 'Model Validations' do
@@ -43,6 +47,5 @@ RSpec.describe Event, type: :model do
     it { is_expected.to validate_presence_of(:starts_at) }
     it { is_expected.to validate_presence_of(:ends_at) }
     it { is_expected.to validate_presence_of(:user_id) }
-    it { is_expected.to validate_presence_of(:venue_id) }
   end
 end

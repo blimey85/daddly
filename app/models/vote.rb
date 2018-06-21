@@ -17,7 +17,8 @@
 
 class Vote < ApplicationRecord
   belongs_to :votable, polymorphic: true, counter_cache: :votes_count
-  has_many :votes, as: :votable
+
+  has_many :votes, as: :votable, dependent: destroy
 
   validates :votable_id, :votable_type, :user_id, presence: true
 end

@@ -13,8 +13,6 @@
 #  index_user_interests_on_user_id      (user_id)
 #
 
-require 'rails_helper'
-
 RSpec.describe UserInterest, type: :model do
   context 'Model Associations' do
     it { is_expected.to belong_to(:user) }

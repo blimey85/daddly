@@ -12,10 +12,10 @@
 #
 
 class Interest < ApplicationRecord
+  belongs_to :sub_category
+
   has_many  :user_interests, dependent: :destroy
   has_many  :users, through: :user_interests
-
-  belongs_to :sub_category
 
   validates :sub_category_id, :name, presence: true
 end

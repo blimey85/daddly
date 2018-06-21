@@ -1,28 +1,12 @@
-javascript:
-    $(document).on("ready page:load turbolinks:load", function() {
-        // used for fancy selectize dropboxes
-        $('.selectize-default').selectize();
-        // used for triggering selectize on newly inserted selects
-        $('#children').on('cocoon:after-insert', function (e, addedItem) {
-            $(addedItem).find('.selectize-default').selectize();
-        });
-        $(window).on('clear.bs.fileinput', function (e) {
-            return $(e.target).find('.btn-file input[type=hidden]').val(1);
-        });
-
-        $(window).on('change.bs.fileinput', function (e) {
-            return $(e.target).find('.btn-file input[type=hidden]').val(0);
-        });
-    });
-
 .col-md-12
   .card
     .card-body
       h2.feature-title.text-center.mb-4.mt-2.font-bold
         strong Edit Your Profile
       hr
+      h3 Basic Info
       .mt-3
-        = simple_form_for(@user, validate: true, html: { class: 'form-horizontal' }) do |f|
+        = simple_form_for @user, class: 'form-horizontal', html: { novalidate: true, 'data-parsley-focus' => 'none' } do |f|
           - if @user.errors.any?
             #error_explanation
               h2 = "#{pluralize(@user.errors.count, 'error')} prohibited this profile from being saved:"
@@ -30,18 +14,18 @@ javascript:
                 - @user.errors.full_messages.each do |message|
                   li = message
           .row
-            .col-md-6.md-form.form-group: .md-form
-              = f.input :first_name
-            .col-md-6.md-form.form-group: .md-form
-              = f.input :last_name
+            .col-md-6
+              = f.input :first_name, required: true
+            .col-md-6
+              = f.input :last_name, required: true
           .row
-            .col-md-6.md-form.form-group: .md-form
-              = f.input :zipcode, as: :string
-            .col-md-6.md-form.form-group: .md-form
-              = f.input :age
-          .row
-            .col-md-12.md-form.form-group.mb-0: .md-form.mb-0
-              = f.input :bio
+            .col-md-6
+              = f.input :zipcode, as: :string, required: true
+            .col-md-6
+              = f.input :age, as: :string, required: true
+
+          .form-group
+            = f.input :bio, required: true, label: 'Biography', placeholder: 'Enter description of event...', input_html: {'data-parsley-required-message': 'Please enter a bit about yourself.'}
           #avatar.mt-3
             h3 Avatar?
             = render partial: 'file_upload', locals: { f: f }
@@ -73,4 +57,22 @@ javascript:
                               = label_tag "user_interest_ids_#{interest.id}", interest.name
 
           .text-center.mt-3
-            = f.button :submit, 'Update Profile', class: 'btn-rounded mt-2 mb-3'
+            = f.button :submit, 'Update Profile', class: 'btn-rounded mt-2 mb-3 btn-mdb-color'
+
+javascript:
+    $(document).ready(function () {
+        // used for fancy selectize dropboxes
+        $('.selectize-default').selectize();
+        // used for triggering selectize on newly inserted selects
+        $('#children').on('cocoon:after-insert', function (e, addedItem) {
+            $(addedItem).find('.selectize-default').selectize();
+        });
+        $(window).on('clear.bs.fileinput', function (e) {
+            return $(e.target).find('.btn-file input[type=hidden]').val(1);
+        });
+        $(window).on('change.bs.fileinput', function (e) {
+            return $(e.target).find('.btn-file input[type=hidden]').val(0);
+        });
+
+        $('form.edit_user').parsley();
+    });

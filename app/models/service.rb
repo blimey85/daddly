@@ -30,17 +30,17 @@ class Service < ApplicationRecord
     scope provider, -> { where(provider: provider) }
   end
 
+  def access_token
+    send("#{provider}_refresh_token!", super) if expired?
+    super
+  end
+
   def client
     send("#{provider}_client")
   end
 
   def expired?
     expires_at? && expires_at <= Time.zone.now
-  end
-
-  def access_token
-    send("#{provider}_refresh_token!", super) if expired?
-    super
   end
 
   def facebook_client

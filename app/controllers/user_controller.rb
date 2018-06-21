@@ -12,7 +12,9 @@ class UserController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
+    @user.attributes = user_params
+    @user.save(context: :profile)
+
     if user_params['avatar'] == '1'
       @user.remove_avatar!
       @user.save
@@ -20,6 +22,7 @@ class UserController < ApplicationController
 
     @interests = @user.interests.build
     flash[:notice] = 'User was successfully updated.'
+    set_interests if @user.errors.any?
     respond_with(@user)
   end
 

@@ -41,6 +41,15 @@
 class User < ApplicationRecord
   include SimpleDiscussion::ForumUser
   extend StatesHelper
+
+  has_many :events, through: :reservations
+  has_many :kids, dependent: :destroy, inverse_of: :user
+  has_many :interests, through: :user_interests
+  has_many :pings, dependent: :destroy
+  has_many :reservations, dependent: :destroy
+  has_many :services, dependent: :destroy
+  has_many :user_interests, dependent: :destroy
+
   attr_accessor :current_password
   attr_accessor :oauth_callback
 
@@ -59,22 +68,13 @@ class User < ApplicationRecord
             if: :password_required?
 
   ### User Profile Validations ###
-  # validates :age, numericality: { greater_than: 12 }
-  # validates :bio, length: { minimum: 32 }
-  # validates :first_name, :last_name, length: { minimum: 2 }
-  # validates :zipcode, format: { with: /\A\d{5}(-\d{4})?\z/, message: 'is not a valid US zipcode' }
-  # validates :zipcode, presence: true, if: :zipcode_required?
-
-  ### Associations ###
-  has_many :services, dependent: :destroy
-  has_many :kids, dependent: :destroy, inverse_of: :user
-  accepts_nested_attributes_for :kids, reject_if: :all_blank, allow_destroy: true
-  has_many  :pings, dependent: :destroy
-  has_many  :user_interests, dependent: :destroy
-  has_many  :interests, through: :user_interests
-
-  has_many  :reservations, dependent: :destroy
-  has_many  :events, through: :reservations
+  with_options on: :profile do
+    validates :age, numericality: { greater_than: 12 }
+    validates :bio, length: { minimum: 32 }
+    validates :first_name, :last_name, length: { minimum: 2 }
+    validates :zipcode, format: { with: /\A\d{5}(-\d{4})?\z/, message: 'is not a valid US zipcode' }
+    validates :zipcode, presence: true, if: :zipcode_required?
+  end
 
   ### Devise ###
   devise :confirmable, :database_authenticatable, :omniauthable, :registerable,
@@ -86,30 +86,6 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
   acts_as_messageable
-
-  # def facebook
-  #   identities.find_by(provider: 'facebook')
-  # end
-  #
-  # def facebook_client
-  #   @facebook_client ||= Facebook.client(access_token: facebook.accesstoken)
-  # end
-  #
-  # def google_oauth2
-  #   identities.find_by(provider: 'google_oauth2')
-  # end
-  #
-  # def google_oauth2_client
-  #   @google_oauth2_client ||= GoogleAppsClient.client(google_oauth2)
-  # end
-  #
-  # def twitter
-  #   identities.find_by(provider: 'twitter')
-  # end
-  #
-  # def twitter_client
-  #   @twitter_client ||= Twitter.client(access_token: twitter.accesstoken)
-  # end
 
   def password_required?
     return false if email.blank? || !email_required?
@@ -141,5 +117,5 @@ class User < ApplicationRecord
       obj.longitude = geo.longitude
     end
   end
-  # after_validation :geocode, if: :zipcode_changed?
+  before_validation :geocode, if: :zipcode_changed?
 end

@@ -14,5 +14,8 @@
 
 FactoryBot.define do
   factory :kid do
+    gender [1, 2].sample
+    age { Faker::Number.between(0, 21) }
+    user_id 1
   end
 end

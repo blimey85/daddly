@@ -8,6 +8,7 @@ en:
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
+      html: '<i style="color: #677581; font-size: 8px; vertical-align: 5px; margin-left: -3px;" class="fas fa-asterisk"></i>'
     error_notification:
       default_message: "Please review the problems below:"
     # Examples

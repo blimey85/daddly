@@ -111,3 +111,106 @@ div.has-danger span.form-text.text-muted {
 div.md-form.has-danger label {
   color: #db0000;
 }
+
+// originally from the events form
+#errors {
+  margin-top: -5px;
+}
+
+label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.selectize-control.venues .selectize-input [data-value] .address {
+  opacity: 0.5;
+}
+
+.selectize-control.venues .selectize-dropdown .caption {
+  font-size: 16px;
+  display: block;
+  opacity: 0.5;
+}
+
+.selectize-dropdown, .selectize-input, .selectize-input input {
+  color: #303030;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 18px;
+  -webkit-font-smoothing: inherit;
+}
+
+.checkbox-errors {
+  flex-basis: 100%;
+  margin-left: 15px;
+}
+
+.event_event_categories .parsley-error {
+  margin-left: 0;
+  margin-right: 0;
+
+  .col:nth-of-type(1) {
+    padding-left: 5px;
+  }
+
+  .col:last-child {
+    padding-right: 5px;
+  }
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: #fff;
+  opacity: 1;
+}
+
+.invalid-message {
+  color: red;
+}
+
+label.parsley-error::before {
+  border-color: red;
+}
+
+div.parsley-error,
+input.parsley-error,
+textarea.parsley-error {
+  border: 1px solid red;
+  border-radius: .25rem;
+}
+
+.selectize-control.single .selectize-input.parsley-error {
+  border-color: red;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  color: red;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+input#event_name {
+  height: 38px;
+}
+
+input.datepicker, input.timepicker {
+  height: 38px;
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+}
+
+.input-group > .custom-select:not(:last-child), .input-group > .form-control:not(:last-child) {
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+}

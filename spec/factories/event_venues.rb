@@ -14,5 +14,7 @@
 
 FactoryBot.define do
   factory :event_venue do
+    association :event
+    association :venue
   end
 end

@@ -1,27 +1,29 @@
-$(document).on("ready page:load turbolinks:load", function() {
+// $(document).on("ready page:load turbolinks:load", function() {
+$( document ).ready(function() {
     // used by MDB time pickers
     $('.datepicker').pickadate({
         min: true,
         max: false
     });
-    $('#starttime').pickatime({twelvehour: true});
-    $('#endtime').pickatime({twelvehour: true});
+    $('#event_start_time').pickatime({twelvehour: true});
+    $('#event_end_time').pickatime({twelvehour: true});
 
     // used by Selectize.js for venue dropdown
     var selectizeCallback = null;
 
-    $(".venue-modal").on("hide.bs.modal", function(e) {
+    $("#venueModal").on("hide.bs.modal", function(e) {
         if (selectizeCallback != null) {
             selectizeCallback();
             selecitzeCallback = null;
         }
 
         $("#new_venue").trigger("reset");
-        $.rails.enableFormElements($("#new_venue"));
+        // $.rails.enableFormElements($("#new_venue"));
     });
 
     $("#new_venue").on("submit", function(e) {
         e.preventDefault();
+
         $.ajax({
             method: "POST",
             url: $(this).attr("action"),
@@ -30,14 +32,42 @@ $(document).on("ready page:load turbolinks:load", function() {
                 selectizeCallback(response);
                 selectizeCallback = null;
 
-                $(".venue-modal").modal('toggle');
+                $("#venueModal").modal('hide');
             }
         });
     });
+
+    // setup Selectize for states dropdown in modal window - also sets up Parsley validation
     $(function() {
-        $('.selectize-states').selectize();
+        $('.selectize-states').selectize({
+            valueField: 'id',
+            labelField: 'name',
+            searchField: 'name',
+            onInitialize: function () {
+                $("#venue_state-selectized").attr({
+                    'data-parsley-errors-container': "#errors-state",
+                    'data-parsley-class-handler': '.selectize-states .selectize-input',
+                    'data-parsley-required-message': 'Please select or create a venue for the event.'
+                });
+            } //,
+            // onChange: function(value) {
+            //     $("#venue_state-selectized").parsley().validate();
+            // }
+        })
     });
+
+    // setup Selectize for venues dropdown in modal window - also sets up Parsley validation
     $(".selectize").selectize({
+        onInitialize: function(){
+            $("#event_venue_id-selectized").attr({
+                'data-parsley-errors-container': "#errors-venue",
+                'data-parsley-class-handler': '.selectize-input',
+                'data-parsley-required-message': 'Please select or create a venue for the event.'
+            });
+        },
+        // onChange: function(value) {
+        //     $("#event_venue_id-selectized").parsley().validate();
+        // },
         valueField: 'id',
         labelField: 'name',
         searchField: ['name', 'address'],
@@ -73,8 +103,11 @@ $(document).on("ready page:load turbolinks:load", function() {
         },
         create: function(input, callback) {
             selectizeCallback = callback;
-            $(".venue-modal").modal();
+            $("#venueModal").modal({ keyboard: false });
             $("#venue_name").val(input);
         }
     });
+    $('#new_event').parsley();
+    $('#new_venue').parsley();
+
 });

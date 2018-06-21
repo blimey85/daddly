@@ -13,8 +13,9 @@
 #
 
 class Kid < ApplicationRecord
-  belongs_to :user
   enumerate :gender, with: Gender
+
+  belongs_to :user
 
   validates :gender, :age, :user_id, presence: true
 end

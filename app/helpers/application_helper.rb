@@ -23,4 +23,8 @@ module ApplicationHelper
   def segment_javascript_include
     javascript_include_tag 'segment' if Rails.env.production?
   end
+
+  def user_services_providers
+    @user_services_providers ||= current_user.services.map(&:provider)
+  end
 end
