@@ -16,11 +16,6 @@ gem 'rails', '~> 5.2'
 gem 'redis'
 gem 'sidekiq'
 
-gem 'active_enum', github: 'adzap/active_enum'
-gem 'active_model_serializers', '~> 0.10.0'
-gem 'activerecord-import'
-gem 'bootsnap', require: false
-
 # Authentication and Authorization
 gem 'devise', '~> 4.2' # TODO: current version is 4.4.3+... can we safely upgrade?
 gem 'google-api-client', '0.8.2', require: 'google/api_client'
@@ -46,6 +41,11 @@ gem 'carrierwave'
 gem 'jasny-bootstrap-rails'
 gem 'simple_form_jasny_fileupload'
 
+# Utilities
+gem 'active_enum', github: 'adzap/active_enum'
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'activerecord-import'
+gem 'bootsnap', require: false
 gem 'coffee-rails', '~> 4.2'
 gem 'counter_culture', '~> 1.0'
 gem 'decanter'
@@ -54,6 +54,8 @@ gem 'gibbon'
 gem 'goldiloader'
 gem 'high_voltage'
 gem 'kaminari', github: 'amatsuda/kaminari', branch: 'master'
+gem 'mailboxer', github: 'mailboxer/mailboxer'
+gem 'marginalia'
 gem 'meta-tags', require: 'meta_tags'
 gem 'modernizr-rails'
 gem 'nokogiri'
@@ -61,6 +63,10 @@ gem 'premailer-rails'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'responders', '~> 2.0'
 gem 'sass-rails', '~> 5.0'
+gem 'searchkick'
+gem 'sendgrid-actionmailer'
+gem 'simple_discussion'
+gem 'timber', '~> 2.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'virtus'
 
@@ -69,28 +75,27 @@ group :development do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'byebug'
   gem 'guard-livereload', require: false
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'irbtools-more', require: 'irbtools/binding'
+  gem 'launchy'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rails_best_practices'
-  gem 'rspec-rails'
-  gem 'rubocop'
   gem 'seed_dump'
   gem 'spring-commands-rspec'
   gem 'web-console', '>= 3.3.0'
 end
 
 group :development, :test do
-  gem 'byebug'
   gem 'capybara', '~> 3.1'
   gem 'chromedriver-helper', '~> 1.1.0'
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'faker', github: 'stympy/faker'
-  gem 'fuubar'
-  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'rubocop'
   gem 'selenium-webdriver'
   gem 'spring'
   gem 'spring-watcher-listen'
@@ -109,10 +114,3 @@ group :production do
   gem 'sentry-raven'
   gem 'skylight'
 end
-
-gem 'mailboxer', github: 'mailboxer/mailboxer'
-gem 'marginalia'
-gem 'searchkick'
-gem 'sendgrid-actionmailer'
-gem 'simple_discussion'
-gem 'timber', '~> 2.1'

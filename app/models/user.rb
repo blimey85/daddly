@@ -44,11 +44,11 @@ class User < ApplicationRecord
 
   has_many :events, through: :reservations
   has_many :kids, dependent: :destroy, inverse_of: :user
-  has_many :interests, through: :user_interests
   has_many :pings, dependent: :destroy
   has_many :reservations, dependent: :destroy
   has_many :services, dependent: :destroy
   has_many :user_interests, dependent: :destroy
+  has_many :interests, through: :user_interests
 
   attr_accessor :current_password
   attr_accessor :oauth_callback

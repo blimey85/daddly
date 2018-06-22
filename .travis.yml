@@ -9,7 +9,7 @@ rvm:
 addons:
   chrome: stable
 
-bundler_args: --without production
+bundler_args: --without development production
 
 cache: bundler
 

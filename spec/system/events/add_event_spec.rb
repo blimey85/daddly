@@ -6,7 +6,7 @@ RSpec.feature 'Create Event', type: :system, js: true do
     load Rails.root + 'db/seeds/event_category_seeds.rb'
   end
 
-  context 'something' do
+  context 'Add an event' do
     include_context 'user'
 
     scenario 'user fills in the add event form' do
@@ -59,5 +59,3 @@ RSpec.feature 'Create Event', type: :system, js: true do
     end
   end
 end
-
-# require 'pry'; binding.pry

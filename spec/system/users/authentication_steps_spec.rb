@@ -1,58 +1,43 @@
-RSpec.feature 'Sign Up', type: :system, js: true do
-  # these tests need to run in a particular oder so we override the global setting
-  before(:context) { @list = [] }
+# frozen_string_literal: true
 
-  feature 'complete registration form' do
-    background do
-      clear_emails
+require 'rails_helper'
 
-      visit root_path
+RSpec.describe 'User signs Up', type: :system, js: true do
+  # Build stubbed user
+  let!(:new_user) { FactoryBot.build_stubbed(:user) }
 
-      fill_in 'user[email]', with: 'tester@testdomain.test'
-      fill_in 'user[password]', with: 'pa$$word'
-      fill_in 'user[password_confirmation]', with: 'pa$$word'
+  scenario 'open confirmation email', :aggregate_failures do
+    # Open home page
+    visit root_path
 
-      click_button 'Create Account'
+    # Complete sign up form
+    fill_in 'user[email]', with: new_user.email
+    fill_in 'user[password]', with: new_user.password
+    fill_in 'user[password_confirmation]', with: new_user.password
 
-      open_email('tester@testdomain.test')
-    end
+    # Submit sign up form
+    click_button 'Create Account'
 
-    scenario 'open confirmation email' do
-      @list << 1
-      expect(current_email).to have_content 'Welcome tester@testdomain.test!'
-    end
+    # Open email address confirmation email
+    open_email(new_user.email)
 
-    scenario 'click link to confirm account' do
-      @list << 2
-      current_email.click_link 'Confirm my account'
-      expect(page).to have_content 'Your email address has been successfully confirmed.'
-    end
+    # Test that we received the email and it has the correct subject and message
+    expect(current_email.subject).to eq('Confirmation instructions')
+    expect(current_email).to have_content "Welcome #{new_user.email}!"
+
+    # Click link to confirm email address
+    current_email.click_link 'Confirm my account'
+
+    # Test that the email address is confirmed and correct success message is present
+    expect(page).to have_content 'Your email address has been successfully confirmed.'
+
+    # Test logging in
+    # visit new_user_session_path
+    # fill_in 'user_email', with: new_user.email
+    # fill_in 'user_password', with: new_user.password
+    #
+    # click_button 'Log In'
+    #
+    # expect(page).to have_content('Signed in successfully.')
   end
 end
-
-# describe 'signing up' do
-#   it "allows user to sign up" do
-#     visit root_path
-#
-#     fill_in 'user[email]', with: 'tester@testdomain.test'
-#     fill_in 'user[password]', with: 'pa$$word'
-#     fill_in 'user[password_confirmation]', with: 'pa$$word'
-#
-#     click_button 'Create Account'
-#
-#     open_email('tester@testdomain.test')
-#     save_and_open_page
-#
-#     # require 'pry'; binding.pry
-#
-#
-#     expect(page).to have_body_text(/#{user_confirmation_url}/)
-#
-#     #
-#     # visit_in_email('Confirm my account')
-#     #
-#     # message = 'Your email address has been successfully confirmed'
-#     #
-#     # expect(page).to have_content(message)
-#   end
-# end
