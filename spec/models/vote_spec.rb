@@ -18,7 +18,7 @@
 RSpec.describe Vote, type: :model do
   context 'Model Associations' do
     it { is_expected.to belong_to(:votable) }
-    it { is_expected.to have_many(:votes) }
+    it { is_expected.to have_many(:votes).dependent(:destroy) }
   end
 
   context 'Model Validations' do

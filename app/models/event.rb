@@ -34,8 +34,8 @@ class Event < ApplicationRecord
   belongs_to :user
 
   has_many :comments, as: :commentable, inverse_of: :commentable, dependent: :destroy
-  has_many  :event_categories, through: :event_event_categories
   has_many  :event_event_categories, dependent: :destroy
+  has_many  :event_categories, through: :event_event_categories # this must be after :event_event_categories
   has_many :event_venues, dependent: :destroy
   has_many  :reservations, dependent: :destroy
   has_many  :users, through: :reservations
@@ -63,14 +63,14 @@ class Event < ApplicationRecord
 
   def search_data
     {
-        name: name,
-        description: description,
-        venues_name: venues.map(&:name),
-        venues_address: venues.map(&:address),
-        venues_city: venues.map(&:city),
-        venues_state: venues.map(&:state),
-        venues_zipcode: venues.map(&:zipcode),
-        locations: venues.map { |l| { lat: l.latitude, lon: l.longitude } }
+      name: name,
+      description: description,
+      venues_name: venues.map(&:name),
+      venues_address: venues.map(&:address),
+      venues_city: venues.map(&:city),
+      venues_state: venues.map(&:state),
+      venues_zipcode: venues.map(&:zipcode),
+      locations: venues.map { |l| { lat: l.latitude, lon: l.longitude } }
     }
   end
 

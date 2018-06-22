@@ -17,6 +17,8 @@ end
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'spec_helper'
@@ -29,6 +31,7 @@ require 'capybara/email/rspec'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'factory_bot_rails'
 require 'faker'
 require 'support/selectize_select_helper'
 require 'shoulda-matchers'
@@ -40,8 +43,6 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
-
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -57,6 +58,7 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
   config.include Devise::Test::IntegrationHelpers, type: :system
+  config.include FactoryBot::Syntax::Methods
   config.include SelectizeSelectHelper
 
   config.run_all_when_everything_filtered = true

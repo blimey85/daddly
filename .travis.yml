@@ -1,24 +1,33 @@
-language: ruby
+languages: ruby
+
+dist: trusty
+sudo: required
+
+rvm:
+  - 2.5.1
+
+addons:
+  chrome: stable
+
+bundler_args: --without development production
+
 cache: bundler
 
-matrix:
-  include:
-    # Latest compiled version in http://rubies.travis-ci.org
-    - rvm: 2.4.1
-      env:
-        - DB=mysql
-
-  #branches:
-  #  only:
-  #    - develop
-
-notifications:
-  email: blimey85@gmail.com
+services:
+  - postgresql
 
 before_install:
-  - gem uninstall -i /home/travis/.rvm/gems/ruby-2.4.1@global did_you_mean
-  #rest
+  - wget http://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - rm chromedriver_linux64.zip
+  - sudo mv -f chromedriver /usr/local/bin/
+  - sudo chmod +x /usr/local/bin/chromedriver
+  - google-chrome-stable --headless --no-sandbox
 
 before_script:
-  - mysql -e 'create database IF NOT EXISTS dp_test;'
-  - bundle exec rake db:schema:load
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
+
+script:
+  - RAILS_ENV=test bundle exec rails db:schema:load --trace
+  - bundle exec rspec
