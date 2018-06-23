@@ -14,6 +14,7 @@ bundler_args: --without development production
 cache: bundler
 
 services:
+  - elasticsearch
   - postgresql
 
 before_install:
@@ -23,11 +24,19 @@ before_install:
   - sudo mv -f chromedriver /usr/local/bin/
   - sudo chmod +x /usr/local/bin/chromedriver
   - google-chrome-stable --headless --no-sandbox
+  - wget ${ES_DOWNLOAD_URL}
+  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
+  - ./elasticsearch-${ES_VERSION}/bin/elasticsearch &
 
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
 
 script:
+#  - bundle install --without development production
   - RAILS_ENV=test bundle exec rails db:schema:load --trace
   - bundle exec rspec
+  - wget -q --waitretry=1 --retry-connrefused -T 10 -O - http://127.0.0.1:9200
+
+env:
+  - ES_VERSION=6.2.4 ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
