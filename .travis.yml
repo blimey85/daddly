@@ -17,6 +17,9 @@ services:
   - elasticsearch
   - postgresql
 
+env:
+  - ES_VERSION=6.2.4 ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
+
 before_install:
   - wget http://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
@@ -33,10 +36,5 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 
 script:
-#  - bundle install --without development production
   - RAILS_ENV=test bundle exec rails db:schema:load --trace
   - bundle exec rspec
-  - wget -q --waitretry=1 --retry-connrefused -T 10 -O - http://127.0.0.1:9200
-
-env:
-  - ES_VERSION=6.2.4 ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
