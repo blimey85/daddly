@@ -49,17 +49,9 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
-  config.action_mailer.smtp_settings = {
-      address: "smtp.sendgrid.net",
-      port: 587,
-      domain_name: "daddly.io",
-      authentication: "plain",
-      enable_starttls_auto: true,
-      user_name: "blimey85",
-      password: "Winzippo85"
-  }
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+
   config.action_mailer.default_url_options = { host: 'localhost' }
 
   # Suppress logger output for asset requests.
@@ -76,12 +68,4 @@ Rails.application.configure do
 
   # Install the Timber.io logger
   send_logs_to_timber = false # <---- Set to false to stop sending development logs to Timber.io.
-                             #       But do not remove the logger code below! The log_device should
-                             #       be set to STDOUT if you want to disable sending logs.
-
-  # log_device = send_logs_to_timber ? Timber::LogDevices::HTTP.new('786_3ce348681265c1b2:32fa20dacdcf3ac9a4d91d902b5b2ebd0a61ba9bb1bc3d3dde2515aff192dd69') : STDOUT
-  # logger = Timber::Logger.new(log_device)
-  # logger.level = config.log_level
-  # config.logger = ActiveSupport::TaggedLogging.new(logger)
-
 end

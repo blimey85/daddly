@@ -49,6 +49,7 @@ gem 'bootsnap', require: false
 gem 'coffee-rails', '~> 4.2'
 gem 'counter_culture', '~> 1.0'
 gem 'decanter'
+gem 'fuubar'
 gem 'geocoder'
 gem 'gibbon'
 gem 'goldiloader'
@@ -76,10 +77,13 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'byebug'
+  gem 'guard-brakeman', require: false
   gem 'guard-livereload', require: false
-  gem 'guard-rspec'
-  gem 'guard-rubocop'
+  gem 'guard-rspec', require: false
+  gem 'guard-rubocop', require: false
   gem 'irbtools-more', require: 'irbtools/binding'
+  gem 'letter_opener'
+  gem 'letter_opener_web'
   gem 'launchy'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rails_best_practices'

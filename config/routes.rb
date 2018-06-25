@@ -112,7 +112,7 @@
 #                    rails_disk_service GET      /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
 #             update_rails_disk_service PUT      /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
 #                  rails_direct_uploads POST     /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
-# 
+#
 # Routes for SimpleDiscussion::Engine:
 #           answered_forum_threads GET    /threads/answered(.:format)                            simple_discussion/forum_threads#answered
 #         unanswered_forum_threads GET    /threads/unanswered(.:format)                          simple_discussion/forum_threads#unanswered
@@ -203,4 +203,7 @@ Rails.application.routes.draw do
 
   ### Community ###
   mount SimpleDiscussion::Engine => '/community'
+
+  ### Emails in Development ###
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
