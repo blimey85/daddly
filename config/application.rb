@@ -20,7 +20,6 @@ module Daddly
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
       g.stylesheets false
       g.javascripts false
-      g.decanter false
       g.helper false
       g.assets false
       g.system_tests = nil

@@ -1,17 +1,15 @@
 # frozen_string_literal: true
 
-if ENV['coverage']
-  require 'simplecov'
-  require 'simplecov-console'
-  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
-    [
-      SimpleCov::Formatter::HTMLFormatter,
-      SimpleCov::Formatter::Console
-    ]
-  )
-  SimpleCov.start 'rails' do
-    add_filter '/controllers/'
-  end
+require 'simplecov'
+require 'simplecov-console'
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+  [
+    SimpleCov::Formatter::Console,
+    SimpleCov::Formatter::HTMLFormatter
+  ]
+)
+SimpleCov.start 'rails' do
+  add_filter '/controllers/'
 end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'

@@ -211,9 +211,6 @@ GEM
     debugging (1.1.1)
       binding.repl (~> 3.0)
       paint (>= 0.9, < 3.0)
-    decanter (1.1.8)
-      actionpack (>= 4.2.10)
-      activesupport
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.4.3)
@@ -708,7 +705,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   counter_culture (~> 1.0)
   database_cleaner
-  decanter
   devise (~> 4.2)
   dotenv-rails
   factory_bot_rails
