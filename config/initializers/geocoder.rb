@@ -26,7 +26,7 @@ else
   Geocoder.configure(
       lookup: :google, # name of geocoding service (symbol)
       use_https: false, # use HTTPS for lookup requests? (if supported)
-      api_key: 'AIzaSyBoleHycUrcFJNpJ8sh2BR_in5aAifXNsE', # API key for geocoding service
+      api_key: ENV['GOOGLE_GEOCODER_API_KEY'], # API key for geocoding service
       cache: Redis.new
   )
 end

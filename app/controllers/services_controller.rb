@@ -4,7 +4,13 @@ class ServicesController < ApplicationController
 
   def destroy
     @service.destroy
-    flash.notice = "Successfully removed #{@service.provider.titleize} account."
+    provider =
+      if @service.provider == 'google_oauth2'
+        'Google'
+      else
+        @service.provider
+      end
+    flash.notice = "Successfully removed your #{provider.titleize} account."
     redirect_back(fallback_location: root_path)
   end
 

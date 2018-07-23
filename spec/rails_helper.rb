@@ -8,9 +8,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
     SimpleCov::Formatter::HTMLFormatter
   ]
 )
-SimpleCov.start 'rails' do
-  add_filter '/controllers/'
-end
+SimpleCov.start 'rails'
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
@@ -29,8 +27,8 @@ require 'capybara/email/rspec'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'database_cleaner'
-require 'factory_bot_rails'
-require 'faker'
+# require 'factory_bot_rails'
+# require 'faker'
 require 'support/selectize_select_helper'
 require 'shoulda-matchers'
 require 'test_prof/recipes/rspec/any_fixture'

@@ -2,10 +2,10 @@
 #
 # Table name: votes
 #
-#  id           :integer          not null, primary key
+#  id           :bigint(8)        not null, primary key
 #  votable_id   :integer
 #  votable_type :string
-#  user_id      :integer
+#  user_id      :bigint(8)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #

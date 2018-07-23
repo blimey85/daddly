@@ -10,7 +10,6 @@ RSpec.feature 'Create Event', type: :system, js: true do
     include_context 'user'
 
     scenario 'user fills in the add event form' do
-      # user = FactoryBot.create(:user)
       user.confirm
       sign_in user
 

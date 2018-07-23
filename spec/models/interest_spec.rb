@@ -2,9 +2,9 @@
 #
 # Table name: interests
 #
-#  id              :integer          not null, primary key
+#  id              :bigint(8)        not null, primary key
 #  name            :string
-#  sub_category_id :integer
+#  sub_category_id :bigint(8)
 #
 # Indexes
 #

@@ -14,6 +14,16 @@
 #
 #  index_pings_on_user_id  (user_id)
 #
+# == Output example:
+#
+#  {
+#    "id": 1,
+#    "pinger_id": 2,
+#    "user_id": 2,
+#    "username": "bobby123",
+#    "qtip_title": "Bob Somebody",
+#    "qtip_text": "A little about me. What can I say?"
+#  }
 
 class PingsSerializer < ActiveModel::Serializer
   attributes :id,

@@ -2,11 +2,11 @@
 #
 # Table name: pings
 #
-#  id                   :integer          not null, primary key
+#  id                   :bigint(8)        not null, primary key
 #  pingable_id          :integer
 #  pingable_type        :string
-#  pinger_id            :integer
-#  user_id              :integer
+#  pinger_id            :bigint(8)
+#  user_id              :bigint(8)
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  pingable_parent_id   :integer
@@ -30,5 +30,16 @@ RSpec.describe Ping, type: :model do
     it { is_expected.to validate_presence_of(:pingable_type) }
     it { is_expected.to validate_presence_of(:pinger_id) }
     it { is_expected.to validate_presence_of(:user_id) }
+  end
+
+  context 'Model Serializer' do
+    ping = FactoryBot.build_stubbed(:ping)
+    subject { PingsSerializer.new(ping) }
+
+    it 'includes the expected attributes' do
+      expect(subject.attributes.keys).to contain_exactly(
+        :id, :pinger_id, :user_id, :username, :qtip_title, :qtip_text
+      )
+    end
   end
 end

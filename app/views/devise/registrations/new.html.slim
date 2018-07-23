@@ -24,9 +24,9 @@
           | or sign up with social media
         .row.d-flex.justify-content-center
           .inline-ul.text-center.d-flex.justify-content-center.mt-2.full-width
-            = link_to raw('<button class="btn btn-fb" type="button"><i class="fa fa-facebook left"></i> Facebook'), omniauth_authorize_path(resource_name, 'facebook')
-            = link_to raw('<button class="btn btn-tw" type="button"><i class="fa fa-twitter left"></i> Twitter'), omniauth_authorize_path(resource_name, 'twitter')
-            = link_to raw('<button class="btn btn-gplus" type="button"><i class="fa fa-google left"></i> Google'), omniauth_authorize_path(resource_name, 'google_oauth2')
+            = link_to '<i class="fa fa-facebook left"></i> Facebook'.html_safe, omniauth_authorize_path(resource_name, 'facebook'), class: 'btn btn-fb'
+            = link_to '<i class="fa fa-twitter left"></i> Twitter'.html_safe, omniauth_authorize_path(resource_name, 'twitter'), class: 'btn btn-tw'
+            = link_to '<i class="fa fa-google left"></i> Google'.html_safe, omniauth_authorize_path(resource_name, 'google_oauth2'), class: 'btn btn-gplus'
         .row.d-flex.justify-content-center.mt-3.mb-2
           .whatever Already have an account? &nbsp;
           = link_to 'Sign In', new_session_path(resource_name)

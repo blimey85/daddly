@@ -71,7 +71,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'virtus'
 
 group :development do
-  gem 'annotate', github: 'ctran/annotate_models'
+  gem 'annotate', '>= 2.7.4'
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'

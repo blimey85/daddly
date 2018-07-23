@@ -39,7 +39,7 @@ class VenuesController < ApplicationController
 
   # uses Ransack for search
   # uses ActiveModel Serializer VenueSearchSerializer for decorating
-  # returns :id, :name, :full_address [:address, :city, :state: :zipcode]
+  # @return :id, :name, :full_address [:address, :city, :state, :zipcode]
   def search
     @venues = Venue.ransack(name_cont: params[:r]).result(distinct: true)
     render json: @venues, each_serializer: VenueSearchSerializer

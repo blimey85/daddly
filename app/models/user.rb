@@ -53,6 +53,8 @@ class User < ApplicationRecord
   attr_accessor :current_password
   attr_accessor :oauth_callback
 
+  accepts_nested_attributes_for :kids, reject_if: :all_blank, allow_destroy: true
+
   ### Devise Validations ###
   validates :email, presence: true, if: :email_required?
   validates :email,

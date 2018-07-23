@@ -26,6 +26,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
     if user_signed_in?
+      kind = 'Google' if kind == 'Google_oauth2'
       flash[:notice] = "Your #{kind} account was connected."
       redirect_to edit_user_registration_path
     else
@@ -47,7 +48,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user = current_user
     elsif service.present?
       @user = service.user
-    elsif User.where(email: auth.info.email).any?
+    elsif User.where(email: auth&.info&.email).any?
       flash[:alert] = "An account with this email already exists. Please sign in with that account before connecting your #{auth.provider.titleize} account."
       redirect_to new_user_session_path
     else
@@ -69,7 +70,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def create_user
     User.create(
       email: auth.info.email,
-      # name: auth.info.name,
       password: Devise.friendly_token[0, 20]
     )
   end

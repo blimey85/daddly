@@ -2,10 +2,10 @@
 #
 # Table name: kids
 #
-#  id      :integer          not null, primary key
+#  id      :bigint(8)        not null, primary key
 #  gender  :integer          default(0), not null
 #  age     :integer          not null
-#  user_id :integer
+#  user_id :bigint(8)
 #
 # Indexes
 #

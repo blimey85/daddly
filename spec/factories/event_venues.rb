@@ -2,9 +2,9 @@
 #
 # Table name: event_venues
 #
-#  id       :integer          not null, primary key
-#  event_id :integer
-#  venue_id :integer
+#  id       :bigint(8)        not null, primary key
+#  event_id :bigint(8)
+#  venue_id :bigint(8)
 #
 # Indexes
 #

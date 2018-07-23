@@ -2,14 +2,14 @@
 #
 # Table name: comments
 #
-#  id               :integer          not null, primary key
+#  id               :bigint(8)        not null, primary key
 #  commentable_id   :integer
 #  commentable_type :string
 #  body             :text
 #  parent_id        :integer
 #  edited_at        :datetime
 #  votes_count      :integer          default(0)
-#  user_id          :integer
+#  user_id          :bigint(8)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
@@ -17,6 +17,34 @@
 #
 #  index_comments_on_commentable_id_and_commentable_type  (commentable_id,commentable_type)
 #  index_comments_on_user_id                              (user_id)
+#
+# == Output example:
+#
+#  {
+#    "id": 58,
+#    "content": "Bob is the best ever!! #winner",
+#    "parent_id": null,
+#    "user_id": 2,
+#    "edited_at": "2017-07-15 01:55:03 -0400",
+#    "created_at": "2017-07-15 01:55:03 -0400",
+#    "fullname": "Gary Traffanstedt",
+#    "profile_picture_url": "http://res.cloudinary.com/daddly/image/upload/v1527379413/oa0jpgn6hsv9fhfrhfix.jpg",
+#    "commentable_id": 1,
+#    "commentable_type": "Event",
+#    "created_by_current_user": 1,
+#    "upvote_count": 0,
+#    "user_has_upvoted": 1,
+#    "pings": [
+#      {
+#        "id": 1,
+#        "pinger_id": 2,
+#        "user_id": 2,
+#        "username": "blimey85",
+#        "qtip_title": "Gary Traffanstedt",
+#        "qtip_text": "A little about me. What can I say? Blah, blah, blah."
+#      }
+#    ]
+#  }
 #
 
 class CommentSerializer < ActiveModel::Serializer
@@ -49,7 +77,7 @@ class CommentSerializer < ActiveModel::Serializer
 
   def pings
     object.pings.map do |ping|
-      PingsSerializer.new(ping)
+      PingsSerializer.new(ping).attributes
     end
   end
 

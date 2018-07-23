@@ -2,7 +2,7 @@
 #
 # Table name: venues
 #
-#  id         :integer          not null, primary key
+#  id         :bigint(8)        not null, primary key
 #  name       :string
 #  address    :string
 #  city       :string
@@ -59,6 +59,6 @@ class Venue < ApplicationRecord
 
   # Only geocode if we don't have lat and lon OR any part of the address has changed
   def need_to_geocode?
-    latitude.nil? || longitude.nil? || address_changed? || city_changed? || state_changed? || zipcode_changed?
+    latitude.blank? || longitude.blank? || address_changed? || city_changed? || state_changed? || zipcode_changed?
   end
 end

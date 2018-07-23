@@ -2,7 +2,7 @@
 #
 # Table name: venues
 #
-#  id         :integer          not null, primary key
+#  id         :bigint(8)        not null, primary key
 #  name       :string
 #  address    :string
 #  city       :string
@@ -32,6 +32,26 @@ RSpec.describe Venue do
     it { is_expected.to validate_presence_of(:zipcode) }
     it { is_expected.to validate_presence_of(:latitude) }
     it { is_expected.to validate_presence_of(:longitude) }
+  end
+
+  context 'Model Serializer' do
+    subject { VenueSerializer.new(venue) }
+
+    it 'includes the expected attributes' do
+      expect(subject.attributes.keys).to contain_exactly(
+        :id, :name, :address, :city, :state, :zipcode, :full_address
+      )
+    end
+  end
+
+  context 'Model Search Serializer' do
+    subject { VenueSearchSerializer.new(venue) }
+
+    it 'includes the expected attributes' do
+      expect(subject.attributes.keys).to contain_exactly(:id,
+                                                         :name,
+                                                         :full_address)
+    end
   end
 
   context 'Address Manipulations' do

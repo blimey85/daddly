@@ -2,9 +2,9 @@
 #
 # Table name: user_interests
 #
-#  id          :integer          not null, primary key
-#  user_id     :integer
-#  interest_id :integer
+#  id          :bigint(8)        not null, primary key
+#  user_id     :bigint(8)
+#  interest_id :bigint(8)
 #  experience  :integer
 #
 # Indexes

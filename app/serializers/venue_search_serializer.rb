@@ -14,16 +14,18 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# == Output example:
+#
+#  {
+#    "id":3,
+#    "name":"jimmy",
+#    "full_address":"123 any street, Altamonte Springs, FL 32701"
+#  }
+#
 
 class VenueSearchSerializer < ActiveModel::Serializer
   attributes :id, :name, :full_address
 
-  # Output example:
-  #   {
-  #     "id":3,
-  #     "name":"jimmy",
-  #     "full_address":"123 any street, Altamonte Springs, FL 32701"
-  #   }
   def full_address
     "#{object.address}, #{object.city}, #{object.state} #{object.zipcode}"
   end

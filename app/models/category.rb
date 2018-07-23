@@ -2,7 +2,7 @@
 #
 # Table name: categories
 #
-#  id       :integer          not null, primary key
+#  id       :bigint(8)        not null, primary key
 #  name     :string
 #  cat_type :string
 #

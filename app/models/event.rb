@@ -2,7 +2,7 @@
 #
 # Table name: events
 #
-#  id             :integer          not null, primary key
+#  id             :bigint(8)        not null, primary key
 #  name           :string
 #  description    :text
 #  starts_at      :datetime
@@ -17,8 +17,8 @@
 #  visibility     :integer
 #  comments_count :integer          default(0), not null
 #  votes_count    :integer          default(0), not null
-#  user_id        :integer
-#  venue_id       :integer # FIXME: remove this field
+#  user_id        :bigint(8)
+#  venue_id       :bigint(8)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #
@@ -70,7 +70,7 @@ class Event < ApplicationRecord
       venues_city: venues.map(&:city),
       venues_state: venues.map(&:state),
       venues_zipcode: venues.map(&:zipcode),
-      locations: venues.map { |l| { lat: l.latitude, lon: l.longitude } }
+      locations: venues.map { |location| { lat: location.latitude, lon: location.longitude } }
     }
   end
 

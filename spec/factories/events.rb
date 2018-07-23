@@ -2,7 +2,7 @@
 #
 # Table name: events
 #
-#  id             :integer          not null, primary key
+#  id             :bigint(8)        not null, primary key
 #  name           :string
 #  description    :text
 #  starts_at      :datetime
@@ -17,8 +17,8 @@
 #  visibility     :integer
 #  comments_count :integer          default(0), not null
 #  votes_count    :integer          default(0), not null
-#  user_id        :integer
-#  venue_id       :integer
+#  user_id        :bigint(8)
+#  venue_id       :bigint(8)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

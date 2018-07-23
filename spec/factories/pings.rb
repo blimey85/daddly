@@ -2,11 +2,11 @@
 #
 # Table name: pings
 #
-#  id                   :integer          not null, primary key
+#  id                   :bigint(8)        not null, primary key
 #  pingable_id          :integer
 #  pingable_type        :string
-#  pinger_id            :integer
-#  user_id              :integer
+#  pinger_id            :bigint(8)
+#  user_id              :bigint(8)
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  pingable_parent_id   :integer

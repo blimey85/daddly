@@ -2,9 +2,9 @@
 #
 # Table name: reservations
 #
-#  id               :integer          not null, primary key
-#  event_id         :integer
-#  user_id          :integer
+#  id               :bigint(8)        not null, primary key
+#  event_id         :bigint(8)
+#  user_id          :bigint(8)
 #  reservation_type :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null

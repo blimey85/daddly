@@ -2,9 +2,9 @@
 #
 # Table name: sub_categories
 #
-#  id          :integer          not null, primary key
+#  id          :bigint(8)        not null, primary key
 #  name        :string
-#  category_id :integer
+#  category_id :bigint(8)
 #
 # Indexes
 #

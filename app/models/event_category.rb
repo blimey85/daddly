@@ -2,7 +2,7 @@
 #
 # Table name: event_categories
 #
-#  id    :integer          not null, primary key
+#  id    :bigint(8)        not null, primary key
 #  name  :string
 #  color :string           default("000000")
 #  icon  :string           default("fas fa-circle")

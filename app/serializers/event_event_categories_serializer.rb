@@ -8,10 +8,15 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
+# == Output example:
+#
+#  {
+#    "event_id": 1,
+#    "event_category_id": 1
+#  }
+#
 
-FactoryBot.define do
-  factory :event_event_category do
-    event_id 1
-    event_category_id 1
-  end
+class EventEventCategoriesSerializer < ActiveModel::Serializer
+  attributes :event_id
+  attributes :event_category_id
 end

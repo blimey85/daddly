@@ -6,7 +6,7 @@ RSpec.describe 'User signs Up', type: :system, js: true do
   # Build stubbed user
   let!(:new_user) { FactoryBot.build_stubbed(:user) }
 
-  scenario 'open confirmation email', :aggregate_failures do
+  scenario 'complete registration and test login', :aggregate_failures do
     # Open home page
     visit root_path
 
@@ -32,12 +32,13 @@ RSpec.describe 'User signs Up', type: :system, js: true do
     expect(page).to have_content 'Your email address has been successfully confirmed.'
 
     # Test logging in
-    # visit new_user_session_path
-    # fill_in 'user_email', with: new_user.email
-    # fill_in 'user_password', with: new_user.password
-    #
-    # click_button 'Log In'
-    #
-    # expect(page).to have_content('Signed in successfully.')
+    visit new_user_session_path
+
+    fill_in 'user_email', with: new_user.email
+    fill_in 'user_password', with: new_user.password
+
+    click_button 'Log In'
+
+    expect(page).to have_content('Signed in successfully.')
   end
 end
