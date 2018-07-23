@@ -61,6 +61,7 @@ RSpec.configure do |config|
 
   config.before(:all) do
     Rails.cache.clear
+    load Rails.root + 'db/seeds/event_category_seeds.rb'
   end
 
   config.before(:all, type: :system) do
