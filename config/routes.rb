@@ -1,6 +1,7 @@
 # == Route Map
 #
 #                                Prefix Verb     URI Pattern                                                                              Controller#Action
+#                               trestle          /admin                                                                                   Trestle::Engine
 #                          reservations GET      /reservations(.:format)                                                                  reservations#index
 #                                       POST     /reservations(.:format)                                                                  reservations#create
 #                       new_reservation GET      /reservations/new(.:format)                                                              reservations#new
@@ -113,6 +114,47 @@
 #                    rails_disk_service GET      /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
 #             update_rails_disk_service PUT      /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
 #                  rails_direct_uploads POST     /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+# 
+# Routes for Trestle::Engine:
+#                     sidekiq_web        /sidekiq/web                            Sidekiq::Web
+#                                 GET    /sidekiq/web(.:format)                  redirect(302, login)
+#                           login GET    /login(.:format)                        trestle/auth/sessions#new
+#                                 POST   /login(.:format)                        trestle/auth/sessions#create
+#                          logout GET    /logout(.:format)                       trestle/auth/sessions#destroy
+# auth_administrators_admin_index GET    /auth/administrators(.:format)          auth/administrators_admin/admin#index
+#                                 POST   /auth/administrators(.:format)          auth/administrators_admin/admin#create
+#   new_auth_administrators_admin GET    /auth/administrators/new(.:format)      auth/administrators_admin/admin#new
+#  edit_auth_administrators_admin GET    /auth/administrators/:id/edit(.:format) auth/administrators_admin/admin#edit
+#       auth_administrators_admin GET    /auth/administrators/:id(.:format)      auth/administrators_admin/admin#show
+#                                 PATCH  /auth/administrators/:id(.:format)      auth/administrators_admin/admin#update
+#                                 PUT    /auth/administrators/:id(.:format)      auth/administrators_admin/admin#update
+#                                 DELETE /auth/administrators/:id(.:format)      auth/administrators_admin/admin#destroy
+#              events_admin_index GET    /events(.:format)                       events_admin/admin#index
+#                                 POST   /events(.:format)                       events_admin/admin#create
+#                new_events_admin GET    /events/new(.:format)                   events_admin/admin#new
+#               edit_events_admin GET    /events/:id/edit(.:format)              events_admin/admin#edit
+#                    events_admin GET    /events/:id(.:format)                   events_admin/admin#show
+#                                 PATCH  /events/:id(.:format)                   events_admin/admin#update
+#                                 PUT    /events/:id(.:format)                   events_admin/admin#update
+#                                 DELETE /events/:id(.:format)                   events_admin/admin#destroy
+#               users_admin_index GET    /users(.:format)                        users_admin/admin#index
+#                                 POST   /users(.:format)                        users_admin/admin#create
+#                 new_users_admin GET    /users/new(.:format)                    users_admin/admin#new
+#                edit_users_admin GET    /users/:id/edit(.:format)               users_admin/admin#edit
+#                     users_admin GET    /users/:id(.:format)                    users_admin/admin#show
+#                                 PATCH  /users/:id(.:format)                    users_admin/admin#update
+#                                 PUT    /users/:id(.:format)                    users_admin/admin#update
+#                                 DELETE /users/:id(.:format)                    users_admin/admin#destroy
+#              venues_admin_index GET    /venues(.:format)                       venues_admin/admin#index
+#                                 POST   /venues(.:format)                       venues_admin/admin#create
+#                new_venues_admin GET    /venues/new(.:format)                   venues_admin/admin#new
+#               edit_venues_admin GET    /venues/:id/edit(.:format)              venues_admin/admin#edit
+#                    venues_admin GET    /venues/:id(.:format)                   venues_admin/admin#show
+#                                 PATCH  /venues/:id(.:format)                   venues_admin/admin#update
+#                                 PUT    /venues/:id(.:format)                   venues_admin/admin#update
+#                                 DELETE /venues/:id(.:format)                   venues_admin/admin#destroy
+#   trestle_sidekiq_sidekiq_admin GET    /sidekiq(.:format)                      trestle/sidekiq/sidekiq_admin/admin#index
+#                            root GET    /                                       trestle/dashboard#index
 # 
 # Routes for SimpleDiscussion::Engine:
 #           answered_forum_threads GET    /threads/answered(.:format)                            simple_discussion/forum_threads#answered

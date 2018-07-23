@@ -16,6 +16,12 @@ gem 'rails', '~> 5.2'
 gem 'redis'
 gem 'sidekiq'
 
+### Admin
+gem 'trestle'
+gem 'trestle-auth'
+gem 'trestle-search'
+gem 'trestle-sidekiq'
+
 # Authentication and Authorization
 gem 'devise', '~> 4.2' # TODO: current version is 4.4.3+... can we safely upgrade?
 gem 'google-api-client', '0.8.2', require: 'google/api_client'
