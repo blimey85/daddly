@@ -1,0 +1,20 @@
+- content_for(:title, 'Dashboard')
+= render "header"
+
+.main-content-area
+  .main-content-container
+    .main-content
+      h3= pluralize(@user_count,'Total User')
+      = column_chart '/charts/new_users'
+
+.main-content-area
+  .main-content-container
+    .main-content
+      h3= pluralize(@event_count,'Total Event')
+      = column_chart '/charts/events'
+
+.main-content-area
+  .main-content-container
+    .main-content
+      h3= pluralize(Ahoy::Visit.count,'Total Visit')
+      = line_chart Ahoy::Visit.group_by_day(:started_at).count

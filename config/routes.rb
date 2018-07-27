@@ -106,6 +106,8 @@
 #                                       PATCH    /votes/:id(.:format)                                                                     votes#update
 #                                       PUT      /votes/:id(.:format)                                                                     votes#update
 #                                       DELETE   /votes/:id(.:format)                                                                     votes#destroy
+#                      charts_new_users GET      /charts/new_users(.:format)                                                              charts#new_users
+#                         charts_events GET      /charts/events(.:format)                                                                 charts#events
 #                     simple_discussion          /community                                                                               SimpleDiscussion::Engine
 #                     letter_opener_web          /letter_opener                                                                           LetterOpenerWeb::Engine
 #                                  page GET      /pages/*id                                                                               high_voltage/pages#show
@@ -129,6 +131,39 @@
 #                                 PATCH  /auth/administrators/:id(.:format)      auth/administrators_admin/admin#update
 #                                 PUT    /auth/administrators/:id(.:format)      auth/administrators_admin/admin#update
 #                                 DELETE /auth/administrators/:id(.:format)      auth/administrators_admin/admin#destroy
+#          categories_admin_index GET    /categories(.:format)                   categories_admin/admin#index
+#                                 POST   /categories(.:format)                   categories_admin/admin#create
+#            new_categories_admin GET    /categories/new(.:format)               categories_admin/admin#new
+#           edit_categories_admin GET    /categories/:id/edit(.:format)          categories_admin/admin#edit
+#                categories_admin GET    /categories/:id(.:format)               categories_admin/admin#show
+#                                 PATCH  /categories/:id(.:format)               categories_admin/admin#update
+#                                 PUT    /categories/:id(.:format)               categories_admin/admin#update
+#                                 DELETE /categories/:id(.:format)               categories_admin/admin#destroy
+#            comments_admin_index GET    /comments(.:format)                     comments_admin/admin#index
+#                                 POST   /comments(.:format)                     comments_admin/admin#create
+#              new_comments_admin GET    /comments/new(.:format)                 comments_admin/admin#new
+#             edit_comments_admin GET    /comments/:id/edit(.:format)            comments_admin/admin#edit
+#                  comments_admin GET    /comments/:id(.:format)                 comments_admin/admin#show
+#                                 PATCH  /comments/:id(.:format)                 comments_admin/admin#update
+#                                 PUT    /comments/:id(.:format)                 comments_admin/admin#update
+#                                 DELETE /comments/:id(.:format)                 comments_admin/admin#destroy
+#                 dashboard_admin GET    /dashboard(.:format)                    dashboard_admin/admin#index
+#    event_categories_admin_index GET    /event_categories(.:format)             event_categories_admin/admin#index
+#                                 POST   /event_categories(.:format)             event_categories_admin/admin#create
+#      new_event_categories_admin GET    /event_categories/new(.:format)         event_categories_admin/admin#new
+#     edit_event_categories_admin GET    /event_categories/:id/edit(.:format)    event_categories_admin/admin#edit
+#          event_categories_admin GET    /event_categories/:id(.:format)         event_categories_admin/admin#show
+#                                 PATCH  /event_categories/:id(.:format)         event_categories_admin/admin#update
+#                                 PUT    /event_categories/:id(.:format)         event_categories_admin/admin#update
+#                                 DELETE /event_categories/:id(.:format)         event_categories_admin/admin#destroy
+#        event_venues_admin_index GET    /event_venues(.:format)                 event_venues_admin/admin#index
+#                                 POST   /event_venues(.:format)                 event_venues_admin/admin#create
+#          new_event_venues_admin GET    /event_venues/new(.:format)             event_venues_admin/admin#new
+#         edit_event_venues_admin GET    /event_venues/:id/edit(.:format)        event_venues_admin/admin#edit
+#              event_venues_admin GET    /event_venues/:id(.:format)             event_venues_admin/admin#show
+#                                 PATCH  /event_venues/:id(.:format)             event_venues_admin/admin#update
+#                                 PUT    /event_venues/:id(.:format)             event_venues_admin/admin#update
+#                                 DELETE /event_venues/:id(.:format)             event_venues_admin/admin#destroy
 #              events_admin_index GET    /events(.:format)                       events_admin/admin#index
 #                                 POST   /events(.:format)                       events_admin/admin#create
 #                new_events_admin GET    /events/new(.:format)                   events_admin/admin#new
@@ -137,6 +172,86 @@
 #                                 PATCH  /events/:id(.:format)                   events_admin/admin#update
 #                                 PUT    /events/:id(.:format)                   events_admin/admin#update
 #                                 DELETE /events/:id(.:format)                   events_admin/admin#destroy
+#    forum_categories_admin_index GET    /forum_categories(.:format)             forum_categories_admin/admin#index
+#                                 POST   /forum_categories(.:format)             forum_categories_admin/admin#create
+#      new_forum_categories_admin GET    /forum_categories/new(.:format)         forum_categories_admin/admin#new
+#     edit_forum_categories_admin GET    /forum_categories/:id/edit(.:format)    forum_categories_admin/admin#edit
+#          forum_categories_admin GET    /forum_categories/:id(.:format)         forum_categories_admin/admin#show
+#                                 PATCH  /forum_categories/:id(.:format)         forum_categories_admin/admin#update
+#                                 PUT    /forum_categories/:id(.:format)         forum_categories_admin/admin#update
+#                                 DELETE /forum_categories/:id(.:format)         forum_categories_admin/admin#destroy
+#         forum_posts_admin_index GET    /forum_posts(.:format)                  forum_posts_admin/admin#index
+#                                 POST   /forum_posts(.:format)                  forum_posts_admin/admin#create
+#           new_forum_posts_admin GET    /forum_posts/new(.:format)              forum_posts_admin/admin#new
+#          edit_forum_posts_admin GET    /forum_posts/:id/edit(.:format)         forum_posts_admin/admin#edit
+#               forum_posts_admin GET    /forum_posts/:id(.:format)              forum_posts_admin/admin#show
+#                                 PATCH  /forum_posts/:id(.:format)              forum_posts_admin/admin#update
+#                                 PUT    /forum_posts/:id(.:format)              forum_posts_admin/admin#update
+#                                 DELETE /forum_posts/:id(.:format)              forum_posts_admin/admin#destroy
+# forum_subscriptions_admin_index GET    /forum_subscriptions(.:format)          forum_subscriptions_admin/admin#index
+#                                 POST   /forum_subscriptions(.:format)          forum_subscriptions_admin/admin#create
+#   new_forum_subscriptions_admin GET    /forum_subscriptions/new(.:format)      forum_subscriptions_admin/admin#new
+#  edit_forum_subscriptions_admin GET    /forum_subscriptions/:id/edit(.:format) forum_subscriptions_admin/admin#edit
+#       forum_subscriptions_admin GET    /forum_subscriptions/:id(.:format)      forum_subscriptions_admin/admin#show
+#                                 PATCH  /forum_subscriptions/:id(.:format)      forum_subscriptions_admin/admin#update
+#                                 PUT    /forum_subscriptions/:id(.:format)      forum_subscriptions_admin/admin#update
+#                                 DELETE /forum_subscriptions/:id(.:format)      forum_subscriptions_admin/admin#destroy
+#       forum_threads_admin_index GET    /forum_threads(.:format)                forum_threads_admin/admin#index
+#                                 POST   /forum_threads(.:format)                forum_threads_admin/admin#create
+#         new_forum_threads_admin GET    /forum_threads/new(.:format)            forum_threads_admin/admin#new
+#        edit_forum_threads_admin GET    /forum_threads/:id/edit(.:format)       forum_threads_admin/admin#edit
+#             forum_threads_admin GET    /forum_threads/:id(.:format)            forum_threads_admin/admin#show
+#                                 PATCH  /forum_threads/:id(.:format)            forum_threads_admin/admin#update
+#                                 PUT    /forum_threads/:id(.:format)            forum_threads_admin/admin#update
+#                                 DELETE /forum_threads/:id(.:format)            forum_threads_admin/admin#destroy
+#          identities_admin_index GET    /identities(.:format)                   identities_admin/admin#index
+#                                 POST   /identities(.:format)                   identities_admin/admin#create
+#            new_identities_admin GET    /identities/new(.:format)               identities_admin/admin#new
+#           edit_identities_admin GET    /identities/:id/edit(.:format)          identities_admin/admin#edit
+#                identities_admin GET    /identities/:id(.:format)               identities_admin/admin#show
+#                                 PATCH  /identities/:id(.:format)               identities_admin/admin#update
+#                                 PUT    /identities/:id(.:format)               identities_admin/admin#update
+#                                 DELETE /identities/:id(.:format)               identities_admin/admin#destroy
+#           interests_admin_index GET    /interests(.:format)                    interests_admin/admin#index
+#                                 POST   /interests(.:format)                    interests_admin/admin#create
+#             new_interests_admin GET    /interests/new(.:format)                interests_admin/admin#new
+#            edit_interests_admin GET    /interests/:id/edit(.:format)           interests_admin/admin#edit
+#                 interests_admin GET    /interests/:id(.:format)                interests_admin/admin#show
+#                                 PATCH  /interests/:id(.:format)                interests_admin/admin#update
+#                                 PUT    /interests/:id(.:format)                interests_admin/admin#update
+#                                 DELETE /interests/:id(.:format)                interests_admin/admin#destroy
+#                kids_admin_index GET    /kids(.:format)                         kids_admin/admin#index
+#                                 POST   /kids(.:format)                         kids_admin/admin#create
+#                  new_kids_admin GET    /kids/new(.:format)                     kids_admin/admin#new
+#                 edit_kids_admin GET    /kids/:id/edit(.:format)                kids_admin/admin#edit
+#                      kids_admin GET    /kids/:id(.:format)                     kids_admin/admin#show
+#                                 PATCH  /kids/:id(.:format)                     kids_admin/admin#update
+#                                 PUT    /kids/:id(.:format)                     kids_admin/admin#update
+#                                 DELETE /kids/:id(.:format)                     kids_admin/admin#destroy
+#            services_admin_index GET    /services(.:format)                     services_admin/admin#index
+#                                 POST   /services(.:format)                     services_admin/admin#create
+#              new_services_admin GET    /services/new(.:format)                 services_admin/admin#new
+#             edit_services_admin GET    /services/:id/edit(.:format)            services_admin/admin#edit
+#                  services_admin GET    /services/:id(.:format)                 services_admin/admin#show
+#                                 PATCH  /services/:id(.:format)                 services_admin/admin#update
+#                                 PUT    /services/:id(.:format)                 services_admin/admin#update
+#                                 DELETE /services/:id(.:format)                 services_admin/admin#destroy
+#      sub_categories_admin_index GET    /sub_categories(.:format)               sub_categories_admin/admin#index
+#                                 POST   /sub_categories(.:format)               sub_categories_admin/admin#create
+#        new_sub_categories_admin GET    /sub_categories/new(.:format)           sub_categories_admin/admin#new
+#       edit_sub_categories_admin GET    /sub_categories/:id/edit(.:format)      sub_categories_admin/admin#edit
+#            sub_categories_admin GET    /sub_categories/:id(.:format)           sub_categories_admin/admin#show
+#                                 PATCH  /sub_categories/:id(.:format)           sub_categories_admin/admin#update
+#                                 PUT    /sub_categories/:id(.:format)           sub_categories_admin/admin#update
+#                                 DELETE /sub_categories/:id(.:format)           sub_categories_admin/admin#destroy
+#      user_interests_admin_index GET    /user_interests(.:format)               user_interests_admin/admin#index
+#                                 POST   /user_interests(.:format)               user_interests_admin/admin#create
+#        new_user_interests_admin GET    /user_interests/new(.:format)           user_interests_admin/admin#new
+#       edit_user_interests_admin GET    /user_interests/:id/edit(.:format)      user_interests_admin/admin#edit
+#            user_interests_admin GET    /user_interests/:id(.:format)           user_interests_admin/admin#show
+#                                 PATCH  /user_interests/:id(.:format)           user_interests_admin/admin#update
+#                                 PUT    /user_interests/:id(.:format)           user_interests_admin/admin#update
+#                                 DELETE /user_interests/:id(.:format)           user_interests_admin/admin#destroy
 #               users_admin_index GET    /users(.:format)                        users_admin/admin#index
 #                                 POST   /users(.:format)                        users_admin/admin#create
 #                 new_users_admin GET    /users/new(.:format)                    users_admin/admin#new
@@ -153,6 +268,14 @@
 #                                 PATCH  /venues/:id(.:format)                   venues_admin/admin#update
 #                                 PUT    /venues/:id(.:format)                   venues_admin/admin#update
 #                                 DELETE /venues/:id(.:format)                   venues_admin/admin#destroy
+#               votes_admin_index GET    /votes(.:format)                        votes_admin/admin#index
+#                                 POST   /votes(.:format)                        votes_admin/admin#create
+#                 new_votes_admin GET    /votes/new(.:format)                    votes_admin/admin#new
+#                edit_votes_admin GET    /votes/:id/edit(.:format)               votes_admin/admin#edit
+#                     votes_admin GET    /votes/:id(.:format)                    votes_admin/admin#show
+#                                 PATCH  /votes/:id(.:format)                    votes_admin/admin#update
+#                                 PUT    /votes/:id(.:format)                    votes_admin/admin#update
+#                                 DELETE /votes/:id(.:format)                    votes_admin/admin#destroy
 #   trestle_sidekiq_sidekiq_admin GET    /sidekiq(.:format)                      trestle/sidekiq/sidekiq_admin/admin#index
 #                            root GET    /                                       trestle/dashboard#index
 # 
@@ -224,7 +347,7 @@ Rails.application.routes.draw do
   resources :events
 
   ### Root: Visitors ###
-  # root to: 'visitors#index'
+  #root to: 'visitors#index'
 
   ### Services ###
   resources :services
@@ -250,6 +373,12 @@ Rails.application.routes.draw do
   post '/votes/like', to: 'votes#create'
   delete '/votes/unlike', to: 'votes#destroy'
   resources :votes
+
+  ### Chartkick for Trestle Admin ###
+  namespace :charts do
+    get 'new_users'
+    get 'events'
+  end
 
   ### Community ###
   mount SimpleDiscussion::Engine => '/community'

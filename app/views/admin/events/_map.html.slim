@@ -1,0 +1,37 @@
+#map style='height: 350px;'
+
+script src='http://maps.google.com/maps/api/js?key=AIzaSyABz6UZcGOQGv-0UUXp6aV4LVs0dI9eTlU'
+script src='https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js'
+
+javascript:
+  var coordinates = {
+      lat: #{event&.venues&.first&.latitude},
+      lng: #{event&.venues&.first&.longitude}
+  };
+  var map = new GMaps({
+      div: '#map',
+      lat: coordinates.lat,
+      lng: coordinates.lng
+  });
+  var venues = #{event.venues.to_json.html_safe};
+  venues.forEach(function (venue) {
+      map.addMarker({
+          lat: venue.latitude,
+          lng: venue.longitude,
+          title: venue.name,
+          infoWindow: {
+              content: "<h4>" + venue.name + "</h4>" +
+                  venue.address +
+                  "<br> " + venue.city + ", " + venue.state + ", " + venue.zipcode
+          }
+      });
+  });
+  if (venues.length > 1) { // default zoom level for one marker, fitZoom for multiple markers
+      map.fitZoom();
+  }
+  $(window).resize(function () {
+      var lat = map.getCenter().lat(),
+          lng = map.getCenter().lng();
+      map.refresh();
+      map.setCenter(lat, lng);
+  });

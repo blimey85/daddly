@@ -1,15 +1,29 @@
 Trestle.resource(:users) do
   menu do
-    item :users, icon: "fa fa-star"
+    group :users, priority: :first do
+      item :users, icon: 'fa fa-users', priority: :first
+    end
+  end
+
+  search do |q|
+    q ? User.where('username ILIKE :q or first_name ILIKE :q or last_name ILIKE :q', q: "%#{q}%") : collection
   end
 
   # Customize the table columns shown on the index view.
   #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
+  table do
+    column :id, link: true
+    column :avatar do |user|
+      "<image class='avatar' src='#{user.avatar}'>".html_safe if user.avatar.present?
+    end
+    column :username
+    column :first_name
+    column :last_name
+    column :age
+    column :created_at, align: :center
+    column :current_sign_in_at, align: :center
+    actions
+  end
 
   # Customize the form fields shown on the new/edit views.
   #

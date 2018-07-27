@@ -42,6 +42,11 @@ class Event < ApplicationRecord
   has_many :venues, through: :event_venues
   has_many :votes, as: :votable, inverse_of: :votable, dependent: :destroy
 
+  scope :future_events, -> { where('starts_at > ?', Time.zone.now).order(starts_at: :desc) }
+  scope :past_events, -> { where('starts_at < ?', Time.zone.now).order(starts_at: :desc) }
+  scope :today_events, -> { where(starts_at: Time.zone.today.all_day).order(starts_at: :asc) }
+  scope :all_events, -> { order(starts_at: :desc) }
+
   # TODO: :start_date, :start_time, :end_date, :end_time, :event_categories ned to be conditionally required
   validates :description, :ends_at, :name, :starts_at, :user_id, presence: true
 

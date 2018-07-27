@@ -1,12 +1,12 @@
 Trestle.resource(:administrators, model: Trestle.config.auth.user_class, scope: Auth) do
   menu do
     group :configuration, priority: :last do
-      item :administrators, icon: "fa fa-users"
+      item :administrators, icon: 'far fa-user-secret'
     end
   end
 
   table do
-    column :avatar, header: false do |administrator|
+    column :avatar do |administrator|
       avatar_for(administrator)
     end
     column :email, link: true

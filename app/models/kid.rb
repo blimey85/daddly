@@ -3,7 +3,7 @@
 # Table name: kids
 #
 #  id      :bigint(8)        not null, primary key
-#  gender  :integer          default(0), not null
+#  gender  :integer          default("Not Saying"), not null
 #  age     :integer          not null
 #  user_id :bigint(8)
 #
@@ -13,7 +13,8 @@
 #
 
 class Kid < ApplicationRecord
-  enumerate :gender, with: Gender
+  # enumerate :gender, with: Gender
+  enum gender: [:'Not Saying', :Male, :Female]
 
   belongs_to :user, optional: true
 

@@ -17,10 +17,14 @@ gem 'redis'
 gem 'sidekiq'
 
 ### Admin
-gem 'trestle'
+gem 'trestle', github: 'TrestleAdmin/trestle'
 gem 'trestle-auth'
 gem 'trestle-search'
 gem 'trestle-sidekiq'
+
+gem 'ahoy_matey'
+gem 'chartkick'
+gem 'groupdate'
 
 # Authentication and Authorization
 gem 'devise', '~> 4.2' # TODO: current version is 4.4.3+... can we safely upgrade?

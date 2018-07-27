@@ -17,7 +17,9 @@
 
 Trestle.resource(:venues) do
   menu do
-    item :venues, icon: "fa fa-star"
+    group :events, priority: 10 do
+      item :venues, icon: 'far fa-calendar-alt'
+    end
   end
 
   collection do
@@ -26,7 +28,7 @@ Trestle.resource(:venues) do
   end
 
   search do |q|
-    q ? collection.where("name ILIKE ?", "%#{q}%") : collection
+    q ? collection.where('name ILIKE ?', "%#{q}%") : collection
   end
 
   # Customize the table columns shown on the index view.
@@ -52,14 +54,22 @@ Trestle.resource(:venues) do
 
   # Customize the form fields shown on the new/edit views.
   #
-  # form do |venue|
-  #   text_field :name
-  #
-  #   row do
-  #     col(xs: 6) { datetime_field :updated_at }
-  #     col(xs: 6) { datetime_field :created_at }
-  #   end
-  # end
+  form do |venue|
+    render 'map', venue: venue
+    text_field :name
+    text_field :address
+    row do
+      col(xs: 4) { text_field :city }
+      col(xs: 4) { text_field :state }
+      col(xs: 4) { text_field :zipcode }
+    end
+
+
+    row do
+      col(xs: 6) { datetime_field :updated_at }
+      col(xs: 6) { datetime_field :created_at }
+    end
+  end
 
   # By default, all parameters passed to the update and create actions will be
   # permitted. If you do not have full trust in your users, you should explicitly

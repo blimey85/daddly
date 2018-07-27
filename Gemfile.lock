@@ -1,6 +1,17 @@
 GIT
+  remote: https://github.com/TrestleAdmin/trestle.git
+  revision: 406c39146a2406ffcf1be20f08b0c76dfb811719
+  specs:
+    trestle (0.8.9)
+      activemodel (>= 4.2.0)
+      autoprefixer-rails (>= 7.1.2)
+      kaminari (~> 1.1.0)
+      railties (>= 4.2.0)
+      sass-rails (>= 5.0.6)
+
+GIT
   remote: https://github.com/activerecord-hackery/ransack.git
-  revision: 437f642c553c56de1b0f9a1569eaa5496d9552f4
+  revision: 6bcfcc12c5e0f78b014afe47ad9de09ed5745272
   specs:
     ransack (1.8.8)
       actionpack (>= 3.0)
@@ -17,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/amatsuda/kaminari.git
-  revision: ee49f289eed5c3ab455496c6d0230bb78d21d40f
+  revision: a43335cc31b765f2e5a9fb0d8694fa707a6593c6
   branch: master
   specs:
     kaminari (1.1.1)
@@ -43,7 +54,7 @@ GIT
 
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: ad3856bd5424cc636aaefde5a96c8636da0b5d47
+  revision: 48669f6e3e16dbe9b2a307da6743a6e37017b3c5
   specs:
     faker (1.9.1)
       i18n (>= 0.7)
@@ -112,6 +123,16 @@ GEM
     after_commit_action (1.1.0)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
+    ahoy_matey (2.1.0)
+      addressable
+      browser (~> 2.0)
+      device_detector
+      geocoder (>= 1.4.5)
+      railties (>= 4.2)
+      referer-parser (>= 0.3)
+      request_store
+      safely_block (>= 0.2.1)
+      user_agent_parser
     annotate (2.7.4)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
@@ -147,9 +168,10 @@ GEM
     bootstrap-social-rails (4.12.0)
       railties (>= 3.1)
     brakeman (4.3.1)
+    browser (2.5.3)
     builder (3.2.3)
     byebug (10.0.2)
-    capybara (3.3.1)
+    capybara (3.4.2)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -166,6 +188,7 @@ GEM
     case_transform (0.2)
       activesupport
     cd (1.0.1)
+    chartkick (2.3.5)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.1.0)
@@ -209,6 +232,7 @@ GEM
       paint (>= 0.9, < 3.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
+    device_detector (1.0.1)
     devise (4.4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -236,6 +260,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     equalizer (0.0.11)
+    errbase (0.1.0)
     erubi (1.7.1)
     erubis (2.7.0)
     eventmachine (1.2.7)
@@ -282,6 +307,8 @@ GEM
       retriable (~> 1.4)
       signet (~> 0.6)
     gravatar_image_tag (1.2.0)
+    groupdate (4.0.1)
+      activesupport (>= 4.2)
     guard (2.14.2)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -459,11 +486,11 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.2)
-    puma (3.11.4)
+    puma (3.12.0)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
-    rack-test (1.0.0)
+    rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.0)
       actioncable (= 5.2.0)
@@ -485,7 +512,7 @@ GEM
       loofah (~> 2.2, >= 2.2.2)
     rails-jquery-autocomplete (1.0.4)
       rails (>= 3.2)
-    rails_best_practices (1.19.2)
+    rails_best_practices (1.19.3)
       activesupport
       code_analyzer (>= 0.4.8)
       erubis
@@ -505,6 +532,9 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (4.0.1)
+    referer-parser (0.3.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     require_all (2.0.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
@@ -535,7 +565,7 @@ GEM
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
-    rubocop (0.58.1)
+    rubocop (0.58.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -549,7 +579,9 @@ GEM
     ruby_info (1.0.1)
     ruby_version (1.0.1)
     rubyzip (1.2.1)
-    sass (3.5.6)
+    safely_block (0.2.1)
+      errbase
+    sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -567,7 +599,7 @@ GEM
     seed_dump (3.3.1)
       activerecord (>= 4)
       activesupport (>= 4)
-    selenium-webdriver (3.13.0)
+    selenium-webdriver (3.13.1)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     sendgrid-actionmailer (0.2.1)
@@ -646,12 +678,6 @@ GEM
     tilt (2.0.8)
     timber (2.6.1)
       msgpack (~> 1.0)
-    trestle (0.8.9)
-      activemodel (>= 4.2.0)
-      autoprefixer-rails (>= 7.1.2)
-      kaminari (~> 1.1.0)
-      railties (>= 4.2.0)
-      sass-rails (>= 5.0.6)
     trestle-auth (0.2.4)
       bcrypt (~> 3.1.7)
       trestle (~> 0.8)
@@ -663,12 +689,13 @@ GEM
       trestle-auth (~> 0.2.3)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.14)
+    uglifier (4.1.16)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.4.0)
+    user_agent_parser (2.4.1)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -689,7 +716,7 @@ GEM
       paint (>= 0.9, < 3.0)
     xpath (3.1.0)
       nokogiri (~> 1.8)
-    yard (0.9.14)
+    yard (0.9.15)
 
 PLATFORMS
   ruby
@@ -698,6 +725,7 @@ DEPENDENCIES
   active_enum!
   active_model_serializers (~> 0.10.0)
   activerecord-import
+  ahoy_matey
   annotate (>= 2.7.4)
   awesome_print
   better_errors
@@ -708,6 +736,7 @@ DEPENDENCIES
   capybara (~> 3.1)
   capybara-email
   carrierwave
+  chartkick
   chromedriver-helper (~> 1.1.0)
   cloudinary
   cocoon
@@ -723,6 +752,7 @@ DEPENDENCIES
   gibbon
   goldiloader
   google-api-client (= 0.8.2)
+  groupdate
   guard-brakeman
   guard-livereload
   guard-rspec
@@ -779,7 +809,7 @@ DEPENDENCIES
   sweet-alert2-rails
   test-prof
   timber (~> 2.1)
-  trestle
+  trestle!
   trestle-auth
   trestle-search
   trestle-sidekiq

@@ -9,22 +9,14 @@ ActiveEnum.setup do |config|
   # config.use_name_as_value = true
 
   # Raise exception ActiveEnum::NotFound if enum value for a given id or name is not found
-  # config.raise_on_not_found = false
+  config.raise_on_not_found = false
 
   # Storage of values (:memory, :i18n)
   # config.storage = :memory
 end
 
-# ActiveEnum.define do
-#
-#   enum(:enum_name) do
-#     value 1 => 'Name'
-#   end
-#
+# class Gender < ActiveEnum::Base
+#   value id: 0, name: 'Not Saying'
+#   value id: 1, name: 'Male'
+#   value id: 2, name: 'Female'
 # end
-
-class Gender < ActiveEnum::Base
-  value id: 0, name: 'Not Saying'
-  value id: 1, name: 'Male'
-  value id: 2, name: 'Female'
-end
