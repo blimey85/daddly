@@ -86,11 +86,12 @@ Rails/SkipsModelValidations:
 Style/BlockComments:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+#  EnforcedStyle: compact
+  Enabled: false
+
 Style/EmptyMethod:
   EnforcedStyle: expanded
-
-Style/FrozenStringLiteralComment:
-  Enabled: true
 
 Style/FrozenStringLiteralComment:
   Enabled: false

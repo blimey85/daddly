@@ -15,8 +15,8 @@ html
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Daddly.io'}"
     = tag :meta, name: 'current-user', content: current_user.id, data: { email: current_user.email, name: current_user.name } if user_signed_in?
 
-    script defer="defer" src="https://pro.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-+1nLPoB0gaUktsZJP+ycZectl3GX7wP8Xf2PE/JHrb7X1u7Emm+v7wJMbAcPr8Ge" crossorigin="anonymous"
-    script defer="defer" src="https://pro.fontawesome.com/releases/v5.0.10/js/v4-shims.js" crossorigin="anonymous"
+    script defer="defer" src="https://pro.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-yBZ34R8uZDBb7pIwm+whKmsCiRDZXCW1vPPn/3Gz0xm4E95frfRNrOmAUfGbSGqN" crossorigin="anonymous"
+    script defer="defer" src="https://pro.fontawesome.com/releases/v5.2.0/js/v4-shims.js" crossorigin="anonymous"
 
     == stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'
     == stylesheet_link_tag 'mdb'
